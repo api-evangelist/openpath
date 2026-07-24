@@ -1,0 +1,1471 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/identityProviders API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/identityProviders
+  description: Identity Providers and OAuth2
+paths:
+  /orgs/{orgId}/identityProviders:
+    get:
+      summary: List all identity providers
+      operationId: listIdentityProviders
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-building:r,o{params.orgId}-building:w,o{params.orgId}-cert:r,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cleanupMsiAware:w,o{params.orgId}-cobalt:r,o{params.orgId}-cobalt:w,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o{params.orgId}-credential:r,o{params.orgId}-credential:w,o{params.orgId}-dash:r,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashEntry:w,o{params.orgId}-entryAccessAudit:r,o{params.orgId}-entryAccessAudit:w,o{params.orgId}-entryState:r,o{params.orgId}-entryState:w,o{params.orgId}-erpParentCenter:w,o{params.orgId}-erpParentStore:w,o{params.orgId}-eventsMsiAware:w,o{params.orgId}-exportClips:w,o{params.orgId}-haloAdmin:w,o{params.orgId}-haloUser:w,o{params.orgId}-haloViewer:r,o{params.orgId}-hw:r,o{params.orgId}-hw:w,o{params.orgId}-idp-scim:r,o{params.orgId}-idp-scim:w,o{params.orgId}-integrations:r,o{params.orgId}-integrations:w,o{params.orgId}-ipRestriction:r,o{params.orgId}-ipRestriction:w,o{params.orgId}-ldp:r,o{params.orgId}-ldp:w,o{params.orgId}-map:r,o{params.orgId}-map:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-opvideoDevice:r,o{params.orgId}-opvideoDevice:w,o{params.orgId}-opvideoIntercom:r,o{params.orgId}-opvideoIntercom:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-portalAudit:r,o{params.orgId}-portalAudit:w,o{params.orgId}-policy:r,o{params.orgId}-policy:w,o{params.orgId}-policySection:r,o{params.orgId}-policySection:w,o{params.orgId}-presence:r,o{params.orgId}-presence:w,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o{params.orgId}-realUserGroup:r,o{params.orgId}-realUserGroup:w,o{params.orgId}-restriction:r,o{params.orgId}-restriction:w,o{params.orgId}-role:r,o{params.orgId}-role:w,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptDownload:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-serviceCancellation:w,o{params.orgId}-site:r,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o{params.orgId}-timeRestriction:r,o{params.orgId}-timeRestriction:w,o{params.orgId}-user:r,o{params.orgId}-user:w,o{params.orgId}-videoAdmin:w,o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listIdentityProviders'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: id
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    orgId:
+                      type: number
+                    identityProviderType:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        code:
+                          type: string
+                      required:
+                      - id
+                    identityProviderSyncType:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        code:
+                          type: string
+                      required:
+                      - id
+                    authStrategyType:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        code:
+                          type: string
+                      required:
+                      - id
+                    apiKey:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        key:
+                          type: string
+                          pattern: ^\*\*\*\*$
+                        url:
+                          type: string
+                    isSyncUsersEnabled:
+                      type: boolean
+                    isMobileCredentialEnabled:
+                      type: boolean
+                    isCloudKeyCredentialEnabled:
+                      type: boolean
+                    isWalletCredentialEnabled:
+                      type: boolean
+                    isSsoEnabled:
+                      type: boolean
+                    isMobileSsoEnabled:
+                      type: boolean
+                    isIdpInitiatedSsoEnabled:
+                      type: boolean
+                    isRemoveGroupsEnabled:
+                      type: boolean
+                    isLimitByGroupEnabled:
+                      type: boolean
+                    isSyncPersonIdEnabled:
+                      type: boolean
+                    isSyncDepartmentEnabled:
+                      type: boolean
+                    isSyncTitleEnabled:
+                      type: boolean
+                    isSyncMobilePhoneEnabled:
+                      type: boolean
+                    isAutoManageVideoUserGroupsEnabled:
+                      type: boolean
+                    nextSyncAt:
+                      type: string
+                      format: date
+                      x-nullable: true
+                    lastSyncedAt:
+                      type: string
+                      format: date
+                      x-nullable: true
+                    lastSyncedMessage:
+                      type: string
+                      x-nullable: true
+                    lastSyncFailureAt:
+                      type: string
+                      format: date
+                      x-nullable: true
+                    lastSyncFailureMessage:
+                      type: string
+                      x-nullable: true
+                    lastSyncAttemptAt:
+                      type: string
+                      format: date
+                      x-nullable: true
+                    lastSyncAttemptStatus:
+                      type: string
+                      x-nullable: true
+                    isSyncUsersRequested:
+                      type: boolean
+                    status:
+                      type: string
+                    namespace:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        nickname:
+                          type: string
+                      required:
+                      - id
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    uuid:
+                      type: string
+                      x-nullable: true
+                    samlConfig:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        issuer:
+                          type: string
+                          x-nullable: true
+                        ssoUrl:
+                          type: string
+                          x-nullable: true
+                        logoutUrl:
+                          type: string
+                          x-nullable: true
+                        certificate:
+                          type: string
+                          x-nullable: true
+                        entityId:
+                          type: string
+                          x-nullable: true
+                        assertionUrl:
+                          type: string
+                          x-nullable: true
+                      required:
+                      - id
+                    oidcConfig:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        clientId:
+                          type: string
+                          x-nullable: true
+                        subdomain:
+                          type: string
+                    clientAuth:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        clientId:
+                          type: string
+                        clientSecret:
+                          type: string
+                        tenantId:
+                          type: string
+                        url:
+                          type: string
+                    basicAuth:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        url:
+                          type: string
+                        authCreds:
+                          type: string
+                        groupsUrl:
+                          type: string
+                    scimAttributeMapping:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        rules:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              type:
+                                type: string
+                                enum:
+                                - specific
+                                - template
+                              mappings:
+                                x-alternatives:
+                                - type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      conditions:
+                                        type: array
+                                        items:
+                                          type: object
+                                          properties:
+                                            key:
+                                              type: string
+                                            value:
+                                              type: string
+                                              x-alternatives:
+                                              - type: string
+                                              - type: number
+                                              - type: boolean
+                                          required:
+                                          - key
+                                          - value
+                                      destinations:
+                                        type: array
+                                        items:
+                                          type: object
+                                          properties:
+                                            roleIds:
+                                              type: array
+                                              items:
+                                                type: integer
+                                            accessGroupIds:
+                                              type: array
+                                              items:
+                                                type: integer
+                                            videoUserGroupIds:
+                                              type: array
+                                              items:
+                                                type: string
+                                    required:
+                                    - conditions
+                                    - destinations
+                                - type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      destinations:
+                                        type: array
+                                        items:
+                                          type: object
+                                          properties:
+                                            roleTemplates:
+                                              type: array
+                                              items:
+                                                type: string
+                                            accessGroupTemplates:
+                                              type: array
+                                              items:
+                                                type: string
+                                    required:
+                                    - destinations
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    conditions:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          key:
+                                            type: string
+                                          value:
+                                            type: string
+                                            x-alternatives:
+                                            - type: string
+                                            - type: number
+                                            - type: boolean
+                                        required:
+                                        - key
+                                        - value
+                                    destinations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          roleIds:
+                                            type: array
+                                            items:
+                                              type: integer
+                                          accessGroupIds:
+                                            type: array
+                                            items:
+                                              type: integer
+                                          videoUserGroupIds:
+                                            type: array
+                                            items:
+                                              type: string
+                                  required:
+                                  - conditions
+                                  - destinations
+                            required:
+                            - type
+                    scimAccessTokens:
+                      type: array
+                      items:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                        required:
+                        - id
+                    userFieldMappings:
+                      x-nullable: true
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          destination:
+                            type: string
+                          sources:
+                            type: array
+                            items:
+                              type: string
+                        required:
+                        - destination
+                        - sources
+                  required:
+                  - id
+                  - orgId
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-account:r
+      - o{params.orgId}-account:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-advancedOxygenReports:r
+      - o{params.orgId}-advancedOxygenReports:w
+      - o{params.orgId}-alarmActions:w
+      - o{params.orgId}-alarmConfigurations:r
+      - o{params.orgId}-alarmConfigurations:w
+      - o{params.orgId}-alertSettings:r
+      - o{params.orgId}-alertSettings:w
+      - o{params.orgId}-badgePrinting:r
+      - o{params.orgId}-badgePrinting:w
+      - o{params.orgId}-building:r
+      - o{params.orgId}-building:w
+      - o{params.orgId}-cert:r
+      - o{params.orgId}-cert:w
+      - o{params.orgId}-cert{params.authCertId}:r
+      - o{params.orgId}-cert{params.authCertId}:w
+      - o{params.orgId}-cleanupMsiAware:w
+      - o{params.orgId}-cobalt:r
+      - o{params.orgId}-cobalt:w
+      - o{params.orgId}-configurations:r
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-credential:r
+      - o{params.orgId}-credential:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dashActivity:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashAlarm:r
+      - o{params.orgId}-dashAlarm:w
+      - o{params.orgId}-dashCust:r
+      - o{params.orgId}-dashCust:w
+      - o{params.orgId}-dashEntry:r
+      - o{params.orgId}-dashEntry:w
+      - o{params.orgId}-entryAccessAudit:r
+      - o{params.orgId}-entryAccessAudit:w
+      - o{params.orgId}-entryState:r
+      - o{params.orgId}-entryState:w
+      - o{params.orgId}-erpParentCenter:w
+      - o{params.orgId}-erpParentStore:w
+      - o{params.orgId}-eventsMsiAware:w
+      - o{params.orgId}-exportClips:w
+      - o{params.orgId}-haloAdmin:w
+      - o{params.orgId}-haloUser:w
+      - o{params.orgId}-haloViewer:r
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-idp-scim:r
+      - o{params.orgId}-idp-scim:w
+      - o{params.orgId}-integrations:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-ipRestriction:r
+      - o{params.orgId}-ipRestriction:w
+      - o{params.orgId}-ldp:r
+      - o{params.orgId}-ldp:w
+      - o{params.orgId}-map:r
+      - o{params.orgId}-map:w
+      - o{params.orgId}-mobileAppSettings:r
+      - o{params.orgId}-mobileAppSettings:w
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o{params.orgId}-opvideoDevice:r
+      - o{params.orgId}-opvideoDevice:w
+      - o{params.orgId}-opvideoIntercom:r
+      - o{params.orgId}-opvideoIntercom:w
+      - o{params.orgId}-outboundWebhooks:r
+      - o{params.orgId}-outboundWebhooks:w
+      - o{params.orgId}-parcelMgmtParcels:r
+      - o{params.orgId}-parcelMgmtParcels:w
+      - o{params.orgId}-portalAudit:r
+      - o{params.orgId}-portalAudit:w
+      - o{params.orgId}-policy:r
+      - o{params.orgId}-policy:w
+      - o{params.orgId}-policySection:r
+      - o{params.orgId}-policySection:w
+      - o{params.orgId}-presence:r
+      - o{params.orgId}-presence:w
+      - o{params.orgId}-quickStart:r
+      - o{params.orgId}-quickStart:w
+      - o{params.orgId}-realUserGroup:r
+      - o{params.orgId}-realUserGroup:w
+      - o{params.orgId}-restriction:r
+      - o{params.orgId}-restriction:w
+      - o{params.orgId}-role:r
+      - o{params.orgId}-role:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rptAlarm:r
+      - o{params.orgId}-rptAlarm:w
+      - o{params.orgId}-rptDownload:r
+      - o{params.orgId}-rptGeneral:r
+      - o{params.orgId}-rptGeneral:w
+      - o{params.orgId}-serviceCancellation:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-sos:w
+      - o{params.orgId}-timeRestriction:r
+      - o{params.orgId}-timeRestriction:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-videoAdmin:w
+      - o{params.orgId}-videoProviderLive:w
+      - o{params.orgId}-videoProviderPlayback:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/identityProviders/{identityProviderId}:
+    get:
+      summary: Describe an identity provider
+      operationId: describeIdentityProvider
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeIdentityProvider'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  orgId:
+                    type: number
+                  identityProviderType:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      code:
+                        type: string
+                    required:
+                    - id
+                  identityProviderSyncType:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      code:
+                        type: string
+                    required:
+                    - id
+                  authStrategyType:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      code:
+                        type: string
+                    required:
+                    - id
+                  apiKey:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      key:
+                        type: string
+                        pattern: ^\*\*\*\*$
+                      url:
+                        type: string
+                  isSyncUsersEnabled:
+                    type: boolean
+                  isMobileCredentialEnabled:
+                    type: boolean
+                  isCloudKeyCredentialEnabled:
+                    type: boolean
+                  isWalletCredentialEnabled:
+                    type: boolean
+                  isSsoEnabled:
+                    type: boolean
+                  isMobileSsoEnabled:
+                    type: boolean
+                  isIdpInitiatedSsoEnabled:
+                    type: boolean
+                  isRemoveGroupsEnabled:
+                    type: boolean
+                  isLimitByGroupEnabled:
+                    type: boolean
+                  isSyncPersonIdEnabled:
+                    type: boolean
+                  isSyncDepartmentEnabled:
+                    type: boolean
+                  isSyncTitleEnabled:
+                    type: boolean
+                  isSyncMobilePhoneEnabled:
+                    type: boolean
+                  isAutoManageVideoUserGroupsEnabled:
+                    type: boolean
+                  nextSyncAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+                  lastSyncedAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+                  lastSyncedMessage:
+                    type: string
+                    x-nullable: true
+                  lastSyncFailureAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+                  lastSyncFailureMessage:
+                    type: string
+                    x-nullable: true
+                  lastSyncAttemptAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+                  lastSyncAttemptStatus:
+                    type: string
+                    x-nullable: true
+                  isSyncUsersRequested:
+                    type: boolean
+                  status:
+                    type: string
+                  namespace:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      nickname:
+                        type: string
+                    required:
+                    - id
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  uuid:
+                    type: string
+                    x-nullable: true
+                  samlConfig:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      issuer:
+                        type: string
+                        x-nullable: true
+                      ssoUrl:
+                        type: string
+                        x-nullable: true
+                      logoutUrl:
+                        type: string
+                        x-nullable: true
+                      certificate:
+                        type: string
+                        x-nullable: true
+                      entityId:
+                        type: string
+                        x-nullable: true
+                      assertionUrl:
+                        type: string
+                        x-nullable: true
+                    required:
+                    - id
+                  oidcConfig:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      clientId:
+                        type: string
+                        x-nullable: true
+                      subdomain:
+                        type: string
+                  clientAuth:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      clientId:
+                        type: string
+                      clientSecret:
+                        type: string
+                      tenantId:
+                        type: string
+                      url:
+                        type: string
+                  basicAuth:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      url:
+                        type: string
+                      authCreds:
+                        type: string
+                      groupsUrl:
+                        type: string
+                  scimAttributeMapping:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      rules:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              enum:
+                              - specific
+                              - template
+                            mappings:
+                              x-alternatives:
+                              - type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    conditions:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          key:
+                                            type: string
+                                          value:
+                                            type: string
+                                            x-alternatives:
+                                            - type: string
+                                            - type: number
+                                            - type: boolean
+                                        required:
+                                        - key
+                                        - value
+                                    destinations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          roleIds:
+                                            type: array
+                                            items:
+                                              type: integer
+                                          accessGroupIds:
+                                            type: array
+                                            items:
+                                              type: integer
+                                          videoUserGroupIds:
+                                            type: array
+                                            items:
+                                              type: string
+                                  required:
+                                  - conditions
+                                  - destinations
+                              - type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    destinations:
+                                      type: array
+                                      items:
+                                        type: object
+                                        properties:
+                                          roleTemplates:
+                                            type: array
+                                            items:
+                                              type: string
+                                          accessGroupTemplates:
+                                            type: array
+                                            items:
+                                              type: string
+                                  required:
+                                  - destinations
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  conditions:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        key:
+                                          type: string
+                                        value:
+                                          type: string
+                                          x-alternatives:
+                                          - type: string
+                                          - type: number
+                                          - type: boolean
+                                      required:
+                                      - key
+                                      - value
+                                  destinations:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        roleIds:
+                                          type: array
+                                          items:
+                                            type: integer
+                                        accessGroupIds:
+                                          type: array
+                                          items:
+                                            type: integer
+                                        videoUserGroupIds:
+                                          type: array
+                                          items:
+                                            type: string
+                                required:
+                                - conditions
+                                - destinations
+                          required:
+                          - type
+                  scimAccessTokens:
+                    type: array
+                    items:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                      required:
+                      - id
+                  userFieldMappings:
+                    x-nullable: true
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        destination:
+                          type: string
+                        sources:
+                          type: array
+                          items:
+                            type: string
+                      required:
+                      - destination
+                      - sources
+                required:
+                - id
+                - orgId
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/identityProviders/{identityProviderId}/groupRelations:
+    get:
+      summary: Describe an identity provider's group relations
+      operationId: getIdentityProviderGroupRelations
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getIdentityProviderGroupRelations'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    idpGroupUniqueIdentifier:
+                      type: string
+                      x-nullable: true
+                    identityProviderGroup:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        idpGroupUniqueIdentifier:
+                          type: string
+                          x-nullable: true
+                        name:
+                          type: string
+                        description:
+                          type: string
+                          x-nullable: true
+                        email:
+                          type: string
+                          x-nullable: true
+                    groupId:
+                      type: number
+                      x-nullable: true
+                    group:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                      x-nullable: true
+                    videoUserGroupIdExt:
+                      type: string
+                      x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-integrations:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    put:
+      summary: Set an identity provider's group relations
+      operationId: setIdentityProviderGroupRelations
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: setIdentityProviderGroupRelations'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              idpGroupUniqueIdentifier:
+                type: string
+                x-nullable: true
+              groupId:
+                type: integer
+                x-nullable: true
+              videoUserGroupIdExt:
+                type: string
+                x-nullable: true
+            required:
+            - idpGroupUniqueIdentifier
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-integrations:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/identityProviders/{identityProviderId}/groups:
+    get:
+      summary: List an identity provider's groups
+      operationId: listIdentityProviderGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listIdentityProviderGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: string
+        name: q
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    idpGroupUniqueIdentifier:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    email:
+                      type: string
+                      x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-integrations:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/identityProviders/{identityProviderId}/syncUsers:
+    post:
+      summary: Sync users
+      operationId: syncUsersIdentityProvider
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncUsersIdentityProvider'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-integrations:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/identityProviders/{identityProviderId}/oauth2/authorize:
+    post:
+      summary: Generate OAuth2 authorize URL
+      operationId: getIdentityProviderAuthUrl
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w<br/><br/>__Endpoint name__: getIdentityProviderAuthUrl'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  authUrl:
+                    type: string
+                    x-nullable: true
+                  authorizationUrl:
+                    type: string
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-integrations:w
+  /orgs/{orgId}/identityProviders/{identityProviderId}/groupRelation:
+    delete:
+      summary: Remove a group relation from an identity provider
+      operationId: deleteIdentityProviderGroupRelation
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteIdentityProviderGroupRelation'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            idpGroupUniqueIdentifier:
+              type: string
+              x-nullable: true
+            groupId:
+              type: integer
+              x-nullable: true
+            videoUserGroupIdExt:
+              type: string
+              x-nullable: true
+          required:
+          - idpGroupUniqueIdentifier
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-user:w
+      - o{params.orgId}-integrations:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Add a group relation to an identity provider
+      operationId: setIdentityProviderGroupRelation
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: setIdentityProviderGroupRelation'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            idpGroupUniqueIdentifier:
+              type: string
+              x-nullable: true
+            groupId:
+              type: integer
+              x-nullable: true
+            videoUserGroupIdExt:
+              type: string
+              x-nullable: true
+          required:
+          - idpGroupUniqueIdentifier
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-user:w
+      - o{params.orgId}-integrations:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/identityProviders/{identityProviderId}/userCustomMapping:
+    put:
+      summary: Set an identity provider's user custom fields mapping
+      operationId: setIdentityProviderUserCustomFieldsMapping
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: setIdentityProviderUserCustomFieldsMapping'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              destination:
+                type: string
+                minLength: 1
+                x-convert:
+                  trim: true
+              sources:
+                type: array
+                items:
+                  type: string
+                  minLength: 1
+                  x-convert:
+                    trim: true
+            required:
+            - destination
+            - sources
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-integrations:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/identityProviders/{identityProviderId}/inactivate:
+    put:
+      summary: Inactivate an identity provider and all associated identities and users
+      operationId: inactivateIdentityProvider
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: inactivateIdentityProvider'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: identityProviderId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/identityProviders
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

@@ -1,0 +1,387 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/orgPictures API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/orgPictures
+  description: Org Pictures
+paths:
+  /orgs/{orgId}/orgPictures:
+    get:
+      summary: List all org pictures
+      operationId: listOrgPictures
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listOrgPictures'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: id
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/orgPictures
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    isAvatar:
+                      type: boolean
+                    picture:
+                      type: object
+                      properties:
+                        contentType:
+                          type: string
+                        fileName:
+                          type: string
+                        url:
+                          type: string
+                          x-nullable: true
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-mobileAppSettings:w
+      - o{params.orgId}-mobileAppSettings:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create an org picture
+      operationId: createOrgPicture
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: createOrgPicture'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            isAvatar:
+              type: boolean
+              default: true
+            picture:
+              type: object
+              properties:
+                base64:
+                  type: string
+              required:
+              - base64
+          required:
+          - picture
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/orgPictures
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  isAvatar:
+                    type: boolean
+                  picture:
+                    type: object
+                    properties:
+                      contentType:
+                        type: string
+                      fileName:
+                        type: string
+                      url:
+                        type: string
+                        x-nullable: true
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-mobileAppSettings:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/orgPictures/{orgPictureId}:
+    get:
+      summary: Describe an org picture
+      operationId: describeOrgPicture
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: describeOrgPicture'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: orgPictureId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/orgPictures
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  isAvatar:
+                    type: boolean
+                  picture:
+                    type: object
+                    properties:
+                      contentType:
+                        type: string
+                      fileName:
+                        type: string
+                      url:
+                        type: string
+                        x-nullable: true
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-mobileAppSettings:w
+      - o:w
+      - s-o:w
+    delete:
+      summary: Delete an org picture
+      operationId: deleteOrgPicture
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteOrgPicture'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: orgPictureId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/orgPictures
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-mobileAppSettings:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update an org picture
+      operationId: updateOrgPicture
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateOrgPicture'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: orgPictureId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            isAvatar:
+              type: boolean
+            picture:
+              type: object
+              properties:
+                base64:
+                  type: string
+              required:
+              - base64
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/orgPictures
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-mobileAppSettings:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

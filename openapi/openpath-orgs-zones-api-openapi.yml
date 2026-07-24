@@ -1,0 +1,2741 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/zones API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/zones
+  description: Zones
+paths:
+  /orgs/{orgId}/zones:
+    get:
+      summary: List all owned or shared zones
+      operationId: listZones
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-rpt:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZones'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    opal:
+                      type: string
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    org:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                      - id
+                    site:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                      - id
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    apbResetIcalText:
+                      type: string
+                      x-nullable: true
+                    apbExpirationSeconds:
+                      type: integer
+                      x-nullable: true
+                    apbUseContactSensor:
+                      type: boolean
+                    apbAllowSharedOrgReset:
+                      type: boolean
+                    zoneShares:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          orgId:
+                            type: integer
+                    entries:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          acu:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                            required:
+                            - id
+                          wirelessLock:
+                            x-nullable: true
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              noTourLockId:
+                                type: integer
+                                minimum: 0
+                                maximum: 65534
+                                x-nullable: true
+                              isOffline:
+                                type: boolean
+                              wirelessLockDbEntries:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    credentialNumberHash:
+                                      type: string
+                            required:
+                            - id
+                        required:
+                        - id
+                    apbAreas:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                        required:
+                        - id
+                    entryCount:
+                      type: integer
+                    offlineEntryCount:
+                      type: integer
+                    userCount:
+                      type: integer
+                    groupCount:
+                      type: integer
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-ldp:w
+      - o{params.orgId}-ldp:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashActivity:r
+      - o{params.orgId}-dashCust:w
+      - o{params.orgId}-dashCust:r
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o{params.orgId}-rpt:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create a zone
+      operationId: createZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: createZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            siteId:
+              type: integer
+            description:
+              type: string
+              x-nullable: true
+            apbResetIcalText:
+              type: string
+              x-nullable: true
+            apbExpirationSeconds:
+              type: integer
+              x-nullable: true
+            apbUseContactSensor:
+              type: boolean
+              default: true
+            apbAllowSharedOrgReset:
+              type: boolean
+              default: false
+          required:
+          - name
+          - siteId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  opal:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  org:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                    required:
+                    - id
+                  site:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                    required:
+                    - id
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  apbResetIcalText:
+                    type: string
+                    x-nullable: true
+                  apbExpirationSeconds:
+                    type: integer
+                    x-nullable: true
+                  apbUseContactSensor:
+                    type: boolean
+                  apbAllowSharedOrgReset:
+                    type: boolean
+                  zoneShares:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        orgId:
+                          type: integer
+                  entries:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        acu:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                          required:
+                          - id
+                        wirelessLock:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            noTourLockId:
+                              type: integer
+                              minimum: 0
+                              maximum: 65534
+                              x-nullable: true
+                            isOffline:
+                              type: boolean
+                            wirelessLockDbEntries:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  credentialNumberHash:
+                                    type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  apbAreas:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                      - id
+                  entryCount:
+                    type: integer
+                  offlineEntryCount:
+                    type: integer
+                  userCount:
+                    type: integer
+                  groupCount:
+                    type: integer
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-quickStart:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}:
+    get:
+      summary: Describe an owned or shared zone
+      operationId: describeZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  opal:
+                    type: string
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  org:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                    required:
+                    - id
+                  site:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                    required:
+                    - id
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  apbResetIcalText:
+                    type: string
+                    x-nullable: true
+                  apbExpirationSeconds:
+                    type: integer
+                    x-nullable: true
+                  apbUseContactSensor:
+                    type: boolean
+                  apbAllowSharedOrgReset:
+                    type: boolean
+                  zoneShares:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        orgId:
+                          type: integer
+                  entries:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        acu:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                          required:
+                          - id
+                        wirelessLock:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            noTourLockId:
+                              type: integer
+                              minimum: 0
+                              maximum: 65534
+                              x-nullable: true
+                            isOffline:
+                              type: boolean
+                            wirelessLockDbEntries:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  credentialNumberHash:
+                                    type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  apbAreas:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                      - id
+                  entryCount:
+                    type: integer
+                  offlineEntryCount:
+                    type: integer
+                  userCount:
+                    type: integer
+                  groupCount:
+                    type: integer
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete a zone
+      operationId: deleteZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update a zone
+      operationId: updateZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              x-nullable: true
+            siteId:
+              type: integer
+            apbResetIcalText:
+              type: string
+              x-nullable: true
+            apbExpirationSeconds:
+              type: integer
+              x-nullable: true
+            apbUseContactSensor:
+              type: boolean
+            apbAllowSharedOrgReset:
+              type: boolean
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/apbAreas:
+    get:
+      summary: List all zone anti-passback areas
+      operationId: listZoneApbAreas
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneApbAreas'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    name:
+                      type: string
+                    occupancyLimit:
+                      type: integer
+                      x-nullable: true
+                    occupancyLimitMode:
+                      x-nullable: true
+                      type: string
+                      enum:
+                      - alert
+                      - enforce
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    apbFlows:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          direction:
+                            type: string
+                            enum:
+                            - inbound
+                            - outbound
+                          mode:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - alert
+                            - enforce
+                          entries:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                              required:
+                              - id
+                        required:
+                        - id
+                        - direction
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashActivity:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create a zone anti-passback area
+      operationId: createZoneApbArea
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createZoneApbArea'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            occupancyLimit:
+              type: integer
+              minimum: 1
+              x-nullable: true
+            occupancyLimitMode:
+              x-nullable: true
+              type: string
+              enum:
+              - alert
+              - enforce
+            apbFlows:
+              type: array
+              items:
+                type: object
+                properties:
+                  direction:
+                    type: string
+                    enum:
+                    - inbound
+                    - outbound
+                  mode:
+                    x-nullable: true
+                    type: string
+                    default: null
+                    enum:
+                    - alert
+                    - enforce
+                  entryIds:
+                    type: array
+                    items:
+                      type: integer
+                required:
+                - direction
+          required:
+          - name
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  occupancyLimit:
+                    type: integer
+                    x-nullable: true
+                  occupancyLimitMode:
+                    x-nullable: true
+                    type: string
+                    enum:
+                    - alert
+                    - enforce
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  apbFlows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        direction:
+                          type: string
+                          enum:
+                          - inbound
+                          - outbound
+                        mode:
+                          x-nullable: true
+                          type: string
+                          enum:
+                          - alert
+                          - enforce
+                        entries:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                            required:
+                            - id
+                      required:
+                      - id
+                      - direction
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/groupIds:
+    get:
+      summary: List all group IDs of a zone
+      operationId: listZoneGroupIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneGroupIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: integer
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    put:
+      summary: Set a zone's groups by replacing the entire set with this one
+      operationId: setZoneGroupIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setZoneGroupIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            groupIds:
+              type: array
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/zoneUsers:
+    get:
+      summary: List all users (and their associated configurations) of a zone
+      operationId: listZoneZoneUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneZoneUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: user.identity.lastName
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    user:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        status:
+                          type: string
+                        identity:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            firstName:
+                              type: string
+                              x-nullable: true
+                            middleName:
+                              type: string
+                              x-nullable: true
+                            lastName:
+                              type: string
+                              x-nullable: true
+                            fullName:
+                              type: string
+                              x-nullable: true
+                            initials:
+                              type: string
+                              x-nullable: true
+                            email:
+                              type: string
+                            namespace:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                nickname:
+                                  type: string
+                                  x-nullable: true
+                              required:
+                              - id
+                          required:
+                          - id
+                        sites:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                      required:
+                      - id
+                    schedule:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        scheduleType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                      required:
+                      - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    patch:
+      summary: Bulk-update a zone's users (and their associated configurations)
+      operationId: updateZoneZoneUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateZoneZoneUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              items:
+                type: object
+                properties:
+                  userId:
+                    type: integer
+                  scheduleId:
+                    type: integer
+                    x-nullable: true
+                required:
+                - userId
+                - scheduleId
+            remove:
+              type: array
+              items:
+                type: object
+                properties:
+                  userId:
+                    type: integer
+                required:
+                - userId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set a zone's users (and their associated configurations) by replacing the entire set with this one
+      operationId: setZoneZoneUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setZoneZoneUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              userId:
+                type: integer
+              scheduleId:
+                type: integer
+                x-nullable: true
+            required:
+            - userId
+            - scheduleId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/users:
+    get:
+      summary: List all users of a zone
+      operationId: listZoneUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: identity.lastName
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status:
+                      type: string
+                    identity:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        firstName:
+                          type: string
+                          x-nullable: true
+                        middleName:
+                          type: string
+                          x-nullable: true
+                        lastName:
+                          type: string
+                          x-nullable: true
+                        fullName:
+                          type: string
+                          x-nullable: true
+                        initials:
+                          type: string
+                          x-nullable: true
+                        email:
+                          type: string
+                        namespace:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nickname:
+                              type: string
+                              x-nullable: true
+                          required:
+                          - id
+                      required:
+                      - id
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/zones/{zoneId}/shares:
+    get:
+      summary: List all shares of this zone
+      operationId: listZoneShares
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneShares'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    org:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                      required:
+                      - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/zones/{zoneId}/groups:
+    get:
+      summary: List all groups of a zone
+      operationId: listZoneGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    userCount:
+                      type: integer
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/zones/{zoneId}/zoneGroups:
+    get:
+      summary: List all groups (and their associated configurations) of a zone
+      operationId: listZoneZoneGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listZoneZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: group.name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    group:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        description:
+                          type: string
+                          x-nullable: true
+                        userCount:
+                          type: integer
+                        sites:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                      required:
+                      - id
+                    schedule:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        scheduleType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                      required:
+                      - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    patch:
+      summary: Bulk-update a zone's groups (and their associated configurations)
+      operationId: updateZoneZoneGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateZoneZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              items:
+                type: object
+                properties:
+                  groupId:
+                    type: integer
+                  scheduleId:
+                    type: integer
+                    x-nullable: true
+                required:
+                - groupId
+                - scheduleId
+            remove:
+              type: array
+              items:
+                type: object
+                properties:
+                  groupId:
+                    type: integer
+                required:
+                - groupId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set a zone's groups (and their associated configurations) by replacing the entire set with this one
+      operationId: setZoneZoneGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setZoneZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              groupId:
+                type: integer
+              scheduleId:
+                type: integer
+                x-nullable: true
+            required:
+            - groupId
+            - scheduleId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/apbAreas/{apbAreaId}:
+    get:
+      summary: Describe a zone anti-passback area
+      operationId: describeZoneApbArea
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeZoneApbArea'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: apbAreaId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  occupancyLimit:
+                    type: integer
+                    x-nullable: true
+                  occupancyLimitMode:
+                    x-nullable: true
+                    type: string
+                    enum:
+                    - alert
+                    - enforce
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  apbFlows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        direction:
+                          type: string
+                          enum:
+                          - inbound
+                          - outbound
+                        mode:
+                          x-nullable: true
+                          type: string
+                          enum:
+                          - alert
+                          - enforce
+                        entries:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                            required:
+                            - id
+                      required:
+                      - id
+                      - direction
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete a zone anti-passback area
+      operationId: deleteZoneApbArea
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteZoneApbArea'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: apbAreaId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update a zone anti-passback area
+      operationId: updateZoneApbArea
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateZoneApbArea'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: apbAreaId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            occupancyLimit:
+              type: integer
+              minimum: 1
+              x-nullable: true
+            occupancyLimitMode:
+              x-nullable: true
+              type: string
+              enum:
+              - alert
+              - enforce
+            apbFlows:
+              type: array
+              items:
+                type: object
+                properties:
+                  direction:
+                    type: string
+                    enum:
+                    - inbound
+                    - outbound
+                  mode:
+                    x-nullable: true
+                    type: string
+                    default: null
+                    enum:
+                    - alert
+                    - enforce
+                  entryIds:
+                    type: array
+                    items:
+                      type: integer
+                required:
+                - direction
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/apbReset:
+    post:
+      summary: Reset anti-passback for a zone and/or user
+      operationId: resetApb
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: resetApb'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              zoneId:
+                type: integer
+              userId:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    requestId:
+                      type: integer
+                    acus:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          opal:
+                            type: string
+                        required:
+                        - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/unshare:
+    post:
+      summary: Unshare zone
+      operationId: unshareZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: unshareZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            orgId:
+              type: integer
+          required:
+          - orgId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/share:
+    post:
+      summary: Share zone
+      operationId: shareZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: shareZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            orgId:
+              type: integer
+          required:
+          - orgId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/relinquishShare:
+    post:
+      summary: Relinquish shared zone from shared-to org
+      operationId: relinquishZoneShare
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: relinquishZoneShare'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/users/{userId}:
+    delete:
+      summary: Remove a user from a zone
+      operationId: removeUserFromZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeUserFromZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Add a user to a zone
+      operationId: setUserToZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserToZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      - x-nullable: true
+        in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            scheduleId:
+              type: integer
+              x-nullable: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/groups/{groupId}:
+    delete:
+      summary: Remove a group from a zone
+      operationId: removeGroupFromZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeGroupFromZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Add a group to a zone
+      operationId: setGroupToZone
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupToZone'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - x-nullable: true
+        in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            scheduleId:
+              type: integer
+              x-nullable: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/userIds:
+    put:
+      summary: Set a zone's users by replacing the entire set with this one
+      operationId: setZoneUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setZoneUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            userIds:
+              type: array
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/zones/{zoneId}/shareOrgIds:
+    put:
+      summary: Set this zone's shares by replacing the entire set with this one
+      operationId: setZoneShareOrgIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: setZoneShareOrgIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: zoneId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            orgIds:
+              type: array
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/zones
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

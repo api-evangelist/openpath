@@ -1,0 +1,89 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/triggerPermissionsChange API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/triggerPermissionsChange
+paths:
+  /orgs/{orgId}/triggerPermissionsChange:
+    post:
+      summary: Trigger immediate entry permission recalculation & broadcast
+      operationId: triggerPermissionsChange
+      description: 'This API forces the immediate recalculation and broadcast of all entry permissions for the specified org. Do not repeatedly call this for regular permissions recalculations.<br/><br/>This API request is often called once after a series of x-op-triggers:bypass header related permission change API calls.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: triggerPermissionsChange'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - x-nullable: true
+        in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            includeZoneShares:
+              type: boolean
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/triggerPermissionsChange
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

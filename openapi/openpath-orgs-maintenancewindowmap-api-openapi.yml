@@ -1,0 +1,469 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/maintenanceWindowMap API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/maintenanceWindowMap
+paths:
+  /orgs/{orgId}/maintenanceWindowMap:
+    get:
+      summary: List all maintenance windows maps
+      operationId: listOrgMaintenanceWindowMap
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: listOrgMaintenanceWindowMap'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: id
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/maintenanceWindowMap
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    maintenanceWindowTypeId:
+                      type: integer
+                      enum:
+                      - 1
+                      - 2
+                      - 3
+                    modelId:
+                      type: integer
+                    mesonTimeslots:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          enum:
+                          - timeslot
+                        time_slots:
+                          type: array
+                          items:
+                            type: string
+                        deviceTime:
+                          type: boolean
+                    maintenanceWindowDefinition:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        day:
+                          type: string
+                          enum:
+                          - Sunday
+                          - Monday
+                          - Tuesday
+                          - Wednesday
+                          - Thursday
+                          - Friday
+                          - Saturday
+                        startTime:
+                          type: string
+                        durationHours:
+                          type: integer
+                        timeZone:
+                          type: string
+                      required:
+                      - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o-basic:w
+      - o-basic:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+    post:
+      summary: Create/Update/Delete maintenance window maps for an organization
+      operationId: updateOrgMaintenanceWindowMap
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: updateOrgMaintenanceWindowMap'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            Add:
+              type: array
+              items:
+                type: object
+                properties:
+                  maintenanceWindowTypeId:
+                    type: integer
+                  modelId:
+                    type: integer
+                  maintenanceWindowDefinitionId:
+                    type: integer
+                required:
+                - maintenanceWindowTypeId
+                - modelId
+                - maintenanceWindowDefinitionId
+            Update:
+              type: array
+              items:
+                type: object
+                properties:
+                  maintenanceWindowMapId:
+                    type: integer
+                  maintenanceWindowDefinitionId:
+                    type: integer
+                required:
+                - maintenanceWindowMapId
+                - maintenanceWindowDefinitionId
+            Delete:
+              type: array
+              items:
+                type: object
+                properties:
+                  maintenanceWindowMapId:
+                    type: integer
+                required:
+                - maintenanceWindowMapId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/maintenanceWindowMap
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o:w
+      - s-o:w
+      - o-basic:w
+      - o{params.orgId}-hw:w
+    put:
+      summary: Upsert ACU maintenance window maps to a single maintenance window definition
+      operationId: upsertOrgMaintenanceWindowMapForAcus
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: upsertOrgMaintenanceWindowMapForAcus'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            maintenanceWindowDefinitionId:
+              type: integer
+            acuIds:
+              type: array
+              items:
+                type: integer
+          required:
+          - maintenanceWindowDefinitionId
+          - acuIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/maintenanceWindowMap
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o:w
+      - s-o:w
+      - o-basic:w
+      - o{params.orgId}-hw:w
+  /orgs/{orgId}/maintenanceWindowMap/{maintenanceWindowMapId}:
+    get:
+      summary: Describe a maintenance window
+      operationId: describeOrgMaintenanceWindowMap
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: describeOrgMaintenanceWindowMap'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: maintenanceWindowMapId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/maintenanceWindowMap
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  maintenanceWindowTypeId:
+                    type: integer
+                    enum:
+                    - 1
+                    - 2
+                    - 3
+                  modelId:
+                    type: integer
+                  mesonTimeslots:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      type:
+                        type: string
+                        enum:
+                        - timeslot
+                      time_slots:
+                        type: array
+                        items:
+                          type: string
+                      deviceTime:
+                        type: boolean
+                  maintenanceWindowDefinition:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      day:
+                        type: string
+                        enum:
+                        - Sunday
+                        - Monday
+                        - Tuesday
+                        - Wednesday
+                        - Thursday
+                        - Friday
+                        - Saturday
+                      startTime:
+                        type: string
+                      durationHours:
+                        type: integer
+                      timeZone:
+                        type: string
+                    required:
+                    - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o-basic:w
+      - o-basic:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

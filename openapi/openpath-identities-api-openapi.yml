@@ -1,0 +1,171 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth identities API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: identities
+  description: Identities and MFA
+paths:
+  /identities/{identityId}/nicknames:
+    get:
+      summary: List an identity's nicknames
+      operationId: listIdentityNicknames
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: i{params.identityId}:w,i{params.identityId}:r,i:w,i:r<br/><br/>__Endpoint name__: listIdentityNicknames'
+      parameters:
+      - type: integer
+        name: identityId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - identities
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    nickname:
+                      type: string
+                      minLength: 1
+                      maxLength: 100
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - i{params.identityId}:w
+      - i{params.identityId}:r
+      - i:w
+      - i:r
+    patch:
+      summary: Bulk-update an identity's nicknames
+      operationId: updateIdentityNicknames
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: i{params.identityId}:w,i:w<br/><br/>__Endpoint name__: updateIdentityNicknames'
+      parameters:
+      - type: integer
+        name: identityId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: object
+                properties:
+                  nickname:
+                    type: string
+                    minLength: 1
+                    maxLength: 100
+            remove:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: object
+                properties:
+                  nickname:
+                    type: string
+                    minLength: 1
+                    maxLength: 100
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - identities
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - i{params.identityId}:w
+      - i:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

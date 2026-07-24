@@ -1,0 +1,273 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/acuModels API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/acuModels
+  description: ACU Models
+paths:
+  /orgs/{orgId}/acuModels:
+    get:
+      summary: List all ACU models
+      operationId: listAcuModels
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listAcuModels'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: ordinal
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/acuModels
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    config:
+                      type: object
+                    vendorConfig:
+                      x-nullable: true
+                      type: object
+                    isBaseModel:
+                      type: boolean
+                    acuModelPortMapCounts:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          ioType:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              code:
+                                type: string
+                            required:
+                            - id
+                          count:
+                            type: integer
+                    acuModelVendor:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        code:
+                          type: string
+                      required:
+                      - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-quickStart:r
+      - o{params.orgId}-quickStart:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/acuModels/{acuModelId}:
+    get:
+      summary: Describe an ACU model
+      operationId: describeAcuModel
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuModel'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: acuModelId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/acuModels
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  config:
+                    type: object
+                  vendorConfig:
+                    x-nullable: true
+                    type: object
+                  isBaseModel:
+                    type: boolean
+                  acuModelPortMapCounts:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        ioType:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            code:
+                              type: string
+                          required:
+                          - id
+                        count:
+                          type: integer
+                  acuModelVendor:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      code:
+                        type: string
+                    required:
+                    - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

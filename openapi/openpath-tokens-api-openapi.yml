@@ -1,0 +1,87 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth tokens API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: tokens
+  description: Token use and validation
+paths:
+  /tokens/cloudKeyLockdownPlanActionTokens/{token}/use:
+    post:
+      summary: Use a cloudKey token to remotely trigger or revert a lockdown plan
+      operationId: useCloudKeyLockdownPlanActionToken
+      description: '__Endpoint name__: useCloudKeyLockdownPlanActionToken'
+      parameters:
+      - type: string
+        name: token
+        in: path
+        required: true
+      - x-nullable: true
+        in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            lockdownPlanId:
+              type: integer
+            action:
+              type: string
+              enum:
+              - trigger
+              - revert
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - tokens
+      responses:
+        '204':
+          description: No Content
+  /tokens/cloudKeyUnlockTokens/{token}/use:
+    post:
+      summary: Use a cloudKey token to remotely unlock an entry
+      operationId: useCloudKeyUnlockToken
+      description: '__Endpoint name__: useCloudKeyUnlockToken'
+      parameters:
+      - type: string
+        name: token
+        in: path
+        required: true
+      - x-alternatives:
+        - type: object
+          properties:
+            entryId:
+              type: integer
+        - type: string
+        x-nullable: true
+        in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            entryId:
+              type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - tokens
+      responses:
+        '204':
+          description: No Content
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

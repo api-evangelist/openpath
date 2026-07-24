@@ -1,0 +1,1446 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: auth
+  description: Authentication and Login
+paths:
+  /auth/accessTokens/{token}:
+    get:
+      summary: Describe an access token's associated identity and scopes
+      operationId: describeAccessToken
+      description: '__Endpoint name__: describeAccessToken'
+      parameters:
+      - type: string
+        name: token
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  identityId:
+                    type: number
+                  identity:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      namespace:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          nickname:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  token:
+                    type: string
+                  tokenScopeList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        org:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              x-nullable: true
+                            name:
+                              type: string
+                              x-nullable: true
+                            opal:
+                              type: string
+                              x-nullable: true
+                            packagePlans:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  package:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                      packageFeatures:
+                                        type: array
+                                        items:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type: number
+                                            config:
+                                              x-nullable: true
+                                              type: object
+                                            feature:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: number
+                                                name:
+                                                  type: string
+                                                code:
+                                                  type: string
+                                              required:
+                                              - id
+                                          required:
+                                          - id
+                                    required:
+                                    - id
+                                  isSelected:
+                                    type: boolean
+                                required:
+                                - id
+                            parentOrg:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            orgNativeApps:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  failureReason:
+                                    type: string
+                                    x-nullable: true
+                                  url:
+                                    type: string
+                                    x-nullable: true
+                                  status:
+                                    type: string
+                                    enum:
+                                    - A
+                                    - E
+                                    - I
+                                    - P
+                                    - S
+                                  config:
+                                    x-nullable: true
+                                    type: object
+                                  nativeApp:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                      url:
+                                        type: string
+                                        x-nullable: true
+                                    required:
+                                    - id
+                                required:
+                                - id
+                                - nativeApp
+                            isUnified:
+                              type: boolean
+                          required:
+                          - id
+                        user:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              x-nullable: true
+                            opal:
+                              type: string
+                              x-nullable: true
+                            needsMFACredential:
+                              type: boolean
+                          required:
+                          - id
+                        scope:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: string
+                        policySection:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              nativeAppId:
+                                type: number
+                                x-nullable: true
+                              site:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                  required:
+                                  - id
+                              role:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                required:
+                                - id
+                            required:
+                            - id
+                        scopeWithContext:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              context:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    mfa:
+                                      type: boolean
+                                    needsMFACredential:
+                                      type: boolean
+                                    fsa:
+                                      type: boolean
+                              scope:
+                                type: array
+                                items:
+                                  type: string
+                  createdAt:
+                    type: string
+                    format: date
+                  expiresAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+  /auth/login:
+    post:
+      summary: Login
+      operationId: login
+      description: '__Endpoint name__: login'
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            namespaceId:
+              type: integer
+            namespaceNickname:
+              type: string
+              minLength: 1
+              maxLength: 255
+            email:
+              type: string
+              x-format:
+                email: true
+              x-convert:
+                trim: true
+            password:
+              type: string
+            mfa:
+              type: object
+              properties:
+                totpCode:
+                  type: string
+            forMobileLogin:
+              type: boolean
+          required:
+          - email
+          - password
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  identityId:
+                    type: number
+                  identity:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      namespace:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          nickname:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  token:
+                    type: string
+                  tokenScopeList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        org:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              x-nullable: true
+                            name:
+                              type: string
+                              x-nullable: true
+                            opal:
+                              type: string
+                              x-nullable: true
+                            packagePlans:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  package:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                      packageFeatures:
+                                        type: array
+                                        items:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type: number
+                                            config:
+                                              x-nullable: true
+                                              type: object
+                                            feature:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: number
+                                                name:
+                                                  type: string
+                                                code:
+                                                  type: string
+                                              required:
+                                              - id
+                                          required:
+                                          - id
+                                    required:
+                                    - id
+                                  isSelected:
+                                    type: boolean
+                                required:
+                                - id
+                            parentOrg:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            orgNativeApps:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  failureReason:
+                                    type: string
+                                    x-nullable: true
+                                  url:
+                                    type: string
+                                    x-nullable: true
+                                  status:
+                                    type: string
+                                    enum:
+                                    - A
+                                    - E
+                                    - I
+                                    - P
+                                    - S
+                                  config:
+                                    x-nullable: true
+                                    type: object
+                                  nativeApp:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                      url:
+                                        type: string
+                                        x-nullable: true
+                                    required:
+                                    - id
+                                required:
+                                - id
+                                - nativeApp
+                            isUnified:
+                              type: boolean
+                          required:
+                          - id
+                        user:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              x-nullable: true
+                            opal:
+                              type: string
+                              x-nullable: true
+                            needsMFACredential:
+                              type: boolean
+                          required:
+                          - id
+                        scope:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: string
+                        policySection:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              nativeAppId:
+                                type: number
+                                x-nullable: true
+                              site:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                  required:
+                                  - id
+                              role:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                required:
+                                - id
+                            required:
+                            - id
+                        scopeWithContext:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              context:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    mfa:
+                                      type: boolean
+                                    needsMFACredential:
+                                      type: boolean
+                                    fsa:
+                                      type: boolean
+                              scope:
+                                type: array
+                                items:
+                                  type: string
+                  createdAt:
+                    type: string
+                    format: date
+                  expiresAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+  /auth/loginAll:
+    post:
+      summary: Login all successful matches for email/password
+      operationId: loginAll
+      description: '__Endpoint name__: loginAll'
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            email:
+              type: string
+              x-format:
+                email: true
+              x-convert:
+                trim: true
+            password:
+              type: string
+            mfa:
+              type: object
+              properties:
+                totpCode:
+                  type: string
+            forMobileLogin:
+              type: boolean
+          required:
+          - email
+          - password
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    identityId:
+                      type: number
+                    identity:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        namespace:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            nickname:
+                              type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                    token:
+                      type: string
+                    tokenScopeList:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          org:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                                x-nullable: true
+                              name:
+                                type: string
+                                x-nullable: true
+                              opal:
+                                type: string
+                                x-nullable: true
+                              packagePlans:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    package:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                        packageFeatures:
+                                          type: array
+                                          items:
+                                            type: object
+                                            properties:
+                                              id:
+                                                type: number
+                                              config:
+                                                x-nullable: true
+                                                type: object
+                                              feature:
+                                                type: object
+                                                properties:
+                                                  id:
+                                                    type: number
+                                                  name:
+                                                    type: string
+                                                  code:
+                                                    type: string
+                                                required:
+                                                - id
+                                            required:
+                                            - id
+                                      required:
+                                      - id
+                                    isSelected:
+                                      type: boolean
+                                  required:
+                                  - id
+                              parentOrg:
+                                x-nullable: true
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                              orgNativeApps:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: integer
+                                    failureReason:
+                                      type: string
+                                      x-nullable: true
+                                    url:
+                                      type: string
+                                      x-nullable: true
+                                    status:
+                                      type: string
+                                      enum:
+                                      - A
+                                      - E
+                                      - I
+                                      - P
+                                      - S
+                                    config:
+                                      x-nullable: true
+                                      type: object
+                                    nativeApp:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: integer
+                                        url:
+                                          type: string
+                                          x-nullable: true
+                                      required:
+                                      - id
+                                  required:
+                                  - id
+                                  - nativeApp
+                              isUnified:
+                                type: boolean
+                            required:
+                            - id
+                          user:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                                x-nullable: true
+                              opal:
+                                type: string
+                                x-nullable: true
+                              needsMFACredential:
+                                type: boolean
+                            required:
+                            - id
+                          scope:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: string
+                          policySection:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                nativeAppId:
+                                  type: number
+                                  x-nullable: true
+                                site:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                    required:
+                                    - id
+                                role:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                  required:
+                                  - id
+                              required:
+                              - id
+                          scopeWithContext:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                context:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      mfa:
+                                        type: boolean
+                                      needsMFACredential:
+                                        type: boolean
+                                      fsa:
+                                        type: boolean
+                                scope:
+                                  type: array
+                                  items:
+                                    type: string
+                    createdAt:
+                      type: string
+                      format: date
+                    expiresAt:
+                      type: string
+                      format: date
+                      x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+  /auth/logout:
+    post:
+      summary: Logout
+      operationId: logout
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: undefined<br/><br/>__Endpoint name__: logout'
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+  /auth/resetPassword:
+    post:
+      summary: Send email to reset password
+      operationId: resetPassword
+      description: '__Endpoint name__: resetPassword'
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            namespaceId:
+              type: integer
+            namespaceNickname:
+              type: string
+              minLength: 1
+              maxLength: 255
+            email:
+              type: string
+              x-format:
+                email: true
+              x-convert:
+                trim: true
+            forMobileLogin:
+              type: boolean
+            resetUrl:
+              type: string
+              x-format:
+                uri: true
+          required:
+          - email
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '204':
+          description: No Content
+  /auth/setupMobile:
+    post:
+      summary: Send email with magic link to setup mobile
+      operationId: setupMobile
+      description: '__Endpoint name__: setupMobile'
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            namespaceId:
+              type: integer
+            email:
+              type: string
+              x-format:
+                email: true
+              x-convert:
+                trim: true
+            credentialId:
+              type: integer
+            os:
+              type: string
+            appVersion:
+              type: string
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '204':
+          description: No Content
+  /auth/accessTokens/refresh:
+    post:
+      summary: Create a new access token with refreshed scopes and expiration time, invalidate old token
+      operationId: refreshLogin
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: undefined<br/><br/>__Endpoint name__: refreshLogin'
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  identityId:
+                    type: number
+                  identity:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      namespace:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          nickname:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  token:
+                    type: string
+                  tokenScopeList:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        org:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              x-nullable: true
+                            name:
+                              type: string
+                              x-nullable: true
+                            opal:
+                              type: string
+                              x-nullable: true
+                            packagePlans:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  package:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                      packageFeatures:
+                                        type: array
+                                        items:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type: number
+                                            config:
+                                              x-nullable: true
+                                              type: object
+                                            feature:
+                                              type: object
+                                              properties:
+                                                id:
+                                                  type: number
+                                                name:
+                                                  type: string
+                                                code:
+                                                  type: string
+                                              required:
+                                              - id
+                                          required:
+                                          - id
+                                    required:
+                                    - id
+                                  isSelected:
+                                    type: boolean
+                                required:
+                                - id
+                            parentOrg:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            orgNativeApps:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  failureReason:
+                                    type: string
+                                    x-nullable: true
+                                  url:
+                                    type: string
+                                    x-nullable: true
+                                  status:
+                                    type: string
+                                    enum:
+                                    - A
+                                    - E
+                                    - I
+                                    - P
+                                    - S
+                                  config:
+                                    x-nullable: true
+                                    type: object
+                                  nativeApp:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: integer
+                                      url:
+                                        type: string
+                                        x-nullable: true
+                                    required:
+                                    - id
+                                required:
+                                - id
+                                - nativeApp
+                            isUnified:
+                              type: boolean
+                          required:
+                          - id
+                        user:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                              x-nullable: true
+                            opal:
+                              type: string
+                              x-nullable: true
+                            needsMFACredential:
+                              type: boolean
+                          required:
+                          - id
+                        scope:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: string
+                        policySection:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              nativeAppId:
+                                type: number
+                                x-nullable: true
+                              site:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                  required:
+                                  - id
+                              role:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                required:
+                                - id
+                            required:
+                            - id
+                        scopeWithContext:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              context:
+                                type: array
+                                items:
+                                  type: object
+                                  properties:
+                                    mfa:
+                                      type: boolean
+                                    needsMFACredential:
+                                      type: boolean
+                                    fsa:
+                                      type: boolean
+                              scope:
+                                type: array
+                                items:
+                                  type: string
+                  createdAt:
+                    type: string
+                    format: date
+                  expiresAt:
+                    type: string
+                    format: date
+                    x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+  /auth/oidc/authorize:
+    post:
+      summary: DEPRECATED - use /auth/sso/authorize instead
+      operationId: getOidcAuthUrl
+      description: '__Endpoint name__: getOidcAuthUrl'
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            namespaceId:
+              type: integer
+            namespaceNickname:
+              type: string
+              minLength: 1
+              maxLength: 255
+            email:
+              type: string
+              x-format:
+                email: true
+              x-convert:
+                trim: true
+          required:
+          - email
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  authUrl:
+                    type: string
+                    x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+  /auth/sso/authorize:
+    post:
+      summary: Generate SSO authorize URL (may be OIDC or SAML)
+      operationId: getSsoAuthUrl
+      description: '__Endpoint name__: getSsoAuthUrl'
+      parameters:
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            namespaceId:
+              type: integer
+            namespaceNickname:
+              type: string
+              minLength: 1
+              maxLength: 255
+            email:
+              type: string
+              x-format:
+                email: true
+              x-convert:
+                trim: true
+            uuid:
+              type: string
+              x-format:
+                guid: true
+              x-convert:
+                trim: true
+            redirectUrlDirect:
+              type: boolean
+              default: false
+            redirectUrl:
+              type: string
+              pattern: ^\/[^:]*$
+              x-alternatives:
+              - type: string
+                pattern: ^\/[^:]*$
+                x-alternatives:
+                - type: string
+                  pattern: ^\/[^:]*$
+                - type: string
+                  pattern: ^https?:\/\/(?:(?:[a-zA-Z0-9-]+\.)+(ava\.uk|alta\.uk|avasecurity\.com|avigilon\.com)|localhost(:\d+)?)\/?.*$
+                  x-format:
+                    uri:
+                      scheme:
+                      - http
+                      - https
+              - type: string
+                x-nullable: true
+                x-alternatives:
+                - type: string
+                  x-nullable: true
+                - type: string
+                  pattern: ^\/[^:]*$
+                - type: string
+                  pattern: ^https?:\/\/(?:(?:[a-zA-Z0-9-]+\.)+(ava\.uk|alta\.uk|avasecurity\.com|avigilon\.com)|localhost(:\d+)?)\/?.*$
+                  x-format:
+                    uri:
+                      scheme:
+                      - http
+                      - https
+              required:
+              - redirectUrl
+            forMobileLogin:
+              type: boolean
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  authUrl:
+                    type: string
+                    x-nullable: true
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+  /auth/accessTokens/{token}/validate:
+    post:
+      summary: Validate an access token for proper signature, format, expiration, and active status
+      operationId: validateAccessToken
+      description: 'Possible error names: TokenExpiredError, JsonWebTokenError, TokenNotFoundError<br/><br/>__Endpoint name__: validateAccessToken'
+      parameters:
+      - type: string
+        name: token
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - auth
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  isValid:
+                    type: boolean
+                  err:
+                    type: object
+                    properties:
+                      name:
+                        type: string
+                      message:
+                        type: string
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

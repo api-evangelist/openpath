@@ -1,0 +1,640 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/subscriptions API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/subscriptions
+  description: REST Hook Subscriptions
+paths:
+  /orgs/{orgId}/subscriptions:
+    get:
+      summary: List all REST Hook subscriptions
+      operationId: listSubscriptions
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSubscriptions'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: id
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/subscriptions
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    subjectOrg:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                      required:
+                      - id
+                    hookEvent:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        updatedAt:
+                          type: string
+                          format: date
+                      required:
+                      - id
+                    hookAction:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        description:
+                          type: string
+                          x-nullable: true
+                        config:
+                          type: object
+                        updatedAt:
+                          type: string
+                          format: date
+                      required:
+                      - id
+                    targetUrl:
+                      type: string
+                      x-nullable: true
+                    isActive:
+                      type: boolean
+                    isBlocking:
+                      type: boolean
+                    isVisible:
+                      type: boolean
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    rateLimitCount:
+                      type: integer
+                      x-nullable: true
+                    rateLimitWindowSecs:
+                      type: integer
+                      x-nullable: true
+                    isOnceDaily:
+                      type: boolean
+                    dailyResetTime:
+                      type: string
+                      x-nullable: true
+                    dailyResetTimezone:
+                      type: string
+                      x-nullable: true
+                    handlerHookEventLocation:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          minimum: 1
+                      required:
+                      - id
+                    updatedAt:
+                      type: string
+                      format: date
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-configurations:r
+      - o{params.orgId}-outboundWebhooks:w
+      - o{params.orgId}-outboundWebhooks:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create a REST Hook subscription
+      operationId: createSubscription
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: createSubscription'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            hookEventId:
+              type: integer
+            hookEventName:
+              type: string
+              minLength: 1
+              maxLength: 100
+            targetUrl:
+              type: string
+              minLength: 8
+              maxLength: 1000
+            hookActionId:
+              type: integer
+            isBlocking:
+              type: boolean
+            isVisible:
+              type: boolean
+              default: true
+            isOnceDaily:
+              type: boolean
+              default: false
+            dailyResetTime:
+              type: string
+              default: null
+              pattern: ^([01]?\d|2[0-3]):\d{2}$
+              x-nullable: true
+            dailyResetTimezone:
+              type: string
+              default: null
+              x-nullable: true
+            name:
+              type: string
+              maxLength: 255
+            description:
+              type: string
+              maxLength: 255
+              x-nullable: true
+            handlerHookEventLocationId:
+              type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/subscriptions
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  subjectOrg:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                    required:
+                    - id
+                  hookEvent:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      description:
+                        type: string
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  hookAction:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      description:
+                        type: string
+                        x-nullable: true
+                      config:
+                        type: object
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  targetUrl:
+                    type: string
+                    x-nullable: true
+                  isActive:
+                    type: boolean
+                  isBlocking:
+                    type: boolean
+                  isVisible:
+                    type: boolean
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  rateLimitCount:
+                    type: integer
+                    x-nullable: true
+                  rateLimitWindowSecs:
+                    type: integer
+                    x-nullable: true
+                  isOnceDaily:
+                    type: boolean
+                  dailyResetTime:
+                    type: string
+                    x-nullable: true
+                  dailyResetTimezone:
+                    type: string
+                    x-nullable: true
+                  handlerHookEventLocation:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        minimum: 1
+                    required:
+                    - id
+                  updatedAt:
+                    type: string
+                    format: date
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-outboundWebhooks:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/subscriptions/{subscriptionId}:
+    get:
+      summary: Describe a REST Hook subscription
+      operationId: describeSubscription
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSubscription'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: subscriptionId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/subscriptions
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  subjectOrg:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                    required:
+                    - id
+                  hookEvent:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      description:
+                        type: string
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  hookAction:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      description:
+                        type: string
+                        x-nullable: true
+                      config:
+                        type: object
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  targetUrl:
+                    type: string
+                    x-nullable: true
+                  isActive:
+                    type: boolean
+                  isBlocking:
+                    type: boolean
+                  isVisible:
+                    type: boolean
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  rateLimitCount:
+                    type: integer
+                    x-nullable: true
+                  rateLimitWindowSecs:
+                    type: integer
+                    x-nullable: true
+                  isOnceDaily:
+                    type: boolean
+                  dailyResetTime:
+                    type: string
+                    x-nullable: true
+                  dailyResetTimezone:
+                    type: string
+                    x-nullable: true
+                  handlerHookEventLocation:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                        minimum: 1
+                    required:
+                    - id
+                  updatedAt:
+                    type: string
+                    format: date
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-configurations:r
+      - o{params.orgId}-outboundWebhooks:w
+      - o{params.orgId}-outboundWebhooks:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete a REST Hook subscription
+      operationId: deleteSubscription
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSubscription'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: subscriptionId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/subscriptions
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-outboundWebhooks:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update a REST Hook subscription
+      operationId: updateSubscription
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSubscription'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: subscriptionId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            hookEventId:
+              type: integer
+            hookEventName:
+              type: string
+              minLength: 1
+              maxLength: 100
+            targetUrl:
+              type: string
+              minLength: 8
+              maxLength: 1000
+            hookActionId:
+              type: integer
+            isBlocking:
+              type: boolean
+            isVisible:
+              type: boolean
+            isOnceDaily:
+              type: boolean
+            dailyResetTime:
+              type: string
+              pattern: ^([01]?\d|2[0-3]):\d{2}$
+              x-nullable: true
+            dailyResetTimezone:
+              type: string
+              x-nullable: true
+            name:
+              type: string
+              maxLength: 255
+            description:
+              type: string
+              maxLength: 255
+              x-nullable: true
+            handlerHookEventLocationId:
+              type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/subscriptions
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-outboundWebhooks:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

@@ -1,0 +1,218 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/features API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/features
+paths:
+  /orgs/{orgId}/features:
+    get:
+      summary: Get an organization's enabled features
+      operationId: listOrgFeatures
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-building:r,o{params.orgId}-building:w,o{params.orgId}-cert:r,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cleanupMsiAware:w,o{params.orgId}-cobalt:r,o{params.orgId}-cobalt:w,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o{params.orgId}-credential:r,o{params.orgId}-credential:w,o{params.orgId}-dash:r,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashEntry:w,o{params.orgId}-entryAccessAudit:r,o{params.orgId}-entryAccessAudit:w,o{params.orgId}-entryState:r,o{params.orgId}-entryState:w,o{params.orgId}-erpParentCenter:w,o{params.orgId}-erpParentStore:w,o{params.orgId}-eventsMsiAware:w,o{params.orgId}-exportClips:w,o{params.orgId}-haloAdmin:w,o{params.orgId}-haloUser:w,o{params.orgId}-haloViewer:r,o{params.orgId}-hw:r,o{params.orgId}-hw:w,o{params.orgId}-idp-scim:r,o{params.orgId}-idp-scim:w,o{params.orgId}-integrations:r,o{params.orgId}-integrations:w,o{params.orgId}-ipRestriction:r,o{params.orgId}-ipRestriction:w,o{params.orgId}-ldp:r,o{params.orgId}-ldp:w,o{params.orgId}-map:r,o{params.orgId}-map:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-opvideoDevice:r,o{params.orgId}-opvideoDevice:w,o{params.orgId}-opvideoIntercom:r,o{params.orgId}-opvideoIntercom:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-portalAudit:r,o{params.orgId}-portalAudit:w,o{params.orgId}-policy:r,o{params.orgId}-policy:w,o{params.orgId}-policySection:r,o{params.orgId}-policySection:w,o{params.orgId}-presence:r,o{params.orgId}-presence:w,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o{params.orgId}-realUserGroup:r,o{params.orgId}-realUserGroup:w,o{params.orgId}-restriction:r,o{params.orgId}-restriction:w,o{params.orgId}-role:r,o{params.orgId}-role:w,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptDownload:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-serviceCancellation:w,o{params.orgId}-site:r,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o{params.orgId}-timeRestriction:r,o{params.orgId}-timeRestriction:w,o{params.orgId}-user:r,o{params.orgId}-user:w,o{params.orgId}-videoAdmin:w,o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r,o{params.orgId}-sos:w,o{params.orgId}-videoAdmin:w<br/><br/>__Endpoint name__: listOrgFeatures'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/features
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    code:
+                      type: string
+                    singular:
+                      type: string
+                      x-nullable: true
+                    plural:
+                      type: string
+                      x-nullable: true
+                    isBinary:
+                      type: boolean
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-account:r
+      - o{params.orgId}-account:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-advancedOxygenReports:r
+      - o{params.orgId}-advancedOxygenReports:w
+      - o{params.orgId}-alarmActions:w
+      - o{params.orgId}-alarmConfigurations:r
+      - o{params.orgId}-alarmConfigurations:w
+      - o{params.orgId}-alertSettings:r
+      - o{params.orgId}-alertSettings:w
+      - o{params.orgId}-badgePrinting:r
+      - o{params.orgId}-badgePrinting:w
+      - o{params.orgId}-building:r
+      - o{params.orgId}-building:w
+      - o{params.orgId}-cert:r
+      - o{params.orgId}-cert:w
+      - o{params.orgId}-cert{params.authCertId}:r
+      - o{params.orgId}-cert{params.authCertId}:w
+      - o{params.orgId}-cleanupMsiAware:w
+      - o{params.orgId}-cobalt:r
+      - o{params.orgId}-cobalt:w
+      - o{params.orgId}-configurations:r
+      - o{params.orgId}-configurations:w
+      - o{params.orgId}-credential:r
+      - o{params.orgId}-credential:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dashActivity:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashAlarm:r
+      - o{params.orgId}-dashAlarm:w
+      - o{params.orgId}-dashCust:r
+      - o{params.orgId}-dashCust:w
+      - o{params.orgId}-dashEntry:r
+      - o{params.orgId}-dashEntry:w
+      - o{params.orgId}-entryAccessAudit:r
+      - o{params.orgId}-entryAccessAudit:w
+      - o{params.orgId}-entryState:r
+      - o{params.orgId}-entryState:w
+      - o{params.orgId}-erpParentCenter:w
+      - o{params.orgId}-erpParentStore:w
+      - o{params.orgId}-eventsMsiAware:w
+      - o{params.orgId}-exportClips:w
+      - o{params.orgId}-haloAdmin:w
+      - o{params.orgId}-haloUser:w
+      - o{params.orgId}-haloViewer:r
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-idp-scim:r
+      - o{params.orgId}-idp-scim:w
+      - o{params.orgId}-integrations:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-ipRestriction:r
+      - o{params.orgId}-ipRestriction:w
+      - o{params.orgId}-ldp:r
+      - o{params.orgId}-ldp:w
+      - o{params.orgId}-map:r
+      - o{params.orgId}-map:w
+      - o{params.orgId}-mobileAppSettings:r
+      - o{params.orgId}-mobileAppSettings:w
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o{params.orgId}-opvideoDevice:r
+      - o{params.orgId}-opvideoDevice:w
+      - o{params.orgId}-opvideoIntercom:r
+      - o{params.orgId}-opvideoIntercom:w
+      - o{params.orgId}-outboundWebhooks:r
+      - o{params.orgId}-outboundWebhooks:w
+      - o{params.orgId}-parcelMgmtParcels:r
+      - o{params.orgId}-parcelMgmtParcels:w
+      - o{params.orgId}-portalAudit:r
+      - o{params.orgId}-portalAudit:w
+      - o{params.orgId}-policy:r
+      - o{params.orgId}-policy:w
+      - o{params.orgId}-policySection:r
+      - o{params.orgId}-policySection:w
+      - o{params.orgId}-presence:r
+      - o{params.orgId}-presence:w
+      - o{params.orgId}-quickStart:r
+      - o{params.orgId}-quickStart:w
+      - o{params.orgId}-realUserGroup:r
+      - o{params.orgId}-realUserGroup:w
+      - o{params.orgId}-restriction:r
+      - o{params.orgId}-restriction:w
+      - o{params.orgId}-role:r
+      - o{params.orgId}-role:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rptAlarm:r
+      - o{params.orgId}-rptAlarm:w
+      - o{params.orgId}-rptDownload:r
+      - o{params.orgId}-rptGeneral:r
+      - o{params.orgId}-rptGeneral:w
+      - o{params.orgId}-serviceCancellation:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-sos:w
+      - o{params.orgId}-timeRestriction:r
+      - o{params.orgId}-timeRestriction:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-videoAdmin:w
+      - o{params.orgId}-videoProviderLive:w
+      - o{params.orgId}-videoProviderPlayback:w
+      - o:w
+      - o:r
+      - o-basic:w
+      - o-basic:r
+      - s-o:w
+      - s-o:r
+      - o{params.orgId}-sos:w
+      - o{params.orgId}-videoAdmin:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

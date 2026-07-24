@@ -1,0 +1,653 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/entryStates API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/entryStates
+  description: Entry States
+paths:
+  /orgs/{orgId}/entryStates:
+    get:
+      summary: List all entry states
+      operationId: listEntryStates
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-entryState:w,o{params.orgId}-entryState:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listEntryStates'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: ordinal
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/entryStates
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    ordinal:
+                      type: number
+                    name:
+                      type: string
+                    code:
+                      type: string
+                    description:
+                      type: string
+                    isLocked:
+                      type: boolean
+                    isToggle:
+                      type: boolean
+                    orgId:
+                      type: number
+                      x-nullable: true
+                    isMultiFactor:
+                      type: boolean
+                    triggerMethods:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          code:
+                            type: string
+                          connectionTypeCode:
+                            type: string
+                          requestTypeCode:
+                            type: string
+                          credentialType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              modelName:
+                                type: string
+                            required:
+                            - id
+                        required:
+                        - id
+                    secondFactorTriggerMethods:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          code:
+                            type: string
+                          connectionTypeCode:
+                            type: string
+                          requestTypeCode:
+                            type: string
+                          credentialType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              modelName:
+                                type: string
+                            required:
+                            - id
+                        required:
+                        - id
+                    triggerMethodCount:
+                      type: integer
+                    secondFactorTriggerMethodCount:
+                      type: integer
+                    secondFactorTimeoutSeconds:
+                      type: integer
+                      x-nullable: true
+                    uniqueTriggerMethodCount:
+                      type: integer
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-entryState:w
+      - o{params.orgId}-entryState:r
+      - o{params.orgId}-ldp:w
+      - o{params.orgId}-ldp:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create a custom entry state
+      operationId: createEntryState
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: createEntryState'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              minLength: 1
+              maxLength: 255
+            isLocked:
+              type: boolean
+            secondFactorTimeoutSeconds:
+              type: integer
+              minimum: 5
+              maximum: 30
+              x-nullable: true
+            isToggle:
+              type: boolean
+              default: false
+          required:
+          - name
+          - description
+          - isLocked
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/entryStates
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  ordinal:
+                    type: number
+                  name:
+                    type: string
+                  code:
+                    type: string
+                  description:
+                    type: string
+                  isLocked:
+                    type: boolean
+                  isToggle:
+                    type: boolean
+                  orgId:
+                    type: number
+                    x-nullable: true
+                  isMultiFactor:
+                    type: boolean
+                  triggerMethods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        code:
+                          type: string
+                        connectionTypeCode:
+                          type: string
+                        requestTypeCode:
+                          type: string
+                        credentialType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            modelName:
+                              type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  secondFactorTriggerMethods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        code:
+                          type: string
+                        connectionTypeCode:
+                          type: string
+                        requestTypeCode:
+                          type: string
+                        credentialType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            modelName:
+                              type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  triggerMethodCount:
+                    type: integer
+                  secondFactorTriggerMethodCount:
+                    type: integer
+                  secondFactorTimeoutSeconds:
+                    type: integer
+                    x-nullable: true
+                  uniqueTriggerMethodCount:
+                    type: integer
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-entryState:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/entryStates/{entryStateId}:
+    get:
+      summary: Describe an entry state
+      operationId: describeEntryState
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-entryState:w,o{params.orgId}-entryState:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeEntryState'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: entryStateId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/entryStates
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  ordinal:
+                    type: number
+                  name:
+                    type: string
+                  code:
+                    type: string
+                  description:
+                    type: string
+                  isLocked:
+                    type: boolean
+                  isToggle:
+                    type: boolean
+                  orgId:
+                    type: number
+                    x-nullable: true
+                  isMultiFactor:
+                    type: boolean
+                  triggerMethods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        code:
+                          type: string
+                        connectionTypeCode:
+                          type: string
+                        requestTypeCode:
+                          type: string
+                        credentialType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            modelName:
+                              type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  secondFactorTriggerMethods:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        code:
+                          type: string
+                        connectionTypeCode:
+                          type: string
+                        requestTypeCode:
+                          type: string
+                        credentialType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            modelName:
+                              type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  triggerMethodCount:
+                    type: integer
+                  secondFactorTriggerMethodCount:
+                    type: integer
+                  secondFactorTimeoutSeconds:
+                    type: integer
+                    x-nullable: true
+                  uniqueTriggerMethodCount:
+                    type: integer
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-entryState:w
+      - o{params.orgId}-entryState:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete a custom entry state
+      operationId: deleteEntryState
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteEntryState'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: entryStateId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/entryStates
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-entryState:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update a custom entry state
+      operationId: updateEntryState
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateEntryState'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: entryStateId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              minLength: 1
+              maxLength: 255
+            isLocked:
+              type: boolean
+            secondFactorTimeoutSeconds:
+              type: integer
+              minimum: 5
+              maximum: 30
+              x-nullable: true
+            isToggle:
+              type: boolean
+              default: false
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/entryStates
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-entryState:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/entryStates/{entryStateId}/triggerMethodIds:
+    put:
+      summary: Set a custom entry state's entire list of trigger methods
+      operationId: setEntryStateTriggerMethodIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: setEntryStateTriggerMethodIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: entryStateId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            triggerMethodIds:
+              type: array
+              items:
+                type: integer
+            secondFactorTriggerMethodIds:
+              type: array
+              items:
+                type: integer
+          required:
+          - triggerMethodIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/entryStates
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-entryState:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

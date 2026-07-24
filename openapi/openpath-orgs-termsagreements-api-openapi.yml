@@ -1,0 +1,1038 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/termsAgreements API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/termsAgreements
+paths:
+  /orgs/{orgId}/termsAgreements:
+    get:
+      summary: List all signed Terms of Service agreements
+      operationId: listTermsAgreements
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTermsAgreements'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: identity.lastName
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/termsAgreements
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    orgId:
+                      type: integer
+                    termsVersion:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                        isAcceptable:
+                          type: boolean
+                        isLatest:
+                          type: boolean
+                        fileUrl:
+                          type: string
+                          x-nullable: true
+                          required:
+                          - fileUrl
+                          x-alternatives:
+                          - type: string
+                            x-nullable: true
+                          - type: string
+                        fileSha256Sum:
+                          type: string
+                          x-nullable: true
+                          required:
+                          - fileSha256Sum
+                          x-alternatives:
+                          - type: string
+                            x-nullable: true
+                          - type: string
+                        fileName:
+                          type: string
+                          x-nullable: true
+                          required:
+                          - fileName
+                          x-alternatives:
+                          - type: string
+                            x-nullable: true
+                          - type: string
+                        url:
+                          type: string
+                          x-nullable: true
+                          required:
+                          - url
+                          x-alternatives:
+                          - type: string
+                            x-nullable: true
+                          - type: string
+                      required:
+                      - id
+                      - name
+                      - isAcceptable
+                      - isLatest
+                    identity:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        opal:
+                          type: string
+                        roles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              description:
+                                type: string
+                              isMfaRequired:
+                                type: boolean
+                            required:
+                            - id
+                        mfaCredentials:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                              name:
+                                type: string
+                              status:
+                                type: string
+                              mfaCredentialType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                  modelName:
+                                    type: string
+                                required:
+                                - id
+                              totpSoftDevice:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                required:
+                                - id
+                            required:
+                            - id
+                        firstName:
+                          type: string
+                          x-nullable: true
+                        middleName:
+                          type: string
+                          x-nullable: true
+                        lastName:
+                          type: string
+                          x-nullable: true
+                        fullName:
+                          type: string
+                          x-nullable: true
+                        initials:
+                          type: string
+                          x-nullable: true
+                        isEmailVerified:
+                          type: boolean
+                        namespace:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nickname:
+                              type: string
+                              x-nullable: true
+                            namespaceType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                modelName:
+                                  type: string
+                                  x-nullable: true
+                              required:
+                              - id
+                            org:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            identityProvider:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                isSsoEnabled:
+                                  type: boolean
+                                isSyncMobilePhoneEnabled:
+                                  type: boolean
+                                isRemoveGroupsEnabled:
+                                  type: boolean
+                                identityProviderSyncTypeId:
+                                  type: integer
+                                  x-nullable: true
+                                credentials:
+                                  type: string
+                                  x-nullable: true
+                                identityProviderType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                                org:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                            propertyManagementSystem:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                orgId:
+                                  type: number
+                                propertyManagementSystemTypeId:
+                                  type: number
+                                propertyManagementSystemType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                              - orgId
+                              - propertyManagementSystemTypeId
+                          required:
+                          - id
+                        idpUniqueIdentifier:
+                          type: string
+                        pmsUniqueIdentifier:
+                          type: string
+                          x-nullable: true
+                        needsPasswordChange:
+                          type: boolean
+                          default: false
+                        nicknames:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              nickname:
+                                type: string
+                                minLength: 1
+                                maxLength: 100
+                        email:
+                          type: string
+                        mobilePhone:
+                          type: string
+                          x-nullable: true
+                        language:
+                          type: string
+                          x-nullable: true
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                        users:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              opal:
+                                type: string
+                              status:
+                                type: string
+                              startDate:
+                                type: string
+                                format: date
+                                x-nullable: true
+                              endDate:
+                                type: string
+                                format: date
+                                x-nullable: true
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                              org:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                    x-nullable: true
+                                required:
+                                - id
+                            required:
+                            - id
+                      required:
+                      - id
+                    ipAddress:
+                      type: string
+                    signedAt:
+                      type: string
+                      format: date
+                  required:
+                  - id
+                  - createdAt
+                  - updatedAt
+                  - orgId
+                  - ipAddress
+                  - signedAt
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create a signed Terms of Service agreement - DEPRECATED use /orgs/{orgId}/termsAgreements/sign instead
+      operationId: createTermsAgreement
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w<br/><br/>__Endpoint name__: createTermsAgreement'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            termsVersionId:
+              type: integer
+          required:
+          - termsVersionId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/termsAgreements
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  orgId:
+                    type: integer
+                  termsVersion:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      isAcceptable:
+                        type: boolean
+                      isLatest:
+                        type: boolean
+                      fileUrl:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - fileUrl
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                      fileSha256Sum:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - fileSha256Sum
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                      fileName:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - fileName
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                      url:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - url
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                    required:
+                    - id
+                    - name
+                    - isAcceptable
+                    - isLatest
+                  identity:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      opal:
+                        type: string
+                      roles:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                            description:
+                              type: string
+                            isMfaRequired:
+                              type: boolean
+                          required:
+                          - id
+                      mfaCredentials:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            createdAt:
+                              type: string
+                              format: date
+                            updatedAt:
+                              type: string
+                              format: date
+                            name:
+                              type: string
+                            status:
+                              type: string
+                            mfaCredentialType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                modelName:
+                                  type: string
+                              required:
+                              - id
+                            totpSoftDevice:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                              required:
+                              - id
+                          required:
+                          - id
+                      firstName:
+                        type: string
+                        x-nullable: true
+                      middleName:
+                        type: string
+                        x-nullable: true
+                      lastName:
+                        type: string
+                        x-nullable: true
+                      fullName:
+                        type: string
+                        x-nullable: true
+                      initials:
+                        type: string
+                        x-nullable: true
+                      isEmailVerified:
+                        type: boolean
+                      namespace:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          nickname:
+                            type: string
+                            x-nullable: true
+                          namespaceType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              modelName:
+                                type: string
+                                x-nullable: true
+                            required:
+                            - id
+                          org:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                          identityProvider:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              isSsoEnabled:
+                                type: boolean
+                              isSyncMobilePhoneEnabled:
+                                type: boolean
+                              isRemoveGroupsEnabled:
+                                type: boolean
+                              identityProviderSyncTypeId:
+                                type: integer
+                                x-nullable: true
+                              credentials:
+                                type: string
+                                x-nullable: true
+                              identityProviderType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                              org:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                            required:
+                            - id
+                          propertyManagementSystem:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              orgId:
+                                type: number
+                              propertyManagementSystemTypeId:
+                                type: number
+                              propertyManagementSystemType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                            required:
+                            - id
+                            - orgId
+                            - propertyManagementSystemTypeId
+                        required:
+                        - id
+                      idpUniqueIdentifier:
+                        type: string
+                      pmsUniqueIdentifier:
+                        type: string
+                        x-nullable: true
+                      needsPasswordChange:
+                        type: boolean
+                        default: false
+                      nicknames:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            nickname:
+                              type: string
+                              minLength: 1
+                              maxLength: 100
+                      email:
+                        type: string
+                      mobilePhone:
+                        type: string
+                        x-nullable: true
+                      language:
+                        type: string
+                        x-nullable: true
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                      users:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            opal:
+                              type: string
+                            status:
+                              type: string
+                            startDate:
+                              type: string
+                              format: date
+                              x-nullable: true
+                            endDate:
+                              type: string
+                              format: date
+                              x-nullable: true
+                            createdAt:
+                              type: string
+                              format: date
+                            updatedAt:
+                              type: string
+                              format: date
+                            org:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                  x-nullable: true
+                              required:
+                              - id
+                          required:
+                          - id
+                    required:
+                    - id
+                  ipAddress:
+                    type: string
+                  signedAt:
+                    type: string
+                    format: date
+                required:
+                - id
+                - createdAt
+                - updatedAt
+                - orgId
+                - ipAddress
+                - signedAt
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+  /orgs/{orgId}/termsAgreements/checkSigned:
+    post:
+      summary: Check if org has signed an acceptable Terms Agreement for an app or application
+      operationId: checkSignedOrgTermsAgreement
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r,s-o-video:w,s-o-video:r<br/><br/>__Endpoint name__: checkSignedOrgTermsAgreement'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            applicationId:
+              type: integer
+            appId:
+              type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/termsAgreements
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  termsAgreement:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      termsVersion:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          isAcceptable:
+                            type: boolean
+                          isLatest:
+                            type: boolean
+                          fileUrl:
+                            type: string
+                            x-nullable: true
+                            required:
+                            - fileUrl
+                            x-alternatives:
+                            - type: string
+                              x-nullable: true
+                            - type: string
+                          fileSha256Sum:
+                            type: string
+                            x-nullable: true
+                            required:
+                            - fileSha256Sum
+                            x-alternatives:
+                            - type: string
+                              x-nullable: true
+                            - type: string
+                          fileName:
+                            type: string
+                            x-nullable: true
+                            required:
+                            - fileName
+                            x-alternatives:
+                            - type: string
+                              x-nullable: true
+                            - type: string
+                          url:
+                            type: string
+                            x-nullable: true
+                            required:
+                            - url
+                            x-alternatives:
+                            - type: string
+                              x-nullable: true
+                            - type: string
+                        required:
+                        - id
+                        - name
+                        - isAcceptable
+                        - isLatest
+                      ipAddress:
+                        type: string
+                      signedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                    - ipAddress
+                    - signedAt
+                  latestTermsVersion:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                      isAcceptable:
+                        type: boolean
+                      isLatest:
+                        type: boolean
+                      fileUrl:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - fileUrl
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                      fileSha256Sum:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - fileSha256Sum
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                      fileName:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - fileName
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                      url:
+                        type: string
+                        x-nullable: true
+                        required:
+                        - url
+                        x-alternatives:
+                        - type: string
+                          x-nullable: true
+                        - type: string
+                    required:
+                    - id
+                    - name
+                    - isAcceptable
+                    - isLatest
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-integrations:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - s-o-video:w
+      - s-o-video:r
+  /orgs/{orgId}/termsAgreements/sign:
+    post:
+      summary: Sign an acceptable Terms Agreement for an app or application
+      operationId: signOrgTermsAgreement
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-integrations:w<br/><br/>__Endpoint name__: signOrgTermsAgreement'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            termsVersionId:
+              type: integer
+          required:
+          - termsVersionId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/termsAgreements
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-integrations:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

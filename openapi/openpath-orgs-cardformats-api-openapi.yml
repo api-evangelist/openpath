@@ -1,0 +1,338 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/cardFormats API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/cardFormats
+paths:
+  /orgs/{orgId}/cardFormats:
+    get:
+      summary: List all entry card formats
+      operationId: listCardFormats
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listCardFormats'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/cardFormats
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    code:
+                      type: string
+                    name:
+                      type: string
+                    numBits:
+                      type: integer
+                    description:
+                      type: object
+                      properties:
+                        numBits:
+                          type: integer
+                        fields:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                              displayName:
+                                type: string
+                              maxBits:
+                                type: integer
+                              rightmostBit:
+                                type: integer
+                            required:
+                            - name
+                            - displayName
+                            - maxBits
+                            - rightmostBit
+                        parityBits:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              position:
+                                type: integer
+                              sourceBits:
+                                type: array
+                                items:
+                                  type: integer
+                              setIfMatch:
+                                type: number
+                                enum:
+                                - 0
+                                - 1
+                            required:
+                            - position
+                        fixedBits:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              position:
+                                type: integer
+                              value:
+                                type: number
+                                enum:
+                                - 0
+                                - 1
+                            required:
+                            - position
+                        reverseBitOrder:
+                          type: boolean
+                      required:
+                      - numBits
+                  required:
+                  - id
+                  - code
+                  - name
+                  - numBits
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-credential:w
+      - o{params.orgId}-credential:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/cardFormats/{cardFormatId}:
+    get:
+      summary: Describe a card format
+      operationId: describeCardFormat
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeCardFormat'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: cardFormatId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/cardFormats
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  code:
+                    type: string
+                  name:
+                    type: string
+                  numBits:
+                    type: integer
+                  description:
+                    type: object
+                    properties:
+                      numBits:
+                        type: integer
+                      fields:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            name:
+                              type: string
+                            displayName:
+                              type: string
+                            maxBits:
+                              type: integer
+                            rightmostBit:
+                              type: integer
+                          required:
+                          - name
+                          - displayName
+                          - maxBits
+                          - rightmostBit
+                      parityBits:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            position:
+                              type: integer
+                            sourceBits:
+                              type: array
+                              items:
+                                type: integer
+                            setIfMatch:
+                              type: number
+                              enum:
+                              - 0
+                              - 1
+                          required:
+                          - position
+                      fixedBits:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            position:
+                              type: integer
+                            value:
+                              type: number
+                              enum:
+                              - 0
+                              - 1
+                          required:
+                          - position
+                      reverseBitOrder:
+                        type: boolean
+                    required:
+                    - numBits
+                required:
+                - id
+                - code
+                - name
+                - numBits
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

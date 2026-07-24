@@ -1,0 +1,857 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/packagePlans API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/packagePlans
+paths:
+  /orgs/{orgId}/packagePlans:
+    get:
+      summary: List all available package plans
+      operationId: listOrgPackagePlans
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-account:w,o{params.orgId}-account:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listOrgPackagePlans'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: ordinal
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        name: viewContext
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/packagePlans
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    package:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        startDate:
+                          type: string
+                          format: date
+                          x-nullable: true
+                        endDate:
+                          type: string
+                          format: date
+                          x-nullable: true
+                        canOptInSelf:
+                          type: boolean
+                        canOptInRoot:
+                          type: boolean
+                        canOptInParentOrg:
+                          type: boolean
+                        isAutoManaged:
+                          type: boolean
+                        isAutoManagedForLicenses:
+                          type: boolean
+                        parentPackages:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                        subPackages:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                        conflictingPackages:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                        packageFeatures:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              config:
+                                x-nullable: true
+                                type: object
+                              feature:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                  code:
+                                    type: string
+                                  singular:
+                                    type: string
+                                    x-nullable: true
+                                  plural:
+                                    type: string
+                                    x-nullable: true
+                                  isBinary:
+                                    type: boolean
+                                required:
+                                - id
+                              isBillable:
+                                type: boolean
+                            required:
+                            - id
+                      required:
+                      - id
+                    isSelected:
+                      type: boolean
+                    netsuitePlan:
+                      type: object
+                      properties:
+                        currency:
+                          type: string
+                        interval:
+                          type: string
+                        interval_count:
+                          type: integer
+                        PricePlanId:
+                          type: integer
+                        tiers:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              fromqty:
+                                type: integer
+                              value:
+                                type: number
+                              fixedAmount:
+                                type: boolean
+                      required:
+                      - currency
+                      - interval
+                      - interval_count
+                    stripePlan:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        product:
+                          type: string
+                        amount:
+                          type: number
+                          x-nullable: true
+                        currency:
+                          type: string
+                        interval:
+                          type: string
+                        interval_count:
+                          type: number
+                      required:
+                      - currency
+                      - interval
+                      - interval_count
+                    softwareLicense:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        sku:
+                          type: string
+                        billableQuantity:
+                          type: integer
+                        softwareLicenseOffers:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              type:
+                                type: string
+                                enum:
+                                - trial
+                                - promo
+                              subscriptionTermOverride:
+                                type: number
+                                x-nullable: true
+                              defaultIntervalTerm:
+                                type: string
+                                enum:
+                                - month
+                                - day
+                                - year
+                              defaultIntervalDuration:
+                                type: number
+                              maxDaysAllowed:
+                                type: number
+                              maxQuantityAllowed:
+                                type: number
+                                x-nullable: true
+                            required:
+                            - id
+                            - type
+                            - defaultIntervalTerm
+                            - defaultIntervalDuration
+                            - maxDaysAllowed
+                        packagePlans:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              ordinal:
+                                type: integer
+                              intervalUnit:
+                                type: string
+                                x-nullable: true
+                              intervalCount:
+                                type: integer
+                                x-nullable: true
+                              currencyCode:
+                                type: string
+                                x-nullable: true
+                              package:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                  startDate:
+                                    type: string
+                                    format: date
+                                    x-nullable: true
+                                  endDate:
+                                    type: string
+                                    format: date
+                                    x-nullable: true
+                                  canOptInSelf:
+                                    type: boolean
+                                  canOptInRoot:
+                                    type: boolean
+                                  canOptInParentOrg:
+                                    type: boolean
+                                  isAutoManaged:
+                                    type: boolean
+                                  isAutoManagedForLicenses:
+                                    type: boolean
+                                  parentPackages:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                  subPackages:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                  conflictingPackages:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                  packageFeatures:
+                                    type: array
+                                    items:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        config:
+                                          x-nullable: true
+                                          type: object
+                                        feature:
+                                          type: object
+                                          properties:
+                                            id:
+                                              type: number
+                                            name:
+                                              type: string
+                                            code:
+                                              type: string
+                                            singular:
+                                              type: string
+                                              x-nullable: true
+                                            plural:
+                                              type: string
+                                              x-nullable: true
+                                            isBinary:
+                                              type: boolean
+                                          required:
+                                          - id
+                                        isBillable:
+                                          type: boolean
+                                      required:
+                                      - id
+                                required:
+                                - id
+                              softwareLicense:
+                                x-nullable: true
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  sku:
+                                    type: string
+                                  billableQuantity:
+                                    type: integer
+                                required:
+                                - id
+                            required:
+                            - id
+                      required:
+                      - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o{params.orgId}-role:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-account:w
+      - o{params.orgId}-account:r
+      - o:w
+      - o:r
+      - o-basic:w
+      - o-basic:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/packagePlans/{packagePlanId}:
+    get:
+      summary: Describe a package plan
+      operationId: describeOrgPackagePlan
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeOrgPackagePlan'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: packagePlanId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/packagePlans
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  package:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      startDate:
+                        type: string
+                        format: date
+                        x-nullable: true
+                      endDate:
+                        type: string
+                        format: date
+                        x-nullable: true
+                      canOptInSelf:
+                        type: boolean
+                      canOptInRoot:
+                        type: boolean
+                      canOptInParentOrg:
+                        type: boolean
+                      isAutoManaged:
+                        type: boolean
+                      isAutoManagedForLicenses:
+                        type: boolean
+                      parentPackages:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      subPackages:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      conflictingPackages:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      packageFeatures:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            config:
+                              x-nullable: true
+                              type: object
+                            feature:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                code:
+                                  type: string
+                                singular:
+                                  type: string
+                                  x-nullable: true
+                                plural:
+                                  type: string
+                                  x-nullable: true
+                                isBinary:
+                                  type: boolean
+                              required:
+                              - id
+                            isBillable:
+                              type: boolean
+                          required:
+                          - id
+                    required:
+                    - id
+                  isSelected:
+                    type: boolean
+                  netsuitePlan:
+                    type: object
+                    properties:
+                      currency:
+                        type: string
+                      interval:
+                        type: string
+                      interval_count:
+                        type: integer
+                      PricePlanId:
+                        type: integer
+                      tiers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            fromqty:
+                              type: integer
+                            value:
+                              type: number
+                            fixedAmount:
+                              type: boolean
+                    required:
+                    - currency
+                    - interval
+                    - interval_count
+                  stripePlan:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: string
+                      product:
+                        type: string
+                      amount:
+                        type: number
+                        x-nullable: true
+                      currency:
+                        type: string
+                      interval:
+                        type: string
+                      interval_count:
+                        type: number
+                    required:
+                    - currency
+                    - interval
+                    - interval_count
+                  softwareLicense:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      sku:
+                        type: string
+                      billableQuantity:
+                        type: integer
+                      softwareLicenseOffers:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            type:
+                              type: string
+                              enum:
+                              - trial
+                              - promo
+                            subscriptionTermOverride:
+                              type: number
+                              x-nullable: true
+                            defaultIntervalTerm:
+                              type: string
+                              enum:
+                              - month
+                              - day
+                              - year
+                            defaultIntervalDuration:
+                              type: number
+                            maxDaysAllowed:
+                              type: number
+                            maxQuantityAllowed:
+                              type: number
+                              x-nullable: true
+                          required:
+                          - id
+                          - type
+                          - defaultIntervalTerm
+                          - defaultIntervalDuration
+                          - maxDaysAllowed
+                      packagePlans:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            ordinal:
+                              type: integer
+                            intervalUnit:
+                              type: string
+                              x-nullable: true
+                            intervalCount:
+                              type: integer
+                              x-nullable: true
+                            currencyCode:
+                              type: string
+                              x-nullable: true
+                            package:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                startDate:
+                                  type: string
+                                  format: date
+                                  x-nullable: true
+                                endDate:
+                                  type: string
+                                  format: date
+                                  x-nullable: true
+                                canOptInSelf:
+                                  type: boolean
+                                canOptInRoot:
+                                  type: boolean
+                                canOptInParentOrg:
+                                  type: boolean
+                                isAutoManaged:
+                                  type: boolean
+                                isAutoManagedForLicenses:
+                                  type: boolean
+                                parentPackages:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
+                                subPackages:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
+                                conflictingPackages:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
+                                packageFeatures:
+                                  type: array
+                                  items:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      config:
+                                        x-nullable: true
+                                        type: object
+                                      feature:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: number
+                                          name:
+                                            type: string
+                                          code:
+                                            type: string
+                                          singular:
+                                            type: string
+                                            x-nullable: true
+                                          plural:
+                                            type: string
+                                            x-nullable: true
+                                          isBinary:
+                                            type: boolean
+                                        required:
+                                        - id
+                                      isBillable:
+                                        type: boolean
+                                    required:
+                                    - id
+                              required:
+                              - id
+                            softwareLicense:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                sku:
+                                  type: string
+                                billableQuantity:
+                                  type: integer
+                              required:
+                              - id
+                          required:
+                          - id
+                    required:
+                    - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o:w
+      - o:r
+      - o-basic:w
+      - o-basic:r
+      - s-o:w
+      - s-o:r
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

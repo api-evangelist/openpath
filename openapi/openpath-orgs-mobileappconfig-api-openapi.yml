@@ -1,0 +1,144 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/mobileAppConfig API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/mobileAppConfig
+paths:
+  /orgs/{orgId}/mobileAppConfig:
+    get:
+      summary: Get mobile app config
+      operationId: describeMobileAppConfig
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeMobileAppConfig'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/mobileAppConfig
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  isBadgeViewEnabled:
+                    type: boolean
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-configurations:r
+      - o{params.orgId}-configurations:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete mobile app config
+      operationId: deleteMobileAppConfig
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteMobileAppConfig'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/mobileAppConfig
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update mobile app config
+      operationId: updateMobileAppConfig
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateMobileAppConfig'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            isBadgeViewEnabled:
+              type: boolean
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/mobileAppConfig
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-admin:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

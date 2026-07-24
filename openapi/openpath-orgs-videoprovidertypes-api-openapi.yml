@@ -1,0 +1,136 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/videoProviderTypes API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/videoProviderTypes
+paths:
+  /orgs/{orgId}/videoProviderTypes:
+    get:
+      summary: List all video provider types
+      operationId: listVideoProviderTypes
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listVideoProviderTypes'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/videoProviderTypes
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    ordinal:
+                      type: number
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-integrations:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dashEntry:w
+      - o{params.orgId}-dashEntry:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashActivity:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

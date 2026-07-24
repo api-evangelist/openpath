@@ -1,0 +1,2994 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/sites API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/sites
+  description: Sites
+paths:
+  /orgs/{orgId}/sites:
+    get:
+      summary: List all sites
+      operationId: listSites
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:w,s-o:r,o{params.orgId}-sos:w,o{params.orgId}-videoAdmin:w<br/><br/>__Endpoint name__: listSites'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    opal:
+                      type: string
+                    name:
+                      type: string
+                    address:
+                      type: string
+                      x-nullable: true
+                    address2:
+                      type: string
+                      x-nullable: true
+                    city:
+                      type: string
+                      x-nullable: true
+                    state:
+                      type: string
+                      x-nullable: true
+                    zip:
+                      type: string
+                      x-nullable: true
+                    country:
+                      type: string
+                      x-nullable: true
+                    phone:
+                      type: string
+                      x-nullable: true
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    zoneCount:
+                      type: integer
+                    language:
+                      type: string
+                      x-nullable: true
+                    userCount:
+                      type: integer
+                    contactName:
+                      type: string
+                      x-nullable: true
+                    contactPhone:
+                      type: string
+                      x-nullable: true
+                    boundary:
+                      type: string
+                      x-nullable: true
+                    resources:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          s3Data:
+                            type: string
+                          s3Key:
+                            type: string
+                          s3Bucket:
+                            type: string
+                          url:
+                            type: string
+                            x-nullable: true
+                          createdAt:
+                            type: string
+                            format: date-time
+                          updatedAt:
+                            type: string
+                            format: date-time
+                        required:
+                        - id
+                        - name
+                        - contentType
+                        - fileName
+                        - s3Data
+                        - s3Key
+                        - s3Bucket
+                        - createdAt
+                        - updatedAt
+                    sosFacilityCampus:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        siteId:
+                          type: number
+                        sosFacilityCampusIdExt:
+                          type: string
+                        createdAt:
+                          type: string
+                          format: date-time
+                        updatedAt:
+                          type: string
+                          format: date-time
+                      required:
+                      - siteId
+                      - sosFacilityCampusIdExt
+                      - createdAt
+                      - updatedAt
+                    realUserGroups:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o{params.orgId}-role:r
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-admin:r
+      - o{params.orgId}-hw:w
+      - o{params.orgId}-hw:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashActivity:r
+      - o{params.orgId}-dashCust:w
+      - o{params.orgId}-dashCust:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o{params.orgId}-parcelMgmtParcels:r
+      - o{params.orgId}-parcelMgmtParcels:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o{params.orgId}-sos:w
+      - o{params.orgId}-videoAdmin:w
+    post:
+      summary: Create a site
+      operationId: createSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-sos:w,o:w,s-o:w<br/><br/>__Endpoint name__: createSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            address:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            address2:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            city:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            zip:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            phone:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            language:
+              x-nullable: true
+              type: string
+              enum:
+              - en
+              - fr
+              - es
+              - it
+              - de
+            country:
+              type: string
+              x-convert:
+                trim: true
+              x-nullable: true
+            state:
+              type: string
+              x-convert:
+                trim: true
+              x-nullable: true
+            contactName:
+              type: string
+              maxLength: 100
+              x-nullable: true
+            contactPhone:
+              type: string
+              maxLength: 20
+              x-nullable: true
+            boundary:
+              type: string
+              x-nullable: true
+            resources:
+              type: array
+              items:
+                type: object
+                properties:
+                  fileName:
+                    type: string
+                  fileBase64:
+                    type: string
+                required:
+                - fileName
+                - fileBase64
+          required:
+          - name
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  opal:
+                    type: string
+                  name:
+                    type: string
+                  address:
+                    type: string
+                    x-nullable: true
+                  address2:
+                    type: string
+                    x-nullable: true
+                  city:
+                    type: string
+                    x-nullable: true
+                  state:
+                    type: string
+                    x-nullable: true
+                  zip:
+                    type: string
+                    x-nullable: true
+                  country:
+                    type: string
+                    x-nullable: true
+                  phone:
+                    type: string
+                    x-nullable: true
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  zoneCount:
+                    type: integer
+                  language:
+                    type: string
+                    x-nullable: true
+                  userCount:
+                    type: integer
+                  contactName:
+                    type: string
+                    x-nullable: true
+                  contactPhone:
+                    type: string
+                    x-nullable: true
+                  boundary:
+                    type: string
+                    x-nullable: true
+                  resources:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        contentType:
+                          type: string
+                        fileName:
+                          type: string
+                        s3Data:
+                          type: string
+                        s3Key:
+                          type: string
+                        s3Bucket:
+                          type: string
+                        url:
+                          type: string
+                          x-nullable: true
+                        createdAt:
+                          type: string
+                          format: date-time
+                        updatedAt:
+                          type: string
+                          format: date-time
+                      required:
+                      - id
+                      - name
+                      - contentType
+                      - fileName
+                      - s3Data
+                      - s3Key
+                      - s3Bucket
+                      - createdAt
+                      - updatedAt
+                  sosFacilityCampus:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      siteId:
+                        type: number
+                      sosFacilityCampusIdExt:
+                        type: string
+                      createdAt:
+                        type: string
+                        format: date-time
+                      updatedAt:
+                        type: string
+                        format: date-time
+                    required:
+                    - siteId
+                    - sosFacilityCampusIdExt
+                    - createdAt
+                    - updatedAt
+                  realUserGroups:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-quickStart:w
+      - o{params.orgId}-sos:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}:
+    get:
+      summary: Describe a site
+      operationId: describeSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-sos:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  opal:
+                    type: string
+                  name:
+                    type: string
+                  address:
+                    type: string
+                    x-nullable: true
+                  address2:
+                    type: string
+                    x-nullable: true
+                  city:
+                    type: string
+                    x-nullable: true
+                  state:
+                    type: string
+                    x-nullable: true
+                  zip:
+                    type: string
+                    x-nullable: true
+                  country:
+                    type: string
+                    x-nullable: true
+                  phone:
+                    type: string
+                    x-nullable: true
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  zoneCount:
+                    type: integer
+                  language:
+                    type: string
+                    x-nullable: true
+                  userCount:
+                    type: integer
+                  contactName:
+                    type: string
+                    x-nullable: true
+                  contactPhone:
+                    type: string
+                    x-nullable: true
+                  boundary:
+                    type: string
+                    x-nullable: true
+                  resources:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        contentType:
+                          type: string
+                        fileName:
+                          type: string
+                        s3Data:
+                          type: string
+                        s3Key:
+                          type: string
+                        s3Bucket:
+                          type: string
+                        url:
+                          type: string
+                          x-nullable: true
+                        createdAt:
+                          type: string
+                          format: date-time
+                        updatedAt:
+                          type: string
+                          format: date-time
+                      required:
+                      - id
+                      - name
+                      - contentType
+                      - fileName
+                      - s3Data
+                      - s3Key
+                      - s3Bucket
+                      - createdAt
+                      - updatedAt
+                  sosFacilityCampus:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      siteId:
+                        type: number
+                      sosFacilityCampusIdExt:
+                        type: string
+                      createdAt:
+                        type: string
+                        format: date-time
+                      updatedAt:
+                        type: string
+                        format: date-time
+                    required:
+                    - siteId
+                    - sosFacilityCampusIdExt
+                    - createdAt
+                    - updatedAt
+                  realUserGroups:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-parcelMgmtParcels:r
+      - o{params.orgId}-parcelMgmtParcels:w
+      - o{params.orgId}-sos:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete a site
+      operationId: deleteSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w,o{params.orgId}-sos:w<br/><br/>__Endpoint name__: deleteSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-site:w
+      - o{params.orgId}-admin:w
+      - o{params.orgId}-quickStart:w
+      - o{params.orgId}-siteGeneral:w
+      - o:w
+      - s-o:w
+      - o{params.orgId}-sos:w
+    patch:
+      summary: Update a site
+      operationId: updateSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            address:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            address2:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            city:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            zip:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            phone:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+              x-nullable: true
+            language:
+              x-nullable: true
+              type: string
+              enum:
+              - en
+              - fr
+              - es
+              - it
+              - de
+            country:
+              type: string
+              x-convert:
+                trim: true
+              x-nullable: true
+            state:
+              type: string
+              x-convert:
+                trim: true
+              x-nullable: true
+            contactName:
+              type: string
+              x-nullable: true
+            contactPhone:
+              type: string
+              x-nullable: true
+            boundary:
+              type: string
+              x-nullable: true
+            resources:
+              type: array
+              items:
+                type: object
+                properties:
+                  fileName:
+                    type: string
+                  fileBase64:
+                    type: string
+                required:
+                - fileName
+                - fileBase64
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-site:w
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-sos:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/locationRestriction:
+    get:
+      summary: Get location restriction for a site
+      operationId: getSiteLocationRestriction
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getSiteLocationRestriction'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                x-nullable: true
+                type: object
+                properties:
+                  id:
+                    type: number
+                  allowedDistanceMeters:
+                    type: number
+                  scaleFactor:
+                    type: number
+                  locationMeasurement:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      longitude:
+                        type: number
+                      latitude:
+                        type: number
+                      accuracyMeters:
+                        type: number
+                        x-nullable: true
+                      timeZoneId:
+                        type: string
+                        x-nullable: true
+                      locationMeasurementSourceType:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                          code:
+                            type: string
+                        required:
+                        - id
+                      rawData:
+                        type: object
+                    required:
+                    - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete location restriction for a site
+      operationId: deleteSiteLocationRestriction
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSiteLocationRestriction'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set location restriction for a site
+      operationId: setSiteLocationRestriction
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteLocationRestriction'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            locationMeasurementId:
+              type: integer
+            allowedDistanceMeters:
+              type: number
+          required:
+          - locationMeasurementId
+          - allowedDistanceMeters
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/locationMeasurements:
+    get:
+      summary: List location measurements for a site
+      operationId: listSiteLocationMeasurements
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSiteLocationMeasurements'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: id
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    longitude:
+                      type: number
+                    latitude:
+                      type: number
+                    accuracyMeters:
+                      type: number
+                      x-nullable: true
+                    timeZoneId:
+                      type: string
+                      x-nullable: true
+                    locationMeasurementSourceType:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        code:
+                          type: string
+                      required:
+                      - id
+                    rawData:
+                      type: object
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/sites/{siteId}/users:
+    get:
+      summary: List all users of a site
+      operationId: listSiteUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSiteUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: identity.lastName
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status:
+                      type: string
+                      enum:
+                      - I
+                      - A
+                      - S
+                    identity:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        opal:
+                          type: string
+                        roles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              description:
+                                type: string
+                              isMfaRequired:
+                                type: boolean
+                            required:
+                            - id
+                        mfaCredentials:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                              name:
+                                type: string
+                              status:
+                                type: string
+                              mfaCredentialType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                  modelName:
+                                    type: string
+                                required:
+                                - id
+                              totpSoftDevice:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                required:
+                                - id
+                            required:
+                            - id
+                        firstName:
+                          type: string
+                          x-nullable: true
+                        middleName:
+                          type: string
+                          x-nullable: true
+                        lastName:
+                          type: string
+                          x-nullable: true
+                        fullName:
+                          type: string
+                          x-nullable: true
+                        initials:
+                          type: string
+                          x-nullable: true
+                        isEmailVerified:
+                          type: boolean
+                        namespace:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nickname:
+                              type: string
+                              x-nullable: true
+                            namespaceType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                modelName:
+                                  type: string
+                                  x-nullable: true
+                              required:
+                              - id
+                            org:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            identityProvider:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                isSsoEnabled:
+                                  type: boolean
+                                isSyncMobilePhoneEnabled:
+                                  type: boolean
+                                isRemoveGroupsEnabled:
+                                  type: boolean
+                                identityProviderSyncTypeId:
+                                  type: integer
+                                  x-nullable: true
+                                credentials:
+                                  type: string
+                                  x-nullable: true
+                                identityProviderType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                                org:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                            propertyManagementSystem:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                orgId:
+                                  type: number
+                                propertyManagementSystemTypeId:
+                                  type: number
+                                propertyManagementSystemType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                              - orgId
+                              - propertyManagementSystemTypeId
+                          required:
+                          - id
+                        idpUniqueIdentifier:
+                          type: string
+                        pmsUniqueIdentifier:
+                          type: string
+                          x-nullable: true
+                        needsPasswordChange:
+                          type: boolean
+                          default: false
+                        nicknames:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              nickname:
+                                type: string
+                                minLength: 1
+                                maxLength: 100
+                        email:
+                          type: string
+                        mobilePhone:
+                          type: string
+                          x-nullable: true
+                        language:
+                          type: string
+                          x-nullable: true
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                        users:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              opal:
+                                type: string
+                              status:
+                                type: string
+                              startDate:
+                                type: string
+                                format: date
+                                x-nullable: true
+                              endDate:
+                                type: string
+                                format: date
+                                x-nullable: true
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                              org:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                    x-nullable: true
+                                required:
+                                - id
+                            required:
+                            - id
+                      required:
+                      - id
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/sites/{siteId}/groups:
+    get:
+      summary: List all groups of a site
+      operationId: listSiteGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSiteGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    userCount:
+                      type: integer
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/sites/{siteId}/locationMeasurements/{locationMeasurementId}:
+    get:
+      summary: Describe a location measurement for a site
+      operationId: describeSiteLocationMeasurement
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSiteLocationMeasurement'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        name: locationMeasurementId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  longitude:
+                    type: number
+                  latitude:
+                    type: number
+                  accuracyMeters:
+                    type: number
+                    x-nullable: true
+                  timeZoneId:
+                    type: string
+                    x-nullable: true
+                  locationMeasurementSourceType:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      code:
+                        type: string
+                    required:
+                    - id
+                  rawData:
+                    type: object
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete a location measurement for a site
+      operationId: deleteSiteLocationMeasurement
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSiteLocationMeasurement'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        name: locationMeasurementId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/users/{userId}:
+    delete:
+      summary: Remove a user from a site
+      operationId: removeUserFromSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeUserFromSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Add a user to a site
+      operationId: setUserToSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserToSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/groups/{groupId}:
+    delete:
+      summary: Remove a group from a site
+      operationId: removeGroupFromSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeGroupFromSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Add a group to a site
+      operationId: setGroupToSite
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupToSite'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/userIds:
+    patch:
+      summary: Bulk-update a site's users
+      operationId: updateSiteUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSiteUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+            remove:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set a site's users by replacing the entire set with this one
+      operationId: setSiteUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            userIds:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+          required:
+          - userIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/groupIds:
+    patch:
+      summary: Bulk-update a site's groups
+      operationId: updateSiteGroupIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSiteGroupIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+            remove:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set a site's groups by replacing the entire set with this one
+      operationId: setSiteGroupIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteGroupIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            groupIds:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+          required:
+          - groupIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/sites/{siteId}/locationMeasurement:
+    put:
+      summary: Set a location measurement for a site
+      operationId: setSiteLocationMeasurement
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteLocationMeasurement'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: siteId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            locationMeasurementSourceTypeId:
+              type: integer
+            rawData:
+              x-alternatives:
+              - type: object
+                properties:
+                  acuWifi:
+                    type: object
+                    properties:
+                      homeMobileCountryCode:
+                        type: integer
+                      homeMobileNetworkCode:
+                        type: integer
+                      radioType:
+                        type: string
+                      carrier:
+                        type: string
+                      considerIp:
+                        type: boolean
+                      cellTowers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            cellId:
+                              type: integer
+                            locationAreaCode:
+                              type: integer
+                            mobileCountryCode:
+                              type: integer
+                            mobileNetworkCode:
+                              type: integer
+                            age:
+                              type: integer
+                            signalStrength:
+                              type: integer
+                            timingAdvance:
+                              type: integer
+                          required:
+                          - cellId
+                          - locationAreaCode
+                          - mobileCountryCode
+                          - mobileNetworkCode
+                      wifiAccessPoints:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            macAddress:
+                              type: string
+                            signalToNoiseRatio:
+                              type: number
+                            age:
+                              type: number
+                            channel:
+                              type: number
+                            signalStrength:
+                              type: number
+                          required:
+                          - macAddress
+                  physicalAddress:
+                    type: object
+                    properties:
+                      address:
+                        type: string
+                      city:
+                        type: string
+                      state:
+                        type: string
+                      zip:
+                        type: string
+                      country:
+                        type: string
+                    required:
+                    - address
+                    - city
+                    - state
+                    - zip
+                  pinDrop:
+                    type: object
+                    properties:
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+                      accuracyMeters:
+                        type: number
+                    required:
+                    - latitude
+                    - longitude
+                  device:
+                    type: object
+                    properties:
+                      locationReports:
+                        x-alternatives:
+                        - type: array
+                          items:
+                            type: object
+                            properties:
+                              latitude:
+                                type: number
+                              longitude:
+                                type: number
+                              accuracyMeters:
+                                type: number
+                              readerId:
+                                type: number
+                              timestamp:
+                                type: number
+                            required:
+                            - latitude
+                            - longitude
+                        - type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+              - type: object
+                properties:
+                  acuWifi:
+                    type: object
+                    properties:
+                      homeMobileCountryCode:
+                        type: integer
+                      homeMobileNetworkCode:
+                        type: integer
+                      radioType:
+                        type: string
+                      carrier:
+                        type: string
+                      considerIp:
+                        type: boolean
+                      cellTowers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            cellId:
+                              type: integer
+                            locationAreaCode:
+                              type: integer
+                            mobileCountryCode:
+                              type: integer
+                            mobileNetworkCode:
+                              type: integer
+                            age:
+                              type: integer
+                            signalStrength:
+                              type: integer
+                            timingAdvance:
+                              type: integer
+                          required:
+                          - cellId
+                          - locationAreaCode
+                          - mobileCountryCode
+                          - mobileNetworkCode
+                      wifiAccessPoints:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            macAddress:
+                              type: string
+                            signalToNoiseRatio:
+                              type: number
+                            age:
+                              type: number
+                            channel:
+                              type: number
+                            signalStrength:
+                              type: number
+                          required:
+                          - macAddress
+                  physicalAddress:
+                    type: object
+                    properties:
+                      address:
+                        type: string
+                      city:
+                        type: string
+                      state:
+                        type: string
+                      zip:
+                        type: string
+                      country:
+                        type: string
+                    required:
+                    - address
+                    - city
+                    - state
+                    - zip
+                  pinDrop:
+                    type: object
+                    properties:
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+                      accuracyMeters:
+                        type: number
+                    required:
+                    - latitude
+                    - longitude
+                  device:
+                    type: object
+                    properties:
+                      locationReports:
+                        x-alternatives:
+                        - type: array
+                          items:
+                            type: object
+                            properties:
+                              latitude:
+                                type: number
+                              longitude:
+                                type: number
+                              accuracyMeters:
+                                type: number
+                              readerId:
+                                type: number
+                              timestamp:
+                                type: number
+                            required:
+                            - latitude
+                            - longitude
+                        - type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                required:
+                - acuWifi
+              - type: object
+                properties:
+                  acuWifi:
+                    type: object
+                    properties:
+                      homeMobileCountryCode:
+                        type: integer
+                      homeMobileNetworkCode:
+                        type: integer
+                      radioType:
+                        type: string
+                      carrier:
+                        type: string
+                      considerIp:
+                        type: boolean
+                      cellTowers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            cellId:
+                              type: integer
+                            locationAreaCode:
+                              type: integer
+                            mobileCountryCode:
+                              type: integer
+                            mobileNetworkCode:
+                              type: integer
+                            age:
+                              type: integer
+                            signalStrength:
+                              type: integer
+                            timingAdvance:
+                              type: integer
+                          required:
+                          - cellId
+                          - locationAreaCode
+                          - mobileCountryCode
+                          - mobileNetworkCode
+                      wifiAccessPoints:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            macAddress:
+                              type: string
+                            signalToNoiseRatio:
+                              type: number
+                            age:
+                              type: number
+                            channel:
+                              type: number
+                            signalStrength:
+                              type: number
+                          required:
+                          - macAddress
+                  physicalAddress:
+                    type: object
+                    properties:
+                      address:
+                        type: string
+                      city:
+                        type: string
+                      state:
+                        type: string
+                      zip:
+                        type: string
+                      country:
+                        type: string
+                    required:
+                    - address
+                    - city
+                    - state
+                    - zip
+                  pinDrop:
+                    type: object
+                    properties:
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+                      accuracyMeters:
+                        type: number
+                    required:
+                    - latitude
+                    - longitude
+                  device:
+                    type: object
+                    properties:
+                      locationReports:
+                        x-alternatives:
+                        - type: array
+                          items:
+                            type: object
+                            properties:
+                              latitude:
+                                type: number
+                              longitude:
+                                type: number
+                              accuracyMeters:
+                                type: number
+                              readerId:
+                                type: number
+                              timestamp:
+                                type: number
+                            required:
+                            - latitude
+                            - longitude
+                        - type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                required:
+                - physicalAddress
+              - type: object
+                properties:
+                  acuWifi:
+                    type: object
+                    properties:
+                      homeMobileCountryCode:
+                        type: integer
+                      homeMobileNetworkCode:
+                        type: integer
+                      radioType:
+                        type: string
+                      carrier:
+                        type: string
+                      considerIp:
+                        type: boolean
+                      cellTowers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            cellId:
+                              type: integer
+                            locationAreaCode:
+                              type: integer
+                            mobileCountryCode:
+                              type: integer
+                            mobileNetworkCode:
+                              type: integer
+                            age:
+                              type: integer
+                            signalStrength:
+                              type: integer
+                            timingAdvance:
+                              type: integer
+                          required:
+                          - cellId
+                          - locationAreaCode
+                          - mobileCountryCode
+                          - mobileNetworkCode
+                      wifiAccessPoints:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            macAddress:
+                              type: string
+                            signalToNoiseRatio:
+                              type: number
+                            age:
+                              type: number
+                            channel:
+                              type: number
+                            signalStrength:
+                              type: number
+                          required:
+                          - macAddress
+                  physicalAddress:
+                    type: object
+                    properties:
+                      address:
+                        type: string
+                      city:
+                        type: string
+                      state:
+                        type: string
+                      zip:
+                        type: string
+                      country:
+                        type: string
+                    required:
+                    - address
+                    - city
+                    - state
+                    - zip
+                  pinDrop:
+                    type: object
+                    properties:
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+                      accuracyMeters:
+                        type: number
+                    required:
+                    - latitude
+                    - longitude
+                  device:
+                    type: object
+                    properties:
+                      locationReports:
+                        x-alternatives:
+                        - type: array
+                          items:
+                            type: object
+                            properties:
+                              latitude:
+                                type: number
+                              longitude:
+                                type: number
+                              accuracyMeters:
+                                type: number
+                              readerId:
+                                type: number
+                              timestamp:
+                                type: number
+                            required:
+                            - latitude
+                            - longitude
+                        - type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                required:
+                - pinDrop
+              - type: object
+                properties:
+                  acuWifi:
+                    type: object
+                    properties:
+                      homeMobileCountryCode:
+                        type: integer
+                      homeMobileNetworkCode:
+                        type: integer
+                      radioType:
+                        type: string
+                      carrier:
+                        type: string
+                      considerIp:
+                        type: boolean
+                      cellTowers:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            cellId:
+                              type: integer
+                            locationAreaCode:
+                              type: integer
+                            mobileCountryCode:
+                              type: integer
+                            mobileNetworkCode:
+                              type: integer
+                            age:
+                              type: integer
+                            signalStrength:
+                              type: integer
+                            timingAdvance:
+                              type: integer
+                          required:
+                          - cellId
+                          - locationAreaCode
+                          - mobileCountryCode
+                          - mobileNetworkCode
+                      wifiAccessPoints:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            macAddress:
+                              type: string
+                            signalToNoiseRatio:
+                              type: number
+                            age:
+                              type: number
+                            channel:
+                              type: number
+                            signalStrength:
+                              type: number
+                          required:
+                          - macAddress
+                  physicalAddress:
+                    type: object
+                    properties:
+                      address:
+                        type: string
+                      city:
+                        type: string
+                      state:
+                        type: string
+                      zip:
+                        type: string
+                      country:
+                        type: string
+                    required:
+                    - address
+                    - city
+                    - state
+                    - zip
+                  pinDrop:
+                    type: object
+                    properties:
+                      latitude:
+                        type: number
+                      longitude:
+                        type: number
+                      accuracyMeters:
+                        type: number
+                    required:
+                    - latitude
+                    - longitude
+                  device:
+                    type: object
+                    properties:
+                      locationReports:
+                        x-alternatives:
+                        - type: array
+                          items:
+                            type: object
+                            properties:
+                              latitude:
+                                type: number
+                              longitude:
+                                type: number
+                              accuracyMeters:
+                                type: number
+                              readerId:
+                                type: number
+                              timestamp:
+                                type: number
+                            required:
+                            - latitude
+                            - longitude
+                        - type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                required:
+                - device
+              type: object
+              properties:
+                acuWifi:
+                  type: object
+                  properties:
+                    homeMobileCountryCode:
+                      type: integer
+                    homeMobileNetworkCode:
+                      type: integer
+                    radioType:
+                      type: string
+                    carrier:
+                      type: string
+                    considerIp:
+                      type: boolean
+                    cellTowers:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          cellId:
+                            type: integer
+                          locationAreaCode:
+                            type: integer
+                          mobileCountryCode:
+                            type: integer
+                          mobileNetworkCode:
+                            type: integer
+                          age:
+                            type: integer
+                          signalStrength:
+                            type: integer
+                          timingAdvance:
+                            type: integer
+                        required:
+                        - cellId
+                        - locationAreaCode
+                        - mobileCountryCode
+                        - mobileNetworkCode
+                    wifiAccessPoints:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          macAddress:
+                            type: string
+                          signalToNoiseRatio:
+                            type: number
+                          age:
+                            type: number
+                          channel:
+                            type: number
+                          signalStrength:
+                            type: number
+                        required:
+                        - macAddress
+                physicalAddress:
+                  type: object
+                  properties:
+                    address:
+                      type: string
+                    city:
+                      type: string
+                    state:
+                      type: string
+                    zip:
+                      type: string
+                    country:
+                      type: string
+                  required:
+                  - address
+                  - city
+                  - state
+                  - zip
+                pinDrop:
+                  type: object
+                  properties:
+                    latitude:
+                      type: number
+                    longitude:
+                      type: number
+                    accuracyMeters:
+                      type: number
+                  required:
+                  - latitude
+                  - longitude
+                device:
+                  type: object
+                  properties:
+                    locationReports:
+                      x-alternatives:
+                      - type: array
+                        items:
+                          type: object
+                          properties:
+                            latitude:
+                              type: number
+                            longitude:
+                              type: number
+                            accuracyMeters:
+                              type: number
+                            readerId:
+                              type: number
+                            timestamp:
+                              type: number
+                          required:
+                          - latitude
+                          - longitude
+                      - type: object
+                        properties:
+                          latitude:
+                            type: number
+                          longitude:
+                            type: number
+                          accuracyMeters:
+                            type: number
+                          readerId:
+                            type: number
+                          timestamp:
+                            type: number
+                        required:
+                        - latitude
+                        - longitude
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          latitude:
+                            type: number
+                          longitude:
+                            type: number
+                          accuracyMeters:
+                            type: number
+                          readerId:
+                            type: number
+                          timestamp:
+                            type: number
+                        required:
+                        - latitude
+                        - longitude
+          required:
+          - locationMeasurementSourceTypeId
+          - rawData
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/sites
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

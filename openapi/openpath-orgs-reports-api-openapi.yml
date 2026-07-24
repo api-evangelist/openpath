@@ -1,0 +1,1739 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/reports API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/reports
+  description: Reports and Analytics
+paths:
+  /orgs/{orgId}/reports/deviceTimeZoneDependentRelativeTimeRanges:
+    get:
+      summary: Get the search and display unix timestamp ranges for relative times based on the device with a timezone in the min utc offset
+      operationId: getDeviceTimeZoneDependentRelativeTimeRanges
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-occupancyReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getDeviceTimeZoneDependentRelativeTimeRanges'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+          minimum: 1
+        collectionFormat: multi
+        name: siteIds
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+          minimum: 1
+        collectionFormat: multi
+        name: zoneIds
+        in: query
+      - type: string
+        format: date
+        name: referenceTime
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/reports
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              cursors:
+                type: object
+                properties:
+                  nextCursor:
+                    type: integer
+                    x-nullable: true
+                    x-alternatives:
+                    - type: integer
+                      x-nullable: true
+                    - type: string
+                      pattern: ^[a-zA-Z0-9,@._~-]+$
+                      x-nullable: true
+                  hasNextPage:
+                    type: boolean
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    relativeTime:
+                      type: string
+                      enum:
+                      - today
+                      - thisWeek
+                      - thisMonth
+                      - thisQuarter
+                      - thisYear
+                      - yesterday
+                      - lastFullWeek
+                      - lastFullMonth
+                      - lastFullQuarter
+                      - last6FullMonths
+                      - last12FullMonths
+                    deviceMinUtcOffsetTimeZoneId:
+                      type: string
+                    displayStartDateUnix:
+                      type: integer
+                      minimum: 1721088000
+                    displayEndDateUnix:
+                      type: integer
+                      minimum: 1721088000
+                    searchStartDateUnix:
+                      type: integer
+                      minimum: 1721088000
+                    searchEndDateUnix:
+                      type: integer
+                      minimum: 1721088000
+                  required:
+                  - relativeTime
+                  - deviceMinUtcOffsetTimeZoneId
+                  - displayStartDateUnix
+                  - displayEndDateUnix
+                  - searchStartDateUnix
+                  - searchEndDateUnix
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-occupancyReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/reports/activity:
+    get:
+      summary: Get entry access activity
+      operationId: getActivity
+      description: 'Note: Please use `/org/{orgId}/reports/activity/events` API when possible as it replaces this API and is faster.<br/><br/>Returns activity events for the `time` specified date range. This API does not handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>This API can return 422 Unprocessable Entity status code. A 422 is returned when the `time` filter specified a date range with more data than can be retrieved within the 55 second API timeout period. Please try narrowing the query date range or use the `/org/{orgId}/reports/activity/events` API as an alternative. The `/org/{orgId}/reports/activity/events` API does not have the 422 status code problem.<br/><br/>The difference between entryName, zoneName, and siteName vs. entryName2, zoneName2, and siteName2 is that the `*Name2` fields can potentially return "Multiple" as the name. This occurs when the entries array indicates multiple unique ids for that resource type. Whereas the entryId, entryName, zoneId, zoneName, siteId, and siteName values always equal their entries[0] (the first one) equivalent values.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getActivity'
+      parameters:
+      - type: string
+        default: ''
+        pattern: ^((log-all)(,|$))*$
+        name: x-op-debug
+        in: header
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        default: 10000
+        minimum: 1
+        maximum: 10000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: time
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: desc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        default: ''
+        maxLength: 512
+        pattern: ^((useOpProton|quick|noquick|withTouch|searchId:[a-zA-Z0-9_-]+)(,|$))*
+        name: options
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: customFieldIds
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/reports
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              cursors:
+                type: object
+                properties:
+                  nextCursor:
+                    type: integer
+                    x-nullable: true
+                    x-alternatives:
+                    - type: integer
+                      x-nullable: true
+                    - type: string
+                      pattern: ^[a-zA-Z0-9,@._~-]+$
+                      x-nullable: true
+                  hasNextPage:
+                    type: boolean
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    time:
+                      type: number
+                    timeIsoString:
+                      type: string
+                    userId:
+                      type: number
+                      x-nullable: true
+                    userFirstName:
+                      type: string
+                      x-nullable: true
+                    userMiddleName:
+                      type: string
+                      x-nullable: true
+                    userLastName:
+                      type: string
+                      x-nullable: true
+                    userName:
+                      type: string
+                      x-nullable: true
+                    userEmail:
+                      type: string
+                    userMobilePhone:
+                      type: string
+                      x-nullable: true
+                    userOrgId:
+                      type: number
+                      x-nullable: true
+                    userOrgName:
+                      type: string
+                      x-nullable: true
+                    userExternalId:
+                      type: string
+                      x-nullable: true
+                    userIdpName:
+                      type: string
+                      x-nullable: true
+                    userGroups:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                        required:
+                        - id
+                    userSites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                        required:
+                        - id
+                    sourceName:
+                      type: string
+                    category:
+                      type: string
+                      x-nullable: true
+                    subCategory:
+                      type: string
+                      x-nullable: true
+                    credentialSubtype:
+                      type: string
+                    credentialTypeModelName:
+                      type: string
+                      x-nullable: true
+                    credentialTypeName:
+                      type: string
+                      x-nullable: true
+                    credentialDetail:
+                      type: string
+                      x-nullable: true
+                    cardFields:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        rcm:
+                          type: string
+                          pattern: ^[0-9]+$
+                        facilityCode:
+                          type: string
+                          pattern: ^[0-9]+$
+                        issueLevel:
+                          type: string
+                          pattern: ^[0-9]+$
+                        cardId:
+                          type: string
+                          pattern: ^[0-9]+$
+                        companyId:
+                          type: string
+                          pattern: ^[0-9]+$
+                        companyCode:
+                          type: string
+                          pattern: ^[0-9]+$
+                        siteCode:
+                          type: string
+                          pattern: ^[0-9]+$
+                        oem:
+                          type: string
+                          pattern: ^[0-9]+$
+                    acuId:
+                      type: number
+                      x-nullable: true
+                    acuName:
+                      type: string
+                    entryId:
+                      type: number
+                      x-nullable: true
+                    entryName:
+                      type: string
+                    entryName2:
+                      type: string
+                    zoneId:
+                      type: number
+                      x-nullable: true
+                    zoneName:
+                      type: string
+                      x-nullable: true
+                    zoneName2:
+                      type: string
+                      x-nullable: true
+                    siteId:
+                      type: number
+                      x-nullable: true
+                    siteName:
+                      type: string
+                      x-nullable: true
+                    siteName2:
+                      type: string
+                      x-nullable: true
+                    entries:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                          zone:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                            required:
+                            - id
+                          site:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                            required:
+                            - id
+                        required:
+                        - id
+                    lockdownPlanId:
+                      type: number
+                      x-nullable: true
+                    lockdownPlanName:
+                      type: string
+                    gatewayDevice:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          x-nullable: true
+                        uid:
+                          type: string
+                          x-nullable: true
+                        opal:
+                          type: string
+                        name:
+                          type: string
+                          x-nullable: true
+                      required:
+                      - type
+                    sourceDevice:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        type:
+                          type: string
+                          x-nullable: true
+                        uid:
+                          type: string
+                          x-nullable: true
+                        opal:
+                          type: string
+                        name:
+                          type: string
+                          x-nullable: true
+                      required:
+                      - type
+                    deviceDetail:
+                      type: string
+                    deviceDetailName:
+                      type: string
+                    deviceTimezone:
+                      type: string
+                      x-nullable: true
+                    readerId:
+                      type: number
+                      x-nullable: true
+                    readerName:
+                      type: string
+                    readerPortNumber:
+                      type: number
+                      x-nullable: true
+                    portNumber:
+                      type: object
+                      properties:
+                        modelName:
+                          type: string
+                          enum:
+                          - contactSensor
+                          - genericInput
+                          - reader
+                          - rex
+                        raw:
+                          type: integer
+                        acuId:
+                          type: integer
+                        expansionBoardNum:
+                          type: integer
+                        virtualPortNum:
+                          type: integer
+                    targetType:
+                      type: string
+                      x-nullable: true
+                    targetName:
+                      type: string
+                      x-nullable: true
+                    requestType:
+                      type: string
+                    requestId:
+                      type: string
+                    result:
+                      type: string
+                    resultDescription:
+                      type: string
+                    deniedReason:
+                      type: string
+                      x-nullable: true
+                    connectionType:
+                      type: string
+                      x-nullable: true
+                    location:
+                      type: string
+                    userCustomFields:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          value:
+                            type: string
+                            x-nullable: true
+                          customField:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              customFieldType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                            required:
+                            - id
+                        required:
+                        - id
+                    userCustomFieldsData:
+                      type: object
+                    firstAuthInfos:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          connectionType:
+                            type: string
+                            x-nullable: true
+                          requestType:
+                            type: string
+                          credentialSubtype:
+                            type: string
+                          credentialTypeModelName:
+                            type: string
+                            x-nullable: true
+                          credentialDetail:
+                            type: string
+                            x-nullable: true
+                          credentialTypeName:
+                            type: string
+                            x-nullable: true
+                          cardFields:
+                            x-nullable: true
+                            type: object
+                            properties:
+                              rcm:
+                                type: string
+                                pattern: ^[0-9]+$
+                              facilityCode:
+                                type: string
+                                pattern: ^[0-9]+$
+                              issueLevel:
+                                type: string
+                                pattern: ^[0-9]+$
+                              cardId:
+                                type: string
+                                pattern: ^[0-9]+$
+                              companyId:
+                                type: string
+                                pattern: ^[0-9]+$
+                              companyCode:
+                                type: string
+                                pattern: ^[0-9]+$
+                              siteCode:
+                                type: string
+                                pattern: ^[0-9]+$
+                              oem:
+                                type: string
+                                pattern: ^[0-9]+$
+                          readerId:
+                            type: number
+                            x-nullable: true
+                          readerName:
+                            type: string
+                          userId:
+                            type: number
+                            x-nullable: true
+                          userFirstName:
+                            type: string
+                            x-nullable: true
+                          userMiddleName:
+                            type: string
+                            x-nullable: true
+                          userLastName:
+                            type: string
+                            x-nullable: true
+                          userName:
+                            type: string
+                            x-nullable: true
+                          userEmail:
+                            type: string
+                          userOrgId:
+                            type: number
+                            x-nullable: true
+                          userOrgName:
+                            type: string
+                            x-nullable: true
+                          userExternalId:
+                            type: string
+                            x-nullable: true
+                          userIdpName:
+                            type: string
+                            x-nullable: true
+                  required:
+                  - time
+                  - sourceName
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashActivity:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rptGeneral:w
+      - o{params.orgId}-rptGeneral:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/reports/auditLogs/ui:
+    get:
+      summary: Search/filter/return audit logs for UI
+      operationId: getAuditLogsUi
+      description: 'Returns audit log UI events for the `timestamp` specified date range. Default search time span is 1 hour ago to now.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-portalAudit:w,o{params.orgId}-portalAudit:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getAuditLogsUi'
+      parameters:
+      - type: string
+        default: ''
+        pattern: ^((log-all)(,|$))*$
+        name: x-op-debug
+        in: header
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        default: 10000
+        minimum: 1
+        maximum: 10000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: timestamp
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: desc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        default: ''
+        maxLength: 512
+        pattern: ^((searchId:[a-zA-Z0-9_-]+)(,|$))*$
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/reports
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              cursors:
+                type: object
+                properties:
+                  nextCursor:
+                    type: integer
+                    x-nullable: true
+                    x-alternatives:
+                    - type: integer
+                      x-nullable: true
+                    - type: string
+                      pattern: ^[a-zA-Z0-9,@._~-]+$
+                      x-nullable: true
+                  hasNextPage:
+                    type: boolean
+              data:
+                type: array
+                items:
+                  type: object
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-portalAudit:w
+      - o{params.orgId}-portalAudit:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/reports/presence/buckets:
+    get:
+      summary: Get presence bucket reports
+      operationId: getPresenceBucketsReport
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-presence:w,o{params.orgId}-presence:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getPresenceBucketsReport'
+      parameters:
+      - type: string
+        default: ''
+        pattern: ^((log-all|log-request|log-pd-request-construction|pd-.+)(,|$))*$
+        name: x-op-debug
+        in: header
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 100
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: day
+        enum:
+        - hour
+        - day
+        - week
+        - month
+        - year
+        name: timeScale
+        in: query
+      - type: string
+        default: org
+        enum:
+        - org
+        - sites
+        - zones
+        - entries
+        - readers
+        - groups
+        - users
+        name: category
+        in: query
+      - type: string
+        format: date
+        name: startDate
+        in: query
+        required: true
+      - type: string
+        format: date
+        name: endDate
+        in: query
+        required: true
+      - type: string
+        maxLength: 256
+        name: timeZone
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: string
+          enum:
+          - readers
+          - entries
+        collectionFormat: multi
+        name: sensorTypes
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: siteIds
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: zoneIds
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: entryIds
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: readerIds
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: groupIds
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: userIds
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/reports
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  columnLabelsMs:
+                    type: array
+                    items:
+                      type: integer
+                  columnLabels:
+                    type: array
+                    items:
+                      type: string
+                  rows:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        resourceOpal:
+                          type: string
+                        name:
+                          type: string
+                        counts:
+                          type: array
+                          items:
+                            type: number
+                  debugInfo:
+                    type: object
+                  request:
+                    type: object
+                required:
+                - request
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-presence:w
+      - o{params.orgId}-presence:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/reports/activity/events:
+    get:
+      summary: Get access activity events
+      operationId: getActivityEvents
+      description: 'Returns activity events for the `uiData.time` specified date range. This API can handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>To filter by time, use a `filter` value of `uiData.time:(utcEpochSeconds-<utcEpochSeconds)` or any other valid time range specification, where utcEpochSeconds is replaced by your desired start and end times in unix epoch seconds. To filter by an array field like userGroups, use a `filter` value of `uiData.userGroups.id:(4822,5729)`. This will filter the results to only those that have a `uiData.userGroups.id` value of 4822 or 5729. New partial results are returned for each API call. The query is complete when the API returns `false` for `cursors.hasNextPage`. The caller is required to pass the same filter parameter across all calls of the same query.<br/><br/>Commonly, the `limit` parameter provides an upper bound on the number of results returned by the API. That is not the case here. For performance reasons, this API endpoint treats the `limit` parameter as a suggestion. This endpoint commonly returns substantially more results than the specified `limit` value. If your client is concerned about a large number of events in the response, the client can first issue a request for 1 hour of data. The 1 hour response size can then be used to calculate the time based paging necessary to maintain a rough amount of response data.<br/><br/>The `uiDataOnly` option will cause only uiData elements to be returned, filtering out the hookEvents sub-object from the response. This can reduce client JSON processing time and memory utilization if uiData is only needed.<br/><br/>The difference between entryName, zoneName, and siteName vs. entryName2, zoneName2, and siteName2 is that the `*Name2` fields can potentially return "Multiple" as the name. This occurs when the entries array indicates multiple unique ids for that resource type. Whereas the entryId, entryName, zoneId, zoneName, siteId, and siteName values will always equal their entries[0] (the first one) equivalent values.<br/><br/>For traceability purposes, it is helpful if your API always provides the `option` parameter value of `searchId:{shortPurpose}-{orgId}-{startTimeMillisecs}-{callNum}`. Where `{shortPurpose}` might be `logGather` or whatever unique purpose you have in calling the API; `{orgId}` is your orgId; `{startTimeMillisecs}` is the time in milliseconds for the first call and remains unchanged for all `{callNum}` calls; `{callNum}` starts at 0 and increments for each API call when paging through each returned cursor until complete. An example the first call to this API might have a `searchId:logGather-12345-1675964642144-0` for the logGather purpose, 12345 orgId, with the first API call at 2023-02-09T17:44:02.144, and a 0 callNum for the 1st API call. The second API call with the cursor set would be `searchId:logGather-12345-1675964642144-1`, the 3rd call `...642144-2` and so on. Providing your searchId to an Openpath representative can significantly aid in resolving inqueries.<br/><br/>Please use this API over the slower `/orgs/{orgId}/reports/activity` API when possible.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getActivityEvents'
+      parameters:
+      - type: string
+        default: ''
+        pattern: ^((log-all)(,|$))*$
+        name: x-op-debug
+        in: header
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        default: 30000
+        minimum: 1
+        maximum: 30000
+        name: limit
+        in: query
+      - type: string
+        default: ''
+        pattern: ^[a-zA-Z0-9,@._~-]+$
+        x-nullable: true
+        name: cursor
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        default: ''
+        maxLength: 512
+        pattern: ^((withUserSites|useOpProton|_truncateForTest|_oxygenPageLimit:[1-9][0-9]*|_oxygenIncrSecs:[1-9][0-9]*|uiDataOnly|searchId:[a-zA-Z0-9_-]+)(,|$))*
+        name: options
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: customFieldIds
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/reports
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              cursors:
+                type: object
+                properties:
+                  nextCursor:
+                    type: integer
+                    x-nullable: true
+                    x-alternatives:
+                    - type: integer
+                      x-nullable: true
+                    - type: string
+                      pattern: ^[a-zA-Z0-9,@._~-]+$
+                      x-nullable: true
+                  hasNextPage:
+                    type: boolean
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    uiData:
+                      type: object
+                      properties:
+                        time:
+                          type: number
+                        timeIsoString:
+                          type: string
+                        userId:
+                          type: number
+                          x-nullable: true
+                        userFirstName:
+                          type: string
+                          x-nullable: true
+                        userMiddleName:
+                          type: string
+                          x-nullable: true
+                        userLastName:
+                          type: string
+                          x-nullable: true
+                        userName:
+                          type: string
+                          x-nullable: true
+                        userEmail:
+                          type: string
+                        userMobilePhone:
+                          type: string
+                          x-nullable: true
+                        userOrgId:
+                          type: number
+                          x-nullable: true
+                        userOrgName:
+                          type: string
+                          x-nullable: true
+                        userExternalId:
+                          type: string
+                          x-nullable: true
+                        userIdpName:
+                          type: string
+                          x-nullable: true
+                        userGroups:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                            required:
+                            - id
+                        userSites:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                            required:
+                            - id
+                        sourceName:
+                          type: string
+                        category:
+                          type: string
+                          x-nullable: true
+                        subCategory:
+                          type: string
+                          x-nullable: true
+                        credentialSubtype:
+                          type: string
+                        credentialTypeModelName:
+                          type: string
+                          x-nullable: true
+                        credentialTypeName:
+                          type: string
+                          x-nullable: true
+                        credentialDetail:
+                          type: string
+                          x-nullable: true
+                        cardFields:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            rcm:
+                              type: string
+                              pattern: ^[0-9]+$
+                            facilityCode:
+                              type: string
+                              pattern: ^[0-9]+$
+                            issueLevel:
+                              type: string
+                              pattern: ^[0-9]+$
+                            cardId:
+                              type: string
+                              pattern: ^[0-9]+$
+                            companyId:
+                              type: string
+                              pattern: ^[0-9]+$
+                            companyCode:
+                              type: string
+                              pattern: ^[0-9]+$
+                            siteCode:
+                              type: string
+                              pattern: ^[0-9]+$
+                            oem:
+                              type: string
+                              pattern: ^[0-9]+$
+                        acuId:
+                          type: number
+                          x-nullable: true
+                        acuName:
+                          type: string
+                        entryId:
+                          type: number
+                          x-nullable: true
+                        entryName:
+                          type: string
+                        entryName2:
+                          type: string
+                        zoneId:
+                          type: number
+                          x-nullable: true
+                        zoneName:
+                          type: string
+                          x-nullable: true
+                        zoneName2:
+                          type: string
+                          x-nullable: true
+                        siteId:
+                          type: number
+                          x-nullable: true
+                        siteName:
+                          type: string
+                          x-nullable: true
+                        siteName2:
+                          type: string
+                          x-nullable: true
+                        entries:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                              zone:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                              site:
+                                type: object
+                                properties:
+                                  id:
+                                    type: integer
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                            required:
+                            - id
+                        lockdownPlanId:
+                          type: number
+                          x-nullable: true
+                        lockdownPlanName:
+                          type: string
+                        gatewayDevice:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              x-nullable: true
+                            uid:
+                              type: string
+                              x-nullable: true
+                            opal:
+                              type: string
+                            name:
+                              type: string
+                              x-nullable: true
+                          required:
+                          - type
+                        sourceDevice:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            type:
+                              type: string
+                              x-nullable: true
+                            uid:
+                              type: string
+                              x-nullable: true
+                            opal:
+                              type: string
+                            name:
+                              type: string
+                              x-nullable: true
+                          required:
+                          - type
+                        deviceDetail:
+                          type: string
+                        deviceDetailName:
+                          type: string
+                        deviceTimezone:
+                          type: string
+                          x-nullable: true
+                        readerId:
+                          type: number
+                          x-nullable: true
+                        readerName:
+                          type: string
+                        readerPortNumber:
+                          type: number
+                          x-nullable: true
+                        portNumber:
+                          type: object
+                          properties:
+                            modelName:
+                              type: string
+                              enum:
+                              - contactSensor
+                              - genericInput
+                              - reader
+                              - rex
+                            raw:
+                              type: integer
+                            acuId:
+                              type: integer
+                            expansionBoardNum:
+                              type: integer
+                            virtualPortNum:
+                              type: integer
+                        targetType:
+                          type: string
+                          x-nullable: true
+                        targetName:
+                          type: string
+                          x-nullable: true
+                        requestType:
+                          type: string
+                        requestId:
+                          type: string
+                        result:
+                          type: string
+                        resultDescription:
+                          type: string
+                        deniedReason:
+                          type: string
+                          x-nullable: true
+                        connectionType:
+                          type: string
+                          x-nullable: true
+                        location:
+                          type: string
+                        userCustomFields:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              value:
+                                type: string
+                                x-nullable: true
+                              customField:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                  customFieldType:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
+                                required:
+                                - id
+                            required:
+                            - id
+                        userCustomFieldsData:
+                          type: object
+                        firstAuthInfos:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              connectionType:
+                                type: string
+                                x-nullable: true
+                              requestType:
+                                type: string
+                              credentialSubtype:
+                                type: string
+                              credentialTypeModelName:
+                                type: string
+                                x-nullable: true
+                              credentialDetail:
+                                type: string
+                                x-nullable: true
+                              credentialTypeName:
+                                type: string
+                                x-nullable: true
+                              cardFields:
+                                x-nullable: true
+                                type: object
+                                properties:
+                                  rcm:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  facilityCode:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  issueLevel:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  cardId:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  companyId:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  companyCode:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  siteCode:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                                  oem:
+                                    type: string
+                                    pattern: ^[0-9]+$
+                              readerId:
+                                type: number
+                                x-nullable: true
+                              readerName:
+                                type: string
+                              userId:
+                                type: number
+                                x-nullable: true
+                              userFirstName:
+                                type: string
+                                x-nullable: true
+                              userMiddleName:
+                                type: string
+                                x-nullable: true
+                              userLastName:
+                                type: string
+                                x-nullable: true
+                              userName:
+                                type: string
+                                x-nullable: true
+                              userEmail:
+                                type: string
+                              userOrgId:
+                                type: number
+                                x-nullable: true
+                              userOrgName:
+                                type: string
+                                x-nullable: true
+                              userExternalId:
+                                type: string
+                                x-nullable: true
+                              userIdpName:
+                                type: string
+                                x-nullable: true
+                      required:
+                      - time
+                      - sourceName
+                    hookEvent:
+                      type: object
+                      properties:
+                        timestamp:
+                          type: number
+                        event:
+                          type: string
+                        data:
+                          type: object
+                      required:
+                      - timestamp
+                      - event
+                      - data
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dash:r
+      - o{params.orgId}-dashActivity:w
+      - o{params.orgId}-dashActivity:r
+      - o{params.orgId}-dashCust:w
+      - o{params.orgId}-dashCust:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rptGeneral:w
+      - o{params.orgId}-rptGeneral:r
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/reports/alarm/events:
+    get:
+      summary: Get alarm events
+      operationId: getAlarmEvents
+      description: 'Returns alarm events for the `uiData.time` specified date range. This API can handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>To filter by time, use a `filter` value of `uiData.time:(utcEpochSeconds-<utcEpochSeconds)` or any other valid time range specification, where utcEpochSeconds is replaced by your desired start and end times in unix epoch seconds. New partial results are returned for each API call. The query is complete when the API returns `false` for `cursors.hasNextPage`. The caller is required to pass the same filter parameter across all calls of the same query.<br/><br/>Commonly, the `limit` parameter provides an upper bound on the number of results returned by the API. That is not the case here. For performance reasons, this API endpoint treats the `limit` parameter as a suggestion. This endpoint commonly returns substantially more results than the specified `limit` value.<br/><br/>The `uiDataOnly` option will cause only uiData elements to be returned, filtering out the hookEvents sub-object from the response. This can reduce client JSON processing time and memory utilization if uiData is only needed.<br/><br/>The entryName2 and siteName2 fields can potentially return "Multiple" as the name. This occurs when the entries indicate multiple unique ids for that resource type. Whereas the entryId and siteId values will always equal their first entry or site value.<br/><br/>For traceability purposes, it is helpful if your API always provides the `option` parameter value of `searchId:{shortPurpose}-{orgId}-{startTimeMillisecs}-{callNum}`. Where `{shortPurpose}` might be `logGather` or whatever unique purpose you have in calling the API; `{orgId}` is your orgId; `{startTimeMillisecs}` is the time in milliseconds for the first call and remains unchanged for all `{callNum}` calls; `{callNum}` starts at 0 and increments for each API call when paging through each returned cursor until complete. An example the first call to this API might have a `searchId:logGather-12345-1675964642144-0` for the logGather purpose, 12345 orgId, with the first API call at 2023-02-09T17:44:02.144, and a 0 callNum for the 1st API call. The second API call with the cursor set would be `searchId:logGather-12345-1675964642144-1`, the 3rd call `...642144-2` and so on. Providing your searchId to an Openpath representative can significantly aid in resolving inqueries.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptAlarm:r,o:w,o:r<br/><br/>__Endpoint name__: getAlarmEvents'
+      parameters:
+      - type: string
+        default: ''
+        pattern: ^((log-all)(,|$))*$
+        name: x-op-debug
+        in: header
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        default: 30000
+        minimum: 1
+        maximum: 30000
+        name: limit
+        in: query
+      - type: string
+        default: ''
+        pattern: ^[a-zA-Z0-9,@._~-]+$
+        x-nullable: true
+        name: cursor
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        default: ''
+        maxLength: 512
+        pattern: ^((_truncateForTest|_oxygenPageLimit:[1-9][0-9]*|_oxygenIncrSecs:[1-9][0-9]*|withHookEvent|searchId:[a-zA-Z0-9_-]+)(,|$))*
+        name: options
+        in: query
+      - type: array
+        x-constraint:
+          single: true
+        items:
+          type: integer
+        collectionFormat: multi
+        name: customFieldIds
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/reports
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              cursors:
+                type: object
+                properties:
+                  nextCursor:
+                    type: integer
+                    x-nullable: true
+                    x-alternatives:
+                    - type: integer
+                      x-nullable: true
+                    - type: string
+                      pattern: ^[a-zA-Z0-9,@._~-]+$
+                      x-nullable: true
+                  hasNextPage:
+                    type: boolean
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    uiData:
+                      type: object
+                      properties:
+                        alarmId:
+                          type: string
+                          x-format:
+                            guid: true
+                        time:
+                          type: number
+                        timeIsoString:
+                          type: string
+                        sourceEventTime:
+                          type: number
+                        sourceEventTimeIsoString:
+                          type: string
+                        subCategory:
+                          type: string
+                          x-nullable: true
+                        userId:
+                          type: number
+                          x-nullable: true
+                        userName:
+                          type: string
+                          x-nullable: true
+                        acuId:
+                          type: number
+                          x-nullable: true
+                        acuName:
+                          type: string
+                        entryId:
+                          type: number
+                          x-nullable: true
+                        entryName2:
+                          type: string
+                        zoneId:
+                          type: number
+                          x-nullable: true
+                        zoneName2:
+                          type: string
+                          x-nullable: true
+                        siteId:
+                          type: number
+                          x-nullable: true
+                        siteName2:
+                          type: string
+                          x-nullable: true
+                        readerId:
+                          type: number
+                          x-nullable: true
+                        readerName:
+                          type: string
+                        alarmActionId:
+                          type: number
+                        alarmActionName:
+                          type: string
+                        alarmStatusId:
+                          type: number
+                        alarmStatusName:
+                          type: string
+                        alarmConfigId:
+                          type: number
+                          x-nullable: true
+                        alarmConfigName:
+                          type: string
+                        assignedUserId:
+                          type: number
+                          x-nullable: true
+                        assignedUserName:
+                          type: string
+                          x-nullable: true
+                        assignedRoleId:
+                          type: number
+                          x-nullable: true
+                        assignedRoleName:
+                          type: string
+                          x-nullable: true
+                        cameraIds:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: number
+                        note:
+                          type: string
+                      required:
+                      - alarmId
+                      - time
+                      - sourceEventTime
+                      - alarmActionId
+                      - alarmStatusId
+                    hookEvent:
+                      type: object
+                      properties:
+                        timestamp:
+                          type: number
+                        event:
+                          type: string
+                        data:
+                          type: object
+                      required:
+                      - timestamp
+                      - event
+                      - data
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rptAlarm:w
+      - o{params.orgId}-rptAlarm:r
+      - o:w
+      - o:r
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

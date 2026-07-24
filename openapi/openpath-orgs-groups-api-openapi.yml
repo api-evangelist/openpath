@@ -1,0 +1,5055 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/groups API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/groups
+  description: User Groups
+paths:
+  /orgs/{orgId}/groups:
+    get:
+      summary: List all access groups
+      operationId: listGroups
+      description: 'listGroups takes the following options:<br/><br/>withSites - to include the group''s sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    userCount:
+                      type: integer
+                    badgeConfig:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        nameConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            fontStyle:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - italic
+                              - oblique
+                              - none
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            layout:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - threeLines
+                              - twoLines
+                              - oneLine
+                            textTransform:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - none
+                              - uppercase
+                              - lowercase
+                              - capitalize
+                          x-nullable: true
+                        customField1Config:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        customField2Config:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        backgroundConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            backgroundColor:
+                              type: string
+                              x-nullable: true
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        photoConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            backgroundColor:
+                              type: string
+                              x-nullable: true
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            borderRadius:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            borderColor:
+                              type: string
+                              x-nullable: true
+                          x-nullable: true
+                        logoConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            backgroundColor:
+                              type: string
+                              x-nullable: true
+                            backgroundPosition:
+                              type: string
+                              x-nullable: true
+                            label:
+                              type: string
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        externalIdConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        customField1:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        customField2:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        badgeDefaultConfig:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nameConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                fontStyle:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - italic
+                                  - oblique
+                                  - none
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                layout:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - threeLines
+                                  - twoLines
+                                  - oneLine
+                                textTransform:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - none
+                                  - uppercase
+                                  - lowercase
+                                  - capitalize
+                            customField1Config:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            customField2Config:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            backgroundConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                backgroundColor:
+                                  type: string
+                                  x-nullable: true
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            photoConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                backgroundColor:
+                                  type: string
+                                  x-nullable: true
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                borderRadius:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                borderColor:
+                                  type: string
+                                  x-nullable: true
+                            logoConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                backgroundColor:
+                                  type: string
+                                  x-nullable: true
+                                backgroundPosition:
+                                  type: string
+                                  x-nullable: true
+                                label:
+                                  type: string
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            externalIdConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            backgroundPicture:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                contentType:
+                                  type: string
+                                fileName:
+                                  type: string
+                                url:
+                                  type: string
+                                  x-nullable: true
+                            logoPicture:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                contentType:
+                                  type: string
+                                fileName:
+                                  type: string
+                                url:
+                                  type: string
+                                  x-nullable: true
+                            badgeWidth:
+                              type: number
+                            badgeHeight:
+                              type: number
+                            badgeBorderRadius:
+                              type: number
+                            printWidth:
+                              type: number
+                              x-nullable: true
+                            printHeight:
+                              type: number
+                              x-nullable: true
+                            name:
+                              type: string
+                            isMobile:
+                              type: boolean
+                          required:
+                          - id
+                        backgroundPicture:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            contentType:
+                              type: string
+                            fileName:
+                              type: string
+                            url:
+                              type: string
+                              x-nullable: true
+                        logoPicture:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            contentType:
+                              type: string
+                            fileName:
+                              type: string
+                            url:
+                              type: string
+                              x-nullable: true
+                        name:
+                          type: string
+                          x-nullable: true
+                        badgeBorderRadius:
+                          type: integer
+                          x-nullable: true
+                        isOrgDefault:
+                          type: boolean
+                          x-nullable: true
+                      required:
+                      - id
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-ldp:w
+      - o{params.orgId}-ldp:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-integrations:r
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-credential:w
+      - o{params.orgId}-credential:r
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    post:
+      summary: Create an access group
+      operationId: createGroup
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createGroup'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              x-nullable: true
+            badgeConfigId:
+              type: integer
+              x-nullable: true
+          required:
+          - name
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  userCount:
+                    type: integer
+                  badgeConfig:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      nameConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          fontStyle:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - italic
+                            - oblique
+                            - none
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          layout:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - threeLines
+                            - twoLines
+                            - oneLine
+                          textTransform:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - none
+                            - uppercase
+                            - lowercase
+                            - capitalize
+                        x-nullable: true
+                      customField1Config:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      customField2Config:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      backgroundConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          backgroundColor:
+                            type: string
+                            x-nullable: true
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      photoConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          backgroundColor:
+                            type: string
+                            x-nullable: true
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          borderRadius:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          borderColor:
+                            type: string
+                            x-nullable: true
+                        x-nullable: true
+                      logoConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          backgroundColor:
+                            type: string
+                            x-nullable: true
+                          backgroundPosition:
+                            type: string
+                            x-nullable: true
+                          label:
+                            type: string
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      externalIdConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      customField1:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      customField2:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      badgeDefaultConfig:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          nameConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              fontStyle:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - italic
+                                - oblique
+                                - none
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              layout:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - threeLines
+                                - twoLines
+                                - oneLine
+                              textTransform:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - none
+                                - uppercase
+                                - lowercase
+                                - capitalize
+                          customField1Config:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          customField2Config:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          backgroundConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              backgroundColor:
+                                type: string
+                                x-nullable: true
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          photoConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              backgroundColor:
+                                type: string
+                                x-nullable: true
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              borderRadius:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              borderColor:
+                                type: string
+                                x-nullable: true
+                          logoConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              backgroundColor:
+                                type: string
+                                x-nullable: true
+                              backgroundPosition:
+                                type: string
+                                x-nullable: true
+                              label:
+                                type: string
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          externalIdConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          backgroundPicture:
+                            x-nullable: true
+                            type: object
+                            properties:
+                              contentType:
+                                type: string
+                              fileName:
+                                type: string
+                              url:
+                                type: string
+                                x-nullable: true
+                          logoPicture:
+                            x-nullable: true
+                            type: object
+                            properties:
+                              contentType:
+                                type: string
+                              fileName:
+                                type: string
+                              url:
+                                type: string
+                                x-nullable: true
+                          badgeWidth:
+                            type: number
+                          badgeHeight:
+                            type: number
+                          badgeBorderRadius:
+                            type: number
+                          printWidth:
+                            type: number
+                            x-nullable: true
+                          printHeight:
+                            type: number
+                            x-nullable: true
+                          name:
+                            type: string
+                          isMobile:
+                            type: boolean
+                        required:
+                        - id
+                      backgroundPicture:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          url:
+                            type: string
+                            x-nullable: true
+                      logoPicture:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          url:
+                            type: string
+                            x-nullable: true
+                      name:
+                        type: string
+                        x-nullable: true
+                      badgeBorderRadius:
+                        type: integer
+                        x-nullable: true
+                      isOrgDefault:
+                        type: boolean
+                        x-nullable: true
+                    required:
+                    - id
+                  sites:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/groups/{groupId}:
+    get:
+      summary: Describe an access group
+      operationId: describeGroup
+      description: 'describeGroup takes the following options:<br/><br/>withSites - to include the group''s sites<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeGroup'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  userCount:
+                    type: integer
+                  badgeConfig:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      nameConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          fontStyle:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - italic
+                            - oblique
+                            - none
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          layout:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - threeLines
+                            - twoLines
+                            - oneLine
+                          textTransform:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - none
+                            - uppercase
+                            - lowercase
+                            - capitalize
+                        x-nullable: true
+                      customField1Config:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      customField2Config:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      backgroundConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          backgroundColor:
+                            type: string
+                            x-nullable: true
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      photoConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          backgroundColor:
+                            type: string
+                            x-nullable: true
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          borderRadius:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          borderColor:
+                            type: string
+                            x-nullable: true
+                        x-nullable: true
+                      logoConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          backgroundColor:
+                            type: string
+                            x-nullable: true
+                          backgroundPosition:
+                            type: string
+                            x-nullable: true
+                          label:
+                            type: string
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      externalIdConfig:
+                        type: object
+                        properties:
+                          isEnabled:
+                            type: boolean
+                            x-nullable: true
+                          color:
+                            type: string
+                            x-nullable: true
+                          fontFamily:
+                            type: string
+                            x-nullable: true
+                          fontSize:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          lineHeight:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          fontWeight:
+                            type: number
+                            x-nullable: true
+                          textAlign:
+                            x-nullable: true
+                            type: string
+                            enum:
+                            - left
+                            - center
+                            - right
+                          centerX:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          centerY:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          width:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                          height:
+                            type: number
+                            minimum: 0
+                            maximum: 1
+                            x-nullable: true
+                        x-nullable: true
+                      customField1:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      customField2:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      badgeDefaultConfig:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          nameConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              fontStyle:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - italic
+                                - oblique
+                                - none
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              layout:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - threeLines
+                                - twoLines
+                                - oneLine
+                              textTransform:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - none
+                                - uppercase
+                                - lowercase
+                                - capitalize
+                          customField1Config:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          customField2Config:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          backgroundConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              backgroundColor:
+                                type: string
+                                x-nullable: true
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          photoConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              backgroundColor:
+                                type: string
+                                x-nullable: true
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              borderRadius:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              borderColor:
+                                type: string
+                                x-nullable: true
+                          logoConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              backgroundColor:
+                                type: string
+                                x-nullable: true
+                              backgroundPosition:
+                                type: string
+                                x-nullable: true
+                              label:
+                                type: string
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          externalIdConfig:
+                            type: object
+                            properties:
+                              isEnabled:
+                                type: boolean
+                                x-nullable: true
+                              color:
+                                type: string
+                                x-nullable: true
+                              fontFamily:
+                                type: string
+                                x-nullable: true
+                              fontSize:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              lineHeight:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              fontWeight:
+                                type: number
+                                x-nullable: true
+                              textAlign:
+                                x-nullable: true
+                                type: string
+                                enum:
+                                - left
+                                - center
+                                - right
+                              centerX:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              centerY:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              width:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                              height:
+                                type: number
+                                minimum: 0
+                                maximum: 1
+                                x-nullable: true
+                          backgroundPicture:
+                            x-nullable: true
+                            type: object
+                            properties:
+                              contentType:
+                                type: string
+                              fileName:
+                                type: string
+                              url:
+                                type: string
+                                x-nullable: true
+                          logoPicture:
+                            x-nullable: true
+                            type: object
+                            properties:
+                              contentType:
+                                type: string
+                              fileName:
+                                type: string
+                              url:
+                                type: string
+                                x-nullable: true
+                          badgeWidth:
+                            type: number
+                          badgeHeight:
+                            type: number
+                          badgeBorderRadius:
+                            type: number
+                          printWidth:
+                            type: number
+                            x-nullable: true
+                          printHeight:
+                            type: number
+                            x-nullable: true
+                          name:
+                            type: string
+                          isMobile:
+                            type: boolean
+                        required:
+                        - id
+                      backgroundPicture:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          url:
+                            type: string
+                            x-nullable: true
+                      logoPicture:
+                        x-nullable: true
+                        type: object
+                        properties:
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          url:
+                            type: string
+                            x-nullable: true
+                      name:
+                        type: string
+                        x-nullable: true
+                      badgeBorderRadius:
+                        type: integer
+                        x-nullable: true
+                      isOrgDefault:
+                        type: boolean
+                        x-nullable: true
+                    required:
+                    - id
+                  sites:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    delete:
+      summary: Delete an access group
+      operationId: deleteGroup
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteGroup'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    patch:
+      summary: Update an access group
+      operationId: updateGroup
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroup'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              x-nullable: true
+            badgeConfigId:
+              type: integer
+              x-nullable: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/groups/{groupId}/zoneGroups:
+    get:
+      summary: List all zones (and their associated configurations) an access group has access to
+      operationId: listGroupZoneGroups
+      description: 'listGroupZoneGroups takes the following options:<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: zoneShare.zone.name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    zone:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                    schedule:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        scheduleType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                      required:
+                      - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    patch:
+      summary: Bulk-update an access groups's zones (and their associated configurations)
+      operationId: updateGroupZoneGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroupZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              items:
+                type: object
+                properties:
+                  zoneId:
+                    type: integer
+                  scheduleId:
+                    type: integer
+                    x-nullable: true
+                required:
+                - zoneId
+                - scheduleId
+            remove:
+              type: array
+              items:
+                type: object
+                properties:
+                  zoneId:
+                    type: integer
+                required:
+                - zoneId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set an access groups's zones (and their associated configurations) by replacing the entire set with this one
+      operationId: setGroupZoneGroups
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupZoneGroups'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              zoneId:
+                type: integer
+              scheduleId:
+                type: integer
+                x-nullable: true
+            required:
+            - zoneId
+            - scheduleId
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/groups/{groupId}/userIds:
+    get:
+      summary: List all user IDs of a group
+      operationId: listGroupUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: integer
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+    patch:
+      summary: Bulk-update an access group's users
+      operationId: updateGroupUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroupUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+            remove:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Set an access group's users by replacing the entire set with this one
+      operationId: setGroupUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            userIds:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+          required:
+          - userIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/groups/{groupId}/users:
+    get:
+      summary: List all users of an access group
+      operationId: listGroupUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: identity.lastName
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status:
+                      type: string
+                      enum:
+                      - I
+                      - A
+                      - S
+                    identity:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        opal:
+                          type: string
+                        roles:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                              description:
+                                type: string
+                              isMfaRequired:
+                                type: boolean
+                            required:
+                            - id
+                        mfaCredentials:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                              name:
+                                type: string
+                              status:
+                                type: string
+                              mfaCredentialType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                  modelName:
+                                    type: string
+                                required:
+                                - id
+                              totpSoftDevice:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                required:
+                                - id
+                            required:
+                            - id
+                        firstName:
+                          type: string
+                          x-nullable: true
+                        middleName:
+                          type: string
+                          x-nullable: true
+                        lastName:
+                          type: string
+                          x-nullable: true
+                        fullName:
+                          type: string
+                          x-nullable: true
+                        initials:
+                          type: string
+                          x-nullable: true
+                        isEmailVerified:
+                          type: boolean
+                        namespace:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nickname:
+                              type: string
+                              x-nullable: true
+                            namespaceType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                modelName:
+                                  type: string
+                                  x-nullable: true
+                              required:
+                              - id
+                            org:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            identityProvider:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                isSsoEnabled:
+                                  type: boolean
+                                isSyncMobilePhoneEnabled:
+                                  type: boolean
+                                isRemoveGroupsEnabled:
+                                  type: boolean
+                                identityProviderSyncTypeId:
+                                  type: integer
+                                  x-nullable: true
+                                credentials:
+                                  type: string
+                                  x-nullable: true
+                                identityProviderType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                                org:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                            propertyManagementSystem:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                orgId:
+                                  type: number
+                                propertyManagementSystemTypeId:
+                                  type: number
+                                propertyManagementSystemType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                              - orgId
+                              - propertyManagementSystemTypeId
+                          required:
+                          - id
+                        idpUniqueIdentifier:
+                          type: string
+                        pmsUniqueIdentifier:
+                          type: string
+                          x-nullable: true
+                        needsPasswordChange:
+                          type: boolean
+                          default: false
+                        nicknames:
+                          x-nullable: true
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              nickname:
+                                type: string
+                                minLength: 1
+                                maxLength: 100
+                        email:
+                          type: string
+                        mobilePhone:
+                          type: string
+                          x-nullable: true
+                        language:
+                          type: string
+                          x-nullable: true
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                        users:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              opal:
+                                type: string
+                              status:
+                                type: string
+                              startDate:
+                                type: string
+                                format: date
+                                x-nullable: true
+                              endDate:
+                                type: string
+                                format: date
+                                x-nullable: true
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                              org:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                    x-nullable: true
+                                required:
+                                - id
+                            required:
+                            - id
+                      required:
+                      - id
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/groups/{groupId}/zones:
+    get:
+      summary: List all zones of an access group
+      operationId: listGroupZones
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupZones'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/groups/{groupId}/entries:
+    get:
+      summary: List all entries an access group has access to
+      operationId: listGroupEntries
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupEntries'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    zone:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        site:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      required:
+                      - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/groups/list:
+    post:
+      summary: List all access groups
+      operationId: listGroupsPost
+      description: 'listGroups takes the following options:<br/><br/>withSites - to include the group''s sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupsPost'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            limit:
+              type: integer
+              minimum: 1
+              maximum: 1000
+            offset:
+              type: integer
+              default: 0
+              minimum: 0
+            sort:
+              type: string
+              default: name
+              pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+            order:
+              type: string
+              default: asc
+              pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+            q:
+              type: string
+            filter:
+              type: string
+            preFilter:
+              type: string
+            options:
+              type: string
+              default: ''
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    userCount:
+                      type: integer
+                    badgeConfig:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        nameConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            fontStyle:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - italic
+                              - oblique
+                              - none
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            layout:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - threeLines
+                              - twoLines
+                              - oneLine
+                            textTransform:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - none
+                              - uppercase
+                              - lowercase
+                              - capitalize
+                          x-nullable: true
+                        customField1Config:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        customField2Config:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        backgroundConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            backgroundColor:
+                              type: string
+                              x-nullable: true
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        photoConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            backgroundColor:
+                              type: string
+                              x-nullable: true
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            borderRadius:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            borderColor:
+                              type: string
+                              x-nullable: true
+                          x-nullable: true
+                        logoConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            backgroundColor:
+                              type: string
+                              x-nullable: true
+                            backgroundPosition:
+                              type: string
+                              x-nullable: true
+                            label:
+                              type: string
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        externalIdConfig:
+                          type: object
+                          properties:
+                            isEnabled:
+                              type: boolean
+                              x-nullable: true
+                            color:
+                              type: string
+                              x-nullable: true
+                            fontFamily:
+                              type: string
+                              x-nullable: true
+                            fontSize:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            lineHeight:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            fontWeight:
+                              type: number
+                              x-nullable: true
+                            textAlign:
+                              x-nullable: true
+                              type: string
+                              enum:
+                              - left
+                              - center
+                              - right
+                            centerX:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            centerY:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            width:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                            height:
+                              type: number
+                              minimum: 0
+                              maximum: 1
+                              x-nullable: true
+                          x-nullable: true
+                        customField1:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        customField2:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        badgeDefaultConfig:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nameConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                fontStyle:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - italic
+                                  - oblique
+                                  - none
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                layout:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - threeLines
+                                  - twoLines
+                                  - oneLine
+                                textTransform:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - none
+                                  - uppercase
+                                  - lowercase
+                                  - capitalize
+                            customField1Config:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            customField2Config:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            backgroundConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                backgroundColor:
+                                  type: string
+                                  x-nullable: true
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            photoConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                backgroundColor:
+                                  type: string
+                                  x-nullable: true
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                borderRadius:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                borderColor:
+                                  type: string
+                                  x-nullable: true
+                            logoConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                backgroundColor:
+                                  type: string
+                                  x-nullable: true
+                                backgroundPosition:
+                                  type: string
+                                  x-nullable: true
+                                label:
+                                  type: string
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            externalIdConfig:
+                              type: object
+                              properties:
+                                isEnabled:
+                                  type: boolean
+                                  x-nullable: true
+                                color:
+                                  type: string
+                                  x-nullable: true
+                                fontFamily:
+                                  type: string
+                                  x-nullable: true
+                                fontSize:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                lineHeight:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                fontWeight:
+                                  type: number
+                                  x-nullable: true
+                                textAlign:
+                                  x-nullable: true
+                                  type: string
+                                  enum:
+                                  - left
+                                  - center
+                                  - right
+                                centerX:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                centerY:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                width:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                                height:
+                                  type: number
+                                  minimum: 0
+                                  maximum: 1
+                                  x-nullable: true
+                            backgroundPicture:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                contentType:
+                                  type: string
+                                fileName:
+                                  type: string
+                                url:
+                                  type: string
+                                  x-nullable: true
+                            logoPicture:
+                              x-nullable: true
+                              type: object
+                              properties:
+                                contentType:
+                                  type: string
+                                fileName:
+                                  type: string
+                                url:
+                                  type: string
+                                  x-nullable: true
+                            badgeWidth:
+                              type: number
+                            badgeHeight:
+                              type: number
+                            badgeBorderRadius:
+                              type: number
+                            printWidth:
+                              type: number
+                              x-nullable: true
+                            printHeight:
+                              type: number
+                              x-nullable: true
+                            name:
+                              type: string
+                            isMobile:
+                              type: boolean
+                          required:
+                          - id
+                        backgroundPicture:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            contentType:
+                              type: string
+                            fileName:
+                              type: string
+                            url:
+                              type: string
+                              x-nullable: true
+                        logoPicture:
+                          x-nullable: true
+                          type: object
+                          properties:
+                            contentType:
+                              type: string
+                            fileName:
+                              type: string
+                            url:
+                              type: string
+                              x-nullable: true
+                        name:
+                          type: string
+                          x-nullable: true
+                        badgeBorderRadius:
+                          type: integer
+                          x-nullable: true
+                        isOrgDefault:
+                          type: boolean
+                          x-nullable: true
+                      required:
+                      - id
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-site:w
+      - o{params.orgId}-site:r
+      - o{params.orgId}-siteGeneral:w
+      - o{params.orgId}-siteGeneral:r
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-ldp:w
+      - o{params.orgId}-ldp:r
+      - o{params.orgId}-integrations:w
+      - o{params.orgId}-integrations:r
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o{params.orgId}-credential:w
+      - o{params.orgId}-credential:r
+      - o{params.orgId}-musterReport:r
+      - o{params.orgId}-musterReport:w
+      - o{params.orgId}-occupancyReport:r
+      - o{params.orgId}-occupancyReport:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+  /orgs/{orgId}/groups/{groupId}/users/{userId}:
+    delete:
+      summary: Remove a user from an access group
+      operationId: removeUserFromGroup
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeUserFromGroup'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+    put:
+      summary: Add a user to an access group
+      operationId: setUserToGroup
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserToGroup'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/groups/{groupId}/siteIds:
+    patch:
+      summary: Bulk-update a group's sites
+      operationId: updateGroupSiteIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateGroupSiteIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+            remove:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+      - o-user:w
+    put:
+      summary: Set a group's sites by replacing the entire set with this one
+      operationId: setGroupSiteIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setGroupSiteIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: integer
+          required:
+          - siteIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+      - o-user:w
+  /orgs/{orgId}/groups/{groupId}/zoneIds:
+    put:
+      summary: Set an access group's zones by replacing the entire set with this one
+      operationId: setGroupZoneIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupZoneIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: groupId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            zoneIds:
+              type: array
+              items:
+                type: integer
+          required:
+          - zoneIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/groups
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o:w
+      - s-o:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false

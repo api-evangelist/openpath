@@ -1,0 +1,1023 @@
+swagger: '2.0'
+info:
+  title: Openpath API Documentation auth orgs/roles API
+  version: 1.0.0
+  description: Authentication and Login
+host: api.openpath.com
+schemes:
+- https
+consumes:
+- application/json
+produces:
+- application/json
+tags:
+- name: orgs/roles
+  description: User Roles
+paths:
+  /orgs/{orgId}/roles:
+    get:
+      summary: List all roles
+      operationId: listRoles
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w,o-role:r,o-role:w<br/><br/>__Endpoint name__: listRoles'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: name
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    name:
+                      type: string
+                    description:
+                      type: string
+                      x-nullable: true
+                    nativeAppId:
+                      type: integer
+                      x-nullable: true
+                    nativeApp:
+                      x-nullable: true
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        name:
+                          type: string
+                      required:
+                      - id
+                    isEditable:
+                      type: boolean
+                    isSiteSpecific:
+                      type: boolean
+                    isMfaRequired:
+                      type: boolean
+                    createdAt:
+                      type: string
+                      format: date
+                    updatedAt:
+                      type: string
+                      format: date
+                    userCount:
+                      type: integer
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-user:w
+      - o{params.orgId}-user:r
+      - o{params.orgId}-role:w
+      - o{params.orgId}-role:r
+      - o{params.orgId}-rpt:r
+      - o{params.orgId}-rpt:w
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o-user:r
+      - o-user:w
+      - o-role:r
+      - o-role:w
+    post:
+      summary: Create a role
+      operationId: createRole
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: createRole'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              x-nullable: true
+            nativeAppId:
+              type: integer
+              x-nullable: true
+            isSiteSpecific:
+              type: boolean
+            isMfaRequired:
+              type: boolean
+          required:
+          - name
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '201':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  nativeAppId:
+                    type: integer
+                    x-nullable: true
+                  nativeApp:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                    required:
+                    - id
+                  isEditable:
+                    type: boolean
+                  isSiteSpecific:
+                    type: boolean
+                  isMfaRequired:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  userCount:
+                    type: integer
+                  sites:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Created
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+  /orgs/{orgId}/roles/{roleId}:
+    get:
+      summary: Describe a role
+      operationId: describeRole
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o:w,o:r,s-o:w,s-o:r,o-role:r,o-role:w<br/><br/>__Endpoint name__: describeRole'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              data:
+                type: object
+                properties:
+                  id:
+                    type: number
+                  name:
+                    type: string
+                  description:
+                    type: string
+                    x-nullable: true
+                  nativeAppId:
+                    type: integer
+                    x-nullable: true
+                  nativeApp:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      name:
+                        type: string
+                    required:
+                    - id
+                  isEditable:
+                    type: boolean
+                  isSiteSpecific:
+                    type: boolean
+                  isMfaRequired:
+                    type: boolean
+                  createdAt:
+                    type: string
+                    format: date
+                  updatedAt:
+                    type: string
+                    format: date
+                  userCount:
+                    type: integer
+                  sites:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                      required:
+                      - id
+                required:
+                - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o{params.orgId}-role:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o-role:r
+      - o-role:w
+    delete:
+      summary: Delete a role
+      operationId: deleteRole
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: deleteRole'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+    patch:
+      summary: Update a role
+      operationId: updateRole
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: updateRole'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            name:
+              type: string
+              minLength: 1
+              maxLength: 100
+              x-convert:
+                trim: true
+            description:
+              type: string
+              x-nullable: true
+            nativeAppId:
+              type: integer
+              x-nullable: true
+            isSiteSpecific:
+              type: boolean
+            isMfaRequired:
+              type: boolean
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+  /orgs/{orgId}/roles/{roleId}/users:
+    get:
+      summary: List all users of a role
+      operationId: listRoleUsers
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o:w,o:r,s-o:w,s-o:r,o-role:r,o-role:w<br/><br/>__Endpoint name__: listRoleUsers'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - type: integer
+        minimum: 1
+        maximum: 1000
+        name: limit
+        in: query
+      - type: integer
+        default: 0
+        minimum: 0
+        name: offset
+        in: query
+      - type: string
+        default: identity.lastName
+        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+        name: sort
+        in: query
+      - type: string
+        default: asc
+        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+        name: order
+        in: query
+      - type: string
+        name: q
+        in: query
+      - type: string
+        name: filter
+        in: query
+      - type: string
+        name: preFilter
+        in: query
+      - type: string
+        default: ''
+        name: options
+        in: query
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: number
+                    status:
+                      type: string
+                    identity:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        firstName:
+                          type: string
+                          x-nullable: true
+                        middleName:
+                          type: string
+                          x-nullable: true
+                        lastName:
+                          type: string
+                          x-nullable: true
+                        fullName:
+                          type: string
+                          x-nullable: true
+                        initials:
+                          type: string
+                          x-nullable: true
+                        email:
+                          type: string
+                        mobilePhone:
+                          type: string
+                          x-nullable: true
+                        isEmailVerified:
+                          type: boolean
+                        namespace:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            nickname:
+                              type: string
+                              x-nullable: true
+                            namespaceType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                                modelName:
+                                  type: string
+                                  x-nullable: true
+                              required:
+                              - id
+                            org:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            identityProvider:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                isSsoEnabled:
+                                  type: boolean
+                                isSyncMobilePhoneEnabled:
+                                  type: boolean
+                                identityProviderType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                                org:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                              required:
+                              - id
+                          required:
+                          - id
+                      required:
+                      - id
+                    sites:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                  required:
+                  - id
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o{params.orgId}-role:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o-role:r
+      - o-role:w
+  /orgs/{orgId}/roles/{roleId}/scopeIds:
+    get:
+      summary: List all scope ids of a role
+      operationId: listRoleScopeIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o:w,o:r,s-o:w,s-o:r,o-role:r,o-role:w<br/><br/>__Endpoint name__: listRoleScopeIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '200':
+          schema:
+            type: object
+            properties:
+              totalCount:
+                type: integer
+              filteredCount:
+                type: integer
+              data:
+                type: array
+                items:
+                  type: integer
+              meta:
+                type: object
+                properties:
+                  accessToken:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      scopeUpdatedAt:
+                        type: string
+                        format: date
+                  siteSpecificAccess:
+                    x-nullable: true
+                    type: object
+                    properties:
+                      isSiteSpecific:
+                        type: boolean
+                      siteIds:
+                        x-nullable: true
+                        type: array
+                        items:
+                          type: integer
+                      siteIdsByScope:
+                        type: object
+                        properties:
+                          string:
+                            x-nullable: true
+                            type: array
+                            items:
+                              type: integer
+                        x-nullable: true
+          description: Successful
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o{params.orgId}-role:r
+      - o:w
+      - o:r
+      - s-o:w
+      - s-o:r
+      - o-role:r
+      - o-role:w
+    put:
+      summary: Set a role's scopes by replacing the entire set with this one
+      operationId: setRoleScopeIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w<br/><br/>__Endpoint name__: setRoleScopeIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            scopeIds:
+              type: array
+              items:
+                type: integer
+          required:
+          - scopeIds
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+  /orgs/{orgId}/roles/{roleId}/users/{userId}:
+    delete:
+      summary: Remove a user from a role
+      operationId: removeUserFromRole
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: removeUserFromRole'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+    put:
+      summary: Add a user to a role
+      operationId: setUserToRole
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: setUserToRole'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - type: integer
+        name: userId
+        in: path
+        required: true
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+  /orgs/{orgId}/roles/{roleId}/userIds:
+    patch:
+      summary: Bulk-update a role's users
+      operationId: updateRoleUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: updateRoleUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            add:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+            remove:
+              type: array
+              x-constraint:
+                unique: true
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+    put:
+      summary: Set a role's users by replacing the entire set with this one
+      operationId: setRoleUserIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: setRoleUserIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            userIds:
+              type: array
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+  /orgs/{orgId}/roles/{roleId}/siteIds:
+    put:
+      summary: Set a role's sites by replacing the entire set with this one
+      operationId: setRoleSiteIds
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w,o-role:w<br/><br/>__Endpoint name__: setRoleSiteIds'
+      parameters:
+      - type: integer
+        name: orgId
+        in: path
+        required: true
+      - type: integer
+        name: roleId
+        in: path
+        required: true
+      - in: body
+        name: body
+        schema:
+          type: object
+          properties:
+            siteIds:
+              type: array
+              items:
+                type: integer
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      tags:
+      - orgs/roles
+      security:
+      - jwt: []
+      responses:
+        '204':
+          description: No Content
+      x-op-scopes:
+      - o{params.orgId}-role:w
+      - o:w
+      - s-o:w
+      - o-role:w
+securityDefinitions:
+  jwt:
+    type: apiKey
+    name: Authorization
+    in: header
+x-proxy-enabled: false
