@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: https://openpath.readme.io + openapi/openpath-openapi-original.json
+authentication:
+  style: JWT bearer token in the Authorization header (scheme name "jwt")
+  obtain: POST /auth/login (Login API) with email/password (+ optional MFA totpCode); returns an access token
+  alternative: HTTP Basic Authentication is also accepted
+  refresh: POST /auth/refreshLogin issues a new token with refreshed scopes/expiration and invalidates the old one
+  validate: POST /auth/validateAccessToken checks signature, format, expiration, active status
+  scope_model: >-
+    Fine-grained scope strings of the form o{orgId}-<resource>:<r|w> plus wildcards (o:w, s-o:r).
+  docs: https://openpath.readme.io/docs/using-the-api
+idempotency:
+  supported: false
+  note: No Idempotency-Key header or idempotency contract is documented or present in the OpenAPI.
+pagination:
+  style: offset-limit (with optional cursor on some list endpoints)
+  params:
+  - offset
+  - limit
+  - sort
+  - order
+  - filter
+  - preFilter
+  - q
+  - cursor
+  response_fields:
+  - data
+  - totalCount
+  docs: https://openpath.readme.io/docs/results-pagination
+query_parameters:
+  docs: https://openpath.readme.io/docs/query-parameters
+  common: [filter, preFilter, sort, order, q, options]
+error_envelope:
+  success_wrapper: '{ "data": ... }'
+  error_names_documented: [TokenExpiredError, JsonWebTokenError, TokenNotFoundError]
+  cross_ref: errors/openpath-error-codes.yml
+versioning:
+  scheme: single unversioned base (https://api.openpath.com); spec version 1.0.0
+cross_references:
+  authentication: authentication/openpath-authentication.yml
+  errors: errors/openpath-error-codes.yml
+  lifecycle: lifecycle/openpath-lifecycle.yml
+  scopes: scopes/openpath-scopes.yml

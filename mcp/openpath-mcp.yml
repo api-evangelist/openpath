@@ -1,0 +1,1649 @@
+generated: '2026-07-20'
+method: derived
+status: candidate
+source: openapi/openpath-openapi-original.json
+note: >-
+  No official hosted/remote Openpath MCP server was found. The tools below are
+  candidate tools derived one-per-operation from the OpenAPI (546 operations).
+server:
+  name: openpath
+  transport: http
+tools:
+- name: globalListBillableFeatures
+  description: "List all billable features"
+  source_operation: openapi/openpath-openapi-original.json#globalListBillableFeatures
+- name: describeAccessToken
+  description: "Describe an access token's associated identity and scopes"
+  source_operation: openapi/openpath-openapi-original.json#describeAccessToken
+- name: listIdentityNicknames
+  description: "List an identity's nicknames"
+  source_operation: openapi/openpath-openapi-original.json#listIdentityNicknames
+- name: updateIdentityNicknames
+  description: "Bulk-update an identity's nicknames"
+  source_operation: openapi/openpath-openapi-original.json#updateIdentityNicknames
+- name: listWirelessLocks
+  description: "List all wireless locks"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLocks
+- name: createWirelessLock
+  description: "Create a wireless lock "
+  source_operation: openapi/openpath-openapi-original.json#createWirelessLock
+- name: listWirelessGateways
+  description: "List all wireless gateways"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessGateways
+- name: createWirelessGateway
+  description: "Create a wireless gateway"
+  source_operation: openapi/openpath-openapi-original.json#createWirelessGateway
+- name: listWiegands
+  description: "List all wiegands"
+  source_operation: openapi/openpath-openapi-original.json#listWiegands
+- name: listWidgetTypes
+  description: "List all widget types"
+  source_operation: openapi/openpath-openapi-original.json#listWidgetTypes
+- name: listVideoProviderTypes
+  description: "List all video provider types"
+  source_operation: openapi/openpath-openapi-original.json#listVideoProviderTypes
+- name: listUsers
+  description: "List all users"
+  source_operation: openapi/openpath-openapi-original.json#listUsers
+- name: createUser
+  description: "Create a user"
+  source_operation: openapi/openpath-openapi-original.json#createUser
+- name: listUnusedInputs
+  description: "List all unused inputs"
+  source_operation: openapi/openpath-openapi-original.json#listUnusedInputs
+- name: listTermsAgreements
+  description: "List all signed Terms of Service agreements"
+  source_operation: openapi/openpath-openapi-original.json#listTermsAgreements
+- name: createTermsAgreement
+  description: "Create a signed Terms of Service agreement - DEPRECATED use /orgs/{orgId}/termsAgreements/sign instead"
+  source_operation: openapi/openpath-openapi-original.json#createTermsAgreement
+- name: listSchedules
+  description: "List all schedules"
+  source_operation: openapi/openpath-openapi-original.json#listSchedules
+- name: createSchedule
+  description: "Create a schedule"
+  source_operation: openapi/openpath-openapi-original.json#createSchedule
+- name: listReaders
+  description: "List all owned or assigned readers"
+  source_operation: openapi/openpath-openapi-original.json#listReaders
+- name: createReader
+  description: "Create a reader"
+  source_operation: openapi/openpath-openapi-original.json#createReader
+- name: listParcels
+  description: "List active parcels"
+  source_operation: openapi/openpath-openapi-original.json#listParcels
+- name: createParcel
+  description: "Create a parcel"
+  source_operation: openapi/openpath-openapi-original.json#createParcel
+- name: deleteParcels
+  description: "Delete multiple parcels"
+  source_operation: openapi/openpath-openapi-original.json#deleteParcels
+- name: updateParcels
+  description: "Bulk update parcels"
+  source_operation: openapi/openpath-openapi-original.json#updateParcels
+- name: listOrgPackagePlansSelected
+  description: "List all selected package plans"
+  source_operation: openapi/openpath-openapi-original.json#listOrgPackagePlansSelected
+- name: describeMobileAppConfig
+  description: "Get mobile app config"
+  source_operation: openapi/openpath-openapi-original.json#describeMobileAppConfig
+- name: deleteMobileAppConfig
+  description: "Delete mobile app config"
+  source_operation: openapi/openpath-openapi-original.json#deleteMobileAppConfig
+- name: updateMobileAppConfig
+  description: "Update mobile app config"
+  source_operation: openapi/openpath-openapi-original.json#updateMobileAppConfig
+- name: listOrgMaintenanceWindowMap
+  description: "List all maintenance windows maps"
+  source_operation: openapi/openpath-openapi-original.json#listOrgMaintenanceWindowMap
+- name: updateOrgMaintenanceWindowMap
+  description: "Create/Update/Delete maintenance window maps for an organization"
+  source_operation: openapi/openpath-openapi-original.json#updateOrgMaintenanceWindowMap
+- name: upsertOrgMaintenanceWindowMapForAcus
+  description: "Upsert ACU maintenance window maps to a single maintenance window definition"
+  source_operation: openapi/openpath-openapi-original.json#upsertOrgMaintenanceWindowMapForAcus
+- name: listOrgMaintenanceWindowDefinition
+  description: "List all maintenance windows"
+  source_operation: openapi/openpath-openapi-original.json#listOrgMaintenanceWindowDefinition
+- name: createOrgMaintenanceWindowDefinition
+  description: "Create a maintenance window for an organization"
+  source_operation: openapi/openpath-openapi-original.json#createOrgMaintenanceWindowDefinition
+- name: listOrgMaintenanceWindowAcuMap
+  description: "List all ACU maintenance window maps"
+  source_operation: openapi/openpath-openapi-original.json#listOrgMaintenanceWindowAcuMap
+- name: upsertOrgMaintenanceWindowAcuMap
+  description: "Upsert ACU maintenance window maps to a single maintenance window definition"
+  source_operation: openapi/openpath-openapi-original.json#upsertOrgMaintenanceWindowAcuMap
+- name: listMailrooms
+  description: "List active mailrooms"
+  source_operation: openapi/openpath-openapi-original.json#listMailrooms
+- name: createMailroom
+  description: "Create a mailroom"
+  source_operation: openapi/openpath-openapi-original.json#createMailroom
+- name: listIdentityProviders
+  description: "List all identity providers"
+  source_operation: openapi/openpath-openapi-original.json#listIdentityProviders
+- name: listOrgFeatures
+  description: "Get an organization's enabled features"
+  source_operation: openapi/openpath-openapi-original.json#listOrgFeatures
+- name: listEolSupervisions
+  description: "List all EOL supervisions"
+  source_operation: openapi/openpath-openapi-original.json#listEolSupervisions
+- name: listEntryStates
+  description: "List all entry states"
+  source_operation: openapi/openpath-openapi-original.json#listEntryStates
+- name: createEntryState
+  description: "Create a custom entry state"
+  source_operation: openapi/openpath-openapi-original.json#createEntryState
+- name: listEntries
+  description: "List all entries"
+  source_operation: openapi/openpath-openapi-original.json#listEntries
+- name: createEntry
+  description: "Create an entry"
+  source_operation: openapi/openpath-openapi-original.json#createEntry
+- name: listEmailAlertTypes
+  description: "List all email alert types"
+  source_operation: openapi/openpath-openapi-original.json#listEmailAlertTypes
+- name: listBadgeConfigs
+  description: "List all badge configs"
+  source_operation: openapi/openpath-openapi-original.json#listBadgeConfigs
+- name: createBadgeConfig
+  description: "Create a new badge config"
+  source_operation: openapi/openpath-openapi-original.json#createBadgeConfig
+- name: listAuthCerts
+  description: "Get list of X.509 authentication certificates"
+  source_operation: openapi/openpath-openapi-original.json#listAuthCerts
+- name: createAuthCert
+  description: "Create an X.509 authentication certificate"
+  source_operation: openapi/openpath-openapi-original.json#createAuthCert
+- name: listAlarmStatuses
+  description: "List all alarm statuses"
+  source_operation: openapi/openpath-openapi-original.json#listAlarmStatuses
+- name: listAlarmSeverities
+  description: "List all alarm severities"
+  source_operation: openapi/openpath-openapi-original.json#listAlarmSeverities
+- name: listAcuPortTypes
+  description: "List all ACU port types"
+  source_operation: openapi/openpath-openapi-original.json#listAcuPortTypes
+- name: listAllAcuPorts
+  description: "List all ACU ports"
+  source_operation: openapi/openpath-openapi-original.json#listAllAcuPorts
+- name: listAcuModels
+  description: "List all ACU models"
+  source_operation: openapi/openpath-openapi-original.json#listAcuModels
+- name: listAcus
+  description: "List all owned or assigned ACUs"
+  source_operation: openapi/openpath-openapi-original.json#listAcus
+- name: createAcu
+  description: "Create an ACU"
+  source_operation: openapi/openpath-openapi-original.json#createAcu
+- name: listAlarmActions
+  description: "List all alarm actions"
+  source_operation: openapi/openpath-openapi-original.json#listAlarmActions
+- name: listAlarmConfigurations
+  description: "List all alarm configurations"
+  source_operation: openapi/openpath-openapi-original.json#listAlarmConfigurations
+- name: createAlarmConfiguration
+  description: "Create an alarm configuration"
+  source_operation: openapi/openpath-openapi-original.json#createAlarmConfiguration
+- name: listCardFormats
+  description: "List all entry card formats"
+  source_operation: openapi/openpath-openapi-original.json#listCardFormats
+- name: listContactSensors
+  description: "List all contact sensors"
+  source_operation: openapi/openpath-openapi-original.json#listContactSensors
+- name: listOrgCredentials
+  description: "List all credentials from all users within the org"
+  source_operation: openapi/openpath-openapi-original.json#listOrgCredentials
+- name: listCredentialActionTypes
+  description: "List all credential action types"
+  source_operation: openapi/openpath-openapi-original.json#listCredentialActionTypes
+- name: listCredentialTypes
+  description: "List all credential types"
+  source_operation: openapi/openpath-openapi-original.json#listCredentialTypes
+- name: listCustomFields
+  description: "List all custom fields"
+  source_operation: openapi/openpath-openapi-original.json#listCustomFields
+- name: createCustomField
+  description: "Create a custom field"
+  source_operation: openapi/openpath-openapi-original.json#createCustomField
+- name: updateCustomFields
+  description: "Bulk update custom fields"
+  source_operation: openapi/openpath-openapi-original.json#updateCustomFields
+- name: listCustomFieldTypes
+  description: "List all custom field types"
+  source_operation: openapi/openpath-openapi-original.json#listCustomFieldTypes
+- name: listDashboards
+  description: "List all dashboards"
+  source_operation: openapi/openpath-openapi-original.json#listDashboards
+- name: createDashboard
+  description: "Create a new dashboard"
+  source_operation: openapi/openpath-openapi-original.json#createDashboard
+- name: listEmailAlerts
+  description: "Get email alerts"
+  source_operation: openapi/openpath-openapi-original.json#listEmailAlerts
+- name: listOrgFobAllegions
+  description: "List all allegion fob credentials within the org"
+  source_operation: openapi/openpath-openapi-original.json#listOrgFobAllegions
+- name: createOrgFobAllegion
+  description: "Create an allegion fob credential"
+  source_operation: openapi/openpath-openapi-original.json#createOrgFobAllegion
+- name: listGenericInputs
+  description: "List all generic inputs"
+  source_operation: openapi/openpath-openapi-original.json#listGenericInputs
+- name: listGroups
+  description: "List all access groups"
+  source_operation: openapi/openpath-openapi-original.json#listGroups
+- name: createGroup
+  description: "Create an access group"
+  source_operation: openapi/openpath-openapi-original.json#createGroup
+- name: listHookActions
+  description: "List all hook actions"
+  source_operation: openapi/openpath-openapi-original.json#listHookActions
+- name: createHookAction
+  description: "Create a hook action"
+  source_operation: openapi/openpath-openapi-original.json#createHookAction
+- name: listHookEvents
+  description: "List all hook events"
+  source_operation: openapi/openpath-openapi-original.json#listHookEvents
+- name: listOrgIdentities
+  description: "List all identity providers"
+  source_operation: openapi/openpath-openapi-original.json#listOrgIdentities
+- name: listIdentityProviderTypes
+  description: "List all identity provider types"
+  source_operation: openapi/openpath-openapi-original.json#listIdentityProviderTypes
+- name: listIos
+  description: "List all I/Os"
+  source_operation: openapi/openpath-openapi-original.json#listIos
+- name: listLocationMeasurementSourceTypes
+  description: "List all location measurement source types"
+  source_operation: openapi/openpath-openapi-original.json#listLocationMeasurementSourceTypes
+- name: listLockdownPlans
+  description: "List all lockdown plans"
+  source_operation: openapi/openpath-openapi-original.json#listLockdownPlans
+- name: createLockdownPlan
+  description: "Create a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#createLockdownPlan
+- name: describeOrgMaintenanceWindow
+  description: "Describe an organization's maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgMaintenanceWindow
+- name: deleteOrgMaintenanceWindow
+  description: "Delete an organization's maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#deleteOrgMaintenanceWindow
+- name: updateOrgMaintenanceWindow
+  description: "Update an organization's maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#updateOrgMaintenanceWindow
+- name: createOrgMaintenanceWindow
+  description: "Create or update an organization's maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#createOrgMaintenanceWindow
+- name: listNamespaces
+  description: "List all namespaces for the org (including IDP namespaces associated with the org)"
+  source_operation: openapi/openpath-openapi-original.json#listNamespaces
+- name: listOrgPictures
+  description: "List all org pictures"
+  source_operation: openapi/openpath-openapi-original.json#listOrgPictures
+- name: createOrgPicture
+  description: "Create an org picture"
+  source_operation: openapi/openpath-openapi-original.json#createOrgPicture
+- name: listOrgPackagePlans
+  description: "List all available package plans"
+  source_operation: openapi/openpath-openapi-original.json#listOrgPackagePlans
+- name: listPalettes
+  description: "List all palettes"
+  source_operation: openapi/openpath-openapi-original.json#listPalettes
+- name: listParcelMessageTypes
+  description: "List all parcel message types"
+  source_operation: openapi/openpath-openapi-original.json#listParcelMessageTypes
+- name: listParcelStatuses
+  description: "List all parcel statuses"
+  source_operation: openapi/openpath-openapi-original.json#listParcelStatuses
+- name: getEffectivePermissionsForOrg
+  description: "Get effective permissions (scopes and allowed endpoints) for the authenticated identity for an org"
+  source_operation: openapi/openpath-openapi-original.json#getEffectivePermissionsForOrg
+- name: listRecentAlarms
+  description: "List all recent alarms"
+  source_operation: openapi/openpath-openapi-original.json#listRecentAlarms
+- name: listRelays
+  description: "List all relays"
+  source_operation: openapi/openpath-openapi-original.json#listRelays
+- name: listRelayHardwareTypes
+  description: "List all relay hardware types"
+  source_operation: openapi/openpath-openapi-original.json#listRelayHardwareTypes
+- name: listRexs
+  description: "List all REXs"
+  source_operation: openapi/openpath-openapi-original.json#listRexs
+- name: listRoles
+  description: "List all roles"
+  source_operation: openapi/openpath-openapi-original.json#listRoles
+- name: createRole
+  description: "Create a role"
+  source_operation: openapi/openpath-openapi-original.json#createRole
+- name: listScheduleTypes
+  description: "List all schedule types"
+  source_operation: openapi/openpath-openapi-original.json#listScheduleTypes
+- name: listScopeResources
+  description: "List all scope resources"
+  source_operation: openapi/openpath-openapi-original.json#listScopeResources
+- name: listSharedUsers
+  description: "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)"
+  source_operation: openapi/openpath-openapi-original.json#listSharedUsers
+- name: listSites
+  description: "List all sites"
+  source_operation: openapi/openpath-openapi-original.json#listSites
+- name: createSite
+  description: "Create a site"
+  source_operation: openapi/openpath-openapi-original.json#createSite
+- name: listSubscriptions
+  description: "List all REST Hook subscriptions"
+  source_operation: openapi/openpath-openapi-original.json#listSubscriptions
+- name: createSubscription
+  description: "Create a REST Hook subscription"
+  source_operation: openapi/openpath-openapi-original.json#createSubscription
+- name: listThirdPartyReaders
+  description: "List all third party OSDP readers"
+  source_operation: openapi/openpath-openapi-original.json#listThirdPartyReaders
+- name: listThirdPartyWiegands
+  description: "List all third party wiegand readers"
+  source_operation: openapi/openpath-openapi-original.json#listThirdPartyWiegands
+- name: listTriggerMethods
+  description: "List all trigger methods"
+  source_operation: openapi/openpath-openapi-original.json#listTriggerMethods
+- name: listWirelessLockGateways
+  description: "List all wireless lock gateways"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLockGateways
+- name: createWirelessLockGateway
+  description: "Create a wirelessLock gateway"
+  source_operation: openapi/openpath-openapi-original.json#createWirelessLockGateway
+- name: listWirelessLockProviders
+  description: "List all wireless lock providers"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLockProviders
+- name: createWirelessLockProvider
+  description: "Create a wireless lock provider"
+  source_operation: openapi/openpath-openapi-original.json#createWirelessLockProvider
+- name: listWirelessLockReaders
+  description: "List all wireless lock readers"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLockReaders
+- name: createWirelessLockReader
+  description: "Create a wirelessLock reader"
+  source_operation: openapi/openpath-openapi-original.json#createWirelessLockReader
+- name: listWirelessLockTemplates
+  description: "List all wireless lock templates"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLockTemplates
+- name: createWirelessLockTemplate
+  description: "Create a wireless lock template"
+  source_operation: openapi/openpath-openapi-original.json#createWirelessLockTemplate
+- name: listZones
+  description: "List all owned or shared zones"
+  source_operation: openapi/openpath-openapi-original.json#listZones
+- name: createZone
+  description: "Create a zone"
+  source_operation: openapi/openpath-openapi-original.json#createZone
+- name: describeZone
+  description: "Describe an owned or shared zone"
+  source_operation: openapi/openpath-openapi-original.json#describeZone
+- name: deleteZone
+  description: "Delete a zone"
+  source_operation: openapi/openpath-openapi-original.json#deleteZone
+- name: updateZone
+  description: "Update a zone"
+  source_operation: openapi/openpath-openapi-original.json#updateZone
+- name: describeWirelessLockTemplate
+  description: "Get a wireless lock template"
+  source_operation: openapi/openpath-openapi-original.json#describeWirelessLockTemplate
+- name: deleteWirelessLockTemplate
+  description: "Delete a wireless lock template"
+  source_operation: openapi/openpath-openapi-original.json#deleteWirelessLockTemplate
+- name: updateWirelessLockTemplate
+  description: "Update a wireless lock template"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockTemplate
+- name: describeWirelessLockReader
+  description: "Describe a wireless lock reader"
+  source_operation: openapi/openpath-openapi-original.json#describeWirelessLockReader
+- name: deleteWirelessLockReader
+  description: "Remove a wireless lock reader"
+  source_operation: openapi/openpath-openapi-original.json#deleteWirelessLockReader
+- name: updateWirelessLockReader
+  description: "Update a wirelessLock reader"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockReader
+- name: describeWirelessLockProvider
+  description: "Describe a wireless lock provider"
+  source_operation: openapi/openpath-openapi-original.json#describeWirelessLockProvider
+- name: deleteWirelessLockProvider
+  description: "Remove a wireless lock provider and all related devices"
+  source_operation: openapi/openpath-openapi-original.json#deleteWirelessLockProvider
+- name: describeWirelessLockGateway
+  description: "Describe a wireless lock gateway"
+  source_operation: openapi/openpath-openapi-original.json#describeWirelessLockGateway
+- name: deleteWirelessLockGateway
+  description: "Remove a wireless lock gateway"
+  source_operation: openapi/openpath-openapi-original.json#deleteWirelessLockGateway
+- name: updateWirelessLockGateway
+  description: "Update a wirelessLock gateway"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockGateway
+- name: describeTriggerMethod
+  description: "Describe a trigger method"
+  source_operation: openapi/openpath-openapi-original.json#describeTriggerMethod
+- name: describeThirdPartyWiegand
+  description: "Describe a third party wiegand reader"
+  source_operation: openapi/openpath-openapi-original.json#describeThirdPartyWiegand
+- name: updateThirdPartyWiegand
+  description: "Update a third party wiegand reader"
+  source_operation: openapi/openpath-openapi-original.json#updateThirdPartyWiegand
+- name: describeThirdPartyReader
+  description: "Describe a third party OSDP reader"
+  source_operation: openapi/openpath-openapi-original.json#describeThirdPartyReader
+- name: updateThirdPartyReader
+  description: "Update a third party OSDP reader"
+  source_operation: openapi/openpath-openapi-original.json#updateThirdPartyReader
+- name: describeSubscription
+  description: "Describe a REST Hook subscription"
+  source_operation: openapi/openpath-openapi-original.json#describeSubscription
+- name: deleteSubscription
+  description: "Delete a REST Hook subscription"
+  source_operation: openapi/openpath-openapi-original.json#deleteSubscription
+- name: updateSubscription
+  description: "Update a REST Hook subscription"
+  source_operation: openapi/openpath-openapi-original.json#updateSubscription
+- name: describeSite
+  description: "Describe a site"
+  source_operation: openapi/openpath-openapi-original.json#describeSite
+- name: deleteSite
+  description: "Delete a site"
+  source_operation: openapi/openpath-openapi-original.json#deleteSite
+- name: updateSite
+  description: "Update a site"
+  source_operation: openapi/openpath-openapi-original.json#updateSite
+- name: describeSharedUser
+  description: "Describe a user that has access to at least one zone from this org (including users from other orgs via zone sharing)"
+  source_operation: openapi/openpath-openapi-original.json#describeSharedUser
+- name: describeScopeResource
+  description: "Describe a scope resource"
+  source_operation: openapi/openpath-openapi-original.json#describeScopeResource
+- name: describeScheduleType
+  description: "Describe a schedule type"
+  source_operation: openapi/openpath-openapi-original.json#describeScheduleType
+- name: describeRole
+  description: "Describe a role"
+  source_operation: openapi/openpath-openapi-original.json#describeRole
+- name: deleteRole
+  description: "Delete a role"
+  source_operation: openapi/openpath-openapi-original.json#deleteRole
+- name: updateRole
+  description: "Update a role"
+  source_operation: openapi/openpath-openapi-original.json#updateRole
+- name: describeRex
+  description: "Describe a REX"
+  source_operation: openapi/openpath-openapi-original.json#describeRex
+- name: updateRex
+  description: "Update a REX"
+  source_operation: openapi/openpath-openapi-original.json#updateRex
+- name: getDeviceTimeZoneDependentRelativeTimeRanges
+  description: "Get the search and display unix timestamp ranges for relative times based on the device with a timezone in the min utc offset"
+  source_operation: openapi/openpath-openapi-original.json#getDeviceTimeZoneDependentRelativeTimeRanges
+- name: describeRelayHardwareType
+  description: "Describe a relay hardware type"
+  source_operation: openapi/openpath-openapi-original.json#describeRelayHardwareType
+- name: describeRelay
+  description: "Describe a relay"
+  source_operation: openapi/openpath-openapi-original.json#describeRelay
+- name: updateRelay
+  description: "Update a relay"
+  source_operation: openapi/openpath-openapi-original.json#updateRelay
+- name: describeRecentAlarm
+  description: "Describe a recent alarm"
+  source_operation: openapi/openpath-openapi-original.json#describeRecentAlarm
+- name: describePalette
+  description: "Describe a palette"
+  source_operation: openapi/openpath-openapi-original.json#describePalette
+- name: describeOrgPackagePlan
+  description: "Describe a package plan"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgPackagePlan
+- name: describeOrgPicture
+  description: "Describe an org picture"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgPicture
+- name: deleteOrgPicture
+  description: "Delete an org picture"
+  source_operation: openapi/openpath-openapi-original.json#deleteOrgPicture
+- name: updateOrgPicture
+  description: "Update an org picture"
+  source_operation: openapi/openpath-openapi-original.json#updateOrgPicture
+- name: describeLockdownPlan
+  description: "Describe a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#describeLockdownPlan
+- name: deleteLockdownPlan
+  description: "Delete a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#deleteLockdownPlan
+- name: updateLockdownPlan
+  description: "Update a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#updateLockdownPlan
+- name: describeLocationMeasurementSourceType
+  description: "Describe a location measurement source type"
+  source_operation: openapi/openpath-openapi-original.json#describeLocationMeasurementSourceType
+- name: describeIo
+  description: "Describe an I/O"
+  source_operation: openapi/openpath-openapi-original.json#describeIo
+- name: describeIdentityProviderType
+  description: "Describe a identity provider type"
+  source_operation: openapi/openpath-openapi-original.json#describeIdentityProviderType
+- name: describeHookEvent
+  description: "Describe a hook event"
+  source_operation: openapi/openpath-openapi-original.json#describeHookEvent
+- name: describeHookAction
+  description: "Describe a hook action"
+  source_operation: openapi/openpath-openapi-original.json#describeHookAction
+- name: deleteHookAction
+  description: "Delete a hook action"
+  source_operation: openapi/openpath-openapi-original.json#deleteHookAction
+- name: updateHookAction
+  description: "Update a hook action"
+  source_operation: openapi/openpath-openapi-original.json#updateHookAction
+- name: describeGroup
+  description: "Describe an access group"
+  source_operation: openapi/openpath-openapi-original.json#describeGroup
+- name: deleteGroup
+  description: "Delete an access group"
+  source_operation: openapi/openpath-openapi-original.json#deleteGroup
+- name: updateGroup
+  description: "Update an access group"
+  source_operation: openapi/openpath-openapi-original.json#updateGroup
+- name: describeGenericInput
+  description: "Describe a generic input"
+  source_operation: openapi/openpath-openapi-original.json#describeGenericInput
+- name: updateGenericInput
+  description: "Update a generic input"
+  source_operation: openapi/openpath-openapi-original.json#updateGenericInput
+- name: describeOrgFobAllegion
+  description: "Describe an allegion fob credential"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgFobAllegion
+- name: updateOrgFobAllegion
+  description: "Update an allegion fob credential"
+  source_operation: openapi/openpath-openapi-original.json#updateOrgFobAllegion
+- name: describeDashboard
+  description: "Describe a dashboard"
+  source_operation: openapi/openpath-openapi-original.json#describeDashboard
+- name: deleteDashboard
+  description: "Delete a dashboard"
+  source_operation: openapi/openpath-openapi-original.json#deleteDashboard
+- name: updateDashboard
+  description: "Update an existing dashboard"
+  source_operation: openapi/openpath-openapi-original.json#updateDashboard
+- name: describeCustomFieldType
+  description: "Describe a custom field type"
+  source_operation: openapi/openpath-openapi-original.json#describeCustomFieldType
+- name: describeCustomField
+  description: "Describe a custom field"
+  source_operation: openapi/openpath-openapi-original.json#describeCustomField
+- name: deleteCustomField
+  description: "Delete a custom field"
+  source_operation: openapi/openpath-openapi-original.json#deleteCustomField
+- name: updateCustomField
+  description: "Update a custom field"
+  source_operation: openapi/openpath-openapi-original.json#updateCustomField
+- name: describeCredentialType
+  description: "Describe a credential type"
+  source_operation: openapi/openpath-openapi-original.json#describeCredentialType
+- name: describeCredentialActionType
+  description: "Describe a credential action type"
+  source_operation: openapi/openpath-openapi-original.json#describeCredentialActionType
+- name: describeContactSensor
+  description: "Describe a contact sensor"
+  source_operation: openapi/openpath-openapi-original.json#describeContactSensor
+- name: updateContactSensor
+  description: "Update a contact sensor"
+  source_operation: openapi/openpath-openapi-original.json#updateContactSensor
+- name: describeCardFormat
+  description: "Describe a card format"
+  source_operation: openapi/openpath-openapi-original.json#describeCardFormat
+- name: describeAlarmConfiguration
+  description: "Describe an alarm configuration"
+  source_operation: openapi/openpath-openapi-original.json#describeAlarmConfiguration
+- name: updateAlarmConfiguration
+  description: "Update an alarm configuration"
+  source_operation: openapi/openpath-openapi-original.json#updateAlarmConfiguration
+- name: describeAlarmAction
+  description: "Describe an alarm action"
+  source_operation: openapi/openpath-openapi-original.json#describeAlarmAction
+- name: describeAlarm
+  description: "Describe an alarm"
+  source_operation: openapi/openpath-openapi-original.json#describeAlarm
+- name: updateAlarm
+  description: "Update an alarm"
+  source_operation: openapi/openpath-openapi-original.json#updateAlarm
+- name: describeAcu
+  description: "Describe an owned or assigned ACU"
+  source_operation: openapi/openpath-openapi-original.json#describeAcu
+- name: deleteAcu
+  description: "Delete an ACU"
+  source_operation: openapi/openpath-openapi-original.json#deleteAcu
+- name: updateAcu
+  description: "Update an ACU"
+  source_operation: openapi/openpath-openapi-original.json#updateAcu
+- name: listAcuTimezones
+  description: "List all the acu ids and their timezones for the org"
+  source_operation: openapi/openpath-openapi-original.json#listAcuTimezones
+- name: describeAcuModel
+  description: "Describe an ACU model"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuModel
+- name: describeAcuPortType
+  description: "Describe an ACU port type"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuPortType
+- name: describeAlarmSeverity
+  description: "Describe an alarm severity"
+  source_operation: openapi/openpath-openapi-original.json#describeAlarmSeverity
+- name: describeAlarmStatus
+  description: "Describe an alarm status"
+  source_operation: openapi/openpath-openapi-original.json#describeAlarmStatus
+- name: describeAuthCert
+  description: "Get an X.509 authentication certificate"
+  source_operation: openapi/openpath-openapi-original.json#describeAuthCert
+- name: deleteAuthCert
+  description: "Delete an X.509 authentication certificate"
+  source_operation: openapi/openpath-openapi-original.json#deleteAuthCert
+- name: updateAuthCert
+  description: "Update an X.509 authentication certificate"
+  source_operation: openapi/openpath-openapi-original.json#updateAuthCert
+- name: describeBadgeConfig
+  description: "Describe a badge config"
+  source_operation: openapi/openpath-openapi-original.json#describeBadgeConfig
+- name: deleteBadgeConfig
+  description: "Delete a badge config of an Org"
+  source_operation: openapi/openpath-openapi-original.json#deleteBadgeConfig
+- name: updateBadgeConfig
+  description: "Update a badge config"
+  source_operation: openapi/openpath-openapi-original.json#updateBadgeConfig
+- name: describeEmailAlertType
+  description: "Describe an email alert type"
+  source_operation: openapi/openpath-openapi-original.json#describeEmailAlertType
+- name: describeEntry
+  description: "Describe an entry"
+  source_operation: openapi/openpath-openapi-original.json#describeEntry
+- name: deleteEntry
+  description: "Delete an entry"
+  source_operation: openapi/openpath-openapi-original.json#deleteEntry
+- name: updateEntry
+  description: "Update an entry"
+  source_operation: openapi/openpath-openapi-original.json#updateEntry
+- name: describeEntryState
+  description: "Describe an entry state"
+  source_operation: openapi/openpath-openapi-original.json#describeEntryState
+- name: deleteEntryState
+  description: "Delete a custom entry state"
+  source_operation: openapi/openpath-openapi-original.json#deleteEntryState
+- name: updateEntryState
+  description: "Update a custom entry state"
+  source_operation: openapi/openpath-openapi-original.json#updateEntryState
+- name: describeEolSupervision
+  description: "Describe an EOL supervision"
+  source_operation: openapi/openpath-openapi-original.json#describeEolSupervision
+- name: describeIdentityProvider
+  description: "Describe an identity provider"
+  source_operation: openapi/openpath-openapi-original.json#describeIdentityProvider
+- name: describeMailroom
+  description: "Describe a mailroom"
+  source_operation: openapi/openpath-openapi-original.json#describeMailroom
+- name: deleteMailroom
+  description: "Delete a mailroom"
+  source_operation: openapi/openpath-openapi-original.json#deleteMailroom
+- name: updateMailroom
+  description: "Update a mailroom"
+  source_operation: openapi/openpath-openapi-original.json#updateMailroom
+- name: describeAllMailroomStatistics
+  description: "Get all mailroom statistics"
+  source_operation: openapi/openpath-openapi-original.json#describeAllMailroomStatistics
+- name: describeOrgMaintenanceWindowAcuMap
+  description: "Describe an ACU maintenance window map"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgMaintenanceWindowAcuMap
+- name: describeOrgMaintenanceWindowDefinition
+  description: "Describe a maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgMaintenanceWindowDefinition
+- name: deleteOrgMaintenanceWindowDefinition
+  description: "Delete an organization's maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#deleteOrgMaintenanceWindowDefinition
+- name: describeOrgMaintenanceWindowMap
+  description: "Describe a maintenance window"
+  source_operation: openapi/openpath-openapi-original.json#describeOrgMaintenanceWindowMap
+- name: describeParcel
+  description: "Describe a parcel"
+  source_operation: openapi/openpath-openapi-original.json#describeParcel
+- name: deleteParcel
+  description: "Delete a parcel"
+  source_operation: openapi/openpath-openapi-original.json#deleteParcel
+- name: updateParcel
+  description: "Update a parcel"
+  source_operation: openapi/openpath-openapi-original.json#updateParcel
+- name: getParcelActivity
+  description: "Lists activity for parcels"
+  source_operation: openapi/openpath-openapi-original.json#getParcelActivity
+- name: describeReader
+  description: "Describe an owned or assigned reader"
+  source_operation: openapi/openpath-openapi-original.json#describeReader
+- name: deleteReader
+  description: "Delete a reader"
+  source_operation: openapi/openpath-openapi-original.json#deleteReader
+- name: updateReader
+  description: "Update a reader"
+  source_operation: openapi/openpath-openapi-original.json#updateReader
+- name: getActivity
+  description: "Get entry access activity"
+  source_operation: openapi/openpath-openapi-original.json#getActivity
+- name: describeSchedule
+  description: "Describe a schedule"
+  source_operation: openapi/openpath-openapi-original.json#describeSchedule
+- name: deleteSchedule
+  description: "Delete a schedule"
+  source_operation: openapi/openpath-openapi-original.json#deleteSchedule
+- name: updateSchedule
+  description: "Update a schedule"
+  source_operation: openapi/openpath-openapi-original.json#updateSchedule
+- name: listTasksReports
+  description: "List all report tasks"
+  source_operation: openapi/openpath-openapi-original.json#listTasksReports
+- name: createTasksReport
+  description: "Create a new batch report task."
+  source_operation: openapi/openpath-openapi-original.json#createTasksReport
+- name: describeUnusedInput
+  description: "Describe an unused input"
+  source_operation: openapi/openpath-openapi-original.json#describeUnusedInput
+- name: updateUnusedInput
+  description: "Update an unused input"
+  source_operation: openapi/openpath-openapi-original.json#updateUnusedInput
+- name: describeUser
+  description: "Describe a user"
+  source_operation: openapi/openpath-openapi-original.json#describeUser
+- name: deleteUser
+  description: "Delete a user"
+  source_operation: openapi/openpath-openapi-original.json#deleteUser
+- name: updateUser
+  description: "Update a user"
+  source_operation: openapi/openpath-openapi-original.json#updateUser
+- name: describeWidgetType
+  description: "Describe a widget type"
+  source_operation: openapi/openpath-openapi-original.json#describeWidgetType
+- name: describeWiegand
+  description: "Describe a wiegand"
+  source_operation: openapi/openpath-openapi-original.json#describeWiegand
+- name: updateWiegand
+  description: "Update a wiegand"
+  source_operation: openapi/openpath-openapi-original.json#updateWiegand
+- name: describeWirelessGateway
+  description: "Describe a wireless gateway"
+  source_operation: openapi/openpath-openapi-original.json#describeWirelessGateway
+- name: deleteWirelessGateway
+  description: "Remove a wireless gateway"
+  source_operation: openapi/openpath-openapi-original.json#deleteWirelessGateway
+- name: updateWirelessGateway
+  description: "Update a wireless gateway"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessGateway
+- name: describeWirelessLock
+  description: "Describe a wireless lock "
+  source_operation: openapi/openpath-openapi-original.json#describeWirelessLock
+- name: deleteWirelessLock
+  description: "Remove a wireless lock "
+  source_operation: openapi/openpath-openapi-original.json#deleteWirelessLock
+- name: updateWirelessLock
+  description: "Update a wireless lock "
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLock
+- name: listZoneApbAreas
+  description: "List all zone anti-passback areas"
+  source_operation: openapi/openpath-openapi-original.json#listZoneApbAreas
+- name: createZoneApbArea
+  description: "Create a zone anti-passback area"
+  source_operation: openapi/openpath-openapi-original.json#createZoneApbArea
+- name: listZoneGroupIds
+  description: "List all group IDs of a zone"
+  source_operation: openapi/openpath-openapi-original.json#listZoneGroupIds
+- name: setZoneGroupIds
+  description: "Set a zone's groups by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setZoneGroupIds
+- name: listZoneZoneUsers
+  description: "List all users (and their associated configurations) of a zone"
+  source_operation: openapi/openpath-openapi-original.json#listZoneZoneUsers
+- name: updateZoneZoneUsers
+  description: "Bulk-update a zone's users (and their associated configurations)"
+  source_operation: openapi/openpath-openapi-original.json#updateZoneZoneUsers
+- name: setZoneZoneUsers
+  description: "Set a zone's users (and their associated configurations) by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setZoneZoneUsers
+- name: listZoneUsers
+  description: "List all users of a zone"
+  source_operation: openapi/openpath-openapi-original.json#listZoneUsers
+- name: listWirelessLockProviderOperators
+  description: "List all operators for a wireless lock provider"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLockProviderOperators
+- name: listUserPictures
+  description: "List all user pictures"
+  source_operation: openapi/openpath-openapi-original.json#listUserPictures
+- name: createUserPicture
+  description: "Create a user picture (DEPRECATED)"
+  source_operation: openapi/openpath-openapi-original.json#createUserPicture
+- name: listUserMfaCredentials
+  description: "List all MFA credentials (for users in the local org namespace only)"
+  source_operation: openapi/openpath-openapi-original.json#listUserMfaCredentials
+- name: describeUserBadge
+  description: "Describe user badge"
+  source_operation: openapi/openpath-openapi-original.json#describeUserBadge
+- name: listUserZones
+  description: "List all zones a user has access to"
+  source_operation: openapi/openpath-openapi-original.json#listUserZones
+- name: listUserAcus
+  description: "List all ACUs a user has access to"
+  source_operation: openapi/openpath-openapi-original.json#listUserAcus
+- name: listUserSites
+  description: "List all sites of a user"
+  source_operation: openapi/openpath-openapi-original.json#listUserSites
+- name: listUserRoles
+  description: "List all roles of a user"
+  source_operation: openapi/openpath-openapi-original.json#listUserRoles
+- name: listTasksReportsSchedules
+  description: "List all schedules for all the report tasks"
+  source_operation: openapi/openpath-openapi-original.json#listTasksReportsSchedules
+- name: createTasksReportsSchedule
+  description: "Create a new scheduled report task."
+  source_operation: openapi/openpath-openapi-original.json#createTasksReportsSchedule
+- name: describeTasksReport
+  description: "Get a specific report task by id."
+  source_operation: openapi/openpath-openapi-original.json#describeTasksReport
+- name: deleteTasksReport
+  description: "Delete a specific report task by id."
+  source_operation: openapi/openpath-openapi-original.json#deleteTasksReport
+- name: getSiteLocationRestriction
+  description: "Get location restriction for a site"
+  source_operation: openapi/openpath-openapi-original.json#getSiteLocationRestriction
+- name: deleteSiteLocationRestriction
+  description: "Delete location restriction for a site"
+  source_operation: openapi/openpath-openapi-original.json#deleteSiteLocationRestriction
+- name: setSiteLocationRestriction
+  description: "Set location restriction for a site"
+  source_operation: openapi/openpath-openapi-original.json#setSiteLocationRestriction
+- name: listSiteLocationMeasurements
+  description: "List location measurements for a site"
+  source_operation: openapi/openpath-openapi-original.json#listSiteLocationMeasurements
+- name: determineScheduleAccess
+  description: "Determine whether the API caller has access to modify this schedule via their admin permissions"
+  source_operation: openapi/openpath-openapi-original.json#determineScheduleAccess
+- name: listRoleUsers
+  description: "List all users of a role"
+  source_operation: openapi/openpath-openapi-original.json#listRoleUsers
+- name: getAuditLogsUi
+  description: "Search/filter/return audit logs for UI"
+  source_operation: openapi/openpath-openapi-original.json#getAuditLogsUi
+- name: getPresenceBucketsReport
+  description: "Get presence bucket reports"
+  source_operation: openapi/openpath-openapi-original.json#getPresenceBucketsReport
+- name: getActivityEvents
+  description: "Get access activity events"
+  source_operation: openapi/openpath-openapi-original.json#getActivityEvents
+- name: listRecipientParcels
+  description: "Self-pickup - List parcels"
+  source_operation: openapi/openpath-openapi-original.json#listRecipientParcels
+- name: listParcelHistory
+  description: "Lists parcel history"
+  source_operation: openapi/openpath-openapi-original.json#listParcelHistory
+- name: describeMailroomStatistics
+  description: "Get single mailroom statistics"
+  source_operation: openapi/openpath-openapi-original.json#describeMailroomStatistics
+- name: getIdentityProviderGroupRelations
+  description: "Describe an identity provider's group relations"
+  source_operation: openapi/openpath-openapi-original.json#getIdentityProviderGroupRelations
+- name: setIdentityProviderGroupRelations
+  description: "Set an identity provider's group relations"
+  source_operation: openapi/openpath-openapi-original.json#setIdentityProviderGroupRelations
+- name: listGroupZoneGroups
+  description: "List all zones (and their associated configurations) an access group has access to"
+  source_operation: openapi/openpath-openapi-original.json#listGroupZoneGroups
+- name: updateGroupZoneGroups
+  description: "Bulk-update an access groups's zones (and their associated configurations)"
+  source_operation: openapi/openpath-openapi-original.json#updateGroupZoneGroups
+- name: setGroupZoneGroups
+  description: "Set an access groups's zones (and their associated configurations) by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setGroupZoneGroups
+- name: listGroupUserIds
+  description: "List all user IDs of a group"
+  source_operation: openapi/openpath-openapi-original.json#listGroupUserIds
+- name: updateGroupUserIds
+  description: "Bulk-update an access group's users"
+  source_operation: openapi/openpath-openapi-original.json#updateGroupUserIds
+- name: setGroupUserIds
+  description: "Set an access group's users by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setGroupUserIds
+- name: listEntryCameras
+  description: "List all cameras of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryCameras
+- name: listEntryThirdPartyWiegands
+  description: "List all third party reader - wiegands of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryThirdPartyWiegands
+- name: listEntryWiegands
+  description: "List all wiegands of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryWiegands
+- name: listEntryContactSensors
+  description: "List all contactSensors of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryContactSensors
+- name: listEntryReaders
+  description: "List all readers of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryReaders
+- name: listEntryUsers
+  description: "List all active users that have access to an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryUsers
+- name: describeAcuTimezone
+  description: "Describe an owned or assigned ACU's timezone"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuTimezone
+- name: getAcuDiagnosticsReport
+  description: "Get ACU diagnostics report"
+  source_operation: openapi/openpath-openapi-original.json#getAcuDiagnosticsReport
+- name: createAcuDiagnosticsReport
+  description: "Create an ACU diagnostics report"
+  source_operation: openapi/openpath-openapi-original.json#createAcuDiagnosticsReport
+- name: listAcuExpansionBoards
+  description: "List all expansion boards belonging to an ACU"
+  source_operation: openapi/openpath-openapi-original.json#listAcuExpansionBoards
+- name: createAcuExpansionBoard
+  description: "Create an expansion board for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#createAcuExpansionBoard
+- name: setAcuExpansionBoards
+  description: "Set expansion boards for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#setAcuExpansionBoards
+- name: listAcuLocationMeasurements
+  description: "List location measurements for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#listAcuLocationMeasurements
+- name: getAcuLocationRestriction
+  description: "Get location restriction for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#getAcuLocationRestriction
+- name: deleteAcuLocationRestriction
+  description: "Delete location restriction for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#deleteAcuLocationRestriction
+- name: setAcuLocationRestriction
+  description: "Set location restriction for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#setAcuLocationRestriction
+- name: listAcuPorts
+  description: "List ACU ports"
+  source_operation: openapi/openpath-openapi-original.json#listAcuPorts
+- name: listAlarmConfigurationCameras
+  description: "List all cameras of an alarm configuration"
+  source_operation: openapi/openpath-openapi-original.json#listAlarmConfigurationCameras
+- name: listCredentialActions
+  description: "List all credential actions"
+  source_operation: openapi/openpath-openapi-original.json#listCredentialActions
+- name: createCredentialAction
+  description: "Create a credential action"
+  source_operation: openapi/openpath-openapi-original.json#createCredentialAction
+- name: listCustomFieldDropdownItems
+  description: "List all custom field dropdown items"
+  source_operation: openapi/openpath-openapi-original.json#listCustomFieldDropdownItems
+- name: createCustomFieldDropdownItem
+  description: "Create a custom field dropdown item"
+  source_operation: openapi/openpath-openapi-original.json#createCustomFieldDropdownItem
+- name: updateCustomFieldDropdownItems
+  description: "Bulk update custom field dropdown items"
+  source_operation: openapi/openpath-openapi-original.json#updateCustomFieldDropdownItems
+- name: listEntryUserSchedules
+  description: "List all active users, with their associated schedule(s), that have access to an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryUserSchedules
+- name: listEntryRelays
+  description: "List all relays of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryRelays
+- name: listEntryRexs
+  description: "List all rexs of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryRexs
+- name: listEntryThirdPartyReaders
+  description: "List all third party reader - OSDPs of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryThirdPartyReaders
+- name: listEntryControls
+  description: "List all controls (readers, rexs, contact sensors, wiegands, relays) of an entry"
+  source_operation: openapi/openpath-openapi-original.json#listEntryControls
+- name: listGroupUsers
+  description: "List all users of an access group"
+  source_operation: openapi/openpath-openapi-original.json#listGroupUsers
+- name: listGroupZones
+  description: "List all zones of an access group"
+  source_operation: openapi/openpath-openapi-original.json#listGroupZones
+- name: listGroupEntries
+  description: "List all entries an access group has access to"
+  source_operation: openapi/openpath-openapi-original.json#listGroupEntries
+- name: listIdentityProviderGroups
+  description: "List an identity provider's groups"
+  source_operation: openapi/openpath-openapi-original.json#listIdentityProviderGroups
+- name: getParcelSignature
+  description: "Get a parcel signature"
+  source_operation: openapi/openpath-openapi-original.json#getParcelSignature
+- name: listParcelPictures
+  description: "List parcel pictures"
+  source_operation: openapi/openpath-openapi-original.json#listParcelPictures
+- name: createParcelPicture
+  description: "Create a parcel picture"
+  source_operation: openapi/openpath-openapi-original.json#createParcelPicture
+- name: getAlarmEvents
+  description: "Get alarm events"
+  source_operation: openapi/openpath-openapi-original.json#getAlarmEvents
+- name: listRoleScopeIds
+  description: "List all scope ids of a role"
+  source_operation: openapi/openpath-openapi-original.json#listRoleScopeIds
+- name: setRoleScopeIds
+  description: "Set a role's scopes by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setRoleScopeIds
+- name: listEvents
+  description: "List all schedule events"
+  source_operation: openapi/openpath-openapi-original.json#listEvents
+- name: createEvent
+  description: "Create a schedule event"
+  source_operation: openapi/openpath-openapi-original.json#createEvent
+- name: updateEvents
+  description: "Bulk update schedule events"
+  source_operation: openapi/openpath-openapi-original.json#updateEvents
+- name: listSiteUsers
+  description: "List all users of a site"
+  source_operation: openapi/openpath-openapi-original.json#listSiteUsers
+- name: listSiteGroups
+  description: "List all groups of a site"
+  source_operation: openapi/openpath-openapi-original.json#listSiteGroups
+- name: listUserGroups
+  description: "List all groups of a user"
+  source_operation: openapi/openpath-openapi-original.json#listUserGroups
+- name: listUserEntries
+  description: "List all entries a user has access to"
+  source_operation: openapi/openpath-openapi-original.json#listUserEntries
+- name: listUserZoneUsers
+  description: "List all zones (and their associated configurations) a user has access to"
+  source_operation: openapi/openpath-openapi-original.json#listUserZoneUsers
+- name: updateUserZoneUsers
+  description: "Bulk-update a user's zones and their associated configurations"
+  source_operation: openapi/openpath-openapi-original.json#updateUserZoneUsers
+- name: setUserZoneUsers
+  description: "Set a user's zones (and their associated configurations) by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setUserZoneUsers
+- name: listCredentials
+  description: "List all user credentials"
+  source_operation: openapi/openpath-openapi-original.json#listCredentials
+- name: createCredential
+  description: "Create a user credential"
+  source_operation: openapi/openpath-openapi-original.json#createCredential
+- name: listUserCustomFields
+  description: "List all user custom fields"
+  source_operation: openapi/openpath-openapi-original.json#listUserCustomFields
+- name: updateUserCustomFields
+  description: "Update all user custom fields"
+  source_operation: openapi/openpath-openapi-original.json#updateUserCustomFields
+- name: describeUserIntercomNotificationPreferenceSet
+  description: "Get a user's intercom notification preferences"
+  source_operation: openapi/openpath-openapi-original.json#describeUserIntercomNotificationPreferenceSet
+- name: updateUserIntercomNotificationPreferenceSet
+  description: "Update a user's intercom notification preferences"
+  source_operation: openapi/openpath-openapi-original.json#updateUserIntercomNotificationPreferenceSet
+- name: describeUserPreferenceSet
+  description: "Get a user's preference set"
+  source_operation: openapi/openpath-openapi-original.json#describeUserPreferenceSet
+- name: updateUserPreferenceSet
+  description: "Update a user's preference set"
+  source_operation: openapi/openpath-openapi-original.json#updateUserPreferenceSet
+- name: listWidgets
+  description: "List all dashboard widgets"
+  source_operation: openapi/openpath-openapi-original.json#listWidgets
+- name: createWidget
+  description: "Create a new dashboard widget"
+  source_operation: openapi/openpath-openapi-original.json#createWidget
+- name: listWirelessLockProviderFirmwares
+  description: "List all firmwares available for a wireless lock provider by device"
+  source_operation: openapi/openpath-openapi-original.json#listWirelessLockProviderFirmwares
+- name: listZoneShares
+  description: "List all shares of this zone"
+  source_operation: openapi/openpath-openapi-original.json#listZoneShares
+- name: listZoneGroups
+  description: "List all groups of a zone"
+  source_operation: openapi/openpath-openapi-original.json#listZoneGroups
+- name: listZoneZoneGroups
+  description: "List all groups (and their associated configurations) of a zone"
+  source_operation: openapi/openpath-openapi-original.json#listZoneZoneGroups
+- name: updateZoneZoneGroups
+  description: "Bulk-update a zone's groups (and their associated configurations)"
+  source_operation: openapi/openpath-openapi-original.json#updateZoneZoneGroups
+- name: setZoneZoneGroups
+  description: "Set a zone's groups (and their associated configurations) by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setZoneZoneGroups
+- name: describeWidget
+  description: "Describe a dashboard widget"
+  source_operation: openapi/openpath-openapi-original.json#describeWidget
+- name: deleteWidget
+  description: "Delete a dashboard widget"
+  source_operation: openapi/openpath-openapi-original.json#deleteWidget
+- name: updateWidget
+  description: "Update a dashboard widget"
+  source_operation: openapi/openpath-openapi-original.json#updateWidget
+- name: getUserAvatarPicture
+  description: "Get the user avatar picture"
+  source_operation: openapi/openpath-openapi-original.json#getUserAvatarPicture
+- name: deleteUserAvatarPicture
+  description: "Delete the user avatar picture"
+  source_operation: openapi/openpath-openapi-original.json#deleteUserAvatarPicture
+- name: setUserAvatarPicture
+  description: "Set the user avatar picture"
+  source_operation: openapi/openpath-openapi-original.json#setUserAvatarPicture
+- name: describeUserCustomField
+  description: "Describe a user custom field"
+  source_operation: openapi/openpath-openapi-original.json#describeUserCustomField
+- name: updateUserCustomField
+  description: "Update a user custom field"
+  source_operation: openapi/openpath-openapi-original.json#updateUserCustomField
+- name: describeCredential
+  description: "Describe a user credential"
+  source_operation: openapi/openpath-openapi-original.json#describeCredential
+- name: deleteCredential
+  description: "Delete a user credential"
+  source_operation: openapi/openpath-openapi-original.json#deleteCredential
+- name: updateCredential
+  description: "Update a user credential"
+  source_operation: openapi/openpath-openapi-original.json#updateCredential
+- name: getUserActivity
+  description: "Get a user's entry activity"
+  source_operation: openapi/openpath-openapi-original.json#getUserActivity
+- name: describeEvent
+  description: "Describe a schedule event"
+  source_operation: openapi/openpath-openapi-original.json#describeEvent
+- name: deleteEvent
+  description: "Delete a schedule event"
+  source_operation: openapi/openpath-openapi-original.json#deleteEvent
+- name: updateEvent
+  description: "Update a schedule event"
+  source_operation: openapi/openpath-openapi-original.json#updateEvent
+- name: describeParcelPicture
+  description: "Get a parcel picture"
+  source_operation: openapi/openpath-openapi-original.json#describeParcelPicture
+- name: deleteParcelPicture
+  description: "Delete a parcel picture"
+  source_operation: openapi/openpath-openapi-original.json#deleteParcelPicture
+- name: updateParcelPicture
+  description: "Update a parcel picture"
+  source_operation: openapi/openpath-openapi-original.json#updateParcelPicture
+- name: describeCustomFieldDropdownItem
+  description: "Describe a custom field dropdown item"
+  source_operation: openapi/openpath-openapi-original.json#describeCustomFieldDropdownItem
+- name: deleteCustomFieldDropdownItem
+  description: "Delete a custom field dropdown item"
+  source_operation: openapi/openpath-openapi-original.json#deleteCustomFieldDropdownItem
+- name: updateCustomFieldDropdownItem
+  description: "Update a custom field dropdown item"
+  source_operation: openapi/openpath-openapi-original.json#updateCustomFieldDropdownItem
+- name: describeCredentialAction
+  description: "Describe a credential action"
+  source_operation: openapi/openpath-openapi-original.json#describeCredentialAction
+- name: deleteCredentialAction
+  description: "Delete a credential action"
+  source_operation: openapi/openpath-openapi-original.json#deleteCredentialAction
+- name: updateCredentialAction
+  description: "Update a credential action"
+  source_operation: openapi/openpath-openapi-original.json#updateCredentialAction
+- name: listOrgNoTourCredentialSectorsValidationData
+  description: "List all no tour credential sector validation data for this user"
+  source_operation: openapi/openpath-openapi-original.json#listOrgNoTourCredentialSectorsValidationData
+- name: describeAcuPort
+  description: "Describe an ACU port"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuPort
+- name: updateAcuPort
+  description: "Update an ACU port"
+  source_operation: openapi/openpath-openapi-original.json#updateAcuPort
+- name: describeAcuLocationMeasurement
+  description: "Describe a location measurement for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuLocationMeasurement
+- name: deleteAcuLocationMeasurement
+  description: "Delete a location measurement for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#deleteAcuLocationMeasurement
+- name: describeAcuExpansionBoard
+  description: "Describe an expansion board belonging to an ACU"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuExpansionBoard
+- name: deleteAcuExpansionBoard
+  description: "Delete an expansion board belonging to an ACU"
+  source_operation: openapi/openpath-openapi-original.json#deleteAcuExpansionBoard
+- name: updateAcuExpansionBoard
+  description: "Update an expansion board belonging to an ACU"
+  source_operation: openapi/openpath-openapi-original.json#updateAcuExpansionBoard
+- name: getEntryActivity
+  description: "Get an entry's activity"
+  source_operation: openapi/openpath-openapi-original.json#getEntryActivity
+- name: describeSiteLocationMeasurement
+  description: "Describe a location measurement for a site"
+  source_operation: openapi/openpath-openapi-original.json#describeSiteLocationMeasurement
+- name: deleteSiteLocationMeasurement
+  description: "Delete a location measurement for a site"
+  source_operation: openapi/openpath-openapi-original.json#deleteSiteLocationMeasurement
+- name: describeTasksReportLink
+  description: "Get a link to the specific report task result by id."
+  source_operation: openapi/openpath-openapi-original.json#describeTasksReportLink
+- name: describeTasksReportsSchedule
+  description: "Get a specific task report schedule by id."
+  source_operation: openapi/openpath-openapi-original.json#describeTasksReportsSchedule
+- name: deleteTasksReportsSchedule
+  description: "Delete a specific task report schedule by id."
+  source_operation: openapi/openpath-openapi-original.json#deleteTasksReportsSchedule
+- name: updateTasksReportsSchedule
+  description: "Update a specific task report schedule"
+  source_operation: openapi/openpath-openapi-original.json#updateTasksReportsSchedule
+- name: describeUserPicture
+  description: "Describe a user picture (DEPRECATED)"
+  source_operation: openapi/openpath-openapi-original.json#describeUserPicture
+- name: deleteUserPicture
+  description: "Delete a user picture (DEPRECATED)"
+  source_operation: openapi/openpath-openapi-original.json#deleteUserPicture
+- name: updateUserPicture
+  description: "Update a user picture (DEPRECATED)"
+  source_operation: openapi/openpath-openapi-original.json#updateUserPicture
+- name: describeZoneApbArea
+  description: "Describe a zone anti-passback area"
+  source_operation: openapi/openpath-openapi-original.json#describeZoneApbArea
+- name: deleteZoneApbArea
+  description: "Delete a zone anti-passback area"
+  source_operation: openapi/openpath-openapi-original.json#deleteZoneApbArea
+- name: updateZoneApbArea
+  description: "Update a zone anti-passback area"
+  source_operation: openapi/openpath-openapi-original.json#updateZoneApbArea
+- name: listOrgNoTourCredentialCommands
+  description: "List all no tour credential commands for the given credential"
+  source_operation: openapi/openpath-openapi-original.json#listOrgNoTourCredentialCommands
+- name: updateOrgNoTourCredentialCommands
+  description: "Set the no tour credential commands for a credential"
+  source_operation: openapi/openpath-openapi-original.json#updateOrgNoTourCredentialCommands
+- name: describeAcuPortEol
+  description: "Describe an ACU port's EOL settings"
+  source_operation: openapi/openpath-openapi-original.json#describeAcuPortEol
+- name: updateAcuPortEol
+  description: "Update an ACU port's EOL settings"
+  source_operation: openapi/openpath-openapi-original.json#updateAcuPortEol
+- name: listTargetOfOrgNoTourCredentialCommands
+  description: "List all no tour credential commands for which the given credential is the target"
+  source_operation: openapi/openpath-openapi-original.json#listTargetOfOrgNoTourCredentialCommands
+- name: login
+  description: "Login"
+  source_operation: openapi/openpath-openapi-original.json#login
+- name: loginAll
+  description: "Login all successful matches for email/password"
+  source_operation: openapi/openpath-openapi-original.json#loginAll
+- name: logout
+  description: "Logout"
+  source_operation: openapi/openpath-openapi-original.json#logout
+- name: resetPassword
+  description: "Send email to reset password"
+  source_operation: openapi/openpath-openapi-original.json#resetPassword
+- name: setupMobile
+  description: "Send email with magic link to setup mobile"
+  source_operation: openapi/openpath-openapi-original.json#setupMobile
+- name: refreshLogin
+  description: "Create a new access token with refreshed scopes and expiration time, invalidate old token"
+  source_operation: openapi/openpath-openapi-original.json#refreshLogin
+- name: getOidcAuthUrl
+  description: "DEPRECATED - use /auth/sso/authorize instead"
+  source_operation: openapi/openpath-openapi-original.json#getOidcAuthUrl
+- name: getSsoAuthUrl
+  description: "Generate SSO authorize URL (may be OIDC or SAML)"
+  source_operation: openapi/openpath-openapi-original.json#getSsoAuthUrl
+- name: triggerPermissionsChange
+  description: "Trigger immediate entry permission recalculation & broadcast"
+  source_operation: openapi/openpath-openapi-original.json#triggerPermissionsChange
+- name: validateAccessToken
+  description: "Validate an access token for proper signature, format, expiration, and active status"
+  source_operation: openapi/openpath-openapi-original.json#validateAccessToken
+- name: listUsersPost
+  description: "List all users"
+  source_operation: openapi/openpath-openapi-original.json#listUsersPost
+- name: listGroupsPost
+  description: "List all access groups"
+  source_operation: openapi/openpath-openapi-original.json#listGroupsPost
+- name: listEntriesPost
+  description: "List all entries"
+  source_operation: openapi/openpath-openapi-original.json#listEntriesPost
+- name: resetApb
+  description: "Reset anti-passback for a zone and/or user"
+  source_operation: openapi/openpath-openapi-original.json#resetApb
+- name: updateWirelessGatewayFirmwareBatch
+  description: "Update the firmware for multiple wireless gateways to the latest version"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessGatewayFirmwareBatch
+- name: checkSignedOrgTermsAgreement
+  description: "Check if org has signed an acceptable Terms Agreement for an app or application"
+  source_operation: openapi/openpath-openapi-original.json#checkSignedOrgTermsAgreement
+- name: sendCustomParcelEmail
+  description: "Send custom email to recipients"
+  source_operation: openapi/openpath-openapi-original.json#sendCustomParcelEmail
+- name: requestPackageUpgrade
+  description: "Request a package plan upgrade"
+  source_operation: openapi/openpath-openapi-original.json#requestPackageUpgrade
+- name: triggerAcusSoftwareUpdate
+  description: "Trigger a software update for ACUs"
+  source_operation: openapi/openpath-openapi-original.json#triggerAcusSoftwareUpdate
+- name: triggerBatchAcuSoftwareUpdate
+  description: "Trigger minor and major software updates for ACUs"
+  source_operation: openapi/openpath-openapi-original.json#triggerBatchAcuSoftwareUpdate
+- name: signParcels
+  description: "Sign parcels"
+  source_operation: openapi/openpath-openapi-original.json#signParcels
+- name: signOrgTermsAgreement
+  description: "Sign an acceptable Terms Agreement for an app or application"
+  source_operation: openapi/openpath-openapi-original.json#signOrgTermsAgreement
+- name: updateWirelessLockFirmwareBatch
+  description: "Update the firmware for multiple wireless locks to the latest version"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockFirmwareBatch
+- name: updateWirelessLockGatewayFirmwareBatch
+  description: "Update the firmware for multiple wireless lock gateways to the latest version"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockGatewayFirmwareBatch
+- name: listSharedUsersPost
+  description: "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)"
+  source_operation: openapi/openpath-openapi-original.json#listSharedUsersPost
+- name: useCloudKeyLockdownPlanActionToken
+  description: "Use a cloudKey token to remotely trigger or revert a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#useCloudKeyLockdownPlanActionToken
+- name: useCloudKeyUnlockToken
+  description: "Use a cloudKey token to remotely unlock an entry"
+  source_operation: openapi/openpath-openapi-original.json#useCloudKeyUnlockToken
+- name: unshareZone
+  description: "Unshare zone"
+  source_operation: openapi/openpath-openapi-original.json#unshareZone
+- name: syncWirelessLockProviderDevices
+  description: "Sync devices for a wireless lock provider"
+  source_operation: openapi/openpath-openapi-original.json#syncWirelessLockProviderDevices
+- name: updateWirelessLockGatewayFirmware
+  description: "Update the firmware for a wireless lock gateway to a specific version"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockGatewayFirmware
+- name: blinkWirelessLockLed
+  description: "Blink the reader or inside-push-button LED for a wireless lock to identify it."
+  source_operation: openapi/openpath-openapi-original.json#blinkWirelessLockLed
+- name: updateWirelessLockFirmware
+  description: "Update the firmware for a wireless lock to a specific version"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessLockFirmware
+- name: activateWirelessGateway
+  description: "Activate an Assa Abloy wireless gateway hub"
+  source_operation: openapi/openpath-openapi-original.json#activateWirelessGateway
+- name: remoteReaderIdentify
+  description: "Remotely trigger a reader to identify itself via LED and buzzer"
+  source_operation: openapi/openpath-openapi-original.json#remoteReaderIdentify
+- name: syncUsersIdentityProvider
+  description: "Sync users"
+  source_operation: openapi/openpath-openapi-original.json#syncUsersIdentityProvider
+- name: revertEntryTempState
+  description: "Remove any temporary override state from the entry's schedule"
+  source_operation: openapi/openpath-openapi-original.json#revertEntryTempState
+- name: remoteEntryIdentify
+  description: "Remotely trigger an entry to identify itself via LED and buzzer of associated readers"
+  source_operation: openapi/openpath-openapi-original.json#remoteEntryIdentify
+- name: remoteAcuRunCommand
+  description: "Run a command on an ACU"
+  source_operation: openapi/openpath-openapi-original.json#remoteAcuRunCommand
+- name: remoteAcuRestartHardware
+  description: "Remotely trigger an ACU to restart its hardware communicator"
+  source_operation: openapi/openpath-openapi-original.json#remoteAcuRestartHardware
+- name: remoteAcuRestartApi
+  description: "Remotely trigger an ACU to restart its API server"
+  source_operation: openapi/openpath-openapi-original.json#remoteAcuRestartApi
+- name: remoteAcuIdentify
+  description: "Remotely trigger an ACU to identify itself via LED"
+  source_operation: openapi/openpath-openapi-original.json#remoteAcuIdentify
+- name: submitCobaltUserFeedback
+  description: "Receives feedback from the user and store it"
+  source_operation: openapi/openpath-openapi-original.json#submitCobaltUserFeedback
+- name: generateActivityLogsFilter
+  description: "Receives a generateActivityLogsFilter request and passes it to cobalt to execute"
+  source_operation: openapi/openpath-openapi-original.json#generateActivityLogsFilter
+- name: triggerAcuSoftwareUpdate
+  description: "Trigger a software update for a single ACU"
+  source_operation: openapi/openpath-openapi-original.json#triggerAcuSoftwareUpdate
+- name: remoteAcuRefreshShadow
+  description: "Remotely trigger an ACU to refresh its device shadow"
+  source_operation: openapi/openpath-openapi-original.json#remoteAcuRefreshShadow
+- name: remoteAcuRestartCloud
+  description: "Remotely trigger an ACU to restart its cloud communicator"
+  source_operation: openapi/openpath-openapi-original.json#remoteAcuRestartCloud
+- name: setEntryTempState
+  description: "Add a temporary override state to the entry's schedule"
+  source_operation: openapi/openpath-openapi-original.json#setEntryTempState
+- name: remoteReaderRestart
+  description: "Remotely trigger a reader to restart"
+  source_operation: openapi/openpath-openapi-original.json#remoteReaderRestart
+- name: verifyEmail
+  description: "Send email to user to verify email"
+  source_operation: openapi/openpath-openapi-original.json#verifyEmail
+- name: syncWirelessGatewayDevices
+  description: "Sync devices for a wireless gateway"
+  source_operation: openapi/openpath-openapi-original.json#syncWirelessGatewayDevices
+- name: updateWirelessGatewayFirmware
+  description: "Update the firmware for a wireless gateway to a specific version"
+  source_operation: openapi/openpath-openapi-original.json#updateWirelessGatewayFirmware
+- name: syncWirelessLockGatewayDevices
+  description: "Sync devices for a wireless lock gateway"
+  source_operation: openapi/openpath-openapi-original.json#syncWirelessLockGatewayDevices
+- name: inviteWirelessLockProviderOperator
+  description: "Invite self to be a site operator for a wireless lock provider"
+  source_operation: openapi/openpath-openapi-original.json#inviteWirelessLockProviderOperator
+- name: shareZone
+  description: "Share zone"
+  source_operation: openapi/openpath-openapi-original.json#shareZone
+- name: relinquishZoneShare
+  description: "Relinquish shared zone from shared-to org"
+  source_operation: openapi/openpath-openapi-original.json#relinquishZoneShare
+- name: listOrgNoTourCredentialSectorsPost
+  description: "List all no tour credential sectors needed for this credential"
+  source_operation: openapi/openpath-openapi-original.json#listOrgNoTourCredentialSectorsPost
+- name: getIdentityProviderAuthUrl
+  description: "Generate OAuth2 authorize URL"
+  source_operation: openapi/openpath-openapi-original.json#getIdentityProviderAuthUrl
+- name: setOpVideoDeviceFacadeBackgroundImage
+  description: "Set/update the background image for an opvideo device facade"
+  source_operation: openapi/openpath-openapi-original.json#setOpVideoDeviceFacadeBackgroundImage
+- name: sendRecipientParcelReminder
+  description: "Self-pickup - resend parcel reminder"
+  source_operation: openapi/openpath-openapi-original.json#sendRecipientParcelReminder
+- name: cloudKeyRevertLockdownPlan
+  description: "Use a cloudKey credential to request reverting a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#cloudKeyRevertLockdownPlan
+- name: generateCloudKeyLockdownPlanActionToken
+  description: "Generate new cloudKey token for a specific action on a specific lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#generateCloudKeyLockdownPlanActionToken
+- name: generateCloudKeyUnlockToken
+  description: "Generate new cloudKey unlock token for a specific entry. "
+  source_operation: openapi/openpath-openapi-original.json#generateCloudKeyUnlockToken
+- name: generateSetupMobileToken
+  description: "Generate new setup mobile token for credential"
+  source_operation: openapi/openpath-openapi-original.json#generateSetupMobileToken
+- name: setupMobileCredential
+  description: "Send email to user to set up their mobile credential"
+  source_operation: openapi/openpath-openapi-original.json#setupMobileCredential
+- name: cloudKeyEntryUnlock
+  description: "Use a cloudKey credential to request a cloud-unlock of an entry"
+  source_operation: openapi/openpath-openapi-original.json#cloudKeyEntryUnlock
+- name: cloudKeyTriggerLockdownPlan
+  description: "Use a cloudKey credential to request triggering a lockdown plan"
+  source_operation: openapi/openpath-openapi-original.json#cloudKeyTriggerLockdownPlan
+- name: setupWalletCredential
+  description: "Send email to user to set up their wallet credential"
+  source_operation: openapi/openpath-openapi-original.json#setupWalletCredential
+- name: generateCloudKeyUnlockTokenByModelId
+  description: "Generate new cloudKey unlock token for a specific entry"
+  source_operation: openapi/openpath-openapi-original.json#generateCloudKeyUnlockTokenByModelId
+- name: syncWalletAppleDevice
+  description: "Sync Apple Wallet Device"
+  source_operation: openapi/openpath-openapi-original.json#syncWalletAppleDevice
+- name: cancelMailroom
+  description: "Cancel mailroom"
+  source_operation: openapi/openpath-openapi-original.json#cancelMailroom
+- name: deleteIdentityProviderGroupRelation
+  description: "Remove a group relation from an identity provider"
+  source_operation: openapi/openpath-openapi-original.json#deleteIdentityProviderGroupRelation
+- name: setIdentityProviderGroupRelation
+  description: "Add a group relation to an identity provider"
+  source_operation: openapi/openpath-openapi-original.json#setIdentityProviderGroupRelation
+- name: removeUserFromZone
+  description: "Remove a user from a zone"
+  source_operation: openapi/openpath-openapi-original.json#removeUserFromZone
+- name: setUserToZone
+  description: "Add a user to a zone"
+  source_operation: openapi/openpath-openapi-original.json#setUserToZone
+- name: removeUserFromSite
+  description: "Remove a user from a site"
+  source_operation: openapi/openpath-openapi-original.json#removeUserFromSite
+- name: setUserToSite
+  description: "Add a user to a site"
+  source_operation: openapi/openpath-openapi-original.json#setUserToSite
+- name: removeUserFromRole
+  description: "Remove a user from a role"
+  source_operation: openapi/openpath-openapi-original.json#removeUserFromRole
+- name: setUserToRole
+  description: "Add a user to a role"
+  source_operation: openapi/openpath-openapi-original.json#setUserToRole
+- name: removeThirdPartyWiegandFromEntry
+  description: "Remove a third party reader - wiegand from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeThirdPartyWiegandFromEntry
+- name: setThirdPartyWiegandToEntry
+  description: "Set a third party reader - wiegand to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setThirdPartyWiegandToEntry
+- name: removeWiegandFromEntry
+  description: "Remove a wiegand from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeWiegandFromEntry
+- name: setWiegandToEntry
+  description: "Set a wiegand to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setWiegandToEntry
+- name: removeContactSensorFromEntry
+  description: "Remove a contactSensor from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeContactSensorFromEntry
+- name: setContactSensorToEntry
+  description: "Set a contactSensor to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setContactSensorToEntry
+- name: removeReaderFromEntry
+  description: "Remove a reader from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeReaderFromEntry
+- name: setReaderToEntry
+  description: "Set a reader to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setReaderToEntry
+- name: deleteAlarmConfigurationCameraId
+  description: "Remove a camera from an alarm configuration"
+  source_operation: openapi/openpath-openapi-original.json#deleteAlarmConfigurationCameraId
+- name: addAlarmConfigurationCameraId
+  description: "Add a camera to an alarm configuration"
+  source_operation: openapi/openpath-openapi-original.json#addAlarmConfigurationCameraId
+- name: removeRelayFromEntry
+  description: "Remove a relay from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeRelayFromEntry
+- name: setRelayToEntry
+  description: "Set a relay to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setRelayToEntry
+- name: removeRexFromEntry
+  description: "Remove a rex from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeRexFromEntry
+- name: setRexToEntry
+  description: "Set a rex to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setRexToEntry
+- name: removeThirdPartyReaderFromEntry
+  description: "Remove a third party reader - OSDP from an entry"
+  source_operation: openapi/openpath-openapi-original.json#removeThirdPartyReaderFromEntry
+- name: setThirdPartyReaderToEntry
+  description: "Set a third party reader - OSDP to an entry"
+  source_operation: openapi/openpath-openapi-original.json#setThirdPartyReaderToEntry
+- name: removeUserFromGroup
+  description: "Remove a user from an access group"
+  source_operation: openapi/openpath-openapi-original.json#removeUserFromGroup
+- name: setUserToGroup
+  description: "Add a user to an access group"
+  source_operation: openapi/openpath-openapi-original.json#setUserToGroup
+- name: removeGroupFromSite
+  description: "Remove a group from a site"
+  source_operation: openapi/openpath-openapi-original.json#removeGroupFromSite
+- name: setGroupToSite
+  description: "Add a group to a site"
+  source_operation: openapi/openpath-openapi-original.json#setGroupToSite
+- name: removeGroupFromZone
+  description: "Remove a group from a zone"
+  source_operation: openapi/openpath-openapi-original.json#removeGroupFromZone
+- name: setGroupToZone
+  description: "Add a group to a zone"
+  source_operation: openapi/openpath-openapi-original.json#setGroupToZone
+- name: deleteOpVideoDeviceFacadeBackgroundImage
+  description: "Delete a background image for an opvideo device facade"
+  source_operation: openapi/openpath-openapi-original.json#deleteOpVideoDeviceFacadeBackgroundImage
+- name: updateAlarms
+  description: "Bulk update alarms"
+  source_operation: openapi/openpath-openapi-original.json#updateAlarms
+- name: updateUserGroupIds
+  description: "Bulk-update a user's groups"
+  source_operation: openapi/openpath-openapi-original.json#updateUserGroupIds
+- name: setUserGroupIds
+  description: "Set a user's groups by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setUserGroupIds
+- name: updateSiteUserIds
+  description: "Bulk-update a site's users"
+  source_operation: openapi/openpath-openapi-original.json#updateSiteUserIds
+- name: setSiteUserIds
+  description: "Set a site's users by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setSiteUserIds
+- name: updateGroupSiteIds
+  description: "Bulk-update a group's sites"
+  source_operation: openapi/openpath-openapi-original.json#updateGroupSiteIds
+- name: setGroupSiteIds
+  description: "Set a group's sites by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setGroupSiteIds
+- name: updateRoleUserIds
+  description: "Bulk-update a role's users"
+  source_operation: openapi/openpath-openapi-original.json#updateRoleUserIds
+- name: setRoleUserIds
+  description: "Set a role's users by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setRoleUserIds
+- name: updateSiteGroupIds
+  description: "Bulk-update a site's groups"
+  source_operation: openapi/openpath-openapi-original.json#updateSiteGroupIds
+- name: setSiteGroupIds
+  description: "Set a site's groups by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setSiteGroupIds
+- name: updateUserSiteIds
+  description: "Bulk-update a user's sites"
+  source_operation: openapi/openpath-openapi-original.json#updateUserSiteIds
+- name: setUserSiteIds
+  description: "Set a user's sites by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setUserSiteIds
+- name: updateParcelPickedUpStatus
+  description: "Self-pickup - Update parcel status"
+  source_operation: openapi/openpath-openapi-original.json#updateParcelPickedUpStatus
+- name: updateWalletAppleDevice
+  description: "Update Apple Wallet Device"
+  source_operation: openapi/openpath-openapi-original.json#updateWalletAppleDevice
+- name: setZoneUserIds
+  description: "Set a zone's users by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setZoneUserIds
+- name: setUserStatus
+  description: "Set a user's status"
+  source_operation: openapi/openpath-openapi-original.json#setUserStatus
+- name: setRoleSiteIds
+  description: "Set a role's sites by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setRoleSiteIds
+- name: setLockdownPlanPermissions
+  description: "Set a lockdown plan's user and group permissions"
+  source_operation: openapi/openpath-openapi-original.json#setLockdownPlanPermissions
+- name: setIdentityProviderUserCustomFieldsMapping
+  description: "Set an identity provider's user custom fields mapping"
+  source_operation: openapi/openpath-openapi-original.json#setIdentityProviderUserCustomFieldsMapping
+- name: setEntryStateTriggerMethodIds
+  description: "Set a custom entry state's entire list of trigger methods"
+  source_operation: openapi/openpath-openapi-original.json#setEntryStateTriggerMethodIds
+- name: setAcuLocationMeasurement
+  description: "Set a location measurement for an ACU"
+  source_operation: openapi/openpath-openapi-original.json#setAcuLocationMeasurement
+- name: setAcuStatus
+  description: "Set an ACU's status and nucleon config group name"
+  source_operation: openapi/openpath-openapi-original.json#setAcuStatus
+- name: setAcuLocationMeasurementSelf
+  description: "ACU sets a location measurement for itself"
+  source_operation: openapi/openpath-openapi-original.json#setAcuLocationMeasurementSelf
+- name: setAlarmConfigurationCameraIds
+  description: "Set an alarm configuration's cameras by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setAlarmConfigurationCameraIds
+- name: setGroupZoneIds
+  description: "Set an access group's zones by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setGroupZoneIds
+- name: inactivateIdentityProvider
+  description: "Inactivate an identity provider and all associated identities and users"
+  source_operation: openapi/openpath-openapi-original.json#inactivateIdentityProvider
+- name: setLockdownPlanZoneStates
+  description: "Set a lockdown plan's zone states"
+  source_operation: openapi/openpath-openapi-original.json#setLockdownPlanZoneStates
+- name: setSiteLocationMeasurement
+  description: "Set a location measurement for a site"
+  source_operation: openapi/openpath-openapi-original.json#setSiteLocationMeasurement
+- name: setUserZoneIds
+  description: "Set a user's zones by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setUserZoneIds
+- name: setUserRoleIds
+  description: "Set a user's roles by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setUserRoleIds
+- name: setZoneShareOrgIds
+  description: "Set this zone's shares by replacing the entire set with this one"
+  source_operation: openapi/openpath-openapi-original.json#setZoneShareOrgIds

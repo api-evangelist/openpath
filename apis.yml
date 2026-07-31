@@ -1,9 +1,28 @@
 aid: openpath
 name: Openpath
-description: 'Openpath is a company surfaced as a portfolio company of emergence-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: security. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: >-
+  Openpath is a cloud-based, mobile-first access control platform for the modern
+  workplace — touchless entry, door/reader/relay hardware (ACUs), user and credential
+  management, roles, schedules, sites and zones, video and alarm integrations. Founded
+  in 2016 and backed by Emergence Capital, Openpath was acquired by Motorola Solutions
+  in 2021 and is now marketed as Avigilon Alta; openpath.com redirects to
+  avigilon.com/access-control. Its developer surface remains live: a documented REST
+  API at api.openpath.com (546 operations, JWT scope-based auth, OpenID Connect) with
+  reference docs on ReadMe.
 url: https://raw.githubusercontent.com/api-evangelist/openpath/refs/heads/main/apis.yml
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://files.readme.io/31f837c-small-Avigilon_Alta_favicon.png
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
@@ -12,16 +31,1505 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Security
-apis: []
+- Access Control
+- Physical Security
+- Identity
+- Credentials
+- IoT
+- Smart Building
+- Avigilon Alta
+- Motorola Solutions
+apis:
+- aid: openpath:openpath-auth-api
+  name: Openpath auth API
+  description: Authentication and Login
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - auth
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-auth-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-billablefeatures-api
+  name: Openpath billableFeatures API
+  description: The billableFeatures API from Openpath — 1 operation(s) for billablefeatures.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - billableFeatures
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-billablefeatures-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-identities-api
+  name: Openpath identities API
+  description: Identities and MFA
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - identities
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-identities-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-acumodels-api
+  name: Openpath orgs/acuModels API
+  description: ACU Models
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/acuModels
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-acumodels-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-acuports-api
+  name: Openpath orgs/acuPorts API
+  description: The orgs/acuPorts API from Openpath — 1 operation(s) for orgs/acuports.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/acuPorts
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-acuports-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-acuporttypes-api
+  name: Openpath orgs/acuPortTypes API
+  description: ACU Port Types
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/acuPortTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-acuporttypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-acus-api
+  name: Openpath orgs/acus API
+  description: ACUs
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/acus
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-acus-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-alarmactions-api
+  name: Openpath orgs/alarmActions API
+  description: The orgs/alarmActions API from Openpath — 2 operation(s) for orgs/alarmactions.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/alarmActions
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-alarmactions-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-alarmconfigurations-api
+  name: Openpath orgs/alarmConfigurations API
+  description: >-
+    The orgs/alarmConfigurations API from Openpath — 5 operation(s) for orgs/alarmconfigurations.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/alarmConfigurations
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-alarmconfigurations-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-alarmseverities-api
+  name: Openpath orgs/alarmSeverities API
+  description: The orgs/alarmSeverities API from Openpath — 2 operation(s) for orgs/alarmseverities.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/alarmSeverities
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-alarmseverities-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-alarmsext-api
+  name: Openpath orgs/alarmsExt API
+  description: The orgs/alarmsExt API from Openpath — 2 operation(s) for orgs/alarmsext.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/alarmsExt
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-alarmsext-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-alarmstatuses-api
+  name: Openpath orgs/alarmStatuses API
+  description: The orgs/alarmStatuses API from Openpath — 2 operation(s) for orgs/alarmstatuses.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/alarmStatuses
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-alarmstatuses-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-authcerts-api
+  name: Openpath orgs/authCerts API
+  description: The orgs/authCerts API from Openpath — 2 operation(s) for orgs/authcerts.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/authCerts
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-authcerts-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-badgeconfigs-api
+  name: Openpath orgs/badgeConfigs API
+  description: The orgs/badgeConfigs API from Openpath — 2 operation(s) for orgs/badgeconfigs.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/badgeConfigs
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-badgeconfigs-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-cardformats-api
+  name: Openpath orgs/cardFormats API
+  description: The orgs/cardFormats API from Openpath — 2 operation(s) for orgs/cardformats.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/cardFormats
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-cardformats-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-cobalt-api
+  name: Openpath orgs/cobalt API
+  description: The orgs/cobalt API from Openpath — 1 operation(s) for orgs/cobalt.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/cobalt
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-cobalt-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-contactsensors-api
+  name: Openpath orgs/contactSensors API
+  description: Contact Sensors
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/contactSensors
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-contactsensors-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-credentialactiontypes-api
+  name: Openpath orgs/credentialActionTypes API
+  description: >-
+    The orgs/credentialActionTypes API from Openpath — 2 operation(s) for orgs/credentialactiontypes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/credentialActionTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-credentialactiontypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-credentials-api
+  name: Openpath orgs/credentials API
+  description: The orgs/credentials API from Openpath — 3 operation(s) for orgs/credentials.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/credentials
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-credentials-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-credentialtypes-api
+  name: Openpath orgs/credentialTypes API
+  description: Credential Types
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/credentialTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-credentialtypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-customfields-api
+  name: Openpath orgs/customFields API
+  description: Custom Fields
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/customFields
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-customfields-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-customfieldtypes-api
+  name: Openpath orgs/customFieldTypes API
+  description: Custom Field Types
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/customFieldTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-customfieldtypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-dashboards-api
+  name: Openpath orgs/dashboards API
+  description: The orgs/dashboards API from Openpath — 4 operation(s) for orgs/dashboards.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-dashboards-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-effectivescopes-api
+  name: Openpath orgs/effectiveScopes API
+  description: The orgs/effectiveScopes API from Openpath — 1 operation(s) for orgs/effectivescopes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/effectiveScopes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-effectivescopes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-emailalerts-api
+  name: Openpath orgs/emailAlerts API
+  description: The orgs/emailAlerts API from Openpath — 1 operation(s) for orgs/emailalerts.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/emailAlerts
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-emailalerts-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-emailalerttypes-api
+  name: Openpath orgs/emailAlertTypes API
+  description: The orgs/emailAlertTypes API from Openpath — 2 operation(s) for orgs/emailalerttypes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/emailAlertTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-emailalerttypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-entries-api
+  name: Openpath orgs/entries API
+  description: Entries and Entry Hardware
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/entries
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-entries-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-entrystates-api
+  name: Openpath orgs/entryStates API
+  description: Entry States
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/entryStates
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-entrystates-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-eolsupervisions-api
+  name: Openpath orgs/eolSupervisions API
+  description: The orgs/eolSupervisions API from Openpath — 2 operation(s) for orgs/eolsupervisions.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/eolSupervisions
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-eolsupervisions-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-features-api
+  name: Openpath orgs/features API
+  description: The orgs/features API from Openpath — 1 operation(s) for orgs/features.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/features
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-features-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-foballegions-api
+  name: Openpath orgs/fobAllegions API
+  description: The orgs/fobAllegions API from Openpath — 2 operation(s) for orgs/foballegions.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/fobAllegions
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-foballegions-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-genericinputs-api
+  name: Openpath orgs/genericInputs API
+  description: The orgs/genericInputs API from Openpath — 2 operation(s) for orgs/genericinputs.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/genericInputs
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-genericinputs-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-groups-api
+  name: Openpath orgs/groups API
+  description: User Groups
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/groups
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-groups-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-hookactions-api
+  name: Openpath orgs/hookActions API
+  description: The orgs/hookActions API from Openpath — 2 operation(s) for orgs/hookactions.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/hookActions
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-hookactions-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-hookevents-api
+  name: Openpath orgs/hookEvents API
+  description: The orgs/hookEvents API from Openpath — 2 operation(s) for orgs/hookevents.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/hookEvents
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-hookevents-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-identityproviders-api
+  name: Openpath orgs/identityProviders API
+  description: Identity Providers and OAuth2
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/identityProviders
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-identityproviders-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-identityprovidertypes-api
+  name: Openpath orgs/identityProviderTypes API
+  description: Identity Provider Types
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/identityProviderTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-identityprovidertypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-ios-api
+  name: Openpath orgs/ios API
+  description: The orgs/ios API from Openpath — 2 operation(s) for orgs/ios.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/ios
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-ios-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-locationmeasurementsourcetypes-api
+  name: Openpath orgs/locationMeasurementSourceTypes API
+  description: >-
+    The orgs/locationMeasurementSourceTypes API from Openpath — 2 operation(s) for orgs/locationmeasurementsourcetypes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/locationMeasurementSourceTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-locationmeasurementsourcetypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-lockdownplans-api
+  name: Openpath orgs/lockdownPlans API
+  description: The orgs/lockdownPlans API from Openpath — 4 operation(s) for orgs/lockdownplans.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/lockdownPlans
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-lockdownplans-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-mailrooms-api
+  name: Openpath orgs/mailrooms API
+  description: The orgs/mailrooms API from Openpath — 5 operation(s) for orgs/mailrooms.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/mailrooms
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-mailrooms-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-maintenancewindow-api
+  name: Openpath orgs/maintenanceWindow API
+  description: >-
+    The orgs/maintenanceWindow API from Openpath — 1 operation(s) for orgs/maintenancewindow.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/maintenanceWindow
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-maintenancewindow-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-maintenancewindowacumap-api
+  name: Openpath orgs/maintenanceWindowAcuMap API
+  description: >-
+    The orgs/maintenanceWindowAcuMap API from Openpath — 2 operation(s) for orgs/maintenancewindowacumap.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/maintenanceWindowAcuMap
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-maintenancewindowacumap-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-maintenancewindowdefinition-api
+  name: Openpath orgs/maintenanceWindowDefinition API
+  description: >-
+    The orgs/maintenanceWindowDefinition API from Openpath — 2 operation(s) for orgs/maintenancewindowdefinition.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/maintenanceWindowDefinition
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-maintenancewindowdefinition-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-maintenancewindowmap-api
+  name: Openpath orgs/maintenanceWindowMap API
+  description: >-
+    The orgs/maintenanceWindowMap API from Openpath — 2 operation(s) for orgs/maintenancewindowmap.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/maintenanceWindowMap
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-maintenancewindowmap-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-mobileappconfig-api
+  name: Openpath orgs/mobileAppConfig API
+  description: The orgs/mobileAppConfig API from Openpath — 1 operation(s) for orgs/mobileappconfig.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/mobileAppConfig
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-mobileappconfig-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-namespaces-api
+  name: Openpath orgs/namespaces API
+  description: The orgs/namespaces API from Openpath — 1 operation(s) for orgs/namespaces.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/namespaces
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-namespaces-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-opvideo-devices-api
+  name: Openpath orgs/opvideo-devices API
+  description: The orgs/opvideo-devices API from Openpath — 2 operation(s) for orgs/opvideo-devices.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/opvideo-devices
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-opvideo-devices-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-orgidentities-api
+  name: Openpath orgs/orgIdentities API
+  description: The orgs/orgIdentities API from Openpath — 1 operation(s) for orgs/orgidentities.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/orgIdentities
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-orgidentities-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-orgpackageplans-api
+  name: Openpath orgs/orgPackagePlans API
+  description: The orgs/orgPackagePlans API from Openpath — 2 operation(s) for orgs/orgpackageplans.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/orgPackagePlans
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-orgpackageplans-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-orgpictures-api
+  name: Openpath orgs/orgPictures API
+  description: Org Pictures
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/orgPictures
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-orgpictures-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-packageplans-api
+  name: Openpath orgs/packagePlans API
+  description: The orgs/packagePlans API from Openpath — 2 operation(s) for orgs/packageplans.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/packagePlans
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-packageplans-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-palettes-api
+  name: Openpath orgs/palettes API
+  description: Entry Color Palettes
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/palettes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-palettes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-parcelmessagetypes-api
+  name: Openpath orgs/parcelMessageTypes API
+  description: >-
+    The orgs/parcelMessageTypes API from Openpath — 1 operation(s) for orgs/parcelmessagetypes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/parcelMessageTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-parcelmessagetypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-parcels-api
+  name: Openpath orgs/parcels API
+  description: The orgs/parcels API from Openpath — 12 operation(s) for orgs/parcels.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/parcels
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-parcels-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-parcelstatuses-api
+  name: Openpath orgs/parcelStatuses API
+  description: The orgs/parcelStatuses API from Openpath — 1 operation(s) for orgs/parcelstatuses.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/parcelStatuses
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-parcelstatuses-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-readers-api
+  name: Openpath orgs/readers API
+  description: Readers
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/readers
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-readers-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-recentalarms-api
+  name: Openpath orgs/recentAlarms API
+  description: The orgs/recentAlarms API from Openpath — 1 operation(s) for orgs/recentalarms.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/recentAlarms
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-recentalarms-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-recentalarmsext-api
+  name: Openpath orgs/recentAlarmsExt API
+  description: The orgs/recentAlarmsExt API from Openpath — 1 operation(s) for orgs/recentalarmsext.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/recentAlarmsExt
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-recentalarmsext-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-relayhardwaretypes-api
+  name: Openpath orgs/relayHardwareTypes API
+  description: Relay Hardware Types
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/relayHardwareTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-relayhardwaretypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-relays-api
+  name: Openpath orgs/relays API
+  description: Relays
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/relays
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-relays-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-reports-api
+  name: Openpath orgs/reports API
+  description: Reports and Analytics
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/reports
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-reports-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-rexs-api
+  name: Openpath orgs/rexs API
+  description: Request-To-Exit Sensors
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/rexs
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-rexs-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-roles-api
+  name: Openpath orgs/roles API
+  description: User Roles
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/roles
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-roles-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-schedules-api
+  name: Openpath orgs/schedules API
+  description: Schedules
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/schedules
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-schedules-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-scheduletypes-api
+  name: Openpath orgs/scheduleTypes API
+  description: Schedule Types
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/scheduleTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-scheduletypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-scoperesources-api
+  name: Openpath orgs/scopeResources API
+  description: Scope Resources for User Roles
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/scopeResources
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-scoperesources-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-sharedusers-api
+  name: Openpath orgs/sharedUsers API
+  description: The orgs/sharedUsers API from Openpath — 3 operation(s) for orgs/sharedusers.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/sharedUsers
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-sharedusers-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-sites-api
+  name: Openpath orgs/sites API
+  description: Sites
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/sites
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-sites-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-subscriptions-api
+  name: Openpath orgs/subscriptions API
+  description: REST Hook Subscriptions
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/subscriptions
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-subscriptions-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-tasks-api
+  name: Openpath orgs/tasks API
+  description: The orgs/tasks API from Openpath — 5 operation(s) for orgs/tasks.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/tasks
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-tasks-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-termsagreements-api
+  name: Openpath orgs/termsAgreements API
+  description: The orgs/termsAgreements API from Openpath — 3 operation(s) for orgs/termsagreements.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/termsAgreements
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-termsagreements-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-thirdpartyreaders-api
+  name: Openpath orgs/thirdPartyReaders API
+  description: >-
+    The orgs/thirdPartyReaders API from Openpath — 2 operation(s) for orgs/thirdpartyreaders.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/thirdPartyReaders
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-thirdpartyreaders-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-thirdpartywiegands-api
+  name: Openpath orgs/thirdPartyWiegands API
+  description: >-
+    The orgs/thirdPartyWiegands API from Openpath — 2 operation(s) for orgs/thirdpartywiegands.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/thirdPartyWiegands
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-thirdpartywiegands-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-triggermethods-api
+  name: Openpath orgs/triggerMethods API
+  description: Entry Trigger Methods
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/triggerMethods
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-triggermethods-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-triggerpermissionschange-api
+  name: Openpath orgs/triggerPermissionsChange API
+  description: >-
+    The orgs/triggerPermissionsChange API from Openpath — 1 operation(s) for orgs/triggerpermissionschange.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/triggerPermissionsChange
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-triggerpermissionschange-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-unusedinputs-api
+  name: Openpath orgs/unusedInputs API
+  description: The orgs/unusedInputs API from Openpath — 2 operation(s) for orgs/unusedinputs.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/unusedInputs
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-unusedinputs-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-users-api
+  name: Openpath orgs/users API
+  description: Users and Credentials
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/users
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-users-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-videoprovidertypes-api
+  name: Openpath orgs/videoProviderTypes API
+  description: >-
+    The orgs/videoProviderTypes API from Openpath — 1 operation(s) for orgs/videoprovidertypes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/videoProviderTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-videoprovidertypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-widgettypes-api
+  name: Openpath orgs/widgetTypes API
+  description: The orgs/widgetTypes API from Openpath — 2 operation(s) for orgs/widgettypes.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/widgetTypes
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-widgettypes-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wiegands-api
+  name: Openpath orgs/wiegands API
+  description: Wiegand controls
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wiegands
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wiegands-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wirelessgateways-api
+  name: Openpath orgs/wirelessGateways API
+  description: The orgs/wirelessGateways API from Openpath — 6 operation(s) for orgs/wirelessgateways.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wirelessGateways
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wirelessgateways-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wirelesslockgateways-api
+  name: Openpath orgs/wirelessLockGateways API
+  description: >-
+    The orgs/wirelessLockGateways API from Openpath — 5 operation(s) for orgs/wirelesslockgateways.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wirelessLockGateways
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wirelesslockgateways-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wirelesslockproviders-api
+  name: Openpath orgs/wirelessLockProviders API
+  description: >-
+    The orgs/wirelessLockProviders API from Openpath — 6 operation(s) for orgs/wirelesslockproviders.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wirelessLockProviders
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wirelesslockproviders-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wirelesslockreaders-api
+  name: Openpath orgs/wirelessLockReaders API
+  description: >-
+    The orgs/wirelessLockReaders API from Openpath — 2 operation(s) for orgs/wirelesslockreaders.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wirelessLockReaders
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wirelesslockreaders-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wirelesslocks-api
+  name: Openpath orgs/wirelessLocks API
+  description: The orgs/wirelessLocks API from Openpath — 5 operation(s) for orgs/wirelesslocks.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wirelessLocks
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wirelesslocks-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-wirelesslocktemplates-api
+  name: Openpath orgs/wirelessLockTemplates API
+  description: >-
+    The orgs/wirelessLockTemplates API from Openpath — 2 operation(s) for orgs/wirelesslocktemplates.
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/wirelessLockTemplates
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-wirelesslocktemplates-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-orgs-zones-api
+  name: Openpath orgs/zones API
+  description: Zones
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - orgs/zones
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-orgs-zones-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
+- aid: openpath:openpath-tokens-api
+  name: Openpath tokens API
+  description: Token use and validation
+  humanURL: https://openpath.readme.io
+  baseURL: https://api.openpath.com
+  tags:
+  - tokens
+  properties:
+  - type: OpenAPI
+    url: openapi/openpath-tokens-api-openapi.yml
+  - type: Documentation
+    url: https://openpath.readme.io
+  - type: APIReference
+    url: https://openpath.readme.io/reference
+  - type: GettingStarted
+    url: https://openpath.readme.io/docs/basics-to-start
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DeveloperPortal
+  url: https://openpath.readme.io
+- type: Documentation
+  url: https://openpath.readme.io
+- type: APIReference
+  url: https://openpath.readme.io/reference
+- type: GettingStarted
+  url: https://openpath.readme.io/docs/basics-to-start
+- type: Login
+  url: https://control.openpath.com
+- type: Authentication
+  url: authentication/openpath-authentication.yml
+- type: OAuthScopes
+  url: scopes/openpath-scopes.yml
+- type: WellKnown
+  url: well-known/openpath-well-known.yml
+- type: Conventions
+  url: conventions/openpath-conventions.yml
+- type: ErrorCatalog
+  url: errors/openpath-error-codes.yml
+- type: Lifecycle
+  url: lifecycle/openpath-lifecycle.yml
+- type: Conformance
+  url: conformance/openpath-conformance.yml
+- type: DataModel
+  url: data-model/openpath-data-model.yml
+- type: MCPServer
+  url: mcp/openpath-mcp.yml
+- type: LLMsTxt
+  url: llms/openpath-llms.txt
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/openpath-agentic-access.yml
+- type: DomainSecurity
+  url: security/openpath-domain-security.yml
 - type: Website
   url: https://www.openpath.com
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

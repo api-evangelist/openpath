@@ -1,0 +1,22 @@
+generated: '2026-07-20'
+method: searched
+source: https://openpath.readme.io/reference/validateaccesstoken + openapi responses
+format: named-errors
+note: >-
+  The OpenAPI documents only success responses (200/201/204); error responses are
+  returned as named error objects. The documented error names below are captured
+  from the API reference. The success envelope wraps payloads in a top-level "data".
+envelope_field: name
+problems:
+- name: TokenExpiredError
+  meaning: The supplied access token has passed its expiration time.
+  remediation: Re-authenticate via /auth/login or refresh via /auth/refreshLogin.
+  source_operation: openapi/openpath-openapi-original.json#validateAccessToken
+- name: JsonWebTokenError
+  meaning: The access token is malformed or has an invalid signature.
+  remediation: Obtain a new token via /auth/login.
+  source_operation: openapi/openpath-openapi-original.json#validateAccessToken
+- name: TokenNotFoundError
+  meaning: No access token was found for the request.
+  remediation: Include a valid JWT in the Authorization header.
+  source_operation: openapi/openpath-openapi-original.json#validateAccessToken

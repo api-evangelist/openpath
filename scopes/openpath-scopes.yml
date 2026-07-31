@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://api.openpath.com/.well-known/openid-configuration
+docs: https://openpath.readme.io/docs/using-the-api
+note: >-
+  The Openpath API primarily authorizes with fine-grained JWT scope strings of
+  the form o{orgId}-<resource>:<r|w> (e.g. o123-hw:r, o123-site:w, o:w, s-o:r)
+  issued by the Login API. In addition, an OpenID Connect / OAuth2 authorization
+  server (issuer helium.prod.openpath.com) advertises the standard OIDC scopes
+  below for authorization_code + PKCE flows.
+issuer: https://helium.prod.openpath.com
+authorization_endpoint: https://helium.prod.openpath.com/oauth/authorize
+token_endpoint: https://helium.prod.openpath.com/oauth/token
+grant_types: ["authorization_code", "refresh_token"]
+code_challenge_methods: ["S256"]
+scopes:
+- scope: openid
+  description: "OpenID Connect authentication; returns an ID token"
+  flows: [authorizationCode]
+- scope: profile
+  description: "Access to basic profile claims (name, given_name, family_name, preferred_username)"
+  flows: [authorizationCode]
+- scope: email
+  description: "Access to the email and email_verified claims"
+  flows: [authorizationCode]

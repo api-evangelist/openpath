@@ -1,0 +1,44 @@
+generated: '2026-07-20'
+method: searched
+source: openapi/openpath-openapi-original.json + https://openpath.readme.io/docs/using-the-api + well-known/openpath-openid-configuration.json
+docs: https://openpath.readme.io/docs/using-the-api
+summary:
+  types:
+  - apiKey
+  - http
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: jwt
+  type: apiKey
+  in: header
+  parameter: Authorization
+  description: >-
+    Primary auth. A JWT access token obtained from the Login API (POST /auth/login,
+    optionally with mfa.totpCode) is sent in the Authorization header. The token
+    carries fine-grained scope strings of the form o{orgId}-<resource>:<r|w>.
+    Refresh via /auth/refreshLogin; validate via /auth/validateAccessToken.
+  sources:
+  - openapi/openpath-openapi-original.json
+- name: basic
+  type: http
+  scheme: basic
+  description: HTTP Basic Authentication is also accepted per the API docs.
+  sources:
+  - https://openpath.readme.io/docs/using-the-api
+- name: oauth2-oidc
+  type: oauth2
+  flow: authorizationCode
+  authorizationUrl: https://helium.prod.openpath.com/oauth/authorize
+  tokenUrl: https://helium.prod.openpath.com/oauth/token
+  pkce: S256
+  scopes: [openid, profile, email]
+  description: >-
+    An OpenID Connect / OAuth2 authorization server (issuer helium.prod.openpath.com)
+    is advertised at /.well-known/openid-configuration, supporting authorization_code
+    + refresh_token grants with PKCE (S256) and RS256 ID tokens.
+  sources:
+  - well-known/openpath-openid-configuration.json

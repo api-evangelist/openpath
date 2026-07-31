@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/openpath-openapi-original.json + well-known/openpath-openid-configuration.json
+standards:
+- id: oauth2
+  conforms: true
+  evidence: OIDC discovery advertises authorization_code + refresh_token grants (helium.prod.openpath.com)
+- id: oidc
+  conforms: true
+  evidence: /.well-known/openid-configuration present with issuer, jwks_uri, id_token RS256
+- id: pkce-rfc7636
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256
+- id: jwt-rfc7519
+  conforms: true
+  evidence: API authorizes with JWT access tokens in the Authorization header
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: errors are returned as named error objects, not application/problem+json
+- id: pagination
+  conforms: true
+  evidence: consistent offset/limit/sort/order/filter query params across list endpoints
+- id: idempotency
+  conforms: false
+  evidence: no Idempotency-Key header documented or present

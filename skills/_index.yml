@@ -1,0 +1,16 @@
+generated: '2026-07-20'
+method: generated
+source: openapi/openpath-openapi-original.json
+skills:
+- file: openpath-authenticate.md
+  name: Authenticate with the Openpath API
+  api: openapi/openpath-openapi-original.json
+  operations: [login, describeAccessToken, validateAccessToken, refreshLogin, logout]
+- file: openpath-provision-entry.md
+  name: Provision a door (entry) and attach hardware
+  api: openapi/openpath-openapi-original.json
+  operations: [listAcus, createEntry, setReaderToEntry, setRelayToEntry, remoteEntryIdentify, describeEntry]
+- file: openpath-grant-user-access.md
+  name: Onboard a user and grant them a credential
+  api: openapi/openpath-openapi-original.json
+  operations: [createUser, describeUser, createCredential, listCredentials, listEntryUsers]

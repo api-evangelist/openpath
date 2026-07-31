@@ -1,0 +1,19 @@
+generated: '2026-07-20'
+method: derived
+source: openapi/openpath-openapi-original.json + https://openpath.readme.io
+versioning:
+  scheme: unversioned-base
+  current: '1.0.0'
+  base_url: https://api.openpath.com
+  docs: https://openpath.readme.io/docs/basics-to-start
+deprecation:
+  policy_url: null
+  note: >-
+    Individual operations are marked DEPRECATED in the API reference (see below);
+    no separate written deprecation/sunset policy page was found.
+deprecated_operations:
+- openapi/openpath-openapi-original.json#createUserPicture
+- openapi/openpath-openapi-original.json#describeUserPicture
+- openapi/openpath-openapi-original.json#deleteUserPicture
+- openapi/openpath-openapi-original.json#updateUserPicture
+- openapi/openpath-openapi-original.json#getOidcAuthUrl  # docs: 'DEPRECATED - use /auth/sso/authorize instead'
