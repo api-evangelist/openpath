@@ -1,0 +1,356 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/reports API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the search and display unix timestamp ranges for relative times based on the device with a timezone in the min utc offset",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/reports/deviceTimeZoneDependentRelativeTimeRanges",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "siteIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "zoneIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "referenceTime",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-occupancyReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getDeviceTimeZoneDependentRelativeTimeRanges"
+        },
+        {
+          "info": {
+            "name": "Get entry access activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/reports/activity",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customFieldIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Note: Please use `/org/{orgId}/reports/activity/events` API when possible as it replaces this API and is faster.<br/><br/>Returns activity events for the `time` specified date range. This API does not handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>This API can return 422 Unprocessable Entity status code. A 422 is returned when the `time` filter specified a date range with more data than can be retrieved within the 55 second API t"
+        },
+        {
+          "info": {
+            "name": "Search/filter/return audit logs for UI",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/reports/auditLogs/ui",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns audit log UI events for the `timestamp` specified date range. Default search time span is 1 hour ago to now.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-portalAudit:w,o{params.orgId}-portalAudit:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getAuditLogsUi"
+        },
+        {
+          "info": {
+            "name": "Get presence bucket reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/reports/presence/buckets",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeScale",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "category",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "startDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "endDate",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "timeZone",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sensorTypes",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "siteIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "zoneIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "entryIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "readerIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "groupIds",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "userIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-presence:w,o{params.orgId}-presence:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getPresenceBucketsReport"
+        },
+        {
+          "info": {
+            "name": "Get access activity events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/reports/activity/events",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customFieldIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns activity events for the `uiData.time` specified date range. This API can handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>To filter by time, use a `filter` value of `uiData.time:(utcEpochSeconds-<utcEpochSeconds)` or any other valid time range specification, where utcEpochSeconds is replaced by your desired start and end times in unix epoch seconds. To filter by an array field like userGroups, use a `filter` value of `uiDat"
+        },
+        {
+          "info": {
+            "name": "Get alarm events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/reports/alarm/events",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "customFieldIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Returns alarm events for the `uiData.time` specified date range. This API can handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>To filter by time, use a `filter` value of `uiData.time:(utcEpochSeconds-<utcEpochSeconds)` or any other valid time range specification, where utcEpochSeconds is replaced by your desired start and end times in unix epoch seconds. New partial results are returned for each API call. The query is complete when"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

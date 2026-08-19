@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "5fd8fc41-6918-4fa8-89bb-5968dd48b5d7",
+      "name": "orgs/locationMeasurementSourceTypes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3580ac62-e59f-4131-9562-93eb5cf92058",
+          "name": "List all location measurement source types",
+          "request": {
+            "name": "List all location measurement source types",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listLocationMeasurementSourceTypes",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "locationMeasurementSourceTypes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "57201fcf-5ddc-4daf-9684-cd3023f9b620",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "locationMeasurementSourceTypes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 1822,\n  \"filteredCount\": 8615,\n  \"data\": [\n    {\n      \"id\": 1720.375733876588,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    {\n      \"id\": 4166.565934645825,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2000-06-19\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6696,\n        3330\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6785,\n          2460\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d87b2da9-b4d0-4017-bc33-b5dfd24e0c98",
+          "name": "Describe a location measurement source type",
+          "request": {
+            "name": "Describe a location measurement source type",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeLocationMeasurementSourceType",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "locationMeasurementSourceTypes",
+                ":locationMeasurementSourceTypeId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "locationMeasurementSourceTypeId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "079fd6f1-5935-49a2-a7b4-3e669bb9ac4f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "locationMeasurementSourceTypes",
+                    ":locationMeasurementSourceTypeId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "locationMeasurementSourceTypeId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5465.703524162933,\n    \"name\": \"string\",\n    \"code\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1988-01-16\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4051,\n        5123\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2509,\n          1128\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b1a39dd7-3e63-4155-8f68-617754067708",
+    "name": "Openpath API Documentation auth orgs/locationMeasurementSourceTypes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "f34ba88e-bcfc-48ca-b86e-0e2a913e6772",
+      "name": "orgs/hookEvents",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7f608730-a2b0-40d6-8bea-06985f6cc316",
+          "name": "List all hook events",
+          "request": {
+            "name": "List all hook events",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listHookEvents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "hookEvents"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0df037b0-9861-40af-a20d-24b7a5b96f64",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "hookEvents"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6112,\n  \"filteredCount\": 5213,\n  \"data\": [\n    {\n      \"id\": 4945.55001023605,\n      \"isCloudRecorded\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"hookEventLocation\": {\n        \"id\": 880.4833177235172,\n        \"name\": \"string\",\n        \"acceptsTargetUrl\": false,\n        \"acceptsHookAction\": true\n      },\n      \"hookEventLocations\": [\n        {\n          \"id\": 4500.938535901065,\n          \"name\": \"string\",\n          \"acceptsTargetUrl\": true,\n          \"acceptsHookAction\": true\n        },\n        {\n          \"id\": 9144.100784721264,\n          \"name\": \"string\",\n          \"acceptsTargetUrl\": false,\n          \"acceptsHookAction\": false\n        }\n      ],\n      \"requiredFeature\": {\n        \"id\": 6198,\n        \"code\": \"string\"\n      },\n      \"fieldMap\": {},\n      \"flags\": {}\n    },\n    {\n      \"id\": 6192.294172518537,\n      \"isCloudRecorded\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"hookEventLocation\": {\n        \"id\": 7769.906633092243,\n        \"name\": \"string\",\n        \"acceptsTargetUrl\": false,\n        \"acceptsHookAction\": true\n      },\n      \"hookEventLocations\": [\n        {\n          \"id\": 167.97794358882956,\n          \"name\": \"string\",\n          \"acceptsTargetUrl\": true,\n          \"acceptsHookAction\": false\n        },\n        {\n          \"id\": 3593.2184716520223,\n          \"name\": \"string\",\n          \"acceptsTargetUrl\": true,\n          \"acceptsHookAction\": false\n        }\n      ],\n      \"requiredFeature\": {\n        \"id\": 5654,\n        \"code\": \"string\"\n      },\n      \"fieldMap\": {},\n      \"flags\": {}\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2021-05-12\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6104,\n        4071\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1203,\n          6401\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d8e74bd0-fa7c-4410-ae07-80f8ae003fa7",
+          "name": "Describe a hook event",
+          "request": {
+            "name": "Describe a hook event",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeHookEvent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "hookEvents",
+                ":hookEventId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "hookEventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "67caec5e-96e6-4243-b261-89642914ab2e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "hookEvents",
+                    ":hookEventId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "hookEventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 2416.646755763895,\n    \"isCloudRecorded\": true,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"hookEventLocation\": {\n      \"id\": 8539.269090346901,\n      \"name\": \"string\",\n      \"acceptsTargetUrl\": true,\n      \"acceptsHookAction\": false\n    },\n    \"hookEventLocations\": [\n      {\n        \"id\": 6091.411878844914,\n        \"name\": \"string\",\n        \"acceptsTargetUrl\": true,\n        \"acceptsHookAction\": false\n      },\n      {\n        \"id\": 2832.298706267371,\n        \"name\": \"string\",\n        \"acceptsTargetUrl\": true,\n        \"acceptsHookAction\": false\n      }\n    ],\n    \"requiredFeature\": {\n      \"id\": 1374,\n      \"code\": \"string\"\n    },\n    \"fieldMap\": {},\n    \"flags\": {}\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2014-09-19\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2461,\n        2252\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4508,\n          5337\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "61a319b2-bfda-42eb-a501-37ad967d489b",
+    "name": "Openpath API Documentation auth orgs/hookEvents API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

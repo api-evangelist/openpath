@@ -1,0 +1,747 @@
+{
+  "item": [
+    {
+      "id": "fbe2a689-851e-4b93-b6a4-11a82fcdfb3d",
+      "name": "orgs/authCerts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "44e566cc-2d0f-44ec-97b7-895cb5134995",
+          "name": "Get list of X.509 authentication certificates",
+          "request": {
+            "name": "Get list of X.509 authentication certificates",
+            "description": {
+              "content": "Get all X.509 certificates for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r<br/><br/>__Endpoint name__: listAuthCerts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "authCerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2b0e087a-e6e2-42a9-b0b5-6b0e7f05a32b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "authCerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3725,\n  \"filteredCount\": 7559,\n  \"data\": [\n    {\n      \"id\": 9949,\n      \"certificate\": \"string\",\n      \"canOnlySelfModify\": true,\n      \"name\": \"string\",\n      \"roleId\": 7550,\n      \"opal\": \"string\",\n      \"orgId\": 3405\n    },\n    {\n      \"id\": 6904,\n      \"certificate\": \"string\",\n      \"canOnlySelfModify\": false,\n      \"name\": \"string\",\n      \"roleId\": 330,\n      \"opal\": \"string\",\n      \"orgId\": 2962\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2005-12-14\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4327,\n        3185\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1969,\n          6113\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9cc6ece6-5f53-4dd5-b336-4297bbdb8a14",
+          "name": "Create an X.509 authentication certificate",
+          "request": {
+            "name": "Create an X.509 authentication certificate",
+            "description": {
+              "content": "Create an X.509 certificate for an org to be used as a means of authentication against the api. The caller must have a superset of the scopes to be assigned via the roleId. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r<br/><br/>__Endpoint name__: createAuthCert",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "authCerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"certificate\": \"<string>\",\n  \"roleId\": \"<integer>\",\n  \"canOnlySelfModify\": false,\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e98f1265-77da-447b-bbd8-cdc5e043c944",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "authCerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificate\": \"<string>\",\n  \"roleId\": \"<integer>\",\n  \"canOnlySelfModify\": false,\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 7743,\n    \"certificate\": \"string\",\n    \"canOnlySelfModify\": true,\n    \"name\": \"string\",\n    \"roleId\": 8603,\n    \"opal\": \"string\",\n    \"orgId\": 8845\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1997-08-16\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1317,\n        5809\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3928,\n          8357\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8b7e2e6-90f3-457e-91b6-cb079cf523b9",
+          "name": "Get an X.509 authentication certificate",
+          "request": {
+            "name": "Get an X.509 authentication certificate",
+            "description": {
+              "content": "Get an X.509 certificate for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cert{params.authCertId}:r<br/><br/>__Endpoint name__: describeAuthCert",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "authCerts",
+                ":authCertId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "authCertId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c429b75f-9abd-4700-bc7d-d651a8bf1ac2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "authCerts",
+                    ":authCertId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "authCertId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 7743,\n    \"certificate\": \"string\",\n    \"canOnlySelfModify\": true,\n    \"name\": \"string\",\n    \"roleId\": 8603,\n    \"opal\": \"string\",\n    \"orgId\": 8845\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1997-08-16\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1317,\n        5809\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3928,\n          8357\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7d305674-81c3-4cc4-a335-491a8764bacb",
+          "name": "Delete an X.509 authentication certificate",
+          "request": {
+            "name": "Delete an X.509 authentication certificate",
+            "description": {
+              "content": "Delete an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert's private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:w<br/><br/>__Endpoint name__: deleteAuthCert",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "authCerts",
+                ":authCertId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "authCertId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d69d81db-0af0-4bfd-9b2e-b0fe418dba99",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "authCerts",
+                    ":authCertId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "authCertId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "404c2b55-8c49-4543-af5f-6acf2a1ce9d8",
+          "name": "Update an X.509 authentication certificate",
+          "request": {
+            "name": "Update an X.509 authentication certificate",
+            "description": {
+              "content": "Update an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert's private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:w<br/><br/>__Endpoint name__: updateAuthCert",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "authCerts",
+                ":authCertId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "authCertId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"certificate\": \"<string>\",\n  \"canOnlySelfModify\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"roleId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "23268c5a-9a10-44cc-9fca-096611971539",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "authCerts",
+                    ":authCertId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "authCertId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"certificate\": \"<string>\",\n  \"canOnlySelfModify\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"roleId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 7743,\n    \"certificate\": \"string\",\n    \"canOnlySelfModify\": true,\n    \"name\": \"string\",\n    \"roleId\": 8603,\n    \"opal\": \"string\",\n    \"orgId\": 8845\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1997-08-16\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1317,\n        5809\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3928,\n          8357\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b62d9d28-db8b-4efc-9303-154bc4ba4e49",
+    "name": "Openpath API Documentation auth orgs/authCerts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

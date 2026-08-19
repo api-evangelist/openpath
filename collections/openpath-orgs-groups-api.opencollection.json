@@ -1,0 +1,633 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/groups API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all access groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "listGroups takes the following options:<br/><br/>withSites - to include the group's sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-integrations:w,o{params.orgId}-inte"
+        },
+        {
+          "info": {
+            "name": "Create an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/groups",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createGroup"
+        },
+        {
+          "info": {
+            "name": "Describe an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "describeGroup takes the following options:<br/><br/>withSites - to include the group's sites<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeGroup"
+        },
+        {
+          "info": {
+            "name": "Update an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroup"
+        },
+        {
+          "info": {
+            "name": "Delete an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteGroup"
+        },
+        {
+          "info": {
+            "name": "List all zones (and their associated configurations) an access group has access to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/zoneGroups",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "listGroupZoneGroups takes the following options:<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupZoneGroups"
+        },
+        {
+          "info": {
+            "name": "Set an access groups's zones (and their associated configurations) by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/zoneGroups",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupZoneGroups"
+        },
+        {
+          "info": {
+            "name": "Bulk-update an access groups's zones (and their associated configurations)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/zoneGroups",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroupZoneGroups"
+        },
+        {
+          "info": {
+            "name": "List all user IDs of a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/userIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupUserIds"
+        },
+        {
+          "info": {
+            "name": "Set an access group's users by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/userIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupUserIds"
+        },
+        {
+          "info": {
+            "name": "Bulk-update an access group's users",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/userIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroupUserIds"
+        },
+        {
+          "info": {
+            "name": "List all users of an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/users",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupUsers"
+        },
+        {
+          "info": {
+            "name": "List all zones of an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/zones",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupZones"
+        },
+        {
+          "info": {
+            "name": "List all entries an access group has access to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/entries",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupEntries"
+        },
+        {
+          "info": {
+            "name": "List all access groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/list",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "listGroups takes the following options:<br/><br/>withSites - to include the group's sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-integrations:w,o{params.orgId}-inte"
+        },
+        {
+          "info": {
+            "name": "Add a user to an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/users/:userId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserToGroup"
+        },
+        {
+          "info": {
+            "name": "Remove a user from an access group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/users/:userId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeUserFromGroup"
+        },
+        {
+          "info": {
+            "name": "Set a group's sites by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/siteIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setGroupSiteIds"
+        },
+        {
+          "info": {
+            "name": "Bulk-update a group's sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/siteIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateGroupSiteIds"
+        },
+        {
+          "info": {
+            "name": "Set an access group's zones by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/groups/:groupId/zoneIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupZoneIds"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

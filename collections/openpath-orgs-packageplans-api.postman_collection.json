@@ -1,0 +1,350 @@
+{
+  "item": [
+    {
+      "id": "4aa7c9b0-6695-4b4e-b36c-2738c3865ae7",
+      "name": "orgs/packagePlans",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2b2083c7-c873-41ec-92a7-73407b0ffb06",
+          "name": "List all available package plans",
+          "request": {
+            "name": "List all available package plans",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-account:w,o{params.orgId}-account:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listOrgPackagePlans",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "packagePlans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "ordinal"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "viewContext",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bf936df2-db2b-473c-9ebd-3226e4d12ec5",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "packagePlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "ordinal"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "viewContext",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7452,\n  \"filteredCount\": 5207,\n  \"data\": [\n    {\n      \"id\": 8024.489992115728,\n      \"package\": {\n        \"id\": 6421.6231271742245,\n        \"name\": \"string\",\n        \"startDate\": \"1989-08-12\",\n        \"endDate\": \"1981-09-07\",\n        \"canOptInSelf\": false,\n        \"canOptInRoot\": false,\n        \"canOptInParentOrg\": false,\n        \"isAutoManaged\": true,\n        \"isAutoManagedForLicenses\": true,\n        \"parentPackages\": [\n          {\n            \"id\": 2868.202693900386,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 6935.993350951605,\n            \"name\": \"string\"\n          }\n        ],\n        \"subPackages\": [\n          {\n            \"id\": 8518.874785565227,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4969.947658535983,\n            \"name\": \"string\"\n          }\n        ],\n        \"conflictingPackages\": [\n          {\n            \"id\": 6533.891011700692,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 8843.607932506127,\n            \"name\": \"string\"\n          }\n        ],\n        \"packageFeatures\": [\n          {\n            \"id\": 2519.37036015504,\n            \"config\": {},\n            \"feature\": {\n              \"id\": 716.4303574106723,\n              \"name\": \"string\",\n              \"code\": \"string\",\n              \"singular\": \"string\",\n              \"plural\": \"string\",\n              \"isBinary\": true\n            },\n            \"isBillable\": true\n          },\n          {\n            \"id\": 7480.073926852066,\n            \"config\": {},\n            \"feature\": {\n              \"id\": 8564.212862243261,\n              \"name\": \"string\",\n              \"code\": \"string\",\n              \"singular\": \"string\",\n              \"plural\": \"string\",\n              \"isBinary\": true\n            },\n            \"isBillable\": false\n          }\n        ]\n      },\n      \"isSelected\": false,\n      \"netsuitePlan\": {\n        \"currency\": \"string\",\n        \"interval\": \"string\",\n        \"interval_count\": 5115,\n        \"PricePlanId\": 857,\n        \"tiers\": [\n          {\n            \"fromqty\": 7039,\n            \"value\": 9505.351125618909,\n            \"fixedAmount\": true\n          },\n          {\n            \"fromqty\": 9217,\n            \"value\": 6576.290692191739,\n            \"fixedAmount\": true\n          }\n        ]\n      },\n      \"stripePlan\": {\n        \"currency\": \"string\",\n        \"interval\": \"string\",\n        \"interval_count\": 8289.141340935077,\n        \"id\": \"string\",\n        \"product\": \"string\",\n        \"amount\": 3986.426645230622\n      },\n      \"softwareLicense\": {\n        \"id\": 2895.796610538207,\n        \"sku\": \"string\",\n        \"billableQuantity\": 5008,\n        \"softwareLicenseOffers\": [\n          {\n            \"id\": 1054.3141725492133,\n            \"type\": \"trial\",\n            \"defaultIntervalTerm\": \"day\",\n            \"defaultIntervalDuration\": 7666.185511390356,\n            \"maxDaysAllowed\": 768.5837424256492,\n            \"subscriptionTermOverride\": 7944.72405059244,\n            \"maxQuantityAllowed\": 3551.7298014536814\n          },\n          {\n            \"id\": 6437.885101658455,\n            \"type\": \"trial\",\n            \"defaultIntervalTerm\": \"month\",\n            \"defaultIntervalDuration\": 4677.665251112056,\n            \"maxDaysAllowed\": 2641.993704804899,\n            \"subscriptionTermOverride\": 2913.7947561488986,\n            \"maxQuantityAllowed\": 9677.105648879298\n          }\n        ],\n        \"packagePlans\": [\n          {\n            \"id\": 9342.930216355999,\n            \"ordinal\": 6053,\n            \"intervalUnit\": \"string\",\n            \"intervalCount\": 5605,\n            \"currencyCode\": \"string\",\n            \"package\": {\n              \"id\": 9205.33620399417,\n              \"name\": \"string\",\n              \"startDate\": \"1977-12-04\",\n              \"endDate\": \"1971-05-25\",\n              \"canOptInSelf\": true,\n              \"canOptInRoot\": false,\n              \"canOptInParentOrg\": false,\n              \"isAutoManaged\": false,\n              \"isAutoManagedForLicenses\": true,\n              \"parentPackages\": [\n                {\n                  \"id\": 1089.0032596995013,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 3833.222579325172,\n                  \"name\": \"string\"\n                }\n              ],\n              \"subPackages\": [\n                {\n                  \"id\": 5289.92013026295,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 4865.608706377878,\n                  \"name\": \"string\"\n                }\n              ],\n              \"conflictingPackages\": [\n                {\n                  \"id\": 1536.1031241984879,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 9178.722371548565,\n                  \"name\": \"string\"\n                }\n              ],\n              \"packageFeatures\": [\n                {\n                  \"id\": 5497.74340985372,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": true\n                },\n                {\n                  \"id\": 1068.1817850510588,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": false\n                }\n              ]\n            },\n            \"softwareLicense\": {\n              \"id\": 4648.348741276732,\n              \"sku\": \"string\",\n              \"billableQuantity\": 563\n            }\n          },\n          {\n            \"id\": 2682.3557949778133,\n            \"ordinal\": 7947,\n            \"intervalUnit\": \"string\",\n            \"intervalCount\": 7749,\n            \"currencyCode\": \"string\",\n            \"package\": {\n              \"id\": 1212.7706495550428,\n              \"name\": \"string\",\n              \"startDate\": \"1951-07-11\",\n              \"endDate\": \"1947-06-18\",\n              \"canOptInSelf\": true,\n              \"canOptInRoot\": false,\n              \"canOptInParentOrg\": true,\n              \"isAutoManaged\": true,\n              \"isAutoManagedForLicenses\": false,\n              \"parentPackages\": [\n                {\n                  \"id\": 6006.9257733258,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 3320.117995758106,\n                  \"name\": \"string\"\n                }\n              ],\n              \"subPackages\": [\n                {\n                  \"id\": 906.0813058571615,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 5872.668543049119,\n                  \"name\": \"string\"\n                }\n              ],\n              \"conflictingPackages\": [\n                {\n                  \"id\": 7668.688023039478,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 815.3464222656193,\n                  \"name\": \"string\"\n                }\n              ],\n              \"packageFeatures\": [\n                {\n                  \"id\": 738.7181319055725,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": false\n                },\n                {\n                  \"id\": 7756.824809638589,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": false\n                }\n              ]\n            },\n            \"softwareLicense\": {\n              \"id\": 6877.848318003475,\n              \"sku\": \"string\",\n              \"billableQuantity\": 629\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"id\": 5097.7675707023855,\n      \"package\": {\n        \"id\": 4585.457070668924,\n        \"name\": \"string\",\n        \"startDate\": \"1952-09-07\",\n        \"endDate\": \"1980-03-21\",\n        \"canOptInSelf\": false,\n        \"canOptInRoot\": true,\n        \"canOptInParentOrg\": false,\n        \"isAutoManaged\": false,\n        \"isAutoManagedForLicenses\": false,\n        \"parentPackages\": [\n          {\n            \"id\": 6037.21425842281,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4129.81012979902,\n            \"name\": \"string\"\n          }\n        ],\n        \"subPackages\": [\n          {\n            \"id\": 9330.385520505855,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 8098.294889722802,\n            \"name\": \"string\"\n          }\n        ],\n        \"conflictingPackages\": [\n          {\n            \"id\": 6493.066134022733,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 852.4158359891143,\n            \"name\": \"string\"\n          }\n        ],\n        \"packageFeatures\": [\n          {\n            \"id\": 701.0666265116128,\n            \"config\": {},\n            \"feature\": {\n              \"id\": 6136.954448066847,\n              \"name\": \"string\",\n              \"code\": \"string\",\n              \"singular\": \"string\",\n              \"plural\": \"string\",\n              \"isBinary\": false\n            },\n            \"isBillable\": false\n          },\n          {\n            \"id\": 1154.3075068372943,\n            \"config\": {},\n            \"feature\": {\n              \"id\": 4522.8261604206455,\n              \"name\": \"string\",\n              \"code\": \"string\",\n              \"singular\": \"string\",\n              \"plural\": \"string\",\n              \"isBinary\": false\n            },\n            \"isBillable\": true\n          }\n        ]\n      },\n      \"isSelected\": false,\n      \"netsuitePlan\": {\n        \"currency\": \"string\",\n        \"interval\": \"string\",\n        \"interval_count\": 8566,\n        \"PricePlanId\": 20,\n        \"tiers\": [\n          {\n            \"fromqty\": 6524,\n            \"value\": 5956.287389409836,\n            \"fixedAmount\": true\n          },\n          {\n            \"fromqty\": 6130,\n            \"value\": 2522.9091757232236,\n            \"fixedAmount\": false\n          }\n        ]\n      },\n      \"stripePlan\": {\n        \"currency\": \"string\",\n        \"interval\": \"string\",\n        \"interval_count\": 4609.907918549981,\n        \"id\": \"string\",\n        \"product\": \"string\",\n        \"amount\": 9633.95331297369\n      },\n      \"softwareLicense\": {\n        \"id\": 2270.651824909402,\n        \"sku\": \"string\",\n        \"billableQuantity\": 4679,\n        \"softwareLicenseOffers\": [\n          {\n            \"id\": 9784.977413854496,\n            \"type\": \"promo\",\n            \"defaultIntervalTerm\": \"month\",\n            \"defaultIntervalDuration\": 4406.115356433137,\n            \"maxDaysAllowed\": 5377.439754998933,\n            \"subscriptionTermOverride\": 7365.79680014045,\n            \"maxQuantityAllowed\": 1514.462350510243\n          },\n          {\n            \"id\": 821.6496473321855,\n            \"type\": \"promo\",\n            \"defaultIntervalTerm\": \"year\",\n            \"defaultIntervalDuration\": 8455.66407826186,\n            \"maxDaysAllowed\": 4144.073164684281,\n            \"subscriptionTermOverride\": 9757.702341130465,\n            \"maxQuantityAllowed\": 252.30576802227623\n          }\n        ],\n        \"packagePlans\": [\n          {\n            \"id\": 7938.863370228948,\n            \"ordinal\": 5310,\n            \"intervalUnit\": \"string\",\n            \"intervalCount\": 9259,\n            \"currencyCode\": \"string\",\n            \"package\": {\n              \"id\": 3781.6449111757356,\n              \"name\": \"string\",\n              \"startDate\": \"1984-02-22\",\n              \"endDate\": \"2025-06-13\",\n              \"canOptInSelf\": true,\n              \"canOptInRoot\": false,\n              \"canOptInParentOrg\": true,\n              \"isAutoManaged\": false,\n              \"isAutoManagedForLicenses\": false,\n              \"parentPackages\": [\n                {\n                  \"id\": 4646.414818921935,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 8536.793977435767,\n                  \"name\": \"string\"\n                }\n              ],\n              \"subPackages\": [\n                {\n                  \"id\": 5801.136574428537,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 9588.307963601561,\n                  \"name\": \"string\"\n                }\n              ],\n              \"conflictingPackages\": [\n                {\n                  \"id\": 4882.094568107169,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 9939.804031184798,\n                  \"name\": \"string\"\n                }\n              ],\n              \"packageFeatures\": [\n                {\n                  \"id\": 7616.193243450272,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": false\n                },\n                {\n                  \"id\": 9696.602459008704,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": false\n                }\n              ]\n            },\n            \"softwareLicense\": {\n              \"id\": 2252.2371736327095,\n              \"sku\": \"string\",\n              \"billableQuantity\": 5404\n            }\n          },\n          {\n            \"id\": 8843.302208049572,\n            \"ordinal\": 8468,\n            \"intervalUnit\": \"string\",\n            \"intervalCount\": 4567,\n            \"currencyCode\": \"string\",\n            \"package\": {\n              \"id\": 1535.7706229061353,\n              \"name\": \"string\",\n              \"startDate\": \"2001-11-12\",\n              \"endDate\": \"1965-08-14\",\n              \"canOptInSelf\": true,\n              \"canOptInRoot\": false,\n              \"canOptInParentOrg\": false,\n              \"isAutoManaged\": false,\n              \"isAutoManagedForLicenses\": false,\n              \"parentPackages\": [\n                {\n                  \"id\": 1300.2309975902704,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 7030.165364684652,\n                  \"name\": \"string\"\n                }\n              ],\n              \"subPackages\": [\n                {\n                  \"id\": 6003.475478714444,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 3098.692751238421,\n                  \"name\": \"string\"\n                }\n              ],\n              \"conflictingPackages\": [\n                {\n                  \"id\": 8654.798664129774,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 9795.724575602511,\n                  \"name\": \"string\"\n                }\n              ],\n              \"packageFeatures\": [\n                {\n                  \"id\": 3913.677382114502,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": true\n                },\n                {\n                  \"id\": 6569.692628205534,\n                  \"config\": {},\n                  \"feature\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"code\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"singular\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"plural\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"isBinary\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"isBillable\": false\n                }\n              ]\n            },\n            \"softwareLicense\": {\n              \"id\": 8997.404428533042,\n              \"sku\": \"string\",\n              \"billableQuantity\": 9605\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1954-06-06\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3164,\n        547\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6231,\n          464\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce7921ee-e65f-4e37-a666-38fc609b0748",
+          "name": "Describe a package plan",
+          "request": {
+            "name": "Describe a package plan",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeOrgPackagePlan",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "packagePlans",
+                ":packagePlanId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "packagePlanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2db2f359-6b38-44f0-a205-61c3d2e5500e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "packagePlans",
+                    ":packagePlanId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "packagePlanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5550.766068982573,\n    \"package\": {\n      \"id\": 2326.877903342096,\n      \"name\": \"string\",\n      \"startDate\": \"1964-09-08\",\n      \"endDate\": \"1957-10-23\",\n      \"canOptInSelf\": false,\n      \"canOptInRoot\": false,\n      \"canOptInParentOrg\": false,\n      \"isAutoManaged\": false,\n      \"isAutoManagedForLicenses\": true,\n      \"parentPackages\": [\n        {\n          \"id\": 99.01072880106554,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8967.642677871745,\n          \"name\": \"string\"\n        }\n      ],\n      \"subPackages\": [\n        {\n          \"id\": 2454.952299215414,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 1942.6026828583288,\n          \"name\": \"string\"\n        }\n      ],\n      \"conflictingPackages\": [\n        {\n          \"id\": 4367.217909719563,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 2145.5878372122374,\n          \"name\": \"string\"\n        }\n      ],\n      \"packageFeatures\": [\n        {\n          \"id\": 8200.924263938681,\n          \"config\": {},\n          \"feature\": {\n            \"id\": 1518.7919926209004,\n            \"name\": \"string\",\n            \"code\": \"string\",\n            \"singular\": \"string\",\n            \"plural\": \"string\",\n            \"isBinary\": false\n          },\n          \"isBillable\": true\n        },\n        {\n          \"id\": 6325.279916106564,\n          \"config\": {},\n          \"feature\": {\n            \"id\": 7886.9977058008635,\n            \"name\": \"string\",\n            \"code\": \"string\",\n            \"singular\": \"string\",\n            \"plural\": \"string\",\n            \"isBinary\": false\n          },\n          \"isBillable\": false\n        }\n      ]\n    },\n    \"isSelected\": false,\n    \"netsuitePlan\": {\n      \"currency\": \"string\",\n      \"interval\": \"string\",\n      \"interval_count\": 7853,\n      \"PricePlanId\": 8665,\n      \"tiers\": [\n        {\n          \"fromqty\": 2682,\n          \"value\": 9940.846806057321,\n          \"fixedAmount\": true\n        },\n        {\n          \"fromqty\": 1175,\n          \"value\": 2210.8458932026256,\n          \"fixedAmount\": false\n        }\n      ]\n    },\n    \"stripePlan\": {\n      \"currency\": \"string\",\n      \"interval\": \"string\",\n      \"interval_count\": 9421.164661624593,\n      \"id\": \"string\",\n      \"product\": \"string\",\n      \"amount\": 925.0928245557699\n    },\n    \"softwareLicense\": {\n      \"id\": 4797.07210848331,\n      \"sku\": \"string\",\n      \"billableQuantity\": 4252,\n      \"softwareLicenseOffers\": [\n        {\n          \"id\": 6657.139726627872,\n          \"type\": \"trial\",\n          \"defaultIntervalTerm\": \"year\",\n          \"defaultIntervalDuration\": 6827.584526268358,\n          \"maxDaysAllowed\": 573.8305194304305,\n          \"subscriptionTermOverride\": 7499.180082265289,\n          \"maxQuantityAllowed\": 1154.0365729962887\n        },\n        {\n          \"id\": 3759.015766482756,\n          \"type\": \"promo\",\n          \"defaultIntervalTerm\": \"day\",\n          \"defaultIntervalDuration\": 1429.2718477105282,\n          \"maxDaysAllowed\": 8736.940167193385,\n          \"subscriptionTermOverride\": 841.3230099062652,\n          \"maxQuantityAllowed\": 6963.779081052254\n        }\n      ],\n      \"packagePlans\": [\n        {\n          \"id\": 9261.02972319435,\n          \"ordinal\": 4657,\n          \"intervalUnit\": \"string\",\n          \"intervalCount\": 6135,\n          \"currencyCode\": \"string\",\n          \"package\": {\n            \"id\": 9913.241476626628,\n            \"name\": \"string\",\n            \"startDate\": \"1956-06-14\",\n            \"endDate\": \"1999-04-20\",\n            \"canOptInSelf\": true,\n            \"canOptInRoot\": false,\n            \"canOptInParentOrg\": false,\n            \"isAutoManaged\": true,\n            \"isAutoManagedForLicenses\": true,\n            \"parentPackages\": [\n              {\n                \"id\": 1235.6789992400863,\n                \"name\": \"string\"\n              },\n              {\n                \"id\": 3659.4720466420627,\n                \"name\": \"string\"\n              }\n            ],\n            \"subPackages\": [\n              {\n                \"id\": 5529.79550437916,\n                \"name\": \"string\"\n              },\n              {\n                \"id\": 7606.748612343977,\n                \"name\": \"string\"\n              }\n            ],\n            \"conflictingPackages\": [\n              {\n                \"id\": 4384.29039339034,\n                \"name\": \"string\"\n              },\n              {\n                \"id\": 5822.980034819542,\n                \"name\": \"string\"\n              }\n            ],\n            \"packageFeatures\": [\n              {\n                \"id\": 5039.443092081173,\n                \"config\": {},\n                \"feature\": {\n                  \"id\": 9845.834401458731,\n                  \"name\": \"string\",\n                  \"code\": \"string\",\n                  \"singular\": \"string\",\n                  \"plural\": \"string\",\n                  \"isBinary\": false\n                },\n                \"isBillable\": true\n              },\n              {\n                \"id\": 9919.739457323576,\n                \"config\": {},\n                \"feature\": {\n                  \"id\": 3548.748874280393,\n                  \"name\": \"string\",\n                  \"code\": \"string\",\n                  \"singular\": \"string\",\n                  \"plural\": \"string\",\n                  \"isBinary\": true\n                },\n                \"isBillable\": true\n              }\n            ]\n          },\n          \"softwareLicense\": {\n            \"id\": 3653.6134298256675,\n            \"sku\": \"string\",\n            \"billableQuantity\": 5766\n          }\n        },\n        {\n          \"id\": 1531.3088908896011,\n          \"ordinal\": 7815,\n          \"intervalUnit\": \"string\",\n          \"intervalCount\": 4258,\n          \"currencyCode\": \"string\",\n          \"package\": {\n            \"id\": 4947.989011032057,\n            \"name\": \"string\",\n            \"startDate\": \"2013-08-24\",\n            \"endDate\": \"1947-01-17\",\n            \"canOptInSelf\": true,\n            \"canOptInRoot\": false,\n            \"canOptInParentOrg\": false,\n            \"isAutoManaged\": false,\n            \"isAutoManagedForLicenses\": true,\n            \"parentPackages\": [\n              {\n                \"id\": 9461.689368571107,\n                \"name\": \"string\"\n              },\n              {\n                \"id\": 7145.032036319269,\n                \"name\": \"string\"\n              }\n            ],\n            \"subPackages\": [\n              {\n                \"id\": 3053.755968238722,\n                \"name\": \"string\"\n              },\n              {\n                \"id\": 630.3550876323649,\n                \"name\": \"string\"\n              }\n            ],\n            \"conflictingPackages\": [\n              {\n                \"id\": 3601.85919137453,\n                \"name\": \"string\"\n              },\n              {\n                \"id\": 3433.935353527946,\n                \"name\": \"string\"\n              }\n            ],\n            \"packageFeatures\": [\n              {\n                \"id\": 8258.448849592165,\n                \"config\": {},\n                \"feature\": {\n                  \"id\": 9112.935867458205,\n                  \"name\": \"string\",\n                  \"code\": \"string\",\n                  \"singular\": \"string\",\n                  \"plural\": \"string\",\n                  \"isBinary\": true\n                },\n                \"isBillable\": true\n              },\n              {\n                \"id\": 7204.086660303867,\n                \"config\": {},\n                \"feature\": {\n                  \"id\": 7923.017172849524,\n                  \"name\": \"string\",\n                  \"code\": \"string\",\n                  \"singular\": \"string\",\n                  \"plural\": \"string\",\n                  \"isBinary\": true\n                },\n                \"isBillable\": true\n              }\n            ]\n          },\n          \"softwareLicense\": {\n            \"id\": 4016.435170537681,\n            \"sku\": \"string\",\n            \"billableQuantity\": 5321\n          }\n        }\n      ]\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1981-09-06\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8894,\n        4065\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9505,\n          7955\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d1fbbda2-29dd-45fc-b640-b55ea3441b34",
+    "name": "Openpath API Documentation auth orgs/packagePlans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

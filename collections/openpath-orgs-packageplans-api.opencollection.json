@@ -1,0 +1,99 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/packagePlans API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/packagePlans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all available package plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/packagePlans",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "viewContext",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-account:w,o{params.orgId}-account:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>"
+        },
+        {
+          "info": {
+            "name": "Describe a package plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/packagePlans/:packagePlanId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "packagePlanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeOrgPackagePlan"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

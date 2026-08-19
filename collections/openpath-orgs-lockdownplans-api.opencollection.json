@@ -1,0 +1,214 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/lockdownPlans API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/lockdownPlans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all lockdown plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{pa"
+        },
+        {
+          "info": {
+            "name": "Create a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: createLockdownPlan"
+        },
+        {
+          "info": {
+            "name": "Describe a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans/:lockdownPlanId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lockdownPlanId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeLockdownPlan"
+        },
+        {
+          "info": {
+            "name": "Update a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans/:lockdownPlanId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lockdownPlanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateLockdownPlan"
+        },
+        {
+          "info": {
+            "name": "Delete a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans/:lockdownPlanId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lockdownPlanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteLockdownPlan"
+        },
+        {
+          "info": {
+            "name": "Set a lockdown plan's user and group permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans/:lockdownPlanId/permissions",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lockdownPlanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: setLockdownPlanPermissions"
+        },
+        {
+          "info": {
+            "name": "Set a lockdown plan's zone states",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/lockdownPlans/:lockdownPlanId/zoneStates",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "lockdownPlanId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: setLockdownPlanZoneStates"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "02e228ce-a600-46e6-bb6a-26e286cd9665",
+      "name": "orgs/triggerMethods",
+      "description": {
+        "content": "Entry Trigger Methods",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "a865031e-471e-48e1-9878-415175aa2861",
+          "name": "List all trigger methods",
+          "request": {
+            "name": "List all trigger methods",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-entryState:w,o{params.orgId}-entryState:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTriggerMethods",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "triggerMethods"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "ordinal"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5d190a97-5c06-4ed1-8b11-89178d6abb1d",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "triggerMethods"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "ordinal"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 2288,\n  \"filteredCount\": 6017,\n  \"data\": [\n    {\n      \"id\": 1237.7296588905417,\n      \"ordinal\": 9199.057052043026,\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"connectionTypeCode\": \"string\",\n      \"requestTypeCode\": \"string\",\n      \"credentialType\": {\n        \"id\": 8335.844698621311,\n        \"modelName\": \"string\"\n      },\n      \"triggerMethodGroup\": {\n        \"id\": 7987.66369031049,\n        \"name\": \"string\"\n      }\n    },\n    {\n      \"id\": 8932.31074120485,\n      \"ordinal\": 3445.747103643538,\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"connectionTypeCode\": \"string\",\n      \"requestTypeCode\": \"string\",\n      \"credentialType\": {\n        \"id\": 3517.9625088900666,\n        \"modelName\": \"string\"\n      },\n      \"triggerMethodGroup\": {\n        \"id\": 2884.1278426698336,\n        \"name\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1949-01-02\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        5447,\n        3252\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8931,\n          5226\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "681523f4-83dc-44d0-8827-4269d0bf54e9",
+          "name": "Describe a trigger method",
+          "request": {
+            "name": "Describe a trigger method",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-entryState:w,o{params.orgId}-entryState:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTriggerMethod",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "triggerMethods",
+                ":triggerMethodId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "triggerMethodId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7c77b367-8afb-4241-a69c-29186a2241d0",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "triggerMethods",
+                    ":triggerMethodId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "triggerMethodId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4760.252504041135,\n    \"ordinal\": 8190.787832836261,\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"connectionTypeCode\": \"string\",\n    \"requestTypeCode\": \"string\",\n    \"credentialType\": {\n      \"id\": 8832.047140354036,\n      \"modelName\": \"string\"\n    },\n    \"triggerMethodGroup\": {\n      \"id\": 7796.724886872931,\n      \"name\": \"string\"\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1956-03-31\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        9728,\n        7519\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1668,\n          2289\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "62d398cc-83e5-41e8-9fa4-e95b557490c4",
+    "name": "Openpath API Documentation auth orgs/triggerMethods API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

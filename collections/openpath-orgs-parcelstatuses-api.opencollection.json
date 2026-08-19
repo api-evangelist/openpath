@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/parcelStatuses API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/parcelStatuses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all parcel statuses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/parcelStatuses",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: listParcelStatuses"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1077 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/acus API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/acus",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all owned or assigned ACUs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ccursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashC"
+        },
+        {
+          "info": {
+            "name": "Create an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-quickStart:w,o{params.orgId}-admin:w,o:w,s-o:w<br/><br/>__Endpoint name__: createAcu"
+        },
+        {
+          "info": {
+            "name": "Describe an owned or assigned ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcu"
+        },
+        {
+          "info": {
+            "name": "Update an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateAcu"
+        },
+        {
+          "info": {
+            "name": "Delete an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteAcu"
+        },
+        {
+          "info": {
+            "name": "List all the acu ids and their timezones for the org",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/timezones",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashC"
+        },
+        {
+          "info": {
+            "name": "Describe an owned or assigned ACU's timezone",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/timezone",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuTimezone"
+        },
+        {
+          "info": {
+            "name": "Get ACU diagnostics report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/diagnosticsReport",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "waitForNewReport",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: getAcuDiagnosticsReport"
+        },
+        {
+          "info": {
+            "name": "Create an ACU diagnostics report",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/diagnosticsReport",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: createAcuDiagnosticsReport"
+        },
+        {
+          "info": {
+            "name": "List all expansion boards belonging to an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/expansionBoards",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listAcuExpansionBoards"
+        },
+        {
+          "info": {
+            "name": "Create an expansion board for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/expansionBoards",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: createAcuExpansionBoard"
+        },
+        {
+          "info": {
+            "name": "Set expansion boards for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/expansionBoards",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: setAcuExpansionBoards"
+        },
+        {
+          "info": {
+            "name": "List location measurements for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationMeasurements",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listAcuLocationMeasurements"
+        },
+        {
+          "info": {
+            "name": "Get location restriction for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationRestriction",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getAcuLocationRestriction"
+        },
+        {
+          "info": {
+            "name": "Set location restriction for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationRestriction",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: setAcuLocationRestriction"
+        },
+        {
+          "info": {
+            "name": "Delete location restriction for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationRestriction",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteAcuLocationRestriction"
+        },
+        {
+          "info": {
+            "name": "List ACU ports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/acuPorts",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o:w,o:r,s-o:w,s-o:r<br/><br/>"
+        },
+        {
+          "info": {
+            "name": "Describe an ACU port",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/acuPorts/:acuPortId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuPortId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuPort"
+        },
+        {
+          "info": {
+            "name": "Update an ACU port",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/acuPorts/:acuPortId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuPortId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateAcuPort"
+        },
+        {
+          "info": {
+            "name": "Describe a location measurement for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationMeasurements/:locationMeasurementId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationMeasurementId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuLocationMeasurement"
+        },
+        {
+          "info": {
+            "name": "Delete a location measurement for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationMeasurements/:locationMeasurementId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationMeasurementId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteAcuLocationMeasurement"
+        },
+        {
+          "info": {
+            "name": "Describe an expansion board belonging to an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/expansionBoards/:expansionBoardId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expansionBoardId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuExpansionBoard"
+        },
+        {
+          "info": {
+            "name": "Update an expansion board belonging to an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/expansionBoards/:expansionBoardId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expansionBoardId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateAcuExpansionBoard"
+        },
+        {
+          "info": {
+            "name": "Delete an expansion board belonging to an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/expansionBoards/:expansionBoardId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "expansionBoardId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteAcuExpansionBoard"
+        },
+        {
+          "info": {
+            "name": "Describe an ACU port's EOL settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/acuPorts/:acuPortId/eol",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuPortId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuPortEol"
+        },
+        {
+          "info": {
+            "name": "Update an ACU port's EOL settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/acuPorts/:acuPortId/eol",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuPortId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateAcuPortEol"
+        },
+        {
+          "info": {
+            "name": "Trigger a software update for ACUs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/triggerSoftwareUpdate",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: triggerAcusSoftwareUpdate"
+        },
+        {
+          "info": {
+            "name": "Trigger minor and major software updates for ACUs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/triggerBatchAcuSoftwareUpdate",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: triggerBatchAcuSoftwareUpdate"
+        },
+        {
+          "info": {
+            "name": "Run a command on an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/runCommand",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-acu:w,s-o:w<br/><br/>__Endpoint name__: remoteAcuRunCommand"
+        },
+        {
+          "info": {
+            "name": "Remotely trigger an ACU to restart its hardware communicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/restartHardware",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: remoteAcuRestartHardware"
+        },
+        {
+          "info": {
+            "name": "Remotely trigger an ACU to restart its API server",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/restartApi",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: remoteAcuRestartApi"
+        },
+        {
+          "info": {
+            "name": "Remotely trigger an ACU to identify itself via LED",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/identify",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: remoteAcuIdentify"
+        },
+        {
+          "info": {
+            "name": "Trigger a software update for a single ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/triggerSoftwareUpdate",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: triggerAcuSoftwareUpdate"
+        },
+        {
+          "info": {
+            "name": "Remotely trigger an ACU to refresh its device shadow",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/refreshShadow",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: remoteAcuRefreshShadow"
+        },
+        {
+          "info": {
+            "name": "Remotely trigger an ACU to restart its cloud communicator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/restartCloud",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: remoteAcuRestartCloud"
+        },
+        {
+          "info": {
+            "name": "Set a location measurement for an ACU",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationMeasurement",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: setAcuLocationMeasurement"
+        },
+        {
+          "info": {
+            "name": "Set an ACU's status and nucleon config group name",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/status",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-acu{params.acuId}:orgAcu-setAcuStatus:w,o:w<br/><br/>__Endpoint name__: setAcuStatus"
+        },
+        {
+          "info": {
+            "name": "ACU sets a location measurement for itself",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/acus/:acuId/locationMeasurementSelf",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "acuId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o{params.orgId}-acu{params.acuId}:orgAcu-locationMeasurementSelf:w<br/><br/>__Endpoint name__: setAcuLocationMeasurementSelf"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

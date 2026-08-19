@@ -1,0 +1,484 @@
+{
+  "item": [
+    {
+      "id": "5918923e-1c6f-43d8-87bc-f9f84b71289d",
+      "name": "orgs/relays",
+      "description": {
+        "content": "Relays",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b41ec1f4-0c29-4e3d-97ab-d2cb1f39d731",
+          "name": "List all relays",
+          "request": {
+            "name": "List all relays",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listRelays",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "relays"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "58242de2-2b9d-4d57-a74b-36d53824b3ed",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "relays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 5394,\n  \"filteredCount\": 2071,\n  \"data\": [\n    {\n      \"id\": 4084.1668599624713,\n      \"name\": \"string\",\n      \"openDurationSeconds\": 1701.2597653431437,\n      \"invertOutput\": true,\n      \"relayHardwareType\": {\n        \"id\": 3588.945948539771,\n        \"name\": \"string\"\n      },\n      \"acuPort\": {\n        \"id\": 4707.1911828550865,\n        \"acuPortTypePortNumber\": 8951.045497098221,\n        \"virtualPortNumber\": 8795.151655737234,\n        \"portNumber\": 3653.063508614385,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 8992.223280009775,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 403.8503700667273,\n          \"number\": 6188\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 2174.8995897058444,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 9243.774944593319,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7456.118036234485,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 5146.326999620181,\n      \"name\": \"string\",\n      \"openDurationSeconds\": 8628.377959251731,\n      \"invertOutput\": true,\n      \"relayHardwareType\": {\n        \"id\": 8273.52707760692,\n        \"name\": \"string\"\n      },\n      \"acuPort\": {\n        \"id\": 3047.180704438915,\n        \"acuPortTypePortNumber\": 190.7349946394399,\n        \"virtualPortNumber\": 919.5862477126715,\n        \"portNumber\": 4656.606533936142,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 1818.5839110342438,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 6979.833071806016,\n          \"number\": 5729\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 2373.3171333023984,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 1870.7476692990588,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6291.338146722021,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2001-10-03\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        661,\n        7494\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9213,\n          9398\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "328dbe42-847e-4d67-ba26-91bcab31306a",
+          "name": "Describe a relay",
+          "request": {
+            "name": "Describe a relay",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeRelay",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "relays",
+                ":relayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "relayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1b00c95e-dd34-4f04-af95-45f3ff1d3556",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "relays",
+                    ":relayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "relayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5781.769340313714,\n    \"name\": \"string\",\n    \"openDurationSeconds\": 6090.197013856675,\n    \"invertOutput\": true,\n    \"relayHardwareType\": {\n      \"id\": 5251.029742335174,\n      \"name\": \"string\"\n    },\n    \"acuPort\": {\n      \"id\": 6378.424214799866,\n      \"acuPortTypePortNumber\": 921.6912284891831,\n      \"virtualPortNumber\": 3408.3541556106356,\n      \"portNumber\": 7011.115590676278,\n      \"label\": \"string\",\n      \"acu\": {\n        \"id\": 877.5734466140128,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 619.8135113501991,\n        \"number\": 9000\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 903.8284299097232,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"entries\": [\n      {\n        \"id\": 1322.5627231014569,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 5131.52164588007,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1994-01-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8419,\n        2428\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9203,\n          3331\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "88b9bebb-055c-4b07-bccf-b1e5284a2cd8",
+          "name": "Update a relay",
+          "request": {
+            "name": "Update a relay",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateRelay",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "relays",
+                ":relayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "relayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"openDurationSeconds\": \"<integer>\",\n  \"relayHardwareTypeId\": \"<integer>\",\n  \"invertOutput\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8862394a-c4be-40b2-bfa2-e3070bf5db5d",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "relays",
+                    ":relayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "relayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"openDurationSeconds\": \"<integer>\",\n  \"relayHardwareTypeId\": \"<integer>\",\n  \"invertOutput\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6d6bec49-c8ea-4064-9476-c67bf4bef5bb",
+    "name": "Openpath API Documentation auth orgs/relays API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

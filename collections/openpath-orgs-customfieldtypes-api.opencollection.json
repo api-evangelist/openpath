@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/customFieldTypes API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/customFieldTypes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all custom field types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/customFieldTypes",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listCustomFieldTypes"
+        },
+        {
+          "info": {
+            "name": "Describe a custom field type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/customFieldTypes/:customFieldTypeId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "customFieldTypeId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeCustomFieldType"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

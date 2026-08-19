@@ -1,0 +1,1049 @@
+{
+  "item": [
+    {
+      "id": "3cbce123-814a-4b7e-a262-dc7696b5e9f5",
+      "name": "orgs/lockdownPlans",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e251d97a-117d-413d-a847-4ab3a12eb19c",
+          "name": "List all lockdown plans",
+          "request": {
+            "name": "List all lockdown plans",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-building:r,o{params.orgId}-building:w,o{params.orgId}-cert:r,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cleanupMsiAware:w,o{params.orgId}-cobalt:r,o{params.orgId}-cobalt:w,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o{params.orgId}-credential:r,o{params.orgId}-credential:w,o{params.orgId}-dash:r,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashEntry:w,o{params.orgId}-entryAccessAudit:r,o{params.orgId}-entryAccessAudit:w,o{params.orgId}-entryState:r,o{params.orgId}-entryState:w,o{params.orgId}-erpParentCenter:w,o{params.orgId}-erpParentStore:w,o{params.orgId}-eventsMsiAware:w,o{params.orgId}-exportClips:w,o{params.orgId}-haloAdmin:w,o{params.orgId}-haloUser:w,o{params.orgId}-haloViewer:r,o{params.orgId}-hw:r,o{params.orgId}-hw:w,o{params.orgId}-idp-scim:r,o{params.orgId}-idp-scim:w,o{params.orgId}-integrations:r,o{params.orgId}-integrations:w,o{params.orgId}-ipRestriction:r,o{params.orgId}-ipRestriction:w,o{params.orgId}-ldp:r,o{params.orgId}-ldp:w,o{params.orgId}-map:r,o{params.orgId}-map:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-opvideoDevice:r,o{params.orgId}-opvideoDevice:w,o{params.orgId}-opvideoIntercom:r,o{params.orgId}-opvideoIntercom:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-portalAudit:r,o{params.orgId}-portalAudit:w,o{params.orgId}-policy:r,o{params.orgId}-policy:w,o{params.orgId}-policySection:r,o{params.orgId}-policySection:w,o{params.orgId}-presence:r,o{params.orgId}-presence:w,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o{params.orgId}-realUserGroup:r,o{params.orgId}-realUserGroup:w,o{params.orgId}-restriction:r,o{params.orgId}-restriction:w,o{params.orgId}-role:r,o{params.orgId}-role:w,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptDownload:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-serviceCancellation:w,o{params.orgId}-site:r,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o{params.orgId}-timeRestriction:r,o{params.orgId}-timeRestriction:w,o{params.orgId}-user:r,o{params.orgId}-user:w,o{params.orgId}-videoAdmin:w,o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o:w,o:r,s-o:w,s-o:r,o{params.orgId}-sos:w<br/><br/>__Endpoint name__: listLockdownPlans",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "ordinal"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c998bd4d-eb47-4ab0-99dc-81e7ef9bd305",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "ordinal"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4796,\n  \"filteredCount\": 1108,\n  \"data\": [\n    {\n      \"id\": 157,\n      \"opal\": \"string\",\n      \"name\": \"string\",\n      \"ordinal\": 8629,\n      \"autoRevertAfterSeconds\": 5428,\n      \"isStandard\": false,\n      \"isActive\": false,\n      \"activeUntil\": \"2001-06-12\",\n      \"stateChangedAt\": \"1967-12-01\",\n      \"stateChangedRequestId\": \"string\",\n      \"org\": {\n        \"id\": 9033,\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"zoneStates\": [\n        {\n          \"zone\": {\n            \"id\": 533\n          },\n          \"entryState\": {\n            \"id\": 3299\n          }\n        },\n        {\n          \"zone\": {\n            \"id\": 9316\n          },\n          \"entryState\": {\n            \"id\": 7362\n          }\n        }\n      ],\n      \"triggerUsers\": [\n        {\n          \"id\": 9899,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 4174,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 5307.156518152921,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 1049.0755224014458,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 2429.761758253587,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 8909,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 2098,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 6583.124214846385,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 7374.127741342393,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 5045.919771813393,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"triggerGroups\": [\n        {\n          \"id\": 8719,\n          \"sites\": [\n            {\n              \"id\": 9605.907086419931,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 676.9411683555637,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 3068,\n          \"sites\": [\n            {\n              \"id\": 7802.093370808668,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 9084.568846265247,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"revertUsers\": [\n        {\n          \"id\": 9299,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 759,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 4390.232828524498,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 4380.628477340754,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 1974.4165779358036,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 4287,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 695,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 8111.7795790012415,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 3314.6432518035017,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 6463.285686959332,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"revertGroups\": [\n        {\n          \"id\": 1144,\n          \"sites\": [\n            {\n              \"id\": 2609.291340852753,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 2853.614800781332,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 7460,\n          \"sites\": [\n            {\n              \"id\": 4013.2719522687553,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 5894.388212919349,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": 4636,\n      \"opal\": \"string\",\n      \"name\": \"string\",\n      \"ordinal\": 8644,\n      \"autoRevertAfterSeconds\": 6615,\n      \"isStandard\": true,\n      \"isActive\": true,\n      \"activeUntil\": \"1947-08-14\",\n      \"stateChangedAt\": \"2003-10-25\",\n      \"stateChangedRequestId\": \"string\",\n      \"org\": {\n        \"id\": 5112,\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"zoneStates\": [\n        {\n          \"zone\": {\n            \"id\": 886\n          },\n          \"entryState\": {\n            \"id\": 3855\n          }\n        },\n        {\n          \"zone\": {\n            \"id\": 8521\n          },\n          \"entryState\": {\n            \"id\": 8352\n          }\n        }\n      ],\n      \"triggerUsers\": [\n        {\n          \"id\": 3095,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 1562,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 3044.3934611007253,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 2979.0513611707424,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 3886.277556790696,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 9154,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 9614,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 313.9260257572174,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 8232.85160126503,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 8751.789031494465,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"triggerGroups\": [\n        {\n          \"id\": 5574,\n          \"sites\": [\n            {\n              \"id\": 5841.094060303553,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 6003.154650782701,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 9329,\n          \"sites\": [\n            {\n              \"id\": 9191.5130205453,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 2064.853997612599,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"revertUsers\": [\n        {\n          \"id\": 6946,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 6330,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 1420.0612925289836,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 5301.329684793403,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 8921.581085108042,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 393,\n          \"identity\": {\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"email\": \"string\",\n            \"namespace\": {\n              \"id\": 3045,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 4699.921745013386,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              }\n            }\n          },\n          \"sites\": [\n            {\n              \"id\": 8091.597848916186,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 5621.140315289524,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ],\n      \"revertGroups\": [\n        {\n          \"id\": 9046,\n          \"sites\": [\n            {\n              \"id\": 6128.790043732402,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 948.854170129838,\n              \"name\": \"string\"\n            }\n          ]\n        },\n        {\n          \"id\": 7907,\n          \"sites\": [\n            {\n              \"id\": 8704.595393726631,\n              \"name\": \"string\"\n            },\n            {\n              \"id\": 6512.155256306113,\n              \"name\": \"string\"\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1987-02-11\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4656,\n        3590\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8570,\n          7690\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ef32fe1-f025-4d45-bcec-671d406a19c8",
+          "name": "Create a lockdown plan",
+          "request": {
+            "name": "Create a lockdown plan",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: createLockdownPlan",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"autoRevertAfterSeconds\": null,\n  \"isStandard\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e876c875-a63e-4c34-9dd4-fe52e6902c56",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"autoRevertAfterSeconds\": null,\n  \"isStandard\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 6897,\n    \"opal\": \"string\",\n    \"name\": \"string\",\n    \"ordinal\": 7325,\n    \"autoRevertAfterSeconds\": 4239,\n    \"isStandard\": false,\n    \"isActive\": false,\n    \"activeUntil\": \"1997-01-17\",\n    \"stateChangedAt\": \"2018-10-30\",\n    \"stateChangedRequestId\": \"string\",\n    \"org\": {\n      \"id\": 7596,\n      \"opal\": \"string\",\n      \"name\": \"string\"\n    },\n    \"zoneStates\": [\n      {\n        \"zone\": {\n          \"id\": 779\n        },\n        \"entryState\": {\n          \"id\": 224\n        }\n      },\n      {\n        \"zone\": {\n          \"id\": 9179\n        },\n        \"entryState\": {\n          \"id\": 9407\n        }\n      }\n    ],\n    \"triggerUsers\": [\n      {\n        \"id\": 2489,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 6163,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 3080.8198988206213,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 7342.305986641999,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 1902.3552039112524,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 1241,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 120,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 5754.932043150053,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 4497.653683319875,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 3693.1703490782884,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"triggerGroups\": [\n      {\n        \"id\": 2452,\n        \"sites\": [\n          {\n            \"id\": 759.1742398940304,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 3933.4440318169395,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 196,\n        \"sites\": [\n          {\n            \"id\": 4063.7055309938864,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 7467.724601833862,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"revertUsers\": [\n      {\n        \"id\": 1952,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 9627,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 9506.346440989713,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 5440.39195735966,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 9189.18127977499,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 3588,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 1648,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 8458.476301733916,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 1585.5428728285203,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 343.6947662498524,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"revertGroups\": [\n      {\n        \"id\": 1159,\n        \"sites\": [\n          {\n            \"id\": 4796.717740067475,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 1639.2196179367368,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 1518,\n        \"sites\": [\n          {\n            \"id\": 148.9287006836193,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4260.3035802593895,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1990-05-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9390,\n        4314\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6783,\n          9369\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4ab1f867-9cc9-45e1-9f82-ad402352f403",
+          "name": "Describe a lockdown plan",
+          "request": {
+            "name": "Describe a lockdown plan",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeLockdownPlan",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans",
+                ":lockdownPlanId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "lockdownPlanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c9916027-0043-47d9-9b91-23f54c896d05",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans",
+                    ":lockdownPlanId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "lockdownPlanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 6897,\n    \"opal\": \"string\",\n    \"name\": \"string\",\n    \"ordinal\": 7325,\n    \"autoRevertAfterSeconds\": 4239,\n    \"isStandard\": false,\n    \"isActive\": false,\n    \"activeUntil\": \"1997-01-17\",\n    \"stateChangedAt\": \"2018-10-30\",\n    \"stateChangedRequestId\": \"string\",\n    \"org\": {\n      \"id\": 7596,\n      \"opal\": \"string\",\n      \"name\": \"string\"\n    },\n    \"zoneStates\": [\n      {\n        \"zone\": {\n          \"id\": 779\n        },\n        \"entryState\": {\n          \"id\": 224\n        }\n      },\n      {\n        \"zone\": {\n          \"id\": 9179\n        },\n        \"entryState\": {\n          \"id\": 9407\n        }\n      }\n    ],\n    \"triggerUsers\": [\n      {\n        \"id\": 2489,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 6163,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 3080.8198988206213,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 7342.305986641999,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 1902.3552039112524,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 1241,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 120,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 5754.932043150053,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 4497.653683319875,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 3693.1703490782884,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"triggerGroups\": [\n      {\n        \"id\": 2452,\n        \"sites\": [\n          {\n            \"id\": 759.1742398940304,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 3933.4440318169395,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 196,\n        \"sites\": [\n          {\n            \"id\": 4063.7055309938864,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 7467.724601833862,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"revertUsers\": [\n      {\n        \"id\": 1952,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 9627,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 9506.346440989713,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 5440.39195735966,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 9189.18127977499,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 3588,\n        \"identity\": {\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"email\": \"string\",\n          \"namespace\": {\n            \"id\": 1648,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 8458.476301733916,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            }\n          }\n        },\n        \"sites\": [\n          {\n            \"id\": 1585.5428728285203,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 343.6947662498524,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"revertGroups\": [\n      {\n        \"id\": 1159,\n        \"sites\": [\n          {\n            \"id\": 4796.717740067475,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 1639.2196179367368,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"id\": 1518,\n        \"sites\": [\n          {\n            \"id\": 148.9287006836193,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4260.3035802593895,\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1990-05-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9390,\n        4314\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6783,\n          9369\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b5c15f60-603f-4fd6-8f1f-68606d3c40ef",
+          "name": "Delete a lockdown plan",
+          "request": {
+            "name": "Delete a lockdown plan",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteLockdownPlan",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans",
+                ":lockdownPlanId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "lockdownPlanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "85a3b136-2df8-48cf-8ca7-62cd99cd1aca",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans",
+                    ":lockdownPlanId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "lockdownPlanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffbff900-b310-4564-86c2-d0c7102e193c",
+          "name": "Update a lockdown plan",
+          "request": {
+            "name": "Update a lockdown plan",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateLockdownPlan",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans",
+                ":lockdownPlanId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "lockdownPlanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"autoRevertAfterSeconds\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5afbd3b1-82f2-4402-b8fd-df8f14f7f40e",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans",
+                    ":lockdownPlanId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "lockdownPlanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"autoRevertAfterSeconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "118194f8-36eb-4e1d-87db-c44e2bd3bf25",
+          "name": "Set a lockdown plan's user and group permissions",
+          "request": {
+            "name": "Set a lockdown plan's user and group permissions",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: setLockdownPlanPermissions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans",
+                ":lockdownPlanId",
+                "permissions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "lockdownPlanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"triggerUserIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"triggerGroupIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"revertUserIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"revertGroupIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3313ae8-da82-40aa-976b-e6c82e384d2b",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans",
+                    ":lockdownPlanId",
+                    "permissions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "lockdownPlanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"triggerUserIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"triggerGroupIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"revertUserIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"revertGroupIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5131330d-8bf3-496b-97cb-f1cbd17bc459",
+          "name": "Set a lockdown plan's zone states",
+          "request": {
+            "name": "Set a lockdown plan's zone states",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o:w,s-o:w<br/><br/>__Endpoint name__: setLockdownPlanZoneStates",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "lockdownPlans",
+                ":lockdownPlanId",
+                "zoneStates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "lockdownPlanId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"zoneId\": \"<integer>\",\n    \"entryStateId\": \"<integer>\"\n  },\n  {\n    \"zoneId\": \"<integer>\",\n    \"entryStateId\": \"<integer>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f8dd04f5-1ec1-410b-b9e2-6c3a1c19cef0",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "lockdownPlans",
+                    ":lockdownPlanId",
+                    "zoneStates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "lockdownPlanId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"zoneId\": \"<integer>\",\n    \"entryStateId\": \"<integer>\"\n  },\n  {\n    \"zoneId\": \"<integer>\",\n    \"entryStateId\": \"<integer>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "494c1469-3350-4328-928e-8179f54c0abe",
+    "name": "Openpath API Documentation auth orgs/lockdownPlans API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

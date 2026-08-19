@@ -1,0 +1,211 @@
+{
+  "item": [
+    {
+      "id": "d8f04cb2-73d3-4dbf-9637-0b5135c655ca",
+      "name": "orgs/namespaces",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f6c9611d-1e2e-45ca-82fd-aa36bbc755c9",
+          "name": "List all namespaces for the org (including IDP namespaces associated with the org)",
+          "request": {
+            "name": "List all namespaces for the org (including IDP namespaces associated with the org)",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listNamespaces",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "namespaces"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "42cd5ea7-2ce9-4016-8aa0-173b8d4142af",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "namespaces"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 2259,\n  \"filteredCount\": 2016,\n  \"data\": [\n    {\n      \"id\": 2619,\n      \"nickname\": \"string\",\n      \"namespaceType\": {\n        \"id\": 4949.357963022476,\n        \"name\": \"string\",\n        \"modelName\": \"string\"\n      },\n      \"org\": {\n        \"id\": 5640.797178474872,\n        \"name\": \"string\"\n      },\n      \"identityProvider\": {\n        \"id\": 5162.63484054495,\n        \"identityProviderType\": {\n          \"id\": 4810.076084326872,\n          \"name\": \"string\"\n        },\n        \"org\": {\n          \"id\": 2155.9848002025174,\n          \"name\": \"string\"\n        }\n      },\n      \"propertyManagementSystem\": {\n        \"id\": 7051.902610067694,\n        \"orgId\": 8037.9906813327925,\n        \"propertyManagementSystemTypeId\": 6672.389705606149,\n        \"propertyManagementSystemType\": {\n          \"id\": 5787.263226427703,\n          \"name\": \"string\"\n        },\n        \"org\": {\n          \"id\": 9171.31811938439,\n          \"name\": \"string\"\n        }\n      },\n      \"passwordPolicy\": {}\n    },\n    {\n      \"id\": 6023,\n      \"nickname\": \"string\",\n      \"namespaceType\": {\n        \"id\": 3681.3812580901795,\n        \"name\": \"string\",\n        \"modelName\": \"string\"\n      },\n      \"org\": {\n        \"id\": 6466.4696456355405,\n        \"name\": \"string\"\n      },\n      \"identityProvider\": {\n        \"id\": 8923.51319871304,\n        \"identityProviderType\": {\n          \"id\": 2094.617288774574,\n          \"name\": \"string\"\n        },\n        \"org\": {\n          \"id\": 4976.3767722514785,\n          \"name\": \"string\"\n        }\n      },\n      \"propertyManagementSystem\": {\n        \"id\": 5626.295458709082,\n        \"orgId\": 5989.6715230027785,\n        \"propertyManagementSystemTypeId\": 3246.7272750839725,\n        \"propertyManagementSystemType\": {\n          \"id\": 8964.656898700141,\n          \"name\": \"string\"\n        },\n        \"org\": {\n          \"id\": 668.4262438309485,\n          \"name\": \"string\"\n        }\n      },\n      \"passwordPolicy\": {}\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-05-10\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        1261,\n        2109\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3671,\n          1032\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7e222c63-7981-4a62-9514-66b7ceb61112",
+    "name": "Openpath API Documentation auth orgs/namespaces API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

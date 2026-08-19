@@ -1,0 +1,227 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/wirelessLockGateways API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/wirelessLockGateways",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all wireless lock gateways",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o{params.orgId}-hw:r,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockGateways"
+        },
+        {
+          "info": {
+            "name": "Create a wirelessLock gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessLockGateway"
+        },
+        {
+          "info": {
+            "name": "Describe a wireless lock gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways/:wirelessLockGatewayId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wirelessLockGatewayId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o:r,s-o:r<br/><br/>__Endpoint name__: describeWirelessLockGateway"
+        },
+        {
+          "info": {
+            "name": "Update a wirelessLock gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways/:wirelessLockGatewayId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wirelessLockGatewayId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockGateway"
+        },
+        {
+          "info": {
+            "name": "Remove a wireless lock gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways/:wirelessLockGatewayId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wirelessLockGatewayId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessLockGateway"
+        },
+        {
+          "info": {
+            "name": "Update the firmware for multiple wireless lock gateways to the latest version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways/updateFirmwareBatch",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wirelessLockGatewayIds",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockGatewayFirmwareBatch"
+        },
+        {
+          "info": {
+            "name": "Update the firmware for a wireless lock gateway to a specific version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways/:wirelessLockGatewayId/updateFirmware",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wirelessLockGatewayId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockGatewayFirmware"
+        },
+        {
+          "info": {
+            "name": "Sync devices for a wireless lock gateway",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/wirelessLockGateways/:wirelessLockGatewayId/syncDevices",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "wirelessLockGatewayId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncWirelessLockGatewayDevices"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

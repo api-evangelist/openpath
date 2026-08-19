@@ -1,0 +1,1567 @@
+{
+  "item": [
+    {
+      "id": "091939ed-ede0-4148-9a76-57543f9db4c7",
+      "name": "orgs/identityProviders",
+      "description": {
+        "content": "Identity Providers and OAuth2",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "46067945-5e4d-493d-a222-d2459ca65487",
+          "name": "List all identity providers",
+          "request": {
+            "name": "List all identity providers",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-building:r,o{params.orgId}-building:w,o{params.orgId}-cert:r,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cleanupMsiAware:w,o{params.orgId}-cobalt:r,o{params.orgId}-cobalt:w,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o{params.orgId}-credential:r,o{params.orgId}-credential:w,o{params.orgId}-dash:r,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashEntry:w,o{params.orgId}-entryAccessAudit:r,o{params.orgId}-entryAccessAudit:w,o{params.orgId}-entryState:r,o{params.orgId}-entryState:w,o{params.orgId}-erpParentCenter:w,o{params.orgId}-erpParentStore:w,o{params.orgId}-eventsMsiAware:w,o{params.orgId}-exportClips:w,o{params.orgId}-haloAdmin:w,o{params.orgId}-haloUser:w,o{params.orgId}-haloViewer:r,o{params.orgId}-hw:r,o{params.orgId}-hw:w,o{params.orgId}-idp-scim:r,o{params.orgId}-idp-scim:w,o{params.orgId}-integrations:r,o{params.orgId}-integrations:w,o{params.orgId}-ipRestriction:r,o{params.orgId}-ipRestriction:w,o{params.orgId}-ldp:r,o{params.orgId}-ldp:w,o{params.orgId}-map:r,o{params.orgId}-map:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-opvideoDevice:r,o{params.orgId}-opvideoDevice:w,o{params.orgId}-opvideoIntercom:r,o{params.orgId}-opvideoIntercom:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-portalAudit:r,o{params.orgId}-portalAudit:w,o{params.orgId}-policy:r,o{params.orgId}-policy:w,o{params.orgId}-policySection:r,o{params.orgId}-policySection:w,o{params.orgId}-presence:r,o{params.orgId}-presence:w,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o{params.orgId}-realUserGroup:r,o{params.orgId}-realUserGroup:w,o{params.orgId}-restriction:r,o{params.orgId}-restriction:w,o{params.orgId}-role:r,o{params.orgId}-role:w,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptDownload:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-serviceCancellation:w,o{params.orgId}-site:r,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o{params.orgId}-timeRestriction:r,o{params.orgId}-timeRestriction:w,o{params.orgId}-user:r,o{params.orgId}-user:w,o{params.orgId}-videoAdmin:w,o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listIdentityProviders",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "30820ff9-cdcd-48e8-b64c-e1a63197b3f1",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 9230,\n  \"filteredCount\": 4931,\n  \"data\": [\n    {\n      \"id\": 686.1928541142437,\n      \"orgId\": 7072.800267780524,\n      \"identityProviderType\": {\n        \"id\": 2636.017067253128,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"identityProviderSyncType\": {\n        \"id\": 2254.8708128810304,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"authStrategyType\": {\n        \"id\": 5658.6647307202165,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"apiKey\": {\n        \"key\": \"****\",\n        \"url\": \"string\"\n      },\n      \"isSyncUsersEnabled\": true,\n      \"isMobileCredentialEnabled\": false,\n      \"isCloudKeyCredentialEnabled\": false,\n      \"isWalletCredentialEnabled\": false,\n      \"isSsoEnabled\": false,\n      \"isMobileSsoEnabled\": false,\n      \"isIdpInitiatedSsoEnabled\": false,\n      \"isRemoveGroupsEnabled\": true,\n      \"isLimitByGroupEnabled\": false,\n      \"isSyncPersonIdEnabled\": false,\n      \"isSyncDepartmentEnabled\": false,\n      \"isSyncTitleEnabled\": false,\n      \"isSyncMobilePhoneEnabled\": true,\n      \"isAutoManageVideoUserGroupsEnabled\": false,\n      \"nextSyncAt\": \"1955-10-01\",\n      \"lastSyncedAt\": \"1993-01-11\",\n      \"lastSyncedMessage\": \"string\",\n      \"lastSyncFailureAt\": \"2003-07-22\",\n      \"lastSyncFailureMessage\": \"string\",\n      \"lastSyncAttemptAt\": \"1980-02-05\",\n      \"lastSyncAttemptStatus\": \"string\",\n      \"isSyncUsersRequested\": false,\n      \"status\": \"string\",\n      \"namespace\": {\n        \"id\": 2707.149478302786,\n        \"nickname\": \"string\"\n      },\n      \"createdAt\": \"2016-10-10\",\n      \"updatedAt\": \"1988-02-23\",\n      \"uuid\": \"string\",\n      \"samlConfig\": {\n        \"id\": 2448,\n        \"issuer\": \"string\",\n        \"ssoUrl\": \"string\",\n        \"logoutUrl\": \"string\",\n        \"certificate\": \"string\",\n        \"entityId\": \"string\",\n        \"assertionUrl\": \"string\"\n      },\n      \"oidcConfig\": {\n        \"clientId\": \"string\",\n        \"subdomain\": \"string\"\n      },\n      \"clientAuth\": {\n        \"clientId\": \"string\",\n        \"clientSecret\": \"string\",\n        \"tenantId\": \"string\",\n        \"url\": \"string\"\n      },\n      \"basicAuth\": {\n        \"url\": \"string\",\n        \"authCreds\": \"string\",\n        \"groupsUrl\": \"string\"\n      },\n      \"scimAttributeMapping\": {\n        \"rules\": [\n          {\n            \"type\": \"specific\",\n            \"mappings\": [\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"type\": \"template\",\n            \"mappings\": [\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"scimAccessTokens\": [\n        {\n          \"id\": 6623\n        },\n        {\n          \"id\": 1404\n        }\n      ],\n      \"userFieldMappings\": [\n        {\n          \"destination\": \"string\",\n          \"sources\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"destination\": \"string\",\n          \"sources\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    },\n    {\n      \"id\": 2264.290261549312,\n      \"orgId\": 1145.5131016525966,\n      \"identityProviderType\": {\n        \"id\": 3620.022395459315,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"identityProviderSyncType\": {\n        \"id\": 9793.938417272217,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"authStrategyType\": {\n        \"id\": 1298.610397640776,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"apiKey\": {\n        \"key\": \"****\",\n        \"url\": \"string\"\n      },\n      \"isSyncUsersEnabled\": true,\n      \"isMobileCredentialEnabled\": true,\n      \"isCloudKeyCredentialEnabled\": false,\n      \"isWalletCredentialEnabled\": true,\n      \"isSsoEnabled\": true,\n      \"isMobileSsoEnabled\": true,\n      \"isIdpInitiatedSsoEnabled\": false,\n      \"isRemoveGroupsEnabled\": false,\n      \"isLimitByGroupEnabled\": false,\n      \"isSyncPersonIdEnabled\": true,\n      \"isSyncDepartmentEnabled\": false,\n      \"isSyncTitleEnabled\": false,\n      \"isSyncMobilePhoneEnabled\": true,\n      \"isAutoManageVideoUserGroupsEnabled\": true,\n      \"nextSyncAt\": \"2020-06-21\",\n      \"lastSyncedAt\": \"1967-02-18\",\n      \"lastSyncedMessage\": \"string\",\n      \"lastSyncFailureAt\": \"1958-05-24\",\n      \"lastSyncFailureMessage\": \"string\",\n      \"lastSyncAttemptAt\": \"2001-11-21\",\n      \"lastSyncAttemptStatus\": \"string\",\n      \"isSyncUsersRequested\": true,\n      \"status\": \"string\",\n      \"namespace\": {\n        \"id\": 621.037132122485,\n        \"nickname\": \"string\"\n      },\n      \"createdAt\": \"1967-05-13\",\n      \"updatedAt\": \"1957-06-12\",\n      \"uuid\": \"string\",\n      \"samlConfig\": {\n        \"id\": 8063,\n        \"issuer\": \"string\",\n        \"ssoUrl\": \"string\",\n        \"logoutUrl\": \"string\",\n        \"certificate\": \"string\",\n        \"entityId\": \"string\",\n        \"assertionUrl\": \"string\"\n      },\n      \"oidcConfig\": {\n        \"clientId\": \"string\",\n        \"subdomain\": \"string\"\n      },\n      \"clientAuth\": {\n        \"clientId\": \"string\",\n        \"clientSecret\": \"string\",\n        \"tenantId\": \"string\",\n        \"url\": \"string\"\n      },\n      \"basicAuth\": {\n        \"url\": \"string\",\n        \"authCreds\": \"string\",\n        \"groupsUrl\": \"string\"\n      },\n      \"scimAttributeMapping\": {\n        \"rules\": [\n          {\n            \"type\": \"specific\",\n            \"mappings\": [\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"type\": \"specific\",\n            \"mappings\": [\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"conditions\": [\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"key\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"value\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ],\n                \"destinations\": [\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"roleIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"accessGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"videoUserGroupIds\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ]\n      },\n      \"scimAccessTokens\": [\n        {\n          \"id\": 521\n        },\n        {\n          \"id\": 2956\n        }\n      ],\n      \"userFieldMappings\": [\n        {\n          \"destination\": \"string\",\n          \"sources\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        {\n          \"destination\": \"string\",\n          \"sources\": [\n            \"string\",\n            \"string\"\n          ]\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2021-05-27\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1866,\n        9848\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          635,\n          6951\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05ad9f85-b740-4f19-822e-a51dfbe71b15",
+          "name": "Describe an identity provider",
+          "request": {
+            "name": "Describe an identity provider",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeIdentityProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b6ca2a37-fb73-4594-aa36-d421115d61ab",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4804.1921238823925,\n    \"orgId\": 4903.997151951673,\n    \"identityProviderType\": {\n      \"id\": 9418.50097371557,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"identityProviderSyncType\": {\n      \"id\": 8791.013449359603,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"authStrategyType\": {\n      \"id\": 559.4237714839456,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"apiKey\": {\n      \"key\": \"****\",\n      \"url\": \"string\"\n    },\n    \"isSyncUsersEnabled\": true,\n    \"isMobileCredentialEnabled\": false,\n    \"isCloudKeyCredentialEnabled\": false,\n    \"isWalletCredentialEnabled\": false,\n    \"isSsoEnabled\": true,\n    \"isMobileSsoEnabled\": false,\n    \"isIdpInitiatedSsoEnabled\": false,\n    \"isRemoveGroupsEnabled\": true,\n    \"isLimitByGroupEnabled\": false,\n    \"isSyncPersonIdEnabled\": true,\n    \"isSyncDepartmentEnabled\": true,\n    \"isSyncTitleEnabled\": false,\n    \"isSyncMobilePhoneEnabled\": true,\n    \"isAutoManageVideoUserGroupsEnabled\": true,\n    \"nextSyncAt\": \"1957-08-24\",\n    \"lastSyncedAt\": \"1999-03-06\",\n    \"lastSyncedMessage\": \"string\",\n    \"lastSyncFailureAt\": \"2022-05-15\",\n    \"lastSyncFailureMessage\": \"string\",\n    \"lastSyncAttemptAt\": \"2015-09-12\",\n    \"lastSyncAttemptStatus\": \"string\",\n    \"isSyncUsersRequested\": false,\n    \"status\": \"string\",\n    \"namespace\": {\n      \"id\": 3199.5899865961787,\n      \"nickname\": \"string\"\n    },\n    \"createdAt\": \"1978-11-05\",\n    \"updatedAt\": \"1975-08-29\",\n    \"uuid\": \"string\",\n    \"samlConfig\": {\n      \"id\": 6136,\n      \"issuer\": \"string\",\n      \"ssoUrl\": \"string\",\n      \"logoutUrl\": \"string\",\n      \"certificate\": \"string\",\n      \"entityId\": \"string\",\n      \"assertionUrl\": \"string\"\n    },\n    \"oidcConfig\": {\n      \"clientId\": \"string\",\n      \"subdomain\": \"string\"\n    },\n    \"clientAuth\": {\n      \"clientId\": \"string\",\n      \"clientSecret\": \"string\",\n      \"tenantId\": \"string\",\n      \"url\": \"string\"\n    },\n    \"basicAuth\": {\n      \"url\": \"string\",\n      \"authCreds\": \"string\",\n      \"groupsUrl\": \"string\"\n    },\n    \"scimAttributeMapping\": {\n      \"rules\": [\n        {\n          \"type\": \"specific\",\n          \"mappings\": [\n            {\n              \"conditions\": [\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                },\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                }\n              ],\n              \"destinations\": [\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"conditions\": [\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                },\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                }\n              ],\n              \"destinations\": [\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"type\": \"specific\",\n          \"mappings\": [\n            {\n              \"conditions\": [\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                },\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                }\n              ],\n              \"destinations\": [\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                }\n              ]\n            },\n            {\n              \"conditions\": [\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                },\n                {\n                  \"key\": \"string\",\n                  \"value\": \"string\"\n                }\n              ],\n              \"destinations\": [\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                {\n                  \"roleIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"accessGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ],\n                  \"videoUserGroupIds\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    },\n    \"scimAccessTokens\": [\n      {\n        \"id\": 6928\n      },\n      {\n        \"id\": 7342\n      }\n    ],\n    \"userFieldMappings\": [\n      {\n        \"destination\": \"string\",\n        \"sources\": [\n          \"string\",\n          \"string\"\n        ]\n      },\n      {\n        \"destination\": \"string\",\n        \"sources\": [\n          \"string\",\n          \"string\"\n        ]\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1980-03-22\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1632,\n        1819\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8495,\n          7483\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27c3f99f-a34f-4c05-b287-20dbd04ba384",
+          "name": "Describe an identity provider's group relations",
+          "request": {
+            "name": "Describe an identity provider's group relations",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getIdentityProviderGroupRelations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "groupRelations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2496ac71-e2e7-4a0d-95e2-a567cb721460",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "groupRelations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3312,\n  \"filteredCount\": 5824,\n  \"data\": [\n    {\n      \"idpGroupUniqueIdentifier\": \"string\",\n      \"identityProviderGroup\": {\n        \"idpGroupUniqueIdentifier\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"email\": \"string\"\n      },\n      \"groupId\": 4087.1405054891397,\n      \"group\": {\n        \"id\": 7892.969829449976,\n        \"name\": \"string\"\n      },\n      \"videoUserGroupIdExt\": \"string\"\n    },\n    {\n      \"idpGroupUniqueIdentifier\": \"string\",\n      \"identityProviderGroup\": {\n        \"idpGroupUniqueIdentifier\": \"string\",\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"email\": \"string\"\n      },\n      \"groupId\": 3139.8056075869263,\n      \"group\": {\n        \"id\": 4258.039390756029,\n        \"name\": \"string\"\n      },\n      \"videoUserGroupIdExt\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-11-02\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6379,\n        4124\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7061,\n          4725\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2614358b-bdac-406e-9ff7-a6cac98c30a8",
+          "name": "Set an identity provider's group relations",
+          "request": {
+            "name": "Set an identity provider's group relations",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: setIdentityProviderGroupRelations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "groupRelations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"idpGroupUniqueIdentifier\": \"<string>\",\n    \"groupId\": \"<integer>\",\n    \"videoUserGroupIdExt\": \"<string>\"\n  },\n  {\n    \"idpGroupUniqueIdentifier\": \"<string>\",\n    \"groupId\": \"<integer>\",\n    \"videoUserGroupIdExt\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bedfd708-ff07-4989-be7c-f33e411b910c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "groupRelations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"idpGroupUniqueIdentifier\": \"<string>\",\n    \"groupId\": \"<integer>\",\n    \"videoUserGroupIdExt\": \"<string>\"\n  },\n  {\n    \"idpGroupUniqueIdentifier\": \"<string>\",\n    \"groupId\": \"<integer>\",\n    \"videoUserGroupIdExt\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54b2adac-7eb1-42a8-af11-ac8f0e701f59",
+          "name": "List an identity provider's groups",
+          "request": {
+            "name": "List an identity provider's groups",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listIdentityProviderGroups",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "59d4cb59-f55d-4ad1-9081-3bffb5d9f2d1",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 2717,\n  \"filteredCount\": 1894,\n  \"data\": [\n    {\n      \"idpGroupUniqueIdentifier\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"email\": \"string\"\n    },\n    {\n      \"idpGroupUniqueIdentifier\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"email\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1999-03-28\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8839,\n        6436\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          723,\n          8982\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70a9e3d1-6db9-4eb8-943e-e35f865dda5e",
+          "name": "Sync users",
+          "request": {
+            "name": "Sync users",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncUsersIdentityProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "syncUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "582c2bcd-1099-427a-a676-e77071b11845",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "syncUsers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9657d30-45b9-4b88-8fd8-0e2752f1a202",
+          "name": "Generate OAuth2 authorize URL",
+          "request": {
+            "name": "Generate OAuth2 authorize URL",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w<br/><br/>__Endpoint name__: getIdentityProviderAuthUrl",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "oauth2",
+                "authorize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "af410863-6ba7-4187-bea2-5e909422c965",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "oauth2",
+                    "authorize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"authUrl\": \"string\",\n    \"authorizationUrl\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2004-08-25\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9362,\n        3069\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6932,\n          5500\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "79bd4c5a-9971-4775-b6e8-cdee7d9a4ebc",
+          "name": "Remove a group relation from an identity provider",
+          "request": {
+            "name": "Remove a group relation from an identity provider",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteIdentityProviderGroupRelation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "groupRelation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idpGroupUniqueIdentifier\": \"<string>\",\n  \"groupId\": \"<integer>\",\n  \"videoUserGroupIdExt\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b15efa21-9c4a-4f55-9a68-ab1e5c1944b7",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "groupRelation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f58c6c19-3867-480b-87b8-5a633a27ad16",
+          "name": "Add a group relation to an identity provider",
+          "request": {
+            "name": "Add a group relation to an identity provider",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: setIdentityProviderGroupRelation",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "groupRelation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idpGroupUniqueIdentifier\": \"<string>\",\n  \"groupId\": \"<integer>\",\n  \"videoUserGroupIdExt\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1b2c3258-f6cb-477e-8d9c-4cd79e15a88d",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "groupRelation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "700e2672-6f25-4422-bfe0-74b53256a3c4",
+          "name": "Set an identity provider's user custom fields mapping",
+          "request": {
+            "name": "Set an identity provider's user custom fields mapping",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: setIdentityProviderUserCustomFieldsMapping",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "userCustomMapping"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"destination\": \"<string>\",\n    \"sources\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"destination\": \"<string>\",\n    \"sources\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "af2ab510-8169-423c-836f-d227f8ec1d95",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "userCustomMapping"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"destination\": \"<string>\",\n    \"sources\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  {\n    \"destination\": \"<string>\",\n    \"sources\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7be63030-9472-42de-a5c4-c1a55a8cf316",
+          "name": "Inactivate an identity provider and all associated identities and users",
+          "request": {
+            "name": "Inactivate an identity provider and all associated identities and users",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: inactivateIdentityProvider",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "identityProviders",
+                ":identityProviderId",
+                "inactivate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "identityProviderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "02f5fb24-0b61-4f7f-a959-caaf3d5a146e",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "identityProviders",
+                    ":identityProviderId",
+                    "inactivate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "identityProviderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "497bdd62-a35c-4e78-858a-783bfe2c4394",
+    "name": "Openpath API Documentation auth orgs/identityProviders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

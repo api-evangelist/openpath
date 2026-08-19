@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth tokens API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "tokens",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Use a cloudKey token to remotely trigger or revert a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/tokens/cloudKeyLockdownPlanActionTokens/:token/use",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__Endpoint name__: useCloudKeyLockdownPlanActionToken"
+        },
+        {
+          "info": {
+            "name": "Use a cloudKey token to remotely unlock an entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/tokens/cloudKeyUnlockTokens/:token/use",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__Endpoint name__: useCloudKeyUnlockToken"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

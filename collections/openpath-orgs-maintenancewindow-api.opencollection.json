@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/maintenanceWindow API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/maintenanceWindow",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Describe an organization's maintenance window",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/maintenanceWindow",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: describeOrgMaintenanceWindow"
+        },
+        {
+          "info": {
+            "name": "Create or update an organization's maintenance window",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/maintenanceWindow",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: createOrgMaintenanceWindow"
+        },
+        {
+          "info": {
+            "name": "Update an organization's maintenance window",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/maintenanceWindow",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: updateOrgMaintenanceWindow"
+        },
+        {
+          "info": {
+            "name": "Delete an organization's maintenance window",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/maintenanceWindow",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: deleteOrgMaintenanceWindow"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

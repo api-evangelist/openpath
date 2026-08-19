@@ -1,0 +1,1245 @@
+{
+  "item": [
+    {
+      "id": "aadba115-76e5-4036-ad8f-85382e70246a",
+      "name": "orgs/alarmConfigurations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1909c433-3e35-4d60-8fa8-65ce28750b0c",
+          "name": "List all alarm configurations",
+          "request": {
+            "name": "List all alarm configurations",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,s-o:w,s-o:r,o:w,o:r<br/><br/>__Endpoint name__: listAlarmConfigurations",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c5ee4fa0-45bd-45fd-ad74-e4310b6a7781",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4040,\n  \"filteredCount\": 208,\n  \"cursors\": {\n    \"nextCursor\": 9155,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"id\": 4769,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"isActive\": false,\n      \"isMuted\": false,\n      \"isNoteRequired\": false,\n      \"alarmSeverity\": {\n        \"id\": 7107.071813611335,\n        \"name\": \"string\"\n      },\n      \"subscription\": {\n        \"id\": 8009.296152723072,\n        \"subjectOrg\": {\n          \"id\": 2182\n        },\n        \"hookEvent\": {\n          \"id\": 919,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1986-08-02\"\n        },\n        \"hookAction\": {\n          \"id\": 5910,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"1972-12-28\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": true,\n        \"isBlocking\": true,\n        \"isVisible\": true,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 4262,\n        \"rateLimitWindowSecs\": 4901,\n        \"isOnceDaily\": true,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 9055\n        },\n        \"updatedAt\": \"1972-03-14\"\n      },\n      \"notificationSubscriptions\": [\n        {\n          \"id\": 7658.430877933647,\n          \"subjectOrg\": {\n            \"id\": 5467\n          },\n          \"hookEvent\": {\n            \"id\": 3328,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"updatedAt\": \"1967-06-20\"\n          },\n          \"hookAction\": {\n            \"id\": 2821,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"config\": {},\n            \"updatedAt\": \"1980-01-31\"\n          },\n          \"targetUrl\": \"string\",\n          \"isActive\": true,\n          \"isBlocking\": true,\n          \"isVisible\": false,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"rateLimitCount\": 424,\n          \"rateLimitWindowSecs\": 9732,\n          \"isOnceDaily\": false,\n          \"dailyResetTime\": \"string\",\n          \"dailyResetTimezone\": \"string\",\n          \"handlerHookEventLocation\": {\n            \"id\": 8147\n          },\n          \"updatedAt\": \"1992-11-07\"\n        },\n        {\n          \"id\": 8565.034157009297,\n          \"subjectOrg\": {\n            \"id\": 7543\n          },\n          \"hookEvent\": {\n            \"id\": 325,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"updatedAt\": \"1957-09-02\"\n          },\n          \"hookAction\": {\n            \"id\": 9759,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"config\": {},\n            \"updatedAt\": \"2025-01-11\"\n          },\n          \"targetUrl\": \"string\",\n          \"isActive\": false,\n          \"isBlocking\": false,\n          \"isVisible\": false,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"rateLimitCount\": 9148,\n          \"rateLimitWindowSecs\": 2423,\n          \"isOnceDaily\": false,\n          \"dailyResetTime\": \"string\",\n          \"dailyResetTimezone\": \"string\",\n          \"handlerHookEventLocation\": {\n            \"id\": 9455\n          },\n          \"updatedAt\": \"1978-02-21\"\n        }\n      ],\n      \"assignedUser\": {\n        \"id\": 3129.037161118954,\n        \"opal\": \"string\",\n        \"status\": \"S\",\n        \"startDate\": \"1950-11-25\",\n        \"endDate\": \"1958-04-22\",\n        \"startAndEndDateTimeZoneId\": \"Asia/Magadan\",\n        \"hasRemoteUnlock\": true,\n        \"isOverrideAllowed\": true,\n        \"externalId\": \"string\",\n        \"identity\": {\n          \"id\": 7168.845157253486,\n          \"opal\": \"string\",\n          \"roles\": [\n            {\n              \"id\": 14.669273986576137,\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"isMfaRequired\": true\n            },\n            {\n              \"id\": 7123.417364886897,\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"isMfaRequired\": false\n            }\n          ],\n          \"mfaCredentials\": [\n            {\n              \"id\": 9470.295409128614,\n              \"createdAt\": \"2001-10-02\",\n              \"updatedAt\": \"2003-02-17\",\n              \"name\": \"string\",\n              \"status\": \"string\",\n              \"mfaCredentialType\": {\n                \"id\": 7782.404571619623,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"totpSoftDevice\": {\n                \"id\": 4067.98440528642\n              }\n            },\n            {\n              \"id\": 4883.393035663671,\n              \"createdAt\": \"1950-06-04\",\n              \"updatedAt\": \"2002-10-21\",\n              \"name\": \"string\",\n              \"status\": \"string\",\n              \"mfaCredentialType\": {\n                \"id\": 7041.699115088421,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"totpSoftDevice\": {\n                \"id\": 3405.2958888220173\n              }\n            }\n          ],\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"isEmailVerified\": false,\n          \"namespace\": {\n            \"id\": 1191,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 1740.09580521435,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"org\": {\n              \"id\": 5650.221284539729,\n              \"name\": \"string\"\n            },\n            \"identityProvider\": {\n              \"id\": 3290.1571177772694,\n              \"isSsoEnabled\": false,\n              \"isSyncMobilePhoneEnabled\": true,\n              \"isRemoveGroupsEnabled\": false,\n              \"identityProviderSyncTypeId\": 4472,\n              \"credentials\": \"string\",\n              \"identityProviderType\": {\n                \"id\": 2881.432115055622,\n                \"name\": \"string\"\n              },\n              \"org\": {\n                \"id\": 1222.5723662893806,\n                \"name\": \"string\"\n              }\n            },\n            \"propertyManagementSystem\": {\n              \"id\": 9363.937393848175,\n              \"orgId\": 2633.288479823768,\n              \"propertyManagementSystemTypeId\": 7733.4210964726935,\n              \"propertyManagementSystemType\": {\n                \"id\": 9828.020195698413,\n                \"name\": \"string\"\n              }\n            }\n          },\n          \"idpUniqueIdentifier\": \"string\",\n          \"pmsUniqueIdentifier\": \"string\",\n          \"needsPasswordChange\": false,\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\",\n          \"mobilePhone\": \"string\",\n          \"language\": \"string\",\n          \"createdAt\": \"1950-02-04\",\n          \"updatedAt\": \"1966-05-10\",\n          \"users\": [\n            {\n              \"id\": 8217.237106666938,\n              \"opal\": \"string\",\n              \"status\": \"string\",\n              \"startDate\": \"1981-04-06\",\n              \"endDate\": \"1951-08-01\",\n              \"createdAt\": \"1982-07-10\",\n              \"updatedAt\": \"2011-03-15\",\n              \"org\": {\n                \"id\": 888.9363091499857,\n                \"name\": \"string\"\n              }\n            },\n            {\n              \"id\": 3198.2133282101177,\n              \"opal\": \"string\",\n              \"status\": \"string\",\n              \"startDate\": \"2002-12-04\",\n              \"endDate\": \"1958-06-18\",\n              \"createdAt\": \"2025-04-30\",\n              \"updatedAt\": \"1978-07-30\",\n              \"org\": {\n                \"id\": 8192.366998889886,\n                \"name\": \"string\"\n              }\n            }\n          ]\n        },\n        \"groups\": [\n          {\n            \"id\": 8825.303927390585,\n            \"name\": \"string\",\n            \"opvideoIntercomProfiles\": [\n              {\n                \"id\": 9919.854294626335,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 1829.2837461582267,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"id\": 5032.918542107863,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 7435.578944488059,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": 4039.5801820353204,\n            \"name\": \"string\",\n            \"opvideoIntercomProfiles\": [\n              {\n                \"id\": 3082.716364124232,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 7269.516284066009,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"id\": 3969.1359001410597,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 4159.12555924499,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ],\n        \"sites\": [\n          {\n            \"id\": 6088.7547008512765,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 2484.064929619465,\n            \"name\": \"string\"\n          }\n        ],\n        \"realUserGroups\": [\n          {\n            \"id\": 6055.485127775874,\n            \"name\": \"string\",\n            \"description\": \"string\"\n          },\n          {\n            \"id\": 3162.6242539880554,\n            \"name\": \"string\",\n            \"description\": \"string\"\n          }\n        ],\n        \"roles\": [\n          {\n            \"id\": 9897.633479441878,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 8033.415126647165,\n            \"name\": \"string\"\n          }\n        ],\n        \"userCustomFields\": [\n          {\n            \"id\": 5744.987137161137,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 7614.4819975739965,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 7251.480903807196,\n                \"name\": \"string\"\n              }\n            }\n          },\n          {\n            \"id\": 687.8774270063725,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 6516.552044502927,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 8225.85268301024,\n                \"name\": \"string\"\n              }\n            }\n          }\n        ],\n        \"buildingFloorUnits\": [\n          {\n            \"id\": 5679.490080341875,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isDefault\": true,\n            \"buildingFloor\": {\n              \"id\": 5055,\n              \"name\": \"string\",\n              \"isDefault\": true,\n              \"building\": {\n                \"id\": 3128,\n                \"name\": \"string\"\n              }\n            }\n          },\n          {\n            \"id\": 727.7149505160552,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isDefault\": true,\n            \"buildingFloor\": {\n              \"id\": 2486,\n              \"name\": \"string\",\n              \"isDefault\": true,\n              \"building\": {\n                \"id\": 749,\n                \"name\": \"string\"\n              }\n            }\n          }\n        ],\n        \"createdAt\": \"2000-01-11\",\n        \"updatedAt\": \"1999-12-19\",\n        \"manuallyInactivatedAt\": \"1985-02-20\",\n        \"lastActivityAt\": \"1966-11-03\",\n        \"title\": \"string\",\n        \"department\": \"string\",\n        \"personId\": \"string\",\n        \"statusLastUpdatedAt\": \"1967-07-09\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"pictureExpiresAt\": 8153.475017139832,\n        \"lastParcelReminderAt\": \"1949-09-06\"\n      },\n      \"assignedRole\": {\n        \"id\": 7206.998471318213,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"nativeAppId\": 3015,\n        \"nativeApp\": {\n          \"id\": 1962,\n          \"name\": \"string\"\n        },\n        \"isEditable\": false,\n        \"isSiteSpecific\": false,\n        \"isMfaRequired\": false,\n        \"createdAt\": \"1964-12-04\",\n        \"updatedAt\": \"1966-09-18\",\n        \"userCount\": 4899,\n        \"sites\": [\n          {\n            \"id\": 6019.138090450779,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 413.4078835225241,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"cameras\": [\n        {\n          \"id\": 8981,\n          \"videoProviderId\": 8706,\n          \"videoProvider\": {\n            \"id\": 706,\n            \"videoProviderTypeId\": 2274\n          },\n          \"idExt\": \"string\",\n          \"name\": \"string\",\n          \"nameExt\": \"string\",\n          \"supportsSnapshot\": false,\n          \"supportsDeeplink\": true,\n          \"supportsMotionSnapshot\": true,\n          \"supportsFaceCrop\": true,\n          \"supportsFaceDetection\": true,\n          \"supportsPeopleDetection\": false,\n          \"supportsMotionRecap\": false,\n          \"supportsLivestream\": false\n        },\n        {\n          \"id\": 5671,\n          \"videoProviderId\": 3262,\n          \"videoProvider\": {\n            \"id\": 6311,\n            \"videoProviderTypeId\": 1802\n          },\n          \"idExt\": \"string\",\n          \"name\": \"string\",\n          \"nameExt\": \"string\",\n          \"supportsSnapshot\": false,\n          \"supportsDeeplink\": true,\n          \"supportsMotionSnapshot\": true,\n          \"supportsFaceCrop\": false,\n          \"supportsFaceDetection\": false,\n          \"supportsPeopleDetection\": false,\n          \"supportsMotionRecap\": true,\n          \"supportsLivestream\": false\n        }\n      ],\n      \"createdAt\": \"1975-01-02\",\n      \"updatedAt\": \"2003-08-19\",\n      \"idExt\": \"string\",\n      \"nameExt\": \"string\"\n    },\n    {\n      \"id\": 8055,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"instructions\": \"string\",\n      \"isActive\": true,\n      \"isMuted\": false,\n      \"isNoteRequired\": false,\n      \"alarmSeverity\": {\n        \"id\": 2996.272313623328,\n        \"name\": \"string\"\n      },\n      \"subscription\": {\n        \"id\": 7032.220067239071,\n        \"subjectOrg\": {\n          \"id\": 1439\n        },\n        \"hookEvent\": {\n          \"id\": 6911,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1956-03-05\"\n        },\n        \"hookAction\": {\n          \"id\": 2249,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"1961-10-07\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": false,\n        \"isBlocking\": true,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 3735,\n        \"rateLimitWindowSecs\": 1198,\n        \"isOnceDaily\": true,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 8138\n        },\n        \"updatedAt\": \"2010-03-15\"\n      },\n      \"notificationSubscriptions\": [\n        {\n          \"id\": 6513.335457252771,\n          \"subjectOrg\": {\n            \"id\": 5907\n          },\n          \"hookEvent\": {\n            \"id\": 8631,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"updatedAt\": \"2014-02-21\"\n          },\n          \"hookAction\": {\n            \"id\": 2241,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"config\": {},\n            \"updatedAt\": \"2010-06-24\"\n          },\n          \"targetUrl\": \"string\",\n          \"isActive\": true,\n          \"isBlocking\": true,\n          \"isVisible\": false,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"rateLimitCount\": 4947,\n          \"rateLimitWindowSecs\": 4343,\n          \"isOnceDaily\": false,\n          \"dailyResetTime\": \"string\",\n          \"dailyResetTimezone\": \"string\",\n          \"handlerHookEventLocation\": {\n            \"id\": 1345\n          },\n          \"updatedAt\": \"2019-09-07\"\n        },\n        {\n          \"id\": 6981.673004887518,\n          \"subjectOrg\": {\n            \"id\": 3997\n          },\n          \"hookEvent\": {\n            \"id\": 8813,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"updatedAt\": \"2018-09-12\"\n          },\n          \"hookAction\": {\n            \"id\": 6149,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"config\": {},\n            \"updatedAt\": \"1980-02-16\"\n          },\n          \"targetUrl\": \"string\",\n          \"isActive\": true,\n          \"isBlocking\": true,\n          \"isVisible\": false,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"rateLimitCount\": 8703,\n          \"rateLimitWindowSecs\": 7316,\n          \"isOnceDaily\": false,\n          \"dailyResetTime\": \"string\",\n          \"dailyResetTimezone\": \"string\",\n          \"handlerHookEventLocation\": {\n            \"id\": 4633\n          },\n          \"updatedAt\": \"1974-08-28\"\n        }\n      ],\n      \"assignedUser\": {\n        \"id\": 2127.1667860856514,\n        \"opal\": \"string\",\n        \"status\": \"I\",\n        \"startDate\": \"1980-03-12\",\n        \"endDate\": \"1956-05-08\",\n        \"startAndEndDateTimeZoneId\": \"Asia/Tashkent\",\n        \"hasRemoteUnlock\": true,\n        \"isOverrideAllowed\": false,\n        \"externalId\": \"string\",\n        \"identity\": {\n          \"id\": 3575.5198936003185,\n          \"opal\": \"string\",\n          \"roles\": [\n            {\n              \"id\": 4663.259410097153,\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"isMfaRequired\": true\n            },\n            {\n              \"id\": 1996.734712105933,\n              \"name\": \"string\",\n              \"description\": \"string\",\n              \"isMfaRequired\": true\n            }\n          ],\n          \"mfaCredentials\": [\n            {\n              \"id\": 5845.147661421751,\n              \"createdAt\": \"1951-08-11\",\n              \"updatedAt\": \"1958-07-05\",\n              \"name\": \"string\",\n              \"status\": \"string\",\n              \"mfaCredentialType\": {\n                \"id\": 2473.248172675465,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"totpSoftDevice\": {\n                \"id\": 6982.858733396484\n              }\n            },\n            {\n              \"id\": 3507.162387274314,\n              \"createdAt\": \"2024-09-25\",\n              \"updatedAt\": \"1951-12-30\",\n              \"name\": \"string\",\n              \"status\": \"string\",\n              \"mfaCredentialType\": {\n                \"id\": 476.95087888802834,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"totpSoftDevice\": {\n                \"id\": 353.48005615255863\n              }\n            }\n          ],\n          \"firstName\": \"string\",\n          \"middleName\": \"string\",\n          \"lastName\": \"string\",\n          \"fullName\": \"string\",\n          \"initials\": \"string\",\n          \"isEmailVerified\": true,\n          \"namespace\": {\n            \"id\": 4258,\n            \"nickname\": \"string\",\n            \"namespaceType\": {\n              \"id\": 6805.437114068178,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9728.835067758298,\n              \"name\": \"string\"\n            },\n            \"identityProvider\": {\n              \"id\": 8464.283361261105,\n              \"isSsoEnabled\": true,\n              \"isSyncMobilePhoneEnabled\": true,\n              \"isRemoveGroupsEnabled\": true,\n              \"identityProviderSyncTypeId\": 1246,\n              \"credentials\": \"string\",\n              \"identityProviderType\": {\n                \"id\": 7814.776157949451,\n                \"name\": \"string\"\n              },\n              \"org\": {\n                \"id\": 1789.7493255736185,\n                \"name\": \"string\"\n              }\n            },\n            \"propertyManagementSystem\": {\n              \"id\": 2044.2937725361965,\n              \"orgId\": 5744.996216868028,\n              \"propertyManagementSystemTypeId\": 6201.92306355359,\n              \"propertyManagementSystemType\": {\n                \"id\": 1523.4613353793402,\n                \"name\": \"string\"\n              }\n            }\n          },\n          \"idpUniqueIdentifier\": \"string\",\n          \"pmsUniqueIdentifier\": \"string\",\n          \"needsPasswordChange\": false,\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\",\n          \"mobilePhone\": \"string\",\n          \"language\": \"string\",\n          \"createdAt\": \"1999-12-03\",\n          \"updatedAt\": \"2022-02-14\",\n          \"users\": [\n            {\n              \"id\": 9166.842149948476,\n              \"opal\": \"string\",\n              \"status\": \"string\",\n              \"startDate\": \"1996-10-01\",\n              \"endDate\": \"1989-09-08\",\n              \"createdAt\": \"1958-04-18\",\n              \"updatedAt\": \"1960-11-28\",\n              \"org\": {\n                \"id\": 7247.106468813036,\n                \"name\": \"string\"\n              }\n            },\n            {\n              \"id\": 197.50992665919287,\n              \"opal\": \"string\",\n              \"status\": \"string\",\n              \"startDate\": \"1982-09-26\",\n              \"endDate\": \"2003-07-04\",\n              \"createdAt\": \"2010-10-29\",\n              \"updatedAt\": \"1947-02-13\",\n              \"org\": {\n                \"id\": 9944.932368597898,\n                \"name\": \"string\"\n              }\n            }\n          ]\n        },\n        \"groups\": [\n          {\n            \"id\": 7517.133446887035,\n            \"name\": \"string\",\n            \"opvideoIntercomProfiles\": [\n              {\n                \"id\": 8402.538645451883,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 8488.574838845308,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"id\": 864.6654455595615,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 9754.197616763773,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          },\n          {\n            \"id\": 3605.4866980964753,\n            \"name\": \"string\",\n            \"opvideoIntercomProfiles\": [\n              {\n                \"id\": 5046.79578746261,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 94.34158668136573,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              {\n                \"id\": 8020.410989881234,\n                \"name\": \"string\",\n                \"opvideoIntercomProfileTypeId\": 3125.497434938863,\n                \"opvideoIntercoms\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              }\n            ]\n          }\n        ],\n        \"sites\": [\n          {\n            \"id\": 8666.190890772848,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 9130.499441229844,\n            \"name\": \"string\"\n          }\n        ],\n        \"realUserGroups\": [\n          {\n            \"id\": 3595.351911846121,\n            \"name\": \"string\",\n            \"description\": \"string\"\n          },\n          {\n            \"id\": 5341.725032476926,\n            \"name\": \"string\",\n            \"description\": \"string\"\n          }\n        ],\n        \"roles\": [\n          {\n            \"id\": 7537.539963441743,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 2419.0177251497657,\n            \"name\": \"string\"\n          }\n        ],\n        \"userCustomFields\": [\n          {\n            \"id\": 2113.117738660837,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 2951.0252718698603,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 3545.0437697385228,\n                \"name\": \"string\"\n              }\n            }\n          },\n          {\n            \"id\": 6271.154193344904,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 4371.726855429277,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 9941.737199443385,\n                \"name\": \"string\"\n              }\n            }\n          }\n        ],\n        \"buildingFloorUnits\": [\n          {\n            \"id\": 6649.132484215322,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isDefault\": false,\n            \"buildingFloor\": {\n              \"id\": 3585,\n              \"name\": \"string\",\n              \"isDefault\": true,\n              \"building\": {\n                \"id\": 7709,\n                \"name\": \"string\"\n              }\n            }\n          },\n          {\n            \"id\": 1882.3622406919326,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isDefault\": false,\n            \"buildingFloor\": {\n              \"id\": 2174,\n              \"name\": \"string\",\n              \"isDefault\": true,\n              \"building\": {\n                \"id\": 5825,\n                \"name\": \"string\"\n              }\n            }\n          }\n        ],\n        \"createdAt\": \"1981-11-13\",\n        \"updatedAt\": \"2023-06-14\",\n        \"manuallyInactivatedAt\": \"1951-09-06\",\n        \"lastActivityAt\": \"2017-10-07\",\n        \"title\": \"string\",\n        \"department\": \"string\",\n        \"personId\": \"string\",\n        \"statusLastUpdatedAt\": \"2010-04-12\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"pictureExpiresAt\": 2699.7903747042596,\n        \"lastParcelReminderAt\": \"1953-03-22\"\n      },\n      \"assignedRole\": {\n        \"id\": 8588.849722955823,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"nativeAppId\": 3388,\n        \"nativeApp\": {\n          \"id\": 4538,\n          \"name\": \"string\"\n        },\n        \"isEditable\": false,\n        \"isSiteSpecific\": true,\n        \"isMfaRequired\": true,\n        \"createdAt\": \"1956-11-17\",\n        \"updatedAt\": \"1964-10-16\",\n        \"userCount\": 495,\n        \"sites\": [\n          {\n            \"id\": 7079.213108758097,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4190.0021677747045,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"cameras\": [\n        {\n          \"id\": 7110,\n          \"videoProviderId\": 1103,\n          \"videoProvider\": {\n            \"id\": 1135,\n            \"videoProviderTypeId\": 4125\n          },\n          \"idExt\": \"string\",\n          \"name\": \"string\",\n          \"nameExt\": \"string\",\n          \"supportsSnapshot\": false,\n          \"supportsDeeplink\": true,\n          \"supportsMotionSnapshot\": false,\n          \"supportsFaceCrop\": true,\n          \"supportsFaceDetection\": false,\n          \"supportsPeopleDetection\": false,\n          \"supportsMotionRecap\": false,\n          \"supportsLivestream\": false\n        },\n        {\n          \"id\": 2603,\n          \"videoProviderId\": 7584,\n          \"videoProvider\": {\n            \"id\": 5642,\n            \"videoProviderTypeId\": 5867\n          },\n          \"idExt\": \"string\",\n          \"name\": \"string\",\n          \"nameExt\": \"string\",\n          \"supportsSnapshot\": false,\n          \"supportsDeeplink\": true,\n          \"supportsMotionSnapshot\": true,\n          \"supportsFaceCrop\": true,\n          \"supportsFaceDetection\": true,\n          \"supportsPeopleDetection\": false,\n          \"supportsMotionRecap\": false,\n          \"supportsLivestream\": true\n        }\n      ],\n      \"createdAt\": \"1955-02-06\",\n      \"updatedAt\": \"1998-04-02\",\n      \"idExt\": \"string\",\n      \"nameExt\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2000-04-11\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8200,\n        3854\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2651,\n          3585\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8f74f81f-7fdb-4379-bbc7-400f16eb1773",
+          "name": "Create an alarm configuration",
+          "request": {
+            "name": "Create an alarm configuration",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w,s-o:w<br/><br/>__Endpoint name__: createAlarmConfiguration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"alarmSeverityId\": \"<integer>\",\n  \"subscription\": {\n    \"hookAction\": {\n      \"config\": {\n        \"version\": \"<string>\",\n        \"trigger\": \"<object>\",\n        \"requests\": [\n          \"<object>\",\n          \"<object>\"\n        ]\n      },\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    \"hookEventId\": \"<integer>\",\n    \"hookEventName\": \"<string>\",\n    \"isBlocking\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  },\n  \"isActive\": \"<boolean>\",\n  \"isMuted\": \"<boolean>\",\n  \"isNoteRequired\": \"<boolean>\",\n  \"notificationSubscriptions\": [\n    {\n      \"hookAction\": {\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"hookAction\": {\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"assignedUserId\": \"<integer>\",\n  \"assignedRoleId\": \"<integer>\",\n  \"cameraIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"idExt\": \"<string>\",\n  \"nameExt\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb04d6a3-0aba-490c-bf4f-90c7196132e5",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"alarmSeverityId\": \"<integer>\",\n  \"subscription\": {\n    \"hookAction\": {\n      \"config\": {\n        \"version\": \"<string>\",\n        \"trigger\": \"<object>\",\n        \"requests\": [\n          \"<object>\",\n          \"<object>\"\n        ]\n      },\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    \"hookEventId\": \"<integer>\",\n    \"hookEventName\": \"<string>\",\n    \"isBlocking\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\"\n  },\n  \"isActive\": \"<boolean>\",\n  \"isMuted\": \"<boolean>\",\n  \"isNoteRequired\": \"<boolean>\",\n  \"notificationSubscriptions\": [\n    {\n      \"hookAction\": {\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    },\n    {\n      \"hookAction\": {\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"name\": \"<string>\",\n        \"description\": \"<string>\"\n      },\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\"\n    }\n  ],\n  \"assignedUserId\": \"<integer>\",\n  \"assignedRoleId\": \"<integer>\",\n  \"cameraIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"idExt\": \"<string>\",\n  \"nameExt\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 1936,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"instructions\": \"string\",\n    \"isActive\": true,\n    \"isMuted\": false,\n    \"isNoteRequired\": false,\n    \"alarmSeverity\": {\n      \"id\": 3773.042721432667,\n      \"name\": \"string\"\n    },\n    \"subscription\": {\n      \"id\": 1369.706845401948,\n      \"subjectOrg\": {\n        \"id\": 77\n      },\n      \"hookEvent\": {\n        \"id\": 7552,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"updatedAt\": \"1960-03-07\"\n      },\n      \"hookAction\": {\n        \"id\": 4070,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"config\": {},\n        \"updatedAt\": \"1973-01-18\"\n      },\n      \"targetUrl\": \"string\",\n      \"isActive\": true,\n      \"isBlocking\": true,\n      \"isVisible\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rateLimitCount\": 1894,\n      \"rateLimitWindowSecs\": 4542,\n      \"isOnceDaily\": true,\n      \"dailyResetTime\": \"string\",\n      \"dailyResetTimezone\": \"string\",\n      \"handlerHookEventLocation\": {\n        \"id\": 8501\n      },\n      \"updatedAt\": \"1980-07-19\"\n    },\n    \"notificationSubscriptions\": [\n      {\n        \"id\": 6715.842925554568,\n        \"subjectOrg\": {\n          \"id\": 1663\n        },\n        \"hookEvent\": {\n          \"id\": 9360,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1998-03-07\"\n        },\n        \"hookAction\": {\n          \"id\": 9464,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"2006-08-22\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": false,\n        \"isBlocking\": true,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 472,\n        \"rateLimitWindowSecs\": 3804,\n        \"isOnceDaily\": true,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 2267\n        },\n        \"updatedAt\": \"1987-02-11\"\n      },\n      {\n        \"id\": 420.0602017045163,\n        \"subjectOrg\": {\n          \"id\": 2879\n        },\n        \"hookEvent\": {\n          \"id\": 2160,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1973-10-23\"\n        },\n        \"hookAction\": {\n          \"id\": 2219,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"1969-07-27\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": true,\n        \"isBlocking\": false,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 2364,\n        \"rateLimitWindowSecs\": 6932,\n        \"isOnceDaily\": false,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 5240\n        },\n        \"updatedAt\": \"1962-12-21\"\n      }\n    ],\n    \"assignedUser\": {\n      \"id\": 5445.736799385548,\n      \"opal\": \"string\",\n      \"status\": \"I\",\n      \"startDate\": \"1983-07-29\",\n      \"endDate\": \"1956-06-27\",\n      \"startAndEndDateTimeZoneId\": \"Africa/El_Aaiun\",\n      \"hasRemoteUnlock\": true,\n      \"isOverrideAllowed\": false,\n      \"externalId\": \"string\",\n      \"identity\": {\n        \"id\": 4586.724120557862,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 5083.307407179699,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 9784.653565245795,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 3762.44496517089,\n            \"createdAt\": \"1962-08-23\",\n            \"updatedAt\": \"2014-06-10\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5364.527293372504,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 8809.700188542776\n            }\n          },\n          {\n            \"id\": 8151.939947711726,\n            \"createdAt\": \"2010-02-25\",\n            \"updatedAt\": \"2026-05-07\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5544.211287506729,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4673.634814486854\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 6081,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 660.7603541454376,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1469.859557184331,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 837.339729780624,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 5305,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 8195.576117311437,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 919.7487482340172,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 425.4762383503208,\n            \"orgId\": 1407.0121827308612,\n            \"propertyManagementSystemTypeId\": 1658.0602974795368,\n            \"propertyManagementSystemType\": {\n              \"id\": 5376.260437538034,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1984-05-07\",\n        \"updatedAt\": \"2008-01-16\",\n        \"users\": [\n          {\n            \"id\": 9840.96088926861,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1953-09-26\",\n            \"endDate\": \"2022-01-05\",\n            \"createdAt\": \"1999-10-03\",\n            \"updatedAt\": \"2014-11-23\",\n            \"org\": {\n              \"id\": 9078.18687377864,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 1099.4809387873138,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1953-04-15\",\n            \"endDate\": \"1949-05-27\",\n            \"createdAt\": \"1962-05-19\",\n            \"updatedAt\": \"1996-01-14\",\n            \"org\": {\n              \"id\": 1849.1868992965733,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"groups\": [\n        {\n          \"id\": 5485.392079744401,\n          \"name\": \"string\",\n          \"opvideoIntercomProfiles\": [\n            {\n              \"id\": 8428.365415642113,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 2440.824717759271,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 1159.6188096935111,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 3328.3600326324404,\n                  \"name\": \"string\"\n                }\n              ]\n            },\n            {\n              \"id\": 9683.978957568841,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 5654.327242705061,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 9460.871026257068,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 6349.299738817525,\n                  \"name\": \"string\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"id\": 5082.480069631339,\n          \"name\": \"string\",\n          \"opvideoIntercomProfiles\": [\n            {\n              \"id\": 8700.829957321468,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 3914.908426484789,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 3668.911863010208,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 8533.35668656194,\n                  \"name\": \"string\"\n                }\n              ]\n            },\n            {\n              \"id\": 3657.7782437069695,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 3062.883489255832,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 7169.730614171112,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 6865.274937825145,\n                  \"name\": \"string\"\n                }\n              ]\n            }\n          ]\n        }\n      ],\n      \"sites\": [\n        {\n          \"id\": 8961.211228483586,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6662.047948154489,\n          \"name\": \"string\"\n        }\n      ],\n      \"realUserGroups\": [\n        {\n          \"id\": 4327.601932882939,\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"id\": 5961.197555704082,\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"roles\": [\n        {\n          \"id\": 4573.627225099499,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7533.895770524841,\n          \"name\": \"string\"\n        }\n      ],\n      \"userCustomFields\": [\n        {\n          \"id\": 6564.624436988439,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 6341.486897419417,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 2114.1507471472564,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 2099.904962739235,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 8117.414694040518,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 9182.993848987933,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"buildingFloorUnits\": [\n        {\n          \"id\": 205.8621799516347,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isDefault\": true,\n          \"buildingFloor\": {\n            \"id\": 3141,\n            \"name\": \"string\",\n            \"isDefault\": true,\n            \"building\": {\n              \"id\": 2505,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 357.32552266191544,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isDefault\": false,\n          \"buildingFloor\": {\n            \"id\": 6440,\n            \"name\": \"string\",\n            \"isDefault\": false,\n            \"building\": {\n              \"id\": 9323,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"createdAt\": \"1964-03-14\",\n      \"updatedAt\": \"1985-05-28\",\n      \"manuallyInactivatedAt\": \"1973-04-21\",\n      \"lastActivityAt\": \"1962-11-01\",\n      \"title\": \"string\",\n      \"department\": \"string\",\n      \"personId\": \"string\",\n      \"statusLastUpdatedAt\": \"1994-12-04\",\n      \"pictureUrl\": \"string\",\n      \"pictureFullSizeUrl\": \"string\",\n      \"pictureExpiresAt\": 4480.05212315187,\n      \"lastParcelReminderAt\": \"1960-02-20\"\n    },\n    \"assignedRole\": {\n      \"id\": 5028.865095466534,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"nativeAppId\": 6018,\n      \"nativeApp\": {\n        \"id\": 3910,\n        \"name\": \"string\"\n      },\n      \"isEditable\": true,\n      \"isSiteSpecific\": true,\n      \"isMfaRequired\": false,\n      \"createdAt\": \"2001-07-07\",\n      \"updatedAt\": \"1961-01-01\",\n      \"userCount\": 951,\n      \"sites\": [\n        {\n          \"id\": 6847.06874921565,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6939.19862715679,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    \"cameras\": [\n      {\n        \"id\": 7055,\n        \"videoProviderId\": 9491,\n        \"videoProvider\": {\n          \"id\": 6421,\n          \"videoProviderTypeId\": 9180\n        },\n        \"idExt\": \"string\",\n        \"name\": \"string\",\n        \"nameExt\": \"string\",\n        \"supportsSnapshot\": true,\n        \"supportsDeeplink\": true,\n        \"supportsMotionSnapshot\": false,\n        \"supportsFaceCrop\": true,\n        \"supportsFaceDetection\": false,\n        \"supportsPeopleDetection\": true,\n        \"supportsMotionRecap\": true,\n        \"supportsLivestream\": false\n      },\n      {\n        \"id\": 2275,\n        \"videoProviderId\": 7496,\n        \"videoProvider\": {\n          \"id\": 1619,\n          \"videoProviderTypeId\": 8044\n        },\n        \"idExt\": \"string\",\n        \"name\": \"string\",\n        \"nameExt\": \"string\",\n        \"supportsSnapshot\": false,\n        \"supportsDeeplink\": true,\n        \"supportsMotionSnapshot\": true,\n        \"supportsFaceCrop\": false,\n        \"supportsFaceDetection\": true,\n        \"supportsPeopleDetection\": false,\n        \"supportsMotionRecap\": true,\n        \"supportsLivestream\": false\n      }\n    ],\n    \"createdAt\": \"1988-02-23\",\n    \"updatedAt\": \"1956-07-31\",\n    \"idExt\": \"string\",\n    \"nameExt\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2000-11-13\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6598,\n        5984\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8685,\n          4616\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8871db23-90a1-476a-8db2-2324e6591253",
+          "name": "Describe an alarm configuration",
+          "request": {
+            "name": "Describe an alarm configuration",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alarmConfigurations:r,s-o:w,s-o:r,o:w,o:r<br/><br/>__Endpoint name__: describeAlarmConfiguration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations",
+                ":alarmConfigurationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "alarmConfigurationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7bcb401a-7d46-4e3a-b5ec-f1b7ed7704f8",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations",
+                    ":alarmConfigurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "alarmConfigurationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 1936,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"instructions\": \"string\",\n    \"isActive\": true,\n    \"isMuted\": false,\n    \"isNoteRequired\": false,\n    \"alarmSeverity\": {\n      \"id\": 3773.042721432667,\n      \"name\": \"string\"\n    },\n    \"subscription\": {\n      \"id\": 1369.706845401948,\n      \"subjectOrg\": {\n        \"id\": 77\n      },\n      \"hookEvent\": {\n        \"id\": 7552,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"updatedAt\": \"1960-03-07\"\n      },\n      \"hookAction\": {\n        \"id\": 4070,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"config\": {},\n        \"updatedAt\": \"1973-01-18\"\n      },\n      \"targetUrl\": \"string\",\n      \"isActive\": true,\n      \"isBlocking\": true,\n      \"isVisible\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rateLimitCount\": 1894,\n      \"rateLimitWindowSecs\": 4542,\n      \"isOnceDaily\": true,\n      \"dailyResetTime\": \"string\",\n      \"dailyResetTimezone\": \"string\",\n      \"handlerHookEventLocation\": {\n        \"id\": 8501\n      },\n      \"updatedAt\": \"1980-07-19\"\n    },\n    \"notificationSubscriptions\": [\n      {\n        \"id\": 6715.842925554568,\n        \"subjectOrg\": {\n          \"id\": 1663\n        },\n        \"hookEvent\": {\n          \"id\": 9360,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1998-03-07\"\n        },\n        \"hookAction\": {\n          \"id\": 9464,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"2006-08-22\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": false,\n        \"isBlocking\": true,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 472,\n        \"rateLimitWindowSecs\": 3804,\n        \"isOnceDaily\": true,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 2267\n        },\n        \"updatedAt\": \"1987-02-11\"\n      },\n      {\n        \"id\": 420.0602017045163,\n        \"subjectOrg\": {\n          \"id\": 2879\n        },\n        \"hookEvent\": {\n          \"id\": 2160,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1973-10-23\"\n        },\n        \"hookAction\": {\n          \"id\": 2219,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"1969-07-27\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": true,\n        \"isBlocking\": false,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 2364,\n        \"rateLimitWindowSecs\": 6932,\n        \"isOnceDaily\": false,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 5240\n        },\n        \"updatedAt\": \"1962-12-21\"\n      }\n    ],\n    \"assignedUser\": {\n      \"id\": 5445.736799385548,\n      \"opal\": \"string\",\n      \"status\": \"I\",\n      \"startDate\": \"1983-07-29\",\n      \"endDate\": \"1956-06-27\",\n      \"startAndEndDateTimeZoneId\": \"Africa/El_Aaiun\",\n      \"hasRemoteUnlock\": true,\n      \"isOverrideAllowed\": false,\n      \"externalId\": \"string\",\n      \"identity\": {\n        \"id\": 4586.724120557862,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 5083.307407179699,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 9784.653565245795,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 3762.44496517089,\n            \"createdAt\": \"1962-08-23\",\n            \"updatedAt\": \"2014-06-10\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5364.527293372504,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 8809.700188542776\n            }\n          },\n          {\n            \"id\": 8151.939947711726,\n            \"createdAt\": \"2010-02-25\",\n            \"updatedAt\": \"2026-05-07\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5544.211287506729,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4673.634814486854\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 6081,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 660.7603541454376,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1469.859557184331,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 837.339729780624,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 5305,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 8195.576117311437,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 919.7487482340172,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 425.4762383503208,\n            \"orgId\": 1407.0121827308612,\n            \"propertyManagementSystemTypeId\": 1658.0602974795368,\n            \"propertyManagementSystemType\": {\n              \"id\": 5376.260437538034,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1984-05-07\",\n        \"updatedAt\": \"2008-01-16\",\n        \"users\": [\n          {\n            \"id\": 9840.96088926861,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1953-09-26\",\n            \"endDate\": \"2022-01-05\",\n            \"createdAt\": \"1999-10-03\",\n            \"updatedAt\": \"2014-11-23\",\n            \"org\": {\n              \"id\": 9078.18687377864,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 1099.4809387873138,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1953-04-15\",\n            \"endDate\": \"1949-05-27\",\n            \"createdAt\": \"1962-05-19\",\n            \"updatedAt\": \"1996-01-14\",\n            \"org\": {\n              \"id\": 1849.1868992965733,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"groups\": [\n        {\n          \"id\": 5485.392079744401,\n          \"name\": \"string\",\n          \"opvideoIntercomProfiles\": [\n            {\n              \"id\": 8428.365415642113,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 2440.824717759271,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 1159.6188096935111,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 3328.3600326324404,\n                  \"name\": \"string\"\n                }\n              ]\n            },\n            {\n              \"id\": 9683.978957568841,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 5654.327242705061,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 9460.871026257068,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 6349.299738817525,\n                  \"name\": \"string\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"id\": 5082.480069631339,\n          \"name\": \"string\",\n          \"opvideoIntercomProfiles\": [\n            {\n              \"id\": 8700.829957321468,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 3914.908426484789,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 3668.911863010208,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 8533.35668656194,\n                  \"name\": \"string\"\n                }\n              ]\n            },\n            {\n              \"id\": 3657.7782437069695,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 3062.883489255832,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 7169.730614171112,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 6865.274937825145,\n                  \"name\": \"string\"\n                }\n              ]\n            }\n          ]\n        }\n      ],\n      \"sites\": [\n        {\n          \"id\": 8961.211228483586,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6662.047948154489,\n          \"name\": \"string\"\n        }\n      ],\n      \"realUserGroups\": [\n        {\n          \"id\": 4327.601932882939,\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"id\": 5961.197555704082,\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"roles\": [\n        {\n          \"id\": 4573.627225099499,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7533.895770524841,\n          \"name\": \"string\"\n        }\n      ],\n      \"userCustomFields\": [\n        {\n          \"id\": 6564.624436988439,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 6341.486897419417,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 2114.1507471472564,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 2099.904962739235,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 8117.414694040518,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 9182.993848987933,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"buildingFloorUnits\": [\n        {\n          \"id\": 205.8621799516347,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isDefault\": true,\n          \"buildingFloor\": {\n            \"id\": 3141,\n            \"name\": \"string\",\n            \"isDefault\": true,\n            \"building\": {\n              \"id\": 2505,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 357.32552266191544,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isDefault\": false,\n          \"buildingFloor\": {\n            \"id\": 6440,\n            \"name\": \"string\",\n            \"isDefault\": false,\n            \"building\": {\n              \"id\": 9323,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"createdAt\": \"1964-03-14\",\n      \"updatedAt\": \"1985-05-28\",\n      \"manuallyInactivatedAt\": \"1973-04-21\",\n      \"lastActivityAt\": \"1962-11-01\",\n      \"title\": \"string\",\n      \"department\": \"string\",\n      \"personId\": \"string\",\n      \"statusLastUpdatedAt\": \"1994-12-04\",\n      \"pictureUrl\": \"string\",\n      \"pictureFullSizeUrl\": \"string\",\n      \"pictureExpiresAt\": 4480.05212315187,\n      \"lastParcelReminderAt\": \"1960-02-20\"\n    },\n    \"assignedRole\": {\n      \"id\": 5028.865095466534,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"nativeAppId\": 6018,\n      \"nativeApp\": {\n        \"id\": 3910,\n        \"name\": \"string\"\n      },\n      \"isEditable\": true,\n      \"isSiteSpecific\": true,\n      \"isMfaRequired\": false,\n      \"createdAt\": \"2001-07-07\",\n      \"updatedAt\": \"1961-01-01\",\n      \"userCount\": 951,\n      \"sites\": [\n        {\n          \"id\": 6847.06874921565,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6939.19862715679,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    \"cameras\": [\n      {\n        \"id\": 7055,\n        \"videoProviderId\": 9491,\n        \"videoProvider\": {\n          \"id\": 6421,\n          \"videoProviderTypeId\": 9180\n        },\n        \"idExt\": \"string\",\n        \"name\": \"string\",\n        \"nameExt\": \"string\",\n        \"supportsSnapshot\": true,\n        \"supportsDeeplink\": true,\n        \"supportsMotionSnapshot\": false,\n        \"supportsFaceCrop\": true,\n        \"supportsFaceDetection\": false,\n        \"supportsPeopleDetection\": true,\n        \"supportsMotionRecap\": true,\n        \"supportsLivestream\": false\n      },\n      {\n        \"id\": 2275,\n        \"videoProviderId\": 7496,\n        \"videoProvider\": {\n          \"id\": 1619,\n          \"videoProviderTypeId\": 8044\n        },\n        \"idExt\": \"string\",\n        \"name\": \"string\",\n        \"nameExt\": \"string\",\n        \"supportsSnapshot\": false,\n        \"supportsDeeplink\": true,\n        \"supportsMotionSnapshot\": true,\n        \"supportsFaceCrop\": false,\n        \"supportsFaceDetection\": true,\n        \"supportsPeopleDetection\": false,\n        \"supportsMotionRecap\": true,\n        \"supportsLivestream\": false\n      }\n    ],\n    \"createdAt\": \"1988-02-23\",\n    \"updatedAt\": \"1956-07-31\",\n    \"idExt\": \"string\",\n    \"nameExt\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2000-11-13\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6598,\n        5984\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8685,\n          4616\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "02111702-a742-45a3-8a01-47f9eb75a363",
+          "name": "Update an alarm configuration",
+          "request": {
+            "name": "Update an alarm configuration",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateAlarmConfiguration",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations",
+                ":alarmConfigurationId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "alarmConfigurationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"isActive\": \"<boolean>\",\n  \"isMuted\": \"<boolean>\",\n  \"isNoteRequired\": \"<boolean>\",\n  \"alarmSeverityId\": \"<integer>\",\n  \"subscription\": {\n    \"hookEventId\": \"<integer>\",\n    \"hookEventName\": \"<string>\",\n    \"isBlocking\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"hookAction\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"config\": {\n        \"version\": \"<string>\",\n        \"trigger\": \"<object>\",\n        \"requests\": [\n          \"<object>\",\n          \"<object>\"\n        ]\n      }\n    }\n  },\n  \"notificationSubscriptions\": [\n    {\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"hookAction\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"id\": \"<integer>\"\n      }\n    },\n    {\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"hookAction\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"id\": \"<integer>\"\n      }\n    }\n  ],\n  \"assignedUserId\": \"<integer>\",\n  \"assignedRoleId\": \"<integer>\",\n  \"cameraIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"idExt\": \"<string>\",\n  \"nameExt\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "618b0b18-3181-4750-bfbb-e5c37126c284",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations",
+                    ":alarmConfigurationId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "alarmConfigurationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"instructions\": \"<string>\",\n  \"isActive\": \"<boolean>\",\n  \"isMuted\": \"<boolean>\",\n  \"isNoteRequired\": \"<boolean>\",\n  \"alarmSeverityId\": \"<integer>\",\n  \"subscription\": {\n    \"hookEventId\": \"<integer>\",\n    \"hookEventName\": \"<string>\",\n    \"isBlocking\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"description\": \"<string>\",\n    \"hookAction\": {\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"config\": {\n        \"version\": \"<string>\",\n        \"trigger\": \"<object>\",\n        \"requests\": [\n          \"<object>\",\n          \"<object>\"\n        ]\n      }\n    }\n  },\n  \"notificationSubscriptions\": [\n    {\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"hookAction\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"id\": \"<integer>\"\n      }\n    },\n    {\n      \"hookEventId\": \"<integer>\",\n      \"hookEventName\": \"<string>\",\n      \"isBlocking\": \"<boolean>\",\n      \"name\": \"<string>\",\n      \"description\": \"<string>\",\n      \"id\": \"<integer>\",\n      \"hookAction\": {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"config\": {\n          \"version\": \"<string>\",\n          \"trigger\": \"<object>\",\n          \"requests\": [\n            \"<object>\",\n            \"<object>\"\n          ]\n        },\n        \"id\": \"<integer>\"\n      }\n    }\n  ],\n  \"assignedUserId\": \"<integer>\",\n  \"assignedRoleId\": \"<integer>\",\n  \"cameraIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"idExt\": \"<string>\",\n  \"nameExt\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 1936,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"instructions\": \"string\",\n    \"isActive\": true,\n    \"isMuted\": false,\n    \"isNoteRequired\": false,\n    \"alarmSeverity\": {\n      \"id\": 3773.042721432667,\n      \"name\": \"string\"\n    },\n    \"subscription\": {\n      \"id\": 1369.706845401948,\n      \"subjectOrg\": {\n        \"id\": 77\n      },\n      \"hookEvent\": {\n        \"id\": 7552,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"updatedAt\": \"1960-03-07\"\n      },\n      \"hookAction\": {\n        \"id\": 4070,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"config\": {},\n        \"updatedAt\": \"1973-01-18\"\n      },\n      \"targetUrl\": \"string\",\n      \"isActive\": true,\n      \"isBlocking\": true,\n      \"isVisible\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rateLimitCount\": 1894,\n      \"rateLimitWindowSecs\": 4542,\n      \"isOnceDaily\": true,\n      \"dailyResetTime\": \"string\",\n      \"dailyResetTimezone\": \"string\",\n      \"handlerHookEventLocation\": {\n        \"id\": 8501\n      },\n      \"updatedAt\": \"1980-07-19\"\n    },\n    \"notificationSubscriptions\": [\n      {\n        \"id\": 6715.842925554568,\n        \"subjectOrg\": {\n          \"id\": 1663\n        },\n        \"hookEvent\": {\n          \"id\": 9360,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1998-03-07\"\n        },\n        \"hookAction\": {\n          \"id\": 9464,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"2006-08-22\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": false,\n        \"isBlocking\": true,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 472,\n        \"rateLimitWindowSecs\": 3804,\n        \"isOnceDaily\": true,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 2267\n        },\n        \"updatedAt\": \"1987-02-11\"\n      },\n      {\n        \"id\": 420.0602017045163,\n        \"subjectOrg\": {\n          \"id\": 2879\n        },\n        \"hookEvent\": {\n          \"id\": 2160,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"updatedAt\": \"1973-10-23\"\n        },\n        \"hookAction\": {\n          \"id\": 2219,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"config\": {},\n          \"updatedAt\": \"1969-07-27\"\n        },\n        \"targetUrl\": \"string\",\n        \"isActive\": true,\n        \"isBlocking\": false,\n        \"isVisible\": false,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"rateLimitCount\": 2364,\n        \"rateLimitWindowSecs\": 6932,\n        \"isOnceDaily\": false,\n        \"dailyResetTime\": \"string\",\n        \"dailyResetTimezone\": \"string\",\n        \"handlerHookEventLocation\": {\n          \"id\": 5240\n        },\n        \"updatedAt\": \"1962-12-21\"\n      }\n    ],\n    \"assignedUser\": {\n      \"id\": 5445.736799385548,\n      \"opal\": \"string\",\n      \"status\": \"I\",\n      \"startDate\": \"1983-07-29\",\n      \"endDate\": \"1956-06-27\",\n      \"startAndEndDateTimeZoneId\": \"Africa/El_Aaiun\",\n      \"hasRemoteUnlock\": true,\n      \"isOverrideAllowed\": false,\n      \"externalId\": \"string\",\n      \"identity\": {\n        \"id\": 4586.724120557862,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 5083.307407179699,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 9784.653565245795,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 3762.44496517089,\n            \"createdAt\": \"1962-08-23\",\n            \"updatedAt\": \"2014-06-10\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5364.527293372504,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 8809.700188542776\n            }\n          },\n          {\n            \"id\": 8151.939947711726,\n            \"createdAt\": \"2010-02-25\",\n            \"updatedAt\": \"2026-05-07\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5544.211287506729,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4673.634814486854\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 6081,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 660.7603541454376,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1469.859557184331,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 837.339729780624,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 5305,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 8195.576117311437,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 919.7487482340172,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 425.4762383503208,\n            \"orgId\": 1407.0121827308612,\n            \"propertyManagementSystemTypeId\": 1658.0602974795368,\n            \"propertyManagementSystemType\": {\n              \"id\": 5376.260437538034,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1984-05-07\",\n        \"updatedAt\": \"2008-01-16\",\n        \"users\": [\n          {\n            \"id\": 9840.96088926861,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1953-09-26\",\n            \"endDate\": \"2022-01-05\",\n            \"createdAt\": \"1999-10-03\",\n            \"updatedAt\": \"2014-11-23\",\n            \"org\": {\n              \"id\": 9078.18687377864,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 1099.4809387873138,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1953-04-15\",\n            \"endDate\": \"1949-05-27\",\n            \"createdAt\": \"1962-05-19\",\n            \"updatedAt\": \"1996-01-14\",\n            \"org\": {\n              \"id\": 1849.1868992965733,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"groups\": [\n        {\n          \"id\": 5485.392079744401,\n          \"name\": \"string\",\n          \"opvideoIntercomProfiles\": [\n            {\n              \"id\": 8428.365415642113,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 2440.824717759271,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 1159.6188096935111,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 3328.3600326324404,\n                  \"name\": \"string\"\n                }\n              ]\n            },\n            {\n              \"id\": 9683.978957568841,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 5654.327242705061,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 9460.871026257068,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 6349.299738817525,\n                  \"name\": \"string\"\n                }\n              ]\n            }\n          ]\n        },\n        {\n          \"id\": 5082.480069631339,\n          \"name\": \"string\",\n          \"opvideoIntercomProfiles\": [\n            {\n              \"id\": 8700.829957321468,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 3914.908426484789,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 3668.911863010208,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 8533.35668656194,\n                  \"name\": \"string\"\n                }\n              ]\n            },\n            {\n              \"id\": 3657.7782437069695,\n              \"name\": \"string\",\n              \"opvideoIntercomProfileTypeId\": 3062.883489255832,\n              \"opvideoIntercoms\": [\n                {\n                  \"id\": 7169.730614171112,\n                  \"name\": \"string\"\n                },\n                {\n                  \"id\": 6865.274937825145,\n                  \"name\": \"string\"\n                }\n              ]\n            }\n          ]\n        }\n      ],\n      \"sites\": [\n        {\n          \"id\": 8961.211228483586,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6662.047948154489,\n          \"name\": \"string\"\n        }\n      ],\n      \"realUserGroups\": [\n        {\n          \"id\": 4327.601932882939,\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"id\": 5961.197555704082,\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"roles\": [\n        {\n          \"id\": 4573.627225099499,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7533.895770524841,\n          \"name\": \"string\"\n        }\n      ],\n      \"userCustomFields\": [\n        {\n          \"id\": 6564.624436988439,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 6341.486897419417,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 2114.1507471472564,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 2099.904962739235,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 8117.414694040518,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 9182.993848987933,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"buildingFloorUnits\": [\n        {\n          \"id\": 205.8621799516347,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isDefault\": true,\n          \"buildingFloor\": {\n            \"id\": 3141,\n            \"name\": \"string\",\n            \"isDefault\": true,\n            \"building\": {\n              \"id\": 2505,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 357.32552266191544,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isDefault\": false,\n          \"buildingFloor\": {\n            \"id\": 6440,\n            \"name\": \"string\",\n            \"isDefault\": false,\n            \"building\": {\n              \"id\": 9323,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"createdAt\": \"1964-03-14\",\n      \"updatedAt\": \"1985-05-28\",\n      \"manuallyInactivatedAt\": \"1973-04-21\",\n      \"lastActivityAt\": \"1962-11-01\",\n      \"title\": \"string\",\n      \"department\": \"string\",\n      \"personId\": \"string\",\n      \"statusLastUpdatedAt\": \"1994-12-04\",\n      \"pictureUrl\": \"string\",\n      \"pictureFullSizeUrl\": \"string\",\n      \"pictureExpiresAt\": 4480.05212315187,\n      \"lastParcelReminderAt\": \"1960-02-20\"\n    },\n    \"assignedRole\": {\n      \"id\": 5028.865095466534,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"nativeAppId\": 6018,\n      \"nativeApp\": {\n        \"id\": 3910,\n        \"name\": \"string\"\n      },\n      \"isEditable\": true,\n      \"isSiteSpecific\": true,\n      \"isMfaRequired\": false,\n      \"createdAt\": \"2001-07-07\",\n      \"updatedAt\": \"1961-01-01\",\n      \"userCount\": 951,\n      \"sites\": [\n        {\n          \"id\": 6847.06874921565,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6939.19862715679,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    \"cameras\": [\n      {\n        \"id\": 7055,\n        \"videoProviderId\": 9491,\n        \"videoProvider\": {\n          \"id\": 6421,\n          \"videoProviderTypeId\": 9180\n        },\n        \"idExt\": \"string\",\n        \"name\": \"string\",\n        \"nameExt\": \"string\",\n        \"supportsSnapshot\": true,\n        \"supportsDeeplink\": true,\n        \"supportsMotionSnapshot\": false,\n        \"supportsFaceCrop\": true,\n        \"supportsFaceDetection\": false,\n        \"supportsPeopleDetection\": true,\n        \"supportsMotionRecap\": true,\n        \"supportsLivestream\": false\n      },\n      {\n        \"id\": 2275,\n        \"videoProviderId\": 7496,\n        \"videoProvider\": {\n          \"id\": 1619,\n          \"videoProviderTypeId\": 8044\n        },\n        \"idExt\": \"string\",\n        \"name\": \"string\",\n        \"nameExt\": \"string\",\n        \"supportsSnapshot\": false,\n        \"supportsDeeplink\": true,\n        \"supportsMotionSnapshot\": true,\n        \"supportsFaceCrop\": false,\n        \"supportsFaceDetection\": true,\n        \"supportsPeopleDetection\": false,\n        \"supportsMotionRecap\": true,\n        \"supportsLivestream\": false\n      }\n    ],\n    \"createdAt\": \"1988-02-23\",\n    \"updatedAt\": \"1956-07-31\",\n    \"idExt\": \"string\",\n    \"nameExt\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2000-11-13\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6598,\n        5984\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8685,\n          4616\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "437fe0af-29d4-4529-952e-f99297f65691",
+          "name": "List all cameras of an alarm configuration",
+          "request": {
+            "name": "List all cameras of an alarm configuration",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alarmConfigurations:r,o:w,o:r<br/><br/>__Endpoint name__: listAlarmConfigurationCameras",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations",
+                ":alarmConfigurationId",
+                "cameras"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "alarmConfigurationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "90acbfc4-dceb-4bd7-848e-f0e61a3ac101",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations",
+                    ":alarmConfigurationId",
+                    "cameras"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "alarmConfigurationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 8484,\n  \"filteredCount\": 4536,\n  \"data\": [\n    {\n      \"nameExt\": \"string\",\n      \"idExt\": \"string\",\n      \"id\": 1307,\n      \"model\": \"string\",\n      \"version\": \"string\",\n      \"manufacturer\": \"string\",\n      \"supportsSnapshot\": false,\n      \"supportsDeeplink\": true,\n      \"supportsMotionSnapshot\": false,\n      \"supportsFaceCrop\": true,\n      \"supportsFaceDetection\": true,\n      \"supportsPeopleDetection\": false,\n      \"supportsMotionRecap\": false,\n      \"supportsLivestream\": false,\n      \"groupName\": \"string\",\n      \"raw\": \"string\",\n      \"videoProviderId\": 2726,\n      \"videoProvider\": {\n        \"id\": 2335,\n        \"orgId\": 6884,\n        \"name\": \"string\",\n        \"videoProviderTypeId\": 3343\n      },\n      \"timeZoneId\": \"string\",\n      \"entries\": [\n        {\n          \"id\": 1603,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 6235,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"nameExt\": \"string\",\n      \"idExt\": \"string\",\n      \"id\": 7218,\n      \"model\": \"string\",\n      \"version\": \"string\",\n      \"manufacturer\": \"string\",\n      \"supportsSnapshot\": true,\n      \"supportsDeeplink\": false,\n      \"supportsMotionSnapshot\": true,\n      \"supportsFaceCrop\": true,\n      \"supportsFaceDetection\": false,\n      \"supportsPeopleDetection\": false,\n      \"supportsMotionRecap\": true,\n      \"supportsLivestream\": true,\n      \"groupName\": \"string\",\n      \"raw\": \"string\",\n      \"videoProviderId\": 437,\n      \"videoProvider\": {\n        \"id\": 9065,\n        \"orgId\": 8364,\n        \"name\": \"string\",\n        \"videoProviderTypeId\": 3252\n      },\n      \"timeZoneId\": \"string\",\n      \"entries\": [\n        {\n          \"id\": 1890,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 9935,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2018-09-20\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1915,\n        8202\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5333,\n          7277\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1881dede-c532-4f21-81e5-42ce627d937f",
+          "name": "Remove a camera from an alarm configuration",
+          "request": {
+            "name": "Remove a camera from an alarm configuration",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w<br/><br/>__Endpoint name__: deleteAlarmConfigurationCameraId",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations",
+                ":alarmConfigurationId",
+                "cameras",
+                ":cameraId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "alarmConfigurationId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "cameraId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "60192f79-50a2-4fb6-b139-829838834953",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations",
+                    ":alarmConfigurationId",
+                    "cameras",
+                    ":cameraId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "alarmConfigurationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "cameraId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "94a4ec3f-c074-4953-8b48-7c4c0563f796",
+          "name": "Add a camera to an alarm configuration",
+          "request": {
+            "name": "Add a camera to an alarm configuration",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w<br/><br/>__Endpoint name__: addAlarmConfigurationCameraId",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations",
+                ":alarmConfigurationId",
+                "cameras",
+                ":cameraId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "alarmConfigurationId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "cameraId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "88750256-76de-41eb-9e01-20036154ccaa",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations",
+                    ":alarmConfigurationId",
+                    "cameras",
+                    ":cameraId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "alarmConfigurationId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "cameraId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c7f188ee-8763-4baf-be63-c11e22c2beb6",
+          "name": "Set an alarm configuration's cameras by replacing the entire set with this one",
+          "request": {
+            "name": "Set an alarm configuration's cameras by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w<br/><br/>__Endpoint name__: setAlarmConfigurationCameraIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "alarmConfigurations",
+                ":alarmConfigurationId",
+                "cameraIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "alarmConfigurationId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cameraIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "97ada8ca-9647-4fc1-b348-26bd4eaecd53",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "alarmConfigurations",
+                    ":alarmConfigurationId",
+                    "cameraIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "alarmConfigurationId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cameraIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "76603103-10c3-4949-a91f-7bdb2e1d1c0b",
+    "name": "Openpath API Documentation auth orgs/alarmConfigurations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

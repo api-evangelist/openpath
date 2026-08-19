@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/orgPackagePlans API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/orgPackagePlans",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all selected package plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/orgPackagePlans",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{pa"
+        },
+        {
+          "info": {
+            "name": "Request a package plan upgrade",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/orgPackagePlans/upgradeRequested",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-ldp:w,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:w,o{params.orgId}-user:w,o{params.orgId}-credential:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-hw:w,o{params.orgId}-entryState:w,o{params.orgId}-admin:w,o{params.orgId}-integrations:w,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-configurations:w,o{params.orgId}-account:w,o{params.orgId}-mobileAppSettings:w,o{p"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

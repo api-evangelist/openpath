@@ -1,0 +1,94 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/locationMeasurementSourceTypes API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/locationMeasurementSourceTypes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all location measurement source types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/locationMeasurementSourceTypes",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listLocationMeasurementSourceTypes"
+        },
+        {
+          "info": {
+            "name": "Describe a location measurement source type",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/locationMeasurementSourceTypes/:locationMeasurementSourceTypeId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationMeasurementSourceTypeId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeLocationMeasurementSourceType"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

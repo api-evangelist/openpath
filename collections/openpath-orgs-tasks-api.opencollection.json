@@ -1,0 +1,298 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/tasks API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all report tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTasksReports"
+        },
+        {
+          "info": {
+            "name": "Create a new batch report task.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "The report's time filter can be specified either via the `relativeTime` field or via the `filter` field.<br/><br/>The `relativeTime` field supports these possible values: today, thisWeek, thisMonth, thisQuarter, thisYear, lastHour, last4Hours, last12Hours, last24Hours, last7Days, last30Days, yesterday, lastFullWeek, lastFullMonth, lastFullQuarter, lastFullYear, last6FullMonths, last12FullMonths.<br/><br/>The `options` field supports `withWeekends` which is used for `occupancyOrg` reports.The `fi"
+        },
+        {
+          "info": {
+            "name": "List all schedules for all the report tasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/schedules",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTasksReportsSchedules"
+        },
+        {
+          "info": {
+            "name": "Create a new scheduled report task.",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/schedules",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "The cronTime value uses a restricted cron time format: `minute hour day-of-month month days-of-week`.Specifically, the cronTime is restricted to support only a daily, weekly, monthly or 1st day of the quarter. Daily is supported through a `min hr * * *` cronTime for daily execution at hr:min time. Weekly is supported through a `min hr * * <day-of-week1>,<dow2>,...` cronTime for weekly execution at hr:min time on `<dow#>` days (e.g. 0=Sunday, 1=Monday). Monthly is supported through a `min hr day "
+        },
+        {
+          "info": {
+            "name": "Get a specific report task by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/:id",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptDownload:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTasksReport"
+        },
+        {
+          "info": {
+            "name": "Delete a specific report task by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/:id",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteTasksReport"
+        },
+        {
+          "info": {
+            "name": "Get a link to the specific report task result by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/:id/link",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptDownload:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTasksReportLink"
+        },
+        {
+          "info": {
+            "name": "Get a specific task report schedule by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/schedules/:id",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTasksReportsSchedule"
+        },
+        {
+          "info": {
+            "name": "Update a specific task report schedule",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/schedules/:id",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateTasksReportsSchedule"
+        },
+        {
+          "info": {
+            "name": "Delete a specific task report schedule by id.",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/tasks/reports/schedules/:id",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteTasksReportsSchedule"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

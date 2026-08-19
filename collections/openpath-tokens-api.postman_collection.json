@@ -1,0 +1,238 @@
+{
+  "item": [
+    {
+      "id": "642b8d51-9621-460d-a70d-056de4d4a839",
+      "name": "tokens",
+      "description": {
+        "content": "Token use and validation",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "346df422-5ebd-43b0-a4fb-6bd5f9aefc13",
+          "name": "Use a cloudKey token to remotely trigger or revert a lockdown plan",
+          "request": {
+            "name": "Use a cloudKey token to remotely trigger or revert a lockdown plan",
+            "description": {
+              "content": "__Endpoint name__: useCloudKeyLockdownPlanActionToken",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tokens",
+                "cloudKeyLockdownPlanActionTokens",
+                ":token",
+                "use"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lockdownPlanId\": \"<integer>\",\n  \"action\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34789f67-dff9-47d1-b691-20c229562bf2",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tokens",
+                    "cloudKeyLockdownPlanActionTokens",
+                    ":token",
+                    "use"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"lockdownPlanId\": \"<integer>\",\n  \"action\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "efd24228-4f1a-4038-be51-193a5bbac61d",
+          "name": "Use a cloudKey token to remotely unlock an entry",
+          "request": {
+            "name": "Use a cloudKey token to remotely unlock an entry",
+            "description": {
+              "content": "__Endpoint name__: useCloudKeyUnlockToken",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "tokens",
+                "cloudKeyUnlockTokens",
+                ":token",
+                "use"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"entryId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "11c68c9f-60dc-41c3-bc12-fe5363ddea9f",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "tokens",
+                    "cloudKeyUnlockTokens",
+                    ":token",
+                    "use"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"entryId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "322c7769-b7e2-4ce9-99dc-78c9cc2906e3",
+    "name": "Openpath API Documentation auth tokens API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,1101 @@
+{
+  "item": [
+    {
+      "id": "3d7c4b87-2b2d-4fec-8271-ea7cdab6a126",
+      "name": "orgs/wirelessLockGateways",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2918ba24-531e-439b-9a63-3244f0c0582a",
+          "name": "List all wireless lock gateways",
+          "request": {
+            "name": "List all wireless lock gateways",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o{params.orgId}-hw:r,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockGateways",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ddb051df-672e-42d7-a69c-3d5619e2e51f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 8485,\n  \"filteredCount\": 645,\n  \"data\": [\n    {\n      \"id\": 2666.047207626491,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1973-10-29\",\n      \"lastDisconnectedAt\": \"1947-12-21\",\n      \"isLive\": true,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"acuId\": 2905,\n      \"acu\": {\n        \"id\": 8217,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 4431.312093762078,\n          \"allowedDistanceMeters\": 4414.0362814917635,\n          \"scaleFactor\": 1352.3518280440062,\n          \"locationMeasurement\": {\n            \"id\": 7147.469700231911,\n            \"longitude\": 6185.324021232123,\n            \"latitude\": 9678.231597409918,\n            \"accuracyMeters\": 5743.913042349449,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 33.084973185149025,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 6089,\n      \"thirdPartyDevice\": {\n        \"id\": 7832,\n        \"assignedOrg\": {\n          \"id\": 3950,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1948-04-10\",\n        \"updatedAt\": \"1961-12-17\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 6436.499834291668,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"2017-05-06\",\n          \"updatedAt\": \"1968-06-19\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 2643.0229372772565,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1963-09-10\",\n        \"updatedAt\": \"2014-03-09\",\n        \"orgId\": 470.9609170209128,\n        \"wirelessLockProviderType\": {\n          \"id\": 5755.799688087953,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 4389\n    },\n    {\n      \"id\": 3342.4688561306893,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1958-01-09\",\n      \"lastDisconnectedAt\": \"1965-03-01\",\n      \"isLive\": true,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"acuId\": 9120,\n      \"acu\": {\n        \"id\": 7395,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 3523.042587185361,\n          \"allowedDistanceMeters\": 2479.4658190726072,\n          \"scaleFactor\": 3954.8303904627746,\n          \"locationMeasurement\": {\n            \"id\": 4156.660564109933,\n            \"longitude\": 1495.5372737357486,\n            \"latitude\": 9747.064155262698,\n            \"accuracyMeters\": 824.5525668832432,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 6629.621581822342,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 3138,\n      \"thirdPartyDevice\": {\n        \"id\": 1276,\n        \"assignedOrg\": {\n          \"id\": 5761,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": true,\n        \"orderName\": \"string\",\n        \"createdAt\": \"2016-10-31\",\n        \"updatedAt\": \"2010-05-26\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 4435.621403756381,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1949-05-20\",\n          \"updatedAt\": \"1988-11-21\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 1832.0974071888318,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1992-11-21\",\n        \"updatedAt\": \"2005-01-13\",\n        \"orgId\": 5031.951525774174,\n        \"wirelessLockProviderType\": {\n          \"id\": 3683.4005964038943,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 6125\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1948-06-01\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2954,\n        6960\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7023,\n          4809\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2a06eac-14f4-46f5-8c04-9be41e733c51",
+          "name": "Create a wirelessLock gateway",
+          "request": {
+            "name": "Create a wirelessLock gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessLockGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"model\": \"<string>\",\n  \"idExt\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"authKey\": \"<string>\",\n  \"config\": \"<object>\",\n  \"isLive\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "61963226-b0b1-4096-8319-d6456a1d2784",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"model\": \"<string>\",\n  \"idExt\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"authKey\": \"<string>\",\n  \"config\": \"<object>\",\n  \"isLive\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5775.560342134159,\n    \"name\": \"string\",\n    \"manufacturer\": \"string\",\n    \"serialNumber\": \"string\",\n    \"model\": \"string\",\n    \"lastConnectedAt\": \"2001-06-20\",\n    \"lastDisconnectedAt\": \"1961-05-18\",\n    \"isLive\": false,\n    \"idExt\": \"string\",\n    \"authKey\": \"string\",\n    \"acuId\": 7573,\n    \"acu\": {\n      \"id\": 2591,\n      \"opal\": \"string\",\n      \"locationRestriction\": {\n        \"id\": 6199.957449501669,\n        \"allowedDistanceMeters\": 1062.2772276999826,\n        \"scaleFactor\": 8537.076508090695,\n        \"locationMeasurement\": {\n          \"id\": 3085.149500190593,\n          \"longitude\": 3884.6188772507185,\n          \"latitude\": 7740.766314999006,\n          \"accuracyMeters\": 6966.754255495232,\n          \"timeZoneId\": \"string\",\n          \"locationMeasurementSourceType\": {\n            \"id\": 4372.640690815012,\n            \"name\": \"string\",\n            \"code\": \"string\"\n          },\n          \"rawData\": {}\n        }\n      }\n    },\n    \"config\": {},\n    \"thirdPartyDeviceId\": 6280,\n    \"thirdPartyDevice\": {\n      \"id\": 802,\n      \"assignedOrg\": {\n        \"id\": 3502,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": false,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1982-03-06\",\n      \"updatedAt\": \"2010-09-03\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 2016.500914368855,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2012-12-11\",\n        \"updatedAt\": \"1984-12-04\"\n      }\n    },\n    \"wirelessLockCount\": 0,\n    \"wirelessLockProvider\": {\n      \"id\": 1488.0506846131757,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1988-04-30\",\n      \"updatedAt\": \"1955-07-22\",\n      \"orgId\": 2674.8722520313095,\n      \"wirelessLockProviderType\": {\n        \"id\": 4162.628823220497,\n        \"name\": \"string\"\n      }\n    },\n    \"wirelessLockProviderId\": 562\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1947-04-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2800,\n        7006\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5101,\n          8968\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7de06113-0a83-4e54-b884-c72dbdf64bea",
+          "name": "Describe a wireless lock gateway",
+          "request": {
+            "name": "Describe a wireless lock gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o:r,s-o:r<br/><br/>__Endpoint name__: describeWirelessLockGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways",
+                ":wirelessLockGatewayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "96ecbdec-bbb7-4013-b765-7009d55628d1",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways",
+                    ":wirelessLockGatewayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5775.560342134159,\n    \"name\": \"string\",\n    \"manufacturer\": \"string\",\n    \"serialNumber\": \"string\",\n    \"model\": \"string\",\n    \"lastConnectedAt\": \"2001-06-20\",\n    \"lastDisconnectedAt\": \"1961-05-18\",\n    \"isLive\": false,\n    \"idExt\": \"string\",\n    \"authKey\": \"string\",\n    \"acuId\": 7573,\n    \"acu\": {\n      \"id\": 2591,\n      \"opal\": \"string\",\n      \"locationRestriction\": {\n        \"id\": 6199.957449501669,\n        \"allowedDistanceMeters\": 1062.2772276999826,\n        \"scaleFactor\": 8537.076508090695,\n        \"locationMeasurement\": {\n          \"id\": 3085.149500190593,\n          \"longitude\": 3884.6188772507185,\n          \"latitude\": 7740.766314999006,\n          \"accuracyMeters\": 6966.754255495232,\n          \"timeZoneId\": \"string\",\n          \"locationMeasurementSourceType\": {\n            \"id\": 4372.640690815012,\n            \"name\": \"string\",\n            \"code\": \"string\"\n          },\n          \"rawData\": {}\n        }\n      }\n    },\n    \"config\": {},\n    \"thirdPartyDeviceId\": 6280,\n    \"thirdPartyDevice\": {\n      \"id\": 802,\n      \"assignedOrg\": {\n        \"id\": 3502,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": false,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1982-03-06\",\n      \"updatedAt\": \"2010-09-03\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 2016.500914368855,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2012-12-11\",\n        \"updatedAt\": \"1984-12-04\"\n      }\n    },\n    \"wirelessLockCount\": 0,\n    \"wirelessLockProvider\": {\n      \"id\": 1488.0506846131757,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1988-04-30\",\n      \"updatedAt\": \"1955-07-22\",\n      \"orgId\": 2674.8722520313095,\n      \"wirelessLockProviderType\": {\n        \"id\": 4162.628823220497,\n        \"name\": \"string\"\n      }\n    },\n    \"wirelessLockProviderId\": 562\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1947-04-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2800,\n        7006\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5101,\n          8968\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b8e175cc-0478-42ac-92a7-f77e0a236018",
+          "name": "Remove a wireless lock gateway",
+          "request": {
+            "name": "Remove a wireless lock gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessLockGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways",
+                ":wirelessLockGatewayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1f0d66eb-9e86-4075-89c2-a4ef4d658a99",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways",
+                    ":wirelessLockGatewayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "481e6fd7-f331-4dc6-a4a5-17841cb0de6b",
+          "name": "Update a wirelessLock gateway",
+          "request": {
+            "name": "Update a wirelessLock gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways",
+                ":wirelessLockGatewayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"authKey\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\",\n  \"lastDisconnectedAt\": \"<date>\",\n  \"isLive\": \"<boolean>\",\n  \"config\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "906c51f7-3060-4366-8ef7-3fbcdcdc4b74",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways",
+                    ":wirelessLockGatewayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"authKey\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\",\n  \"lastDisconnectedAt\": \"<date>\",\n  \"isLive\": \"<boolean>\",\n  \"config\": \"<object>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "86e6b2b9-898b-4633-8038-9b01420223a9",
+          "name": "Update the firmware for multiple wireless lock gateways to the latest version",
+          "request": {
+            "name": "Update the firmware for multiple wireless lock gateways to the latest version",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockGatewayFirmwareBatch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways",
+                "updateFirmwareBatch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "wirelessLockGatewayIds",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0ef1f52f-a88b-4663-8d8e-2fc4ec5b2f31",
+              "name": "Firmware update started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways",
+                    "updateFirmwareBatch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wirelessLockGatewayIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f05a4ef1-9a3e-42bb-9bd4-dd7f51a9d3b5",
+          "name": "Update the firmware for a wireless lock gateway to a specific version",
+          "request": {
+            "name": "Update the firmware for a wireless lock gateway to a specific version",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockGatewayFirmware",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways",
+                ":wirelessLockGatewayId",
+                "updateFirmware"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "891bb378-ce4c-462a-b859-b4d8650fa7ab",
+              "name": "Firmware update started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways",
+                    ":wirelessLockGatewayId",
+                    "updateFirmware"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "58967e25-73b3-497c-8d60-4f6b41e15d2b",
+          "name": "Sync devices for a wireless lock gateway",
+          "request": {
+            "name": "Sync devices for a wireless lock gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncWirelessLockGatewayDevices",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockGateways",
+                ":wirelessLockGatewayId",
+                "syncDevices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d2cc5786-132e-4d94-ba96-d3aca7d2c4a1",
+              "name": "Gateway edge device sync started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockGateways",
+                    ":wirelessLockGatewayId",
+                    "syncDevices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "78f55176-f517-4f1d-9ba6-04fa233b51f4",
+    "name": "Openpath API Documentation auth orgs/wirelessLockGateways API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

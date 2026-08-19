@@ -1,0 +1,1971 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/users API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "cursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "ccursor",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "withBuildings",
+                "value": "",
+                "type": "query",
+                "description": "When true, includes nested building/floor/units attached to the user"
+              },
+              {
+                "name": "isAttachedToAtLeastOneIntercom",
+                "value": "",
+                "type": "query",
+                "description": "When true, filters to just users attached to an intercom"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "listUsers takes the following options:<br/><br/>withPicture - to include the full size and thumbnail user picture urls<br/><br/>withRoles - to include the user's roles<br/><br/>withUserSites - to include the user's sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>withBuildings - includes nested building/floor/units attached to the user<br/><br/>isAttachedToAtLeastOneIntercom - filters to just users attached to an intercom<br/><br/>withRealUserGroups - to in"
+        },
+        {
+          "info": {
+            "name": "Create a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: createUser"
+        },
+        {
+          "info": {
+            "name": "Describe a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "describeUser takes the following options:<br/><br/>withPicture - to include the full size and thumbnail user picture urls<br/><br/>withUserSites - to include the user's sites<br/><br/>withRoles - to include the user's roles<br/><br/>withRealUserGroups - to include the real user groups<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:w,o{params.orgId}-user{params.userId}:r,o{"
+        },
+        {
+          "info": {
+            "name": "Update a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateUser"
+        },
+        {
+          "info": {
+            "name": "Delete a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: deleteUser"
+        },
+        {
+          "info": {
+            "name": "List all user pictures",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{pa"
+        },
+        {
+          "info": {
+            "name": "Create a user picture (DEPRECATED)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is deprecated. Use /orgs/{orgId}/users/{userId}/userPictures/avatar (setUserAvatarPicture) instead.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createUserPicture"
+        },
+        {
+          "info": {
+            "name": "List all MFA credentials (for users in the local org namespace only)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/mfaCredentials",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r,o-user:w,o-user:r<br/><br/>__Endpoint name__: listUserMfaCredentials"
+        },
+        {
+          "info": {
+            "name": "Describe user badge",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/badge",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:w,o{params.orgId}-user{params.userId}:r,o{params.orgId}-user{params.userId}:orgUserBadge-describeUserBadge:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeUserBadge"
+        },
+        {
+          "info": {
+            "name": "List all zones a user has access to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/zones",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserZones"
+        },
+        {
+          "info": {
+            "name": "List all ACUs a user has access to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/acus",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserAcus"
+        },
+        {
+          "info": {
+            "name": "List all sites of a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/sites",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserSites"
+        },
+        {
+          "info": {
+            "name": "List all roles of a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/roles",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserRoles"
+        },
+        {
+          "info": {
+            "name": "List all groups of a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/groups",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserGroups"
+        },
+        {
+          "info": {
+            "name": "List all entries a user has access to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/entries",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserEntries"
+        },
+        {
+          "info": {
+            "name": "List all zones (and their associated configurations) a user has access to",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/zoneUsers",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: listUserZoneUsers"
+        },
+        {
+          "info": {
+            "name": "Set a user's zones (and their associated configurations) by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/zoneUsers",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setUserZoneUsers"
+        },
+        {
+          "info": {
+            "name": "Bulk-update a user's zones and their associated configurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/zoneUsers",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateUserZoneUsers"
+        },
+        {
+          "info": {
+            "name": "List all user credentials",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{pa"
+        },
+        {
+          "info": {
+            "name": "Create a user credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createCredential"
+        },
+        {
+          "info": {
+            "name": "List all user custom fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/customFields",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listUserCustomFields"
+        },
+        {
+          "info": {
+            "name": "Update all user custom fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/customFields",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateUserCustomFields"
+        },
+        {
+          "info": {
+            "name": "Get a user's intercom notification preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/intercomNotificationPreferenceSet",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:w,o{params.orgId}-user{params.userId}:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: describeUserIntercomNotificationPreferenceSet"
+        },
+        {
+          "info": {
+            "name": "Update a user's intercom notification preferences",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/intercomNotificationPreferenceSet",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateUserIntercomNotificationPreferenceSet"
+        },
+        {
+          "info": {
+            "name": "Get a user's preference set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/preferenceSet",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o{params.orgId}-user{params.userId}:r,o:w,o:r<br/><br/>__Endpoint name__: describeUserPreferenceSet"
+        },
+        {
+          "info": {
+            "name": "Update a user's preference set",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/preferenceSet",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o:w<br/><br/>__Endpoint name__: updateUserPreferenceSet"
+        },
+        {
+          "info": {
+            "name": "Get the user avatar picture",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures/avatar",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{pa"
+        },
+        {
+          "info": {
+            "name": "Set the user avatar picture",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures/avatar",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserAvatarPicture"
+        },
+        {
+          "info": {
+            "name": "Delete the user avatar picture",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures/avatar",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteUserAvatarPicture"
+        },
+        {
+          "info": {
+            "name": "Describe a user custom field",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/customFields/:customFieldId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "customFieldId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeUserCustomField"
+        },
+        {
+          "info": {
+            "name": "Update a user custom field",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/customFields/:customFieldId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "customFieldId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateUserCustomField"
+        },
+        {
+          "info": {
+            "name": "Describe a user credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeCredential"
+        },
+        {
+          "info": {
+            "name": "Update a user credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateCredential"
+        },
+        {
+          "info": {
+            "name": "Delete a user credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteCredential"
+        },
+        {
+          "info": {
+            "name": "Get a user's entry activity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/reports/activity",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-user{params.userId}:r,o{params.orgId}-user{params.userId}:orgUser-getUserActivity:r,o:w,o:r,s-o:w,s-o:r,o-user:r,o-user:w<br/><br/>__Endpoint name__: getUserActivity"
+        },
+        {
+          "info": {
+            "name": "List all no tour credential sector validation data for this user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/noTourCredentialSectors/validationData",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listOrgNoTourCredentialSectorsValidationData"
+        },
+        {
+          "info": {
+            "name": "Describe a user picture (DEPRECATED)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures/:userPictureId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userPictureId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is deprecated. Use getUserAvatarPicture instead.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: describeUserPicture"
+        },
+        {
+          "info": {
+            "name": "Update a user picture (DEPRECATED)",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures/:userPictureId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userPictureId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is deprecated. Use setUserAvatarPicture instead.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateUserPicture"
+        },
+        {
+          "info": {
+            "name": "Delete a user picture (DEPRECATED)",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/userPictures/:userPictureId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userPictureId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint is deprecated. Use deleteUserAvatarPicture instead.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteUserPicture"
+        },
+        {
+          "info": {
+            "name": "List all users",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/list",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "listUsers takes the following options:<br/><br/>withPicture - to include the full size and thumbnail user picture urls<br/><br/>withRoles - to include the user's roles<br/><br/>withUserSites - to include the user's sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>withBuildings - includes nested building/floor/units attached to the user<br/><br/>isAttachedToAtLeastOneIntercom - filters to just users attached to an intercom<br/><br/>withRealUserGroups - to in"
+        },
+        {
+          "info": {
+            "name": "Receives feedback from the user and store it",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/submitCobaltUserFeedback",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-user{params.userId}:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: submitCobaltUserFeedback"
+        },
+        {
+          "info": {
+            "name": "Send email to user to verify email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/verifyEmail",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: verifyEmail"
+        },
+        {
+          "info": {
+            "name": "Use a cloudKey credential to request reverting a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/cloudKeyRevertLockdownPlan",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w<br/><br/>__Endpoint name__: cloudKeyRevertLockdownPlan"
+        },
+        {
+          "info": {
+            "name": "Generate new cloudKey token for a specific action on a specific lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/generateCloudKeyLockdownPlanActionToken",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: generateCloudKeyLockdownPlanActionToken"
+        },
+        {
+          "info": {
+            "name": "Generate new cloudKey unlock token for a specific entry. ",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/generateCloudKeyUnlockToken",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "The response includes key fields with the following meanings:<br/><br/>**cloudKeyUnlockToken**: returns the unlock token authorized to unlock the specified entries.<br/><br/>**apiUrl**: returns the URL that, if POST-ed to, will immediately unlock the specified entries. E.g. curl -XPOST https://api.openpath.com/tokens/...<redacted-token>.../use immediately unlocks the specified entries.<br/><br/>**fullWebUrl**: returns the URL that if launched in a web browser will display a \"Tap to Unlock an Ent"
+        },
+        {
+          "info": {
+            "name": "Generate new setup mobile token for credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/generateSetupMobileToken",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: generateSetupMobileToken"
+        },
+        {
+          "info": {
+            "name": "Send email to user to set up their mobile credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/setupMobile",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o-support:w,o:w,s-o:w<br/><br/>__Endpoint name__: setupMobileCredential"
+        },
+        {
+          "info": {
+            "name": "Use a cloudKey credential to request a cloud-unlock of an entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/cloudKeyEntryUnlock",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: cloudKeyEntryUnlock"
+        },
+        {
+          "info": {
+            "name": "Use a cloudKey credential to request triggering a lockdown plan",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/cloudKeyTriggerLockdownPlan",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w<br/><br/>__Endpoint name__: cloudKeyTriggerLockdownPlan"
+        },
+        {
+          "info": {
+            "name": "Send email to user to set up their wallet credential",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/setupWallet",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o-support:w,o:w,s-o:w<br/><br/>__Endpoint name__: setupWalletCredential"
+        },
+        {
+          "info": {
+            "name": "Generate new cloudKey unlock token for a specific entry",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/cloudKey/:cloudKeyId/generateUnlockToken",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cloudKeyId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user{params.userId}:w,o{params.orgId}-user{params.userId}:orgUser-generateUnlockToken:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: generateCloudKeyUnlockTokenByModelId"
+        },
+        {
+          "info": {
+            "name": "Sync Apple Wallet Device",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/wallets/:walletId/walletApples/:walletAppleId/walletAppleDevices/:walletAppleDeviceId/sync",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "walletId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "walletAppleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "walletAppleDeviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncWalletAppleDevice"
+        },
+        {
+          "info": {
+            "name": "Set a user's groups by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/groupIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setUserGroupIds"
+        },
+        {
+          "info": {
+            "name": "Bulk-update a user's groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/groupIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateUserGroupIds"
+        },
+        {
+          "info": {
+            "name": "Set a user's sites by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/siteIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setUserSiteIds"
+        },
+        {
+          "info": {
+            "name": "Bulk-update a user's sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/siteIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateUserSiteIds"
+        },
+        {
+          "info": {
+            "name": "Update Apple Wallet Device",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/credentials/:credentialId/wallets/:walletId/walletApples/:walletAppleId/walletAppleDevices/:walletAppleDeviceId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "credentialId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "walletId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "walletAppleId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "walletAppleDeviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWalletAppleDevice"
+        },
+        {
+          "info": {
+            "name": "Set a user's status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/status",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setUserStatus"
+        },
+        {
+          "info": {
+            "name": "Set a user's zones by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/zoneIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setUserZoneIds"
+        },
+        {
+          "info": {
+            "name": "Set a user's roles by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/users/:userId/roleIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserRoleIds"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

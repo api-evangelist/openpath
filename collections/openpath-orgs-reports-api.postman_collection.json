@@ -1,0 +1,1278 @@
+{
+  "item": [
+    {
+      "id": "0f31a55f-57ec-48b2-b419-a09ff681b10f",
+      "name": "orgs/reports",
+      "description": {
+        "content": "Reports and Analytics",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "85dbe0a0-0eae-4199-a04f-4a3e532dbd35",
+          "name": "Get the search and display unix timestamp ranges for relative times based on the device with a timezone in the min utc offset",
+          "request": {
+            "name": "Get the search and display unix timestamp ranges for relative times based on the device with a timezone in the min utc offset",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-occupancyReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getDeviceTimeZoneDependentRelativeTimeRanges",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "reports",
+                "deviceTimeZoneDependentRelativeTimeRanges"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "siteIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "zoneIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "zoneIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "referenceTime",
+                  "value": "<date>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "60ccd8ca-698c-4dfa-970a-518488af60a3",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "reports",
+                    "deviceTimeZoneDependentRelativeTimeRanges"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "siteIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "siteIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "zoneIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "zoneIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "referenceTime",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3685,\n  \"filteredCount\": 7495,\n  \"cursors\": {\n    \"nextCursor\": 8243,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"relativeTime\": \"last12FullMonths\",\n      \"deviceMinUtcOffsetTimeZoneId\": \"string\",\n      \"displayStartDateUnix\": null,\n      \"displayEndDateUnix\": null,\n      \"searchStartDateUnix\": null,\n      \"searchEndDateUnix\": null\n    },\n    {\n      \"relativeTime\": \"thisQuarter\",\n      \"deviceMinUtcOffsetTimeZoneId\": \"string\",\n      \"displayStartDateUnix\": null,\n      \"displayEndDateUnix\": null,\n      \"searchStartDateUnix\": null,\n      \"searchEndDateUnix\": null\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1987-04-04\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2469,\n        4061\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1622,\n          8438\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f350a311-07e9-4753-abab-b200f2337edf",
+          "name": "Get entry access activity",
+          "request": {
+            "name": "Get entry access activity",
+            "description": {
+              "content": "Note: Please use `/org/{orgId}/reports/activity/events` API when possible as it replaces this API and is faster.<br/><br/>Returns activity events for the `time` specified date range. This API does not handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>This API can return 422 Unprocessable Entity status code. A 422 is returned when the `time` filter specified a date range with more data than can be retrieved within the 55 second API timeout period. Please try narrowing the query date range or use the `/org/{orgId}/reports/activity/events` API as an alternative. The `/org/{orgId}/reports/activity/events` API does not have the 422 status code problem.<br/><br/>The difference between entryName, zoneName, and siteName vs. entryName2, zoneName2, and siteName2 is that the `*Name2` fields can potentially return \"Multiple\" as the name. This occurs when the entries array indicates multiple unique ids for that resource type. Whereas the entryId, entryName, zoneId, zoneName, siteId, and siteName values always equal their entries[0] (the first one) equivalent values.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getActivity",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "reports",
+                "activity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10000"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "time"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldIds",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-op-debug",
+                "value": "",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5e9ab108-bc1c-45e3-8022-ffebc6d5c8bf",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "reports",
+                    "activity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "10000"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "time"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    },
+                    {
+                      "key": "customFieldIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customFieldIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-op-debug",
+                    "value": "",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 259,\n  \"filteredCount\": 3724,\n  \"cursors\": {\n    \"nextCursor\": 4509,\n    \"hasNextPage\": true\n  },\n  \"data\": [\n    {\n      \"time\": 6084.2748839270935,\n      \"sourceName\": \"string\",\n      \"timeIsoString\": \"string\",\n      \"userId\": 9159.740346819679,\n      \"userFirstName\": \"string\",\n      \"userMiddleName\": \"string\",\n      \"userLastName\": \"string\",\n      \"userName\": \"string\",\n      \"userEmail\": \"string\",\n      \"userMobilePhone\": \"string\",\n      \"userOrgId\": 8274.415287889313,\n      \"userOrgName\": \"string\",\n      \"userExternalId\": \"string\",\n      \"userIdpName\": \"string\",\n      \"userGroups\": [\n        {\n          \"id\": 3204,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7687,\n          \"name\": \"string\"\n        }\n      ],\n      \"userSites\": [\n        {\n          \"id\": 6437,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 5386,\n          \"name\": \"string\"\n        }\n      ],\n      \"category\": \"string\",\n      \"subCategory\": \"string\",\n      \"credentialSubtype\": \"string\",\n      \"credentialTypeModelName\": \"string\",\n      \"credentialTypeName\": \"string\",\n      \"credentialDetail\": \"string\",\n      \"cardFields\": {\n        \"rcm\": \"84599665776\",\n        \"facilityCode\": \"70478051363\",\n        \"issueLevel\": \"02792986\",\n        \"cardId\": \"9031\",\n        \"companyId\": \"4\",\n        \"companyCode\": \"2\",\n        \"siteCode\": \"700265170\",\n        \"oem\": \"5855933\"\n      },\n      \"acuId\": 4462.993557969295,\n      \"acuName\": \"string\",\n      \"entryId\": 4103.165953835028,\n      \"entryName\": \"string\",\n      \"entryName2\": \"string\",\n      \"zoneId\": 7322.365256188189,\n      \"zoneName\": \"string\",\n      \"zoneName2\": \"string\",\n      \"siteId\": 7538.614049160927,\n      \"siteName\": \"string\",\n      \"siteName2\": \"string\",\n      \"entries\": [\n        {\n          \"id\": 40,\n          \"name\": \"string\",\n          \"zone\": {\n            \"id\": 5817,\n            \"name\": \"string\"\n          },\n          \"site\": {\n            \"id\": 5333,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 5055,\n          \"name\": \"string\",\n          \"zone\": {\n            \"id\": 9206,\n            \"name\": \"string\"\n          },\n          \"site\": {\n            \"id\": 2855,\n            \"name\": \"string\"\n          }\n        }\n      ],\n      \"lockdownPlanId\": 5548.994612742198,\n      \"lockdownPlanName\": \"string\",\n      \"gatewayDevice\": {\n        \"type\": \"string\",\n        \"uid\": \"string\",\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"sourceDevice\": {\n        \"type\": \"string\",\n        \"uid\": \"string\",\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"deviceDetail\": \"string\",\n      \"deviceDetailName\": \"string\",\n      \"deviceTimezone\": \"string\",\n      \"readerId\": 8878.616747304412,\n      \"readerName\": \"string\",\n      \"readerPortNumber\": 9298.709813617968,\n      \"portNumber\": {\n        \"modelName\": \"rex\",\n        \"raw\": 8483,\n        \"acuId\": 4417,\n        \"expansionBoardNum\": 3136,\n        \"virtualPortNum\": 8401\n      },\n      \"targetType\": \"string\",\n      \"targetName\": \"string\",\n      \"requestType\": \"string\",\n      \"requestId\": \"string\",\n      \"result\": \"string\",\n      \"resultDescription\": \"string\",\n      \"deniedReason\": \"string\",\n      \"connectionType\": \"string\",\n      \"location\": \"string\",\n      \"userCustomFields\": [\n        {\n          \"id\": 2964.129447067726,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 4698.4961530273995,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 3533.4837019829947,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 1158.3431563442214,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 4930.835604910708,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 3768.1089037833935,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"userCustomFieldsData\": {},\n      \"firstAuthInfos\": [\n        {\n          \"connectionType\": \"string\",\n          \"requestType\": \"string\",\n          \"credentialSubtype\": \"string\",\n          \"credentialTypeModelName\": \"string\",\n          \"credentialDetail\": \"string\",\n          \"credentialTypeName\": \"string\",\n          \"cardFields\": {\n            \"rcm\": \"60795019\",\n            \"facilityCode\": \"25\",\n            \"issueLevel\": \"63\",\n            \"cardId\": \"74811627712\",\n            \"companyId\": \"6962608\",\n            \"companyCode\": \"8662438\",\n            \"siteCode\": \"46816110\",\n            \"oem\": \"0743524\"\n          },\n          \"readerId\": 8738.52067121744,\n          \"readerName\": \"string\",\n          \"userId\": 6066.9199259330235,\n          \"userFirstName\": \"string\",\n          \"userMiddleName\": \"string\",\n          \"userLastName\": \"string\",\n          \"userName\": \"string\",\n          \"userEmail\": \"string\",\n          \"userOrgId\": 7325.329332963799,\n          \"userOrgName\": \"string\",\n          \"userExternalId\": \"string\",\n          \"userIdpName\": \"string\"\n        },\n        {\n          \"connectionType\": \"string\",\n          \"requestType\": \"string\",\n          \"credentialSubtype\": \"string\",\n          \"credentialTypeModelName\": \"string\",\n          \"credentialDetail\": \"string\",\n          \"credentialTypeName\": \"string\",\n          \"cardFields\": {\n            \"rcm\": \"6298706540\",\n            \"facilityCode\": \"1\",\n            \"issueLevel\": \"6709\",\n            \"cardId\": \"50\",\n            \"companyId\": \"24\",\n            \"companyCode\": \"3280654\",\n            \"siteCode\": \"8601\",\n            \"oem\": \"1835194\"\n          },\n          \"readerId\": 6698.03397339494,\n          \"readerName\": \"string\",\n          \"userId\": 7845.284744173559,\n          \"userFirstName\": \"string\",\n          \"userMiddleName\": \"string\",\n          \"userLastName\": \"string\",\n          \"userName\": \"string\",\n          \"userEmail\": \"string\",\n          \"userOrgId\": 2547.987909843511,\n          \"userOrgName\": \"string\",\n          \"userExternalId\": \"string\",\n          \"userIdpName\": \"string\"\n        }\n      ]\n    },\n    {\n      \"time\": 6420.842841663243,\n      \"sourceName\": \"string\",\n      \"timeIsoString\": \"string\",\n      \"userId\": 2914.1752228378937,\n      \"userFirstName\": \"string\",\n      \"userMiddleName\": \"string\",\n      \"userLastName\": \"string\",\n      \"userName\": \"string\",\n      \"userEmail\": \"string\",\n      \"userMobilePhone\": \"string\",\n      \"userOrgId\": 5951.752402881283,\n      \"userOrgName\": \"string\",\n      \"userExternalId\": \"string\",\n      \"userIdpName\": \"string\",\n      \"userGroups\": [\n        {\n          \"id\": 19,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 2361,\n          \"name\": \"string\"\n        }\n      ],\n      \"userSites\": [\n        {\n          \"id\": 9559,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 5763,\n          \"name\": \"string\"\n        }\n      ],\n      \"category\": \"string\",\n      \"subCategory\": \"string\",\n      \"credentialSubtype\": \"string\",\n      \"credentialTypeModelName\": \"string\",\n      \"credentialTypeName\": \"string\",\n      \"credentialDetail\": \"string\",\n      \"cardFields\": {\n        \"rcm\": \"466\",\n        \"facilityCode\": \"544965\",\n        \"issueLevel\": \"39920\",\n        \"cardId\": \"67552680746\",\n        \"companyId\": \"3550017\",\n        \"companyCode\": \"66564574684\",\n        \"siteCode\": \"915631863\",\n        \"oem\": \"6704929\"\n      },\n      \"acuId\": 5979.237109785458,\n      \"acuName\": \"string\",\n      \"entryId\": 4599.102238585314,\n      \"entryName\": \"string\",\n      \"entryName2\": \"string\",\n      \"zoneId\": 4764.30834157126,\n      \"zoneName\": \"string\",\n      \"zoneName2\": \"string\",\n      \"siteId\": 6523.112077290789,\n      \"siteName\": \"string\",\n      \"siteName2\": \"string\",\n      \"entries\": [\n        {\n          \"id\": 4370,\n          \"name\": \"string\",\n          \"zone\": {\n            \"id\": 7210,\n            \"name\": \"string\"\n          },\n          \"site\": {\n            \"id\": 941,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 8432,\n          \"name\": \"string\",\n          \"zone\": {\n            \"id\": 9250,\n            \"name\": \"string\"\n          },\n          \"site\": {\n            \"id\": 3742,\n            \"name\": \"string\"\n          }\n        }\n      ],\n      \"lockdownPlanId\": 4257.44157052087,\n      \"lockdownPlanName\": \"string\",\n      \"gatewayDevice\": {\n        \"type\": \"string\",\n        \"uid\": \"string\",\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"sourceDevice\": {\n        \"type\": \"string\",\n        \"uid\": \"string\",\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"deviceDetail\": \"string\",\n      \"deviceDetailName\": \"string\",\n      \"deviceTimezone\": \"string\",\n      \"readerId\": 2948.512460398497,\n      \"readerName\": \"string\",\n      \"readerPortNumber\": 7154.331413495714,\n      \"portNumber\": {\n        \"modelName\": \"contactSensor\",\n        \"raw\": 4060,\n        \"acuId\": 5666,\n        \"expansionBoardNum\": 4153,\n        \"virtualPortNum\": 3943\n      },\n      \"targetType\": \"string\",\n      \"targetName\": \"string\",\n      \"requestType\": \"string\",\n      \"requestId\": \"string\",\n      \"result\": \"string\",\n      \"resultDescription\": \"string\",\n      \"deniedReason\": \"string\",\n      \"connectionType\": \"string\",\n      \"location\": \"string\",\n      \"userCustomFields\": [\n        {\n          \"id\": 7399.69057163229,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 4750.31120871131,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 1856.2479833072487,\n              \"name\": \"string\"\n            }\n          }\n        },\n        {\n          \"id\": 6516.509955434947,\n          \"value\": \"string\",\n          \"customField\": {\n            \"id\": 2774.2478140839366,\n            \"name\": \"string\",\n            \"customFieldType\": {\n              \"id\": 2815.2339394177593,\n              \"name\": \"string\"\n            }\n          }\n        }\n      ],\n      \"userCustomFieldsData\": {},\n      \"firstAuthInfos\": [\n        {\n          \"connectionType\": \"string\",\n          \"requestType\": \"string\",\n          \"credentialSubtype\": \"string\",\n          \"credentialTypeModelName\": \"string\",\n          \"credentialDetail\": \"string\",\n          \"credentialTypeName\": \"string\",\n          \"cardFields\": {\n            \"rcm\": \"26186798\",\n            \"facilityCode\": \"39218808732\",\n            \"issueLevel\": \"69668\",\n            \"cardId\": \"958\",\n            \"companyId\": \"48749\",\n            \"companyCode\": \"205\",\n            \"siteCode\": \"142043\",\n            \"oem\": \"954379493\"\n          },\n          \"readerId\": 8263.081492822037,\n          \"readerName\": \"string\",\n          \"userId\": 6841.9264407084665,\n          \"userFirstName\": \"string\",\n          \"userMiddleName\": \"string\",\n          \"userLastName\": \"string\",\n          \"userName\": \"string\",\n          \"userEmail\": \"string\",\n          \"userOrgId\": 6949.7410905712195,\n          \"userOrgName\": \"string\",\n          \"userExternalId\": \"string\",\n          \"userIdpName\": \"string\"\n        },\n        {\n          \"connectionType\": \"string\",\n          \"requestType\": \"string\",\n          \"credentialSubtype\": \"string\",\n          \"credentialTypeModelName\": \"string\",\n          \"credentialDetail\": \"string\",\n          \"credentialTypeName\": \"string\",\n          \"cardFields\": {\n            \"rcm\": \"633\",\n            \"facilityCode\": \"91\",\n            \"issueLevel\": \"6\",\n            \"cardId\": \"8685618372\",\n            \"companyId\": \"711\",\n            \"companyCode\": \"082940930\",\n            \"siteCode\": \"2486616\",\n            \"oem\": \"884\"\n          },\n          \"readerId\": 6435.173636612,\n          \"readerName\": \"string\",\n          \"userId\": 6677.891662682812,\n          \"userFirstName\": \"string\",\n          \"userMiddleName\": \"string\",\n          \"userLastName\": \"string\",\n          \"userName\": \"string\",\n          \"userEmail\": \"string\",\n          \"userOrgId\": 9352.800081793699,\n          \"userOrgName\": \"string\",\n          \"userExternalId\": \"string\",\n          \"userIdpName\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1992-07-18\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        7579,\n        3060\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9002,\n          9752\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7c3ec07e-0df6-48ab-9385-847ca0462760",
+          "name": "Search/filter/return audit logs for UI",
+          "request": {
+            "name": "Search/filter/return audit logs for UI",
+            "description": {
+              "content": "Returns audit log UI events for the `timestamp` specified date range. Default search time span is 1 hour ago to now.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-portalAudit:w,o{params.orgId}-portalAudit:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getAuditLogsUi",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "reports",
+                "auditLogs",
+                "ui"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "10000"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "timestamp"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-op-debug",
+                "value": "",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0e5b6243-e6fc-4790-834e-b1557abaadf9",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "reports",
+                    "auditLogs",
+                    "ui"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "10000"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-op-debug",
+                    "value": "",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 5209,\n  \"filteredCount\": 6566,\n  \"cursors\": {\n    \"nextCursor\": 9610,\n    \"hasNextPage\": true\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2004-06-26\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        617,\n        4437\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2030,\n          6796\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "483d9332-6e4b-4636-b868-d95bbc0967da",
+          "name": "Get presence bucket reports",
+          "request": {
+            "name": "Get presence bucket reports",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-presence:w,o{params.orgId}-presence:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getPresenceBucketsReport",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "reports",
+                "presence",
+                "buckets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "timeScale",
+                  "value": "day"
+                },
+                {
+                  "disabled": false,
+                  "key": "category",
+                  "value": "org"
+                },
+                {
+                  "disabled": false,
+                  "key": "startDate",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "endDate",
+                  "value": "<date>",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "key": "timeZone",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sensorTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "sensorTypes",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "siteIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "zoneIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "zoneIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "entryIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "entryIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "readerIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "readerIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "groupIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "userIds",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-op-debug",
+                "value": "",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2a842918-905f-405f-ae64-c4514086b7c2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "reports",
+                    "presence",
+                    "buckets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "timeScale",
+                      "value": "day"
+                    },
+                    {
+                      "key": "category",
+                      "value": "org"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "timeZone",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sensorTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "sensorTypes",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "siteIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "siteIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "zoneIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "zoneIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "entryIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "entryIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "readerIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "readerIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "groupIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "groupIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "userIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "userIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-op-debug",
+                    "value": "",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"request\": {},\n    \"columnLabelsMs\": [\n      3082,\n      1484\n    ],\n    \"columnLabels\": [\n      \"string\",\n      \"string\"\n    ],\n    \"rows\": [\n      {\n        \"resourceOpal\": \"string\",\n        \"name\": \"string\",\n        \"counts\": [\n          6064.017882503631,\n          385.0770097027767\n        ]\n      },\n      {\n        \"resourceOpal\": \"string\",\n        \"name\": \"string\",\n        \"counts\": [\n          1291.6415058687314,\n          9327.205655463196\n        ]\n      }\n    ],\n    \"debugInfo\": {}\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1998-05-05\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        5045,\n        7753\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2251,\n          5376\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5ae65526-48c0-4eed-894a-cf1d6279831a",
+          "name": "Get access activity events",
+          "request": {
+            "name": "Get access activity events",
+            "description": {
+              "content": "Returns activity events for the `uiData.time` specified date range. This API can handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>To filter by time, use a `filter` value of `uiData.time:(utcEpochSeconds-<utcEpochSeconds)` or any other valid time range specification, where utcEpochSeconds is replaced by your desired start and end times in unix epoch seconds. To filter by an array field like userGroups, use a `filter` value of `uiData.userGroups.id:(4822,5729)`. This will filter the results to only those that have a `uiData.userGroups.id` value of 4822 or 5729. New partial results are returned for each API call. The query is complete when the API returns `false` for `cursors.hasNextPage`. The caller is required to pass the same filter parameter across all calls of the same query.<br/><br/>Commonly, the `limit` parameter provides an upper bound on the number of results returned by the API. That is not the case here. For performance reasons, this API endpoint treats the `limit` parameter as a suggestion. This endpoint commonly returns substantially more results than the specified `limit` value. If your client is concerned about a large number of events in the response, the client can first issue a request for 1 hour of data. The 1 hour response size can then be used to calculate the time based paging necessary to maintain a rough amount of response data.<br/><br/>The `uiDataOnly` option will cause only uiData elements to be returned, filtering out the hookEvents sub-object from the response. This can reduce client JSON processing time and memory utilization if uiData is only needed.<br/><br/>The difference between entryName, zoneName, and siteName vs. entryName2, zoneName2, and siteName2 is that the `*Name2` fields can potentially return \"Multiple\" as the name. This occurs when the entries array indicates multiple unique ids for that resource type. Whereas the entryId, entryName, zoneId, zoneName, siteId, and siteName values will always equal their entries[0] (the first one) equivalent values.<br/><br/>For traceability purposes, it is helpful if your API always provides the `option` parameter value of `searchId:{shortPurpose}-{orgId}-{startTimeMillisecs}-{callNum}`. Where `{shortPurpose}` might be `logGather` or whatever unique purpose you have in calling the API; `{orgId}` is your orgId; `{startTimeMillisecs}` is the time in milliseconds for the first call and remains unchanged for all `{callNum}` calls; `{callNum}` starts at 0 and increments for each API call when paging through each returned cursor until complete. An example the first call to this API might have a `searchId:logGather-12345-1675964642144-0` for the logGather purpose, 12345 orgId, with the first API call at 2023-02-09T17:44:02.144, and a 0 callNum for the 1st API call. The second API call with the cursor set would be `searchId:logGather-12345-1675964642144-1`, the 3rd call `...642144-2` and so on. Providing your searchId to an Openpath representative can significantly aid in resolving inqueries.<br/><br/>Please use this API over the slower `/orgs/{orgId}/reports/activity` API when possible.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getActivityEvents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "reports",
+                "activity",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "30000"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldIds",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-op-debug",
+                "value": "",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8830b51a-b3ea-4d72-a933-01aea0d2ac8e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "reports",
+                    "activity",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "30000"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    },
+                    {
+                      "key": "customFieldIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customFieldIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-op-debug",
+                    "value": "",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 8346,\n  \"filteredCount\": 8888,\n  \"cursors\": {\n    \"nextCursor\": 9229,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"uiData\": {\n        \"time\": 737.454495901032,\n        \"sourceName\": \"string\",\n        \"timeIsoString\": \"string\",\n        \"userId\": 8297.936766457275,\n        \"userFirstName\": \"string\",\n        \"userMiddleName\": \"string\",\n        \"userLastName\": \"string\",\n        \"userName\": \"string\",\n        \"userEmail\": \"string\",\n        \"userMobilePhone\": \"string\",\n        \"userOrgId\": 9240.494927382073,\n        \"userOrgName\": \"string\",\n        \"userExternalId\": \"string\",\n        \"userIdpName\": \"string\",\n        \"userGroups\": [\n          {\n            \"id\": 2123,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 8413,\n            \"name\": \"string\"\n          }\n        ],\n        \"userSites\": [\n          {\n            \"id\": 6634,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 1117,\n            \"name\": \"string\"\n          }\n        ],\n        \"category\": \"string\",\n        \"subCategory\": \"string\",\n        \"credentialSubtype\": \"string\",\n        \"credentialTypeModelName\": \"string\",\n        \"credentialTypeName\": \"string\",\n        \"credentialDetail\": \"string\",\n        \"cardFields\": {\n          \"rcm\": \"27075\",\n          \"facilityCode\": \"25\",\n          \"issueLevel\": \"98292849\",\n          \"cardId\": \"052\",\n          \"companyId\": \"2970367451\",\n          \"companyCode\": \"285\",\n          \"siteCode\": \"3\",\n          \"oem\": \"6935871160\"\n        },\n        \"acuId\": 63.60678492743466,\n        \"acuName\": \"string\",\n        \"entryId\": 894.8402307538239,\n        \"entryName\": \"string\",\n        \"entryName2\": \"string\",\n        \"zoneId\": 7216.008470089806,\n        \"zoneName\": \"string\",\n        \"zoneName2\": \"string\",\n        \"siteId\": 1583.683550976782,\n        \"siteName\": \"string\",\n        \"siteName2\": \"string\",\n        \"entries\": [\n          {\n            \"id\": 1098,\n            \"name\": \"string\",\n            \"zone\": {\n              \"id\": 5634,\n              \"name\": \"string\"\n            },\n            \"site\": {\n              \"id\": 2564,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 978,\n            \"name\": \"string\",\n            \"zone\": {\n              \"id\": 9386,\n              \"name\": \"string\"\n            },\n            \"site\": {\n              \"id\": 7148,\n              \"name\": \"string\"\n            }\n          }\n        ],\n        \"lockdownPlanId\": 6951.6606138615325,\n        \"lockdownPlanName\": \"string\",\n        \"gatewayDevice\": {\n          \"type\": \"string\",\n          \"uid\": \"string\",\n          \"opal\": \"string\",\n          \"name\": \"string\"\n        },\n        \"sourceDevice\": {\n          \"type\": \"string\",\n          \"uid\": \"string\",\n          \"opal\": \"string\",\n          \"name\": \"string\"\n        },\n        \"deviceDetail\": \"string\",\n        \"deviceDetailName\": \"string\",\n        \"deviceTimezone\": \"string\",\n        \"readerId\": 9850.279390631,\n        \"readerName\": \"string\",\n        \"readerPortNumber\": 2424.806510347185,\n        \"portNumber\": {\n          \"modelName\": \"rex\",\n          \"raw\": 5618,\n          \"acuId\": 9749,\n          \"expansionBoardNum\": 6698,\n          \"virtualPortNum\": 7997\n        },\n        \"targetType\": \"string\",\n        \"targetName\": \"string\",\n        \"requestType\": \"string\",\n        \"requestId\": \"string\",\n        \"result\": \"string\",\n        \"resultDescription\": \"string\",\n        \"deniedReason\": \"string\",\n        \"connectionType\": \"string\",\n        \"location\": \"string\",\n        \"userCustomFields\": [\n          {\n            \"id\": 6135.498174456779,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 5467.21959633877,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 3903.895489876709,\n                \"name\": \"string\"\n              }\n            }\n          },\n          {\n            \"id\": 5153.631998232971,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 2482.624640901453,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 1424.28898045749,\n                \"name\": \"string\"\n              }\n            }\n          }\n        ],\n        \"userCustomFieldsData\": {},\n        \"firstAuthInfos\": [\n          {\n            \"connectionType\": \"string\",\n            \"requestType\": \"string\",\n            \"credentialSubtype\": \"string\",\n            \"credentialTypeModelName\": \"string\",\n            \"credentialDetail\": \"string\",\n            \"credentialTypeName\": \"string\",\n            \"cardFields\": {\n              \"rcm\": \"9233507\",\n              \"facilityCode\": \"3\",\n              \"issueLevel\": \"1844985231\",\n              \"cardId\": \"07798\",\n              \"companyId\": \"56\",\n              \"companyCode\": \"8603\",\n              \"siteCode\": \"565066210\",\n              \"oem\": \"0582697\"\n            },\n            \"readerId\": 6288.928309947476,\n            \"readerName\": \"string\",\n            \"userId\": 7231.257963181594,\n            \"userFirstName\": \"string\",\n            \"userMiddleName\": \"string\",\n            \"userLastName\": \"string\",\n            \"userName\": \"string\",\n            \"userEmail\": \"string\",\n            \"userOrgId\": 4977.867273124668,\n            \"userOrgName\": \"string\",\n            \"userExternalId\": \"string\",\n            \"userIdpName\": \"string\"\n          },\n          {\n            \"connectionType\": \"string\",\n            \"requestType\": \"string\",\n            \"credentialSubtype\": \"string\",\n            \"credentialTypeModelName\": \"string\",\n            \"credentialDetail\": \"string\",\n            \"credentialTypeName\": \"string\",\n            \"cardFields\": {\n              \"rcm\": \"92\",\n              \"facilityCode\": \"62544043\",\n              \"issueLevel\": \"00\",\n              \"cardId\": \"475707\",\n              \"companyId\": \"244\",\n              \"companyCode\": \"75\",\n              \"siteCode\": \"8890048740\",\n              \"oem\": \"52858609\"\n            },\n            \"readerId\": 3135.256037923545,\n            \"readerName\": \"string\",\n            \"userId\": 2009.6746177229063,\n            \"userFirstName\": \"string\",\n            \"userMiddleName\": \"string\",\n            \"userLastName\": \"string\",\n            \"userName\": \"string\",\n            \"userEmail\": \"string\",\n            \"userOrgId\": 9735.572680488265,\n            \"userOrgName\": \"string\",\n            \"userExternalId\": \"string\",\n            \"userIdpName\": \"string\"\n          }\n        ]\n      },\n      \"hookEvent\": {\n        \"timestamp\": 1555.537998924058,\n        \"event\": \"string\",\n        \"data\": {}\n      }\n    },\n    {\n      \"uiData\": {\n        \"time\": 3080.939532823255,\n        \"sourceName\": \"string\",\n        \"timeIsoString\": \"string\",\n        \"userId\": 0.46583767668972875,\n        \"userFirstName\": \"string\",\n        \"userMiddleName\": \"string\",\n        \"userLastName\": \"string\",\n        \"userName\": \"string\",\n        \"userEmail\": \"string\",\n        \"userMobilePhone\": \"string\",\n        \"userOrgId\": 1.2910854787218096,\n        \"userOrgName\": \"string\",\n        \"userExternalId\": \"string\",\n        \"userIdpName\": \"string\",\n        \"userGroups\": [\n          {\n            \"id\": 5471,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 2008,\n            \"name\": \"string\"\n          }\n        ],\n        \"userSites\": [\n          {\n            \"id\": 2066,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4329,\n            \"name\": \"string\"\n          }\n        ],\n        \"category\": \"string\",\n        \"subCategory\": \"string\",\n        \"credentialSubtype\": \"string\",\n        \"credentialTypeModelName\": \"string\",\n        \"credentialTypeName\": \"string\",\n        \"credentialDetail\": \"string\",\n        \"cardFields\": {\n          \"rcm\": \"9607057712\",\n          \"facilityCode\": \"27\",\n          \"issueLevel\": \"84\",\n          \"cardId\": \"393249\",\n          \"companyId\": \"8666528422\",\n          \"companyCode\": \"2056121731\",\n          \"siteCode\": \"44\",\n          \"oem\": \"14666982375\"\n        },\n        \"acuId\": 2800.058015599575,\n        \"acuName\": \"string\",\n        \"entryId\": 9096.731521621603,\n        \"entryName\": \"string\",\n        \"entryName2\": \"string\",\n        \"zoneId\": 7267.5220134473375,\n        \"zoneName\": \"string\",\n        \"zoneName2\": \"string\",\n        \"siteId\": 8827.620786492915,\n        \"siteName\": \"string\",\n        \"siteName2\": \"string\",\n        \"entries\": [\n          {\n            \"id\": 2796,\n            \"name\": \"string\",\n            \"zone\": {\n              \"id\": 5455,\n              \"name\": \"string\"\n            },\n            \"site\": {\n              \"id\": 3710,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 396,\n            \"name\": \"string\",\n            \"zone\": {\n              \"id\": 4310,\n              \"name\": \"string\"\n            },\n            \"site\": {\n              \"id\": 25,\n              \"name\": \"string\"\n            }\n          }\n        ],\n        \"lockdownPlanId\": 1464.58461207733,\n        \"lockdownPlanName\": \"string\",\n        \"gatewayDevice\": {\n          \"type\": \"string\",\n          \"uid\": \"string\",\n          \"opal\": \"string\",\n          \"name\": \"string\"\n        },\n        \"sourceDevice\": {\n          \"type\": \"string\",\n          \"uid\": \"string\",\n          \"opal\": \"string\",\n          \"name\": \"string\"\n        },\n        \"deviceDetail\": \"string\",\n        \"deviceDetailName\": \"string\",\n        \"deviceTimezone\": \"string\",\n        \"readerId\": 1137.5276345905072,\n        \"readerName\": \"string\",\n        \"readerPortNumber\": 6944.577122849842,\n        \"portNumber\": {\n          \"modelName\": \"genericInput\",\n          \"raw\": 4148,\n          \"acuId\": 9887,\n          \"expansionBoardNum\": 8116,\n          \"virtualPortNum\": 7930\n        },\n        \"targetType\": \"string\",\n        \"targetName\": \"string\",\n        \"requestType\": \"string\",\n        \"requestId\": \"string\",\n        \"result\": \"string\",\n        \"resultDescription\": \"string\",\n        \"deniedReason\": \"string\",\n        \"connectionType\": \"string\",\n        \"location\": \"string\",\n        \"userCustomFields\": [\n          {\n            \"id\": 3303.2029434620667,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 2370.8300596526633,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 6205.478535053208,\n                \"name\": \"string\"\n              }\n            }\n          },\n          {\n            \"id\": 88.10048206049137,\n            \"value\": \"string\",\n            \"customField\": {\n              \"id\": 4298.202797832333,\n              \"name\": \"string\",\n              \"customFieldType\": {\n                \"id\": 3224.872846316492,\n                \"name\": \"string\"\n              }\n            }\n          }\n        ],\n        \"userCustomFieldsData\": {},\n        \"firstAuthInfos\": [\n          {\n            \"connectionType\": \"string\",\n            \"requestType\": \"string\",\n            \"credentialSubtype\": \"string\",\n            \"credentialTypeModelName\": \"string\",\n            \"credentialDetail\": \"string\",\n            \"credentialTypeName\": \"string\",\n            \"cardFields\": {\n              \"rcm\": \"283\",\n              \"facilityCode\": \"3\",\n              \"issueLevel\": \"981672594\",\n              \"cardId\": \"48504232867\",\n              \"companyId\": \"018\",\n              \"companyCode\": \"095422581\",\n              \"siteCode\": \"2160309\",\n              \"oem\": \"535\"\n            },\n            \"readerId\": 9400.807817280061,\n            \"readerName\": \"string\",\n            \"userId\": 6684.688028541264,\n            \"userFirstName\": \"string\",\n            \"userMiddleName\": \"string\",\n            \"userLastName\": \"string\",\n            \"userName\": \"string\",\n            \"userEmail\": \"string\",\n            \"userOrgId\": 1796.9751485442964,\n            \"userOrgName\": \"string\",\n            \"userExternalId\": \"string\",\n            \"userIdpName\": \"string\"\n          },\n          {\n            \"connectionType\": \"string\",\n            \"requestType\": \"string\",\n            \"credentialSubtype\": \"string\",\n            \"credentialTypeModelName\": \"string\",\n            \"credentialDetail\": \"string\",\n            \"credentialTypeName\": \"string\",\n            \"cardFields\": {\n              \"rcm\": \"461\",\n              \"facilityCode\": \"32\",\n              \"issueLevel\": \"6896\",\n              \"cardId\": \"071\",\n              \"companyId\": \"698411\",\n              \"companyCode\": \"2318083\",\n              \"siteCode\": \"428\",\n              \"oem\": \"64\"\n            },\n            \"readerId\": 1942.772599333945,\n            \"readerName\": \"string\",\n            \"userId\": 6159.711641811301,\n            \"userFirstName\": \"string\",\n            \"userMiddleName\": \"string\",\n            \"userLastName\": \"string\",\n            \"userName\": \"string\",\n            \"userEmail\": \"string\",\n            \"userOrgId\": 7899.882676061466,\n            \"userOrgName\": \"string\",\n            \"userExternalId\": \"string\",\n            \"userIdpName\": \"string\"\n          }\n        ]\n      },\n      \"hookEvent\": {\n        \"timestamp\": 2476.8539090887866,\n        \"event\": \"string\",\n        \"data\": {}\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1981-10-11\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2454,\n        1956\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1497,\n          5517\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "725f4724-765c-4a48-baa9-8233b549e61e",
+          "name": "Get alarm events",
+          "request": {
+            "name": "Get alarm events",
+            "description": {
+              "content": "Returns alarm events for the `uiData.time` specified date range. This API can handle large date range requests. If not specified, the default search time span is 24 hours ago to now.<br/><br/>To filter by time, use a `filter` value of `uiData.time:(utcEpochSeconds-<utcEpochSeconds)` or any other valid time range specification, where utcEpochSeconds is replaced by your desired start and end times in unix epoch seconds. New partial results are returned for each API call. The query is complete when the API returns `false` for `cursors.hasNextPage`. The caller is required to pass the same filter parameter across all calls of the same query.<br/><br/>Commonly, the `limit` parameter provides an upper bound on the number of results returned by the API. That is not the case here. For performance reasons, this API endpoint treats the `limit` parameter as a suggestion. This endpoint commonly returns substantially more results than the specified `limit` value.<br/><br/>The `uiDataOnly` option will cause only uiData elements to be returned, filtering out the hookEvents sub-object from the response. This can reduce client JSON processing time and memory utilization if uiData is only needed.<br/><br/>The entryName2 and siteName2 fields can potentially return \"Multiple\" as the name. This occurs when the entries indicate multiple unique ids for that resource type. Whereas the entryId and siteId values will always equal their first entry or site value.<br/><br/>For traceability purposes, it is helpful if your API always provides the `option` parameter value of `searchId:{shortPurpose}-{orgId}-{startTimeMillisecs}-{callNum}`. Where `{shortPurpose}` might be `logGather` or whatever unique purpose you have in calling the API; `{orgId}` is your orgId; `{startTimeMillisecs}` is the time in milliseconds for the first call and remains unchanged for all `{callNum}` calls; `{callNum}` starts at 0 and increments for each API call when paging through each returned cursor until complete. An example the first call to this API might have a `searchId:logGather-12345-1675964642144-0` for the logGather purpose, 12345 orgId, with the first API call at 2023-02-09T17:44:02.144, and a 0 callNum for the 1st API call. The second API call with the cursor set would be `searchId:logGather-12345-1675964642144-1`, the 3rd call `...642144-2` and so on. Providing your searchId to an Openpath representative can significantly aid in resolving inqueries.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptAlarm:r,o:w,o:r<br/><br/>__Endpoint name__: getAlarmEvents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "reports",
+                "alarm",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "30000"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldIds",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "customFieldIds",
+                  "value": "<integer>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "x-op-debug",
+                "value": "",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4676b2b8-f2fc-4f1f-abbb-cd0b4ffbe410",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "reports",
+                    "alarm",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "30000"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    },
+                    {
+                      "key": "customFieldIds",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "customFieldIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "x-op-debug",
+                    "value": "",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 2166,\n  \"filteredCount\": 9332,\n  \"cursors\": {\n    \"nextCursor\": 7541,\n    \"hasNextPage\": true\n  },\n  \"data\": [\n    {\n      \"uiData\": {\n        \"alarmId\": \"string\",\n        \"time\": 4957.259090949534,\n        \"sourceEventTime\": 9640.559758203397,\n        \"alarmActionId\": 1367.472206037289,\n        \"alarmStatusId\": 383.1967469342679,\n        \"timeIsoString\": \"string\",\n        \"sourceEventTimeIsoString\": \"string\",\n        \"subCategory\": \"string\",\n        \"userId\": 2789.953278816105,\n        \"userName\": \"string\",\n        \"acuId\": 5737.176950625499,\n        \"acuName\": \"string\",\n        \"entryId\": 5490.816421135525,\n        \"entryName2\": \"string\",\n        \"zoneId\": 7139.52793018442,\n        \"zoneName2\": \"string\",\n        \"siteId\": 7839.931473872135,\n        \"siteName2\": \"string\",\n        \"readerId\": 8568.715246440772,\n        \"readerName\": \"string\",\n        \"alarmActionName\": \"string\",\n        \"alarmStatusName\": \"string\",\n        \"alarmConfigId\": 3720.249860292967,\n        \"alarmConfigName\": \"string\",\n        \"assignedUserId\": 5992.817851498567,\n        \"assignedUserName\": \"string\",\n        \"assignedRoleId\": 8558.707597354778,\n        \"assignedRoleName\": \"string\",\n        \"cameraIds\": [\n          9447.653841584885,\n          2935.117366710733\n        ],\n        \"note\": \"string\"\n      },\n      \"hookEvent\": {\n        \"timestamp\": 2560.330183992372,\n        \"event\": \"string\",\n        \"data\": {}\n      }\n    },\n    {\n      \"uiData\": {\n        \"alarmId\": \"string\",\n        \"time\": 489.9289325669964,\n        \"sourceEventTime\": 4961.021480658078,\n        \"alarmActionId\": 7350.710986929693,\n        \"alarmStatusId\": 9201.879744252577,\n        \"timeIsoString\": \"string\",\n        \"sourceEventTimeIsoString\": \"string\",\n        \"subCategory\": \"string\",\n        \"userId\": 6434.921838577486,\n        \"userName\": \"string\",\n        \"acuId\": 6157.182554556618,\n        \"acuName\": \"string\",\n        \"entryId\": 6364.275400651759,\n        \"entryName2\": \"string\",\n        \"zoneId\": 8683.894735456563,\n        \"zoneName2\": \"string\",\n        \"siteId\": 6534.24298261854,\n        \"siteName2\": \"string\",\n        \"readerId\": 8667.541014983077,\n        \"readerName\": \"string\",\n        \"alarmActionName\": \"string\",\n        \"alarmStatusName\": \"string\",\n        \"alarmConfigId\": 9861.2990633613,\n        \"alarmConfigName\": \"string\",\n        \"assignedUserId\": 9736.320459147419,\n        \"assignedUserName\": \"string\",\n        \"assignedRoleId\": 5894.25251039517,\n        \"assignedRoleName\": \"string\",\n        \"cameraIds\": [\n          4788.603322492181,\n          3178.037489096617\n        ],\n        \"note\": \"string\"\n      },\n      \"hookEvent\": {\n        \"timestamp\": 8417.784627260267,\n        \"event\": \"string\",\n        \"data\": {}\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1990-11-23\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3894,\n        6067\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6721,\n          5723\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c635cd0c-c0f7-440c-9221-7b8479b3fc88",
+    "name": "Openpath API Documentation auth orgs/reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

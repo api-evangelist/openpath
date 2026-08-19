@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "50ceb17d-82f3-4149-b62e-780787b56cf5",
+      "name": "orgs/effectiveScopes",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "af4665d3-54c1-4bbc-9b86-21c17131b854",
+          "name": "Get effective permissions (scopes and allowed endpoints) for the authenticated identity for an org",
+          "request": {
+            "name": "Get effective permissions (scopes and allowed endpoints) for the authenticated identity for an org",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-building:r,o{params.orgId}-building:w,o{params.orgId}-cert:r,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cleanupMsiAware:w,o{params.orgId}-cobalt:r,o{params.orgId}-cobalt:w,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o{params.orgId}-credential:r,o{params.orgId}-credential:w,o{params.orgId}-dash:r,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashEntry:w,o{params.orgId}-entryAccessAudit:r,o{params.orgId}-entryAccessAudit:w,o{params.orgId}-entryState:r,o{params.orgId}-entryState:w,o{params.orgId}-erpParentCenter:w,o{params.orgId}-erpParentStore:w,o{params.orgId}-eventsMsiAware:w,o{params.orgId}-exportClips:w,o{params.orgId}-haloAdmin:w,o{params.orgId}-haloUser:w,o{params.orgId}-haloViewer:r,o{params.orgId}-hw:r,o{params.orgId}-hw:w,o{params.orgId}-idp-scim:r,o{params.orgId}-idp-scim:w,o{params.orgId}-integrations:r,o{params.orgId}-integrations:w,o{params.orgId}-ipRestriction:r,o{params.orgId}-ipRestriction:w,o{params.orgId}-ldp:r,o{params.orgId}-ldp:w,o{params.orgId}-map:r,o{params.orgId}-map:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-opvideoDevice:r,o{params.orgId}-opvideoDevice:w,o{params.orgId}-opvideoIntercom:r,o{params.orgId}-opvideoIntercom:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-portalAudit:r,o{params.orgId}-portalAudit:w,o{params.orgId}-policy:r,o{params.orgId}-policy:w,o{params.orgId}-policySection:r,o{params.orgId}-policySection:w,o{params.orgId}-presence:r,o{params.orgId}-presence:w,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o{params.orgId}-realUserGroup:r,o{params.orgId}-realUserGroup:w,o{params.orgId}-restriction:r,o{params.orgId}-restriction:w,o{params.orgId}-role:r,o{params.orgId}-role:w,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptDownload:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-serviceCancellation:w,o{params.orgId}-site:r,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o{params.orgId}-timeRestriction:r,o{params.orgId}-timeRestriction:w,o{params.orgId}-user:r,o{params.orgId}-user:w,o{params.orgId}-videoAdmin:w,o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o:r,o:w,o-basic:r,o-basic:w,o-support:r,o-support:w,s-o:r,s-o:w,s-o-video:r,s-o-video:w<br/><br/>__Endpoint name__: getEffectivePermissionsForOrg",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "effectiveScopes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "753446f8-985d-4f0d-b806-1a58464d7683",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "effectiveScopes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"scopes\": [\n      \"string\",\n      \"st\"\n    ],\n    \"allowedOperationIds\": [\n      \"strin\",\n      \"string\"\n    ],\n    \"isParentOrg\": false\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1980-09-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8265,\n        5977\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2289,\n          4383\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e282f8cc-459c-4edb-9b2f-32faa6c56b52",
+    "name": "Openpath API Documentation auth orgs/effectiveScopes API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

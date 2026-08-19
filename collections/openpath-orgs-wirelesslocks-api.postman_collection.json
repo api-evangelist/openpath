@@ -1,0 +1,1123 @@
+{
+  "item": [
+    {
+      "id": "35a08eb5-7965-49d1-ba09-191bd392af07",
+      "name": "orgs/wirelessLocks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f9ca3d7f-5849-4d10-9cd3-78d5f3df9fac",
+          "name": "List all wireless locks",
+          "request": {
+            "name": "List all wireless locks",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLocks",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8a294828-074b-4aef-a5c6-4b5edb56d809",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 822,\n  \"filteredCount\": 912,\n  \"data\": [\n    {\n      \"id\": 6426.881051881684,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"model\": \"string\",\n      \"serialNumber\": \"string\",\n      \"idExt\": \"string\",\n      \"lastConnectedAt\": \"1986-04-22\",\n      \"doorFileLastSyncedAt\": \"2006-10-23\",\n      \"auditsLastSyncedAt\": \"1977-01-11\",\n      \"linkId\": \"string\",\n      \"config\": {\n        \"battV\": {\n          \"main\": \"string\",\n          \"li\": \"string\"\n        },\n        \"fwVer\": {\n          \"lock\": \"string\",\n          \"main\": \"string\",\n          \"mainBl\": \"string\",\n          \"credRdr\": \"string\",\n          \"credRdrBl\": \"string\",\n          \"ble\": \"string\",\n          \"wifi\": \"string\",\n          \"macAdr\": \"string\",\n          \"recoveryFwVer\": \"string\"\n        },\n        \"lockPrmtrs\": {\n          \"name\": \"string\",\n          \"type\": \"apt\",\n          \"relock\": 14,\n          \"lockId\": 9117,\n          \"doorProp\": 92,\n          \"ada\": 163,\n          \"firstManIn\": 0,\n          \"battFail\": \"asIs\",\n          \"blinkIntLed\": \"T\",\n          \"rapidBlink\": \"F\",\n          \"dstEnable\": 0,\n          \"dstStart\": \"string\",\n          \"dstEnd\": \"string\",\n          \"rtcTime\": \"string\",\n          \"wifiAlertEn\": \"F\",\n          \"wifiAlertSel\": [\n            \"string\",\n            \"string\"\n          ],\n          \"fwUrl\": \"string\",\n          \"fwDwnldTm\": \"string\",\n          \"fwImplTm\": \"string\",\n          \"dpsEn\": \"F\",\n          \"bleCredEn\": \"T\",\n          \"bleCredRng\": \"short\",\n          \"blePerf\": \"max\",\n          \"invCrdAudEn\": \"T\",\n          \"wifiDwnldRtyTmIntv\": 538,\n          \"wifiDwnldRtyCnt\": 51,\n          \"auditIDEn\": \"T\",\n          \"blkCnstr\": \"F\",\n          \"mdl\": \"string\",\n          \"lckMode\": \"string\",\n          \"lckSn\": \"string\",\n          \"mainSn\": \"string\",\n          \"hwVer\": \"string\",\n          \"daysInUse\": 3985,\n          \"mfgDt\": \"string\",\n          \"dbDwnldTm\": \"string\",\n          \"fwImpTm\": \"string\",\n          \"nxtDbVerTS\": \"string\",\n          \"hwCfg\": \"string\",\n          \"dbUpdateStatus\": 9214,\n          \"wtyAct\": \"string\",\n          \"numCycles\": 5163\n        },\n        \"rdrPrmtrs\": {\n          \"bprEn\": \"T\",\n          \"rdrSense\": \"norm\",\n          \"proxConfHID\": \"F\",\n          \"proxConfGECASI\": \"T\",\n          \"proxConfGE4001\": \"F\",\n          \"proxConfGE4002\": \"T\",\n          \"proxConfAWID\": \"F\",\n          \"uid14443\": \"T\",\n          \"mi14443\": \"T\",\n          \"mip14443\": \"T\",\n          \"noc14443\": \"T\",\n          \"uid15693\": \"T\",\n          \"iClsUID40b\": \"T\",\n          \"iClsFrmt\": \"disbld\",\n          \"daysInUse\": 9553,\n          \"sn\": \"string\",\n          \"hwVer\": \"string\",\n          \"mfgDt\": \"string\",\n          \"configCrdPrsntd\": \"F\",\n          \"customKeyPrsntd\": \"F\"\n        },\n        \"dvcProfile\": {\n          \"baseType\": \"string\",\n          \"ext\": [\n            {\n              \"key\": \"string\",\n              \"value\": 1\n            },\n            {\n              \"key\": \"string\",\n              \"value\": 0\n            }\n          ]\n        }\n      },\n      \"status\": {\n        \"lockStatus\": {\n          \"currentLockState\": \"string\"\n        },\n        \"sensorStatus\": {\n          \"locked\": \"T\",\n          \"auxPosition\": \"F\",\n          \"alarmPosition\": \"F\",\n          \"lockClutched\": \"T\",\n          \"primaryBatteryStatus\": \"string\",\n          \"rtcBatteryStatus\": \"string\",\n          \"rtccStatus\": \"string\",\n          \"doorOpen\": \"F\",\n          \"ipbActive\": \"F\",\n          \"rexActive\": \"T\",\n          \"renActive\": \"T\",\n          \"relActive\": \"F\",\n          \"deadBoltExtended\": \"T\",\n          \"keyOverrideActive\": \"T\",\n          \"fdrActive\": \"F\",\n          \"tamperOpen\": \"F\",\n          \"magTamperDetected\": \"T\",\n          \"rdrTamperDetected\": \"F\",\n          \"ttl1Active\": \"F\",\n          \"ttl2Active\": \"F\",\n          \"bprActive\": \"F\",\n          \"ledActive\": \"T\"\n        }\n      },\n      \"noTourLockId\": 32954,\n      \"commStatus\": \"string\",\n      \"batteryLevel\": 7761.858358001229,\n      \"isOffline\": true,\n      \"thirdPartyDeviceId\": 5884,\n      \"thirdPartyDevice\": {\n        \"id\": 5106,\n        \"assignedOrg\": {\n          \"id\": 9286,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1975-12-08\",\n        \"updatedAt\": \"2005-05-22\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 6239.211726302274,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1986-09-08\",\n          \"updatedAt\": \"1982-11-07\"\n        }\n      },\n      \"acuId\": 6667,\n      \"acu\": {\n        \"id\": 7899,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 5430.741972507204,\n          \"allowedDistanceMeters\": 9984.980361529511,\n          \"scaleFactor\": 1295.6377682110199,\n          \"locationMeasurement\": {\n            \"id\": 7039.220524515802,\n            \"longitude\": 9542.597359407411,\n            \"latitude\": 971.7838111182331,\n            \"accuracyMeters\": 4762.687580341168,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 9687.290965374536,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"virtualAcuId\": 1953,\n      \"wirelessLockGatewayId\": 537,\n      \"wirelessLockGateway\": {\n        \"id\": 6505.285830702791,\n        \"name\": \"string\",\n        \"manufacturer\": \"string\",\n        \"serialNumber\": \"string\",\n        \"model\": \"string\",\n        \"lastConnectedAt\": \"2011-03-02\",\n        \"lastDisconnectedAt\": \"2013-11-10\",\n        \"isLive\": false,\n        \"idExt\": \"string\",\n        \"authKey\": \"string\",\n        \"acuId\": 4693,\n        \"acu\": {\n          \"id\": 3421,\n          \"opal\": \"string\",\n          \"locationRestriction\": {\n            \"id\": 5816.633169316528,\n            \"allowedDistanceMeters\": 7081.736564561657,\n            \"scaleFactor\": 1670.4764803355754,\n            \"locationMeasurement\": {\n              \"id\": 4735.336535737444,\n              \"longitude\": 463.5845823618867,\n              \"latitude\": 6663.578113037647,\n              \"accuracyMeters\": 3840.7753943553325,\n              \"timeZoneId\": \"string\",\n              \"locationMeasurementSourceType\": {\n                \"id\": 5437.222642657726,\n                \"name\": \"string\",\n                \"code\": \"string\"\n              },\n              \"rawData\": {}\n            }\n          }\n        },\n        \"config\": {},\n        \"thirdPartyDeviceId\": 6408,\n        \"thirdPartyDevice\": {\n          \"id\": 7843,\n          \"assignedOrg\": {\n            \"id\": 6892,\n            \"name\": \"string\"\n          },\n          \"serialNumber\": \"string\",\n          \"isOpSourced\": true,\n          \"orderName\": \"string\",\n          \"createdAt\": \"1958-03-07\",\n          \"updatedAt\": \"1972-08-18\",\n          \"thirdPartyDeviceType\": {\n            \"id\": 8281.274379322178,\n            \"manufacturerName\": \"string\",\n            \"hardwareModel\": \"string\",\n            \"description\": \"string\",\n            \"dbModelName\": \"string\",\n            \"createdAt\": \"1951-07-11\",\n            \"updatedAt\": \"1996-08-13\"\n          }\n        },\n        \"wirelessLockCount\": 0,\n        \"wirelessLockProvider\": {\n          \"id\": 9735.150372564516,\n          \"siteIdExt\": \"string\",\n          \"siteAuthKey\": \"string\",\n          \"createdAt\": \"1987-11-29\",\n          \"updatedAt\": \"1953-12-23\",\n          \"orgId\": 1090.0898242213498,\n          \"wirelessLockProviderType\": {\n            \"id\": 9678.640508482244,\n            \"name\": \"string\"\n          }\n        },\n        \"wirelessLockProviderId\": 5053\n      },\n      \"wirelessLockProviderId\": 2074,\n      \"wirelessGatewayId\": 9468,\n      \"wirelessGateway\": {\n        \"id\": 4503.196315111946,\n        \"name\": \"string\",\n        \"manufacturer\": \"string\",\n        \"serialNumber\": \"string\",\n        \"model\": \"string\",\n        \"lastConnectedAt\": \"1979-09-16\",\n        \"lastDisconnectedAt\": \"1971-10-12\",\n        \"isLive\": false,\n        \"idExt\": \"string\",\n        \"authKey\": \"string\",\n        \"acuId\": 7404,\n        \"acu\": {\n          \"id\": 5971,\n          \"opal\": \"string\",\n          \"locationRestriction\": {\n            \"id\": 5168.272705368746,\n            \"allowedDistanceMeters\": 9142.903695350737,\n            \"scaleFactor\": 1903.6863579002872,\n            \"locationMeasurement\": {\n              \"id\": 6744.190178250694,\n              \"longitude\": 527.989712059298,\n              \"latitude\": 7817.989709369184,\n              \"accuracyMeters\": 7314.944139268051,\n              \"timeZoneId\": \"string\",\n              \"locationMeasurementSourceType\": {\n                \"id\": 6444.982025411954,\n                \"name\": \"string\",\n                \"code\": \"string\"\n              },\n              \"rawData\": {}\n            }\n          }\n        },\n        \"config\": {},\n        \"thirdPartyDeviceId\": 439,\n        \"thirdPartyDevice\": {\n          \"id\": 6597,\n          \"assignedOrg\": {\n            \"id\": 5826,\n            \"name\": \"string\"\n          },\n          \"serialNumber\": \"string\",\n          \"isOpSourced\": false,\n          \"orderName\": \"string\",\n          \"createdAt\": \"2024-09-26\",\n          \"updatedAt\": \"1950-09-13\",\n          \"thirdPartyDeviceType\": {\n            \"id\": 5981.978843007406,\n            \"manufacturerName\": \"string\",\n            \"hardwareModel\": \"string\",\n            \"description\": \"string\",\n            \"dbModelName\": \"string\",\n            \"createdAt\": \"1972-07-05\",\n            \"updatedAt\": \"1990-04-17\"\n          }\n        },\n        \"wirelessLockCount\": 0,\n        \"wirelessLockProvider\": {\n          \"id\": 5474.403483876185,\n          \"siteIdExt\": \"string\",\n          \"siteAuthKey\": \"string\",\n          \"createdAt\": \"1980-08-20\",\n          \"updatedAt\": \"1964-05-19\",\n          \"orgId\": 539.6080043890183,\n          \"wirelessLockProviderType\": {\n            \"id\": 9518.583534355274,\n            \"name\": \"string\"\n          }\n        },\n        \"wirelessLockProviderId\": 7327\n      },\n      \"wirelessLockProvider\": {\n        \"id\": 4858.073784379121,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1951-11-12\",\n        \"updatedAt\": \"2021-12-05\",\n        \"orgId\": 7233.08164249955,\n        \"wirelessLockProviderType\": {\n          \"id\": 7495.564028141307,\n          \"name\": \"string\"\n        }\n      },\n      \"entry\": {\n        \"id\": 600.4122676783063,\n        \"name\": \"string\",\n        \"zone\": {\n          \"id\": 3583.6556563050904,\n          \"name\": \"string\",\n          \"site\": {\n            \"id\": 3869.5359381146645,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"allegionWirelessLock\": {\n        \"id\": 2001.1017072316206,\n        \"auditsLastSyncedAt\": \"2000-02-21\",\n        \"batteryLevel\": 7068.433246695026,\n        \"commStatus\": \"string\",\n        \"config\": {\n          \"battV\": {\n            \"main\": \"string\",\n            \"li\": \"string\"\n          },\n          \"fwVer\": {\n            \"lock\": \"string\",\n            \"main\": \"string\",\n            \"mainBl\": \"string\",\n            \"credRdr\": \"string\",\n            \"credRdrBl\": \"string\",\n            \"ble\": \"string\",\n            \"wifi\": \"string\",\n            \"macAdr\": \"string\",\n            \"recoveryFwVer\": \"string\"\n          },\n          \"lockPrmtrs\": {\n            \"name\": \"string\",\n            \"type\": \"prvcy\",\n            \"relock\": 14,\n            \"lockId\": 6695,\n            \"doorProp\": 116,\n            \"ada\": 240,\n            \"firstManIn\": 0,\n            \"battFail\": \"sec\",\n            \"blinkIntLed\": \"T\",\n            \"rapidBlink\": \"F\",\n            \"dstEnable\": 0,\n            \"dstStart\": \"string\",\n            \"dstEnd\": \"string\",\n            \"rtcTime\": \"string\",\n            \"wifiAlertEn\": \"F\",\n            \"wifiAlertSel\": [\n              \"string\",\n              \"string\"\n            ],\n            \"fwUrl\": \"string\",\n            \"fwDwnldTm\": \"string\",\n            \"fwImplTm\": \"string\",\n            \"dpsEn\": \"T\",\n            \"bleCredEn\": \"T\",\n            \"bleCredRng\": \"short\",\n            \"blePerf\": \"norm\",\n            \"invCrdAudEn\": \"T\",\n            \"wifiDwnldRtyTmIntv\": 149,\n            \"wifiDwnldRtyCnt\": 235,\n            \"auditIDEn\": \"F\",\n            \"blkCnstr\": \"T\",\n            \"mdl\": \"string\",\n            \"lckMode\": \"string\",\n            \"lckSn\": \"string\",\n            \"mainSn\": \"string\",\n            \"hwVer\": \"string\",\n            \"daysInUse\": 1695,\n            \"mfgDt\": \"string\",\n            \"dbDwnldTm\": \"string\",\n            \"fwImpTm\": \"string\",\n            \"nxtDbVerTS\": \"string\",\n            \"hwCfg\": \"string\",\n            \"dbUpdateStatus\": 7069,\n            \"wtyAct\": \"string\",\n            \"numCycles\": 1712\n          },\n          \"rdrPrmtrs\": {\n            \"bprEn\": \"F\",\n            \"rdrSense\": \"high\",\n            \"proxConfHID\": \"T\",\n            \"proxConfGECASI\": \"T\",\n            \"proxConfGE4001\": \"F\",\n            \"proxConfGE4002\": \"T\",\n            \"proxConfAWID\": \"F\",\n            \"uid14443\": \"T\",\n            \"mi14443\": \"F\",\n            \"mip14443\": \"T\",\n            \"noc14443\": \"T\",\n            \"uid15693\": \"F\",\n            \"iClsUID40b\": \"F\",\n            \"iClsFrmt\": \"disbld\",\n            \"daysInUse\": 6946,\n            \"sn\": \"string\",\n            \"hwVer\": \"string\",\n            \"mfgDt\": \"string\",\n            \"configCrdPrsntd\": \"T\",\n            \"customKeyPrsntd\": \"F\"\n          },\n          \"dvcProfile\": {\n            \"baseType\": \"string\",\n            \"ext\": [\n              {\n                \"key\": \"string\",\n                \"value\": 1\n              },\n              {\n                \"key\": \"string\",\n                \"value\": 0\n              }\n            ]\n          }\n        },\n        \"doorFileLastSyncedAt\": \"1993-10-02\",\n        \"idExt\": \"string\",\n        \"linkId\": \"string\",\n        \"noTourLockId\": 116.46038597685427,\n        \"status\": {\n          \"lockStatus\": {\n            \"currentLockState\": \"string\"\n          },\n          \"sensorStatus\": {\n            \"locked\": \"T\",\n            \"auxPosition\": \"T\",\n            \"alarmPosition\": \"F\",\n            \"lockClutched\": \"T\",\n            \"primaryBatteryStatus\": \"string\",\n            \"rtcBatteryStatus\": \"string\",\n            \"rtccStatus\": \"string\",\n            \"doorOpen\": \"T\",\n            \"ipbActive\": \"T\",\n            \"rexActive\": \"T\",\n            \"renActive\": \"F\",\n            \"relActive\": \"T\",\n            \"deadBoltExtended\": \"T\",\n            \"keyOverrideActive\": \"T\",\n            \"fdrActive\": \"T\",\n            \"tamperOpen\": \"F\",\n            \"magTamperDetected\": \"T\",\n            \"rdrTamperDetected\": \"T\",\n            \"ttl1Active\": \"T\",\n            \"ttl2Active\": \"T\",\n            \"bprActive\": \"F\",\n            \"ledActive\": \"T\"\n          }\n        }\n      },\n      \"avigilonWirelessLock\": {\n        \"id\": 1043.6272641363641,\n        \"dstEnabled\": false,\n        \"formFactor\": \"string\",\n        \"keypadTimeout\": 2056,\n        \"keypadBrightness\": 8663,\n        \"timeOffset\": 3019,\n        \"networkConfig\": {},\n        \"firmwareVersions\": {},\n        \"serialNumber\": \"string\"\n      },\n      \"assaAbloyWirelessLock\": {\n        \"id\": 1040.4279215547174,\n        \"wirelessLockId\": 1653,\n        \"deviceGroupId\": \"string\",\n        \"config\": {\n          \"lockPrmtrs\": {},\n          \"rdrPrmtrs\": {},\n          \"isAjarEnabled\": true,\n          \"isForcedOpenEnabled\": false\n        }\n      }\n    },\n    {\n      \"id\": 7926.553719571285,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"model\": \"string\",\n      \"serialNumber\": \"string\",\n      \"idExt\": \"string\",\n      \"lastConnectedAt\": \"1949-09-04\",\n      \"doorFileLastSyncedAt\": \"1964-05-15\",\n      \"auditsLastSyncedAt\": \"2020-12-02\",\n      \"linkId\": \"string\",\n      \"config\": {\n        \"battV\": {\n          \"main\": \"string\",\n          \"li\": \"string\"\n        },\n        \"fwVer\": {\n          \"lock\": \"string\",\n          \"main\": \"string\",\n          \"mainBl\": \"string\",\n          \"credRdr\": \"string\",\n          \"credRdrBl\": \"string\",\n          \"ble\": \"string\",\n          \"wifi\": \"string\",\n          \"macAdr\": \"string\",\n          \"recoveryFwVer\": \"string\"\n        },\n        \"lockPrmtrs\": {\n          \"name\": \"string\",\n          \"type\": \"strm\",\n          \"relock\": 4,\n          \"lockId\": 1765,\n          \"doorProp\": 71,\n          \"ada\": 80,\n          \"firstManIn\": 1,\n          \"battFail\": \"sec\",\n          \"blinkIntLed\": \"F\",\n          \"rapidBlink\": \"F\",\n          \"dstEnable\": 0,\n          \"dstStart\": \"string\",\n          \"dstEnd\": \"string\",\n          \"rtcTime\": \"string\",\n          \"wifiAlertEn\": \"F\",\n          \"wifiAlertSel\": [\n            \"string\",\n            \"string\"\n          ],\n          \"fwUrl\": \"string\",\n          \"fwDwnldTm\": \"string\",\n          \"fwImplTm\": \"string\",\n          \"dpsEn\": \"T\",\n          \"bleCredEn\": \"F\",\n          \"bleCredRng\": \"short\",\n          \"blePerf\": \"max\",\n          \"invCrdAudEn\": \"F\",\n          \"wifiDwnldRtyTmIntv\": 1170,\n          \"wifiDwnldRtyCnt\": 39,\n          \"auditIDEn\": \"T\",\n          \"blkCnstr\": \"F\",\n          \"mdl\": \"string\",\n          \"lckMode\": \"string\",\n          \"lckSn\": \"string\",\n          \"mainSn\": \"string\",\n          \"hwVer\": \"string\",\n          \"daysInUse\": 5281,\n          \"mfgDt\": \"string\",\n          \"dbDwnldTm\": \"string\",\n          \"fwImpTm\": \"string\",\n          \"nxtDbVerTS\": \"string\",\n          \"hwCfg\": \"string\",\n          \"dbUpdateStatus\": 509,\n          \"wtyAct\": \"string\",\n          \"numCycles\": 2423\n        },\n        \"rdrPrmtrs\": {\n          \"bprEn\": \"F\",\n          \"rdrSense\": \"max\",\n          \"proxConfHID\": \"F\",\n          \"proxConfGECASI\": \"T\",\n          \"proxConfGE4001\": \"T\",\n          \"proxConfGE4002\": \"F\",\n          \"proxConfAWID\": \"T\",\n          \"uid14443\": \"F\",\n          \"mi14443\": \"F\",\n          \"mip14443\": \"F\",\n          \"noc14443\": \"T\",\n          \"uid15693\": \"F\",\n          \"iClsUID40b\": \"T\",\n          \"iClsFrmt\": \"64bCSN\",\n          \"daysInUse\": 2087,\n          \"sn\": \"string\",\n          \"hwVer\": \"string\",\n          \"mfgDt\": \"string\",\n          \"configCrdPrsntd\": \"T\",\n          \"customKeyPrsntd\": \"T\"\n        },\n        \"dvcProfile\": {\n          \"baseType\": \"string\",\n          \"ext\": [\n            {\n              \"key\": \"string\",\n              \"value\": 0\n            },\n            {\n              \"key\": \"string\",\n              \"value\": 1\n            }\n          ]\n        }\n      },\n      \"status\": {\n        \"lockStatus\": {\n          \"currentLockState\": \"string\"\n        },\n        \"sensorStatus\": {\n          \"locked\": \"F\",\n          \"auxPosition\": \"T\",\n          \"alarmPosition\": \"F\",\n          \"lockClutched\": \"T\",\n          \"primaryBatteryStatus\": \"string\",\n          \"rtcBatteryStatus\": \"string\",\n          \"rtccStatus\": \"string\",\n          \"doorOpen\": \"F\",\n          \"ipbActive\": \"T\",\n          \"rexActive\": \"T\",\n          \"renActive\": \"F\",\n          \"relActive\": \"T\",\n          \"deadBoltExtended\": \"T\",\n          \"keyOverrideActive\": \"F\",\n          \"fdrActive\": \"T\",\n          \"tamperOpen\": \"T\",\n          \"magTamperDetected\": \"T\",\n          \"rdrTamperDetected\": \"T\",\n          \"ttl1Active\": \"T\",\n          \"ttl2Active\": \"T\",\n          \"bprActive\": \"F\",\n          \"ledActive\": \"T\"\n        }\n      },\n      \"noTourLockId\": 43670,\n      \"commStatus\": \"string\",\n      \"batteryLevel\": 133.3397640434475,\n      \"isOffline\": true,\n      \"thirdPartyDeviceId\": 1738,\n      \"thirdPartyDevice\": {\n        \"id\": 3588,\n        \"assignedOrg\": {\n          \"id\": 9401,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"2016-12-29\",\n        \"updatedAt\": \"1997-04-15\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 7562.680217447571,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1975-04-10\",\n          \"updatedAt\": \"1972-12-24\"\n        }\n      },\n      \"acuId\": 7397,\n      \"acu\": {\n        \"id\": 5402,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 1340.9191711646463,\n          \"allowedDistanceMeters\": 8829.757433524039,\n          \"scaleFactor\": 9079.030298736587,\n          \"locationMeasurement\": {\n            \"id\": 4785.330105281241,\n            \"longitude\": 2463.0221320769683,\n            \"latitude\": 2534.6891126691717,\n            \"accuracyMeters\": 1637.393678979453,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 3429.5786951186337,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"virtualAcuId\": 5547,\n      \"wirelessLockGatewayId\": 8023,\n      \"wirelessLockGateway\": {\n        \"id\": 5362.888512490959,\n        \"name\": \"string\",\n        \"manufacturer\": \"string\",\n        \"serialNumber\": \"string\",\n        \"model\": \"string\",\n        \"lastConnectedAt\": \"1981-09-30\",\n        \"lastDisconnectedAt\": \"1953-03-21\",\n        \"isLive\": true,\n        \"idExt\": \"string\",\n        \"authKey\": \"string\",\n        \"acuId\": 789,\n        \"acu\": {\n          \"id\": 8908,\n          \"opal\": \"string\",\n          \"locationRestriction\": {\n            \"id\": 3018.855683207026,\n            \"allowedDistanceMeters\": 3498.665124037148,\n            \"scaleFactor\": 1274.8882134222295,\n            \"locationMeasurement\": {\n              \"id\": 1044.0450451736406,\n              \"longitude\": 2165.5741164366837,\n              \"latitude\": 5431.775782141362,\n              \"accuracyMeters\": 5571.650563781877,\n              \"timeZoneId\": \"string\",\n              \"locationMeasurementSourceType\": {\n                \"id\": 8663.778701876323,\n                \"name\": \"string\",\n                \"code\": \"string\"\n              },\n              \"rawData\": {}\n            }\n          }\n        },\n        \"config\": {},\n        \"thirdPartyDeviceId\": 8665,\n        \"thirdPartyDevice\": {\n          \"id\": 29,\n          \"assignedOrg\": {\n            \"id\": 1799,\n            \"name\": \"string\"\n          },\n          \"serialNumber\": \"string\",\n          \"isOpSourced\": false,\n          \"orderName\": \"string\",\n          \"createdAt\": \"1980-09-15\",\n          \"updatedAt\": \"1956-11-11\",\n          \"thirdPartyDeviceType\": {\n            \"id\": 6314.960946340624,\n            \"manufacturerName\": \"string\",\n            \"hardwareModel\": \"string\",\n            \"description\": \"string\",\n            \"dbModelName\": \"string\",\n            \"createdAt\": \"1992-07-29\",\n            \"updatedAt\": \"1997-11-22\"\n          }\n        },\n        \"wirelessLockCount\": 0,\n        \"wirelessLockProvider\": {\n          \"id\": 1304.8651228772956,\n          \"siteIdExt\": \"string\",\n          \"siteAuthKey\": \"string\",\n          \"createdAt\": \"1965-11-25\",\n          \"updatedAt\": \"1979-07-25\",\n          \"orgId\": 3593.760484951627,\n          \"wirelessLockProviderType\": {\n            \"id\": 6342.814728984518,\n            \"name\": \"string\"\n          }\n        },\n        \"wirelessLockProviderId\": 8400\n      },\n      \"wirelessLockProviderId\": 5230,\n      \"wirelessGatewayId\": 7270,\n      \"wirelessGateway\": {\n        \"id\": 1711.54692223221,\n        \"name\": \"string\",\n        \"manufacturer\": \"string\",\n        \"serialNumber\": \"string\",\n        \"model\": \"string\",\n        \"lastConnectedAt\": \"1971-06-08\",\n        \"lastDisconnectedAt\": \"1984-12-02\",\n        \"isLive\": false,\n        \"idExt\": \"string\",\n        \"authKey\": \"string\",\n        \"acuId\": 6787,\n        \"acu\": {\n          \"id\": 4094,\n          \"opal\": \"string\",\n          \"locationRestriction\": {\n            \"id\": 333.8979664636943,\n            \"allowedDistanceMeters\": 1765.3672062285564,\n            \"scaleFactor\": 7639.2556226924025,\n            \"locationMeasurement\": {\n              \"id\": 4780.006729077352,\n              \"longitude\": 2268.42722462662,\n              \"latitude\": 2497.496736398621,\n              \"accuracyMeters\": 5749.771597201106,\n              \"timeZoneId\": \"string\",\n              \"locationMeasurementSourceType\": {\n                \"id\": 1732.2140225260275,\n                \"name\": \"string\",\n                \"code\": \"string\"\n              },\n              \"rawData\": {}\n            }\n          }\n        },\n        \"config\": {},\n        \"thirdPartyDeviceId\": 283,\n        \"thirdPartyDevice\": {\n          \"id\": 2139,\n          \"assignedOrg\": {\n            \"id\": 7791,\n            \"name\": \"string\"\n          },\n          \"serialNumber\": \"string\",\n          \"isOpSourced\": true,\n          \"orderName\": \"string\",\n          \"createdAt\": \"2023-02-19\",\n          \"updatedAt\": \"1950-07-17\",\n          \"thirdPartyDeviceType\": {\n            \"id\": 9071.349187367166,\n            \"manufacturerName\": \"string\",\n            \"hardwareModel\": \"string\",\n            \"description\": \"string\",\n            \"dbModelName\": \"string\",\n            \"createdAt\": \"1975-09-27\",\n            \"updatedAt\": \"2023-08-01\"\n          }\n        },\n        \"wirelessLockCount\": 0,\n        \"wirelessLockProvider\": {\n          \"id\": 1593.079219265301,\n          \"siteIdExt\": \"string\",\n          \"siteAuthKey\": \"string\",\n          \"createdAt\": \"2013-11-22\",\n          \"updatedAt\": \"1970-11-25\",\n          \"orgId\": 1965.265490380076,\n          \"wirelessLockProviderType\": {\n            \"id\": 7605.845615407503,\n            \"name\": \"string\"\n          }\n        },\n        \"wirelessLockProviderId\": 8179\n      },\n      \"wirelessLockProvider\": {\n        \"id\": 3083.271560694273,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1954-04-03\",\n        \"updatedAt\": \"1974-12-20\",\n        \"orgId\": 7298.54492269548,\n        \"wirelessLockProviderType\": {\n          \"id\": 8710.468814362124,\n          \"name\": \"string\"\n        }\n      },\n      \"entry\": {\n        \"id\": 814.3626332594044,\n        \"name\": \"string\",\n        \"zone\": {\n          \"id\": 9998.102262255898,\n          \"name\": \"string\",\n          \"site\": {\n            \"id\": 7334.047578324895,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"allegionWirelessLock\": {\n        \"id\": 4544.691970070164,\n        \"auditsLastSyncedAt\": \"2014-11-29\",\n        \"batteryLevel\": 910.7379328739152,\n        \"commStatus\": \"string\",\n        \"config\": {\n          \"battV\": {\n            \"main\": \"string\",\n            \"li\": \"string\"\n          },\n          \"fwVer\": {\n            \"lock\": \"string\",\n            \"main\": \"string\",\n            \"mainBl\": \"string\",\n            \"credRdr\": \"string\",\n            \"credRdrBl\": \"string\",\n            \"ble\": \"string\",\n            \"wifi\": \"string\",\n            \"macAdr\": \"string\",\n            \"recoveryFwVer\": \"string\"\n          },\n          \"lockPrmtrs\": {\n            \"name\": \"string\",\n            \"type\": \"office\",\n            \"relock\": 1,\n            \"lockId\": 8875,\n            \"doorProp\": 101,\n            \"ada\": 81,\n            \"firstManIn\": 1,\n            \"battFail\": \"asIs\",\n            \"blinkIntLed\": \"T\",\n            \"rapidBlink\": \"F\",\n            \"dstEnable\": 0,\n            \"dstStart\": \"string\",\n            \"dstEnd\": \"string\",\n            \"rtcTime\": \"string\",\n            \"wifiAlertEn\": \"F\",\n            \"wifiAlertSel\": [\n              \"string\",\n              \"string\"\n            ],\n            \"fwUrl\": \"string\",\n            \"fwDwnldTm\": \"string\",\n            \"fwImplTm\": \"string\",\n            \"dpsEn\": \"T\",\n            \"bleCredEn\": \"T\",\n            \"bleCredRng\": \"short\",\n            \"blePerf\": \"norm\",\n            \"invCrdAudEn\": \"T\",\n            \"wifiDwnldRtyTmIntv\": 1212,\n            \"wifiDwnldRtyCnt\": 245,\n            \"auditIDEn\": \"F\",\n            \"blkCnstr\": \"T\",\n            \"mdl\": \"string\",\n            \"lckMode\": \"string\",\n            \"lckSn\": \"string\",\n            \"mainSn\": \"string\",\n            \"hwVer\": \"string\",\n            \"daysInUse\": 9787,\n            \"mfgDt\": \"string\",\n            \"dbDwnldTm\": \"string\",\n            \"fwImpTm\": \"string\",\n            \"nxtDbVerTS\": \"string\",\n            \"hwCfg\": \"string\",\n            \"dbUpdateStatus\": 8915,\n            \"wtyAct\": \"string\",\n            \"numCycles\": 1394\n          },\n          \"rdrPrmtrs\": {\n            \"bprEn\": \"T\",\n            \"rdrSense\": \"high\",\n            \"proxConfHID\": \"T\",\n            \"proxConfGECASI\": \"F\",\n            \"proxConfGE4001\": \"T\",\n            \"proxConfGE4002\": \"F\",\n            \"proxConfAWID\": \"F\",\n            \"uid14443\": \"F\",\n            \"mi14443\": \"F\",\n            \"mip14443\": \"F\",\n            \"noc14443\": \"T\",\n            \"uid15693\": \"T\",\n            \"iClsUID40b\": \"T\",\n            \"iClsFrmt\": \"disbld\",\n            \"daysInUse\": 4700,\n            \"sn\": \"string\",\n            \"hwVer\": \"string\",\n            \"mfgDt\": \"string\",\n            \"configCrdPrsntd\": \"F\",\n            \"customKeyPrsntd\": \"T\"\n          },\n          \"dvcProfile\": {\n            \"baseType\": \"string\",\n            \"ext\": [\n              {\n                \"key\": \"string\",\n                \"value\": 1\n              },\n              {\n                \"key\": \"string\",\n                \"value\": 0\n              }\n            ]\n          }\n        },\n        \"doorFileLastSyncedAt\": \"1968-05-29\",\n        \"idExt\": \"string\",\n        \"linkId\": \"string\",\n        \"noTourLockId\": 5671.431500785969,\n        \"status\": {\n          \"lockStatus\": {\n            \"currentLockState\": \"string\"\n          },\n          \"sensorStatus\": {\n            \"locked\": \"T\",\n            \"auxPosition\": \"F\",\n            \"alarmPosition\": \"T\",\n            \"lockClutched\": \"F\",\n            \"primaryBatteryStatus\": \"string\",\n            \"rtcBatteryStatus\": \"string\",\n            \"rtccStatus\": \"string\",\n            \"doorOpen\": \"F\",\n            \"ipbActive\": \"F\",\n            \"rexActive\": \"T\",\n            \"renActive\": \"T\",\n            \"relActive\": \"T\",\n            \"deadBoltExtended\": \"T\",\n            \"keyOverrideActive\": \"F\",\n            \"fdrActive\": \"F\",\n            \"tamperOpen\": \"T\",\n            \"magTamperDetected\": \"F\",\n            \"rdrTamperDetected\": \"F\",\n            \"ttl1Active\": \"F\",\n            \"ttl2Active\": \"F\",\n            \"bprActive\": \"T\",\n            \"ledActive\": \"F\"\n          }\n        }\n      },\n      \"avigilonWirelessLock\": {\n        \"id\": 1760.0980292079716,\n        \"dstEnabled\": false,\n        \"formFactor\": \"string\",\n        \"keypadTimeout\": 7488,\n        \"keypadBrightness\": 1310,\n        \"timeOffset\": 1713,\n        \"networkConfig\": {},\n        \"firmwareVersions\": {},\n        \"serialNumber\": \"string\"\n      },\n      \"assaAbloyWirelessLock\": {\n        \"id\": 909.6548422866724,\n        \"wirelessLockId\": 5991,\n        \"deviceGroupId\": \"string\",\n        \"config\": {\n          \"lockPrmtrs\": {},\n          \"rdrPrmtrs\": {},\n          \"isAjarEnabled\": true,\n          \"isForcedOpenEnabled\": false\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2009-10-03\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6334,\n        4785\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3870,\n          6433\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "60d3696d-67bb-491b-91b3-2f3b18732d1a",
+          "name": "Create a wireless lock ",
+          "request": {
+            "name": "Create a wireless lock ",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessLock",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"idExt\": \"<string>\",\n  \"linkId\": \"<string>\",\n  \"commStatus\": \"<string>\",\n  \"batteryLevel\": \"<number>\",\n  \"config\": {\n    \"battV\": {\n      \"main\": \"<string>\",\n      \"li\": \"<string>\"\n    },\n    \"fwVer\": {\n      \"lock\": \"<string>\",\n      \"main\": \"<string>\",\n      \"mainBl\": \"<string>\",\n      \"credRdr\": \"<string>\",\n      \"credRdrBl\": \"<string>\",\n      \"ble\": \"<string>\",\n      \"wifi\": \"<string>\",\n      \"macAdr\": \"<string>\",\n      \"recoveryFwVer\": \"<string>\"\n    },\n    \"lockPrmtrs\": {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"relock\": \"<integer>\",\n      \"lockId\": \"<integer>\",\n      \"doorProp\": \"<integer>\",\n      \"ada\": \"<integer>\",\n      \"firstManIn\": \"<integer>\",\n      \"battFail\": \"<string>\",\n      \"blinkIntLed\": \"<string>\",\n      \"rapidBlink\": \"<string>\",\n      \"dstEnable\": \"<integer>\",\n      \"dstStart\": \"<string>\",\n      \"dstEnd\": \"<string>\",\n      \"rtcTime\": \"<string>\",\n      \"wifiAlertEn\": \"<string>\",\n      \"wifiAlertSel\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"fwUrl\": \"<string>\",\n      \"fwDwnldTm\": \"<string>\",\n      \"fwImplTm\": \"<string>\",\n      \"dpsEn\": \"<string>\",\n      \"bleCredEn\": \"<string>\",\n      \"bleCredRng\": \"<string>\",\n      \"blePerf\": \"<string>\",\n      \"invCrdAudEn\": \"<string>\",\n      \"wifiDwnldRtyTmIntv\": \"<integer>\",\n      \"wifiDwnldRtyCnt\": \"<integer>\",\n      \"auditIDEn\": \"<string>\",\n      \"blkCnstr\": \"<string>\",\n      \"mdl\": \"<string>\",\n      \"lckMode\": \"<string>\",\n      \"lckSn\": \"<string>\",\n      \"mainSn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"mfgDt\": \"<string>\",\n      \"dbDwnldTm\": \"<string>\",\n      \"fwImpTm\": \"<string>\",\n      \"nxtDbVerTS\": \"<string>\",\n      \"hwCfg\": \"<string>\",\n      \"dbUpdateStatus\": \"<integer>\",\n      \"wtyAct\": \"<string>\",\n      \"numCycles\": \"<integer>\"\n    },\n    \"rdrPrmtrs\": {\n      \"bprEn\": \"<string>\",\n      \"rdrSense\": \"<string>\",\n      \"proxConfHID\": \"<string>\",\n      \"proxConfGECASI\": \"<string>\",\n      \"proxConfGE4001\": \"<string>\",\n      \"proxConfGE4002\": \"<string>\",\n      \"proxConfAWID\": \"<string>\",\n      \"uid14443\": \"<string>\",\n      \"mi14443\": \"<string>\",\n      \"mip14443\": \"<string>\",\n      \"noc14443\": \"<string>\",\n      \"uid15693\": \"<string>\",\n      \"iClsUID40b\": \"<string>\",\n      \"iClsFrmt\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"sn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"mfgDt\": \"<string>\",\n      \"configCrdPrsntd\": \"<string>\",\n      \"customKeyPrsntd\": \"<string>\"\n    },\n    \"dvcProfile\": {\n      \"baseType\": \"<string>\",\n      \"ext\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        }\n      ]\n    }\n  },\n  \"signalQuality\": \"<string>\",\n  \"status\": {\n    \"lockStatus\": {\n      \"currentLockState\": \"<string>\"\n    },\n    \"sensorStatus\": {\n      \"locked\": \"<string>\",\n      \"auxPosition\": \"<string>\",\n      \"alarmPosition\": \"<string>\",\n      \"lockClutched\": \"<string>\",\n      \"primaryBatteryStatus\": \"<string>\",\n      \"rtcBatteryStatus\": \"<string>\",\n      \"rtccStatus\": \"<string>\",\n      \"doorOpen\": \"<string>\",\n      \"ipbActive\": \"<string>\",\n      \"rexActive\": \"<string>\",\n      \"renActive\": \"<string>\",\n      \"relActive\": \"<string>\",\n      \"deadBoltExtended\": \"<string>\",\n      \"keyOverrideActive\": \"<string>\",\n      \"fdrActive\": \"<string>\",\n      \"tamperOpen\": \"<string>\",\n      \"magTamperDetected\": \"<string>\",\n      \"rdrTamperDetected\": \"<string>\",\n      \"ttl1Active\": \"<string>\",\n      \"ttl2Active\": \"<string>\",\n      \"bprActive\": \"<string>\",\n      \"ledActive\": \"<string>\"\n    }\n  },\n  \"wirelessLockGatewayId\": \"<integer>\",\n  \"wirelessGatewayId\": \"<integer>\",\n  \"allegionWirelessLock\": {\n    \"idExt\": \"<string>\",\n    \"linkId\": \"<string>\",\n    \"commStatus\": \"<string>\",\n    \"batteryLevel\": \"<number>\",\n    \"config\": {\n      \"battV\": {\n        \"main\": \"<string>\",\n        \"li\": \"<string>\"\n      },\n      \"fwVer\": {\n        \"lock\": \"<string>\",\n        \"main\": \"<string>\",\n        \"mainBl\": \"<string>\",\n        \"credRdr\": \"<string>\",\n        \"credRdrBl\": \"<string>\",\n        \"ble\": \"<string>\",\n        \"wifi\": \"<string>\",\n        \"macAdr\": \"<string>\",\n        \"recoveryFwVer\": \"<string>\"\n      },\n      \"lockPrmtrs\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"relock\": \"<integer>\",\n        \"lockId\": \"<integer>\",\n        \"doorProp\": \"<integer>\",\n        \"ada\": \"<integer>\",\n        \"firstManIn\": \"<integer>\",\n        \"battFail\": \"<string>\",\n        \"blinkIntLed\": \"<string>\",\n        \"rapidBlink\": \"<string>\",\n        \"dstEnable\": \"<integer>\",\n        \"dstStart\": \"<string>\",\n        \"dstEnd\": \"<string>\",\n        \"rtcTime\": \"<string>\",\n        \"wifiAlertEn\": \"<string>\",\n        \"wifiAlertSel\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"fwUrl\": \"<string>\",\n        \"fwDwnldTm\": \"<string>\",\n        \"fwImplTm\": \"<string>\",\n        \"dpsEn\": \"<string>\",\n        \"bleCredEn\": \"<string>\",\n        \"bleCredRng\": \"<string>\",\n        \"blePerf\": \"<string>\",\n        \"invCrdAudEn\": \"<string>\",\n        \"wifiDwnldRtyTmIntv\": \"<integer>\",\n        \"wifiDwnldRtyCnt\": \"<integer>\",\n        \"auditIDEn\": \"<string>\",\n        \"blkCnstr\": \"<string>\",\n        \"mdl\": \"<string>\",\n        \"lckMode\": \"<string>\",\n        \"lckSn\": \"<string>\",\n        \"mainSn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"mfgDt\": \"<string>\",\n        \"dbDwnldTm\": \"<string>\",\n        \"fwImpTm\": \"<string>\",\n        \"nxtDbVerTS\": \"<string>\",\n        \"hwCfg\": \"<string>\",\n        \"dbUpdateStatus\": \"<integer>\",\n        \"wtyAct\": \"<string>\",\n        \"numCycles\": \"<integer>\"\n      },\n      \"rdrPrmtrs\": {\n        \"bprEn\": \"<string>\",\n        \"rdrSense\": \"<string>\",\n        \"proxConfHID\": \"<string>\",\n        \"proxConfGECASI\": \"<string>\",\n        \"proxConfGE4001\": \"<string>\",\n        \"proxConfGE4002\": \"<string>\",\n        \"proxConfAWID\": \"<string>\",\n        \"uid14443\": \"<string>\",\n        \"mi14443\": \"<string>\",\n        \"mip14443\": \"<string>\",\n        \"noc14443\": \"<string>\",\n        \"uid15693\": \"<string>\",\n        \"iClsUID40b\": \"<string>\",\n        \"iClsFrmt\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"sn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"mfgDt\": \"<string>\",\n        \"configCrdPrsntd\": \"<string>\",\n        \"customKeyPrsntd\": \"<string>\"\n      },\n      \"dvcProfile\": {\n        \"baseType\": \"<string>\",\n        \"ext\": [\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          },\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    \"status\": {\n      \"lockStatus\": {\n        \"currentLockState\": \"<string>\"\n      },\n      \"sensorStatus\": {\n        \"locked\": \"<string>\",\n        \"auxPosition\": \"<string>\",\n        \"alarmPosition\": \"<string>\",\n        \"lockClutched\": \"<string>\",\n        \"primaryBatteryStatus\": \"<string>\",\n        \"rtcBatteryStatus\": \"<string>\",\n        \"rtccStatus\": \"<string>\",\n        \"doorOpen\": \"<string>\",\n        \"ipbActive\": \"<string>\",\n        \"rexActive\": \"<string>\",\n        \"renActive\": \"<string>\",\n        \"relActive\": \"<string>\",\n        \"deadBoltExtended\": \"<string>\",\n        \"keyOverrideActive\": \"<string>\",\n        \"fdrActive\": \"<string>\",\n        \"tamperOpen\": \"<string>\",\n        \"magTamperDetected\": \"<string>\",\n        \"rdrTamperDetected\": \"<string>\",\n        \"ttl1Active\": \"<string>\",\n        \"ttl2Active\": \"<string>\",\n        \"bprActive\": \"<string>\",\n        \"ledActive\": \"<string>\"\n      }\n    },\n    \"doorFileLastSyncedAt\": \"<date>\",\n    \"auditsLastSyncedAt\": \"<date>\"\n  },\n  \"avigilonWirelessLock\": {\n    \"formFactor\": \"<string>\",\n    \"keypadTimeout\": \"<integer>\",\n    \"keypadBrightness\": \"<integer>\",\n    \"timeOffset\": \"<integer>\",\n    \"dstEnabled\": false,\n    \"networkConfig\": \"<object>\",\n    \"firmwareVersions\": \"<object>\",\n    \"serialNumber\": \"<string>\"\n  },\n  \"assaAbloyWirelessLock\": {\n    \"deviceGroupId\": \"<string>\",\n    \"serialNumber\": \"<string>\",\n    \"config\": {\n      \"lockPrmtrs\": \"<object>\",\n      \"rdrPrmtrs\": \"<object>\",\n      \"isAjarEnabled\": \"<boolean>\",\n      \"isForcedOpenEnabled\": \"<boolean>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7031db8-7411-4154-84b6-69c985dbccfa",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"idExt\": \"<string>\",\n  \"linkId\": \"<string>\",\n  \"commStatus\": \"<string>\",\n  \"batteryLevel\": \"<number>\",\n  \"config\": {\n    \"battV\": {\n      \"main\": \"<string>\",\n      \"li\": \"<string>\"\n    },\n    \"fwVer\": {\n      \"lock\": \"<string>\",\n      \"main\": \"<string>\",\n      \"mainBl\": \"<string>\",\n      \"credRdr\": \"<string>\",\n      \"credRdrBl\": \"<string>\",\n      \"ble\": \"<string>\",\n      \"wifi\": \"<string>\",\n      \"macAdr\": \"<string>\",\n      \"recoveryFwVer\": \"<string>\"\n    },\n    \"lockPrmtrs\": {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"relock\": \"<integer>\",\n      \"lockId\": \"<integer>\",\n      \"doorProp\": \"<integer>\",\n      \"ada\": \"<integer>\",\n      \"firstManIn\": \"<integer>\",\n      \"battFail\": \"<string>\",\n      \"blinkIntLed\": \"<string>\",\n      \"rapidBlink\": \"<string>\",\n      \"dstEnable\": \"<integer>\",\n      \"dstStart\": \"<string>\",\n      \"dstEnd\": \"<string>\",\n      \"rtcTime\": \"<string>\",\n      \"wifiAlertEn\": \"<string>\",\n      \"wifiAlertSel\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"fwUrl\": \"<string>\",\n      \"fwDwnldTm\": \"<string>\",\n      \"fwImplTm\": \"<string>\",\n      \"dpsEn\": \"<string>\",\n      \"bleCredEn\": \"<string>\",\n      \"bleCredRng\": \"<string>\",\n      \"blePerf\": \"<string>\",\n      \"invCrdAudEn\": \"<string>\",\n      \"wifiDwnldRtyTmIntv\": \"<integer>\",\n      \"wifiDwnldRtyCnt\": \"<integer>\",\n      \"auditIDEn\": \"<string>\",\n      \"blkCnstr\": \"<string>\",\n      \"mdl\": \"<string>\",\n      \"lckMode\": \"<string>\",\n      \"lckSn\": \"<string>\",\n      \"mainSn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"mfgDt\": \"<string>\",\n      \"dbDwnldTm\": \"<string>\",\n      \"fwImpTm\": \"<string>\",\n      \"nxtDbVerTS\": \"<string>\",\n      \"hwCfg\": \"<string>\",\n      \"dbUpdateStatus\": \"<integer>\",\n      \"wtyAct\": \"<string>\",\n      \"numCycles\": \"<integer>\"\n    },\n    \"rdrPrmtrs\": {\n      \"bprEn\": \"<string>\",\n      \"rdrSense\": \"<string>\",\n      \"proxConfHID\": \"<string>\",\n      \"proxConfGECASI\": \"<string>\",\n      \"proxConfGE4001\": \"<string>\",\n      \"proxConfGE4002\": \"<string>\",\n      \"proxConfAWID\": \"<string>\",\n      \"uid14443\": \"<string>\",\n      \"mi14443\": \"<string>\",\n      \"mip14443\": \"<string>\",\n      \"noc14443\": \"<string>\",\n      \"uid15693\": \"<string>\",\n      \"iClsUID40b\": \"<string>\",\n      \"iClsFrmt\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"sn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"mfgDt\": \"<string>\",\n      \"configCrdPrsntd\": \"<string>\",\n      \"customKeyPrsntd\": \"<string>\"\n    },\n    \"dvcProfile\": {\n      \"baseType\": \"<string>\",\n      \"ext\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        }\n      ]\n    }\n  },\n  \"signalQuality\": \"<string>\",\n  \"status\": {\n    \"lockStatus\": {\n      \"currentLockState\": \"<string>\"\n    },\n    \"sensorStatus\": {\n      \"locked\": \"<string>\",\n      \"auxPosition\": \"<string>\",\n      \"alarmPosition\": \"<string>\",\n      \"lockClutched\": \"<string>\",\n      \"primaryBatteryStatus\": \"<string>\",\n      \"rtcBatteryStatus\": \"<string>\",\n      \"rtccStatus\": \"<string>\",\n      \"doorOpen\": \"<string>\",\n      \"ipbActive\": \"<string>\",\n      \"rexActive\": \"<string>\",\n      \"renActive\": \"<string>\",\n      \"relActive\": \"<string>\",\n      \"deadBoltExtended\": \"<string>\",\n      \"keyOverrideActive\": \"<string>\",\n      \"fdrActive\": \"<string>\",\n      \"tamperOpen\": \"<string>\",\n      \"magTamperDetected\": \"<string>\",\n      \"rdrTamperDetected\": \"<string>\",\n      \"ttl1Active\": \"<string>\",\n      \"ttl2Active\": \"<string>\",\n      \"bprActive\": \"<string>\",\n      \"ledActive\": \"<string>\"\n    }\n  },\n  \"wirelessLockGatewayId\": \"<integer>\",\n  \"wirelessGatewayId\": \"<integer>\",\n  \"allegionWirelessLock\": {\n    \"idExt\": \"<string>\",\n    \"linkId\": \"<string>\",\n    \"commStatus\": \"<string>\",\n    \"batteryLevel\": \"<number>\",\n    \"config\": {\n      \"battV\": {\n        \"main\": \"<string>\",\n        \"li\": \"<string>\"\n      },\n      \"fwVer\": {\n        \"lock\": \"<string>\",\n        \"main\": \"<string>\",\n        \"mainBl\": \"<string>\",\n        \"credRdr\": \"<string>\",\n        \"credRdrBl\": \"<string>\",\n        \"ble\": \"<string>\",\n        \"wifi\": \"<string>\",\n        \"macAdr\": \"<string>\",\n        \"recoveryFwVer\": \"<string>\"\n      },\n      \"lockPrmtrs\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"relock\": \"<integer>\",\n        \"lockId\": \"<integer>\",\n        \"doorProp\": \"<integer>\",\n        \"ada\": \"<integer>\",\n        \"firstManIn\": \"<integer>\",\n        \"battFail\": \"<string>\",\n        \"blinkIntLed\": \"<string>\",\n        \"rapidBlink\": \"<string>\",\n        \"dstEnable\": \"<integer>\",\n        \"dstStart\": \"<string>\",\n        \"dstEnd\": \"<string>\",\n        \"rtcTime\": \"<string>\",\n        \"wifiAlertEn\": \"<string>\",\n        \"wifiAlertSel\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"fwUrl\": \"<string>\",\n        \"fwDwnldTm\": \"<string>\",\n        \"fwImplTm\": \"<string>\",\n        \"dpsEn\": \"<string>\",\n        \"bleCredEn\": \"<string>\",\n        \"bleCredRng\": \"<string>\",\n        \"blePerf\": \"<string>\",\n        \"invCrdAudEn\": \"<string>\",\n        \"wifiDwnldRtyTmIntv\": \"<integer>\",\n        \"wifiDwnldRtyCnt\": \"<integer>\",\n        \"auditIDEn\": \"<string>\",\n        \"blkCnstr\": \"<string>\",\n        \"mdl\": \"<string>\",\n        \"lckMode\": \"<string>\",\n        \"lckSn\": \"<string>\",\n        \"mainSn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"mfgDt\": \"<string>\",\n        \"dbDwnldTm\": \"<string>\",\n        \"fwImpTm\": \"<string>\",\n        \"nxtDbVerTS\": \"<string>\",\n        \"hwCfg\": \"<string>\",\n        \"dbUpdateStatus\": \"<integer>\",\n        \"wtyAct\": \"<string>\",\n        \"numCycles\": \"<integer>\"\n      },\n      \"rdrPrmtrs\": {\n        \"bprEn\": \"<string>\",\n        \"rdrSense\": \"<string>\",\n        \"proxConfHID\": \"<string>\",\n        \"proxConfGECASI\": \"<string>\",\n        \"proxConfGE4001\": \"<string>\",\n        \"proxConfGE4002\": \"<string>\",\n        \"proxConfAWID\": \"<string>\",\n        \"uid14443\": \"<string>\",\n        \"mi14443\": \"<string>\",\n        \"mip14443\": \"<string>\",\n        \"noc14443\": \"<string>\",\n        \"uid15693\": \"<string>\",\n        \"iClsUID40b\": \"<string>\",\n        \"iClsFrmt\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"sn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"mfgDt\": \"<string>\",\n        \"configCrdPrsntd\": \"<string>\",\n        \"customKeyPrsntd\": \"<string>\"\n      },\n      \"dvcProfile\": {\n        \"baseType\": \"<string>\",\n        \"ext\": [\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          },\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    \"status\": {\n      \"lockStatus\": {\n        \"currentLockState\": \"<string>\"\n      },\n      \"sensorStatus\": {\n        \"locked\": \"<string>\",\n        \"auxPosition\": \"<string>\",\n        \"alarmPosition\": \"<string>\",\n        \"lockClutched\": \"<string>\",\n        \"primaryBatteryStatus\": \"<string>\",\n        \"rtcBatteryStatus\": \"<string>\",\n        \"rtccStatus\": \"<string>\",\n        \"doorOpen\": \"<string>\",\n        \"ipbActive\": \"<string>\",\n        \"rexActive\": \"<string>\",\n        \"renActive\": \"<string>\",\n        \"relActive\": \"<string>\",\n        \"deadBoltExtended\": \"<string>\",\n        \"keyOverrideActive\": \"<string>\",\n        \"fdrActive\": \"<string>\",\n        \"tamperOpen\": \"<string>\",\n        \"magTamperDetected\": \"<string>\",\n        \"rdrTamperDetected\": \"<string>\",\n        \"ttl1Active\": \"<string>\",\n        \"ttl2Active\": \"<string>\",\n        \"bprActive\": \"<string>\",\n        \"ledActive\": \"<string>\"\n      }\n    },\n    \"doorFileLastSyncedAt\": \"<date>\",\n    \"auditsLastSyncedAt\": \"<date>\"\n  },\n  \"avigilonWirelessLock\": {\n    \"formFactor\": \"<string>\",\n    \"keypadTimeout\": \"<integer>\",\n    \"keypadBrightness\": \"<integer>\",\n    \"timeOffset\": \"<integer>\",\n    \"dstEnabled\": false,\n    \"networkConfig\": \"<object>\",\n    \"firmwareVersions\": \"<object>\",\n    \"serialNumber\": \"<string>\"\n  },\n  \"assaAbloyWirelessLock\": {\n    \"deviceGroupId\": \"<string>\",\n    \"serialNumber\": \"<string>\",\n    \"config\": {\n      \"lockPrmtrs\": \"<object>\",\n      \"rdrPrmtrs\": \"<object>\",\n      \"isAjarEnabled\": \"<boolean>\",\n      \"isForcedOpenEnabled\": \"<boolean>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4475.239789910802,\n    \"name\": \"string\",\n    \"manufacturer\": \"string\",\n    \"model\": \"string\",\n    \"serialNumber\": \"string\",\n    \"idExt\": \"string\",\n    \"lastConnectedAt\": \"1975-07-10\",\n    \"doorFileLastSyncedAt\": \"1985-10-16\",\n    \"auditsLastSyncedAt\": \"1949-09-01\",\n    \"linkId\": \"string\",\n    \"config\": {\n      \"battV\": {\n        \"main\": \"string\",\n        \"li\": \"string\"\n      },\n      \"fwVer\": {\n        \"lock\": \"string\",\n        \"main\": \"string\",\n        \"mainBl\": \"string\",\n        \"credRdr\": \"string\",\n        \"credRdrBl\": \"string\",\n        \"ble\": \"string\",\n        \"wifi\": \"string\",\n        \"macAdr\": \"string\",\n        \"recoveryFwVer\": \"string\"\n      },\n      \"lockPrmtrs\": {\n        \"name\": \"string\",\n        \"type\": \"prvcy\",\n        \"relock\": 13,\n        \"lockId\": 28,\n        \"doorProp\": 241,\n        \"ada\": 147,\n        \"firstManIn\": 0,\n        \"battFail\": \"asIs\",\n        \"blinkIntLed\": \"T\",\n        \"rapidBlink\": \"T\",\n        \"dstEnable\": 1,\n        \"dstStart\": \"string\",\n        \"dstEnd\": \"string\",\n        \"rtcTime\": \"string\",\n        \"wifiAlertEn\": \"F\",\n        \"wifiAlertSel\": [\n          \"string\",\n          \"string\"\n        ],\n        \"fwUrl\": \"string\",\n        \"fwDwnldTm\": \"string\",\n        \"fwImplTm\": \"string\",\n        \"dpsEn\": \"F\",\n        \"bleCredEn\": \"F\",\n        \"bleCredRng\": \"long\",\n        \"blePerf\": \"norm\",\n        \"invCrdAudEn\": \"T\",\n        \"wifiDwnldRtyTmIntv\": 1233,\n        \"wifiDwnldRtyCnt\": 5,\n        \"auditIDEn\": \"T\",\n        \"blkCnstr\": \"T\",\n        \"mdl\": \"string\",\n        \"lckMode\": \"string\",\n        \"lckSn\": \"string\",\n        \"mainSn\": \"string\",\n        \"hwVer\": \"string\",\n        \"daysInUse\": 6207,\n        \"mfgDt\": \"string\",\n        \"dbDwnldTm\": \"string\",\n        \"fwImpTm\": \"string\",\n        \"nxtDbVerTS\": \"string\",\n        \"hwCfg\": \"string\",\n        \"dbUpdateStatus\": 7454,\n        \"wtyAct\": \"string\",\n        \"numCycles\": 590\n      },\n      \"rdrPrmtrs\": {\n        \"bprEn\": \"T\",\n        \"rdrSense\": \"norm\",\n        \"proxConfHID\": \"T\",\n        \"proxConfGECASI\": \"F\",\n        \"proxConfGE4001\": \"F\",\n        \"proxConfGE4002\": \"T\",\n        \"proxConfAWID\": \"F\",\n        \"uid14443\": \"T\",\n        \"mi14443\": \"F\",\n        \"mip14443\": \"F\",\n        \"noc14443\": \"F\",\n        \"uid15693\": \"T\",\n        \"iClsUID40b\": \"F\",\n        \"iClsFrmt\": \"disbld\",\n        \"daysInUse\": 8914,\n        \"sn\": \"string\",\n        \"hwVer\": \"string\",\n        \"mfgDt\": \"string\",\n        \"configCrdPrsntd\": \"T\",\n        \"customKeyPrsntd\": \"F\"\n      },\n      \"dvcProfile\": {\n        \"baseType\": \"string\",\n        \"ext\": [\n          {\n            \"key\": \"string\",\n            \"value\": 0\n          },\n          {\n            \"key\": \"string\",\n            \"value\": 1\n          }\n        ]\n      }\n    },\n    \"status\": {\n      \"lockStatus\": {\n        \"currentLockState\": \"string\"\n      },\n      \"sensorStatus\": {\n        \"locked\": \"F\",\n        \"auxPosition\": \"F\",\n        \"alarmPosition\": \"T\",\n        \"lockClutched\": \"T\",\n        \"primaryBatteryStatus\": \"string\",\n        \"rtcBatteryStatus\": \"string\",\n        \"rtccStatus\": \"string\",\n        \"doorOpen\": \"F\",\n        \"ipbActive\": \"F\",\n        \"rexActive\": \"F\",\n        \"renActive\": \"F\",\n        \"relActive\": \"F\",\n        \"deadBoltExtended\": \"T\",\n        \"keyOverrideActive\": \"F\",\n        \"fdrActive\": \"T\",\n        \"tamperOpen\": \"T\",\n        \"magTamperDetected\": \"F\",\n        \"rdrTamperDetected\": \"T\",\n        \"ttl1Active\": \"T\",\n        \"ttl2Active\": \"F\",\n        \"bprActive\": \"F\",\n        \"ledActive\": \"T\"\n      }\n    },\n    \"noTourLockId\": 6736,\n    \"commStatus\": \"string\",\n    \"batteryLevel\": 6297.229514827666,\n    \"isOffline\": false,\n    \"thirdPartyDeviceId\": 8729,\n    \"thirdPartyDevice\": {\n      \"id\": 1792,\n      \"assignedOrg\": {\n        \"id\": 2347,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": true,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1987-04-27\",\n      \"updatedAt\": \"1954-09-08\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 4430.9620598654965,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2004-12-16\",\n        \"updatedAt\": \"2004-06-22\"\n      }\n    },\n    \"acuId\": 7420,\n    \"acu\": {\n      \"id\": 7371,\n      \"opal\": \"string\",\n      \"locationRestriction\": {\n        \"id\": 9440.58566608426,\n        \"allowedDistanceMeters\": 7407.2360910283,\n        \"scaleFactor\": 2785.900640341069,\n        \"locationMeasurement\": {\n          \"id\": 979.2238392531116,\n          \"longitude\": 6438.464780450461,\n          \"latitude\": 1577.8200466954472,\n          \"accuracyMeters\": 7125.928885755893,\n          \"timeZoneId\": \"string\",\n          \"locationMeasurementSourceType\": {\n            \"id\": 9754.0798350965,\n            \"name\": \"string\",\n            \"code\": \"string\"\n          },\n          \"rawData\": {}\n        }\n      }\n    },\n    \"virtualAcuId\": 8086,\n    \"wirelessLockGatewayId\": 7067,\n    \"wirelessLockGateway\": {\n      \"id\": 190.57274686186565,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1975-03-08\",\n      \"lastDisconnectedAt\": \"2002-07-31\",\n      \"isLive\": false,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"acuId\": 1520,\n      \"acu\": {\n        \"id\": 7333,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 2060.671334303088,\n          \"allowedDistanceMeters\": 1764.7506146405879,\n          \"scaleFactor\": 4550.458423494506,\n          \"locationMeasurement\": {\n            \"id\": 4738.682969549265,\n            \"longitude\": 7326.099740808813,\n            \"latitude\": 4704.162756038284,\n            \"accuracyMeters\": 6840.417151276604,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 3942.976442404238,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 7793,\n      \"thirdPartyDevice\": {\n        \"id\": 2142,\n        \"assignedOrg\": {\n          \"id\": 3757,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": true,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1972-05-24\",\n        \"updatedAt\": \"1989-02-10\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 733.1395995091872,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1970-05-21\",\n          \"updatedAt\": \"1962-02-24\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 2434.0330097501183,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"2005-11-16\",\n        \"updatedAt\": \"2020-02-21\",\n        \"orgId\": 7075.393468499388,\n        \"wirelessLockProviderType\": {\n          \"id\": 7491.801835070044,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 8246\n    },\n    \"wirelessLockProviderId\": 5499,\n    \"wirelessGatewayId\": 667,\n    \"wirelessGateway\": {\n      \"id\": 8510.096613030384,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1996-03-03\",\n      \"lastDisconnectedAt\": \"1948-03-14\",\n      \"isLive\": false,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"acuId\": 9864,\n      \"acu\": {\n        \"id\": 8103,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 7304.206320027504,\n          \"allowedDistanceMeters\": 4040.5530264280656,\n          \"scaleFactor\": 4634.365157501296,\n          \"locationMeasurement\": {\n            \"id\": 1379.6871327433169,\n            \"longitude\": 8265.985641705209,\n            \"latitude\": 6670.700837179291,\n            \"accuracyMeters\": 1336.1890837546575,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 3019.556686029764,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 4420,\n      \"thirdPartyDevice\": {\n        \"id\": 9235,\n        \"assignedOrg\": {\n          \"id\": 5251,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1991-07-14\",\n        \"updatedAt\": \"1968-08-08\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 7646.929058076193,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1993-10-30\",\n          \"updatedAt\": \"1947-05-15\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 4158.560593958687,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"2015-07-10\",\n        \"updatedAt\": \"1967-11-06\",\n        \"orgId\": 3703.2283179896,\n        \"wirelessLockProviderType\": {\n          \"id\": 2253.136035929133,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 1467\n    },\n    \"wirelessLockProvider\": {\n      \"id\": 5339.957026896925,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1951-09-30\",\n      \"updatedAt\": \"2015-08-24\",\n      \"orgId\": 4136.104450142867,\n      \"wirelessLockProviderType\": {\n        \"id\": 5513.236000822043,\n        \"name\": \"string\"\n      }\n    },\n    \"entry\": {\n      \"id\": 9176.001253758064,\n      \"name\": \"string\",\n      \"zone\": {\n        \"id\": 5904.507100997453,\n        \"name\": \"string\",\n        \"site\": {\n          \"id\": 6601.687080749861,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"allegionWirelessLock\": {\n      \"id\": 6594.243772257232,\n      \"auditsLastSyncedAt\": \"1991-09-09\",\n      \"batteryLevel\": 1682.0310245595126,\n      \"commStatus\": \"string\",\n      \"config\": {\n        \"battV\": {\n          \"main\": \"string\",\n          \"li\": \"string\"\n        },\n        \"fwVer\": {\n          \"lock\": \"string\",\n          \"main\": \"string\",\n          \"mainBl\": \"string\",\n          \"credRdr\": \"string\",\n          \"credRdrBl\": \"string\",\n          \"ble\": \"string\",\n          \"wifi\": \"string\",\n          \"macAdr\": \"string\",\n          \"recoveryFwVer\": \"string\"\n        },\n        \"lockPrmtrs\": {\n          \"name\": \"string\",\n          \"type\": \"apt\",\n          \"relock\": 19,\n          \"lockId\": 7690,\n          \"doorProp\": 11,\n          \"ada\": 253,\n          \"firstManIn\": 0,\n          \"battFail\": \"safe\",\n          \"blinkIntLed\": \"F\",\n          \"rapidBlink\": \"F\",\n          \"dstEnable\": 0,\n          \"dstStart\": \"string\",\n          \"dstEnd\": \"string\",\n          \"rtcTime\": \"string\",\n          \"wifiAlertEn\": \"T\",\n          \"wifiAlertSel\": [\n            \"string\",\n            \"string\"\n          ],\n          \"fwUrl\": \"string\",\n          \"fwDwnldTm\": \"string\",\n          \"fwImplTm\": \"string\",\n          \"dpsEn\": \"F\",\n          \"bleCredEn\": \"T\",\n          \"bleCredRng\": \"long\",\n          \"blePerf\": \"norm\",\n          \"invCrdAudEn\": \"T\",\n          \"wifiDwnldRtyTmIntv\": 102,\n          \"wifiDwnldRtyCnt\": 173,\n          \"auditIDEn\": \"F\",\n          \"blkCnstr\": \"F\",\n          \"mdl\": \"string\",\n          \"lckMode\": \"string\",\n          \"lckSn\": \"string\",\n          \"mainSn\": \"string\",\n          \"hwVer\": \"string\",\n          \"daysInUse\": 3406,\n          \"mfgDt\": \"string\",\n          \"dbDwnldTm\": \"string\",\n          \"fwImpTm\": \"string\",\n          \"nxtDbVerTS\": \"string\",\n          \"hwCfg\": \"string\",\n          \"dbUpdateStatus\": 6561,\n          \"wtyAct\": \"string\",\n          \"numCycles\": 2605\n        },\n        \"rdrPrmtrs\": {\n          \"bprEn\": \"F\",\n          \"rdrSense\": \"norm\",\n          \"proxConfHID\": \"F\",\n          \"proxConfGECASI\": \"T\",\n          \"proxConfGE4001\": \"F\",\n          \"proxConfGE4002\": \"F\",\n          \"proxConfAWID\": \"T\",\n          \"uid14443\": \"T\",\n          \"mi14443\": \"T\",\n          \"mip14443\": \"F\",\n          \"noc14443\": \"F\",\n          \"uid15693\": \"F\",\n          \"iClsUID40b\": \"T\",\n          \"iClsFrmt\": \"disbld\",\n          \"daysInUse\": 2136,\n          \"sn\": \"string\",\n          \"hwVer\": \"string\",\n          \"mfgDt\": \"string\",\n          \"configCrdPrsntd\": \"T\",\n          \"customKeyPrsntd\": \"T\"\n        },\n        \"dvcProfile\": {\n          \"baseType\": \"string\",\n          \"ext\": [\n            {\n              \"key\": \"string\",\n              \"value\": 1\n            },\n            {\n              \"key\": \"string\",\n              \"value\": 0\n            }\n          ]\n        }\n      },\n      \"doorFileLastSyncedAt\": \"1953-06-23\",\n      \"idExt\": \"string\",\n      \"linkId\": \"string\",\n      \"noTourLockId\": 6330.848370601863,\n      \"status\": {\n        \"lockStatus\": {\n          \"currentLockState\": \"string\"\n        },\n        \"sensorStatus\": {\n          \"locked\": \"F\",\n          \"auxPosition\": \"F\",\n          \"alarmPosition\": \"F\",\n          \"lockClutched\": \"T\",\n          \"primaryBatteryStatus\": \"string\",\n          \"rtcBatteryStatus\": \"string\",\n          \"rtccStatus\": \"string\",\n          \"doorOpen\": \"F\",\n          \"ipbActive\": \"F\",\n          \"rexActive\": \"F\",\n          \"renActive\": \"T\",\n          \"relActive\": \"F\",\n          \"deadBoltExtended\": \"T\",\n          \"keyOverrideActive\": \"F\",\n          \"fdrActive\": \"F\",\n          \"tamperOpen\": \"F\",\n          \"magTamperDetected\": \"T\",\n          \"rdrTamperDetected\": \"T\",\n          \"ttl1Active\": \"F\",\n          \"ttl2Active\": \"F\",\n          \"bprActive\": \"T\",\n          \"ledActive\": \"F\"\n        }\n      }\n    },\n    \"avigilonWirelessLock\": {\n      \"id\": 7783.1394402338165,\n      \"dstEnabled\": false,\n      \"formFactor\": \"string\",\n      \"keypadTimeout\": 8145,\n      \"keypadBrightness\": 1170,\n      \"timeOffset\": 3577,\n      \"networkConfig\": {},\n      \"firmwareVersions\": {},\n      \"serialNumber\": \"string\"\n    },\n    \"assaAbloyWirelessLock\": {\n      \"id\": 3534.6402139006573,\n      \"wirelessLockId\": 2519,\n      \"deviceGroupId\": \"string\",\n      \"config\": {\n        \"lockPrmtrs\": {},\n        \"rdrPrmtrs\": {},\n        \"isAjarEnabled\": true,\n        \"isForcedOpenEnabled\": true\n      }\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1998-10-15\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2871,\n        8912\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8751,\n          8409\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb83a28c-de5c-41bd-a5e5-bbfb41531fe1",
+          "name": "Describe a wireless lock ",
+          "request": {
+            "name": "Describe a wireless lock ",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeWirelessLock",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks",
+                ":wirelessLockId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "73bd43aa-092f-467c-98d0-f091432bf42f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks",
+                    ":wirelessLockId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4475.239789910802,\n    \"name\": \"string\",\n    \"manufacturer\": \"string\",\n    \"model\": \"string\",\n    \"serialNumber\": \"string\",\n    \"idExt\": \"string\",\n    \"lastConnectedAt\": \"1975-07-10\",\n    \"doorFileLastSyncedAt\": \"1985-10-16\",\n    \"auditsLastSyncedAt\": \"1949-09-01\",\n    \"linkId\": \"string\",\n    \"config\": {\n      \"battV\": {\n        \"main\": \"string\",\n        \"li\": \"string\"\n      },\n      \"fwVer\": {\n        \"lock\": \"string\",\n        \"main\": \"string\",\n        \"mainBl\": \"string\",\n        \"credRdr\": \"string\",\n        \"credRdrBl\": \"string\",\n        \"ble\": \"string\",\n        \"wifi\": \"string\",\n        \"macAdr\": \"string\",\n        \"recoveryFwVer\": \"string\"\n      },\n      \"lockPrmtrs\": {\n        \"name\": \"string\",\n        \"type\": \"prvcy\",\n        \"relock\": 13,\n        \"lockId\": 28,\n        \"doorProp\": 241,\n        \"ada\": 147,\n        \"firstManIn\": 0,\n        \"battFail\": \"asIs\",\n        \"blinkIntLed\": \"T\",\n        \"rapidBlink\": \"T\",\n        \"dstEnable\": 1,\n        \"dstStart\": \"string\",\n        \"dstEnd\": \"string\",\n        \"rtcTime\": \"string\",\n        \"wifiAlertEn\": \"F\",\n        \"wifiAlertSel\": [\n          \"string\",\n          \"string\"\n        ],\n        \"fwUrl\": \"string\",\n        \"fwDwnldTm\": \"string\",\n        \"fwImplTm\": \"string\",\n        \"dpsEn\": \"F\",\n        \"bleCredEn\": \"F\",\n        \"bleCredRng\": \"long\",\n        \"blePerf\": \"norm\",\n        \"invCrdAudEn\": \"T\",\n        \"wifiDwnldRtyTmIntv\": 1233,\n        \"wifiDwnldRtyCnt\": 5,\n        \"auditIDEn\": \"T\",\n        \"blkCnstr\": \"T\",\n        \"mdl\": \"string\",\n        \"lckMode\": \"string\",\n        \"lckSn\": \"string\",\n        \"mainSn\": \"string\",\n        \"hwVer\": \"string\",\n        \"daysInUse\": 6207,\n        \"mfgDt\": \"string\",\n        \"dbDwnldTm\": \"string\",\n        \"fwImpTm\": \"string\",\n        \"nxtDbVerTS\": \"string\",\n        \"hwCfg\": \"string\",\n        \"dbUpdateStatus\": 7454,\n        \"wtyAct\": \"string\",\n        \"numCycles\": 590\n      },\n      \"rdrPrmtrs\": {\n        \"bprEn\": \"T\",\n        \"rdrSense\": \"norm\",\n        \"proxConfHID\": \"T\",\n        \"proxConfGECASI\": \"F\",\n        \"proxConfGE4001\": \"F\",\n        \"proxConfGE4002\": \"T\",\n        \"proxConfAWID\": \"F\",\n        \"uid14443\": \"T\",\n        \"mi14443\": \"F\",\n        \"mip14443\": \"F\",\n        \"noc14443\": \"F\",\n        \"uid15693\": \"T\",\n        \"iClsUID40b\": \"F\",\n        \"iClsFrmt\": \"disbld\",\n        \"daysInUse\": 8914,\n        \"sn\": \"string\",\n        \"hwVer\": \"string\",\n        \"mfgDt\": \"string\",\n        \"configCrdPrsntd\": \"T\",\n        \"customKeyPrsntd\": \"F\"\n      },\n      \"dvcProfile\": {\n        \"baseType\": \"string\",\n        \"ext\": [\n          {\n            \"key\": \"string\",\n            \"value\": 0\n          },\n          {\n            \"key\": \"string\",\n            \"value\": 1\n          }\n        ]\n      }\n    },\n    \"status\": {\n      \"lockStatus\": {\n        \"currentLockState\": \"string\"\n      },\n      \"sensorStatus\": {\n        \"locked\": \"F\",\n        \"auxPosition\": \"F\",\n        \"alarmPosition\": \"T\",\n        \"lockClutched\": \"T\",\n        \"primaryBatteryStatus\": \"string\",\n        \"rtcBatteryStatus\": \"string\",\n        \"rtccStatus\": \"string\",\n        \"doorOpen\": \"F\",\n        \"ipbActive\": \"F\",\n        \"rexActive\": \"F\",\n        \"renActive\": \"F\",\n        \"relActive\": \"F\",\n        \"deadBoltExtended\": \"T\",\n        \"keyOverrideActive\": \"F\",\n        \"fdrActive\": \"T\",\n        \"tamperOpen\": \"T\",\n        \"magTamperDetected\": \"F\",\n        \"rdrTamperDetected\": \"T\",\n        \"ttl1Active\": \"T\",\n        \"ttl2Active\": \"F\",\n        \"bprActive\": \"F\",\n        \"ledActive\": \"T\"\n      }\n    },\n    \"noTourLockId\": 6736,\n    \"commStatus\": \"string\",\n    \"batteryLevel\": 6297.229514827666,\n    \"isOffline\": false,\n    \"thirdPartyDeviceId\": 8729,\n    \"thirdPartyDevice\": {\n      \"id\": 1792,\n      \"assignedOrg\": {\n        \"id\": 2347,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": true,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1987-04-27\",\n      \"updatedAt\": \"1954-09-08\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 4430.9620598654965,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2004-12-16\",\n        \"updatedAt\": \"2004-06-22\"\n      }\n    },\n    \"acuId\": 7420,\n    \"acu\": {\n      \"id\": 7371,\n      \"opal\": \"string\",\n      \"locationRestriction\": {\n        \"id\": 9440.58566608426,\n        \"allowedDistanceMeters\": 7407.2360910283,\n        \"scaleFactor\": 2785.900640341069,\n        \"locationMeasurement\": {\n          \"id\": 979.2238392531116,\n          \"longitude\": 6438.464780450461,\n          \"latitude\": 1577.8200466954472,\n          \"accuracyMeters\": 7125.928885755893,\n          \"timeZoneId\": \"string\",\n          \"locationMeasurementSourceType\": {\n            \"id\": 9754.0798350965,\n            \"name\": \"string\",\n            \"code\": \"string\"\n          },\n          \"rawData\": {}\n        }\n      }\n    },\n    \"virtualAcuId\": 8086,\n    \"wirelessLockGatewayId\": 7067,\n    \"wirelessLockGateway\": {\n      \"id\": 190.57274686186565,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1975-03-08\",\n      \"lastDisconnectedAt\": \"2002-07-31\",\n      \"isLive\": false,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"acuId\": 1520,\n      \"acu\": {\n        \"id\": 7333,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 2060.671334303088,\n          \"allowedDistanceMeters\": 1764.7506146405879,\n          \"scaleFactor\": 4550.458423494506,\n          \"locationMeasurement\": {\n            \"id\": 4738.682969549265,\n            \"longitude\": 7326.099740808813,\n            \"latitude\": 4704.162756038284,\n            \"accuracyMeters\": 6840.417151276604,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 3942.976442404238,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 7793,\n      \"thirdPartyDevice\": {\n        \"id\": 2142,\n        \"assignedOrg\": {\n          \"id\": 3757,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": true,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1972-05-24\",\n        \"updatedAt\": \"1989-02-10\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 733.1395995091872,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1970-05-21\",\n          \"updatedAt\": \"1962-02-24\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 2434.0330097501183,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"2005-11-16\",\n        \"updatedAt\": \"2020-02-21\",\n        \"orgId\": 7075.393468499388,\n        \"wirelessLockProviderType\": {\n          \"id\": 7491.801835070044,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 8246\n    },\n    \"wirelessLockProviderId\": 5499,\n    \"wirelessGatewayId\": 667,\n    \"wirelessGateway\": {\n      \"id\": 8510.096613030384,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1996-03-03\",\n      \"lastDisconnectedAt\": \"1948-03-14\",\n      \"isLive\": false,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"acuId\": 9864,\n      \"acu\": {\n        \"id\": 8103,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 7304.206320027504,\n          \"allowedDistanceMeters\": 4040.5530264280656,\n          \"scaleFactor\": 4634.365157501296,\n          \"locationMeasurement\": {\n            \"id\": 1379.6871327433169,\n            \"longitude\": 8265.985641705209,\n            \"latitude\": 6670.700837179291,\n            \"accuracyMeters\": 1336.1890837546575,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 3019.556686029764,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 4420,\n      \"thirdPartyDevice\": {\n        \"id\": 9235,\n        \"assignedOrg\": {\n          \"id\": 5251,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1991-07-14\",\n        \"updatedAt\": \"1968-08-08\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 7646.929058076193,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1993-10-30\",\n          \"updatedAt\": \"1947-05-15\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 4158.560593958687,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"2015-07-10\",\n        \"updatedAt\": \"1967-11-06\",\n        \"orgId\": 3703.2283179896,\n        \"wirelessLockProviderType\": {\n          \"id\": 2253.136035929133,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 1467\n    },\n    \"wirelessLockProvider\": {\n      \"id\": 5339.957026896925,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1951-09-30\",\n      \"updatedAt\": \"2015-08-24\",\n      \"orgId\": 4136.104450142867,\n      \"wirelessLockProviderType\": {\n        \"id\": 5513.236000822043,\n        \"name\": \"string\"\n      }\n    },\n    \"entry\": {\n      \"id\": 9176.001253758064,\n      \"name\": \"string\",\n      \"zone\": {\n        \"id\": 5904.507100997453,\n        \"name\": \"string\",\n        \"site\": {\n          \"id\": 6601.687080749861,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"allegionWirelessLock\": {\n      \"id\": 6594.243772257232,\n      \"auditsLastSyncedAt\": \"1991-09-09\",\n      \"batteryLevel\": 1682.0310245595126,\n      \"commStatus\": \"string\",\n      \"config\": {\n        \"battV\": {\n          \"main\": \"string\",\n          \"li\": \"string\"\n        },\n        \"fwVer\": {\n          \"lock\": \"string\",\n          \"main\": \"string\",\n          \"mainBl\": \"string\",\n          \"credRdr\": \"string\",\n          \"credRdrBl\": \"string\",\n          \"ble\": \"string\",\n          \"wifi\": \"string\",\n          \"macAdr\": \"string\",\n          \"recoveryFwVer\": \"string\"\n        },\n        \"lockPrmtrs\": {\n          \"name\": \"string\",\n          \"type\": \"apt\",\n          \"relock\": 19,\n          \"lockId\": 7690,\n          \"doorProp\": 11,\n          \"ada\": 253,\n          \"firstManIn\": 0,\n          \"battFail\": \"safe\",\n          \"blinkIntLed\": \"F\",\n          \"rapidBlink\": \"F\",\n          \"dstEnable\": 0,\n          \"dstStart\": \"string\",\n          \"dstEnd\": \"string\",\n          \"rtcTime\": \"string\",\n          \"wifiAlertEn\": \"T\",\n          \"wifiAlertSel\": [\n            \"string\",\n            \"string\"\n          ],\n          \"fwUrl\": \"string\",\n          \"fwDwnldTm\": \"string\",\n          \"fwImplTm\": \"string\",\n          \"dpsEn\": \"F\",\n          \"bleCredEn\": \"T\",\n          \"bleCredRng\": \"long\",\n          \"blePerf\": \"norm\",\n          \"invCrdAudEn\": \"T\",\n          \"wifiDwnldRtyTmIntv\": 102,\n          \"wifiDwnldRtyCnt\": 173,\n          \"auditIDEn\": \"F\",\n          \"blkCnstr\": \"F\",\n          \"mdl\": \"string\",\n          \"lckMode\": \"string\",\n          \"lckSn\": \"string\",\n          \"mainSn\": \"string\",\n          \"hwVer\": \"string\",\n          \"daysInUse\": 3406,\n          \"mfgDt\": \"string\",\n          \"dbDwnldTm\": \"string\",\n          \"fwImpTm\": \"string\",\n          \"nxtDbVerTS\": \"string\",\n          \"hwCfg\": \"string\",\n          \"dbUpdateStatus\": 6561,\n          \"wtyAct\": \"string\",\n          \"numCycles\": 2605\n        },\n        \"rdrPrmtrs\": {\n          \"bprEn\": \"F\",\n          \"rdrSense\": \"norm\",\n          \"proxConfHID\": \"F\",\n          \"proxConfGECASI\": \"T\",\n          \"proxConfGE4001\": \"F\",\n          \"proxConfGE4002\": \"F\",\n          \"proxConfAWID\": \"T\",\n          \"uid14443\": \"T\",\n          \"mi14443\": \"T\",\n          \"mip14443\": \"F\",\n          \"noc14443\": \"F\",\n          \"uid15693\": \"F\",\n          \"iClsUID40b\": \"T\",\n          \"iClsFrmt\": \"disbld\",\n          \"daysInUse\": 2136,\n          \"sn\": \"string\",\n          \"hwVer\": \"string\",\n          \"mfgDt\": \"string\",\n          \"configCrdPrsntd\": \"T\",\n          \"customKeyPrsntd\": \"T\"\n        },\n        \"dvcProfile\": {\n          \"baseType\": \"string\",\n          \"ext\": [\n            {\n              \"key\": \"string\",\n              \"value\": 1\n            },\n            {\n              \"key\": \"string\",\n              \"value\": 0\n            }\n          ]\n        }\n      },\n      \"doorFileLastSyncedAt\": \"1953-06-23\",\n      \"idExt\": \"string\",\n      \"linkId\": \"string\",\n      \"noTourLockId\": 6330.848370601863,\n      \"status\": {\n        \"lockStatus\": {\n          \"currentLockState\": \"string\"\n        },\n        \"sensorStatus\": {\n          \"locked\": \"F\",\n          \"auxPosition\": \"F\",\n          \"alarmPosition\": \"F\",\n          \"lockClutched\": \"T\",\n          \"primaryBatteryStatus\": \"string\",\n          \"rtcBatteryStatus\": \"string\",\n          \"rtccStatus\": \"string\",\n          \"doorOpen\": \"F\",\n          \"ipbActive\": \"F\",\n          \"rexActive\": \"F\",\n          \"renActive\": \"T\",\n          \"relActive\": \"F\",\n          \"deadBoltExtended\": \"T\",\n          \"keyOverrideActive\": \"F\",\n          \"fdrActive\": \"F\",\n          \"tamperOpen\": \"F\",\n          \"magTamperDetected\": \"T\",\n          \"rdrTamperDetected\": \"T\",\n          \"ttl1Active\": \"F\",\n          \"ttl2Active\": \"F\",\n          \"bprActive\": \"T\",\n          \"ledActive\": \"F\"\n        }\n      }\n    },\n    \"avigilonWirelessLock\": {\n      \"id\": 7783.1394402338165,\n      \"dstEnabled\": false,\n      \"formFactor\": \"string\",\n      \"keypadTimeout\": 8145,\n      \"keypadBrightness\": 1170,\n      \"timeOffset\": 3577,\n      \"networkConfig\": {},\n      \"firmwareVersions\": {},\n      \"serialNumber\": \"string\"\n    },\n    \"assaAbloyWirelessLock\": {\n      \"id\": 3534.6402139006573,\n      \"wirelessLockId\": 2519,\n      \"deviceGroupId\": \"string\",\n      \"config\": {\n        \"lockPrmtrs\": {},\n        \"rdrPrmtrs\": {},\n        \"isAjarEnabled\": true,\n        \"isForcedOpenEnabled\": true\n      }\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1998-10-15\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2871,\n        8912\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8751,\n          8409\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5739b083-2633-46cc-b5f3-45fb16dc744c",
+          "name": "Remove a wireless lock ",
+          "request": {
+            "name": "Remove a wireless lock ",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessLock",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks",
+                ":wirelessLockId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0721ee8e-43ab-4813-b24a-0be4a64bca68",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks",
+                    ":wirelessLockId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9329b37-a41b-4599-bc31-0e58120ffe46",
+          "name": "Update a wireless lock ",
+          "request": {
+            "name": "Update a wireless lock ",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLock",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks",
+                ":wirelessLockId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ignoreHooks",
+                  "value": "false"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\",\n  \"doorFileLastSyncedAt\": \"<date>\",\n  \"auditsLastSyncedAt\": \"<date>\",\n  \"linkId\": \"<string>\",\n  \"commStatus\": \"<string>\",\n  \"batteryLevel\": \"<number>\",\n  \"config\": {\n    \"battV\": {\n      \"main\": \"<string>\",\n      \"li\": \"<string>\"\n    },\n    \"fwVer\": {\n      \"lock\": \"<string>\",\n      \"main\": \"<string>\",\n      \"mainBl\": \"<string>\",\n      \"credRdr\": \"<string>\",\n      \"credRdrBl\": \"<string>\",\n      \"ble\": \"<string>\",\n      \"wifi\": \"<string>\",\n      \"macAdr\": \"<string>\",\n      \"recoveryFwVer\": \"<string>\"\n    },\n    \"lockPrmtrs\": {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"relock\": \"<integer>\",\n      \"lockId\": \"<integer>\",\n      \"doorProp\": \"<integer>\",\n      \"ada\": \"<integer>\",\n      \"firstManIn\": \"<integer>\",\n      \"battFail\": \"<string>\",\n      \"blinkIntLed\": \"<string>\",\n      \"rapidBlink\": \"<string>\",\n      \"dstEnable\": \"<integer>\",\n      \"dstStart\": \"<string>\",\n      \"dstEnd\": \"<string>\",\n      \"rtcTime\": \"<string>\",\n      \"wifiAlertEn\": \"<string>\",\n      \"wifiAlertSel\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"fwUrl\": \"<string>\",\n      \"fwDwnldTm\": \"<string>\",\n      \"fwImplTm\": \"<string>\",\n      \"dpsEn\": \"<string>\",\n      \"bleCredEn\": \"<string>\",\n      \"bleCredRng\": \"<string>\",\n      \"blePerf\": \"<string>\",\n      \"invCrdAudEn\": \"<string>\",\n      \"wifiDwnldRtyTmIntv\": \"<integer>\",\n      \"wifiDwnldRtyCnt\": \"<integer>\",\n      \"auditIDEn\": \"<string>\",\n      \"blkCnstr\": \"<string>\",\n      \"mdl\": \"<string>\",\n      \"lckMode\": \"<string>\",\n      \"lckSn\": \"<string>\",\n      \"mainSn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"mfgDt\": \"<string>\",\n      \"dbDwnldTm\": \"<string>\",\n      \"fwImpTm\": \"<string>\",\n      \"nxtDbVerTS\": \"<string>\",\n      \"hwCfg\": \"<string>\",\n      \"dbUpdateStatus\": \"<integer>\",\n      \"wtyAct\": \"<string>\",\n      \"numCycles\": \"<integer>\"\n    },\n    \"rdrPrmtrs\": {\n      \"bprEn\": \"<string>\",\n      \"rdrSense\": \"<string>\",\n      \"proxConfHID\": \"<string>\",\n      \"proxConfGECASI\": \"<string>\",\n      \"proxConfGE4001\": \"<string>\",\n      \"proxConfGE4002\": \"<string>\",\n      \"proxConfAWID\": \"<string>\",\n      \"uid14443\": \"<string>\",\n      \"mi14443\": \"<string>\",\n      \"mip14443\": \"<string>\",\n      \"noc14443\": \"<string>\",\n      \"uid15693\": \"<string>\",\n      \"iClsUID40b\": \"<string>\",\n      \"iClsFrmt\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"sn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"mfgDt\": \"<string>\",\n      \"configCrdPrsntd\": \"<string>\",\n      \"customKeyPrsntd\": \"<string>\"\n    },\n    \"dvcProfile\": {\n      \"baseType\": \"<string>\",\n      \"ext\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        }\n      ]\n    }\n  },\n  \"signalQuality\": \"<string>\",\n  \"status\": {\n    \"lockStatus\": {\n      \"currentLockState\": \"<string>\"\n    },\n    \"sensorStatus\": {\n      \"locked\": \"<string>\",\n      \"auxPosition\": \"<string>\",\n      \"alarmPosition\": \"<string>\",\n      \"lockClutched\": \"<string>\",\n      \"primaryBatteryStatus\": \"<string>\",\n      \"rtcBatteryStatus\": \"<string>\",\n      \"rtccStatus\": \"<string>\",\n      \"doorOpen\": \"<string>\",\n      \"ipbActive\": \"<string>\",\n      \"rexActive\": \"<string>\",\n      \"renActive\": \"<string>\",\n      \"relActive\": \"<string>\",\n      \"deadBoltExtended\": \"<string>\",\n      \"keyOverrideActive\": \"<string>\",\n      \"fdrActive\": \"<string>\",\n      \"tamperOpen\": \"<string>\",\n      \"magTamperDetected\": \"<string>\",\n      \"rdrTamperDetected\": \"<string>\",\n      \"ttl1Active\": \"<string>\",\n      \"ttl2Active\": \"<string>\",\n      \"bprActive\": \"<string>\",\n      \"ledActive\": \"<string>\"\n    }\n  },\n  \"wirelessLockGatewayId\": \"<integer>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"wirelessGatewayId\": \"<integer>\",\n  \"allegionWirelessLock\": {\n    \"idExt\": \"<string>\",\n    \"linkId\": \"<string>\",\n    \"commStatus\": \"<string>\",\n    \"batteryLevel\": \"<number>\",\n    \"config\": {\n      \"battV\": {\n        \"main\": \"<string>\",\n        \"li\": \"<string>\"\n      },\n      \"fwVer\": {\n        \"lock\": \"<string>\",\n        \"main\": \"<string>\",\n        \"mainBl\": \"<string>\",\n        \"credRdr\": \"<string>\",\n        \"credRdrBl\": \"<string>\",\n        \"ble\": \"<string>\",\n        \"wifi\": \"<string>\",\n        \"macAdr\": \"<string>\",\n        \"recoveryFwVer\": \"<string>\"\n      },\n      \"lockPrmtrs\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"relock\": \"<integer>\",\n        \"lockId\": \"<integer>\",\n        \"doorProp\": \"<integer>\",\n        \"ada\": \"<integer>\",\n        \"firstManIn\": \"<integer>\",\n        \"battFail\": \"<string>\",\n        \"blinkIntLed\": \"<string>\",\n        \"rapidBlink\": \"<string>\",\n        \"dstEnable\": \"<integer>\",\n        \"dstStart\": \"<string>\",\n        \"dstEnd\": \"<string>\",\n        \"rtcTime\": \"<string>\",\n        \"wifiAlertEn\": \"<string>\",\n        \"wifiAlertSel\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"fwUrl\": \"<string>\",\n        \"fwDwnldTm\": \"<string>\",\n        \"fwImplTm\": \"<string>\",\n        \"dpsEn\": \"<string>\",\n        \"bleCredEn\": \"<string>\",\n        \"bleCredRng\": \"<string>\",\n        \"blePerf\": \"<string>\",\n        \"invCrdAudEn\": \"<string>\",\n        \"wifiDwnldRtyTmIntv\": \"<integer>\",\n        \"wifiDwnldRtyCnt\": \"<integer>\",\n        \"auditIDEn\": \"<string>\",\n        \"blkCnstr\": \"<string>\",\n        \"mdl\": \"<string>\",\n        \"lckMode\": \"<string>\",\n        \"lckSn\": \"<string>\",\n        \"mainSn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"mfgDt\": \"<string>\",\n        \"dbDwnldTm\": \"<string>\",\n        \"fwImpTm\": \"<string>\",\n        \"nxtDbVerTS\": \"<string>\",\n        \"hwCfg\": \"<string>\",\n        \"dbUpdateStatus\": \"<integer>\",\n        \"wtyAct\": \"<string>\",\n        \"numCycles\": \"<integer>\"\n      },\n      \"rdrPrmtrs\": {\n        \"bprEn\": \"<string>\",\n        \"rdrSense\": \"<string>\",\n        \"proxConfHID\": \"<string>\",\n        \"proxConfGECASI\": \"<string>\",\n        \"proxConfGE4001\": \"<string>\",\n        \"proxConfGE4002\": \"<string>\",\n        \"proxConfAWID\": \"<string>\",\n        \"uid14443\": \"<string>\",\n        \"mi14443\": \"<string>\",\n        \"mip14443\": \"<string>\",\n        \"noc14443\": \"<string>\",\n        \"uid15693\": \"<string>\",\n        \"iClsUID40b\": \"<string>\",\n        \"iClsFrmt\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"sn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"mfgDt\": \"<string>\",\n        \"configCrdPrsntd\": \"<string>\",\n        \"customKeyPrsntd\": \"<string>\"\n      },\n      \"dvcProfile\": {\n        \"baseType\": \"<string>\",\n        \"ext\": [\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          },\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    \"status\": {\n      \"lockStatus\": {\n        \"currentLockState\": \"<string>\"\n      },\n      \"sensorStatus\": {\n        \"locked\": \"<string>\",\n        \"auxPosition\": \"<string>\",\n        \"alarmPosition\": \"<string>\",\n        \"lockClutched\": \"<string>\",\n        \"primaryBatteryStatus\": \"<string>\",\n        \"rtcBatteryStatus\": \"<string>\",\n        \"rtccStatus\": \"<string>\",\n        \"doorOpen\": \"<string>\",\n        \"ipbActive\": \"<string>\",\n        \"rexActive\": \"<string>\",\n        \"renActive\": \"<string>\",\n        \"relActive\": \"<string>\",\n        \"deadBoltExtended\": \"<string>\",\n        \"keyOverrideActive\": \"<string>\",\n        \"fdrActive\": \"<string>\",\n        \"tamperOpen\": \"<string>\",\n        \"magTamperDetected\": \"<string>\",\n        \"rdrTamperDetected\": \"<string>\",\n        \"ttl1Active\": \"<string>\",\n        \"ttl2Active\": \"<string>\",\n        \"bprActive\": \"<string>\",\n        \"ledActive\": \"<string>\"\n      }\n    },\n    \"doorFileLastSyncedAt\": \"<date>\",\n    \"auditsLastSyncedAt\": \"<date>\"\n  },\n  \"avigilonWirelessLock\": {\n    \"formFactor\": \"<string>\",\n    \"keypadTimeout\": \"<integer>\",\n    \"keypadBrightness\": \"<integer>\",\n    \"timeOffset\": \"<integer>\",\n    \"networkConfig\": \"<object>\",\n    \"firmwareVersions\": \"<object>\",\n    \"dstEnabled\": \"<boolean>\",\n    \"serialNumber\": \"<string>\"\n  },\n  \"assaAbloyWirelessLock\": {\n    \"deviceGroupId\": \"<string>\",\n    \"config\": {\n      \"lockPrmtrs\": \"<object>\",\n      \"rdrPrmtrs\": \"<object>\",\n      \"isAjarEnabled\": \"<boolean>\",\n      \"isForcedOpenEnabled\": \"<boolean>\"\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "00c22cbd-c09f-4dd1-b667-811ed2b14ef5",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks",
+                    ":wirelessLockId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ignoreHooks",
+                      "value": "false"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\",\n  \"doorFileLastSyncedAt\": \"<date>\",\n  \"auditsLastSyncedAt\": \"<date>\",\n  \"linkId\": \"<string>\",\n  \"commStatus\": \"<string>\",\n  \"batteryLevel\": \"<number>\",\n  \"config\": {\n    \"battV\": {\n      \"main\": \"<string>\",\n      \"li\": \"<string>\"\n    },\n    \"fwVer\": {\n      \"lock\": \"<string>\",\n      \"main\": \"<string>\",\n      \"mainBl\": \"<string>\",\n      \"credRdr\": \"<string>\",\n      \"credRdrBl\": \"<string>\",\n      \"ble\": \"<string>\",\n      \"wifi\": \"<string>\",\n      \"macAdr\": \"<string>\",\n      \"recoveryFwVer\": \"<string>\"\n    },\n    \"lockPrmtrs\": {\n      \"name\": \"<string>\",\n      \"type\": \"<string>\",\n      \"relock\": \"<integer>\",\n      \"lockId\": \"<integer>\",\n      \"doorProp\": \"<integer>\",\n      \"ada\": \"<integer>\",\n      \"firstManIn\": \"<integer>\",\n      \"battFail\": \"<string>\",\n      \"blinkIntLed\": \"<string>\",\n      \"rapidBlink\": \"<string>\",\n      \"dstEnable\": \"<integer>\",\n      \"dstStart\": \"<string>\",\n      \"dstEnd\": \"<string>\",\n      \"rtcTime\": \"<string>\",\n      \"wifiAlertEn\": \"<string>\",\n      \"wifiAlertSel\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"fwUrl\": \"<string>\",\n      \"fwDwnldTm\": \"<string>\",\n      \"fwImplTm\": \"<string>\",\n      \"dpsEn\": \"<string>\",\n      \"bleCredEn\": \"<string>\",\n      \"bleCredRng\": \"<string>\",\n      \"blePerf\": \"<string>\",\n      \"invCrdAudEn\": \"<string>\",\n      \"wifiDwnldRtyTmIntv\": \"<integer>\",\n      \"wifiDwnldRtyCnt\": \"<integer>\",\n      \"auditIDEn\": \"<string>\",\n      \"blkCnstr\": \"<string>\",\n      \"mdl\": \"<string>\",\n      \"lckMode\": \"<string>\",\n      \"lckSn\": \"<string>\",\n      \"mainSn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"mfgDt\": \"<string>\",\n      \"dbDwnldTm\": \"<string>\",\n      \"fwImpTm\": \"<string>\",\n      \"nxtDbVerTS\": \"<string>\",\n      \"hwCfg\": \"<string>\",\n      \"dbUpdateStatus\": \"<integer>\",\n      \"wtyAct\": \"<string>\",\n      \"numCycles\": \"<integer>\"\n    },\n    \"rdrPrmtrs\": {\n      \"bprEn\": \"<string>\",\n      \"rdrSense\": \"<string>\",\n      \"proxConfHID\": \"<string>\",\n      \"proxConfGECASI\": \"<string>\",\n      \"proxConfGE4001\": \"<string>\",\n      \"proxConfGE4002\": \"<string>\",\n      \"proxConfAWID\": \"<string>\",\n      \"uid14443\": \"<string>\",\n      \"mi14443\": \"<string>\",\n      \"mip14443\": \"<string>\",\n      \"noc14443\": \"<string>\",\n      \"uid15693\": \"<string>\",\n      \"iClsUID40b\": \"<string>\",\n      \"iClsFrmt\": \"<string>\",\n      \"daysInUse\": \"<integer>\",\n      \"sn\": \"<string>\",\n      \"hwVer\": \"<string>\",\n      \"mfgDt\": \"<string>\",\n      \"configCrdPrsntd\": \"<string>\",\n      \"customKeyPrsntd\": \"<string>\"\n    },\n    \"dvcProfile\": {\n      \"baseType\": \"<string>\",\n      \"ext\": [\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        },\n        {\n          \"key\": \"<string>\",\n          \"value\": \"<integer>\"\n        }\n      ]\n    }\n  },\n  \"signalQuality\": \"<string>\",\n  \"status\": {\n    \"lockStatus\": {\n      \"currentLockState\": \"<string>\"\n    },\n    \"sensorStatus\": {\n      \"locked\": \"<string>\",\n      \"auxPosition\": \"<string>\",\n      \"alarmPosition\": \"<string>\",\n      \"lockClutched\": \"<string>\",\n      \"primaryBatteryStatus\": \"<string>\",\n      \"rtcBatteryStatus\": \"<string>\",\n      \"rtccStatus\": \"<string>\",\n      \"doorOpen\": \"<string>\",\n      \"ipbActive\": \"<string>\",\n      \"rexActive\": \"<string>\",\n      \"renActive\": \"<string>\",\n      \"relActive\": \"<string>\",\n      \"deadBoltExtended\": \"<string>\",\n      \"keyOverrideActive\": \"<string>\",\n      \"fdrActive\": \"<string>\",\n      \"tamperOpen\": \"<string>\",\n      \"magTamperDetected\": \"<string>\",\n      \"rdrTamperDetected\": \"<string>\",\n      \"ttl1Active\": \"<string>\",\n      \"ttl2Active\": \"<string>\",\n      \"bprActive\": \"<string>\",\n      \"ledActive\": \"<string>\"\n    }\n  },\n  \"wirelessLockGatewayId\": \"<integer>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"wirelessGatewayId\": \"<integer>\",\n  \"allegionWirelessLock\": {\n    \"idExt\": \"<string>\",\n    \"linkId\": \"<string>\",\n    \"commStatus\": \"<string>\",\n    \"batteryLevel\": \"<number>\",\n    \"config\": {\n      \"battV\": {\n        \"main\": \"<string>\",\n        \"li\": \"<string>\"\n      },\n      \"fwVer\": {\n        \"lock\": \"<string>\",\n        \"main\": \"<string>\",\n        \"mainBl\": \"<string>\",\n        \"credRdr\": \"<string>\",\n        \"credRdrBl\": \"<string>\",\n        \"ble\": \"<string>\",\n        \"wifi\": \"<string>\",\n        \"macAdr\": \"<string>\",\n        \"recoveryFwVer\": \"<string>\"\n      },\n      \"lockPrmtrs\": {\n        \"name\": \"<string>\",\n        \"type\": \"<string>\",\n        \"relock\": \"<integer>\",\n        \"lockId\": \"<integer>\",\n        \"doorProp\": \"<integer>\",\n        \"ada\": \"<integer>\",\n        \"firstManIn\": \"<integer>\",\n        \"battFail\": \"<string>\",\n        \"blinkIntLed\": \"<string>\",\n        \"rapidBlink\": \"<string>\",\n        \"dstEnable\": \"<integer>\",\n        \"dstStart\": \"<string>\",\n        \"dstEnd\": \"<string>\",\n        \"rtcTime\": \"<string>\",\n        \"wifiAlertEn\": \"<string>\",\n        \"wifiAlertSel\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"fwUrl\": \"<string>\",\n        \"fwDwnldTm\": \"<string>\",\n        \"fwImplTm\": \"<string>\",\n        \"dpsEn\": \"<string>\",\n        \"bleCredEn\": \"<string>\",\n        \"bleCredRng\": \"<string>\",\n        \"blePerf\": \"<string>\",\n        \"invCrdAudEn\": \"<string>\",\n        \"wifiDwnldRtyTmIntv\": \"<integer>\",\n        \"wifiDwnldRtyCnt\": \"<integer>\",\n        \"auditIDEn\": \"<string>\",\n        \"blkCnstr\": \"<string>\",\n        \"mdl\": \"<string>\",\n        \"lckMode\": \"<string>\",\n        \"lckSn\": \"<string>\",\n        \"mainSn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"mfgDt\": \"<string>\",\n        \"dbDwnldTm\": \"<string>\",\n        \"fwImpTm\": \"<string>\",\n        \"nxtDbVerTS\": \"<string>\",\n        \"hwCfg\": \"<string>\",\n        \"dbUpdateStatus\": \"<integer>\",\n        \"wtyAct\": \"<string>\",\n        \"numCycles\": \"<integer>\"\n      },\n      \"rdrPrmtrs\": {\n        \"bprEn\": \"<string>\",\n        \"rdrSense\": \"<string>\",\n        \"proxConfHID\": \"<string>\",\n        \"proxConfGECASI\": \"<string>\",\n        \"proxConfGE4001\": \"<string>\",\n        \"proxConfGE4002\": \"<string>\",\n        \"proxConfAWID\": \"<string>\",\n        \"uid14443\": \"<string>\",\n        \"mi14443\": \"<string>\",\n        \"mip14443\": \"<string>\",\n        \"noc14443\": \"<string>\",\n        \"uid15693\": \"<string>\",\n        \"iClsUID40b\": \"<string>\",\n        \"iClsFrmt\": \"<string>\",\n        \"daysInUse\": \"<integer>\",\n        \"sn\": \"<string>\",\n        \"hwVer\": \"<string>\",\n        \"mfgDt\": \"<string>\",\n        \"configCrdPrsntd\": \"<string>\",\n        \"customKeyPrsntd\": \"<string>\"\n      },\n      \"dvcProfile\": {\n        \"baseType\": \"<string>\",\n        \"ext\": [\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          },\n          {\n            \"key\": \"<string>\",\n            \"value\": \"<integer>\"\n          }\n        ]\n      }\n    },\n    \"status\": {\n      \"lockStatus\": {\n        \"currentLockState\": \"<string>\"\n      },\n      \"sensorStatus\": {\n        \"locked\": \"<string>\",\n        \"auxPosition\": \"<string>\",\n        \"alarmPosition\": \"<string>\",\n        \"lockClutched\": \"<string>\",\n        \"primaryBatteryStatus\": \"<string>\",\n        \"rtcBatteryStatus\": \"<string>\",\n        \"rtccStatus\": \"<string>\",\n        \"doorOpen\": \"<string>\",\n        \"ipbActive\": \"<string>\",\n        \"rexActive\": \"<string>\",\n        \"renActive\": \"<string>\",\n        \"relActive\": \"<string>\",\n        \"deadBoltExtended\": \"<string>\",\n        \"keyOverrideActive\": \"<string>\",\n        \"fdrActive\": \"<string>\",\n        \"tamperOpen\": \"<string>\",\n        \"magTamperDetected\": \"<string>\",\n        \"rdrTamperDetected\": \"<string>\",\n        \"ttl1Active\": \"<string>\",\n        \"ttl2Active\": \"<string>\",\n        \"bprActive\": \"<string>\",\n        \"ledActive\": \"<string>\"\n      }\n    },\n    \"doorFileLastSyncedAt\": \"<date>\",\n    \"auditsLastSyncedAt\": \"<date>\"\n  },\n  \"avigilonWirelessLock\": {\n    \"formFactor\": \"<string>\",\n    \"keypadTimeout\": \"<integer>\",\n    \"keypadBrightness\": \"<integer>\",\n    \"timeOffset\": \"<integer>\",\n    \"networkConfig\": \"<object>\",\n    \"firmwareVersions\": \"<object>\",\n    \"dstEnabled\": \"<boolean>\",\n    \"serialNumber\": \"<string>\"\n  },\n  \"assaAbloyWirelessLock\": {\n    \"deviceGroupId\": \"<string>\",\n    \"config\": {\n      \"lockPrmtrs\": \"<object>\",\n      \"rdrPrmtrs\": \"<object>\",\n      \"isAjarEnabled\": \"<boolean>\",\n      \"isForcedOpenEnabled\": \"<boolean>\"\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2524b2ac-16e5-481d-b87e-718c4ed5165b",
+          "name": "Update the firmware for multiple wireless locks to the latest version",
+          "request": {
+            "name": "Update the firmware for multiple wireless locks to the latest version",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockFirmwareBatch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks",
+                "updateFirmwareBatch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "wirelessLockIds",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "29c32963-d7ab-4741-b659-3738545e25f3",
+              "name": "Firmware updates started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks",
+                    "updateFirmwareBatch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wirelessLockIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7acf3625-d940-4d01-81b4-049a78363cb0",
+          "name": "Blink the reader or inside-push-button LED for a wireless lock to identify it.",
+          "request": {
+            "name": "Blink the reader or inside-push-button LED for a wireless lock to identify it.",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: blinkWirelessLockLed",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks",
+                ":wirelessLockId",
+                "blinkLed"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "ledName",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d9eeb6e8-9731-4eeb-8964-7b88e4f0f92f",
+              "name": "Wireless lock led blink command sent",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks",
+                    ":wirelessLockId",
+                    "blinkLed"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "ledName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8f37935-6655-4262-a529-fe66827ec951",
+          "name": "Update the firmware for a wireless lock to a specific version",
+          "request": {
+            "name": "Update the firmware for a wireless lock to a specific version",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockFirmware",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLocks",
+                ":wirelessLockId",
+                "updateFirmware"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "04c0f853-a076-4412-b753-82a5dc3369d5",
+              "name": "Firmware update started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLocks",
+                    ":wirelessLockId",
+                    "updateFirmware"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9dfec871-5cec-4009-ade2-55360b600e52",
+    "name": "Openpath API Documentation auth orgs/wirelessLocks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

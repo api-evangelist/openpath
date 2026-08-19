@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "74d3080d-cd5d-4e24-9063-9ed410f4742a",
+      "name": "orgs/acuModels",
+      "description": {
+        "content": "ACU Models",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "34d56b88-aeca-4ced-8849-1371e68561b7",
+          "name": "List all ACU models",
+          "request": {
+            "name": "List all ACU models",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listAcuModels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "acuModels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "ordinal"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a0bd2cb9-2b7d-4129-b239-164a4572fde9",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "acuModels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "ordinal"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 9157,\n  \"filteredCount\": 8654,\n  \"data\": [\n    {\n      \"id\": 5854.908680693761,\n      \"name\": \"string\",\n      \"config\": {},\n      \"vendorConfig\": {},\n      \"isBaseModel\": false,\n      \"acuModelPortMapCounts\": [\n        {\n          \"ioType\": {\n            \"id\": 5136,\n            \"code\": \"string\"\n          },\n          \"count\": 9925\n        },\n        {\n          \"ioType\": {\n            \"id\": 9993,\n            \"code\": \"string\"\n          },\n          \"count\": 9427\n        }\n      ],\n      \"acuModelVendor\": {\n        \"id\": 334,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      }\n    },\n    {\n      \"id\": 5794.874550948565,\n      \"name\": \"string\",\n      \"config\": {},\n      \"vendorConfig\": {},\n      \"isBaseModel\": false,\n      \"acuModelPortMapCounts\": [\n        {\n          \"ioType\": {\n            \"id\": 2854,\n            \"code\": \"string\"\n          },\n          \"count\": 2825\n        },\n        {\n          \"ioType\": {\n            \"id\": 4607,\n            \"code\": \"string\"\n          },\n          \"count\": 4997\n        }\n      ],\n      \"acuModelVendor\": {\n        \"id\": 5196,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2011-06-29\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6535,\n        8827\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9046,\n          2967\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ce14a395-2344-4e90-b9a3-cd7c486bb3fb",
+          "name": "Describe an ACU model",
+          "request": {
+            "name": "Describe an ACU model",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeAcuModel",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "acuModels",
+                ":acuModelId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "acuModelId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "65da367d-230f-4e50-bed4-4208362dfa66",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "acuModels",
+                    ":acuModelId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "acuModelId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 751.2421299302819,\n    \"name\": \"string\",\n    \"config\": {},\n    \"vendorConfig\": {},\n    \"isBaseModel\": false,\n    \"acuModelPortMapCounts\": [\n      {\n        \"ioType\": {\n          \"id\": 4840,\n          \"code\": \"string\"\n        },\n        \"count\": 591\n      },\n      {\n        \"ioType\": {\n          \"id\": 9622,\n          \"code\": \"string\"\n        },\n        \"count\": 6146\n      }\n    ],\n    \"acuModelVendor\": {\n      \"id\": 2960,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2001-06-27\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        5326,\n        2639\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1721,\n          2853\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "753f2299-9c3b-4a53-914b-1b79925be3e2",
+    "name": "Openpath API Documentation auth orgs/acuModels API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

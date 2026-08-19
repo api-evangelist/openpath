@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "f3efd8eb-1afb-4fd0-9c66-4dd3231baf0e",
+      "name": "orgs/scopeResources",
+      "description": {
+        "content": "Scope Resources for User Roles",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ab0b329e-9621-4ae3-acb7-58bd323006d8",
+          "name": "List all scope resources",
+          "request": {
+            "name": "List all scope resources",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listScopeResources",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "scopeResources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "ordinal"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1550f140-e6ed-464d-89cc-78589fc36469",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "scopeResources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "ordinal"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 9144,\n  \"filteredCount\": 1288,\n  \"data\": [\n    {\n      \"id\": 6821.072785281255,\n      \"nativeAppId\": 3523,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"scopes\": [\n        {\n          \"id\": 7947.734723373743,\n          \"permission\": \"string\",\n          \"code\": \"string\",\n          \"description\": \"string\",\n          \"label\": \"string\",\n          \"parentScopeId\": 340.0608898150759\n        },\n        {\n          \"id\": 7280.461626988891,\n          \"permission\": \"string\",\n          \"code\": \"string\",\n          \"description\": \"string\",\n          \"label\": \"string\",\n          \"parentScopeId\": 3381.0211705603165\n        }\n      ]\n    },\n    {\n      \"id\": 474.4886680398652,\n      \"nativeAppId\": 9549,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"scopes\": [\n        {\n          \"id\": 4960.127282146729,\n          \"permission\": \"string\",\n          \"code\": \"string\",\n          \"description\": \"string\",\n          \"label\": \"string\",\n          \"parentScopeId\": 8514.495234403026\n        },\n        {\n          \"id\": 4492.0396081925155,\n          \"permission\": \"string\",\n          \"code\": \"string\",\n          \"description\": \"string\",\n          \"label\": \"string\",\n          \"parentScopeId\": 264.54484932769697\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1999-12-02\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6117,\n        5403\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6796,\n          8270\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6ed635b0-3fd4-4be8-a93b-36b81d723cf3",
+          "name": "Describe a scope resource",
+          "request": {
+            "name": "Describe a scope resource",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeScopeResource",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "scopeResources",
+                ":scopeResourceId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scopeResourceId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6b142c42-f0b0-4dea-8e01-b81ba27da5a8",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "scopeResources",
+                    ":scopeResourceId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scopeResourceId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 8706.832137720883,\n    \"nativeAppId\": 5538,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"scopes\": [\n      {\n        \"id\": 2582.0031794261945,\n        \"permission\": \"string\",\n        \"code\": \"string\",\n        \"description\": \"string\",\n        \"label\": \"string\",\n        \"parentScopeId\": 160.30086035121238\n      },\n      {\n        \"id\": 1914.968335562689,\n        \"permission\": \"string\",\n        \"code\": \"string\",\n        \"description\": \"string\",\n        \"label\": \"string\",\n        \"parentScopeId\": 1129.7859327999959\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1964-09-10\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3248,\n        6187\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7053,\n          8236\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1ded57b1-b62a-407b-95bd-73c53968991d",
+    "name": "Openpath API Documentation auth orgs/scopeResources API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,884 @@
+{
+  "item": [
+    {
+      "id": "17aa2852-be86-4efb-802f-4c350b766e2d",
+      "name": "orgs/entryStates",
+      "description": {
+        "content": "Entry States",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e5e6caa9-12b1-42f4-9039-8a3736a22a50",
+          "name": "List all entry states",
+          "request": {
+            "name": "List all entry states",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-entryState:w,o{params.orgId}-entryState:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listEntryStates",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "entryStates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "ordinal"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "996d9e12-cdd4-45ff-979d-5148db607e6e",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "entryStates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "ordinal"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6641,\n  \"filteredCount\": 1348,\n  \"data\": [\n    {\n      \"id\": 612.680097178735,\n      \"ordinal\": 8864.177209186419,\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"description\": \"string\",\n      \"isLocked\": true,\n      \"isToggle\": true,\n      \"orgId\": 2755.8038618117207,\n      \"isMultiFactor\": true,\n      \"triggerMethods\": [\n        {\n          \"id\": 7877.225933791967,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 3718.2888280507186,\n            \"modelName\": \"string\"\n          }\n        },\n        {\n          \"id\": 8096.730917863256,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 8759.864390974115,\n            \"modelName\": \"string\"\n          }\n        }\n      ],\n      \"secondFactorTriggerMethods\": [\n        {\n          \"id\": 2720.117198610238,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 3306.7841658718876,\n            \"modelName\": \"string\"\n          }\n        },\n        {\n          \"id\": 538.7337515887302,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 7823.191337474593,\n            \"modelName\": \"string\"\n          }\n        }\n      ],\n      \"triggerMethodCount\": 4802,\n      \"secondFactorTriggerMethodCount\": 9549,\n      \"secondFactorTimeoutSeconds\": 1770,\n      \"uniqueTriggerMethodCount\": 5964\n    },\n    {\n      \"id\": 4467.47007170762,\n      \"ordinal\": 1960.2765950930689,\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"description\": \"string\",\n      \"isLocked\": true,\n      \"isToggle\": false,\n      \"orgId\": 9213.583642803369,\n      \"isMultiFactor\": false,\n      \"triggerMethods\": [\n        {\n          \"id\": 6791.08354088006,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 3000.434809863439,\n            \"modelName\": \"string\"\n          }\n        },\n        {\n          \"id\": 7732.069006164502,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 8696.646111872367,\n            \"modelName\": \"string\"\n          }\n        }\n      ],\n      \"secondFactorTriggerMethods\": [\n        {\n          \"id\": 5263.678653481292,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 1054.3179648895818,\n            \"modelName\": \"string\"\n          }\n        },\n        {\n          \"id\": 3908.2430134790193,\n          \"code\": \"string\",\n          \"connectionTypeCode\": \"string\",\n          \"requestTypeCode\": \"string\",\n          \"credentialType\": {\n            \"id\": 5025.812325829846,\n            \"modelName\": \"string\"\n          }\n        }\n      ],\n      \"triggerMethodCount\": 7144,\n      \"secondFactorTriggerMethodCount\": 1089,\n      \"secondFactorTimeoutSeconds\": 4092,\n      \"uniqueTriggerMethodCount\": 6529\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1951-12-31\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        7508,\n        9259\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5776,\n          9431\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fee50f6d-eedd-43ba-bb8d-5fc8d2aaaf35",
+          "name": "Create a custom entry state",
+          "request": {
+            "name": "Create a custom entry state",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: createEntryState",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "entryStates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"isLocked\": \"<boolean>\",\n  \"secondFactorTimeoutSeconds\": \"<integer>\",\n  \"isToggle\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b240f0de-0c5e-4ea3-8693-101559516378",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "entryStates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"isLocked\": \"<boolean>\",\n  \"secondFactorTimeoutSeconds\": \"<integer>\",\n  \"isToggle\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5331.815764353586,\n    \"ordinal\": 6921.0975438125115,\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"description\": \"string\",\n    \"isLocked\": true,\n    \"isToggle\": true,\n    \"orgId\": 1127.7682620645191,\n    \"isMultiFactor\": true,\n    \"triggerMethods\": [\n      {\n        \"id\": 1069.7640195306312,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 3178.7178641374926,\n          \"modelName\": \"string\"\n        }\n      },\n      {\n        \"id\": 2346.220966790915,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 2118.729171093139,\n          \"modelName\": \"string\"\n        }\n      }\n    ],\n    \"secondFactorTriggerMethods\": [\n      {\n        \"id\": 5444.532384748489,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 6036.675978644792,\n          \"modelName\": \"string\"\n        }\n      },\n      {\n        \"id\": 2173.293162735138,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 9992.345109429332,\n          \"modelName\": \"string\"\n        }\n      }\n    ],\n    \"triggerMethodCount\": 656,\n    \"secondFactorTriggerMethodCount\": 7861,\n    \"secondFactorTimeoutSeconds\": 2101,\n    \"uniqueTriggerMethodCount\": 8006\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1995-11-23\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4856,\n        1290\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7424,\n          1605\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0c77524-82b4-49d3-9d35-eeee7c90eba8",
+          "name": "Describe an entry state",
+          "request": {
+            "name": "Describe an entry state",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-entryState:w,o{params.orgId}-entryState:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeEntryState",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "entryStates",
+                ":entryStateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "entryStateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "952dd6fe-1e98-4090-a969-8f9a790b3034",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "entryStates",
+                    ":entryStateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "entryStateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5331.815764353586,\n    \"ordinal\": 6921.0975438125115,\n    \"name\": \"string\",\n    \"code\": \"string\",\n    \"description\": \"string\",\n    \"isLocked\": true,\n    \"isToggle\": true,\n    \"orgId\": 1127.7682620645191,\n    \"isMultiFactor\": true,\n    \"triggerMethods\": [\n      {\n        \"id\": 1069.7640195306312,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 3178.7178641374926,\n          \"modelName\": \"string\"\n        }\n      },\n      {\n        \"id\": 2346.220966790915,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 2118.729171093139,\n          \"modelName\": \"string\"\n        }\n      }\n    ],\n    \"secondFactorTriggerMethods\": [\n      {\n        \"id\": 5444.532384748489,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 6036.675978644792,\n          \"modelName\": \"string\"\n        }\n      },\n      {\n        \"id\": 2173.293162735138,\n        \"code\": \"string\",\n        \"connectionTypeCode\": \"string\",\n        \"requestTypeCode\": \"string\",\n        \"credentialType\": {\n          \"id\": 9992.345109429332,\n          \"modelName\": \"string\"\n        }\n      }\n    ],\n    \"triggerMethodCount\": 656,\n    \"secondFactorTriggerMethodCount\": 7861,\n    \"secondFactorTimeoutSeconds\": 2101,\n    \"uniqueTriggerMethodCount\": 8006\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1995-11-23\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4856,\n        1290\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7424,\n          1605\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "aeb08f11-2e67-4acf-8092-c2a674b39be2",
+          "name": "Delete a custom entry state",
+          "request": {
+            "name": "Delete a custom entry state",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteEntryState",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "entryStates",
+                ":entryStateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "entryStateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8d9c00c7-91f1-4c9b-8c66-c6e7a3528e1d",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "entryStates",
+                    ":entryStateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "entryStateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "535d4e09-53f4-44b6-8337-fd650b62cd24",
+          "name": "Update a custom entry state",
+          "request": {
+            "name": "Update a custom entry state",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateEntryState",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "entryStates",
+                ":entryStateId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "entryStateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"isLocked\": \"<boolean>\",\n  \"secondFactorTimeoutSeconds\": \"<integer>\",\n  \"isToggle\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26c2848f-3e78-4918-99b9-3a8450a6fea6",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "entryStates",
+                    ":entryStateId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "entryStateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"isLocked\": \"<boolean>\",\n  \"secondFactorTimeoutSeconds\": \"<integer>\",\n  \"isToggle\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6b872d5e-d1e9-4be6-9c89-6fc87d13e4c4",
+          "name": "Set a custom entry state's entire list of trigger methods",
+          "request": {
+            "name": "Set a custom entry state's entire list of trigger methods",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-entryState:w,o:w,s-o:w<br/><br/>__Endpoint name__: setEntryStateTriggerMethodIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "entryStates",
+                ":entryStateId",
+                "triggerMethodIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "entryStateId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"triggerMethodIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"secondFactorTriggerMethodIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6d0dff68-5a02-4030-928b-f35e5dd23685",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "entryStates",
+                    ":entryStateId",
+                    "triggerMethodIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "entryStateId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"triggerMethodIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"secondFactorTriggerMethodIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7fa8cff2-c3b7-46ba-9ade-75c6e1f59e88",
+    "name": "Openpath API Documentation auth orgs/entryStates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

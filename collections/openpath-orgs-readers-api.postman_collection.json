@@ -1,0 +1,1003 @@
+{
+  "item": [
+    {
+      "id": "1b934aa8-5fdc-4cdd-8da6-7dae2e202ac3",
+      "name": "orgs/readers",
+      "description": {
+        "content": "Readers",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "34360994-be92-4f94-a98c-cc858feb7eab",
+          "name": "List all owned or assigned readers",
+          "request": {
+            "name": "List all owned or assigned readers",
+            "description": {
+              "content": "Possible comma separated values for the options parameter include: withEffectiveLocationRestriction. The withEffectiveLocationRestriction option causes current effective location restriction to be included in the response. Only readers with an effective location restriction include this object.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listReaders",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a4fe3e9a-6850-426e-98f2-c29484335f48",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6923,\n  \"filteredCount\": 886,\n  \"data\": [\n    {\n      \"id\": 3663.244397588049,\n      \"name\": \"string\",\n      \"serialNumber\": \"string\",\n      \"serialNumberBrief\": \"string\",\n      \"firmwareVersion\": \"string\",\n      \"softwareVersionNumber\": \"string\",\n      \"isExit\": false,\n      \"advTxPower\": 4,\n      \"beaconTxPower\": 0,\n      \"capTouchEnabled\": false,\n      \"capTouchRssi\": -56,\n      \"capTouchThreshold\": 2274,\n      \"nfcEnabled\": true,\n      \"autoUnlockEnabled\": false,\n      \"autoUnlockRssi\": -65,\n      \"acuPort\": {\n        \"id\": 1294.319292018674,\n        \"acuPortTypePortNumber\": 2477.574591259061,\n        \"virtualPortNumber\": 1171.3278133284555,\n        \"portNumber\": 5026.779734871882,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 4219.094104025114,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 6941.866680609063,\n          \"number\": 7693,\n          \"acuModelId\": 2946\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 9711.05206354087,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 6021.253243222435,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 5729.158634139893,\n          \"name\": \"string\"\n        }\n      ],\n      \"org\": {\n        \"id\": 4558.875802597729,\n        \"name\": \"string\"\n      },\n      \"ownedByOrg\": {\n        \"id\": 6374.0254064609035,\n        \"name\": \"string\"\n      },\n      \"effectiveLocationRestriction\": {\n        \"id\": 9416,\n        \"locationMeasurement\": {\n          \"longitude\": 7010.364688493706,\n          \"latitude\": 3204.5004986640333,\n          \"timeZoneId\": \"string\"\n        },\n        \"allowedDistanceMeters\": 7072.939060172381,\n        \"scaleFactor\": 3307.5700979499666\n      },\n      \"createdAt\": \"1990-10-03\",\n      \"updatedAt\": \"1955-01-11\",\n      \"notes\": \"string\",\n      \"isAudibleFeedbackEnabled\": true,\n      \"isLedFeedbackEnabled\": false,\n      \"pinTimeoutSeconds\": 9270,\n      \"isAppleWalletTraEnabled\": false\n    },\n    {\n      \"id\": 5099.606721597397,\n      \"name\": \"string\",\n      \"serialNumber\": \"string\",\n      \"serialNumberBrief\": \"string\",\n      \"firmwareVersion\": \"string\",\n      \"softwareVersionNumber\": \"string\",\n      \"isExit\": false,\n      \"advTxPower\": 0,\n      \"beaconTxPower\": 0,\n      \"capTouchEnabled\": false,\n      \"capTouchRssi\": -55,\n      \"capTouchThreshold\": 7922,\n      \"nfcEnabled\": true,\n      \"autoUnlockEnabled\": true,\n      \"autoUnlockRssi\": -55,\n      \"acuPort\": {\n        \"id\": 8909.77122857938,\n        \"acuPortTypePortNumber\": 486.3384604709442,\n        \"virtualPortNumber\": 2390.8710438877665,\n        \"portNumber\": 4485.790935844265,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 7419.053106957373,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 947.3775125091655,\n          \"number\": 7766,\n          \"acuModelId\": 9568\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 3370.8375470294795,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 8739.933825466063,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 164.39701507182212,\n          \"name\": \"string\"\n        }\n      ],\n      \"org\": {\n        \"id\": 1231.8708233279062,\n        \"name\": \"string\"\n      },\n      \"ownedByOrg\": {\n        \"id\": 7143.192180044801,\n        \"name\": \"string\"\n      },\n      \"effectiveLocationRestriction\": {\n        \"id\": 3037,\n        \"locationMeasurement\": {\n          \"longitude\": 5793.582566780383,\n          \"latitude\": 5224.775358242405,\n          \"timeZoneId\": \"string\"\n        },\n        \"allowedDistanceMeters\": 9696.343287701502,\n        \"scaleFactor\": 5114.9534186079245\n      },\n      \"createdAt\": \"1991-08-19\",\n      \"updatedAt\": \"2016-05-09\",\n      \"notes\": \"string\",\n      \"isAudibleFeedbackEnabled\": true,\n      \"isLedFeedbackEnabled\": false,\n      \"pinTimeoutSeconds\": 9067,\n      \"isAppleWalletTraEnabled\": true\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1995-11-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        1020,\n        8885\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9001,\n          5127\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cf12767d-0b55-448f-a5cf-a11a819447ea",
+          "name": "Create a reader",
+          "request": {
+            "name": "Create a reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: createReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"softwareVersionNumber\": \"<string>\",\n  \"acuPortId\": \"<integer>\",\n  \"isExit\": \"<boolean>\",\n  \"advTxPower\": \"<integer>\",\n  \"beaconTxPower\": \"<integer>\",\n  \"capTouchEnabled\": \"<boolean>\",\n  \"capTouchRssi\": \"<integer>\",\n  \"capTouchThreshold\": \"<integer>\",\n  \"nfcEnabled\": \"<boolean>\",\n  \"autoUnlockEnabled\": \"<boolean>\",\n  \"autoUnlockRssi\": \"<integer>\",\n  \"isAudibleFeedbackEnabled\": \"<boolean>\",\n  \"isLedFeedbackEnabled\": \"<boolean>\",\n  \"pinTimeoutSeconds\": \"<integer>\",\n  \"isAppleWalletTraEnabled\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f3246fb4-31c5-43bb-8bef-6c3a99eae8ae",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"softwareVersionNumber\": \"<string>\",\n  \"acuPortId\": \"<integer>\",\n  \"isExit\": \"<boolean>\",\n  \"advTxPower\": \"<integer>\",\n  \"beaconTxPower\": \"<integer>\",\n  \"capTouchEnabled\": \"<boolean>\",\n  \"capTouchRssi\": \"<integer>\",\n  \"capTouchThreshold\": \"<integer>\",\n  \"nfcEnabled\": \"<boolean>\",\n  \"autoUnlockEnabled\": \"<boolean>\",\n  \"autoUnlockRssi\": \"<integer>\",\n  \"isAudibleFeedbackEnabled\": \"<boolean>\",\n  \"isLedFeedbackEnabled\": \"<boolean>\",\n  \"pinTimeoutSeconds\": \"<integer>\",\n  \"isAppleWalletTraEnabled\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 878.785183637717,\n    \"name\": \"string\",\n    \"serialNumber\": \"string\",\n    \"serialNumberBrief\": \"string\",\n    \"firmwareVersion\": \"string\",\n    \"softwareVersionNumber\": \"string\",\n    \"isExit\": false,\n    \"advTxPower\": 4,\n    \"beaconTxPower\": 4,\n    \"capTouchEnabled\": true,\n    \"capTouchRssi\": -49,\n    \"capTouchThreshold\": 9481,\n    \"nfcEnabled\": true,\n    \"autoUnlockEnabled\": true,\n    \"autoUnlockRssi\": -50,\n    \"acuPort\": {\n      \"id\": 9033.930944354686,\n      \"acuPortTypePortNumber\": 2154.556226027876,\n      \"virtualPortNumber\": 3296.1668743739447,\n      \"portNumber\": 9662.376904264001,\n      \"label\": \"string\",\n      \"acu\": {\n        \"id\": 6864.46781815377,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 4475.702100099933,\n        \"number\": 8734,\n        \"acuModelId\": 9130\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 8908.709514582826,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"entries\": [\n      {\n        \"id\": 8049.529289351422,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 8172.998832661045,\n        \"name\": \"string\"\n      }\n    ],\n    \"org\": {\n      \"id\": 8498.468626680631,\n      \"name\": \"string\"\n    },\n    \"ownedByOrg\": {\n      \"id\": 8197.524369163757,\n      \"name\": \"string\"\n    },\n    \"effectiveLocationRestriction\": {\n      \"id\": 7441,\n      \"locationMeasurement\": {\n        \"longitude\": 6228.039475613621,\n        \"latitude\": 7160.308012018538,\n        \"timeZoneId\": \"string\"\n      },\n      \"allowedDistanceMeters\": 4162.19648789804,\n      \"scaleFactor\": 8403.908835317045\n    },\n    \"createdAt\": \"2006-02-25\",\n    \"updatedAt\": \"1983-09-07\",\n    \"notes\": \"string\",\n    \"isAudibleFeedbackEnabled\": false,\n    \"isLedFeedbackEnabled\": false,\n    \"pinTimeoutSeconds\": 8352,\n    \"isAppleWalletTraEnabled\": false\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1951-11-17\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        9965,\n        1854\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7596,\n          5398\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b49804dc-3ae7-4a71-89e9-795f53081658",
+          "name": "Describe an owned or assigned reader",
+          "request": {
+            "name": "Describe an owned or assigned reader",
+            "description": {
+              "content": "Possible comma separated values for the options parameter include: withEffectiveLocationRestriction. The withEffectiveLocationRestriction option causes current effective location restriction to be included in the response. Only readers with an effective location restriction include this object.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers",
+                ":readerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "readerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fbd97c9e-c7da-4c87-9e68-0ac0dcdfa045",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers",
+                    ":readerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "options",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "readerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 878.785183637717,\n    \"name\": \"string\",\n    \"serialNumber\": \"string\",\n    \"serialNumberBrief\": \"string\",\n    \"firmwareVersion\": \"string\",\n    \"softwareVersionNumber\": \"string\",\n    \"isExit\": false,\n    \"advTxPower\": 4,\n    \"beaconTxPower\": 4,\n    \"capTouchEnabled\": true,\n    \"capTouchRssi\": -49,\n    \"capTouchThreshold\": 9481,\n    \"nfcEnabled\": true,\n    \"autoUnlockEnabled\": true,\n    \"autoUnlockRssi\": -50,\n    \"acuPort\": {\n      \"id\": 9033.930944354686,\n      \"acuPortTypePortNumber\": 2154.556226027876,\n      \"virtualPortNumber\": 3296.1668743739447,\n      \"portNumber\": 9662.376904264001,\n      \"label\": \"string\",\n      \"acu\": {\n        \"id\": 6864.46781815377,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 4475.702100099933,\n        \"number\": 8734,\n        \"acuModelId\": 9130\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 8908.709514582826,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"entries\": [\n      {\n        \"id\": 8049.529289351422,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 8172.998832661045,\n        \"name\": \"string\"\n      }\n    ],\n    \"org\": {\n      \"id\": 8498.468626680631,\n      \"name\": \"string\"\n    },\n    \"ownedByOrg\": {\n      \"id\": 8197.524369163757,\n      \"name\": \"string\"\n    },\n    \"effectiveLocationRestriction\": {\n      \"id\": 7441,\n      \"locationMeasurement\": {\n        \"longitude\": 6228.039475613621,\n        \"latitude\": 7160.308012018538,\n        \"timeZoneId\": \"string\"\n      },\n      \"allowedDistanceMeters\": 4162.19648789804,\n      \"scaleFactor\": 8403.908835317045\n    },\n    \"createdAt\": \"2006-02-25\",\n    \"updatedAt\": \"1983-09-07\",\n    \"notes\": \"string\",\n    \"isAudibleFeedbackEnabled\": false,\n    \"isLedFeedbackEnabled\": false,\n    \"pinTimeoutSeconds\": 8352,\n    \"isAppleWalletTraEnabled\": false\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1951-11-17\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        9965,\n        1854\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7596,\n          5398\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "041f8c0a-8a8d-419a-abae-1a1a985ef145",
+          "name": "Delete a reader",
+          "request": {
+            "name": "Delete a reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers",
+                ":readerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "readerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d925206a-c88a-4ad7-9c2e-0b28640e9c91",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers",
+                    ":readerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "readerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1716661a-0dda-4999-a1b6-7c2f42803e0d",
+          "name": "Update a reader",
+          "request": {
+            "name": "Update a reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: updateReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers",
+                ":readerId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "readerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"softwareVersionNumber\": \"<string>\",\n  \"acuPortId\": \"<integer>\",\n  \"isExit\": \"<boolean>\",\n  \"advTxPower\": \"<integer>\",\n  \"beaconTxPower\": \"<integer>\",\n  \"capTouchEnabled\": \"<boolean>\",\n  \"capTouchRssi\": \"<integer>\",\n  \"capTouchThreshold\": \"<integer>\",\n  \"nfcEnabled\": \"<boolean>\",\n  \"autoUnlockEnabled\": \"<boolean>\",\n  \"autoUnlockRssi\": \"<integer>\",\n  \"isAudibleFeedbackEnabled\": \"<boolean>\",\n  \"isLedFeedbackEnabled\": \"<boolean>\",\n  \"pinTimeoutSeconds\": \"<integer>\",\n  \"isAppleWalletTraEnabled\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "956f438e-3f04-4a98-9779-9ecadf48fcdf",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers",
+                    ":readerId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "readerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"notes\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"softwareVersionNumber\": \"<string>\",\n  \"acuPortId\": \"<integer>\",\n  \"isExit\": \"<boolean>\",\n  \"advTxPower\": \"<integer>\",\n  \"beaconTxPower\": \"<integer>\",\n  \"capTouchEnabled\": \"<boolean>\",\n  \"capTouchRssi\": \"<integer>\",\n  \"capTouchThreshold\": \"<integer>\",\n  \"nfcEnabled\": \"<boolean>\",\n  \"autoUnlockEnabled\": \"<boolean>\",\n  \"autoUnlockRssi\": \"<integer>\",\n  \"isAudibleFeedbackEnabled\": \"<boolean>\",\n  \"isLedFeedbackEnabled\": \"<boolean>\",\n  \"pinTimeoutSeconds\": \"<integer>\",\n  \"isAppleWalletTraEnabled\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1e805d6-ddd3-4f7e-b141-2858f68bc2da",
+          "name": "Remotely trigger a reader to identify itself via LED and buzzer",
+          "request": {
+            "name": "Remotely trigger a reader to identify itself via LED and buzzer",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: remoteReaderIdentify",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers",
+                ":readerId",
+                "identify"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "readerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5af544f5-66d4-407f-a815-d0b2b09d5205",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers",
+                    ":readerId",
+                    "identify"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "readerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30b69222-fa22-442e-b63f-803a432f9deb",
+          "name": "Remotely trigger a reader to restart",
+          "request": {
+            "name": "Remotely trigger a reader to restart",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: remoteReaderRestart",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "readers",
+                ":readerId",
+                "restart"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "readerId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6767037a-4c21-4c08-afea-525c72c1986f",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "readers",
+                    ":readerId",
+                    "restart"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "readerId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "833d9be5-0b38-4bb8-a780-5585536751ff",
+    "name": "Openpath API Documentation auth orgs/readers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

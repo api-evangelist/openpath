@@ -1,0 +1,142 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Describe an access token's associated identity and scopes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/auth/accessTokens/:token",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__Endpoint name__: describeAccessToken"
+        },
+        {
+          "info": {
+            "name": "Login",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/login"
+          },
+          "docs": "__Endpoint name__: login"
+        },
+        {
+          "info": {
+            "name": "Login all successful matches for email/password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/loginAll"
+          },
+          "docs": "__Endpoint name__: loginAll"
+        },
+        {
+          "info": {
+            "name": "Logout",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/logout"
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: undefined<br/><br/>__Endpoint name__: logout"
+        },
+        {
+          "info": {
+            "name": "Send email to reset password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/resetPassword"
+          },
+          "docs": "__Endpoint name__: resetPassword"
+        },
+        {
+          "info": {
+            "name": "Send email with magic link to setup mobile",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/setupMobile"
+          },
+          "docs": "__Endpoint name__: setupMobile"
+        },
+        {
+          "info": {
+            "name": "Create a new access token with refreshed scopes and expiration time, invalidate old token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/accessTokens/refresh"
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: undefined<br/><br/>__Endpoint name__: refreshLogin"
+        },
+        {
+          "info": {
+            "name": "DEPRECATED - use /auth/sso/authorize instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/oidc/authorize"
+          },
+          "docs": "__Endpoint name__: getOidcAuthUrl"
+        },
+        {
+          "info": {
+            "name": "Generate SSO authorize URL (may be OIDC or SAML)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/sso/authorize"
+          },
+          "docs": "__Endpoint name__: getSsoAuthUrl"
+        },
+        {
+          "info": {
+            "name": "Validate an access token for proper signature, format, expiration, and active status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/auth/accessTokens/:token/validate",
+            "params": [
+              {
+                "name": "token",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Possible error names: TokenExpiredError, JsonWebTokenError, TokenNotFoundError<br/><br/>__Endpoint name__: validateAccessToken"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

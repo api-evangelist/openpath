@@ -1,0 +1,739 @@
+{
+  "item": [
+    {
+      "id": "d284b5e2-c68b-4b75-8260-4433c66ae5d8",
+      "name": "orgs/badgeConfigs",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7ed4bd3d-08cb-41ab-a708-2e7f7c1e93d1",
+          "name": "List all badge configs",
+          "request": {
+            "name": "List all badge configs",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listBadgeConfigs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "badgeConfigs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "7e6a19f7-baa4-44a3-ba17-9f65515de659",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "badgeConfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 9570,\n  \"filteredCount\": 2215,\n  \"data\": [\n    {\n      \"id\": 8781.147932809976,\n      \"nameConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.604725059707998,\n        \"lineHeight\": 0.6727546644066704,\n        \"fontWeight\": 8315.4945086248,\n        \"fontStyle\": \"oblique\",\n        \"textAlign\": \"center\",\n        \"centerX\": 0.9551736467301183,\n        \"centerY\": 0.45232269024699845,\n        \"width\": 0.9740912113028597,\n        \"height\": 0.4593263831067791,\n        \"layout\": \"oneLine\",\n        \"textTransform\": \"capitalize\"\n      },\n      \"customField1Config\": {\n        \"isEnabled\": false,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.30908042210149667,\n        \"lineHeight\": 0.02578205504609432,\n        \"fontWeight\": 9124.672713704309,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.6442069788209335,\n        \"centerY\": 0.06656826978958541,\n        \"width\": 0.6507360730271226,\n        \"height\": 0.09336219735434304\n      },\n      \"customField2Config\": {\n        \"isEnabled\": false,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.9066935292300307,\n        \"lineHeight\": 0.23892193181678867,\n        \"fontWeight\": 1143.8711296583126,\n        \"textAlign\": \"left\",\n        \"centerX\": 0.9957538722223316,\n        \"centerY\": 0.9704963651532794,\n        \"width\": 0.8614281064559718,\n        \"height\": 0.980787043798979\n      },\n      \"backgroundConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.1624744862704216,\n        \"centerY\": 0.6292026830496499,\n        \"width\": 0.7740338691795418,\n        \"height\": 0.06581984002215491\n      },\n      \"photoConfig\": {\n        \"isEnabled\": false,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.20998169187865023,\n        \"centerY\": 0.369217410004563,\n        \"width\": 0.7171128759214661,\n        \"height\": 0.9738040313406793,\n        \"borderRadius\": 0.09794570104422218,\n        \"borderColor\": \"string\"\n      },\n      \"logoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"backgroundPosition\": \"string\",\n        \"label\": \"string\",\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.6581376063111347,\n        \"lineHeight\": 0.8218082486094653,\n        \"fontWeight\": 3909.6457686247177,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.02618150041477474,\n        \"centerY\": 0.5690245029080329,\n        \"width\": 0.7689257696859259,\n        \"height\": 0.9272750108235966\n      },\n      \"externalIdConfig\": {\n        \"isEnabled\": false,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.41813539796636023,\n        \"lineHeight\": 0.38757957009993493,\n        \"fontWeight\": 2178.6600862822656,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.11658659467484989,\n        \"centerY\": 0.7313296025976318,\n        \"width\": 0.5567988383077929,\n        \"height\": 0.01874112203200129\n      },\n      \"customField1\": {\n        \"id\": 5375.610839004661,\n        \"name\": \"string\"\n      },\n      \"customField2\": {\n        \"id\": 7523.813810953622,\n        \"name\": \"string\"\n      },\n      \"badgeDefaultConfig\": {\n        \"id\": 2236,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.46610718469645085,\n          \"lineHeight\": 0.32266437176204077,\n          \"fontWeight\": 219.94037424827417,\n          \"fontStyle\": \"none\",\n          \"textAlign\": \"left\",\n          \"centerX\": 0.5628533193111024,\n          \"centerY\": 0.23974212304118936,\n          \"width\": 0.9635728096338727,\n          \"height\": 0.9745118441978914,\n          \"layout\": \"twoLines\",\n          \"textTransform\": \"none\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.6228604890642533,\n          \"lineHeight\": 0.21623303492129353,\n          \"fontWeight\": 4396.223878854321,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.0836576126177967,\n          \"centerY\": 0.4168729025214579,\n          \"width\": 0.7635744923966628,\n          \"height\": 0.32913525763868423\n        },\n        \"customField2Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.2972072451595702,\n          \"lineHeight\": 0.30643887483338716,\n          \"fontWeight\": 2482.2202031368656,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.4667672574890235,\n          \"centerY\": 0.6643292294964499,\n          \"width\": 0.7122834236101568,\n          \"height\": 0.8661544715464761\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": false,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.9146639283254674,\n          \"centerY\": 0.5807948367148671,\n          \"width\": 0.4848218080147736,\n          \"height\": 0.7436756585503701\n        },\n        \"photoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.9083378265685438,\n          \"centerY\": 0.5292174975456166,\n          \"width\": 0.9360942029183706,\n          \"height\": 0.853362647467704,\n          \"borderRadius\": 0.33556581871981683,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": false,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.8599901545054822,\n          \"lineHeight\": 0.806577053762883,\n          \"fontWeight\": 599.5162043721635,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.9888604740669095,\n          \"centerY\": 0.14315822458476202,\n          \"width\": 0.20893777788108892,\n          \"height\": 0.3200764180287953\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.09122956317229447,\n          \"lineHeight\": 0.38108256492962145,\n          \"fontWeight\": 568.3809601617485,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.43825696774716527,\n          \"centerY\": 0.8631667531358557,\n          \"width\": 0.8048052437696748,\n          \"height\": 0.3093191977391748\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"badgeWidth\": 8104.632018373927,\n        \"badgeHeight\": 5741.473303738699,\n        \"badgeBorderRadius\": 8786.87225927333,\n        \"printWidth\": 712.3275128463513,\n        \"printHeight\": 6612.7999831908055,\n        \"name\": \"string\",\n        \"isMobile\": true\n      },\n      \"backgroundPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"logoPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"name\": \"string\",\n      \"badgeBorderRadius\": 6706,\n      \"isOrgDefault\": true\n    },\n    {\n      \"id\": 8309.83364058907,\n      \"nameConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.11536101323466774,\n        \"lineHeight\": 0.34525755777231903,\n        \"fontWeight\": 6991.649682841853,\n        \"fontStyle\": \"oblique\",\n        \"textAlign\": \"right\",\n        \"centerX\": 0.6380315265026789,\n        \"centerY\": 0.652610255106636,\n        \"width\": 0.6276054060035557,\n        \"height\": 0.2599350491189527,\n        \"layout\": \"twoLines\",\n        \"textTransform\": \"uppercase\"\n      },\n      \"customField1Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.37699614053748065,\n        \"lineHeight\": 0.1191369234044054,\n        \"fontWeight\": 8613.243843138469,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.936107793529962,\n        \"centerY\": 0.8347866293386117,\n        \"width\": 0.7313396999855393,\n        \"height\": 0.7673049341882813\n      },\n      \"customField2Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.45501042275668346,\n        \"lineHeight\": 0.6477437814041004,\n        \"fontWeight\": 9168.652062174084,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.17191660948040943,\n        \"centerY\": 0.41578991890758266,\n        \"width\": 0.9139086321065836,\n        \"height\": 0.7135474934637784\n      },\n      \"backgroundConfig\": {\n        \"isEnabled\": false,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.7490781301152623,\n        \"centerY\": 0.5223192893484734,\n        \"width\": 0.9949501643618013,\n        \"height\": 0.76972948933873\n      },\n      \"photoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.9754898174208188,\n        \"centerY\": 0.35294477418547754,\n        \"width\": 0.4347276401105463,\n        \"height\": 0.956412926263839,\n        \"borderRadius\": 0.7431756146067323,\n        \"borderColor\": \"string\"\n      },\n      \"logoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"backgroundPosition\": \"string\",\n        \"label\": \"string\",\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.26601547493334254,\n        \"lineHeight\": 0.4873766588218583,\n        \"fontWeight\": 6920.047053817141,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.12671265268224974,\n        \"centerY\": 0.1374518018779507,\n        \"width\": 0.03838292624784756,\n        \"height\": 0.8947107811297258\n      },\n      \"externalIdConfig\": {\n        \"isEnabled\": false,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.811253690917361,\n        \"lineHeight\": 0.47327036759759,\n        \"fontWeight\": 1402.797713343862,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.051943907899378194,\n        \"centerY\": 0.5899206324950768,\n        \"width\": 0.17151280092415633,\n        \"height\": 0.4131014515493182\n      },\n      \"customField1\": {\n        \"id\": 8085.5588163269595,\n        \"name\": \"string\"\n      },\n      \"customField2\": {\n        \"id\": 9406.526633652935,\n        \"name\": \"string\"\n      },\n      \"badgeDefaultConfig\": {\n        \"id\": 8006,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.6613181622821749,\n          \"lineHeight\": 0.44793290917308337,\n          \"fontWeight\": 7621.4047855677445,\n          \"fontStyle\": \"oblique\",\n          \"textAlign\": \"left\",\n          \"centerX\": 0.3307437207908248,\n          \"centerY\": 0.935612956333133,\n          \"width\": 0.9056220524749761,\n          \"height\": 0.04676227831316626,\n          \"layout\": \"oneLine\",\n          \"textTransform\": \"uppercase\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.3949342382882749,\n          \"lineHeight\": 0.48853967388382535,\n          \"fontWeight\": 7860.689948504487,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.47194672319590236,\n          \"centerY\": 0.37623720459567334,\n          \"width\": 0.9288952029786054,\n          \"height\": 0.4198609029006596\n        },\n        \"customField2Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7551044320951403,\n          \"lineHeight\": 0.8223549373185123,\n          \"fontWeight\": 6583.311388512867,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.27338051136736174,\n          \"centerY\": 0.7566318932702285,\n          \"width\": 0.3022830172833968,\n          \"height\": 0.4631946670073588\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.9550731129411375,\n          \"centerY\": 0.5826183627297059,\n          \"width\": 0.026043931603447867,\n          \"height\": 0.5407583639969786\n        },\n        \"photoConfig\": {\n          \"isEnabled\": false,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.2734402166688553,\n          \"centerY\": 0.5350985295315701,\n          \"width\": 0.4194913524289705,\n          \"height\": 0.9580262825836637,\n          \"borderRadius\": 0.17573870896560206,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.370104854321504,\n          \"lineHeight\": 0.22869387447633627,\n          \"fontWeight\": 7557.621570075198,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.9062133418682801,\n          \"centerY\": 0.5716621562376321,\n          \"width\": 0.9463947202875079,\n          \"height\": 0.8020508833495906\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.08109523218617098,\n          \"lineHeight\": 0.9843695864790961,\n          \"fontWeight\": 2313.524808662554,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.02658384332420627,\n          \"centerY\": 0.07846264264766589,\n          \"width\": 0.9200896006075239,\n          \"height\": 0.4802007171022611\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"badgeWidth\": 5102.949704296914,\n        \"badgeHeight\": 638.7336793673404,\n        \"badgeBorderRadius\": 7976.49888998934,\n        \"printWidth\": 8809.041508241877,\n        \"printHeight\": 3167.6791698091165,\n        \"name\": \"string\",\n        \"isMobile\": true\n      },\n      \"backgroundPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"logoPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"name\": \"string\",\n      \"badgeBorderRadius\": 7982,\n      \"isOrgDefault\": true\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1978-04-19\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        9477,\n        4959\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9840,\n          1430\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "931071d2-e0bb-490d-8a17-fcd391d5dc7b",
+          "name": "Create a new badge config",
+          "request": {
+            "name": "Create a new badge config",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: createBadgeConfig",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "badgeConfigs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"badgeDefaultConfigId\": \"<integer>\",\n  \"nameConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"fontStyle\": \"<string>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"layout\": \"<string>\",\n    \"textTransform\": \"<string>\"\n  },\n  \"customField1Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField2Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"backgroundConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"photoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"borderRadius\": \"<number>\",\n    \"borderColor\": \"<string>\"\n  },\n  \"logoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"backgroundPosition\": \"<string>\",\n    \"label\": \"<string>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"externalIdConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField1Id\": \"<integer>\",\n  \"customField2Id\": \"<integer>\",\n  \"backgroundPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"logoPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"badgeBorderRadius\": \"<integer>\",\n  \"isOrgDefault\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fe1f6923-15a0-4eb1-a1af-970594901fd6",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "badgeConfigs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"badgeDefaultConfigId\": \"<integer>\",\n  \"nameConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"fontStyle\": \"<string>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"layout\": \"<string>\",\n    \"textTransform\": \"<string>\"\n  },\n  \"customField1Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField2Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"backgroundConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"photoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"borderRadius\": \"<number>\",\n    \"borderColor\": \"<string>\"\n  },\n  \"logoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"backgroundPosition\": \"<string>\",\n    \"label\": \"<string>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"externalIdConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField1Id\": \"<integer>\",\n  \"customField2Id\": \"<integer>\",\n  \"backgroundPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"logoPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"badgeBorderRadius\": \"<integer>\",\n  \"isOrgDefault\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 8219.726447356961,\n    \"nameConfig\": {\n      \"isEnabled\": false,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.6876329623095963,\n      \"lineHeight\": 0.21449053740165214,\n      \"fontWeight\": 5302.039139746627,\n      \"fontStyle\": \"oblique\",\n      \"textAlign\": \"center\",\n      \"centerX\": 0.8717654554854455,\n      \"centerY\": 0.2148420798595696,\n      \"width\": 0.49053440712243057,\n      \"height\": 0.010435476274143651,\n      \"layout\": \"threeLines\",\n      \"textTransform\": \"uppercase\"\n    },\n    \"customField1Config\": {\n      \"isEnabled\": false,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.2878259619270257,\n      \"lineHeight\": 0.8101907259873289,\n      \"fontWeight\": 5666.11241273287,\n      \"textAlign\": \"right\",\n      \"centerX\": 0.8709349237224836,\n      \"centerY\": 0.09682457013305579,\n      \"width\": 0.24962886496822223,\n      \"height\": 0.8955014344654058\n    },\n    \"customField2Config\": {\n      \"isEnabled\": true,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.8232142471331009,\n      \"lineHeight\": 0.9204487974744665,\n      \"fontWeight\": 75.82569882962021,\n      \"textAlign\": \"center\",\n      \"centerX\": 0.9410210922924076,\n      \"centerY\": 0.4672707797785792,\n      \"width\": 0.7095361629693675,\n      \"height\": 0.01952247149522124\n    },\n    \"backgroundConfig\": {\n      \"isEnabled\": false,\n      \"backgroundColor\": \"string\",\n      \"centerX\": 0.5357445634821307,\n      \"centerY\": 0.5759456325960376,\n      \"width\": 0.7372641659676111,\n      \"height\": 0.6131830519371819\n    },\n    \"photoConfig\": {\n      \"isEnabled\": false,\n      \"backgroundColor\": \"string\",\n      \"centerX\": 0.12814762733236473,\n      \"centerY\": 0.7421762057942075,\n      \"width\": 0.4754599683363989,\n      \"height\": 0.19652706362641237,\n      \"borderRadius\": 0.7210323369269377,\n      \"borderColor\": \"string\"\n    },\n    \"logoConfig\": {\n      \"isEnabled\": false,\n      \"backgroundColor\": \"string\",\n      \"backgroundPosition\": \"string\",\n      \"label\": \"string\",\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.22646318479601146,\n      \"lineHeight\": 0.2006179181909694,\n      \"fontWeight\": 2661.3458943989876,\n      \"textAlign\": \"left\",\n      \"centerX\": 0.3200789689327985,\n      \"centerY\": 0.8925395526324168,\n      \"width\": 0.14164285611202498,\n      \"height\": 0.360528153302482\n    },\n    \"externalIdConfig\": {\n      \"isEnabled\": true,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.5804193090430639,\n      \"lineHeight\": 0.34587287029122216,\n      \"fontWeight\": 730.0410567403992,\n      \"textAlign\": \"center\",\n      \"centerX\": 0.2169152998763404,\n      \"centerY\": 0.957976361755143,\n      \"width\": 0.25617947923500584,\n      \"height\": 0.17709140663839928\n    },\n    \"customField1\": {\n      \"id\": 2319.4113287435725,\n      \"name\": \"string\"\n    },\n    \"customField2\": {\n      \"id\": 3681.9846361709406,\n      \"name\": \"string\"\n    },\n    \"badgeDefaultConfig\": {\n      \"id\": 9355,\n      \"nameConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.7755602574253383,\n        \"lineHeight\": 0.49764397201367916,\n        \"fontWeight\": 7647.943598032174,\n        \"fontStyle\": \"italic\",\n        \"textAlign\": \"center\",\n        \"centerX\": 0.25291883383872926,\n        \"centerY\": 0.8326209728319998,\n        \"width\": 0.17245270116378275,\n        \"height\": 0.6410497396611708,\n        \"layout\": \"oneLine\",\n        \"textTransform\": \"none\"\n      },\n      \"customField1Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.4014740975790212,\n        \"lineHeight\": 0.5988675133304524,\n        \"fontWeight\": 5464.373529906027,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.5074134945791756,\n        \"centerY\": 0.5280409274512563,\n        \"width\": 0.42326782362292226,\n        \"height\": 0.264570334521971\n      },\n      \"customField2Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.4568462606020224,\n        \"lineHeight\": 0.9503030153152301,\n        \"fontWeight\": 3743.386999762267,\n        \"textAlign\": \"right\",\n        \"centerX\": 0.5174739935675768,\n        \"centerY\": 0.9681817543508808,\n        \"width\": 0.25050345324322987,\n        \"height\": 0.19696398652554714\n      },\n      \"backgroundConfig\": {\n        \"isEnabled\": false,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.6730360742129851,\n        \"centerY\": 0.16260802415534392,\n        \"width\": 0.2871435985058244,\n        \"height\": 0.854460149483312\n      },\n      \"photoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.7587690574212602,\n        \"centerY\": 0.16619490422419592,\n        \"width\": 0.06481908039198536,\n        \"height\": 0.6777005071563249,\n        \"borderRadius\": 0.25900981150533386,\n        \"borderColor\": \"string\"\n      },\n      \"logoConfig\": {\n        \"isEnabled\": false,\n        \"backgroundColor\": \"string\",\n        \"backgroundPosition\": \"string\",\n        \"label\": \"string\",\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.44672777673254205,\n        \"lineHeight\": 0.7283970487532091,\n        \"fontWeight\": 4473.675702704932,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.664661043320911,\n        \"centerY\": 0.7901695799353337,\n        \"width\": 0.14134843297369126,\n        \"height\": 0.9148593035335777\n      },\n      \"externalIdConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.5389175936200403,\n        \"lineHeight\": 0.6428638437688978,\n        \"fontWeight\": 1582.3374756086328,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.7474305873087767,\n        \"centerY\": 0.32898397412187375,\n        \"width\": 0.2842371601626035,\n        \"height\": 0.5826527308779222\n      },\n      \"backgroundPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"logoPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"badgeWidth\": 6799.924086922902,\n      \"badgeHeight\": 3130.517704585515,\n      \"badgeBorderRadius\": 4579.6524302922735,\n      \"printWidth\": 6689.347548389675,\n      \"printHeight\": 9244.850029639294,\n      \"name\": \"string\",\n      \"isMobile\": true\n    },\n    \"backgroundPicture\": {\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"url\": \"string\"\n    },\n    \"logoPicture\": {\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"url\": \"string\"\n    },\n    \"name\": \"string\",\n    \"badgeBorderRadius\": 8123,\n    \"isOrgDefault\": true\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1955-03-13\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4216,\n        1266\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4099,\n          2188\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6232aaca-b483-41fd-979c-2e06d3287813",
+          "name": "Describe a badge config",
+          "request": {
+            "name": "Describe a badge config",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeBadgeConfig",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "badgeConfigs",
+                ":badgeConfigId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "badgeConfigId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "77d1fabd-8037-43f7-ae69-06d30f260f0a",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "badgeConfigs",
+                    ":badgeConfigId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "badgeConfigId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 8219.726447356961,\n    \"nameConfig\": {\n      \"isEnabled\": false,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.6876329623095963,\n      \"lineHeight\": 0.21449053740165214,\n      \"fontWeight\": 5302.039139746627,\n      \"fontStyle\": \"oblique\",\n      \"textAlign\": \"center\",\n      \"centerX\": 0.8717654554854455,\n      \"centerY\": 0.2148420798595696,\n      \"width\": 0.49053440712243057,\n      \"height\": 0.010435476274143651,\n      \"layout\": \"threeLines\",\n      \"textTransform\": \"uppercase\"\n    },\n    \"customField1Config\": {\n      \"isEnabled\": false,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.2878259619270257,\n      \"lineHeight\": 0.8101907259873289,\n      \"fontWeight\": 5666.11241273287,\n      \"textAlign\": \"right\",\n      \"centerX\": 0.8709349237224836,\n      \"centerY\": 0.09682457013305579,\n      \"width\": 0.24962886496822223,\n      \"height\": 0.8955014344654058\n    },\n    \"customField2Config\": {\n      \"isEnabled\": true,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.8232142471331009,\n      \"lineHeight\": 0.9204487974744665,\n      \"fontWeight\": 75.82569882962021,\n      \"textAlign\": \"center\",\n      \"centerX\": 0.9410210922924076,\n      \"centerY\": 0.4672707797785792,\n      \"width\": 0.7095361629693675,\n      \"height\": 0.01952247149522124\n    },\n    \"backgroundConfig\": {\n      \"isEnabled\": false,\n      \"backgroundColor\": \"string\",\n      \"centerX\": 0.5357445634821307,\n      \"centerY\": 0.5759456325960376,\n      \"width\": 0.7372641659676111,\n      \"height\": 0.6131830519371819\n    },\n    \"photoConfig\": {\n      \"isEnabled\": false,\n      \"backgroundColor\": \"string\",\n      \"centerX\": 0.12814762733236473,\n      \"centerY\": 0.7421762057942075,\n      \"width\": 0.4754599683363989,\n      \"height\": 0.19652706362641237,\n      \"borderRadius\": 0.7210323369269377,\n      \"borderColor\": \"string\"\n    },\n    \"logoConfig\": {\n      \"isEnabled\": false,\n      \"backgroundColor\": \"string\",\n      \"backgroundPosition\": \"string\",\n      \"label\": \"string\",\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.22646318479601146,\n      \"lineHeight\": 0.2006179181909694,\n      \"fontWeight\": 2661.3458943989876,\n      \"textAlign\": \"left\",\n      \"centerX\": 0.3200789689327985,\n      \"centerY\": 0.8925395526324168,\n      \"width\": 0.14164285611202498,\n      \"height\": 0.360528153302482\n    },\n    \"externalIdConfig\": {\n      \"isEnabled\": true,\n      \"color\": \"string\",\n      \"fontFamily\": \"string\",\n      \"fontSize\": 0.5804193090430639,\n      \"lineHeight\": 0.34587287029122216,\n      \"fontWeight\": 730.0410567403992,\n      \"textAlign\": \"center\",\n      \"centerX\": 0.2169152998763404,\n      \"centerY\": 0.957976361755143,\n      \"width\": 0.25617947923500584,\n      \"height\": 0.17709140663839928\n    },\n    \"customField1\": {\n      \"id\": 2319.4113287435725,\n      \"name\": \"string\"\n    },\n    \"customField2\": {\n      \"id\": 3681.9846361709406,\n      \"name\": \"string\"\n    },\n    \"badgeDefaultConfig\": {\n      \"id\": 9355,\n      \"nameConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.7755602574253383,\n        \"lineHeight\": 0.49764397201367916,\n        \"fontWeight\": 7647.943598032174,\n        \"fontStyle\": \"italic\",\n        \"textAlign\": \"center\",\n        \"centerX\": 0.25291883383872926,\n        \"centerY\": 0.8326209728319998,\n        \"width\": 0.17245270116378275,\n        \"height\": 0.6410497396611708,\n        \"layout\": \"oneLine\",\n        \"textTransform\": \"none\"\n      },\n      \"customField1Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.4014740975790212,\n        \"lineHeight\": 0.5988675133304524,\n        \"fontWeight\": 5464.373529906027,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.5074134945791756,\n        \"centerY\": 0.5280409274512563,\n        \"width\": 0.42326782362292226,\n        \"height\": 0.264570334521971\n      },\n      \"customField2Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.4568462606020224,\n        \"lineHeight\": 0.9503030153152301,\n        \"fontWeight\": 3743.386999762267,\n        \"textAlign\": \"right\",\n        \"centerX\": 0.5174739935675768,\n        \"centerY\": 0.9681817543508808,\n        \"width\": 0.25050345324322987,\n        \"height\": 0.19696398652554714\n      },\n      \"backgroundConfig\": {\n        \"isEnabled\": false,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.6730360742129851,\n        \"centerY\": 0.16260802415534392,\n        \"width\": 0.2871435985058244,\n        \"height\": 0.854460149483312\n      },\n      \"photoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.7587690574212602,\n        \"centerY\": 0.16619490422419592,\n        \"width\": 0.06481908039198536,\n        \"height\": 0.6777005071563249,\n        \"borderRadius\": 0.25900981150533386,\n        \"borderColor\": \"string\"\n      },\n      \"logoConfig\": {\n        \"isEnabled\": false,\n        \"backgroundColor\": \"string\",\n        \"backgroundPosition\": \"string\",\n        \"label\": \"string\",\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.44672777673254205,\n        \"lineHeight\": 0.7283970487532091,\n        \"fontWeight\": 4473.675702704932,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.664661043320911,\n        \"centerY\": 0.7901695799353337,\n        \"width\": 0.14134843297369126,\n        \"height\": 0.9148593035335777\n      },\n      \"externalIdConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.5389175936200403,\n        \"lineHeight\": 0.6428638437688978,\n        \"fontWeight\": 1582.3374756086328,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.7474305873087767,\n        \"centerY\": 0.32898397412187375,\n        \"width\": 0.2842371601626035,\n        \"height\": 0.5826527308779222\n      },\n      \"backgroundPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"logoPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"badgeWidth\": 6799.924086922902,\n      \"badgeHeight\": 3130.517704585515,\n      \"badgeBorderRadius\": 4579.6524302922735,\n      \"printWidth\": 6689.347548389675,\n      \"printHeight\": 9244.850029639294,\n      \"name\": \"string\",\n      \"isMobile\": true\n    },\n    \"backgroundPicture\": {\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"url\": \"string\"\n    },\n    \"logoPicture\": {\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"url\": \"string\"\n    },\n    \"name\": \"string\",\n    \"badgeBorderRadius\": 8123,\n    \"isOrgDefault\": true\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1955-03-13\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4216,\n        1266\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4099,\n          2188\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9651c9f8-814b-43c8-b2f7-4e84718c4a34",
+          "name": "Delete a badge config of an Org",
+          "request": {
+            "name": "Delete a badge config of an Org",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteBadgeConfig",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "badgeConfigs",
+                ":badgeConfigId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "badgeConfigId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8143e0bf-0b0a-47d1-a076-052574dbf556",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "badgeConfigs",
+                    ":badgeConfigId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "badgeConfigId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b9bbedbe-cb96-4cee-b743-887bf3cf0300",
+          "name": "Update a badge config",
+          "request": {
+            "name": "Update a badge config",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateBadgeConfig",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "badgeConfigs",
+                ":badgeConfigId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "badgeConfigId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nameConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"fontStyle\": \"<string>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"layout\": \"<string>\",\n    \"textTransform\": \"<string>\"\n  },\n  \"customField1Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField2Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"backgroundConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"photoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"borderRadius\": \"<number>\",\n    \"borderColor\": \"<string>\"\n  },\n  \"logoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"backgroundPosition\": \"<string>\",\n    \"label\": \"<string>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"externalIdConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField1Id\": \"<integer>\",\n  \"customField2Id\": \"<integer>\",\n  \"backgroundPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"logoPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"badgeDefaultConfigId\": \"<integer>\",\n  \"badgeBorderRadius\": \"<integer>\",\n  \"isOrgDefault\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e3c0d98e-e437-4d06-b439-ff2a21c3f22f",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "badgeConfigs",
+                    ":badgeConfigId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "badgeConfigId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nameConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"fontStyle\": \"<string>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"layout\": \"<string>\",\n    \"textTransform\": \"<string>\"\n  },\n  \"customField1Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField2Config\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"backgroundConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"photoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\",\n    \"borderRadius\": \"<number>\",\n    \"borderColor\": \"<string>\"\n  },\n  \"logoConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"backgroundColor\": \"<string>\",\n    \"backgroundPosition\": \"<string>\",\n    \"label\": \"<string>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"externalIdConfig\": {\n    \"isEnabled\": \"<boolean>\",\n    \"color\": \"<string>\",\n    \"fontFamily\": \"<string>\",\n    \"fontSize\": \"<number>\",\n    \"lineHeight\": \"<number>\",\n    \"fontWeight\": \"<number>\",\n    \"textAlign\": \"<string>\",\n    \"centerX\": \"<number>\",\n    \"centerY\": \"<number>\",\n    \"width\": \"<number>\",\n    \"height\": \"<number>\"\n  },\n  \"customField1Id\": \"<integer>\",\n  \"customField2Id\": \"<integer>\",\n  \"backgroundPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"logoPicture\": {\n    \"base64\": \"<string>\"\n  },\n  \"name\": \"<string>\",\n  \"badgeDefaultConfigId\": \"<integer>\",\n  \"badgeBorderRadius\": \"<integer>\",\n  \"isOrgDefault\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "8050bb27-c117-4828-a422-f1a66455c998",
+    "name": "Openpath API Documentation auth orgs/badgeConfigs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

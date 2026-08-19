@@ -1,0 +1,940 @@
+{
+  "item": [
+    {
+      "id": "9df6b9b8-a60c-49aa-a5f0-9a8ae8c947ed",
+      "name": "auth",
+      "description": {
+        "content": "Authentication and Login",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "1ff747d6-8cd6-401b-8651-75bd59ee80d2",
+          "name": "Describe an access token's associated identity and scopes",
+          "request": {
+            "name": "Describe an access token's associated identity and scopes",
+            "description": {
+              "content": "__Endpoint name__: describeAccessToken",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "accessTokens",
+                ":token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f4134e99-8b36-467c-9249-758157fcdc89",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "accessTokens",
+                    ":token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"identityId\": 5940.970541608863,\n    \"identity\": {\n      \"id\": 2809.4321852007874,\n      \"namespace\": {\n        \"id\": 1917.2718172455116,\n        \"nickname\": \"string\"\n      }\n    },\n    \"token\": \"string\",\n    \"tokenScopeList\": [\n      {\n        \"org\": {\n          \"id\": 5537.711660203072,\n          \"name\": \"string\",\n          \"opal\": \"string\",\n          \"packagePlans\": [\n            {\n              \"id\": 1267.0777242354213,\n              \"package\": {\n                \"id\": 5791.5471593474385,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": false\n            },\n            {\n              \"id\": 9475.652198603371,\n              \"package\": {\n                \"id\": 6808.5585357596365,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": true\n            }\n          ],\n          \"parentOrg\": {\n            \"id\": 8162.149028343782,\n            \"name\": \"string\"\n          },\n          \"orgNativeApps\": [\n            {\n              \"id\": 7369,\n              \"nativeApp\": {\n                \"id\": 6245,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"A\",\n              \"config\": {}\n            },\n            {\n              \"id\": 8771,\n              \"nativeApp\": {\n                \"id\": 4854,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"A\",\n              \"config\": {}\n            }\n          ],\n          \"isUnified\": false\n        },\n        \"user\": {\n          \"id\": 1529.225708912173,\n          \"opal\": \"string\",\n          \"needsMFACredential\": false\n        },\n        \"scope\": [\n          \"string\",\n          \"string\"\n        ],\n        \"policySection\": [\n          {\n            \"id\": 203.95701860031033,\n            \"nativeAppId\": 1746.541384602871,\n            \"site\": [\n              {\n                \"id\": 5355.663799481749\n              },\n              {\n                \"id\": 9926.466659240583\n              }\n            ],\n            \"role\": {\n              \"id\": 5618.3204762078585\n            }\n          },\n          {\n            \"id\": 1833.1596127921712,\n            \"nativeAppId\": 6807.543564994412,\n            \"site\": [\n              {\n                \"id\": 2587.4560976732264\n              },\n              {\n                \"id\": 3357.867552865559\n              }\n            ],\n            \"role\": {\n              \"id\": 5767.528801503233\n            }\n          }\n        ],\n        \"scopeWithContext\": [\n          {\n            \"context\": [\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": true,\n                \"fsa\": false\n              },\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": false,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      },\n      {\n        \"org\": {\n          \"id\": 991.1320338904139,\n          \"name\": \"string\",\n          \"opal\": \"string\",\n          \"packagePlans\": [\n            {\n              \"id\": 9161.955275841052,\n              \"package\": {\n                \"id\": 7814.56580369205,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": false\n            },\n            {\n              \"id\": 8797.722574020552,\n              \"package\": {\n                \"id\": 7778.152352066671,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": true\n            }\n          ],\n          \"parentOrg\": {\n            \"id\": 2260.9704426222543,\n            \"name\": \"string\"\n          },\n          \"orgNativeApps\": [\n            {\n              \"id\": 4806,\n              \"nativeApp\": {\n                \"id\": 2243,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"E\",\n              \"config\": {}\n            },\n            {\n              \"id\": 7385,\n              \"nativeApp\": {\n                \"id\": 8694,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"S\",\n              \"config\": {}\n            }\n          ],\n          \"isUnified\": false\n        },\n        \"user\": {\n          \"id\": 5878.506339404796,\n          \"opal\": \"string\",\n          \"needsMFACredential\": true\n        },\n        \"scope\": [\n          \"string\",\n          \"string\"\n        ],\n        \"policySection\": [\n          {\n            \"id\": 6069.2401225590975,\n            \"nativeAppId\": 6235.5526707324225,\n            \"site\": [\n              {\n                \"id\": 6276.003534375407\n              },\n              {\n                \"id\": 9603.702667862395\n              }\n            ],\n            \"role\": {\n              \"id\": 4958.6773760852875\n            }\n          },\n          {\n            \"id\": 5512.997608135939,\n            \"nativeAppId\": 9304.009678937657,\n            \"site\": [\n              {\n                \"id\": 633.5536407431686\n              },\n              {\n                \"id\": 4549.119833348847\n              }\n            ],\n            \"role\": {\n              \"id\": 3683.909099925132\n            }\n          }\n        ],\n        \"scopeWithContext\": [\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": false\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": false,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"createdAt\": \"1991-05-03\",\n    \"expiresAt\": \"2006-06-19\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1987-02-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9082,\n        8404\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6833,\n          7070\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "66e4e826-30a0-486f-85e7-bce09ab073d3",
+          "name": "Login",
+          "request": {
+            "name": "Login",
+            "description": {
+              "content": "__Endpoint name__: login",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "login"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\",\n  \"mfa\": {\n    \"totpCode\": \"<string>\"\n  },\n  \"forMobileLogin\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6387e271-ea8e-4333-a9cc-3c73767ad36b",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "login"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\",\n  \"mfa\": {\n    \"totpCode\": \"<string>\"\n  },\n  \"forMobileLogin\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"identityId\": 5940.970541608863,\n    \"identity\": {\n      \"id\": 2809.4321852007874,\n      \"namespace\": {\n        \"id\": 1917.2718172455116,\n        \"nickname\": \"string\"\n      }\n    },\n    \"token\": \"string\",\n    \"tokenScopeList\": [\n      {\n        \"org\": {\n          \"id\": 5537.711660203072,\n          \"name\": \"string\",\n          \"opal\": \"string\",\n          \"packagePlans\": [\n            {\n              \"id\": 1267.0777242354213,\n              \"package\": {\n                \"id\": 5791.5471593474385,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": false\n            },\n            {\n              \"id\": 9475.652198603371,\n              \"package\": {\n                \"id\": 6808.5585357596365,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": true\n            }\n          ],\n          \"parentOrg\": {\n            \"id\": 8162.149028343782,\n            \"name\": \"string\"\n          },\n          \"orgNativeApps\": [\n            {\n              \"id\": 7369,\n              \"nativeApp\": {\n                \"id\": 6245,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"A\",\n              \"config\": {}\n            },\n            {\n              \"id\": 8771,\n              \"nativeApp\": {\n                \"id\": 4854,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"A\",\n              \"config\": {}\n            }\n          ],\n          \"isUnified\": false\n        },\n        \"user\": {\n          \"id\": 1529.225708912173,\n          \"opal\": \"string\",\n          \"needsMFACredential\": false\n        },\n        \"scope\": [\n          \"string\",\n          \"string\"\n        ],\n        \"policySection\": [\n          {\n            \"id\": 203.95701860031033,\n            \"nativeAppId\": 1746.541384602871,\n            \"site\": [\n              {\n                \"id\": 5355.663799481749\n              },\n              {\n                \"id\": 9926.466659240583\n              }\n            ],\n            \"role\": {\n              \"id\": 5618.3204762078585\n            }\n          },\n          {\n            \"id\": 1833.1596127921712,\n            \"nativeAppId\": 6807.543564994412,\n            \"site\": [\n              {\n                \"id\": 2587.4560976732264\n              },\n              {\n                \"id\": 3357.867552865559\n              }\n            ],\n            \"role\": {\n              \"id\": 5767.528801503233\n            }\n          }\n        ],\n        \"scopeWithContext\": [\n          {\n            \"context\": [\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": true,\n                \"fsa\": false\n              },\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": false,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      },\n      {\n        \"org\": {\n          \"id\": 991.1320338904139,\n          \"name\": \"string\",\n          \"opal\": \"string\",\n          \"packagePlans\": [\n            {\n              \"id\": 9161.955275841052,\n              \"package\": {\n                \"id\": 7814.56580369205,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": false\n            },\n            {\n              \"id\": 8797.722574020552,\n              \"package\": {\n                \"id\": 7778.152352066671,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": true\n            }\n          ],\n          \"parentOrg\": {\n            \"id\": 2260.9704426222543,\n            \"name\": \"string\"\n          },\n          \"orgNativeApps\": [\n            {\n              \"id\": 4806,\n              \"nativeApp\": {\n                \"id\": 2243,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"E\",\n              \"config\": {}\n            },\n            {\n              \"id\": 7385,\n              \"nativeApp\": {\n                \"id\": 8694,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"S\",\n              \"config\": {}\n            }\n          ],\n          \"isUnified\": false\n        },\n        \"user\": {\n          \"id\": 5878.506339404796,\n          \"opal\": \"string\",\n          \"needsMFACredential\": true\n        },\n        \"scope\": [\n          \"string\",\n          \"string\"\n        ],\n        \"policySection\": [\n          {\n            \"id\": 6069.2401225590975,\n            \"nativeAppId\": 6235.5526707324225,\n            \"site\": [\n              {\n                \"id\": 6276.003534375407\n              },\n              {\n                \"id\": 9603.702667862395\n              }\n            ],\n            \"role\": {\n              \"id\": 4958.6773760852875\n            }\n          },\n          {\n            \"id\": 5512.997608135939,\n            \"nativeAppId\": 9304.009678937657,\n            \"site\": [\n              {\n                \"id\": 633.5536407431686\n              },\n              {\n                \"id\": 4549.119833348847\n              }\n            ],\n            \"role\": {\n              \"id\": 3683.909099925132\n            }\n          }\n        ],\n        \"scopeWithContext\": [\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": false\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": false,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"createdAt\": \"1991-05-03\",\n    \"expiresAt\": \"2006-06-19\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1987-02-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9082,\n        8404\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6833,\n          7070\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16fe674b-6d4a-414f-a7af-0cd244c52cad",
+          "name": "Login all successful matches for email/password",
+          "request": {
+            "name": "Login all successful matches for email/password",
+            "description": {
+              "content": "__Endpoint name__: loginAll",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "loginAll"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"mfa\": {\n    \"totpCode\": \"<string>\"\n  },\n  \"forMobileLogin\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "544f31f8-2ba2-4051-87d7-ace047456820",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "loginAll"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"mfa\": {\n    \"totpCode\": \"<string>\"\n  },\n  \"forMobileLogin\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3122,\n  \"filteredCount\": 3584,\n  \"data\": [\n    {\n      \"identityId\": 1541.7926124850424,\n      \"identity\": {\n        \"id\": 4977.17761781473,\n        \"namespace\": {\n          \"id\": 5975.503278253562,\n          \"nickname\": \"string\"\n        }\n      },\n      \"token\": \"string\",\n      \"tokenScopeList\": [\n        {\n          \"org\": {\n            \"id\": 2521.8039371955956,\n            \"name\": \"string\",\n            \"opal\": \"string\",\n            \"packagePlans\": [\n              {\n                \"id\": 4105.727377707133,\n                \"package\": {\n                  \"id\": 7897.0890733376245,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": false\n              },\n              {\n                \"id\": 1346.0841933604206,\n                \"package\": {\n                  \"id\": 6251.9693048308245,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": false\n              }\n            ],\n            \"parentOrg\": {\n              \"id\": 9161.878165103095,\n              \"name\": \"string\"\n            },\n            \"orgNativeApps\": [\n              {\n                \"id\": 8561,\n                \"nativeApp\": {\n                  \"id\": 9845,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"A\",\n                \"config\": {}\n              },\n              {\n                \"id\": 835,\n                \"nativeApp\": {\n                  \"id\": 1097,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"A\",\n                \"config\": {}\n              }\n            ],\n            \"isUnified\": true\n          },\n          \"user\": {\n            \"id\": 6669.055822829595,\n            \"opal\": \"string\",\n            \"needsMFACredential\": false\n          },\n          \"scope\": [\n            \"string\",\n            \"string\"\n          ],\n          \"policySection\": [\n            {\n              \"id\": 5911.967365291844,\n              \"nativeAppId\": 813.5135341272481,\n              \"site\": [\n                {\n                  \"id\": 6980.506713107028\n                },\n                {\n                  \"id\": 2261.3650339775313\n                }\n              ],\n              \"role\": {\n                \"id\": 4033.222873617661\n              }\n            },\n            {\n              \"id\": 9655.402180468694,\n              \"nativeAppId\": 2628.408828733587,\n              \"site\": [\n                {\n                  \"id\": 1105.9676419593688\n                },\n                {\n                  \"id\": 6467.998637760835\n                }\n              ],\n              \"role\": {\n                \"id\": 556.7588998229611\n              }\n            }\n          ],\n          \"scopeWithContext\": [\n            {\n              \"context\": [\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                },\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": false,\n                  \"fsa\": false\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"context\": [\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": false,\n                  \"fsa\": false\n                },\n                {\n                  \"mfa\": false,\n                  \"needsMFACredential\": true,\n                  \"fsa\": true\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ]\n        },\n        {\n          \"org\": {\n            \"id\": 2572.930718361205,\n            \"name\": \"string\",\n            \"opal\": \"string\",\n            \"packagePlans\": [\n              {\n                \"id\": 19.198021854927028,\n                \"package\": {\n                  \"id\": 7370.642574036414,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": true\n              },\n              {\n                \"id\": 3038.959280766382,\n                \"package\": {\n                  \"id\": 9268.182228755879,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": true\n              }\n            ],\n            \"parentOrg\": {\n              \"id\": 4811.358732920175,\n              \"name\": \"string\"\n            },\n            \"orgNativeApps\": [\n              {\n                \"id\": 9467,\n                \"nativeApp\": {\n                  \"id\": 295,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"I\",\n                \"config\": {}\n              },\n              {\n                \"id\": 1959,\n                \"nativeApp\": {\n                  \"id\": 3952,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"S\",\n                \"config\": {}\n              }\n            ],\n            \"isUnified\": false\n          },\n          \"user\": {\n            \"id\": 6309.351122410748,\n            \"opal\": \"string\",\n            \"needsMFACredential\": false\n          },\n          \"scope\": [\n            \"string\",\n            \"string\"\n          ],\n          \"policySection\": [\n            {\n              \"id\": 9272.623775822643,\n              \"nativeAppId\": 6839.954048186059,\n              \"site\": [\n                {\n                  \"id\": 2570.6089462223913\n                },\n                {\n                  \"id\": 8092.375710063277\n                }\n              ],\n              \"role\": {\n                \"id\": 43.023044519926444\n              }\n            },\n            {\n              \"id\": 3199.1168829277563,\n              \"nativeAppId\": 5700.441523257487,\n              \"site\": [\n                {\n                  \"id\": 4159.9813042009\n                },\n                {\n                  \"id\": 3836.714154522567\n                }\n              ],\n              \"role\": {\n                \"id\": 3361.8299588982204\n              }\n            }\n          ],\n          \"scopeWithContext\": [\n            {\n              \"context\": [\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": true,\n                  \"fsa\": true\n                },\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": false,\n                  \"fsa\": true\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"context\": [\n                {\n                  \"mfa\": false,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                },\n                {\n                  \"mfa\": false,\n                  \"needsMFACredential\": true,\n                  \"fsa\": true\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ]\n        }\n      ],\n      \"createdAt\": \"1958-04-19\",\n      \"expiresAt\": \"1987-02-21\"\n    },\n    {\n      \"identityId\": 6428.193518106999,\n      \"identity\": {\n        \"id\": 5811.662476679128,\n        \"namespace\": {\n          \"id\": 9830.073877317422,\n          \"nickname\": \"string\"\n        }\n      },\n      \"token\": \"string\",\n      \"tokenScopeList\": [\n        {\n          \"org\": {\n            \"id\": 7381.480400061846,\n            \"name\": \"string\",\n            \"opal\": \"string\",\n            \"packagePlans\": [\n              {\n                \"id\": 5639.129160527302,\n                \"package\": {\n                  \"id\": 2207.259460953649,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": true\n              },\n              {\n                \"id\": 8090.552536697198,\n                \"package\": {\n                  \"id\": 7445.795421418849,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": true\n              }\n            ],\n            \"parentOrg\": {\n              \"id\": 7074.216670577117,\n              \"name\": \"string\"\n            },\n            \"orgNativeApps\": [\n              {\n                \"id\": 5222,\n                \"nativeApp\": {\n                  \"id\": 9836,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"E\",\n                \"config\": {}\n              },\n              {\n                \"id\": 345,\n                \"nativeApp\": {\n                  \"id\": 8648,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"A\",\n                \"config\": {}\n              }\n            ],\n            \"isUnified\": true\n          },\n          \"user\": {\n            \"id\": 1446.5230456548795,\n            \"opal\": \"string\",\n            \"needsMFACredential\": false\n          },\n          \"scope\": [\n            \"string\",\n            \"string\"\n          ],\n          \"policySection\": [\n            {\n              \"id\": 6641.397314958513,\n              \"nativeAppId\": 3355.202352506983,\n              \"site\": [\n                {\n                  \"id\": 7865.0472190993305\n                },\n                {\n                  \"id\": 4523.622809713521\n                }\n              ],\n              \"role\": {\n                \"id\": 2505.394444236422\n              }\n            },\n            {\n              \"id\": 3682.1471403720784,\n              \"nativeAppId\": 7688.2425083058115,\n              \"site\": [\n                {\n                  \"id\": 8003.908480294504\n                },\n                {\n                  \"id\": 8327.297427453053\n                }\n              ],\n              \"role\": {\n                \"id\": 9413.226342638114\n              }\n            }\n          ],\n          \"scopeWithContext\": [\n            {\n              \"context\": [\n                {\n                  \"mfa\": false,\n                  \"needsMFACredential\": false,\n                  \"fsa\": true\n                },\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"context\": [\n                {\n                  \"mfa\": false,\n                  \"needsMFACredential\": false,\n                  \"fsa\": true\n                },\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ]\n        },\n        {\n          \"org\": {\n            \"id\": 3164.0817297143963,\n            \"name\": \"string\",\n            \"opal\": \"string\",\n            \"packagePlans\": [\n              {\n                \"id\": 3564.5524984085364,\n                \"package\": {\n                  \"id\": 2160.3213519099895,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": false\n              },\n              {\n                \"id\": 1455.1559858490914,\n                \"package\": {\n                  \"id\": 6547.4002948019815,\n                  \"name\": \"string\",\n                  \"packageFeatures\": [\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  ]\n                },\n                \"isSelected\": false\n              }\n            ],\n            \"parentOrg\": {\n              \"id\": 4610.677369876402,\n              \"name\": \"string\"\n            },\n            \"orgNativeApps\": [\n              {\n                \"id\": 6590,\n                \"nativeApp\": {\n                  \"id\": 4344,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"P\",\n                \"config\": {}\n              },\n              {\n                \"id\": 8480,\n                \"nativeApp\": {\n                  \"id\": 7050,\n                  \"url\": \"string\"\n                },\n                \"failureReason\": \"string\",\n                \"url\": \"string\",\n                \"status\": \"P\",\n                \"config\": {}\n              }\n            ],\n            \"isUnified\": false\n          },\n          \"user\": {\n            \"id\": 7637.079428837172,\n            \"opal\": \"string\",\n            \"needsMFACredential\": false\n          },\n          \"scope\": [\n            \"string\",\n            \"string\"\n          ],\n          \"policySection\": [\n            {\n              \"id\": 1468.351563295498,\n              \"nativeAppId\": 7154.255170007953,\n              \"site\": [\n                {\n                  \"id\": 6938.050442652018\n                },\n                {\n                  \"id\": 6758.178773675819\n                }\n              ],\n              \"role\": {\n                \"id\": 8552.448989402745\n              }\n            },\n            {\n              \"id\": 3548.0217776255618,\n              \"nativeAppId\": 7186.583982576445,\n              \"site\": [\n                {\n                  \"id\": 3853.855628504921\n                },\n                {\n                  \"id\": 4782.254275177879\n                }\n              ],\n              \"role\": {\n                \"id\": 653.0919583257777\n              }\n            }\n          ],\n          \"scopeWithContext\": [\n            {\n              \"context\": [\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": false,\n                  \"fsa\": true\n                },\n                {\n                  \"mfa\": false,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            },\n            {\n              \"context\": [\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                },\n                {\n                  \"mfa\": true,\n                  \"needsMFACredential\": true,\n                  \"fsa\": false\n                }\n              ],\n              \"scope\": [\n                \"string\",\n                \"string\"\n              ]\n            }\n          ]\n        }\n      ],\n      \"createdAt\": \"1980-11-04\",\n      \"expiresAt\": \"1977-10-13\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1962-04-10\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4840,\n        1964\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5153,\n          9646\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9c137d2-45a4-4646-b73c-7a0d11fbd29e",
+          "name": "Logout",
+          "request": {
+            "name": "Logout",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: undefined<br/><br/>__Endpoint name__: logout",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "logout"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "912cb1aa-726f-4ea6-89cb-89afba7daaa2",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "logout"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1924ee5-7f45-4b69-aad4-7538101260d4",
+          "name": "Send email to reset password",
+          "request": {
+            "name": "Send email to reset password",
+            "description": {
+              "content": "__Endpoint name__: resetPassword",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "resetPassword"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\",\n  \"forMobileLogin\": \"<boolean>\",\n  \"resetUrl\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0f08df14-d2ce-4b86-adf8-0943447a5661",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "resetPassword"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\",\n  \"forMobileLogin\": \"<boolean>\",\n  \"resetUrl\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a0e9110-c8de-4e11-be1a-4a78132d5ded",
+          "name": "Send email with magic link to setup mobile",
+          "request": {
+            "name": "Send email with magic link to setup mobile",
+            "description": {
+              "content": "__Endpoint name__: setupMobile",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "setupMobile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"namespaceId\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"credentialId\": \"<integer>\",\n  \"os\": \"<string>\",\n  \"appVersion\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a575530-bbe4-4715-b0f8-a15fcdc23cb6",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "setupMobile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespaceId\": \"<integer>\",\n  \"email\": \"<string>\",\n  \"credentialId\": \"<integer>\",\n  \"os\": \"<string>\",\n  \"appVersion\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23f244ab-b076-4e49-b45a-1a5b77521b73",
+          "name": "Create a new access token with refreshed scopes and expiration time, invalidate old token",
+          "request": {
+            "name": "Create a new access token with refreshed scopes and expiration time, invalidate old token",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: undefined<br/><br/>__Endpoint name__: refreshLogin",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "accessTokens",
+                "refresh"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e2d096a6-7fe6-474f-b2ca-2e3898e70ed9",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "accessTokens",
+                    "refresh"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"identityId\": 5940.970541608863,\n    \"identity\": {\n      \"id\": 2809.4321852007874,\n      \"namespace\": {\n        \"id\": 1917.2718172455116,\n        \"nickname\": \"string\"\n      }\n    },\n    \"token\": \"string\",\n    \"tokenScopeList\": [\n      {\n        \"org\": {\n          \"id\": 5537.711660203072,\n          \"name\": \"string\",\n          \"opal\": \"string\",\n          \"packagePlans\": [\n            {\n              \"id\": 1267.0777242354213,\n              \"package\": {\n                \"id\": 5791.5471593474385,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": false\n            },\n            {\n              \"id\": 9475.652198603371,\n              \"package\": {\n                \"id\": 6808.5585357596365,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": true\n            }\n          ],\n          \"parentOrg\": {\n            \"id\": 8162.149028343782,\n            \"name\": \"string\"\n          },\n          \"orgNativeApps\": [\n            {\n              \"id\": 7369,\n              \"nativeApp\": {\n                \"id\": 6245,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"A\",\n              \"config\": {}\n            },\n            {\n              \"id\": 8771,\n              \"nativeApp\": {\n                \"id\": 4854,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"A\",\n              \"config\": {}\n            }\n          ],\n          \"isUnified\": false\n        },\n        \"user\": {\n          \"id\": 1529.225708912173,\n          \"opal\": \"string\",\n          \"needsMFACredential\": false\n        },\n        \"scope\": [\n          \"string\",\n          \"string\"\n        ],\n        \"policySection\": [\n          {\n            \"id\": 203.95701860031033,\n            \"nativeAppId\": 1746.541384602871,\n            \"site\": [\n              {\n                \"id\": 5355.663799481749\n              },\n              {\n                \"id\": 9926.466659240583\n              }\n            ],\n            \"role\": {\n              \"id\": 5618.3204762078585\n            }\n          },\n          {\n            \"id\": 1833.1596127921712,\n            \"nativeAppId\": 6807.543564994412,\n            \"site\": [\n              {\n                \"id\": 2587.4560976732264\n              },\n              {\n                \"id\": 3357.867552865559\n              }\n            ],\n            \"role\": {\n              \"id\": 5767.528801503233\n            }\n          }\n        ],\n        \"scopeWithContext\": [\n          {\n            \"context\": [\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": true,\n                \"fsa\": false\n              },\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": false,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      },\n      {\n        \"org\": {\n          \"id\": 991.1320338904139,\n          \"name\": \"string\",\n          \"opal\": \"string\",\n          \"packagePlans\": [\n            {\n              \"id\": 9161.955275841052,\n              \"package\": {\n                \"id\": 7814.56580369205,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": false\n            },\n            {\n              \"id\": 8797.722574020552,\n              \"package\": {\n                \"id\": 7778.152352066671,\n                \"name\": \"string\",\n                \"packageFeatures\": [\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"config\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"feature\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                ]\n              },\n              \"isSelected\": true\n            }\n          ],\n          \"parentOrg\": {\n            \"id\": 2260.9704426222543,\n            \"name\": \"string\"\n          },\n          \"orgNativeApps\": [\n            {\n              \"id\": 4806,\n              \"nativeApp\": {\n                \"id\": 2243,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"E\",\n              \"config\": {}\n            },\n            {\n              \"id\": 7385,\n              \"nativeApp\": {\n                \"id\": 8694,\n                \"url\": \"string\"\n              },\n              \"failureReason\": \"string\",\n              \"url\": \"string\",\n              \"status\": \"S\",\n              \"config\": {}\n            }\n          ],\n          \"isUnified\": false\n        },\n        \"user\": {\n          \"id\": 5878.506339404796,\n          \"opal\": \"string\",\n          \"needsMFACredential\": true\n        },\n        \"scope\": [\n          \"string\",\n          \"string\"\n        ],\n        \"policySection\": [\n          {\n            \"id\": 6069.2401225590975,\n            \"nativeAppId\": 6235.5526707324225,\n            \"site\": [\n              {\n                \"id\": 6276.003534375407\n              },\n              {\n                \"id\": 9603.702667862395\n              }\n            ],\n            \"role\": {\n              \"id\": 4958.6773760852875\n            }\n          },\n          {\n            \"id\": 5512.997608135939,\n            \"nativeAppId\": 9304.009678937657,\n            \"site\": [\n              {\n                \"id\": 633.5536407431686\n              },\n              {\n                \"id\": 4549.119833348847\n              }\n            ],\n            \"role\": {\n              \"id\": 3683.909099925132\n            }\n          }\n        ],\n        \"scopeWithContext\": [\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": false\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          },\n          {\n            \"context\": [\n              {\n                \"mfa\": true,\n                \"needsMFACredential\": true,\n                \"fsa\": true\n              },\n              {\n                \"mfa\": false,\n                \"needsMFACredential\": false,\n                \"fsa\": true\n              }\n            ],\n            \"scope\": [\n              \"string\",\n              \"string\"\n            ]\n          }\n        ]\n      }\n    ],\n    \"createdAt\": \"1991-05-03\",\n    \"expiresAt\": \"2006-06-19\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1987-02-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9082,\n        8404\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6833,\n          7070\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3de62b5-8a38-499e-a089-78720ec9243c",
+          "name": "DEPRECATED - use /auth/sso/authorize instead",
+          "request": {
+            "name": "DEPRECATED - use /auth/sso/authorize instead",
+            "description": {
+              "content": "__Endpoint name__: getOidcAuthUrl",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "oidc",
+                "authorize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c88289c5-b759-4c3f-b308-2f8e6b9af81b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "oidc",
+                    "authorize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"authUrl\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2008-07-25\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2479,\n        5865\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7775,\n          2810\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "372f7039-d652-4920-8c93-86933657416c",
+          "name": "Generate SSO authorize URL (may be OIDC or SAML)",
+          "request": {
+            "name": "Generate SSO authorize URL (may be OIDC or SAML)",
+            "description": {
+              "content": "__Endpoint name__: getSsoAuthUrl",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "sso",
+                "authorize"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"redirectUrlDirect\": false,\n  \"redirectUrl\": \"<string>\",\n  \"forMobileLogin\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "acfeee7b-3133-4018-ab47-db9cb9b00101",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "sso",
+                    "authorize"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"namespaceId\": \"<integer>\",\n  \"namespaceNickname\": \"<string>\",\n  \"email\": \"<string>\",\n  \"uuid\": \"<string>\",\n  \"redirectUrlDirect\": false,\n  \"redirectUrl\": \"<string>\",\n  \"forMobileLogin\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"authUrl\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2008-07-25\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2479,\n        5865\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7775,\n          2810\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "262056e1-2b86-4f22-b735-abcf22bea288",
+          "name": "Validate an access token for proper signature, format, expiration, and active status",
+          "request": {
+            "name": "Validate an access token for proper signature, format, expiration, and active status",
+            "description": {
+              "content": "Possible error names: TokenExpiredError, JsonWebTokenError, TokenNotFoundError<br/><br/>__Endpoint name__: validateAccessToken",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "auth",
+                "accessTokens",
+                ":token",
+                "validate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "token",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "68c3ff74-a593-4cc8-9a07-6720158f6c57",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "auth",
+                    "accessTokens",
+                    ":token",
+                    "validate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "token",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"isValid\": false,\n    \"err\": {\n      \"name\": \"string\",\n      \"message\": \"string\"\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1984-09-06\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4530,\n        2692\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9752,\n          6713\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "42d4e4eb-cdb9-4f41-89ea-4078c8e7430d",
+    "name": "Openpath API Documentation auth API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

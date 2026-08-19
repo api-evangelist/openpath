@@ -1,0 +1,739 @@
+{
+  "item": [
+    {
+      "id": "09ea83cb-cf65-4420-9370-a7659dc4d5ad",
+      "name": "orgs/wirelessLockReaders",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d183ff05-505f-4edc-b500-456286571136",
+          "name": "List all wireless lock readers",
+          "request": {
+            "name": "List all wireless lock readers",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o{params.orgId}-hw:r,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockReaders",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockReaders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5a3bc2a6-b350-45e9-81ad-c334622f0d34",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockReaders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6176,\n  \"filteredCount\": 9613,\n  \"data\": [\n    {\n      \"id\": 5213.216451764452,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1963-03-12\",\n      \"idExt\": \"string\",\n      \"thirdPartyDeviceId\": 1540,\n      \"thirdPartyDevice\": {\n        \"id\": 103,\n        \"assignedOrg\": {\n          \"id\": 9654,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": true,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1973-05-22\",\n        \"updatedAt\": \"2010-05-31\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 6534.784724382552,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1969-08-31\",\n          \"updatedAt\": \"1949-01-01\"\n        }\n      },\n      \"wirelessLockProvider\": {\n        \"id\": 5078.881444814897,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1950-06-10\",\n        \"updatedAt\": \"1964-02-09\",\n        \"orgId\": 6675.746134627436,\n        \"wirelessLockProviderType\": {\n          \"id\": 5957.284431617121,\n          \"name\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": 9233.606538136492,\n      \"name\": \"string\",\n      \"manufacturer\": \"string\",\n      \"serialNumber\": \"string\",\n      \"model\": \"string\",\n      \"lastConnectedAt\": \"1956-04-27\",\n      \"idExt\": \"string\",\n      \"thirdPartyDeviceId\": 2596,\n      \"thirdPartyDevice\": {\n        \"id\": 5977,\n        \"assignedOrg\": {\n          \"id\": 2510,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"2010-11-09\",\n        \"updatedAt\": \"1968-11-22\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 2552.5917335121862,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1949-02-21\",\n          \"updatedAt\": \"1997-10-12\"\n        }\n      },\n      \"wirelessLockProvider\": {\n        \"id\": 1169.4862419659646,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1962-07-13\",\n        \"updatedAt\": \"1967-11-10\",\n        \"orgId\": 7403.238347270493,\n        \"wirelessLockProviderType\": {\n          \"id\": 5538.465160167234,\n          \"name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1991-02-20\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1489,\n        1146\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          695,\n          4218\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a181999-a480-4361-bf15-2e0e497b1383",
+          "name": "Create a wirelessLock reader",
+          "request": {
+            "name": "Create a wirelessLock reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessLockReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockReaders"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"model\": \"<string>\",\n  \"idExt\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2cd929fd-6e65-40a0-a60e-298fdccb045f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockReaders"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"serialNumber\": \"<string>\",\n  \"model\": \"<string>\",\n  \"idExt\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 8163.645798271975,\n    \"name\": \"string\",\n    \"manufacturer\": \"string\",\n    \"serialNumber\": \"string\",\n    \"model\": \"string\",\n    \"lastConnectedAt\": \"2009-08-05\",\n    \"idExt\": \"string\",\n    \"thirdPartyDeviceId\": 6574,\n    \"thirdPartyDevice\": {\n      \"id\": 4318,\n      \"assignedOrg\": {\n        \"id\": 6288,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": true,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1972-08-15\",\n      \"updatedAt\": \"1955-11-03\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 6386.724306843115,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2003-05-25\",\n        \"updatedAt\": \"1958-12-03\"\n      }\n    },\n    \"wirelessLockProvider\": {\n      \"id\": 8357.699491658504,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1989-11-03\",\n      \"updatedAt\": \"1958-03-15\",\n      \"orgId\": 1628.6519346987027,\n      \"wirelessLockProviderType\": {\n        \"id\": 1683.264041683018,\n        \"name\": \"string\"\n      }\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1963-03-18\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8217,\n        5889\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5459,\n          5632\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f1e70110-73a0-4d28-a715-166280cb01dc",
+          "name": "Describe a wireless lock reader",
+          "request": {
+            "name": "Describe a wireless lock reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o:r,s-o:r<br/><br/>__Endpoint name__: describeWirelessLockReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockReaders",
+                ":wirelessLockReaderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockReaderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "78f6a432-ea8c-4f46-93e4-155c8f7ebc35",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockReaders",
+                    ":wirelessLockReaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockReaderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 8163.645798271975,\n    \"name\": \"string\",\n    \"manufacturer\": \"string\",\n    \"serialNumber\": \"string\",\n    \"model\": \"string\",\n    \"lastConnectedAt\": \"2009-08-05\",\n    \"idExt\": \"string\",\n    \"thirdPartyDeviceId\": 6574,\n    \"thirdPartyDevice\": {\n      \"id\": 4318,\n      \"assignedOrg\": {\n        \"id\": 6288,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": true,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1972-08-15\",\n      \"updatedAt\": \"1955-11-03\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 6386.724306843115,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2003-05-25\",\n        \"updatedAt\": \"1958-12-03\"\n      }\n    },\n    \"wirelessLockProvider\": {\n      \"id\": 8357.699491658504,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1989-11-03\",\n      \"updatedAt\": \"1958-03-15\",\n      \"orgId\": 1628.6519346987027,\n      \"wirelessLockProviderType\": {\n        \"id\": 1683.264041683018,\n        \"name\": \"string\"\n      }\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1963-03-18\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8217,\n        5889\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5459,\n          5632\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "776b72bf-8bd6-46c8-82d6-937fdf04b414",
+          "name": "Remove a wireless lock reader",
+          "request": {
+            "name": "Remove a wireless lock reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessLockReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockReaders",
+                ":wirelessLockReaderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockReaderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "08efbcae-e679-47f5-b864-b5acb6757e21",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockReaders",
+                    ":wirelessLockReaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockReaderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b83fc45c-5d72-44e9-8a6f-6529ec776269",
+          "name": "Update a wirelessLock reader",
+          "request": {
+            "name": "Update a wirelessLock reader",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockReader",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessLockReaders",
+                ":wirelessLockReaderId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessLockReaderId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ca9d5cab-dbdb-4401-aded-2745b636f30b",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessLockReaders",
+                    ":wirelessLockReaderId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessLockReaderId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "526305db-87b2-45e4-9cd6-a454bca5112e",
+    "name": "Openpath API Documentation auth orgs/wirelessLockReaders API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

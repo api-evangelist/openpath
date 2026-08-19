@@ -1,0 +1,484 @@
+{
+  "item": [
+    {
+      "id": "e34c26dd-5e16-43a3-bfd8-af14f3a33bde",
+      "name": "orgs/rexs",
+      "description": {
+        "content": "Request-To-Exit Sensors",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f0849d95-e14f-4540-84f6-c7fcaca53487",
+          "name": "List all REXs",
+          "request": {
+            "name": "List all REXs",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listRexs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "rexs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5dccf50e-dc07-4049-bdcd-ab6225b677ef",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "rexs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6420,\n  \"filteredCount\": 757,\n  \"data\": [\n    {\n      \"id\": 1293.7017380794457,\n      \"name\": \"string\",\n      \"mode\": \"NC\",\n      \"isTriggerRelayEnabled\": false,\n      \"bypassDurationSeconds\": 3377,\n      \"acuPort\": {\n        \"id\": 3200.541394013483,\n        \"acuPortTypePortNumber\": 2035.7582095785342,\n        \"virtualPortNumber\": 8520.443751644381,\n        \"portNumber\": 8695.73380606574,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 6397.5070041208555,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 6829.5141370498495,\n          \"number\": 1751\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 8234.44078166366,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 2288.9897328198763,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 670.6977863876484,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 30.071872647916553,\n      \"name\": \"string\",\n      \"mode\": \"NC\",\n      \"isTriggerRelayEnabled\": true,\n      \"bypassDurationSeconds\": 8599,\n      \"acuPort\": {\n        \"id\": 303.84049269751466,\n        \"acuPortTypePortNumber\": 9994.735563190026,\n        \"virtualPortNumber\": 520.0021212935691,\n        \"portNumber\": 5409.158010814903,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 9917.69603672588,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 966.0766943068411,\n          \"number\": 8250\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 7598.74087998752,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 7837.224896163597,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 4274.007851612819,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1958-10-15\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        9449,\n        3224\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7879,\n          34\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e466876-dec2-40f2-8e66-13676648d7de",
+          "name": "Describe a REX",
+          "request": {
+            "name": "Describe a REX",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeRex",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "rexs",
+                ":rexId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "rexId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2b039359-bfb5-4c7d-afe8-8ce15d5df296",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "rexs",
+                    ":rexId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "rexId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 6793.935975789112,\n    \"name\": \"string\",\n    \"mode\": \"NO\",\n    \"isTriggerRelayEnabled\": false,\n    \"bypassDurationSeconds\": 8985,\n    \"acuPort\": {\n      \"id\": 2002.8324894508698,\n      \"acuPortTypePortNumber\": 8874.423796790417,\n      \"virtualPortNumber\": 5866.545987274313,\n      \"portNumber\": 7955.070635688481,\n      \"label\": \"string\",\n      \"acu\": {\n        \"id\": 7757.983469792751,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 7723.235810164798,\n        \"number\": 6946\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 6978.022242573509,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"entries\": [\n      {\n        \"id\": 7764.554775507413,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 4464.587215301324,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2021-07-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2036,\n        1438\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1379,\n          3556\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ec7abf1-0bec-450c-ad15-8db346d6dcba",
+          "name": "Update a REX",
+          "request": {
+            "name": "Update a REX",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateRex",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "rexs",
+                ":rexId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "rexId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"mode\": \"<string>\",\n  \"isTriggerRelayEnabled\": \"<boolean>\",\n  \"bypassDurationSeconds\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ed1cc138-c474-40cf-94fe-d4b923302e67",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "rexs",
+                    ":rexId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "rexId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"mode\": \"<string>\",\n  \"isTriggerRelayEnabled\": \"<boolean>\",\n  \"bypassDurationSeconds\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a79d8eb5-2d82-4ac3-96c8-43b75591982a",
+    "name": "Openpath API Documentation auth orgs/rexs API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

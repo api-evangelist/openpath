@@ -1,0 +1,41 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/recentAlarmsExt API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/recentAlarmsExt",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Describe a recent alarm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/recentAlarmsExt/:alarmIdExt",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmIdExt",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashAlarm:r,o:w,o:r<br/><br/>__Endpoint name__: describeRecentAlarm"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,72 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/mobileAppConfig API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/mobileAppConfig",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get mobile app config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/mobileAppConfig",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeMobileAppConfig"
+        },
+        {
+          "info": {
+            "name": "Update mobile app config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/mobileAppConfig",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateMobileAppConfig"
+        },
+        {
+          "info": {
+            "name": "Delete mobile app config",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/mobileAppConfig",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteMobileAppConfig"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

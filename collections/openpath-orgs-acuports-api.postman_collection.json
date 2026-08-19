@@ -1,0 +1,211 @@
+{
+  "item": [
+    {
+      "id": "12fff4b1-c041-4a36-a0a4-aac7cec0fed0",
+      "name": "orgs/acuPorts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2ef43e90-06eb-4715-9398-6954cb2bde34",
+          "name": "List all ACU ports",
+          "request": {
+            "name": "List all ACU ports",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listAllAcuPorts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "acuPorts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "acu.id, expansionBoard.number, id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc, asc, asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "712616f2-97c6-4712-97d0-c4a9a5427ec8",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "acuPorts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "acu.id, expansionBoard.number, id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc, asc, asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 1923,\n  \"filteredCount\": 77,\n  \"data\": [\n    {\n      \"id\": 4444.759048063941,\n      \"acuPortTypePortNumber\": 5940.127932322269,\n      \"virtualPortNumber\": 3829.9588481117853,\n      \"portNumber\": 5674.803906882575,\n      \"parentChainedAcuPort\": {\n        \"id\": 4461.219031101607\n      },\n      \"childChainedAcuPorts\": [\n        {\n          \"id\": 7283.419430924916\n        },\n        {\n          \"id\": 7166.6291074675\n        }\n      ],\n      \"acu\": {\n        \"id\": 6116.395375858219,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 2986.254385948979,\n        \"number\": 4895.346692905566,\n        \"acuModel\": {\n          \"id\": 1308.8098830228278,\n          \"name\": \"string\",\n          \"isBaseModel\": true\n        }\n      },\n      \"acuPortType\": {\n        \"id\": 9678.466208112595,\n        \"name\": \"string\",\n        \"ios\": [\n          {\n            \"id\": 4976.523695933124,\n            \"name\": \"string\",\n            \"modelName\": \"string\",\n            \"isShadow\": true,\n            \"primaryIoId\": 6876,\n            \"isEntryIo\": false\n          },\n          {\n            \"id\": 8831.243144492255,\n            \"name\": \"string\",\n            \"modelName\": \"string\",\n            \"isShadow\": false,\n            \"primaryIoId\": 5871,\n            \"isEntryIo\": false\n          }\n        ]\n      },\n      \"io\": {\n        \"id\": 7459.449220944426,\n        \"name\": \"string\",\n        \"modelName\": \"string\",\n        \"isShadow\": true,\n        \"primaryIoId\": 2684,\n        \"isEntryIo\": false\n      },\n      \"modelId\": 7672.286165087537,\n      \"modelName\": \"string\",\n      \"label\": \"string\",\n      \"reader\": {\n        \"id\": 1831.3656655987943,\n        \"name\": \"string\",\n        \"serialNumber\": \"string\",\n        \"serialNumberBrief\": \"string\",\n        \"firmwareVersion\": \"string\",\n        \"softwareVersionNumber\": \"string\",\n        \"isExit\": false,\n        \"advTxPower\": 3,\n        \"beaconTxPower\": 0,\n        \"capTouchEnabled\": true,\n        \"capTouchRssi\": -60,\n        \"capTouchThreshold\": 289,\n        \"nfcEnabled\": true,\n        \"autoUnlockEnabled\": false,\n        \"autoUnlockRssi\": -75,\n        \"acuPort\": {\n          \"id\": 8231.740368567725,\n          \"acuPortTypePortNumber\": 3883.952564466695,\n          \"virtualPortNumber\": 1282.0429551733491,\n          \"portNumber\": 2912.998542822546,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 8898.475782529498,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 6774.627357076767,\n            \"number\": 7053,\n            \"acuModelId\": 3422\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 6868.516917507388,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 9031.889266209173,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 9361.311920447019,\n            \"name\": \"string\"\n          }\n        ],\n        \"org\": {\n          \"id\": 9838.622024048142,\n          \"name\": \"string\"\n        },\n        \"ownedByOrg\": {\n          \"id\": 9057.987649267208,\n          \"name\": \"string\"\n        },\n        \"effectiveLocationRestriction\": {\n          \"id\": 2784,\n          \"locationMeasurement\": {\n            \"longitude\": 265.0910577325316,\n            \"latitude\": 8297.295480940953,\n            \"timeZoneId\": \"string\"\n          },\n          \"allowedDistanceMeters\": 2202.178612983994,\n          \"scaleFactor\": 6107.106456711307\n        },\n        \"createdAt\": \"1995-06-09\",\n        \"updatedAt\": \"1988-08-15\",\n        \"notes\": \"string\",\n        \"isAudibleFeedbackEnabled\": true,\n        \"isLedFeedbackEnabled\": true,\n        \"pinTimeoutSeconds\": 9190,\n        \"isAppleWalletTraEnabled\": true\n      },\n      \"relay\": {\n        \"id\": 8225.697656373413,\n        \"name\": \"string\",\n        \"openDurationSeconds\": 6635.916858494368,\n        \"invertOutput\": false,\n        \"relayHardwareType\": {\n          \"id\": 8904.896945961078,\n          \"name\": \"string\"\n        },\n        \"acuPort\": {\n          \"id\": 2663.9581160436164,\n          \"acuPortTypePortNumber\": 1820.5655593797842,\n          \"virtualPortNumber\": 8956.847480319295,\n          \"portNumber\": 6955.780747740574,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 5725.995269760527,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 7667.370298634022,\n            \"number\": 9641\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 409.4892917610804,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 8171.800039575805,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 569.9117657401564,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"contactSensor\": {\n        \"id\": 8810.65689645757,\n        \"name\": \"string\",\n        \"isAjarEnabled\": false,\n        \"ajarDurationSeconds\": 4868.779121119897,\n        \"isForcedOpenEnabled\": false,\n        \"acuPort\": {\n          \"id\": 2562.869373513653,\n          \"acuPortTypePortNumber\": 2986.8874074146024,\n          \"virtualPortNumber\": 4725.099633218355,\n          \"portNumber\": 676.3733310378639,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 2116.187486306065,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 2169.9584190256314,\n            \"number\": 7813\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 4753.814560066626,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 4041.842659345135,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4164.5296651659955,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"rex\": {\n        \"id\": 50.11421392095983,\n        \"name\": \"string\",\n        \"mode\": \"NO\",\n        \"isTriggerRelayEnabled\": false,\n        \"bypassDurationSeconds\": 5760,\n        \"acuPort\": {\n          \"id\": 1603.1281046856204,\n          \"acuPortTypePortNumber\": 6243.7524711742435,\n          \"virtualPortNumber\": 438.17172522071843,\n          \"portNumber\": 5060.814536344502,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 2502.140583506538,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 6415.937271852349,\n            \"number\": 1475\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 1666.9188141518355,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 1103.5855870414414,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 124.04782788725699,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"wiegand\": {\n        \"id\": 625.2396972926033,\n        \"name\": \"string\",\n        \"isExit\": true,\n        \"mode\": \"input\",\n        \"isPassThroughEnabled\": true,\n        \"defaultCardNumber\": \"string\",\n        \"defaultCardNumBits\": 9067,\n        \"acuPort\": {\n          \"id\": 1263.0741284629876,\n          \"acuPortTypePortNumber\": 8771.205239853989,\n          \"virtualPortNumber\": 8165.587919979927,\n          \"portNumber\": 8458.722825263874,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 4708.986134720852,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 1392.3530168424113,\n            \"number\": 9715\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 9094.485426953857,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 8580.014423212637,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 2904.885555524349,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"readerShadow\": {\n        \"id\": 9612.701172205496,\n        \"readerId\": 7262.687830142228,\n        \"acuPort\": {\n          \"id\": 2922.1541580448807,\n          \"acuPortTypePortNumber\": 467.6503386309805,\n          \"acu\": {\n            \"id\": 8271.943759259113,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 1643.2192715614235,\n            \"number\": 972\n          }\n        }\n      },\n      \"wiegandShadow\": {\n        \"id\": 8043.45572658191,\n        \"wiegandId\": 4913.012321649092,\n        \"acuPort\": {\n          \"id\": 1885.9470279094448,\n          \"acuPortTypePortNumber\": 1317.8722632804895,\n          \"acu\": {\n            \"id\": 1220.4859221659292,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 6330.389937446011,\n            \"number\": 6081\n          }\n        }\n      },\n      \"thirdPartyReader\": {\n        \"id\": 916,\n        \"name\": \"string\",\n        \"osdpAddress\": 1821.0087784848206,\n        \"osdpBaudRate\": 115200,\n        \"acuPort\": {\n          \"id\": 9925,\n          \"parentChainedAcuPort\": {\n            \"id\": 2412\n          },\n          \"childChainedAcuPorts\": [\n            {\n              \"id\": 7315\n            },\n            {\n              \"id\": 2713\n            }\n          ],\n          \"acuPortTypePortNumber\": 3783.909249230619,\n          \"virtualPortNumber\": 1397.9137245626393,\n          \"portNumber\": 2413.5382650977854,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 8423,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 208,\n            \"number\": 1000\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 779,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 3818,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 5969,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"thirdPartyReaderShadow\": {\n        \"id\": 584,\n        \"thirdPartyReaderId\": 6772,\n        \"acuPort\": {\n          \"id\": 4785,\n          \"acuPortTypePortNumber\": 6022.900788052093,\n          \"acu\": {\n            \"id\": 7553,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 4496,\n            \"number\": 4423\n          }\n        }\n      },\n      \"thirdPartyWiegand\": {\n        \"id\": 3778,\n        \"name\": \"string\",\n        \"acuPort\": {\n          \"id\": 802,\n          \"acuPortTypePortNumber\": 5490.7561563508725,\n          \"virtualPortNumber\": 6137.657813130144,\n          \"portNumber\": 5151.727080219627,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 7347,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 2202,\n            \"number\": 9368\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 576,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 5826,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 2747,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"thirdPartyWiegandShadow\": {\n        \"id\": 4316,\n        \"thirdPartyWiegandId\": 3933,\n        \"acuPort\": {\n          \"id\": 5711,\n          \"acuPortTypePortNumber\": 8381.051335391125,\n          \"acu\": {\n            \"id\": 1251,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 5879,\n            \"number\": 137\n          }\n        }\n      },\n      \"genericInput\": {\n        \"id\": 4082.8049956967616,\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      \"unusedInput\": {\n        \"id\": 6139.643460149926,\n        \"name\": \"string\"\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 6159.333246720694,\n          \"name\": \"string\"\n        }\n      },\n      \"acuPortShadowLinks\": [\n        {\n          \"modelName\": \"string\",\n          \"shadowAcuPortId\": 4918.2652651090175\n        },\n        {\n          \"modelName\": \"string\",\n          \"shadowAcuPortId\": 8626.364864094821\n        }\n      ],\n      \"acuPortChainedLinks\": [\n        {\n          \"modelName\": \"string\",\n          \"chainedModelName\": \"string\",\n          \"chainedAcuPortId\": 1386\n        },\n        {\n          \"modelName\": \"string\",\n          \"chainedModelName\": \"string\",\n          \"chainedAcuPortId\": 2099\n        }\n      ],\n      \"createdAt\": \"2017-07-07\",\n      \"updatedAt\": \"2009-08-13\"\n    },\n    {\n      \"id\": 7341.899951626322,\n      \"acuPortTypePortNumber\": 9406.450530596729,\n      \"virtualPortNumber\": 7052.911155567709,\n      \"portNumber\": 9217.787301001033,\n      \"parentChainedAcuPort\": {\n        \"id\": 5716.008955300884\n      },\n      \"childChainedAcuPorts\": [\n        {\n          \"id\": 4948.858464545004\n        },\n        {\n          \"id\": 6678.9837717562\n        }\n      ],\n      \"acu\": {\n        \"id\": 4472.216946714523,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 1560.0882137115434,\n        \"number\": 265.77984465124274,\n        \"acuModel\": {\n          \"id\": 6400.8921328112065,\n          \"name\": \"string\",\n          \"isBaseModel\": false\n        }\n      },\n      \"acuPortType\": {\n        \"id\": 9729.988793772482,\n        \"name\": \"string\",\n        \"ios\": [\n          {\n            \"id\": 952.2136212073195,\n            \"name\": \"string\",\n            \"modelName\": \"string\",\n            \"isShadow\": false,\n            \"primaryIoId\": 2225,\n            \"isEntryIo\": true\n          },\n          {\n            \"id\": 4736.759111939363,\n            \"name\": \"string\",\n            \"modelName\": \"string\",\n            \"isShadow\": true,\n            \"primaryIoId\": 9724,\n            \"isEntryIo\": false\n          }\n        ]\n      },\n      \"io\": {\n        \"id\": 4687.133878080375,\n        \"name\": \"string\",\n        \"modelName\": \"string\",\n        \"isShadow\": true,\n        \"primaryIoId\": 3011,\n        \"isEntryIo\": true\n      },\n      \"modelId\": 1499.2674271321093,\n      \"modelName\": \"string\",\n      \"label\": \"string\",\n      \"reader\": {\n        \"id\": 9791.745642565396,\n        \"name\": \"string\",\n        \"serialNumber\": \"string\",\n        \"serialNumberBrief\": \"string\",\n        \"firmwareVersion\": \"string\",\n        \"softwareVersionNumber\": \"string\",\n        \"isExit\": true,\n        \"advTxPower\": 3,\n        \"beaconTxPower\": 3,\n        \"capTouchEnabled\": false,\n        \"capTouchRssi\": -89,\n        \"capTouchThreshold\": 7292,\n        \"nfcEnabled\": false,\n        \"autoUnlockEnabled\": true,\n        \"autoUnlockRssi\": -81,\n        \"acuPort\": {\n          \"id\": 4223.082028188402,\n          \"acuPortTypePortNumber\": 4353.807577797458,\n          \"virtualPortNumber\": 1823.1694711136593,\n          \"portNumber\": 3858.4721585880943,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 4437.2302299947405,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 8518.10260709397,\n            \"number\": 2591,\n            \"acuModelId\": 6368\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 831.7567014684523,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 2463.05267871642,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4284.9604449974195,\n            \"name\": \"string\"\n          }\n        ],\n        \"org\": {\n          \"id\": 7929.219164904016,\n          \"name\": \"string\"\n        },\n        \"ownedByOrg\": {\n          \"id\": 3852.350153770724,\n          \"name\": \"string\"\n        },\n        \"effectiveLocationRestriction\": {\n          \"id\": 2878,\n          \"locationMeasurement\": {\n            \"longitude\": 1247.5089313381015,\n            \"latitude\": 4258.515320443647,\n            \"timeZoneId\": \"string\"\n          },\n          \"allowedDistanceMeters\": 7750.034189880282,\n          \"scaleFactor\": 1334.410342380956\n        },\n        \"createdAt\": \"1971-08-01\",\n        \"updatedAt\": \"1989-06-18\",\n        \"notes\": \"string\",\n        \"isAudibleFeedbackEnabled\": false,\n        \"isLedFeedbackEnabled\": false,\n        \"pinTimeoutSeconds\": 6917,\n        \"isAppleWalletTraEnabled\": false\n      },\n      \"relay\": {\n        \"id\": 1590.6841774206248,\n        \"name\": \"string\",\n        \"openDurationSeconds\": 1236.476254748392,\n        \"invertOutput\": true,\n        \"relayHardwareType\": {\n          \"id\": 3909.363643795073,\n          \"name\": \"string\"\n        },\n        \"acuPort\": {\n          \"id\": 7302.294982440265,\n          \"acuPortTypePortNumber\": 730.5897967325492,\n          \"virtualPortNumber\": 3390.9452058219003,\n          \"portNumber\": 6953.356301459557,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 5975.486619992211,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 926.3621733123772,\n            \"number\": 7384\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 4495.509885072644,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 5248.254969044313,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 7566.728771881607,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"contactSensor\": {\n        \"id\": 6854.571453272256,\n        \"name\": \"string\",\n        \"isAjarEnabled\": true,\n        \"ajarDurationSeconds\": 2750.1218993352118,\n        \"isForcedOpenEnabled\": false,\n        \"acuPort\": {\n          \"id\": 4501.567596931743,\n          \"acuPortTypePortNumber\": 1277.2174562333062,\n          \"virtualPortNumber\": 8101.823114975872,\n          \"portNumber\": 9625.920639521692,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 6389.710424320868,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 6381.581794785398,\n            \"number\": 7764\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 1101.0302997563415,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 8836.339863934752,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 8361.241717285644,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"rex\": {\n        \"id\": 9687.727872935826,\n        \"name\": \"string\",\n        \"mode\": \"NO\",\n        \"isTriggerRelayEnabled\": false,\n        \"bypassDurationSeconds\": 4456,\n        \"acuPort\": {\n          \"id\": 9651.749614708588,\n          \"acuPortTypePortNumber\": 859.1576852771921,\n          \"virtualPortNumber\": 9222.117567018118,\n          \"portNumber\": 7505.202260727242,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 1570.9380584820542,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 2884.6355554957295,\n            \"number\": 5164\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 1679.3471935921943,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 8999.500516692196,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 8966.64170341369,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"wiegand\": {\n        \"id\": 9076.595119376689,\n        \"name\": \"string\",\n        \"isExit\": true,\n        \"mode\": \"input\",\n        \"isPassThroughEnabled\": false,\n        \"defaultCardNumber\": \"string\",\n        \"defaultCardNumBits\": 5174,\n        \"acuPort\": {\n          \"id\": 4873.0257896239955,\n          \"acuPortTypePortNumber\": 8899.145041023581,\n          \"virtualPortNumber\": 1928.062958206177,\n          \"portNumber\": 1777.929794485904,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 3472.5926288784026,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 9111.43408980201,\n            \"number\": 2080\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 565.6057513755219,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 1173.615176343087,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 4269.438350086167,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"readerShadow\": {\n        \"id\": 6379.6927024940405,\n        \"readerId\": 2716.14448872475,\n        \"acuPort\": {\n          \"id\": 7760.550988231934,\n          \"acuPortTypePortNumber\": 9256.131649012881,\n          \"acu\": {\n            \"id\": 8185.53090029502,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 6170.63500455502,\n            \"number\": 6946\n          }\n        }\n      },\n      \"wiegandShadow\": {\n        \"id\": 9113.301847324867,\n        \"wiegandId\": 9701.794385574256,\n        \"acuPort\": {\n          \"id\": 1420.1181609113655,\n          \"acuPortTypePortNumber\": 5434.111603495475,\n          \"acu\": {\n            \"id\": 7654.320775686596,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 3535.1128271063135,\n            \"number\": 6933\n          }\n        }\n      },\n      \"thirdPartyReader\": {\n        \"id\": 6169,\n        \"name\": \"string\",\n        \"osdpAddress\": 6700.2293919830245,\n        \"osdpBaudRate\": 115200,\n        \"acuPort\": {\n          \"id\": 2831,\n          \"parentChainedAcuPort\": {\n            \"id\": 78\n          },\n          \"childChainedAcuPorts\": [\n            {\n              \"id\": 565\n            },\n            {\n              \"id\": 7624\n            }\n          ],\n          \"acuPortTypePortNumber\": 1613.1506778186356,\n          \"virtualPortNumber\": 9628.319528408598,\n          \"portNumber\": 2959.8161613289662,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 4492,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 2478,\n            \"number\": 1895\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 7447,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 7287,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 6935,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"thirdPartyReaderShadow\": {\n        \"id\": 6392,\n        \"thirdPartyReaderId\": 273,\n        \"acuPort\": {\n          \"id\": 7929,\n          \"acuPortTypePortNumber\": 7155.225716813548,\n          \"acu\": {\n            \"id\": 3240,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 8161,\n            \"number\": 8720\n          }\n        }\n      },\n      \"thirdPartyWiegand\": {\n        \"id\": 5139,\n        \"name\": \"string\",\n        \"acuPort\": {\n          \"id\": 4383,\n          \"acuPortTypePortNumber\": 5020.555283992473,\n          \"virtualPortNumber\": 3534.942743848758,\n          \"portNumber\": 5500.776370450747,\n          \"label\": \"string\",\n          \"acu\": {\n            \"id\": 9594,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 627,\n            \"number\": 3861\n          },\n          \"eol\": {\n            \"eolSupervision\": {\n              \"id\": 2305,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"entries\": [\n          {\n            \"id\": 8963,\n            \"name\": \"string\"\n          },\n          {\n            \"id\": 6591,\n            \"name\": \"string\"\n          }\n        ]\n      },\n      \"thirdPartyWiegandShadow\": {\n        \"id\": 6814,\n        \"thirdPartyWiegandId\": 9051,\n        \"acuPort\": {\n          \"id\": 6346,\n          \"acuPortTypePortNumber\": 29.893877707239945,\n          \"acu\": {\n            \"id\": 2072,\n            \"name\": \"string\"\n          },\n          \"expansionBoard\": {\n            \"id\": 8234,\n            \"number\": 22\n          }\n        }\n      },\n      \"genericInput\": {\n        \"id\": 8310.017285078844,\n        \"name\": \"string\",\n        \"description\": \"string\"\n      },\n      \"unusedInput\": {\n        \"id\": 2045.2908450171115,\n        \"name\": \"string\"\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 4149.8223091246045,\n          \"name\": \"string\"\n        }\n      },\n      \"acuPortShadowLinks\": [\n        {\n          \"modelName\": \"string\",\n          \"shadowAcuPortId\": 8287.972161982858\n        },\n        {\n          \"modelName\": \"string\",\n          \"shadowAcuPortId\": 8747.18854919463\n        }\n      ],\n      \"acuPortChainedLinks\": [\n        {\n          \"modelName\": \"string\",\n          \"chainedModelName\": \"string\",\n          \"chainedAcuPortId\": 6872\n        },\n        {\n          \"modelName\": \"string\",\n          \"chainedModelName\": \"string\",\n          \"chainedAcuPortId\": 6132\n        }\n      ],\n      \"createdAt\": \"1965-08-09\",\n      \"updatedAt\": \"1995-04-07\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1998-11-09\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        7668,\n        8778\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4798,\n          6097\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b938b844-4ae3-442d-8bad-d90b33f4e3f8",
+    "name": "Openpath API Documentation auth orgs/acuPorts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

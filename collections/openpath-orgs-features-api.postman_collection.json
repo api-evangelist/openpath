@@ -1,0 +1,146 @@
+{
+  "item": [
+    {
+      "id": "d5c75904-4ac4-44f6-9ad0-8dc9b3d7944a",
+      "name": "orgs/features",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "d8c38336-f355-4aab-9eb9-dcdc76c58e8e",
+          "name": "Get an organization's enabled features",
+          "request": {
+            "name": "Get an organization's enabled features",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-account:r,o{params.orgId}-account:w,o{params.orgId}-admin:r,o{params.orgId}-admin:w,o{params.orgId}-advancedOxygenReports:r,o{params.orgId}-advancedOxygenReports:w,o{params.orgId}-alarmActions:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alertSettings:r,o{params.orgId}-alertSettings:w,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-building:r,o{params.orgId}-building:w,o{params.orgId}-cert:r,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cleanupMsiAware:w,o{params.orgId}-cobalt:r,o{params.orgId}-cobalt:w,o{params.orgId}-configurations:r,o{params.orgId}-configurations:w,o{params.orgId}-credential:r,o{params.orgId}-credential:w,o{params.orgId}-dash:r,o{params.orgId}-dash:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashCust:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashEntry:r,o{params.orgId}-dashEntry:w,o{params.orgId}-entryAccessAudit:r,o{params.orgId}-entryAccessAudit:w,o{params.orgId}-entryState:r,o{params.orgId}-entryState:w,o{params.orgId}-erpParentCenter:w,o{params.orgId}-erpParentStore:w,o{params.orgId}-eventsMsiAware:w,o{params.orgId}-exportClips:w,o{params.orgId}-haloAdmin:w,o{params.orgId}-haloUser:w,o{params.orgId}-haloViewer:r,o{params.orgId}-hw:r,o{params.orgId}-hw:w,o{params.orgId}-idp-scim:r,o{params.orgId}-idp-scim:w,o{params.orgId}-integrations:r,o{params.orgId}-integrations:w,o{params.orgId}-ipRestriction:r,o{params.orgId}-ipRestriction:w,o{params.orgId}-ldp:r,o{params.orgId}-ldp:w,o{params.orgId}-map:r,o{params.orgId}-map:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-opvideoDevice:r,o{params.orgId}-opvideoDevice:w,o{params.orgId}-opvideoIntercom:r,o{params.orgId}-opvideoIntercom:w,o{params.orgId}-outboundWebhooks:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-portalAudit:r,o{params.orgId}-portalAudit:w,o{params.orgId}-policy:r,o{params.orgId}-policy:w,o{params.orgId}-policySection:r,o{params.orgId}-policySection:w,o{params.orgId}-presence:r,o{params.orgId}-presence:w,o{params.orgId}-quickStart:r,o{params.orgId}-quickStart:w,o{params.orgId}-realUserGroup:r,o{params.orgId}-realUserGroup:w,o{params.orgId}-restriction:r,o{params.orgId}-restriction:w,o{params.orgId}-role:r,o{params.orgId}-role:w,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptDownload:r,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-serviceCancellation:w,o{params.orgId}-site:r,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o{params.orgId}-timeRestriction:r,o{params.orgId}-timeRestriction:w,o{params.orgId}-user:r,o{params.orgId}-user:w,o{params.orgId}-videoAdmin:w,o{params.orgId}-videoProviderLive:w,o{params.orgId}-videoProviderPlayback:w,o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r,o{params.orgId}-sos:w,o{params.orgId}-videoAdmin:w<br/><br/>__Endpoint name__: listOrgFeatures",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "features"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "437fee60-bd2e-41e6-ba6a-85b35ed56846",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "features"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 1138,\n  \"filteredCount\": 9126,\n  \"data\": [\n    {\n      \"id\": 2191.0535410748575,\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"singular\": \"string\",\n      \"plural\": \"string\",\n      \"isBinary\": false\n    },\n    {\n      \"id\": 7597.2235690280295,\n      \"name\": \"string\",\n      \"code\": \"string\",\n      \"singular\": \"string\",\n      \"plural\": \"string\",\n      \"isBinary\": true\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-07-14\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        33,\n        7656\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4740,\n          7214\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "fd57aa0f-8129-46e5-a9e5-c10ad653cb18",
+    "name": "Openpath API Documentation auth orgs/features API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

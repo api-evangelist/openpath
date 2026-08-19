@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/triggerPermissionsChange API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/triggerPermissionsChange",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Trigger immediate entry permission recalculation & broadcast",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/triggerPermissionsChange",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This API forces the immediate recalculation and broadcast of all entry permissions for the specified org. Do not repeatedly call this for regular permissions recalculations.<br/><br/>This API request is often called once after a series of x-op-triggers:bypass header related permission change API calls.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: triggerPermissionsChange"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

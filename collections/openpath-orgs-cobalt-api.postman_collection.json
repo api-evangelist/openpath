@@ -1,0 +1,171 @@
+{
+  "item": [
+    {
+      "id": "06a3b2da-bbec-422e-9a3d-73a88dd7a079",
+      "name": "orgs/cobalt",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9dc22396-6e98-407a-8099-7b30d6d42c8d",
+          "name": "Receives a generateActivityLogsFilter request and passes it to cobalt to execute",
+          "request": {
+            "name": "Receives a generateActivityLogsFilter request and passes it to cobalt to execute",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: generateActivityLogsFilter",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "cobalt",
+                "v0",
+                "generateActivityLogsFilter"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"sessionId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "739d4308-d4b6-4736-a735-f4140d015647",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "cobalt",
+                    "v0",
+                    "generateActivityLogsFilter"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"sessionId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"startTime\": 1781.0956637530305,\n    \"endTime\": 5564.156987830804,\n    \"accessGroups\": [\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          3402.336827818544,\n          4214.111475850744\n        ],\n        \"matched\": true\n      },\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          8775.024930820862,\n          9681.736433512964\n        ],\n        \"matched\": true\n      }\n    ],\n    \"category\": [\n      {\n        \"plaintext\": \"string\",\n        \"values\": [\n          \"string\",\n          \"string\"\n        ],\n        \"matched\": false\n      },\n      {\n        \"plaintext\": \"string\",\n        \"values\": [\n          \"string\",\n          \"string\"\n        ],\n        \"matched\": false\n      }\n    ],\n    \"entries\": [\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          1064.5905972711246,\n          4482.077208926262\n        ],\n        \"matched\": true\n      },\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          7003.530371604472,\n          9555.060274829344\n        ],\n        \"matched\": false\n      }\n    ],\n    \"event\": [\n      {\n        \"plaintext\": \"string\",\n        \"values\": [\n          \"string\",\n          \"string\"\n        ],\n        \"matched\": false\n      },\n      {\n        \"plaintext\": \"string\",\n        \"values\": [\n          \"string\",\n          \"string\"\n        ],\n        \"matched\": false\n      }\n    ],\n    \"result\": [\n      {\n        \"plaintext\": \"string\",\n        \"values\": [\n          \"string\",\n          \"string\"\n        ],\n        \"matched\": false\n      },\n      {\n        \"plaintext\": \"string\",\n        \"values\": [\n          \"string\",\n          \"string\"\n        ],\n        \"matched\": true\n      }\n    ],\n    \"sites\": [\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          3225.858706880688,\n          9290.146113378389\n        ],\n        \"matched\": false\n      },\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          2105.386791676751,\n          2934.0414902107605\n        ],\n        \"matched\": false\n      }\n    ],\n    \"users\": [\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          1834.3990897637252,\n          7669.405398929757\n        ],\n        \"matched\": false\n      },\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          7259.29689383101,\n          2128.253067935305\n        ],\n        \"matched\": true\n      }\n    ],\n    \"zones\": [\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          126.89330444730196,\n          6686.391405278246\n        ],\n        \"matched\": false\n      },\n      {\n        \"plaintext\": \"string\",\n        \"ids\": [\n          2452.3926088812755,\n          2923.0030464405045\n        ],\n        \"matched\": false\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1952-04-05\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        5456,\n        9608\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3419,\n          2379\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "3bf3db4b-56ff-4cb2-89b8-c632b24b33d5",
+    "name": "Openpath API Documentation auth orgs/cobalt API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

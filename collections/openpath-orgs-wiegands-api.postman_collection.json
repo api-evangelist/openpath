@@ -1,0 +1,484 @@
+{
+  "item": [
+    {
+      "id": "733af20e-787c-406b-9c63-bc6e759d46e4",
+      "name": "orgs/wiegands",
+      "description": {
+        "content": "Wiegand controls",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e64ee1e9-feb5-4e35-aaf9-253c61e6b4e3",
+          "name": "List all wiegands",
+          "request": {
+            "name": "List all wiegands",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listWiegands",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wiegands"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5ae4cf6c-d4cd-46f6-aed0-a2b77e9a43d6",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wiegands"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 9656,\n  \"filteredCount\": 3392,\n  \"data\": [\n    {\n      \"id\": 2297.635228945344,\n      \"name\": \"string\",\n      \"isExit\": false,\n      \"mode\": \"input\",\n      \"isPassThroughEnabled\": false,\n      \"defaultCardNumber\": \"string\",\n      \"defaultCardNumBits\": 358,\n      \"acuPort\": {\n        \"id\": 1500.6364698709497,\n        \"acuPortTypePortNumber\": 1597.1210149841397,\n        \"virtualPortNumber\": 3470.0379757917954,\n        \"portNumber\": 773.7936801938594,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 8676.050157861504,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 3870.4334598455316,\n          \"number\": 5203\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 2138.0541753925286,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 5289.1495601130955,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 1408.800094154693,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 9581.016865356389,\n      \"name\": \"string\",\n      \"isExit\": false,\n      \"mode\": \"output\",\n      \"isPassThroughEnabled\": true,\n      \"defaultCardNumber\": \"string\",\n      \"defaultCardNumBits\": 7571,\n      \"acuPort\": {\n        \"id\": 7520.060290436029,\n        \"acuPortTypePortNumber\": 9752.590554377657,\n        \"virtualPortNumber\": 134.34296608322626,\n        \"portNumber\": 7820.393597557493,\n        \"label\": \"string\",\n        \"acu\": {\n          \"id\": 5229.827293399701,\n          \"name\": \"string\"\n        },\n        \"expansionBoard\": {\n          \"id\": 1516.147608540246,\n          \"number\": 2804\n        },\n        \"eol\": {\n          \"eolSupervision\": {\n            \"id\": 5937.421559569372,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"entries\": [\n        {\n          \"id\": 5157.263471502025,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 2231.165346237555,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1998-09-17\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6627,\n        5891\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6607,\n          7203\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "27c2e6bf-70b9-470b-bf1e-14ca407dfae6",
+          "name": "Describe a wiegand",
+          "request": {
+            "name": "Describe a wiegand",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeWiegand",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wiegands",
+                ":wiegandId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wiegandId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3e788220-76ae-4d87-bee0-dffe1d54e627",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wiegands",
+                    ":wiegandId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wiegandId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4926.098657278991,\n    \"name\": \"string\",\n    \"isExit\": true,\n    \"mode\": \"input\",\n    \"isPassThroughEnabled\": true,\n    \"defaultCardNumber\": \"string\",\n    \"defaultCardNumBits\": 7659,\n    \"acuPort\": {\n      \"id\": 4731.821356705,\n      \"acuPortTypePortNumber\": 8031.285281165847,\n      \"virtualPortNumber\": 20.682460225845965,\n      \"portNumber\": 9659.34288215902,\n      \"label\": \"string\",\n      \"acu\": {\n        \"id\": 280.29693870453843,\n        \"name\": \"string\"\n      },\n      \"expansionBoard\": {\n        \"id\": 72.43390059839649,\n        \"number\": 8766\n      },\n      \"eol\": {\n        \"eolSupervision\": {\n          \"id\": 2949.5307825134855,\n          \"name\": \"string\"\n        }\n      }\n    },\n    \"entries\": [\n      {\n        \"id\": 2508.9331243845904,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 8655.01201324991,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1957-02-28\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        7794,\n        2284\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6993,\n          940\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c890a464-e0ca-4706-949a-f0b8dd827b2b",
+          "name": "Update a wiegand",
+          "request": {
+            "name": "Update a wiegand",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWiegand",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wiegands",
+                ":wiegandId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wiegandId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"isExit\": \"<boolean>\",\n  \"mode\": \"<string>\",\n  \"isPassThroughEnabled\": \"<boolean>\",\n  \"defaultCardNumber\": \"<string>\",\n  \"defaultCardFormatId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b2e35784-5a7f-4625-b766-2c87f6b4ce54",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wiegands",
+                    ":wiegandId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wiegandId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"isExit\": \"<boolean>\",\n  \"mode\": \"<string>\",\n  \"isPassThroughEnabled\": \"<boolean>\",\n  \"defaultCardNumber\": \"<string>\",\n  \"defaultCardFormatId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "9859f7e9-3cf9-4255-b52c-a34a3b3da375",
+    "name": "Openpath API Documentation auth orgs/wiegands API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

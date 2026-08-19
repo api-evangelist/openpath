@@ -1,0 +1,3296 @@
+{
+  "item": [
+    {
+      "id": "a5f21113-bf13-45d3-80c1-1d7dbc85c6a4",
+      "name": "orgs/sites",
+      "description": {
+        "content": "Sites",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "59abaf20-2a87-43d0-875b-91997da47c8b",
+          "name": "List all sites",
+          "request": {
+            "name": "List all sites",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-role:w,o{params.orgId}-role:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:w,s-o:r,o{params.orgId}-sos:w,o{params.orgId}-videoAdmin:w<br/><br/>__Endpoint name__: listSites",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a2538e20-396c-4878-879d-dbfd98f31008",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7206,\n  \"filteredCount\": 2037,\n  \"data\": [\n    {\n      \"id\": 4150.503072239942,\n      \"opal\": \"string\",\n      \"name\": \"string\",\n      \"address\": \"string\",\n      \"address2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"zip\": \"string\",\n      \"country\": \"string\",\n      \"phone\": \"string\",\n      \"createdAt\": \"1991-07-20\",\n      \"updatedAt\": \"2005-07-29\",\n      \"zoneCount\": 7459,\n      \"language\": \"string\",\n      \"userCount\": 2065,\n      \"contactName\": \"string\",\n      \"contactPhone\": \"string\",\n      \"boundary\": \"string\",\n      \"resources\": [\n        {\n          \"id\": 5413.061561061505,\n          \"name\": \"string\",\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"s3Data\": \"string\",\n          \"s3Key\": \"string\",\n          \"s3Bucket\": \"string\",\n          \"createdAt\": \"2019-03-16T05:11:06.847Z\",\n          \"updatedAt\": \"2008-11-08T20:35:55.479Z\",\n          \"url\": \"string\"\n        },\n        {\n          \"id\": 2607.9076307347405,\n          \"name\": \"string\",\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"s3Data\": \"string\",\n          \"s3Key\": \"string\",\n          \"s3Bucket\": \"string\",\n          \"createdAt\": \"1971-02-18T14:23:04.547Z\",\n          \"updatedAt\": \"1986-02-04T19:36:17.764Z\",\n          \"url\": \"string\"\n        }\n      ],\n      \"sosFacilityCampus\": {\n        \"siteId\": 3797.752324029263,\n        \"sosFacilityCampusIdExt\": \"string\",\n        \"createdAt\": \"2026-07-12T04:49:15.990Z\",\n        \"updatedAt\": \"2000-12-30T11:56:32.188Z\"\n      },\n      \"realUserGroups\": [\n        {\n          \"id\": 2963.665388375776,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 9250.879118510971,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 818.1096474825922,\n      \"opal\": \"string\",\n      \"name\": \"string\",\n      \"address\": \"string\",\n      \"address2\": \"string\",\n      \"city\": \"string\",\n      \"state\": \"string\",\n      \"zip\": \"string\",\n      \"country\": \"string\",\n      \"phone\": \"string\",\n      \"createdAt\": \"1973-06-05\",\n      \"updatedAt\": \"1998-01-12\",\n      \"zoneCount\": 5218,\n      \"language\": \"string\",\n      \"userCount\": 6430,\n      \"contactName\": \"string\",\n      \"contactPhone\": \"string\",\n      \"boundary\": \"string\",\n      \"resources\": [\n        {\n          \"id\": 2183.451383277636,\n          \"name\": \"string\",\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"s3Data\": \"string\",\n          \"s3Key\": \"string\",\n          \"s3Bucket\": \"string\",\n          \"createdAt\": \"1951-09-02T15:44:22.931Z\",\n          \"updatedAt\": \"2013-09-09T22:55:53.865Z\",\n          \"url\": \"string\"\n        },\n        {\n          \"id\": 6195.037320516056,\n          \"name\": \"string\",\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"s3Data\": \"string\",\n          \"s3Key\": \"string\",\n          \"s3Bucket\": \"string\",\n          \"createdAt\": \"2016-07-23T10:07:34.424Z\",\n          \"updatedAt\": \"1996-09-28T13:33:10.910Z\",\n          \"url\": \"string\"\n        }\n      ],\n      \"sosFacilityCampus\": {\n        \"siteId\": 3785.0495076205393,\n        \"sosFacilityCampusIdExt\": \"string\",\n        \"createdAt\": \"1963-01-08T12:58:29.038Z\",\n        \"updatedAt\": \"2010-07-12T00:21:12.752Z\"\n      },\n      \"realUserGroups\": [\n        {\n          \"id\": 9547.166263187719,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7705.353267389086,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1986-04-15\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6157,\n        3661\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3159,\n          9389\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7318442e-3bc0-4340-a9d5-e872f85d0743",
+          "name": "Create a site",
+          "request": {
+            "name": "Create a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-sos:w,o:w,s-o:w<br/><br/>__Endpoint name__: createSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"zip\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"language\": \"<string>\",\n  \"country\": \"<string>\",\n  \"state\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactPhone\": \"<string>\",\n  \"boundary\": \"<string>\",\n  \"resources\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    },\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d70a6ccf-f0b8-446a-88f7-df2d3aab714a",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"zip\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"language\": \"<string>\",\n  \"country\": \"<string>\",\n  \"state\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactPhone\": \"<string>\",\n  \"boundary\": \"<string>\",\n  \"resources\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    },\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 207.41197117992272,\n    \"opal\": \"string\",\n    \"name\": \"string\",\n    \"address\": \"string\",\n    \"address2\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"phone\": \"string\",\n    \"createdAt\": \"2024-01-01\",\n    \"updatedAt\": \"2001-07-06\",\n    \"zoneCount\": 8359,\n    \"language\": \"string\",\n    \"userCount\": 2423,\n    \"contactName\": \"string\",\n    \"contactPhone\": \"string\",\n    \"boundary\": \"string\",\n    \"resources\": [\n      {\n        \"id\": 4590.042928261784,\n        \"name\": \"string\",\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"s3Data\": \"string\",\n        \"s3Key\": \"string\",\n        \"s3Bucket\": \"string\",\n        \"createdAt\": \"1992-10-12T17:34:12.922Z\",\n        \"updatedAt\": \"1953-12-16T12:17:40.228Z\",\n        \"url\": \"string\"\n      },\n      {\n        \"id\": 6045.797192874722,\n        \"name\": \"string\",\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"s3Data\": \"string\",\n        \"s3Key\": \"string\",\n        \"s3Bucket\": \"string\",\n        \"createdAt\": \"2016-02-22T21:31:53.412Z\",\n        \"updatedAt\": \"1962-08-26T01:57:17.998Z\",\n        \"url\": \"string\"\n      }\n    ],\n    \"sosFacilityCampus\": {\n      \"siteId\": 8502.465840285358,\n      \"sosFacilityCampusIdExt\": \"string\",\n      \"createdAt\": \"2018-01-09T21:03:28.451Z\",\n      \"updatedAt\": \"1951-09-19T09:21:53.230Z\"\n    },\n    \"realUserGroups\": [\n      {\n        \"id\": 8419.587177138157,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 1519.581227721667,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1955-12-19\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2226,\n        6800\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6214,\n          5924\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "14e7656e-0eba-4f9a-b787-90a33b269f92",
+          "name": "Describe a site",
+          "request": {
+            "name": "Describe a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o{params.orgId}-sos:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f117051d-9650-4c76-849f-6b1a3acead34",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 207.41197117992272,\n    \"opal\": \"string\",\n    \"name\": \"string\",\n    \"address\": \"string\",\n    \"address2\": \"string\",\n    \"city\": \"string\",\n    \"state\": \"string\",\n    \"zip\": \"string\",\n    \"country\": \"string\",\n    \"phone\": \"string\",\n    \"createdAt\": \"2024-01-01\",\n    \"updatedAt\": \"2001-07-06\",\n    \"zoneCount\": 8359,\n    \"language\": \"string\",\n    \"userCount\": 2423,\n    \"contactName\": \"string\",\n    \"contactPhone\": \"string\",\n    \"boundary\": \"string\",\n    \"resources\": [\n      {\n        \"id\": 4590.042928261784,\n        \"name\": \"string\",\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"s3Data\": \"string\",\n        \"s3Key\": \"string\",\n        \"s3Bucket\": \"string\",\n        \"createdAt\": \"1992-10-12T17:34:12.922Z\",\n        \"updatedAt\": \"1953-12-16T12:17:40.228Z\",\n        \"url\": \"string\"\n      },\n      {\n        \"id\": 6045.797192874722,\n        \"name\": \"string\",\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"s3Data\": \"string\",\n        \"s3Key\": \"string\",\n        \"s3Bucket\": \"string\",\n        \"createdAt\": \"2016-02-22T21:31:53.412Z\",\n        \"updatedAt\": \"1962-08-26T01:57:17.998Z\",\n        \"url\": \"string\"\n      }\n    ],\n    \"sosFacilityCampus\": {\n      \"siteId\": 8502.465840285358,\n      \"sosFacilityCampusIdExt\": \"string\",\n      \"createdAt\": \"2018-01-09T21:03:28.451Z\",\n      \"updatedAt\": \"1951-09-19T09:21:53.230Z\"\n    },\n    \"realUserGroups\": [\n      {\n        \"id\": 8419.587177138157,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 1519.581227721667,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1955-12-19\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        2226,\n        6800\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6214,\n          5924\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "95d0c5a6-bfe9-4d3e-a885-3e270d367ff4",
+          "name": "Delete a site",
+          "request": {
+            "name": "Delete a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w,o{params.orgId}-sos:w<br/><br/>__Endpoint name__: deleteSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0e68925e-92f2-4fc6-936e-f3aea23feff1",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "20f4c753-a5cd-4942-8d04-cbf6def527a4",
+          "name": "Update a site",
+          "request": {
+            "name": "Update a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-sos:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"zip\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"language\": \"<string>\",\n  \"country\": \"<string>\",\n  \"state\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactPhone\": \"<string>\",\n  \"boundary\": \"<string>\",\n  \"resources\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    },\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4eafa53c-65b9-464c-9f9a-0f543a7ebc7e",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"address\": \"<string>\",\n  \"address2\": \"<string>\",\n  \"city\": \"<string>\",\n  \"zip\": \"<string>\",\n  \"phone\": \"<string>\",\n  \"language\": \"<string>\",\n  \"country\": \"<string>\",\n  \"state\": \"<string>\",\n  \"contactName\": \"<string>\",\n  \"contactPhone\": \"<string>\",\n  \"boundary\": \"<string>\",\n  \"resources\": [\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    },\n    {\n      \"fileName\": \"<string>\",\n      \"fileBase64\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c8b13917-17cb-4002-9009-4f9689225855",
+          "name": "Get location restriction for a site",
+          "request": {
+            "name": "Get location restriction for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: getSiteLocationRestriction",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationRestriction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "faaf4c53-07f4-487c-acfc-c6b1472c6a24",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationRestriction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 2237.1784727582,\n    \"allowedDistanceMeters\": 8324.315638852006,\n    \"scaleFactor\": 8573.723281907793,\n    \"locationMeasurement\": {\n      \"id\": 4545.891288043522,\n      \"longitude\": 7876.9529313530475,\n      \"latitude\": 4265.815701960807,\n      \"accuracyMeters\": 4148.921901133367,\n      \"timeZoneId\": \"string\",\n      \"locationMeasurementSourceType\": {\n        \"id\": 5992.227757764575,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"rawData\": {}\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1952-10-14\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4857,\n        3641\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1256,\n          330\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cb861a64-0293-413d-9830-6ac01243b420",
+          "name": "Delete location restriction for a site",
+          "request": {
+            "name": "Delete location restriction for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSiteLocationRestriction",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationRestriction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1dd64fcd-f028-4e2e-98d1-1800bc68c439",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationRestriction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "32902f31-3e31-45f9-89e5-9865c92d5248",
+          "name": "Set location restriction for a site",
+          "request": {
+            "name": "Set location restriction for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteLocationRestriction",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationRestriction"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locationMeasurementId\": \"<integer>\",\n  \"allowedDistanceMeters\": \"<number>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ed42cc06-54b5-4865-b672-b126b77af223",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationRestriction"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locationMeasurementId\": \"<integer>\",\n  \"allowedDistanceMeters\": \"<number>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9f9c775c-5027-463d-b8af-08bb86207359",
+          "name": "List location measurements for a site",
+          "request": {
+            "name": "List location measurements for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSiteLocationMeasurements",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationMeasurements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6b35e64e-4173-46cb-a463-8fdc8a1fd45f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationMeasurements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6272,\n  \"filteredCount\": 9142,\n  \"data\": [\n    {\n      \"id\": 3843.932010669322,\n      \"longitude\": 1078.0496920754756,\n      \"latitude\": 7984.663030150313,\n      \"accuracyMeters\": 6710.108653463144,\n      \"timeZoneId\": \"string\",\n      \"locationMeasurementSourceType\": {\n        \"id\": 5026.708526043756,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"rawData\": {}\n    },\n    {\n      \"id\": 4615.381741895624,\n      \"longitude\": 8697.134969982038,\n      \"latitude\": 6158.655401807989,\n      \"accuracyMeters\": 3411.3636131288704,\n      \"timeZoneId\": \"string\",\n      \"locationMeasurementSourceType\": {\n        \"id\": 555.5181855650837,\n        \"name\": \"string\",\n        \"code\": \"string\"\n      },\n      \"rawData\": {}\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1998-12-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8313,\n        5110\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3460,\n          8314\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7dd1305a-aa62-450d-b1dd-6f655b62b2e2",
+          "name": "List all users of a site",
+          "request": {
+            "name": "List all users of a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSiteUsers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "identity.lastName"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ac9c170f-d651-4747-9e9b-78f33ab1d8f3",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "identity.lastName"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4019,\n  \"filteredCount\": 7016,\n  \"data\": [\n    {\n      \"id\": 4654.673246693136,\n      \"status\": \"A\",\n      \"identity\": {\n        \"id\": 5808.97071725483,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 1801.9193010351398,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          },\n          {\n            \"id\": 6436.866464409189,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 2928.300885347367,\n            \"createdAt\": \"2005-12-31\",\n            \"updatedAt\": \"1983-02-07\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 9766.981918893827,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 8886.595912140681\n            }\n          },\n          {\n            \"id\": 8698.919447917582,\n            \"createdAt\": \"1986-01-02\",\n            \"updatedAt\": \"1959-06-15\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 7301.495299252757,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 934.8266413159567\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": false,\n        \"namespace\": {\n          \"id\": 2843,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 2563.2517574828353,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 4762.612902740282,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 6905.760260958094,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 23,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 4349.124547215675,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9450.666144014684,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 6866.74274873365,\n            \"orgId\": 6977.824489953299,\n            \"propertyManagementSystemTypeId\": 7266.807442314281,\n            \"propertyManagementSystemType\": {\n              \"id\": 292.20212418845983,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"2008-07-28\",\n        \"updatedAt\": \"1983-10-11\",\n        \"users\": [\n          {\n            \"id\": 4259.607667939699,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1987-10-30\",\n            \"endDate\": \"1972-06-06\",\n            \"createdAt\": \"1976-07-26\",\n            \"updatedAt\": \"2011-08-27\",\n            \"org\": {\n              \"id\": 5566.978124903361,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 8602.941833706962,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2002-09-11\",\n            \"endDate\": \"1959-11-03\",\n            \"createdAt\": \"1978-04-07\",\n            \"updatedAt\": \"1982-09-19\",\n            \"org\": {\n              \"id\": 7541.919652302673,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"sites\": [\n        {\n          \"id\": 9257.361926127714,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 3054.2865243093133,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 8064.756764688049,\n      \"status\": \"I\",\n      \"identity\": {\n        \"id\": 774.4082589870804,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 7206.64501095438,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          },\n          {\n            \"id\": 1261.1600385952593,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 6785.578294991718,\n            \"createdAt\": \"1991-07-02\",\n            \"updatedAt\": \"2010-12-27\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 196.87268034943918,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4770.239185364302\n            }\n          },\n          {\n            \"id\": 7673.636327224195,\n            \"createdAt\": \"1967-10-12\",\n            \"updatedAt\": \"1950-12-11\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 4592.410142556021,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 792.5874637407604\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 1949,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 5854.736790840934,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 5965.790400017668,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 8129.2888932479755,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 5474,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 5120.8998440400355,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 4979.749047699368,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 1336.6537076115449,\n            \"orgId\": 2413.6342363280037,\n            \"propertyManagementSystemTypeId\": 6988.152038820744,\n            \"propertyManagementSystemType\": {\n              \"id\": 1740.5298689928427,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1954-02-13\",\n        \"updatedAt\": \"1977-12-05\",\n        \"users\": [\n          {\n            \"id\": 8590.433880036735,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1947-05-13\",\n            \"endDate\": \"2020-08-03\",\n            \"createdAt\": \"1995-10-03\",\n            \"updatedAt\": \"1993-10-02\",\n            \"org\": {\n              \"id\": 4045.2646790694535,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 6839.748925431953,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2009-06-25\",\n            \"endDate\": \"2013-05-20\",\n            \"createdAt\": \"2006-01-09\",\n            \"updatedAt\": \"1993-09-15\",\n            \"org\": {\n              \"id\": 4703.7598914972405,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"sites\": [\n        {\n          \"id\": 7900.128825790524,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 2777.0516504397324,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2012-06-16\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        4227,\n        7622\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5360,\n          8632\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3370ecba-e514-45e3-9d83-07ee77e459a9",
+          "name": "List all groups of a site",
+          "request": {
+            "name": "List all groups of a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSiteGroups",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6ccb09c2-feff-4c18-8fa0-8e526c192938",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6726,\n  \"filteredCount\": 7741,\n  \"data\": [\n    {\n      \"id\": 8687.410573031824,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"userCount\": 1401\n    },\n    {\n      \"id\": 4185.795413514739,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"userCount\": 441\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1985-02-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6673,\n        6706\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4112,\n          6247\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6a26a3b3-220b-45be-86f4-d6728c112781",
+          "name": "Describe a location measurement for a site",
+          "request": {
+            "name": "Describe a location measurement for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSiteLocationMeasurement",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationMeasurements",
+                ":locationMeasurementId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "locationMeasurementId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c225ee09-fc7c-4b7b-9a8b-46b05f5c4707",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationMeasurements",
+                    ":locationMeasurementId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "locationMeasurementId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 6899.5690119898845,\n    \"longitude\": 5614.209600090066,\n    \"latitude\": 3380.3248074067883,\n    \"accuracyMeters\": 8673.792272717026,\n    \"timeZoneId\": \"string\",\n    \"locationMeasurementSourceType\": {\n      \"id\": 2287.2504551825746,\n      \"name\": \"string\",\n      \"code\": \"string\"\n    },\n    \"rawData\": {}\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1980-09-19\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6078,\n        1854\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8085,\n          2728\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "73576ecb-67e2-4d56-97df-271e5fee9047",
+          "name": "Delete a location measurement for a site",
+          "request": {
+            "name": "Delete a location measurement for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSiteLocationMeasurement",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationMeasurements",
+                ":locationMeasurementId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "locationMeasurementId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "04b4a171-a54c-4710-98b6-862a0dc668a0",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationMeasurements",
+                    ":locationMeasurementId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "locationMeasurementId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3a77adf1-e6b8-46c8-b485-16fbf11dc15f",
+          "name": "Remove a user from a site",
+          "request": {
+            "name": "Remove a user from a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeUserFromSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1d7cbe23-cf88-480b-a6b6-4cd56ad67e5b",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f8f29cc0-754e-4d12-acf0-714bda1a96df",
+          "name": "Add a user to a site",
+          "request": {
+            "name": "Add a user to a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserToSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "55df3fe0-3bcd-43a8-85b4-4442c26c965c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "af3c8ed0-058b-403c-ae1e-5e4d46defa6c",
+          "name": "Remove a group from a site",
+          "request": {
+            "name": "Remove a group from a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeGroupFromSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fff5dd23-c695-4efc-9d5e-e897dfc5e48e",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "97211275-1220-41c6-836a-d7d80281f11e",
+          "name": "Add a group to a site",
+          "request": {
+            "name": "Add a group to a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupToSite",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "5cfb5a56-2618-41d6-9a59-1609b4f23298",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a0f95cbf-a184-4261-ad08-06bdef6c8244",
+          "name": "Bulk-update a site's users",
+          "request": {
+            "name": "Bulk-update a site's users",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSiteUserIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "userIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"remove\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9e7718cc-2fb0-4911-b8dd-ce3ecab83b85",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "userIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8cbeda8d-b79a-48f0-bd4a-4f7725ffc2b7",
+          "name": "Set a site's users by replacing the entire set with this one",
+          "request": {
+            "name": "Set a site's users by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteUserIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "userIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7a9020f2-90e0-4b79-b7ff-aa4b8ffea48a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "userIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1a9bd8c3-192c-4ad4-a7dc-58a46e20898f",
+          "name": "Bulk-update a site's groups",
+          "request": {
+            "name": "Bulk-update a site's groups",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSiteGroupIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "groupIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"remove\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9d910104-a5f2-4bec-a712-af8a938728f4",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "groupIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "da7402d9-dbf8-4c04-a32d-7a79395b5e23",
+          "name": "Set a site's groups by replacing the entire set with this one",
+          "request": {
+            "name": "Set a site's groups by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteGroupIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "groupIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"groupIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7c370cbd-eef4-4142-8455-149df89a88e9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "groupIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"groupIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5234167b-69b2-4b2c-b04f-2b848e91ad94",
+          "name": "Set a location measurement for a site",
+          "request": {
+            "name": "Set a location measurement for a site",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o:w,s-o:w<br/><br/>__Endpoint name__: setSiteLocationMeasurement",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sites",
+                ":siteId",
+                "locationMeasurement"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "siteId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"locationMeasurementSourceTypeId\": \"<integer>\",\n  \"rawData\": {\n    \"acuWifi\": {\n      \"homeMobileCountryCode\": \"<integer>\",\n      \"homeMobileNetworkCode\": \"<integer>\",\n      \"radioType\": \"<string>\",\n      \"carrier\": \"<string>\",\n      \"considerIp\": \"<boolean>\",\n      \"cellTowers\": [\n        {\n          \"cellId\": \"<integer>\",\n          \"locationAreaCode\": \"<integer>\",\n          \"mobileCountryCode\": \"<integer>\",\n          \"mobileNetworkCode\": \"<integer>\",\n          \"age\": \"<integer>\",\n          \"signalStrength\": \"<integer>\",\n          \"timingAdvance\": \"<integer>\"\n        },\n        {\n          \"cellId\": \"<integer>\",\n          \"locationAreaCode\": \"<integer>\",\n          \"mobileCountryCode\": \"<integer>\",\n          \"mobileNetworkCode\": \"<integer>\",\n          \"age\": \"<integer>\",\n          \"signalStrength\": \"<integer>\",\n          \"timingAdvance\": \"<integer>\"\n        }\n      ],\n      \"wifiAccessPoints\": [\n        {\n          \"macAddress\": \"<string>\",\n          \"signalToNoiseRatio\": \"<number>\",\n          \"age\": \"<number>\",\n          \"channel\": \"<number>\",\n          \"signalStrength\": \"<number>\"\n        },\n        {\n          \"macAddress\": \"<string>\",\n          \"signalToNoiseRatio\": \"<number>\",\n          \"age\": \"<number>\",\n          \"channel\": \"<number>\",\n          \"signalStrength\": \"<number>\"\n        }\n      ]\n    },\n    \"physicalAddress\": {\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"zip\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    \"pinDrop\": {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"accuracyMeters\": \"<number>\"\n    },\n    \"device\": {\n      \"locationReports\": [\n        {\n          \"latitude\": \"<number>\",\n          \"longitude\": \"<number>\",\n          \"accuracyMeters\": \"<number>\",\n          \"readerId\": \"<number>\",\n          \"timestamp\": \"<number>\"\n        },\n        {\n          \"latitude\": \"<number>\",\n          \"longitude\": \"<number>\",\n          \"accuracyMeters\": \"<number>\",\n          \"readerId\": \"<number>\",\n          \"timestamp\": \"<number>\"\n        }\n      ]\n    }\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0d54aaa6-1b61-496e-9b30-9127eaa321b9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sites",
+                    ":siteId",
+                    "locationMeasurement"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "siteId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"locationMeasurementSourceTypeId\": \"<integer>\",\n  \"rawData\": {\n    \"acuWifi\": {\n      \"homeMobileCountryCode\": \"<integer>\",\n      \"homeMobileNetworkCode\": \"<integer>\",\n      \"radioType\": \"<string>\",\n      \"carrier\": \"<string>\",\n      \"considerIp\": \"<boolean>\",\n      \"cellTowers\": [\n        {\n          \"cellId\": \"<integer>\",\n          \"locationAreaCode\": \"<integer>\",\n          \"mobileCountryCode\": \"<integer>\",\n          \"mobileNetworkCode\": \"<integer>\",\n          \"age\": \"<integer>\",\n          \"signalStrength\": \"<integer>\",\n          \"timingAdvance\": \"<integer>\"\n        },\n        {\n          \"cellId\": \"<integer>\",\n          \"locationAreaCode\": \"<integer>\",\n          \"mobileCountryCode\": \"<integer>\",\n          \"mobileNetworkCode\": \"<integer>\",\n          \"age\": \"<integer>\",\n          \"signalStrength\": \"<integer>\",\n          \"timingAdvance\": \"<integer>\"\n        }\n      ],\n      \"wifiAccessPoints\": [\n        {\n          \"macAddress\": \"<string>\",\n          \"signalToNoiseRatio\": \"<number>\",\n          \"age\": \"<number>\",\n          \"channel\": \"<number>\",\n          \"signalStrength\": \"<number>\"\n        },\n        {\n          \"macAddress\": \"<string>\",\n          \"signalToNoiseRatio\": \"<number>\",\n          \"age\": \"<number>\",\n          \"channel\": \"<number>\",\n          \"signalStrength\": \"<number>\"\n        }\n      ]\n    },\n    \"physicalAddress\": {\n      \"address\": \"<string>\",\n      \"city\": \"<string>\",\n      \"state\": \"<string>\",\n      \"zip\": \"<string>\",\n      \"country\": \"<string>\"\n    },\n    \"pinDrop\": {\n      \"latitude\": \"<number>\",\n      \"longitude\": \"<number>\",\n      \"accuracyMeters\": \"<number>\"\n    },\n    \"device\": {\n      \"locationReports\": [\n        {\n          \"latitude\": \"<number>\",\n          \"longitude\": \"<number>\",\n          \"accuracyMeters\": \"<number>\",\n          \"readerId\": \"<number>\",\n          \"timestamp\": \"<number>\"\n        },\n        {\n          \"latitude\": \"<number>\",\n          \"longitude\": \"<number>\",\n          \"accuracyMeters\": \"<number>\",\n          \"readerId\": \"<number>\",\n          \"timestamp\": \"<number>\"\n        }\n      ]\n    }\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1684b2f4-a767-4b32-9d45-cf6d9a540bed",
+    "name": "Openpath API Documentation auth orgs/sites API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

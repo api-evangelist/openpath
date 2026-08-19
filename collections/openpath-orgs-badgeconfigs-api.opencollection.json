@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/badgeConfigs API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/badgeConfigs",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all badge configs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/badgeConfigs",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listBadgeConfigs"
+        },
+        {
+          "info": {
+            "name": "Create a new badge config",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/badgeConfigs",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: createBadgeConfig"
+        },
+        {
+          "info": {
+            "name": "Describe a badge config",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/badgeConfigs/:badgeConfigId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "badgeConfigId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o{params.orgId}-badgePrinting:r,o{params.orgId}-badgePrinting:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeBadgeConfig"
+        },
+        {
+          "info": {
+            "name": "Update a badge config",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/badgeConfigs/:badgeConfigId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "badgeConfigId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateBadgeConfig"
+        },
+        {
+          "info": {
+            "name": "Delete a badge config of an Org",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/badgeConfigs/:badgeConfigId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "badgeConfigId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-badgePrinting:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteBadgeConfig"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

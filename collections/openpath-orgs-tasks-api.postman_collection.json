@@ -1,0 +1,1465 @@
+{
+  "item": [
+    {
+      "id": "1c2aead3-3e3f-4b47-8c7c-9725dba130ae",
+      "name": "orgs/tasks",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9106f7a3-51a6-4dc1-8fdc-e74fa89493d3",
+          "name": "List all report tasks",
+          "request": {
+            "name": "List all report tasks",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTasksReports",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "37125cec-9738-41f6-84ce-d251e10e6b56",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 890,\n  \"filteredCount\": 7134,\n  \"data\": [\n    {\n      \"expiresAfter\": \"2009-09-05\",\n      \"type\": \"auditLogsOrg\",\n      \"id\": 5705,\n      \"org\": {\n        \"id\": 7516,\n        \"name\": \"string\"\n      },\n      \"identity\": {\n        \"id\": 2850.454738572674,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 7156.232671692252,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 3881.3245937658903,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 5632.327472193301,\n            \"createdAt\": \"1988-05-20\",\n            \"updatedAt\": \"2025-07-29\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 694.8644719190256,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 1427.1276286415236\n            }\n          },\n          {\n            \"id\": 6916.802398070207,\n            \"createdAt\": \"1984-09-28\",\n            \"updatedAt\": \"2007-11-25\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 2453.346557598041,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 6455.362008893883\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 3553,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 6098.915640664715,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 7932.181278165057,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 1228.3900455315577,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 4332,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 8515.258629565194,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9378.74876715392,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 7323.714343679021,\n            \"orgId\": 9601.699284649154,\n            \"propertyManagementSystemTypeId\": 4377.929976522076,\n            \"propertyManagementSystemType\": {\n              \"id\": 8217.999070381213,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1958-10-22\",\n        \"updatedAt\": \"2007-05-15\",\n        \"users\": [\n          {\n            \"id\": 774.4570117574145,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2023-09-06\",\n            \"endDate\": \"1975-10-10\",\n            \"createdAt\": \"1995-06-04\",\n            \"updatedAt\": \"2012-12-31\",\n            \"org\": {\n              \"id\": 6242.252204229642,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 3795.174279986705,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1948-08-22\",\n            \"endDate\": \"1988-10-03\",\n            \"createdAt\": \"1996-11-28\",\n            \"updatedAt\": \"1963-11-14\",\n            \"org\": {\n              \"id\": 8530.14143878436,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"numRecordsProcessed\": 638,\n      \"numRecordsOutput\": 9274,\n      \"executionType\": \"immediate\",\n      \"options\": \"string\",\n      \"name\": \"string\",\n      \"filter\": \"string\",\n      \"relativeTime\": \"lastFullWeek\",\n      \"customFieldIds\": [\n        191,\n        7368\n      ],\n      \"destinationEmails\": [\n        \"string\",\n        \"string\"\n      ],\n      \"timeZone\": \"string\",\n      \"columns\": [\n        \"customFieldIdx2\"\n      ],\n      \"statusCode\": \"running\",\n      \"statusFailureCode\": \"unexpectedException\",\n      \"statusDetail\": \"string\",\n      \"createdAt\": \"1977-02-05\",\n      \"updatedAt\": \"1963-10-18\"\n    },\n    {\n      \"expiresAfter\": \"2007-07-16\",\n      \"type\": \"alarmsOrg\",\n      \"id\": 8847,\n      \"org\": {\n        \"id\": 2736,\n        \"name\": \"string\"\n      },\n      \"identity\": {\n        \"id\": 7275.522687841166,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 2355.374527299304,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 3902.1569037370086,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 8122.338093158914,\n            \"createdAt\": \"2011-09-10\",\n            \"updatedAt\": \"1988-12-29\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5675.278609947391,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4692.555835478418\n            }\n          },\n          {\n            \"id\": 2691.456092436938,\n            \"createdAt\": \"1988-10-02\",\n            \"updatedAt\": \"2023-01-17\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 937.1555318902635,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 1612.1623381386541\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 8096,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 6603.78310941551,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 9481.925462842268,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 5319.1228539406275,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": true,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 7882,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 4727.909067167076,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 1518.284627276405,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 9325.332401679563,\n            \"orgId\": 2891.4863921511037,\n            \"propertyManagementSystemTypeId\": 7506.70402510024,\n            \"propertyManagementSystemType\": {\n              \"id\": 386.0235291157499,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1965-10-23\",\n        \"updatedAt\": \"2002-12-22\",\n        \"users\": [\n          {\n            \"id\": 9193.982483467558,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2014-10-27\",\n            \"endDate\": \"2023-07-25\",\n            \"createdAt\": \"1947-02-10\",\n            \"updatedAt\": \"1957-11-29\",\n            \"org\": {\n              \"id\": 5537.074144838801,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 9670.700768600904,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2010-10-24\",\n            \"endDate\": \"2006-12-05\",\n            \"createdAt\": \"1953-08-04\",\n            \"updatedAt\": \"1983-02-21\",\n            \"org\": {\n              \"id\": 8717.792818194337,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"numRecordsProcessed\": 8811,\n      \"numRecordsOutput\": 9121,\n      \"executionType\": \"immediate\",\n      \"options\": \"string\",\n      \"name\": \"string\",\n      \"filter\": \"string\",\n      \"relativeTime\": \"lastFullWeek\",\n      \"customFieldIds\": [\n        9980,\n        7070\n      ],\n      \"destinationEmails\": [\n        \"string\",\n        \"string\"\n      ],\n      \"timeZone\": \"string\",\n      \"columns\": [\n        \"customFieldIdx3\"\n      ],\n      \"statusCode\": \"running\",\n      \"statusFailureCode\": \"unexpectedException\",\n      \"statusDetail\": \"string\",\n      \"createdAt\": \"2001-10-03\",\n      \"updatedAt\": \"1961-04-26\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1972-08-17\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        1425,\n        6713\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1393,\n          76\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2f160129-24a0-4f0f-8160-1d9a035ccbd1",
+          "name": "Create a new batch report task.",
+          "request": {
+            "name": "Create a new batch report task.",
+            "description": {
+              "content": "The report's time filter can be specified either via the `relativeTime` field or via the `filter` field.<br/><br/>The `relativeTime` field supports these possible values: today, thisWeek, thisMonth, thisQuarter, thisYear, lastHour, last4Hours, last12Hours, last24Hours, last7Days, last30Days, yesterday, lastFullWeek, lastFullMonth, lastFullQuarter, lastFullYear, last6FullMonths, last12FullMonths.<br/><br/>The `options` field supports `withWeekends` which is used for `occupancyOrg` reports.The `filter` field specifies the report date and time range and other filters. It uses the same syntax and field names from the `/orgs/{orgId}/reports/activity` API. Example: `\"filter\": \"time:(1609459200--1612137600)\"` means filter to all records with a `/orgs/{orgId}/reports/activity` `time` field value of `Jan 1, 2021 00:00:00 UTC` inclusive to `Feb 1, 2021 00:00:00 UTC` inclusive. If you also wanted to filter for `sideIds`, you would specify `\"filter\": \"time:(1609459200--1612137600) siteId:(123,456,789)\"`. That will return results for that same date range plus filtering for `siteIds` 123, 456, or 789.<br/><br/>The `columns` field is an in-order list of CSV columns to output. Possible values depend on the report type: For activityLogsOrg, the possible values are `time`, `category`, `subCategory`, `result`, `device`, `deviceDetail`, `deviceDetailName`, `deviceTimezone`, `deviceTime`, `user`, `userEmail`, `userOrg`, `userIdpName`, `userExternalId`, `initialCredentialTypeName`, `initialCredentialDetail`, `credentialTypeName`, `credentialDetail`, `target`, `initialRequest`, `request`, `location`, `entryName`, `entryName2`, `zoneName`, `zoneName2`, `siteName`, `siteName2`, `source`, `deniedReason`, `requestId`. For alarmsOrg, the possible values are `alarmId`, `alarmConfigName`, `time`, `eventName`, `siteName2`, `zoneName2`, `entryName2`, `alarmActionName`, `userName`, `assignee`, `alarmStatusName`, `acuName`, `readerName`, `note`. For occupancyOrg, the possible values are `user`, `userEmail`, `userGroups`. Include a `customFieldIdx#` column name to specify `customFieldIds` column placement. Example: where `customFieldId` for id `49` has a name of `Department` and the payload is `..., \"columns\": [\"time\", \"category\", \"customFieldIdx0\"], \"customFieldIds\": [49], ...` means output `\"time\", \"category\", \"Department\"` column headers and subsequent lines with respective values in that `columns` specified order. In this example, customFieldIdx0 is the 0th index in the `customFieldsIds` array.<br/><br/>The difference between entryName, zoneName, and siteName vs. entryName2, zoneName2, and siteName2 is that the `*Name2` fields can potentially return \"Multiple\" as the name. This occurs when there are multiple unique ids for that resource type. Whereas the entryId, entryName, zoneId, zoneName, siteId, and siteName values always equal the first entry's values (entries[0]).<br/><br/>The expiresAfter specification can be specified either via a concrete date in `expiresAfter` or via a relative number of days from the `expiresAfterDays` field.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o-support:w,o:w,s-o:w<br/><br/>__Endpoint name__: createTasksReport",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"executionType\": \"immediate\",\n  \"options\": \"<string>\",\n  \"expiresAfter\": \"<date>\",\n  \"filter\": \"<string>\",\n  \"relativeTime\": \"<string>\",\n  \"customFieldIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"destinationEmails\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"timeZone\": \"<string>\",\n  \"columns\": [\n    \"<string>\"\n  ],\n  \"expiresAfterDays\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "aa5b35e6-2146-49c4-bc12-77f7686f2eec",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"type\": \"<string>\",\n  \"name\": \"<string>\",\n  \"executionType\": \"immediate\",\n  \"options\": \"<string>\",\n  \"expiresAfter\": \"<date>\",\n  \"filter\": \"<string>\",\n  \"relativeTime\": \"<string>\",\n  \"customFieldIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"destinationEmails\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"timeZone\": \"<string>\",\n  \"columns\": [\n    \"<string>\"\n  ],\n  \"expiresAfterDays\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"expiresAfter\": \"1985-04-24\",\n    \"type\": \"activityLogsOrg\",\n    \"id\": 363,\n    \"org\": {\n      \"id\": 6830,\n      \"name\": \"string\"\n    },\n    \"identity\": {\n      \"id\": 6396.224543992374,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 5417.293434926205,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        },\n        {\n          \"id\": 1699.8526904347732,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 6918.853383725284,\n          \"createdAt\": \"1975-08-15\",\n          \"updatedAt\": \"1958-10-22\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 6462.764333057987,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 610.8833361111732\n          }\n        },\n        {\n          \"id\": 1848.144432841392,\n          \"createdAt\": \"2024-09-28\",\n          \"updatedAt\": \"1980-01-02\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 252.44255002575545,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 7689.51499099148\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": false,\n      \"namespace\": {\n        \"id\": 3217,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 3020.118723793811,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 3118.7314532853006,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 7451.232514245192,\n          \"isSsoEnabled\": true,\n          \"isSyncMobilePhoneEnabled\": false,\n          \"isRemoveGroupsEnabled\": true,\n          \"identityProviderSyncTypeId\": 3347,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 6977.020473776735,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1074.628677601851,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 8431.318207136035,\n          \"orgId\": 2930.507070546726,\n          \"propertyManagementSystemTypeId\": 5359.70556935736,\n          \"propertyManagementSystemType\": {\n            \"id\": 1948.581441239161,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"string\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"1980-11-11\",\n      \"updatedAt\": \"1959-09-04\",\n      \"users\": [\n        {\n          \"id\": 6611.909835279483,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2003-08-22\",\n          \"endDate\": \"2009-04-04\",\n          \"createdAt\": \"1974-04-03\",\n          \"updatedAt\": \"2020-08-22\",\n          \"org\": {\n            \"id\": 4869.773921794845,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 8099.50347014709,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2006-11-23\",\n          \"endDate\": \"2010-03-10\",\n          \"createdAt\": \"1975-05-05\",\n          \"updatedAt\": \"1999-10-10\",\n          \"org\": {\n            \"id\": 3204.1207599863287,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    },\n    \"numRecordsProcessed\": 3370,\n    \"numRecordsOutput\": 1606,\n    \"executionType\": \"immediate\",\n    \"options\": \"string\",\n    \"name\": \"string\",\n    \"filter\": \"string\",\n    \"relativeTime\": \"lastFullQuarter\",\n    \"customFieldIds\": [\n      6990,\n      1100\n    ],\n    \"destinationEmails\": [\n      \"string\",\n      \"string\"\n    ],\n    \"timeZone\": \"string\",\n    \"columns\": [\n      \"customFieldIdx8\"\n    ],\n    \"statusCode\": \"completed.success\",\n    \"statusFailureCode\": \"unexpectedException\",\n    \"statusDetail\": \"string\",\n    \"createdAt\": \"2023-03-24\",\n    \"updatedAt\": \"1970-09-01\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2006-07-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8560,\n        1118\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1902,\n          3465\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0f769b8c-549d-4013-ad0e-d6f3a5ad45fe",
+          "name": "List all schedules for all the report tasks",
+          "request": {
+            "name": "List all schedules for all the report tasks",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTasksReportsSchedules",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                "schedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a0d5af00-e5e7-4c11-bcd8-ec95dac5b7f2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    "schedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7023,\n  \"filteredCount\": 2377,\n  \"data\": [\n    {\n      \"cronTime\": \"* 15/72 31 12,11 *\",\n      \"cronTimeZone\": \"string\",\n      \"params\": {\n        \"type\": \"activityLogsOrg\",\n        \"name\": \"string\",\n        \"executionType\": \"immediate\",\n        \"options\": \"string\",\n        \"expiresAfter\": \"1963-03-19\",\n        \"filter\": \"string\",\n        \"relativeTime\": \"thisYear\",\n        \"customFieldIds\": [\n          1372,\n          6905\n        ],\n        \"destinationEmails\": [\n          \"string\",\n          \"string\"\n        ],\n        \"timeZone\": \"string\",\n        \"columns\": [\n          \"userGroups\"\n        ],\n        \"expiresAfterDays\": 18\n      },\n      \"randomDelaySecs\": 1881,\n      \"id\": 3491,\n      \"identity\": {\n        \"id\": 2956.107437361407,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 7782.520310022524,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          },\n          {\n            \"id\": 2022.3112713200785,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 7139.718045756025,\n            \"createdAt\": \"1952-08-22\",\n            \"updatedAt\": \"1992-12-18\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 282.1146534801156,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 687.6470554813807\n            }\n          },\n          {\n            \"id\": 3970.6115262330723,\n            \"createdAt\": \"2019-03-25\",\n            \"updatedAt\": \"1981-07-27\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 7413.726243640594,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 3724.515231896313\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 449,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 2170.735792374766,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 3448.1896164651016,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 9964.138592910283,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 9164,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 5920.204378442252,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 1336.7038907746653,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 1241.122420674149,\n            \"orgId\": 3212.175494894378,\n            \"propertyManagementSystemTypeId\": 1080.09087806889,\n            \"propertyManagementSystemType\": {\n              \"id\": 7397.665604612833,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1993-02-18\",\n        \"updatedAt\": \"1999-09-13\",\n        \"users\": [\n          {\n            \"id\": 7713.220363024432,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1995-09-21\",\n            \"endDate\": \"1997-08-18\",\n            \"createdAt\": \"1963-08-24\",\n            \"updatedAt\": \"2021-12-21\",\n            \"org\": {\n              \"id\": 853.0379298436974,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 9117.80899297383,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1991-11-11\",\n            \"endDate\": \"2009-04-22\",\n            \"createdAt\": \"1988-07-14\",\n            \"updatedAt\": \"1951-10-02\",\n            \"org\": {\n              \"id\": 1792.697233959274,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"org\": {\n        \"id\": 5742,\n        \"name\": \"string\"\n      },\n      \"siteIdsFilter\": [\n        6226,\n        6699\n      ],\n      \"nextStartAt\": \"2021-09-25\",\n      \"lastStartedAt\": \"2011-07-01\",\n      \"createdAt\": \"1974-07-26\",\n      \"updatedAt\": \"1969-06-17\"\n    },\n    {\n      \"cronTime\": \"8/9 * 31 * 0,3,0,3,3,0,1,4,2,2\",\n      \"cronTimeZone\": \"string\",\n      \"params\": {\n        \"type\": \"auditLogsOrg\",\n        \"name\": \"string\",\n        \"executionType\": \"immediate\",\n        \"options\": \"string\",\n        \"expiresAfter\": \"1990-05-20\",\n        \"filter\": \"string\",\n        \"relativeTime\": \"thisWeek\",\n        \"customFieldIds\": [\n          1021,\n          3256\n        ],\n        \"destinationEmails\": [\n          \"string\",\n          \"string\"\n        ],\n        \"timeZone\": \"string\",\n        \"columns\": [\n          \"customFieldIdx2\"\n        ],\n        \"expiresAfterDays\": 20\n      },\n      \"randomDelaySecs\": 2064,\n      \"id\": 9992,\n      \"identity\": {\n        \"id\": 1949.5203436407317,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 9167.750887364375,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 300.687055020481,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 1181.729448898291,\n            \"createdAt\": \"1985-04-16\",\n            \"updatedAt\": \"1963-07-27\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 2623.947616925122,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 864.8556370650384\n            }\n          },\n          {\n            \"id\": 6305.333260513175,\n            \"createdAt\": \"1969-08-21\",\n            \"updatedAt\": \"1955-07-03\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 9602.03694369939,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 9321.288661072798\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 1769,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 7743.792128700598,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 6045.207325524378,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 8645.69905256634,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": true,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 1997,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 5597.548953033249,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9489.870334791556,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 7825.221683595393,\n            \"orgId\": 4709.862675920029,\n            \"propertyManagementSystemTypeId\": 4623.039799495971,\n            \"propertyManagementSystemType\": {\n              \"id\": 127.5769668931248,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"st\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1997-06-26\",\n        \"updatedAt\": \"1955-12-07\",\n        \"users\": [\n          {\n            \"id\": 3148.402376839038,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2014-09-19\",\n            \"endDate\": \"1973-01-21\",\n            \"createdAt\": \"1994-08-30\",\n            \"updatedAt\": \"2007-05-25\",\n            \"org\": {\n              \"id\": 7777.128704077306,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 8735.211081649968,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1993-09-14\",\n            \"endDate\": \"1978-04-23\",\n            \"createdAt\": \"1973-12-06\",\n            \"updatedAt\": \"1954-01-14\",\n            \"org\": {\n              \"id\": 8505.052156703812,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"org\": {\n        \"id\": 1209,\n        \"name\": \"string\"\n      },\n      \"siteIdsFilter\": [\n        4653,\n        7941\n      ],\n      \"nextStartAt\": \"1982-02-03\",\n      \"lastStartedAt\": \"1981-06-05\",\n      \"createdAt\": \"1996-02-21\",\n      \"updatedAt\": \"1975-08-07\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-06-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8760,\n        8006\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5267,\n          2097\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a09cc416-52d3-4e10-8ae7-6e4bc1dda6ee",
+          "name": "Create a new scheduled report task.",
+          "request": {
+            "name": "Create a new scheduled report task.",
+            "description": {
+              "content": "The cronTime value uses a restricted cron time format: `minute hour day-of-month month days-of-week`.Specifically, the cronTime is restricted to support only a daily, weekly, monthly or 1st day of the quarter. Daily is supported through a `min hr * * *` cronTime for daily execution at hr:min time. Weekly is supported through a `min hr * * <day-of-week1>,<dow2>,...` cronTime for weekly execution at hr:min time on `<dow#>` days (e.g. 0=Sunday, 1=Monday). Monthly is supported through a `min hr day * *` cronTime for monthly execution on <day> at hr:min time. 1st day of quarter is supported through a `min hr 1 1,4,7,10 *` cronTime for 1st day of quarter execution at hr:min time.<br/><br/>The randomDelaySecs provides the number of seconds to delay the start of execution. The minimum required delay is 3 hours.<br/><br/>The params field provides the report specific options. See /orgs/{orgId}/tasks/reports help for details.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createTasksReportsSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                "schedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cronTime\": \"<string>\",\n  \"cronTimeZone\": \"<string>\",\n  \"params\": {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"executionType\": \"immediate\",\n    \"options\": \"<string>\",\n    \"expiresAfter\": \"<date>\",\n    \"filter\": \"<string>\",\n    \"relativeTime\": \"<string>\",\n    \"customFieldIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"destinationEmails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"timeZone\": \"<string>\",\n    \"columns\": [\n      \"<string>\"\n    ],\n    \"expiresAfterDays\": \"<integer>\"\n  },\n  \"randomDelaySecs\": \"<integer>\",\n  \"options\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "76848533-6f64-4796-9b6c-b9a0a6bdda6a",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    "schedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cronTime\": \"<string>\",\n  \"cronTimeZone\": \"<string>\",\n  \"params\": {\n    \"type\": \"<string>\",\n    \"name\": \"<string>\",\n    \"executionType\": \"immediate\",\n    \"options\": \"<string>\",\n    \"expiresAfter\": \"<date>\",\n    \"filter\": \"<string>\",\n    \"relativeTime\": \"<string>\",\n    \"customFieldIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"destinationEmails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"timeZone\": \"<string>\",\n    \"columns\": [\n      \"<string>\"\n    ],\n    \"expiresAfterDays\": \"<integer>\"\n  },\n  \"randomDelaySecs\": \"<integer>\",\n  \"options\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"cronTime\": \"*/59051244512 17/70180 31 9,4,6,2,11,8,2,12,4,1 *\",\n    \"cronTimeZone\": \"string\",\n    \"params\": {\n      \"type\": \"auditLogsOrg\",\n      \"name\": \"string\",\n      \"executionType\": \"immediate\",\n      \"options\": \"string\",\n      \"expiresAfter\": \"1962-08-29\",\n      \"filter\": \"string\",\n      \"relativeTime\": \"yesterday\",\n      \"customFieldIds\": [\n        1823,\n        6409\n      ],\n      \"destinationEmails\": [\n        \"string\",\n        \"string\"\n      ],\n      \"timeZone\": \"string\",\n      \"columns\": [\n        \"customFieldIdx10\"\n      ],\n      \"expiresAfterDays\": 13\n    },\n    \"randomDelaySecs\": 1166,\n    \"id\": 4878,\n    \"identity\": {\n      \"id\": 7155.967891547049,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 9169.80686449475,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        },\n        {\n          \"id\": 5247.708380293111,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 2841.5307165153604,\n          \"createdAt\": \"2013-06-05\",\n          \"updatedAt\": \"2021-05-18\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 1649.028867590312,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 6461.100848953456\n          }\n        },\n        {\n          \"id\": 575.9692158325158,\n          \"createdAt\": \"1965-08-04\",\n          \"updatedAt\": \"2007-01-23\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 8551.537521244207,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 7257.308911309947\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": true,\n      \"namespace\": {\n        \"id\": 6818,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 1552.7664122674034,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 7894.422931585403,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 3583.2986306672265,\n          \"isSsoEnabled\": false,\n          \"isSyncMobilePhoneEnabled\": true,\n          \"isRemoveGroupsEnabled\": false,\n          \"identityProviderSyncTypeId\": 4424,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 7672.775928822774,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 5538.807356203761,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 8083.754713201118,\n          \"orgId\": 5515.734282364744,\n          \"propertyManagementSystemTypeId\": 4495.0205884995485,\n          \"propertyManagementSystemType\": {\n            \"id\": 7112.1336337387775,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"string\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"2003-02-24\",\n      \"updatedAt\": \"2021-10-09\",\n      \"users\": [\n        {\n          \"id\": 4404.270988366582,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1999-05-19\",\n          \"endDate\": \"1956-08-18\",\n          \"createdAt\": \"1988-02-20\",\n          \"updatedAt\": \"1980-08-17\",\n          \"org\": {\n            \"id\": 9973.850435407256,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 2812.2802554183536,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1984-09-29\",\n          \"endDate\": \"1987-08-26\",\n          \"createdAt\": \"1971-05-27\",\n          \"updatedAt\": \"2004-08-17\",\n          \"org\": {\n            \"id\": 1576.3308735248372,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    },\n    \"org\": {\n      \"id\": 9682,\n      \"name\": \"string\"\n    },\n    \"siteIdsFilter\": [\n      3908,\n      1576\n    ],\n    \"nextStartAt\": \"1980-05-07\",\n    \"lastStartedAt\": \"2017-04-07\",\n    \"createdAt\": \"1975-04-23\",\n    \"updatedAt\": \"1975-09-22\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2019-09-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2014,\n        6441\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5184,\n          1553\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0744f47d-d27c-4280-8a3a-da66e78b0996",
+          "name": "Get a specific report task by id.",
+          "request": {
+            "name": "Get a specific report task by id.",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptDownload:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTasksReport",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a0ec3e48-6016-49f1-b651-72ec4d4702a3",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"expiresAfter\": \"1985-04-24\",\n    \"type\": \"activityLogsOrg\",\n    \"id\": 363,\n    \"org\": {\n      \"id\": 6830,\n      \"name\": \"string\"\n    },\n    \"identity\": {\n      \"id\": 6396.224543992374,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 5417.293434926205,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        },\n        {\n          \"id\": 1699.8526904347732,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 6918.853383725284,\n          \"createdAt\": \"1975-08-15\",\n          \"updatedAt\": \"1958-10-22\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 6462.764333057987,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 610.8833361111732\n          }\n        },\n        {\n          \"id\": 1848.144432841392,\n          \"createdAt\": \"2024-09-28\",\n          \"updatedAt\": \"1980-01-02\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 252.44255002575545,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 7689.51499099148\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": false,\n      \"namespace\": {\n        \"id\": 3217,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 3020.118723793811,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 3118.7314532853006,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 7451.232514245192,\n          \"isSsoEnabled\": true,\n          \"isSyncMobilePhoneEnabled\": false,\n          \"isRemoveGroupsEnabled\": true,\n          \"identityProviderSyncTypeId\": 3347,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 6977.020473776735,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1074.628677601851,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 8431.318207136035,\n          \"orgId\": 2930.507070546726,\n          \"propertyManagementSystemTypeId\": 5359.70556935736,\n          \"propertyManagementSystemType\": {\n            \"id\": 1948.581441239161,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"string\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"1980-11-11\",\n      \"updatedAt\": \"1959-09-04\",\n      \"users\": [\n        {\n          \"id\": 6611.909835279483,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2003-08-22\",\n          \"endDate\": \"2009-04-04\",\n          \"createdAt\": \"1974-04-03\",\n          \"updatedAt\": \"2020-08-22\",\n          \"org\": {\n            \"id\": 4869.773921794845,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 8099.50347014709,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2006-11-23\",\n          \"endDate\": \"2010-03-10\",\n          \"createdAt\": \"1975-05-05\",\n          \"updatedAt\": \"1999-10-10\",\n          \"org\": {\n            \"id\": 3204.1207599863287,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    },\n    \"numRecordsProcessed\": 3370,\n    \"numRecordsOutput\": 1606,\n    \"executionType\": \"immediate\",\n    \"options\": \"string\",\n    \"name\": \"string\",\n    \"filter\": \"string\",\n    \"relativeTime\": \"lastFullQuarter\",\n    \"customFieldIds\": [\n      6990,\n      1100\n    ],\n    \"destinationEmails\": [\n      \"string\",\n      \"string\"\n    ],\n    \"timeZone\": \"string\",\n    \"columns\": [\n      \"customFieldIdx8\"\n    ],\n    \"statusCode\": \"completed.success\",\n    \"statusFailureCode\": \"unexpectedException\",\n    \"statusDetail\": \"string\",\n    \"createdAt\": \"2023-03-24\",\n    \"updatedAt\": \"1970-09-01\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2006-07-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8560,\n        1118\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1902,\n          3465\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c93fab55-9be2-4eb5-b02a-3fefe76e8a03",
+          "name": "Delete a specific report task by id.",
+          "request": {
+            "name": "Delete a specific report task by id.",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteTasksReport",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c7f66986-8ad4-45de-b7b7-f673eb781308",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "871902d6-dc00-406d-b515-e09141d82d52",
+          "name": "Get a link to the specific report task result by id.",
+          "request": {
+            "name": "Get a link to the specific report task result by id.",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptDownload:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTasksReportLink",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                ":id",
+                "link"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "dff94139-6666-4a47-8c12-77da04619952",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    ":id",
+                    "link"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"expiresAfter\": \"2010-12-21\",\n    \"type\": \"alarmsOrg\",\n    \"id\": 6624,\n    \"org\": {\n      \"id\": 4387,\n      \"name\": \"string\"\n    },\n    \"identity\": {\n      \"id\": 1769.8454356745096,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 3758.3229791294825,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        },\n        {\n          \"id\": 9706.859939774587,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 7017.1887491030675,\n          \"createdAt\": \"1975-02-08\",\n          \"updatedAt\": \"1978-11-12\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 3879.7534380401466,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 4762.562938928458\n          }\n        },\n        {\n          \"id\": 7216.61786743705,\n          \"createdAt\": \"1973-04-03\",\n          \"updatedAt\": \"2013-12-24\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 8148.139794918639,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 3784.372049805815\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": true,\n      \"namespace\": {\n        \"id\": 7600,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 1750.020385975787,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 8787.340936752267,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 376.0200649110756,\n          \"isSsoEnabled\": false,\n          \"isSyncMobilePhoneEnabled\": true,\n          \"isRemoveGroupsEnabled\": false,\n          \"identityProviderSyncTypeId\": 6298,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 1731.3799403023665,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 6691.5527652248265,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 9458.539978549983,\n          \"orgId\": 2941.4152413509573,\n          \"propertyManagementSystemTypeId\": 8653.876441003338,\n          \"propertyManagementSystemType\": {\n            \"id\": 1470.9821387775257,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"str\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"1977-01-05\",\n      \"updatedAt\": \"1962-04-18\",\n      \"users\": [\n        {\n          \"id\": 755.365809986892,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1970-04-18\",\n          \"endDate\": \"1957-07-11\",\n          \"createdAt\": \"1994-08-01\",\n          \"updatedAt\": \"2005-04-21\",\n          \"org\": {\n            \"id\": 6624.893973852904,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 7745.033410369988,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1983-03-19\",\n          \"endDate\": \"1999-07-02\",\n          \"createdAt\": \"2016-08-13\",\n          \"updatedAt\": \"1968-07-15\",\n          \"org\": {\n            \"id\": 6963.631268785782,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    },\n    \"numRecordsProcessed\": 6702,\n    \"numRecordsOutput\": 8193,\n    \"executionType\": \"immediate\",\n    \"options\": \"string\",\n    \"name\": \"string\",\n    \"filter\": \"string\",\n    \"relativeTime\": \"thisYear\",\n    \"customFieldIds\": [\n      2796,\n      3105\n    ],\n    \"destinationEmails\": [\n      \"string\",\n      \"string\"\n    ],\n    \"timeZone\": \"string\",\n    \"columns\": [\n      \"customFieldIdx11\"\n    ],\n    \"statusCode\": \"completed.success\",\n    \"statusFailureCode\": \"unexpectedException\",\n    \"statusDetail\": \"string\",\n    \"createdAt\": \"2020-04-16\",\n    \"updatedAt\": \"1975-01-01\",\n    \"linkUri\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1958-03-06\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3381,\n        407\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6149,\n          6707\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "551b1815-4f07-4031-ade4-0a2d62088532",
+          "name": "Get a specific task report schedule by id.",
+          "request": {
+            "name": "Get a specific task report schedule by id.",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptGeneral:w,o{params.orgId}-rptGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeTasksReportsSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                "schedules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3ec4497f-ceba-4fce-9602-66a27b55002f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    "schedules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"cronTime\": \"*/59051244512 17/70180 31 9,4,6,2,11,8,2,12,4,1 *\",\n    \"cronTimeZone\": \"string\",\n    \"params\": {\n      \"type\": \"auditLogsOrg\",\n      \"name\": \"string\",\n      \"executionType\": \"immediate\",\n      \"options\": \"string\",\n      \"expiresAfter\": \"1962-08-29\",\n      \"filter\": \"string\",\n      \"relativeTime\": \"yesterday\",\n      \"customFieldIds\": [\n        1823,\n        6409\n      ],\n      \"destinationEmails\": [\n        \"string\",\n        \"string\"\n      ],\n      \"timeZone\": \"string\",\n      \"columns\": [\n        \"customFieldIdx10\"\n      ],\n      \"expiresAfterDays\": 13\n    },\n    \"randomDelaySecs\": 1166,\n    \"id\": 4878,\n    \"identity\": {\n      \"id\": 7155.967891547049,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 9169.80686449475,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        },\n        {\n          \"id\": 5247.708380293111,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 2841.5307165153604,\n          \"createdAt\": \"2013-06-05\",\n          \"updatedAt\": \"2021-05-18\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 1649.028867590312,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 6461.100848953456\n          }\n        },\n        {\n          \"id\": 575.9692158325158,\n          \"createdAt\": \"1965-08-04\",\n          \"updatedAt\": \"2007-01-23\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 8551.537521244207,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 7257.308911309947\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": true,\n      \"namespace\": {\n        \"id\": 6818,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 1552.7664122674034,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 7894.422931585403,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 3583.2986306672265,\n          \"isSsoEnabled\": false,\n          \"isSyncMobilePhoneEnabled\": true,\n          \"isRemoveGroupsEnabled\": false,\n          \"identityProviderSyncTypeId\": 4424,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 7672.775928822774,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 5538.807356203761,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 8083.754713201118,\n          \"orgId\": 5515.734282364744,\n          \"propertyManagementSystemTypeId\": 4495.0205884995485,\n          \"propertyManagementSystemType\": {\n            \"id\": 7112.1336337387775,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"string\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"2003-02-24\",\n      \"updatedAt\": \"2021-10-09\",\n      \"users\": [\n        {\n          \"id\": 4404.270988366582,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1999-05-19\",\n          \"endDate\": \"1956-08-18\",\n          \"createdAt\": \"1988-02-20\",\n          \"updatedAt\": \"1980-08-17\",\n          \"org\": {\n            \"id\": 9973.850435407256,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 2812.2802554183536,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1984-09-29\",\n          \"endDate\": \"1987-08-26\",\n          \"createdAt\": \"1971-05-27\",\n          \"updatedAt\": \"2004-08-17\",\n          \"org\": {\n            \"id\": 1576.3308735248372,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    },\n    \"org\": {\n      \"id\": 9682,\n      \"name\": \"string\"\n    },\n    \"siteIdsFilter\": [\n      3908,\n      1576\n    ],\n    \"nextStartAt\": \"1980-05-07\",\n    \"lastStartedAt\": \"2017-04-07\",\n    \"createdAt\": \"1975-04-23\",\n    \"updatedAt\": \"1975-09-22\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2019-09-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2014,\n        6441\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5184,\n          1553\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c992a1b-10c4-4522-890e-b0dfcc61d8f2",
+          "name": "Delete a specific task report schedule by id.",
+          "request": {
+            "name": "Delete a specific task report schedule by id.",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteTasksReportsSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                "schedules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "07d161c0-b5cd-46e7-b36b-2e41a6b06274",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    "schedules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "39341e41-dc25-4ccb-af21-81be2c97f66d",
+          "name": "Update a specific task report schedule",
+          "request": {
+            "name": "Update a specific task report schedule",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateTasksReportsSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "tasks",
+                "reports",
+                "schedules",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cronTime\": \"<string>\",\n  \"cronTimeZone\": \"<string>\",\n  \"params\": {\n    \"type\": \"<string>\",\n    \"executionType\": \"<string>\",\n    \"options\": \"<string>\",\n    \"expiresAfter\": \"<date>\",\n    \"name\": \"<string>\",\n    \"filter\": \"<string>\",\n    \"relativeTime\": \"<string>\",\n    \"customFieldIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"destinationEmails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"timeZone\": \"<string>\",\n    \"columns\": [\n      \"<string>\"\n    ],\n    \"expiresAfterDays\": \"<integer>\"\n  },\n  \"randomDelaySecs\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f710558b-8b23-44dc-823a-75e5197e8859",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "tasks",
+                    "reports",
+                    "schedules",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cronTime\": \"<string>\",\n  \"cronTimeZone\": \"<string>\",\n  \"params\": {\n    \"type\": \"<string>\",\n    \"executionType\": \"<string>\",\n    \"options\": \"<string>\",\n    \"expiresAfter\": \"<date>\",\n    \"name\": \"<string>\",\n    \"filter\": \"<string>\",\n    \"relativeTime\": \"<string>\",\n    \"customFieldIds\": [\n      \"<integer>\",\n      \"<integer>\"\n    ],\n    \"destinationEmails\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"timeZone\": \"<string>\",\n    \"columns\": [\n      \"<string>\"\n    ],\n    \"expiresAfterDays\": \"<integer>\"\n  },\n  \"randomDelaySecs\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "bba8a53b-3837-4315-9cf7-cc4cd8e4eba1",
+    "name": "Openpath API Documentation auth orgs/tasks API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

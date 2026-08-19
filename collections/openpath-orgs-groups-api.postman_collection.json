@@ -1,0 +1,3044 @@
+{
+  "item": [
+    {
+      "id": "dc76ac08-f322-4b54-a2c8-ce83baf41f53",
+      "name": "orgs/groups",
+      "description": {
+        "content": "User Groups",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "57312553-9ea0-4cab-bb16-9fa1c1f3a624",
+          "name": "List all access groups",
+          "request": {
+            "name": "List all access groups",
+            "description": {
+              "content": "listGroups takes the following options:<br/><br/>withSites - to include the group's sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroups",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d3c9db53-c4cc-4620-aea7-1ec0a9d43d46",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3567,\n  \"filteredCount\": 1118,\n  \"data\": [\n    {\n      \"id\": 8701.069469789083,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdAt\": \"1983-03-20\",\n      \"updatedAt\": \"2005-08-08\",\n      \"userCount\": 8305,\n      \"badgeConfig\": {\n        \"id\": 3838.3658702293433,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.9512374803483875,\n          \"lineHeight\": 0.8053008462587556,\n          \"fontWeight\": 2337.460207633437,\n          \"fontStyle\": \"none\",\n          \"textAlign\": \"right\",\n          \"centerX\": 0.6855104842278724,\n          \"centerY\": 0.005727198739069128,\n          \"width\": 0.18411983710564894,\n          \"height\": 0.29519530051943366,\n          \"layout\": \"oneLine\",\n          \"textTransform\": \"capitalize\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7940164104208484,\n          \"lineHeight\": 0.28593178641930306,\n          \"fontWeight\": 2491.1344848651174,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.5861066736946917,\n          \"centerY\": 0.15584662188402842,\n          \"width\": 0.34217777610238453,\n          \"height\": 0.05466648756613901\n        },\n        \"customField2Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.4954747508121806,\n          \"lineHeight\": 0.39349176212298975,\n          \"fontWeight\": 2312.6207596587765,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.7604864517389948,\n          \"centerY\": 0.5666529864550921,\n          \"width\": 0.38710399956138575,\n          \"height\": 0.3708635128342105\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.8810051434225455,\n          \"centerY\": 0.16818475184234893,\n          \"width\": 0.5527577121745842,\n          \"height\": 0.7046200881849138\n        },\n        \"photoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.5185093191772906,\n          \"centerY\": 0.7466454853493761,\n          \"width\": 0.3985722838721891,\n          \"height\": 0.7067456941793926,\n          \"borderRadius\": 0.9490315023319722,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7574627928120281,\n          \"lineHeight\": 0.4483833192930432,\n          \"fontWeight\": 6999.158715347779,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.08067463934717634,\n          \"centerY\": 0.7981963630621581,\n          \"width\": 0.23494629814239887,\n          \"height\": 0.995104260697933\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.3514875297342338,\n          \"lineHeight\": 0.26249290783163903,\n          \"fontWeight\": 6945.630754000328,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.5762987541510624,\n          \"centerY\": 0.21839538921147117,\n          \"width\": 0.06893472535469469,\n          \"height\": 0.9261323922614848\n        },\n        \"customField1\": {\n          \"id\": 1017.3910073961733,\n          \"name\": \"string\"\n        },\n        \"customField2\": {\n          \"id\": 8880.204970677829,\n          \"name\": \"string\"\n        },\n        \"badgeDefaultConfig\": {\n          \"id\": 2365,\n          \"nameConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.5469871553555063,\n            \"lineHeight\": 0.2577432017084108,\n            \"fontWeight\": 2042.055010507714,\n            \"fontStyle\": \"none\",\n            \"textAlign\": \"center\",\n            \"centerX\": 0.8002846924548261,\n            \"centerY\": 0.28918474154800344,\n            \"width\": 0.6497634824328142,\n            \"height\": 0.697246956659147,\n            \"layout\": \"threeLines\",\n            \"textTransform\": \"lowercase\"\n          },\n          \"customField1Config\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.9948610679055239,\n            \"lineHeight\": 0.42019486651060045,\n            \"fontWeight\": 4450.224738323525,\n            \"textAlign\": \"right\",\n            \"centerX\": 0.2523896273819839,\n            \"centerY\": 0.44565327314342285,\n            \"width\": 0.7608385409027254,\n            \"height\": 0.9643937741572441\n          },\n          \"customField2Config\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.737688986444783,\n            \"lineHeight\": 0.7152684852481658,\n            \"fontWeight\": 1148.5494921424843,\n            \"textAlign\": \"left\",\n            \"centerX\": 0.23370970621808962,\n            \"centerY\": 0.14266178298367505,\n            \"width\": 0.7655278153860124,\n            \"height\": 0.9600219273744951\n          },\n          \"backgroundConfig\": {\n            \"isEnabled\": true,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.48892024859621086,\n            \"centerY\": 0.08535210219765044,\n            \"width\": 0.8758295430617412,\n            \"height\": 0.6860718271546223\n          },\n          \"photoConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.7052342464767065,\n            \"centerY\": 0.7605750377661593,\n            \"width\": 0.23801147805707823,\n            \"height\": 0.038743453819406914,\n            \"borderRadius\": 0.9554458682902734,\n            \"borderColor\": \"string\"\n          },\n          \"logoConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"backgroundPosition\": \"string\",\n            \"label\": \"string\",\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.31808464367508893,\n            \"lineHeight\": 0.08207271236360536,\n            \"fontWeight\": 2993.1924010204157,\n            \"textAlign\": \"center\",\n            \"centerX\": 0.7258983368092364,\n            \"centerY\": 0.2365999111988959,\n            \"width\": 0.6692491279194474,\n            \"height\": 0.04079123284905073\n          },\n          \"externalIdConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.7445108061957344,\n            \"lineHeight\": 0.09110846779124837,\n            \"fontWeight\": 9231.222642200366,\n            \"textAlign\": \"left\",\n            \"centerX\": 0.797055200145764,\n            \"centerY\": 0.592721725916137,\n            \"width\": 0.6524489334611552,\n            \"height\": 0.5317512957951545\n          },\n          \"backgroundPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"logoPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"badgeWidth\": 372.64662953907737,\n          \"badgeHeight\": 2739.31834545047,\n          \"badgeBorderRadius\": 4475.065782683368,\n          \"printWidth\": 3413.973300621118,\n          \"printHeight\": 5946.037867329736,\n          \"name\": \"string\",\n          \"isMobile\": true\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"name\": \"string\",\n        \"badgeBorderRadius\": 6504,\n        \"isOrgDefault\": false\n      },\n      \"sites\": [\n        {\n          \"id\": 9676.26834332178,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8183.196585462851,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 9958.455219909476,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdAt\": \"1988-01-09\",\n      \"updatedAt\": \"2023-06-27\",\n      \"userCount\": 776,\n      \"badgeConfig\": {\n        \"id\": 2495.650623599944,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.020424044843905365,\n          \"lineHeight\": 0.5820294029337038,\n          \"fontWeight\": 2135.514647701723,\n          \"fontStyle\": \"oblique\",\n          \"textAlign\": \"right\",\n          \"centerX\": 0.6014111042972765,\n          \"centerY\": 0.4944474510138742,\n          \"width\": 0.5081292715972908,\n          \"height\": 0.061495765595620755,\n          \"layout\": \"twoLines\",\n          \"textTransform\": \"capitalize\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7010171282969131,\n          \"lineHeight\": 0.8582434969405487,\n          \"fontWeight\": 421.58153619321183,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.7863841933104758,\n          \"centerY\": 0.1369272704141571,\n          \"width\": 0.207465839143947,\n          \"height\": 0.9868762370992487\n        },\n        \"customField2Config\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.3388335849074401,\n          \"lineHeight\": 0.20953800526735322,\n          \"fontWeight\": 288.0215883712345,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.835624644068931,\n          \"centerY\": 0.47303737900950626,\n          \"width\": 0.09584877527622238,\n          \"height\": 0.014159104839720493\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.5584802809089052,\n          \"centerY\": 0.9998216450578914,\n          \"width\": 0.0339952984171612,\n          \"height\": 0.7285077112343076\n        },\n        \"photoConfig\": {\n          \"isEnabled\": false,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.7096465689695519,\n          \"centerY\": 0.4452692142179757,\n          \"width\": 0.18074903310266188,\n          \"height\": 0.6832267821560397,\n          \"borderRadius\": 0.5218684768315212,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.6682026152801193,\n          \"lineHeight\": 0.03656247625045428,\n          \"fontWeight\": 4495.215273691194,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.5904253009623157,\n          \"centerY\": 0.09775964530531178,\n          \"width\": 0.01658832921330544,\n          \"height\": 0.19242884709632135\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7434579987703845,\n          \"lineHeight\": 0.4269339442740462,\n          \"fontWeight\": 3428.4501897314344,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.7689468960782202,\n          \"centerY\": 0.5262772235889577,\n          \"width\": 0.36784411304179665,\n          \"height\": 0.4015859730275876\n        },\n        \"customField1\": {\n          \"id\": 7003.240839274808,\n          \"name\": \"string\"\n        },\n        \"customField2\": {\n          \"id\": 4289.767446008178,\n          \"name\": \"string\"\n        },\n        \"badgeDefaultConfig\": {\n          \"id\": 5966,\n          \"nameConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.5793139945151249,\n            \"lineHeight\": 0.13086832454052733,\n            \"fontWeight\": 4871.92667366987,\n            \"fontStyle\": \"italic\",\n            \"textAlign\": \"center\",\n            \"centerX\": 0.3337320322699029,\n            \"centerY\": 0.6483863109180559,\n            \"width\": 0.3339321955470168,\n            \"height\": 0.8206324181763218,\n            \"layout\": \"twoLines\",\n            \"textTransform\": \"uppercase\"\n          },\n          \"customField1Config\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.1551708218739668,\n            \"lineHeight\": 0.03041305159125729,\n            \"fontWeight\": 5199.847752059057,\n            \"textAlign\": \"right\",\n            \"centerX\": 0.3734092267990262,\n            \"centerY\": 0.625300902811019,\n            \"width\": 0.8249494485411218,\n            \"height\": 0.6148027988345657\n          },\n          \"customField2Config\": {\n            \"isEnabled\": false,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.25036433422752513,\n            \"lineHeight\": 0.8159427858561407,\n            \"fontWeight\": 4587.353814677931,\n            \"textAlign\": \"center\",\n            \"centerX\": 0.14279261039658642,\n            \"centerY\": 0.9294886019386647,\n            \"width\": 0.18960049738039986,\n            \"height\": 0.6267829638209723\n          },\n          \"backgroundConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.07701069510765479,\n            \"centerY\": 0.41526288526028565,\n            \"width\": 0.2558400063792873,\n            \"height\": 0.041474385548720294\n          },\n          \"photoConfig\": {\n            \"isEnabled\": true,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.817961511606795,\n            \"centerY\": 0.6921865930344133,\n            \"width\": 0.8000890205420275,\n            \"height\": 0.9953381566593692,\n            \"borderRadius\": 0.5786088152592003,\n            \"borderColor\": \"string\"\n          },\n          \"logoConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"backgroundPosition\": \"string\",\n            \"label\": \"string\",\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.5394325903008859,\n            \"lineHeight\": 0.42878593831654443,\n            \"fontWeight\": 5929.439930429149,\n            \"textAlign\": \"right\",\n            \"centerX\": 0.12962571325668526,\n            \"centerY\": 0.8790325957834285,\n            \"width\": 0.2873389106387938,\n            \"height\": 0.38888433286692736\n          },\n          \"externalIdConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.3317023404286136,\n            \"lineHeight\": 0.2505491726406459,\n            \"fontWeight\": 6924.343667913334,\n            \"textAlign\": \"left\",\n            \"centerX\": 0.804586452185281,\n            \"centerY\": 0.03681955880988996,\n            \"width\": 0.47194940284557796,\n            \"height\": 0.3077946186511311\n          },\n          \"backgroundPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"logoPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"badgeWidth\": 6255.51889240901,\n          \"badgeHeight\": 4398.457963484941,\n          \"badgeBorderRadius\": 81.19360039961498,\n          \"printWidth\": 4935.223269546237,\n          \"printHeight\": 7304.225054063804,\n          \"name\": \"string\",\n          \"isMobile\": true\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"name\": \"string\",\n        \"badgeBorderRadius\": 8143,\n        \"isOrgDefault\": false\n      },\n      \"sites\": [\n        {\n          \"id\": 6063.058073908992,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8985.23924343384,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1976-06-11\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6279,\n        9553\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7224,\n          1375\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1207c9d-b3bd-4aa3-93a7-4ba0478a2e1d",
+          "name": "Create an access group",
+          "request": {
+            "name": "Create an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"badgeConfigId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e74251ea-d138-4e58-9649-40cddd866859",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"badgeConfigId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5715.400298080746,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1956-06-13\",\n    \"updatedAt\": \"1982-02-05\",\n    \"userCount\": 1070,\n    \"badgeConfig\": {\n      \"id\": 9851.968391919656,\n      \"nameConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.8482199486950873,\n        \"lineHeight\": 0.2024404046665782,\n        \"fontWeight\": 3889.761243339932,\n        \"fontStyle\": \"italic\",\n        \"textAlign\": \"right\",\n        \"centerX\": 0.9194943402485326,\n        \"centerY\": 0.30537110455846783,\n        \"width\": 0.49941821573594036,\n        \"height\": 0.6169260307933809,\n        \"layout\": \"twoLines\",\n        \"textTransform\": \"none\"\n      },\n      \"customField1Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.09875741912173841,\n        \"lineHeight\": 0.2559275450786658,\n        \"fontWeight\": 9027.317798617192,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.5633367949825299,\n        \"centerY\": 0.8527333929417555,\n        \"width\": 0.6266053148829394,\n        \"height\": 0.9094725915455658\n      },\n      \"customField2Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.33598334385897066,\n        \"lineHeight\": 0.6068545751616409,\n        \"fontWeight\": 2546.0549837970116,\n        \"textAlign\": \"right\",\n        \"centerX\": 0.3423846033768463,\n        \"centerY\": 0.9028871557513185,\n        \"width\": 0.8002108890300197,\n        \"height\": 0.0067912045962748024\n      },\n      \"backgroundConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.6383897043048444,\n        \"centerY\": 0.0003757009124888411,\n        \"width\": 0.8321943770658898,\n        \"height\": 0.9896423920150846\n      },\n      \"photoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.4874823096441915,\n        \"centerY\": 0.9994988688692666,\n        \"width\": 0.7068083411931773,\n        \"height\": 0.17756064396450988,\n        \"borderRadius\": 0.7244779987081893,\n        \"borderColor\": \"string\"\n      },\n      \"logoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"backgroundPosition\": \"string\",\n        \"label\": \"string\",\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.6236507790934758,\n        \"lineHeight\": 0.9141051636178558,\n        \"fontWeight\": 1887.5323157648106,\n        \"textAlign\": \"left\",\n        \"centerX\": 0.12601571883477714,\n        \"centerY\": 0.08825673935049139,\n        \"width\": 0.6041755212076803,\n        \"height\": 0.7061334430756082\n      },\n      \"externalIdConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.5950407009622086,\n        \"lineHeight\": 0.9889282326520273,\n        \"fontWeight\": 5847.245506876298,\n        \"textAlign\": \"left\",\n        \"centerX\": 0.9288594174008982,\n        \"centerY\": 0.6782508985894405,\n        \"width\": 0.7700853475147806,\n        \"height\": 0.7457287749679427\n      },\n      \"customField1\": {\n        \"id\": 6703.650592680712,\n        \"name\": \"string\"\n      },\n      \"customField2\": {\n        \"id\": 5411.937426099685,\n        \"name\": \"string\"\n      },\n      \"badgeDefaultConfig\": {\n        \"id\": 1905,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.5318616781887465,\n          \"lineHeight\": 0.1754506228165581,\n          \"fontWeight\": 3037.5291438393115,\n          \"fontStyle\": \"italic\",\n          \"textAlign\": \"left\",\n          \"centerX\": 0.23307195039278772,\n          \"centerY\": 0.6250943514085502,\n          \"width\": 0.06884393015170764,\n          \"height\": 0.94792314487952,\n          \"layout\": \"twoLines\",\n          \"textTransform\": \"none\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7899892552730734,\n          \"lineHeight\": 0.18933499975549273,\n          \"fontWeight\": 1984.9816593711123,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.9826627792278959,\n          \"centerY\": 0.2317680876939645,\n          \"width\": 0.3396174326369985,\n          \"height\": 0.47841992693891133\n        },\n        \"customField2Config\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.20041811587655467,\n          \"lineHeight\": 0.9849411389560248,\n          \"fontWeight\": 1391.2187606093285,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.7850365226552095,\n          \"centerY\": 0.6284455858882694,\n          \"width\": 0.6354835951681423,\n          \"height\": 0.7677819107160881\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.5957897134377294,\n          \"centerY\": 0.17235300965317057,\n          \"width\": 0.7918192468555241,\n          \"height\": 0.46090139103911365\n        },\n        \"photoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.2692682049513252,\n          \"centerY\": 0.32810006167803085,\n          \"width\": 0.5897360320860412,\n          \"height\": 0.17923872836458232,\n          \"borderRadius\": 0.6076580305719951,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7743589248120009,\n          \"lineHeight\": 0.9837463856656352,\n          \"fontWeight\": 8730.346611866355,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.9906272357337071,\n          \"centerY\": 0.4505944895687376,\n          \"width\": 0.8589155148485812,\n          \"height\": 0.6046367987400473\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.4674308999022868,\n          \"lineHeight\": 0.6637014770824983,\n          \"fontWeight\": 5867.4441375672395,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.8475294860442198,\n          \"centerY\": 0.6187152414922183,\n          \"width\": 0.7051680854039526,\n          \"height\": 0.15302836693602906\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"badgeWidth\": 8509.442864632834,\n        \"badgeHeight\": 626.110347080523,\n        \"badgeBorderRadius\": 1957.9982658213257,\n        \"printWidth\": 2679.8878063300813,\n        \"printHeight\": 9100.653135717112,\n        \"name\": \"string\",\n        \"isMobile\": true\n      },\n      \"backgroundPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"logoPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"name\": \"string\",\n      \"badgeBorderRadius\": 9277,\n      \"isOrgDefault\": false\n    },\n    \"sites\": [\n      {\n        \"id\": 7214.957077243987,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 9980.297765257412,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-08-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3540,\n        286\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2916,\n          1131\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc8761cb-8660-467f-ab15-523ee866208f",
+          "name": "Describe an access group",
+          "request": {
+            "name": "Describe an access group",
+            "description": {
+              "content": "describeGroup takes the following options:<br/><br/>withSites - to include the group's sites<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1590bc6b-7448-47be-82e9-576702f32866",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5715.400298080746,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"createdAt\": \"1956-06-13\",\n    \"updatedAt\": \"1982-02-05\",\n    \"userCount\": 1070,\n    \"badgeConfig\": {\n      \"id\": 9851.968391919656,\n      \"nameConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.8482199486950873,\n        \"lineHeight\": 0.2024404046665782,\n        \"fontWeight\": 3889.761243339932,\n        \"fontStyle\": \"italic\",\n        \"textAlign\": \"right\",\n        \"centerX\": 0.9194943402485326,\n        \"centerY\": 0.30537110455846783,\n        \"width\": 0.49941821573594036,\n        \"height\": 0.6169260307933809,\n        \"layout\": \"twoLines\",\n        \"textTransform\": \"none\"\n      },\n      \"customField1Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.09875741912173841,\n        \"lineHeight\": 0.2559275450786658,\n        \"fontWeight\": 9027.317798617192,\n        \"textAlign\": \"center\",\n        \"centerX\": 0.5633367949825299,\n        \"centerY\": 0.8527333929417555,\n        \"width\": 0.6266053148829394,\n        \"height\": 0.9094725915455658\n      },\n      \"customField2Config\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.33598334385897066,\n        \"lineHeight\": 0.6068545751616409,\n        \"fontWeight\": 2546.0549837970116,\n        \"textAlign\": \"right\",\n        \"centerX\": 0.3423846033768463,\n        \"centerY\": 0.9028871557513185,\n        \"width\": 0.8002108890300197,\n        \"height\": 0.0067912045962748024\n      },\n      \"backgroundConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.6383897043048444,\n        \"centerY\": 0.0003757009124888411,\n        \"width\": 0.8321943770658898,\n        \"height\": 0.9896423920150846\n      },\n      \"photoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"centerX\": 0.4874823096441915,\n        \"centerY\": 0.9994988688692666,\n        \"width\": 0.7068083411931773,\n        \"height\": 0.17756064396450988,\n        \"borderRadius\": 0.7244779987081893,\n        \"borderColor\": \"string\"\n      },\n      \"logoConfig\": {\n        \"isEnabled\": true,\n        \"backgroundColor\": \"string\",\n        \"backgroundPosition\": \"string\",\n        \"label\": \"string\",\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.6236507790934758,\n        \"lineHeight\": 0.9141051636178558,\n        \"fontWeight\": 1887.5323157648106,\n        \"textAlign\": \"left\",\n        \"centerX\": 0.12601571883477714,\n        \"centerY\": 0.08825673935049139,\n        \"width\": 0.6041755212076803,\n        \"height\": 0.7061334430756082\n      },\n      \"externalIdConfig\": {\n        \"isEnabled\": true,\n        \"color\": \"string\",\n        \"fontFamily\": \"string\",\n        \"fontSize\": 0.5950407009622086,\n        \"lineHeight\": 0.9889282326520273,\n        \"fontWeight\": 5847.245506876298,\n        \"textAlign\": \"left\",\n        \"centerX\": 0.9288594174008982,\n        \"centerY\": 0.6782508985894405,\n        \"width\": 0.7700853475147806,\n        \"height\": 0.7457287749679427\n      },\n      \"customField1\": {\n        \"id\": 6703.650592680712,\n        \"name\": \"string\"\n      },\n      \"customField2\": {\n        \"id\": 5411.937426099685,\n        \"name\": \"string\"\n      },\n      \"badgeDefaultConfig\": {\n        \"id\": 1905,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.5318616781887465,\n          \"lineHeight\": 0.1754506228165581,\n          \"fontWeight\": 3037.5291438393115,\n          \"fontStyle\": \"italic\",\n          \"textAlign\": \"left\",\n          \"centerX\": 0.23307195039278772,\n          \"centerY\": 0.6250943514085502,\n          \"width\": 0.06884393015170764,\n          \"height\": 0.94792314487952,\n          \"layout\": \"twoLines\",\n          \"textTransform\": \"none\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7899892552730734,\n          \"lineHeight\": 0.18933499975549273,\n          \"fontWeight\": 1984.9816593711123,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.9826627792278959,\n          \"centerY\": 0.2317680876939645,\n          \"width\": 0.3396174326369985,\n          \"height\": 0.47841992693891133\n        },\n        \"customField2Config\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.20041811587655467,\n          \"lineHeight\": 0.9849411389560248,\n          \"fontWeight\": 1391.2187606093285,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.7850365226552095,\n          \"centerY\": 0.6284455858882694,\n          \"width\": 0.6354835951681423,\n          \"height\": 0.7677819107160881\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.5957897134377294,\n          \"centerY\": 0.17235300965317057,\n          \"width\": 0.7918192468555241,\n          \"height\": 0.46090139103911365\n        },\n        \"photoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.2692682049513252,\n          \"centerY\": 0.32810006167803085,\n          \"width\": 0.5897360320860412,\n          \"height\": 0.17923872836458232,\n          \"borderRadius\": 0.6076580305719951,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7743589248120009,\n          \"lineHeight\": 0.9837463856656352,\n          \"fontWeight\": 8730.346611866355,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.9906272357337071,\n          \"centerY\": 0.4505944895687376,\n          \"width\": 0.8589155148485812,\n          \"height\": 0.6046367987400473\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.4674308999022868,\n          \"lineHeight\": 0.6637014770824983,\n          \"fontWeight\": 5867.4441375672395,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.8475294860442198,\n          \"centerY\": 0.6187152414922183,\n          \"width\": 0.7051680854039526,\n          \"height\": 0.15302836693602906\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"badgeWidth\": 8509.442864632834,\n        \"badgeHeight\": 626.110347080523,\n        \"badgeBorderRadius\": 1957.9982658213257,\n        \"printWidth\": 2679.8878063300813,\n        \"printHeight\": 9100.653135717112,\n        \"name\": \"string\",\n        \"isMobile\": true\n      },\n      \"backgroundPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"logoPicture\": {\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"name\": \"string\",\n      \"badgeBorderRadius\": 9277,\n      \"isOrgDefault\": false\n    },\n    \"sites\": [\n      {\n        \"id\": 7214.957077243987,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 9980.297765257412,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-08-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3540,\n        286\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2916,\n          1131\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2c38e259-0396-4623-9d31-4b06fdd97a2f",
+          "name": "Delete an access group",
+          "request": {
+            "name": "Delete an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fafafa82-8c18-485f-abfe-4d0b79e12d65",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e8082eb-94e1-475a-8b18-211b4b615c71",
+          "name": "Update an access group",
+          "request": {
+            "name": "Update an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"badgeConfigId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "03ea02d2-6d53-4d19-b77b-c65b536f92f4",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"badgeConfigId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "087afbfb-93b6-4c9b-a68c-10852e552e66",
+          "name": "List all zones (and their associated configurations) an access group has access to",
+          "request": {
+            "name": "List all zones (and their associated configurations) an access group has access to",
+            "description": {
+              "content": "listGroupZoneGroups takes the following options:<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupZoneGroups",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "zoneGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "zoneShare.zone.name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2b05e28a-0d29-41eb-882c-41d17876a80f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "zoneGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "zoneShare.zone.name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3531,\n  \"filteredCount\": 7760,\n  \"data\": [\n    {\n      \"zone\": {\n        \"id\": 897.3231202671639,\n        \"name\": \"string\"\n      },\n      \"schedule\": {\n        \"id\": 1656.7331543684015,\n        \"name\": \"string\",\n        \"scheduleType\": {\n          \"id\": 641.8513861636488,\n          \"name\": \"string\"\n        },\n        \"createdAt\": \"1952-04-30\",\n        \"updatedAt\": \"2008-10-13\"\n      }\n    },\n    {\n      \"zone\": {\n        \"id\": 4955.220241677342,\n        \"name\": \"string\"\n      },\n      \"schedule\": {\n        \"id\": 5537.516909433792,\n        \"name\": \"string\",\n        \"scheduleType\": {\n          \"id\": 6267.65785430995,\n          \"name\": \"string\"\n        },\n        \"createdAt\": \"2025-04-28\",\n        \"updatedAt\": \"1981-07-07\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2007-09-07\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8757,\n        7761\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8962,\n          1353\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0ee2a196-b88f-431d-8a6e-9dbb56f9559b",
+          "name": "Bulk-update an access groups's zones (and their associated configurations)",
+          "request": {
+            "name": "Bulk-update an access groups's zones (and their associated configurations)",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroupZoneGroups",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "zoneGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add\": [\n    {\n      \"zoneId\": \"<integer>\",\n      \"scheduleId\": \"<integer>\"\n    },\n    {\n      \"zoneId\": \"<integer>\",\n      \"scheduleId\": \"<integer>\"\n    }\n  ],\n  \"remove\": [\n    {\n      \"zoneId\": \"<integer>\"\n    },\n    {\n      \"zoneId\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "41ade35b-ecd9-4f8c-a45f-98e76e8ee6a9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "zoneGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"add\": [\n    {\n      \"zoneId\": \"<integer>\",\n      \"scheduleId\": \"<integer>\"\n    },\n    {\n      \"zoneId\": \"<integer>\",\n      \"scheduleId\": \"<integer>\"\n    }\n  ],\n  \"remove\": [\n    {\n      \"zoneId\": \"<integer>\"\n    },\n    {\n      \"zoneId\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09d5d5a0-9033-4ec9-a739-a5585bac6518",
+          "name": "Set an access groups's zones (and their associated configurations) by replacing the entire set with this one",
+          "request": {
+            "name": "Set an access groups's zones (and their associated configurations) by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupZoneGroups",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "zoneGroups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"zoneId\": \"<integer>\",\n    \"scheduleId\": \"<integer>\"\n  },\n  {\n    \"zoneId\": \"<integer>\",\n    \"scheduleId\": \"<integer>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "36b22d13-023f-4ed4-a8cf-9c10be7c5772",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "zoneGroups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"zoneId\": \"<integer>\",\n    \"scheduleId\": \"<integer>\"\n  },\n  {\n    \"zoneId\": \"<integer>\",\n    \"scheduleId\": \"<integer>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ca85822f-9334-405e-999d-04c9ae3e1f31",
+          "name": "List all user IDs of a group",
+          "request": {
+            "name": "List all user IDs of a group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupUserIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "userIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0b6062b1-fc43-4ff4-bd35-fe757c6bac90",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "userIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4998,\n  \"filteredCount\": 5086,\n  \"data\": [\n    702,\n    8660\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1982-10-18\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        3444,\n        3014\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9998,\n          8365\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8e0e42e2-619c-4907-bceb-2ac0ea3536e7",
+          "name": "Bulk-update an access group's users",
+          "request": {
+            "name": "Bulk-update an access group's users",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateGroupUserIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "userIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"remove\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cac26d3c-b4c0-48e6-a9bf-1b92e3644d28",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "userIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5848d4b-fd0b-4c02-8c02-299d222721e9",
+          "name": "Set an access group's users by replacing the entire set with this one",
+          "request": {
+            "name": "Set an access group's users by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupUserIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "userIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3627ccc7-ae66-44d1-bb48-d51bbf6a0905",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "userIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"userIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ad2aa4a6-0fa1-4129-bda2-a1cf6b5383e9",
+          "name": "List all users of an access group",
+          "request": {
+            "name": "List all users of an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupUsers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "users"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "identity.lastName"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a8d56576-c144-46af-8723-81e64ce0c9bf",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "users"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "identity.lastName"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4248,\n  \"filteredCount\": 119,\n  \"data\": [\n    {\n      \"id\": 4456.008520734469,\n      \"status\": \"I\",\n      \"identity\": {\n        \"id\": 9365.393207755433,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 7883.169171200359,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          },\n          {\n            \"id\": 8645.96684855053,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 9470.209631351165,\n            \"createdAt\": \"2010-03-31\",\n            \"updatedAt\": \"1947-09-28\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 7169.476423062852,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 2110.876930597011\n            }\n          },\n          {\n            \"id\": 4020.3252220227346,\n            \"createdAt\": \"1958-03-09\",\n            \"updatedAt\": \"1997-02-28\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 4536.806697036462,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 5042.198602689882\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 7190,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 926.0067957154206,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1622.1467799616107,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 3284.961611795413,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 9193,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 7589.090379757513,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 7960.099061455784,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 6653.424392320691,\n            \"orgId\": 1239.7562085652823,\n            \"propertyManagementSystemTypeId\": 8138.398716734138,\n            \"propertyManagementSystemType\": {\n              \"id\": 1373.5313456441568,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1947-04-25\",\n        \"updatedAt\": \"1989-04-23\",\n        \"users\": [\n          {\n            \"id\": 8975.45001582016,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1998-08-19\",\n            \"endDate\": \"1998-06-01\",\n            \"createdAt\": \"1981-01-28\",\n            \"updatedAt\": \"1996-02-13\",\n            \"org\": {\n              \"id\": 2268.5360309889024,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 5702.325598370321,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1965-03-21\",\n            \"endDate\": \"2017-07-23\",\n            \"createdAt\": \"2023-10-28\",\n            \"updatedAt\": \"1969-06-12\",\n            \"org\": {\n              \"id\": 1681.478972339001,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"sites\": [\n        {\n          \"id\": 7522.116799783398,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8776.410734827332,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 1526.8296259950853,\n      \"status\": \"S\",\n      \"identity\": {\n        \"id\": 5717.155970768152,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 6890.9317900337965,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          },\n          {\n            \"id\": 3394.481134086731,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 8309.64497072147,\n            \"createdAt\": \"2010-03-21\",\n            \"updatedAt\": \"2004-08-16\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 8107.442102718825,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 3716.9088741496303\n            }\n          },\n          {\n            \"id\": 3985.323135957192,\n            \"createdAt\": \"2015-03-15\",\n            \"updatedAt\": \"2007-08-21\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5558.479165898038,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 8755.708518962554\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 2425,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 1543.2009965308935,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 816.0784182278269,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 8758.428749513987,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": true,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 7379,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 1130.9837065207685,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 2516.4884982729864,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 5078.609202897058,\n            \"orgId\": 1993.648882432505,\n            \"propertyManagementSystemTypeId\": 8139.474540474874,\n            \"propertyManagementSystemType\": {\n              \"id\": 7751.754735607436,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"2016-03-20\",\n        \"updatedAt\": \"2017-07-30\",\n        \"users\": [\n          {\n            \"id\": 9332.534645849286,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1951-01-12\",\n            \"endDate\": \"1994-03-07\",\n            \"createdAt\": \"2020-09-05\",\n            \"updatedAt\": \"2014-01-26\",\n            \"org\": {\n              \"id\": 686.9879497551079,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 2660.561640074611,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2018-04-16\",\n            \"endDate\": \"1991-12-18\",\n            \"createdAt\": \"1950-11-18\",\n            \"updatedAt\": \"2014-05-10\",\n            \"org\": {\n              \"id\": 4713.850628541722,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"sites\": [\n        {\n          \"id\": 8725.059099031338,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 3238.741218332829,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1993-06-12\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        5495,\n        4661\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5974,\n          2575\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7ab6c0e-de76-42b7-b35a-aae93b25a083",
+          "name": "List all zones of an access group",
+          "request": {
+            "name": "List all zones of an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupZones",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "zones"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c0962a72-1090-4a92-983b-6e2c188aa45f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "zones"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 8643,\n  \"filteredCount\": 7118,\n  \"data\": [\n    {\n      \"id\": 4302.477775096605,\n      \"name\": \"string\"\n    },\n    {\n      \"id\": 3337.8707635824812,\n      \"name\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1971-12-03\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8168,\n        637\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8636,\n          2199\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "614743ad-71bd-43b4-82a7-91b78c6cfbf7",
+          "name": "List all entries an access group has access to",
+          "request": {
+            "name": "List all entries an access group has access to",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupEntries",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "entries"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c428a8ff-e6fa-401e-a03a-888d380805ee",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "entries"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6005,\n  \"filteredCount\": 891,\n  \"data\": [\n    {\n      \"id\": 5587.498262266654,\n      \"name\": \"string\",\n      \"zone\": {\n        \"id\": 3876.2657412263234,\n        \"name\": \"string\",\n        \"site\": {\n          \"id\": 3585.6277955053674,\n          \"name\": \"string\"\n        }\n      }\n    },\n    {\n      \"id\": 2556.8080849142825,\n      \"name\": \"string\",\n      \"zone\": {\n        \"id\": 904.4283301768407,\n        \"name\": \"string\",\n        \"site\": {\n          \"id\": 2162.49596937234,\n          \"name\": \"string\"\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1975-11-15\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5960,\n        9409\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8227,\n          8756\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1c7d6f5b-c73f-4877-8347-d4f278ea35e3",
+          "name": "List all access groups",
+          "request": {
+            "name": "List all access groups",
+            "description": {
+              "content": "listGroups takes the following options:<br/><br/>withSites - to include the group's sites<br/><br/>ignoreSiteSpecificAccess - bypasses site specific access checks<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-ldp:w,o{params.orgId}-ldp:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listGroupsPost",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": \"<integer>\",\n  \"offset\": 0,\n  \"sort\": \"name\",\n  \"order\": \"asc\",\n  \"q\": \"<string>\",\n  \"filter\": \"<string>\",\n  \"preFilter\": \"<string>\",\n  \"options\": \"\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fcf09e7b-2b01-45c4-bd58-8e5224cc0199",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"offset\": 0,\n  \"sort\": \"name\",\n  \"order\": \"asc\",\n  \"q\": \"<string>\",\n  \"filter\": \"<string>\",\n  \"preFilter\": \"<string>\",\n  \"options\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3567,\n  \"filteredCount\": 1118,\n  \"data\": [\n    {\n      \"id\": 8701.069469789083,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdAt\": \"1983-03-20\",\n      \"updatedAt\": \"2005-08-08\",\n      \"userCount\": 8305,\n      \"badgeConfig\": {\n        \"id\": 3838.3658702293433,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.9512374803483875,\n          \"lineHeight\": 0.8053008462587556,\n          \"fontWeight\": 2337.460207633437,\n          \"fontStyle\": \"none\",\n          \"textAlign\": \"right\",\n          \"centerX\": 0.6855104842278724,\n          \"centerY\": 0.005727198739069128,\n          \"width\": 0.18411983710564894,\n          \"height\": 0.29519530051943366,\n          \"layout\": \"oneLine\",\n          \"textTransform\": \"capitalize\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7940164104208484,\n          \"lineHeight\": 0.28593178641930306,\n          \"fontWeight\": 2491.1344848651174,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.5861066736946917,\n          \"centerY\": 0.15584662188402842,\n          \"width\": 0.34217777610238453,\n          \"height\": 0.05466648756613901\n        },\n        \"customField2Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.4954747508121806,\n          \"lineHeight\": 0.39349176212298975,\n          \"fontWeight\": 2312.6207596587765,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.7604864517389948,\n          \"centerY\": 0.5666529864550921,\n          \"width\": 0.38710399956138575,\n          \"height\": 0.3708635128342105\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.8810051434225455,\n          \"centerY\": 0.16818475184234893,\n          \"width\": 0.5527577121745842,\n          \"height\": 0.7046200881849138\n        },\n        \"photoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.5185093191772906,\n          \"centerY\": 0.7466454853493761,\n          \"width\": 0.3985722838721891,\n          \"height\": 0.7067456941793926,\n          \"borderRadius\": 0.9490315023319722,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7574627928120281,\n          \"lineHeight\": 0.4483833192930432,\n          \"fontWeight\": 6999.158715347779,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.08067463934717634,\n          \"centerY\": 0.7981963630621581,\n          \"width\": 0.23494629814239887,\n          \"height\": 0.995104260697933\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.3514875297342338,\n          \"lineHeight\": 0.26249290783163903,\n          \"fontWeight\": 6945.630754000328,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.5762987541510624,\n          \"centerY\": 0.21839538921147117,\n          \"width\": 0.06893472535469469,\n          \"height\": 0.9261323922614848\n        },\n        \"customField1\": {\n          \"id\": 1017.3910073961733,\n          \"name\": \"string\"\n        },\n        \"customField2\": {\n          \"id\": 8880.204970677829,\n          \"name\": \"string\"\n        },\n        \"badgeDefaultConfig\": {\n          \"id\": 2365,\n          \"nameConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.5469871553555063,\n            \"lineHeight\": 0.2577432017084108,\n            \"fontWeight\": 2042.055010507714,\n            \"fontStyle\": \"none\",\n            \"textAlign\": \"center\",\n            \"centerX\": 0.8002846924548261,\n            \"centerY\": 0.28918474154800344,\n            \"width\": 0.6497634824328142,\n            \"height\": 0.697246956659147,\n            \"layout\": \"threeLines\",\n            \"textTransform\": \"lowercase\"\n          },\n          \"customField1Config\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.9948610679055239,\n            \"lineHeight\": 0.42019486651060045,\n            \"fontWeight\": 4450.224738323525,\n            \"textAlign\": \"right\",\n            \"centerX\": 0.2523896273819839,\n            \"centerY\": 0.44565327314342285,\n            \"width\": 0.7608385409027254,\n            \"height\": 0.9643937741572441\n          },\n          \"customField2Config\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.737688986444783,\n            \"lineHeight\": 0.7152684852481658,\n            \"fontWeight\": 1148.5494921424843,\n            \"textAlign\": \"left\",\n            \"centerX\": 0.23370970621808962,\n            \"centerY\": 0.14266178298367505,\n            \"width\": 0.7655278153860124,\n            \"height\": 0.9600219273744951\n          },\n          \"backgroundConfig\": {\n            \"isEnabled\": true,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.48892024859621086,\n            \"centerY\": 0.08535210219765044,\n            \"width\": 0.8758295430617412,\n            \"height\": 0.6860718271546223\n          },\n          \"photoConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.7052342464767065,\n            \"centerY\": 0.7605750377661593,\n            \"width\": 0.23801147805707823,\n            \"height\": 0.038743453819406914,\n            \"borderRadius\": 0.9554458682902734,\n            \"borderColor\": \"string\"\n          },\n          \"logoConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"backgroundPosition\": \"string\",\n            \"label\": \"string\",\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.31808464367508893,\n            \"lineHeight\": 0.08207271236360536,\n            \"fontWeight\": 2993.1924010204157,\n            \"textAlign\": \"center\",\n            \"centerX\": 0.7258983368092364,\n            \"centerY\": 0.2365999111988959,\n            \"width\": 0.6692491279194474,\n            \"height\": 0.04079123284905073\n          },\n          \"externalIdConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.7445108061957344,\n            \"lineHeight\": 0.09110846779124837,\n            \"fontWeight\": 9231.222642200366,\n            \"textAlign\": \"left\",\n            \"centerX\": 0.797055200145764,\n            \"centerY\": 0.592721725916137,\n            \"width\": 0.6524489334611552,\n            \"height\": 0.5317512957951545\n          },\n          \"backgroundPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"logoPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"badgeWidth\": 372.64662953907737,\n          \"badgeHeight\": 2739.31834545047,\n          \"badgeBorderRadius\": 4475.065782683368,\n          \"printWidth\": 3413.973300621118,\n          \"printHeight\": 5946.037867329736,\n          \"name\": \"string\",\n          \"isMobile\": true\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"name\": \"string\",\n        \"badgeBorderRadius\": 6504,\n        \"isOrgDefault\": false\n      },\n      \"sites\": [\n        {\n          \"id\": 9676.26834332178,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8183.196585462851,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 9958.455219909476,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"createdAt\": \"1988-01-09\",\n      \"updatedAt\": \"2023-06-27\",\n      \"userCount\": 776,\n      \"badgeConfig\": {\n        \"id\": 2495.650623599944,\n        \"nameConfig\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.020424044843905365,\n          \"lineHeight\": 0.5820294029337038,\n          \"fontWeight\": 2135.514647701723,\n          \"fontStyle\": \"oblique\",\n          \"textAlign\": \"right\",\n          \"centerX\": 0.6014111042972765,\n          \"centerY\": 0.4944474510138742,\n          \"width\": 0.5081292715972908,\n          \"height\": 0.061495765595620755,\n          \"layout\": \"twoLines\",\n          \"textTransform\": \"capitalize\"\n        },\n        \"customField1Config\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7010171282969131,\n          \"lineHeight\": 0.8582434969405487,\n          \"fontWeight\": 421.58153619321183,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.7863841933104758,\n          \"centerY\": 0.1369272704141571,\n          \"width\": 0.207465839143947,\n          \"height\": 0.9868762370992487\n        },\n        \"customField2Config\": {\n          \"isEnabled\": true,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.3388335849074401,\n          \"lineHeight\": 0.20953800526735322,\n          \"fontWeight\": 288.0215883712345,\n          \"textAlign\": \"left\",\n          \"centerX\": 0.835624644068931,\n          \"centerY\": 0.47303737900950626,\n          \"width\": 0.09584877527622238,\n          \"height\": 0.014159104839720493\n        },\n        \"backgroundConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.5584802809089052,\n          \"centerY\": 0.9998216450578914,\n          \"width\": 0.0339952984171612,\n          \"height\": 0.7285077112343076\n        },\n        \"photoConfig\": {\n          \"isEnabled\": false,\n          \"backgroundColor\": \"string\",\n          \"centerX\": 0.7096465689695519,\n          \"centerY\": 0.4452692142179757,\n          \"width\": 0.18074903310266188,\n          \"height\": 0.6832267821560397,\n          \"borderRadius\": 0.5218684768315212,\n          \"borderColor\": \"string\"\n        },\n        \"logoConfig\": {\n          \"isEnabled\": true,\n          \"backgroundColor\": \"string\",\n          \"backgroundPosition\": \"string\",\n          \"label\": \"string\",\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.6682026152801193,\n          \"lineHeight\": 0.03656247625045428,\n          \"fontWeight\": 4495.215273691194,\n          \"textAlign\": \"center\",\n          \"centerX\": 0.5904253009623157,\n          \"centerY\": 0.09775964530531178,\n          \"width\": 0.01658832921330544,\n          \"height\": 0.19242884709632135\n        },\n        \"externalIdConfig\": {\n          \"isEnabled\": false,\n          \"color\": \"string\",\n          \"fontFamily\": \"string\",\n          \"fontSize\": 0.7434579987703845,\n          \"lineHeight\": 0.4269339442740462,\n          \"fontWeight\": 3428.4501897314344,\n          \"textAlign\": \"right\",\n          \"centerX\": 0.7689468960782202,\n          \"centerY\": 0.5262772235889577,\n          \"width\": 0.36784411304179665,\n          \"height\": 0.4015859730275876\n        },\n        \"customField1\": {\n          \"id\": 7003.240839274808,\n          \"name\": \"string\"\n        },\n        \"customField2\": {\n          \"id\": 4289.767446008178,\n          \"name\": \"string\"\n        },\n        \"badgeDefaultConfig\": {\n          \"id\": 5966,\n          \"nameConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.5793139945151249,\n            \"lineHeight\": 0.13086832454052733,\n            \"fontWeight\": 4871.92667366987,\n            \"fontStyle\": \"italic\",\n            \"textAlign\": \"center\",\n            \"centerX\": 0.3337320322699029,\n            \"centerY\": 0.6483863109180559,\n            \"width\": 0.3339321955470168,\n            \"height\": 0.8206324181763218,\n            \"layout\": \"twoLines\",\n            \"textTransform\": \"uppercase\"\n          },\n          \"customField1Config\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.1551708218739668,\n            \"lineHeight\": 0.03041305159125729,\n            \"fontWeight\": 5199.847752059057,\n            \"textAlign\": \"right\",\n            \"centerX\": 0.3734092267990262,\n            \"centerY\": 0.625300902811019,\n            \"width\": 0.8249494485411218,\n            \"height\": 0.6148027988345657\n          },\n          \"customField2Config\": {\n            \"isEnabled\": false,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.25036433422752513,\n            \"lineHeight\": 0.8159427858561407,\n            \"fontWeight\": 4587.353814677931,\n            \"textAlign\": \"center\",\n            \"centerX\": 0.14279261039658642,\n            \"centerY\": 0.9294886019386647,\n            \"width\": 0.18960049738039986,\n            \"height\": 0.6267829638209723\n          },\n          \"backgroundConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.07701069510765479,\n            \"centerY\": 0.41526288526028565,\n            \"width\": 0.2558400063792873,\n            \"height\": 0.041474385548720294\n          },\n          \"photoConfig\": {\n            \"isEnabled\": true,\n            \"backgroundColor\": \"string\",\n            \"centerX\": 0.817961511606795,\n            \"centerY\": 0.6921865930344133,\n            \"width\": 0.8000890205420275,\n            \"height\": 0.9953381566593692,\n            \"borderRadius\": 0.5786088152592003,\n            \"borderColor\": \"string\"\n          },\n          \"logoConfig\": {\n            \"isEnabled\": false,\n            \"backgroundColor\": \"string\",\n            \"backgroundPosition\": \"string\",\n            \"label\": \"string\",\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.5394325903008859,\n            \"lineHeight\": 0.42878593831654443,\n            \"fontWeight\": 5929.439930429149,\n            \"textAlign\": \"right\",\n            \"centerX\": 0.12962571325668526,\n            \"centerY\": 0.8790325957834285,\n            \"width\": 0.2873389106387938,\n            \"height\": 0.38888433286692736\n          },\n          \"externalIdConfig\": {\n            \"isEnabled\": true,\n            \"color\": \"string\",\n            \"fontFamily\": \"string\",\n            \"fontSize\": 0.3317023404286136,\n            \"lineHeight\": 0.2505491726406459,\n            \"fontWeight\": 6924.343667913334,\n            \"textAlign\": \"left\",\n            \"centerX\": 0.804586452185281,\n            \"centerY\": 0.03681955880988996,\n            \"width\": 0.47194940284557796,\n            \"height\": 0.3077946186511311\n          },\n          \"backgroundPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"logoPicture\": {\n            \"contentType\": \"string\",\n            \"fileName\": \"string\",\n            \"url\": \"string\"\n          },\n          \"badgeWidth\": 6255.51889240901,\n          \"badgeHeight\": 4398.457963484941,\n          \"badgeBorderRadius\": 81.19360039961498,\n          \"printWidth\": 4935.223269546237,\n          \"printHeight\": 7304.225054063804,\n          \"name\": \"string\",\n          \"isMobile\": true\n        },\n        \"backgroundPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"logoPicture\": {\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"url\": \"string\"\n        },\n        \"name\": \"string\",\n        \"badgeBorderRadius\": 8143,\n        \"isOrgDefault\": false\n      },\n      \"sites\": [\n        {\n          \"id\": 6063.058073908992,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8985.23924343384,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1976-06-11\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        6279,\n        9553\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7224,\n          1375\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "38f16ebc-723e-43c5-a513-86ca46659e6b",
+          "name": "Remove a user from an access group",
+          "request": {
+            "name": "Remove a user from an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: removeUserFromGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4dbc5817-ad11-45a6-9a1b-a809c13b535a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8c2914c-40f5-4ce1-b347-034be16d6571",
+          "name": "Add a user to an access group",
+          "request": {
+            "name": "Add a user to an access group",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setUserToGroup",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "852bc2cf-8d23-4675-88bb-dbcec59b21a1",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6c9fab10-2ee1-4ecc-b6bb-6971ae0f007d",
+          "name": "Bulk-update a group's sites",
+          "request": {
+            "name": "Bulk-update a group's sites",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: updateGroupSiteIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "siteIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"add\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"remove\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "59ce05ea-37d1-46a8-a06a-9c0a294380b5",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "siteIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cc8c21c1-2374-4429-bb22-33e5649e4fc4",
+          "name": "Set a group's sites by replacing the entire set with this one",
+          "request": {
+            "name": "Set a group's sites by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w,o-user:w<br/><br/>__Endpoint name__: setGroupSiteIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "siteIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"siteIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d2181e77-4276-49b9-a9a4-cd704c7dfa37",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "siteIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"siteIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "297555b3-9cc9-4f00-a3b9-591f74e8db8d",
+          "name": "Set an access group's zones by replacing the entire set with this one",
+          "request": {
+            "name": "Set an access group's zones by replacing the entire set with this one",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: setGroupZoneIds",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "groups",
+                ":groupId",
+                "zoneIds"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "groupId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"zoneIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4405a100-2209-480c-89f8-d4a1e0c1fccc",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "groups",
+                    ":groupId",
+                    "zoneIds"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "groupId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"zoneIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "76de3b8d-06f8-4dee-b29e-e9df2caf3df9",
+    "name": "Openpath API Documentation auth orgs/groups API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

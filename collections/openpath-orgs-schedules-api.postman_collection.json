@@ -1,0 +1,1824 @@
+{
+  "item": [
+    {
+      "id": "f20b85b4-4533-42cb-a89a-934763b6f8bb",
+      "name": "orgs/schedules",
+      "description": {
+        "content": "Schedules",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef033fa4-5c82-4916-9a59-db7b8b0f5382",
+          "name": "List all schedules",
+          "request": {
+            "name": "List all schedules",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSchedules",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9f66a26d-b251-46e4-917d-46dc33b4b8e5",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 6552,\n  \"filteredCount\": 1188,\n  \"data\": [\n    {\n      \"id\": 9444.043443164523,\n      \"name\": \"string\",\n      \"scheduleType\": {\n        \"id\": 1084.8369740106878,\n        \"name\": \"string\"\n      },\n      \"entries\": [\n        {\n          \"id\": 2997.7762783271487,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 8179.453040045568,\n          \"name\": \"string\"\n        }\n      ],\n      \"zoneUsers\": [\n        {\n          \"zone\": {\n            \"id\": 613.7333552403423,\n            \"name\": \"string\"\n          },\n          \"user\": {\n            \"id\": 5785.859203902245,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1967-03-20\",\n            \"endDate\": \"1974-11-10\",\n            \"identity\": {\n              \"id\": 518.8609832321999,\n              \"opal\": \"string\",\n              \"roles\": [\n                {\n                  \"id\": 1341.4928182870078,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": false\n                },\n                {\n                  \"id\": 11.361710593020824,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": true\n                }\n              ],\n              \"mfaCredentials\": [\n                {\n                  \"id\": 8872.158969277747,\n                  \"createdAt\": \"1963-07-01\",\n                  \"updatedAt\": \"1964-04-07\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 990.3537901054237,\n                  \"createdAt\": \"2023-10-16\",\n                  \"updatedAt\": \"2021-10-26\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ],\n              \"firstName\": \"string\",\n              \"middleName\": \"string\",\n              \"lastName\": \"string\",\n              \"fullName\": \"string\",\n              \"initials\": \"string\",\n              \"isEmailVerified\": true,\n              \"namespace\": {\n                \"id\": 366,\n                \"nickname\": \"string\",\n                \"namespaceType\": {\n                  \"id\": 6743.132283089411,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 445.52284796969155,\n                  \"name\": \"string\"\n                },\n                \"identityProvider\": {\n                  \"id\": 130.5971793092575,\n                  \"isSsoEnabled\": false,\n                  \"isSyncMobilePhoneEnabled\": false,\n                  \"isRemoveGroupsEnabled\": true,\n                  \"identityProviderSyncTypeId\": 4432,\n                  \"credentials\": \"string\",\n                  \"identityProviderType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                \"propertyManagementSystem\": {\n                  \"id\": 5111.920405862864,\n                  \"orgId\": 3271.7911364524775,\n                  \"propertyManagementSystemTypeId\": 3030.046075465708,\n                  \"propertyManagementSystemType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              },\n              \"idpUniqueIdentifier\": \"string\",\n              \"pmsUniqueIdentifier\": \"string\",\n              \"needsPasswordChange\": false,\n              \"nicknames\": [\n                {\n                  \"nickname\": \"string\"\n                },\n                {\n                  \"nickname\": \"string\"\n                }\n              ],\n              \"email\": \"string\",\n              \"mobilePhone\": \"string\",\n              \"language\": \"string\",\n              \"createdAt\": \"1985-10-24\",\n              \"updatedAt\": \"1950-12-07\",\n              \"users\": [\n                {\n                  \"id\": 6209.36541159862,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"1962-06-13\",\n                  \"endDate\": \"2015-01-26\",\n                  \"createdAt\": \"2003-02-10\",\n                  \"updatedAt\": \"1973-10-17\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 3277.163125051535,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"1968-03-07\",\n                  \"endDate\": \"2015-05-11\",\n                  \"createdAt\": \"1951-02-28\",\n                  \"updatedAt\": \"1966-01-16\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"zone\": {\n            \"id\": 4017.5179228435786,\n            \"name\": \"string\"\n          },\n          \"user\": {\n            \"id\": 2829.789827698779,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1971-02-17\",\n            \"endDate\": \"1961-08-13\",\n            \"identity\": {\n              \"id\": 861.2411955068511,\n              \"opal\": \"string\",\n              \"roles\": [\n                {\n                  \"id\": 7681.455890352099,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": true\n                },\n                {\n                  \"id\": 5701.171048182884,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": true\n                }\n              ],\n              \"mfaCredentials\": [\n                {\n                  \"id\": 5239.619451732494,\n                  \"createdAt\": \"1972-09-06\",\n                  \"updatedAt\": \"1962-07-27\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 6364.985066853841,\n                  \"createdAt\": \"1983-04-07\",\n                  \"updatedAt\": \"2005-07-02\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ],\n              \"firstName\": \"string\",\n              \"middleName\": \"string\",\n              \"lastName\": \"string\",\n              \"fullName\": \"string\",\n              \"initials\": \"string\",\n              \"isEmailVerified\": false,\n              \"namespace\": {\n                \"id\": 1566,\n                \"nickname\": \"string\",\n                \"namespaceType\": {\n                  \"id\": 8815.176030095023,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 2449.9428453636897,\n                  \"name\": \"string\"\n                },\n                \"identityProvider\": {\n                  \"id\": 9358.973906534595,\n                  \"isSsoEnabled\": true,\n                  \"isSyncMobilePhoneEnabled\": true,\n                  \"isRemoveGroupsEnabled\": true,\n                  \"identityProviderSyncTypeId\": 4608,\n                  \"credentials\": \"string\",\n                  \"identityProviderType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                \"propertyManagementSystem\": {\n                  \"id\": 9516.53272290899,\n                  \"orgId\": 8773.621386845636,\n                  \"propertyManagementSystemTypeId\": 7435.067149703812,\n                  \"propertyManagementSystemType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              },\n              \"idpUniqueIdentifier\": \"string\",\n              \"pmsUniqueIdentifier\": \"string\",\n              \"needsPasswordChange\": false,\n              \"nicknames\": [\n                {\n                  \"nickname\": \"string\"\n                },\n                {\n                  \"nickname\": \"string\"\n                }\n              ],\n              \"email\": \"string\",\n              \"mobilePhone\": \"string\",\n              \"language\": \"string\",\n              \"createdAt\": \"1993-02-03\",\n              \"updatedAt\": \"1978-12-13\",\n              \"users\": [\n                {\n                  \"id\": 4351.723272889954,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"1947-10-08\",\n                  \"endDate\": \"2012-08-20\",\n                  \"createdAt\": \"1971-01-08\",\n                  \"updatedAt\": \"1970-02-15\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 3480.287560200269,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"1957-02-16\",\n                  \"endDate\": \"2012-11-21\",\n                  \"createdAt\": \"2023-12-16\",\n                  \"updatedAt\": \"1954-08-02\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        }\n      ],\n      \"zoneGroups\": [\n        {\n          \"zone\": {\n            \"id\": 2673.9279787424,\n            \"name\": \"string\"\n          },\n          \"group\": {\n            \"id\": 4780.313902105404,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"zone\": {\n            \"id\": 2612.218540303738,\n            \"name\": \"string\"\n          },\n          \"group\": {\n            \"id\": 3562.6286867888402,\n            \"name\": \"string\"\n          }\n        }\n      ],\n      \"createdAt\": \"1952-10-02\",\n      \"updatedAt\": \"1960-06-04\"\n    },\n    {\n      \"id\": 8290.177079570456,\n      \"name\": \"string\",\n      \"scheduleType\": {\n        \"id\": 2615.513948660587,\n        \"name\": \"string\"\n      },\n      \"entries\": [\n        {\n          \"id\": 1275.9230110122166,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 2419.2387249948865,\n          \"name\": \"string\"\n        }\n      ],\n      \"zoneUsers\": [\n        {\n          \"zone\": {\n            \"id\": 4821.239674036192,\n            \"name\": \"string\"\n          },\n          \"user\": {\n            \"id\": 2234.6206326179254,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1973-12-10\",\n            \"endDate\": \"2022-03-03\",\n            \"identity\": {\n              \"id\": 6528.2490170046085,\n              \"opal\": \"string\",\n              \"roles\": [\n                {\n                  \"id\": 8878.00961848482,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": false\n                },\n                {\n                  \"id\": 8514.832857385594,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": false\n                }\n              ],\n              \"mfaCredentials\": [\n                {\n                  \"id\": 2397.2847567443655,\n                  \"createdAt\": \"2008-09-09\",\n                  \"updatedAt\": \"1954-08-10\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 3625.329493711035,\n                  \"createdAt\": \"2004-07-14\",\n                  \"updatedAt\": \"1989-04-11\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ],\n              \"firstName\": \"string\",\n              \"middleName\": \"string\",\n              \"lastName\": \"string\",\n              \"fullName\": \"string\",\n              \"initials\": \"string\",\n              \"isEmailVerified\": false,\n              \"namespace\": {\n                \"id\": 9200,\n                \"nickname\": \"string\",\n                \"namespaceType\": {\n                  \"id\": 421.00031343289436,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 9541.82557521506,\n                  \"name\": \"string\"\n                },\n                \"identityProvider\": {\n                  \"id\": 5081.347534217494,\n                  \"isSsoEnabled\": true,\n                  \"isSyncMobilePhoneEnabled\": false,\n                  \"isRemoveGroupsEnabled\": false,\n                  \"identityProviderSyncTypeId\": 2239,\n                  \"credentials\": \"string\",\n                  \"identityProviderType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                \"propertyManagementSystem\": {\n                  \"id\": 5154.213734072281,\n                  \"orgId\": 1628.3834006661114,\n                  \"propertyManagementSystemTypeId\": 7441.170433733099,\n                  \"propertyManagementSystemType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              },\n              \"idpUniqueIdentifier\": \"string\",\n              \"pmsUniqueIdentifier\": \"string\",\n              \"needsPasswordChange\": false,\n              \"nicknames\": [\n                {\n                  \"nickname\": \"string\"\n                },\n                {\n                  \"nickname\": \"string\"\n                }\n              ],\n              \"email\": \"string\",\n              \"mobilePhone\": \"string\",\n              \"language\": \"string\",\n              \"createdAt\": \"1999-10-25\",\n              \"updatedAt\": \"1996-01-02\",\n              \"users\": [\n                {\n                  \"id\": 88.22563810929607,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"1953-03-19\",\n                  \"endDate\": \"2010-03-14\",\n                  \"createdAt\": \"1997-11-09\",\n                  \"updatedAt\": \"2024-10-21\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 6630.493832488951,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"2013-12-18\",\n                  \"endDate\": \"2016-04-20\",\n                  \"createdAt\": \"1957-08-02\",\n                  \"updatedAt\": \"2003-07-09\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        },\n        {\n          \"zone\": {\n            \"id\": 4573.09014895534,\n            \"name\": \"string\"\n          },\n          \"user\": {\n            \"id\": 9861.13283542351,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2010-05-18\",\n            \"endDate\": \"1948-11-05\",\n            \"identity\": {\n              \"id\": 1015.745120843029,\n              \"opal\": \"string\",\n              \"roles\": [\n                {\n                  \"id\": 3652.071070403292,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": true\n                },\n                {\n                  \"id\": 192.666300151918,\n                  \"name\": \"string\",\n                  \"description\": \"string\",\n                  \"isMfaRequired\": false\n                }\n              ],\n              \"mfaCredentials\": [\n                {\n                  \"id\": 9890.185451468778,\n                  \"createdAt\": \"2006-04-14\",\n                  \"updatedAt\": \"1949-03-18\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 4580.058978550937,\n                  \"createdAt\": \"1960-10-09\",\n                  \"updatedAt\": \"2022-02-11\",\n                  \"name\": \"string\",\n                  \"status\": \"string\",\n                  \"mfaCredentialType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"modelName\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"totpSoftDevice\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ],\n              \"firstName\": \"string\",\n              \"middleName\": \"string\",\n              \"lastName\": \"string\",\n              \"fullName\": \"string\",\n              \"initials\": \"string\",\n              \"isEmailVerified\": false,\n              \"namespace\": {\n                \"id\": 6342,\n                \"nickname\": \"string\",\n                \"namespaceType\": {\n                  \"id\": 4966.972820560888,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 1465.499948478266,\n                  \"name\": \"string\"\n                },\n                \"identityProvider\": {\n                  \"id\": 4173.47477791932,\n                  \"isSsoEnabled\": false,\n                  \"isSyncMobilePhoneEnabled\": true,\n                  \"isRemoveGroupsEnabled\": false,\n                  \"identityProviderSyncTypeId\": 8496,\n                  \"credentials\": \"string\",\n                  \"identityProviderType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  },\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                \"propertyManagementSystem\": {\n                  \"id\": 3796.855193543176,\n                  \"orgId\": 4114.96030222917,\n                  \"propertyManagementSystemTypeId\": 1582.0610180981364,\n                  \"propertyManagementSystemType\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              },\n              \"idpUniqueIdentifier\": \"string\",\n              \"pmsUniqueIdentifier\": \"string\",\n              \"needsPasswordChange\": false,\n              \"nicknames\": [\n                {\n                  \"nickname\": \"string\"\n                },\n                {\n                  \"nickname\": \"string\"\n                }\n              ],\n              \"email\": \"string\",\n              \"mobilePhone\": \"string\",\n              \"language\": \"string\",\n              \"createdAt\": \"2017-05-24\",\n              \"updatedAt\": \"1975-06-16\",\n              \"users\": [\n                {\n                  \"id\": 1221.3355838958096,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"2010-10-09\",\n                  \"endDate\": \"1985-10-31\",\n                  \"createdAt\": \"2020-04-16\",\n                  \"updatedAt\": \"2004-09-04\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                },\n                {\n                  \"id\": 1466.5195379371564,\n                  \"opal\": \"string\",\n                  \"status\": \"string\",\n                  \"startDate\": \"1976-08-24\",\n                  \"endDate\": \"1986-11-15\",\n                  \"createdAt\": \"2006-06-29\",\n                  \"updatedAt\": \"1990-10-16\",\n                  \"org\": {\n                    \"id\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    },\n                    \"name\": {\n                      \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n                    }\n                  }\n                }\n              ]\n            }\n          }\n        }\n      ],\n      \"zoneGroups\": [\n        {\n          \"zone\": {\n            \"id\": 3178.8528454767275,\n            \"name\": \"string\"\n          },\n          \"group\": {\n            \"id\": 7997.866392357907,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"zone\": {\n            \"id\": 5821.834069643851,\n            \"name\": \"string\"\n          },\n          \"group\": {\n            \"id\": 6087.231681531251,\n            \"name\": \"string\"\n          }\n        }\n      ],\n      \"createdAt\": \"1971-07-31\",\n      \"updatedAt\": \"1947-04-29\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2002-09-03\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4670,\n        9553\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8184,\n          2119\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "41a3b2e6-4e28-4e2b-be9b-a804e22f5ba5",
+          "name": "Create a schedule",
+          "request": {
+            "name": "Create a schedule",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-user:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"scheduleTypeId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ca795a71-95c0-43b6-9a36-faaafb56333e",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"scheduleTypeId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4189.235615796325,\n    \"name\": \"string\",\n    \"scheduleType\": {\n      \"id\": 1449.8250298635696,\n      \"name\": \"string\"\n    },\n    \"entries\": [\n      {\n        \"id\": 3970.30915564904,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 9849.275577119826,\n        \"name\": \"string\"\n      }\n    ],\n    \"zoneUsers\": [\n      {\n        \"zone\": {\n          \"id\": 6602.956220142963,\n          \"name\": \"string\"\n        },\n        \"user\": {\n          \"id\": 9736.054586577107,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1979-07-17\",\n          \"endDate\": \"1983-11-27\",\n          \"identity\": {\n            \"id\": 2794.1926738431844,\n            \"opal\": \"string\",\n            \"roles\": [\n              {\n                \"id\": 4966.733124016092,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": true\n              },\n              {\n                \"id\": 6848.757577980598,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": true\n              }\n            ],\n            \"mfaCredentials\": [\n              {\n                \"id\": 5374.74552356282,\n                \"createdAt\": \"1958-11-20\",\n                \"updatedAt\": \"1972-05-31\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 2112.540002303368,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 4986.11531927164\n                }\n              },\n              {\n                \"id\": 5375.479068938085,\n                \"createdAt\": \"2004-05-17\",\n                \"updatedAt\": \"1960-04-13\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 4573.634423632323,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 9353.522990812542\n                }\n              }\n            ],\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"isEmailVerified\": false,\n            \"namespace\": {\n              \"id\": 1399,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 92.83680786092985,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"org\": {\n                \"id\": 2181.4324905037142,\n                \"name\": \"string\"\n              },\n              \"identityProvider\": {\n                \"id\": 5558.952899345171,\n                \"isSsoEnabled\": true,\n                \"isSyncMobilePhoneEnabled\": true,\n                \"isRemoveGroupsEnabled\": false,\n                \"identityProviderSyncTypeId\": 9462,\n                \"credentials\": \"string\",\n                \"identityProviderType\": {\n                  \"id\": 6791.135761499716,\n                  \"name\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 1040.3991071840435,\n                  \"name\": \"string\"\n                }\n              },\n              \"propertyManagementSystem\": {\n                \"id\": 8760.242707472282,\n                \"orgId\": 6407.867374005656,\n                \"propertyManagementSystemTypeId\": 4135.850408813761,\n                \"propertyManagementSystemType\": {\n                  \"id\": 2865.59757433396,\n                  \"name\": \"string\"\n                }\n              }\n            },\n            \"idpUniqueIdentifier\": \"string\",\n            \"pmsUniqueIdentifier\": \"string\",\n            \"needsPasswordChange\": false,\n            \"nicknames\": [\n              {\n                \"nickname\": \"string\"\n              },\n              {\n                \"nickname\": \"string\"\n              }\n            ],\n            \"email\": \"string\",\n            \"mobilePhone\": \"string\",\n            \"language\": \"string\",\n            \"createdAt\": \"1965-09-25\",\n            \"updatedAt\": \"1977-11-03\",\n            \"users\": [\n              {\n                \"id\": 763.4932922492433,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"1972-07-04\",\n                \"endDate\": \"1952-09-25\",\n                \"createdAt\": \"1968-04-02\",\n                \"updatedAt\": \"2003-06-12\",\n                \"org\": {\n                  \"id\": 434.3001160210058,\n                  \"name\": \"string\"\n                }\n              },\n              {\n                \"id\": 2975.8722926604564,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"1977-08-14\",\n                \"endDate\": \"1953-10-15\",\n                \"createdAt\": \"2014-01-31\",\n                \"updatedAt\": \"2002-11-28\",\n                \"org\": {\n                  \"id\": 8043.74355913213,\n                  \"name\": \"string\"\n                }\n              }\n            ]\n          }\n        }\n      },\n      {\n        \"zone\": {\n          \"id\": 3735.8109406485773,\n          \"name\": \"string\"\n        },\n        \"user\": {\n          \"id\": 9482.87757018823,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2005-03-09\",\n          \"endDate\": \"1974-03-14\",\n          \"identity\": {\n            \"id\": 6464.282897107596,\n            \"opal\": \"string\",\n            \"roles\": [\n              {\n                \"id\": 7756.036889934473,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": false\n              },\n              {\n                \"id\": 9388.43487024673,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": false\n              }\n            ],\n            \"mfaCredentials\": [\n              {\n                \"id\": 4064.7132454022194,\n                \"createdAt\": \"1993-05-29\",\n                \"updatedAt\": \"2016-01-27\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 300.71610296801055,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 6264.902767208039\n                }\n              },\n              {\n                \"id\": 4970.849505092073,\n                \"createdAt\": \"1949-06-21\",\n                \"updatedAt\": \"2003-02-21\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 4555.353882459765,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 7775.467402202405\n                }\n              }\n            ],\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"isEmailVerified\": false,\n            \"namespace\": {\n              \"id\": 7925,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 2481.959359879048,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"org\": {\n                \"id\": 6744.256432364372,\n                \"name\": \"string\"\n              },\n              \"identityProvider\": {\n                \"id\": 2960.616799103979,\n                \"isSsoEnabled\": true,\n                \"isSyncMobilePhoneEnabled\": true,\n                \"isRemoveGroupsEnabled\": true,\n                \"identityProviderSyncTypeId\": 7867,\n                \"credentials\": \"string\",\n                \"identityProviderType\": {\n                  \"id\": 7362.347631632881,\n                  \"name\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 8165.686029875838,\n                  \"name\": \"string\"\n                }\n              },\n              \"propertyManagementSystem\": {\n                \"id\": 3139.9233116847768,\n                \"orgId\": 7599.851389022087,\n                \"propertyManagementSystemTypeId\": 3007.9278748987826,\n                \"propertyManagementSystemType\": {\n                  \"id\": 231.62166664935535,\n                  \"name\": \"string\"\n                }\n              }\n            },\n            \"idpUniqueIdentifier\": \"string\",\n            \"pmsUniqueIdentifier\": \"string\",\n            \"needsPasswordChange\": false,\n            \"nicknames\": [\n              {\n                \"nickname\": \"string\"\n              },\n              {\n                \"nickname\": \"string\"\n              }\n            ],\n            \"email\": \"string\",\n            \"mobilePhone\": \"string\",\n            \"language\": \"string\",\n            \"createdAt\": \"2021-10-03\",\n            \"updatedAt\": \"1959-10-23\",\n            \"users\": [\n              {\n                \"id\": 2646.543226345156,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"1983-01-14\",\n                \"endDate\": \"1961-09-16\",\n                \"createdAt\": \"1996-12-20\",\n                \"updatedAt\": \"1983-01-05\",\n                \"org\": {\n                  \"id\": 8114.484862605184,\n                  \"name\": \"string\"\n                }\n              },\n              {\n                \"id\": 538.8814662409225,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"2024-05-27\",\n                \"endDate\": \"1971-05-20\",\n                \"createdAt\": \"1959-07-01\",\n                \"updatedAt\": \"1974-01-04\",\n                \"org\": {\n                  \"id\": 445.45068793258037,\n                  \"name\": \"string\"\n                }\n              }\n            ]\n          }\n        }\n      }\n    ],\n    \"zoneGroups\": [\n      {\n        \"zone\": {\n          \"id\": 5468.419280172995,\n          \"name\": \"string\"\n        },\n        \"group\": {\n          \"id\": 2316.6052360403187,\n          \"name\": \"string\"\n        }\n      },\n      {\n        \"zone\": {\n          \"id\": 8503.294514794201,\n          \"name\": \"string\"\n        },\n        \"group\": {\n          \"id\": 6613.963259136648,\n          \"name\": \"string\"\n        }\n      }\n    ],\n    \"createdAt\": \"1985-10-19\",\n    \"updatedAt\": \"1966-10-17\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1974-01-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5031,\n        8334\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          92,\n          3673\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c3de0846-e233-42a4-b551-710012b248f6",
+          "name": "Describe a schedule",
+          "request": {
+            "name": "Describe a schedule",
+            "description": {
+              "content": "By default this endpoint joins the schedule with the shared zones that use it. These operations can be expensive.\nThis data is not needed for most uses. Use an `options` value of `withoutZoneUsers,withoutZoneGroups` where possible for better performance.\nThe caller can also specify one option without the other option if required. The syntax is as such:\n`/orgs/{orgId}/schedules/{scheduleId}?options=withoutZoneUsers,withoutZoneGroups`.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "290b801e-51af-47bd-b6f6-b816b34cde8a",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4189.235615796325,\n    \"name\": \"string\",\n    \"scheduleType\": {\n      \"id\": 1449.8250298635696,\n      \"name\": \"string\"\n    },\n    \"entries\": [\n      {\n        \"id\": 3970.30915564904,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 9849.275577119826,\n        \"name\": \"string\"\n      }\n    ],\n    \"zoneUsers\": [\n      {\n        \"zone\": {\n          \"id\": 6602.956220142963,\n          \"name\": \"string\"\n        },\n        \"user\": {\n          \"id\": 9736.054586577107,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1979-07-17\",\n          \"endDate\": \"1983-11-27\",\n          \"identity\": {\n            \"id\": 2794.1926738431844,\n            \"opal\": \"string\",\n            \"roles\": [\n              {\n                \"id\": 4966.733124016092,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": true\n              },\n              {\n                \"id\": 6848.757577980598,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": true\n              }\n            ],\n            \"mfaCredentials\": [\n              {\n                \"id\": 5374.74552356282,\n                \"createdAt\": \"1958-11-20\",\n                \"updatedAt\": \"1972-05-31\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 2112.540002303368,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 4986.11531927164\n                }\n              },\n              {\n                \"id\": 5375.479068938085,\n                \"createdAt\": \"2004-05-17\",\n                \"updatedAt\": \"1960-04-13\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 4573.634423632323,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 9353.522990812542\n                }\n              }\n            ],\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"isEmailVerified\": false,\n            \"namespace\": {\n              \"id\": 1399,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 92.83680786092985,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"org\": {\n                \"id\": 2181.4324905037142,\n                \"name\": \"string\"\n              },\n              \"identityProvider\": {\n                \"id\": 5558.952899345171,\n                \"isSsoEnabled\": true,\n                \"isSyncMobilePhoneEnabled\": true,\n                \"isRemoveGroupsEnabled\": false,\n                \"identityProviderSyncTypeId\": 9462,\n                \"credentials\": \"string\",\n                \"identityProviderType\": {\n                  \"id\": 6791.135761499716,\n                  \"name\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 1040.3991071840435,\n                  \"name\": \"string\"\n                }\n              },\n              \"propertyManagementSystem\": {\n                \"id\": 8760.242707472282,\n                \"orgId\": 6407.867374005656,\n                \"propertyManagementSystemTypeId\": 4135.850408813761,\n                \"propertyManagementSystemType\": {\n                  \"id\": 2865.59757433396,\n                  \"name\": \"string\"\n                }\n              }\n            },\n            \"idpUniqueIdentifier\": \"string\",\n            \"pmsUniqueIdentifier\": \"string\",\n            \"needsPasswordChange\": false,\n            \"nicknames\": [\n              {\n                \"nickname\": \"string\"\n              },\n              {\n                \"nickname\": \"string\"\n              }\n            ],\n            \"email\": \"string\",\n            \"mobilePhone\": \"string\",\n            \"language\": \"string\",\n            \"createdAt\": \"1965-09-25\",\n            \"updatedAt\": \"1977-11-03\",\n            \"users\": [\n              {\n                \"id\": 763.4932922492433,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"1972-07-04\",\n                \"endDate\": \"1952-09-25\",\n                \"createdAt\": \"1968-04-02\",\n                \"updatedAt\": \"2003-06-12\",\n                \"org\": {\n                  \"id\": 434.3001160210058,\n                  \"name\": \"string\"\n                }\n              },\n              {\n                \"id\": 2975.8722926604564,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"1977-08-14\",\n                \"endDate\": \"1953-10-15\",\n                \"createdAt\": \"2014-01-31\",\n                \"updatedAt\": \"2002-11-28\",\n                \"org\": {\n                  \"id\": 8043.74355913213,\n                  \"name\": \"string\"\n                }\n              }\n            ]\n          }\n        }\n      },\n      {\n        \"zone\": {\n          \"id\": 3735.8109406485773,\n          \"name\": \"string\"\n        },\n        \"user\": {\n          \"id\": 9482.87757018823,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2005-03-09\",\n          \"endDate\": \"1974-03-14\",\n          \"identity\": {\n            \"id\": 6464.282897107596,\n            \"opal\": \"string\",\n            \"roles\": [\n              {\n                \"id\": 7756.036889934473,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": false\n              },\n              {\n                \"id\": 9388.43487024673,\n                \"name\": \"string\",\n                \"description\": \"string\",\n                \"isMfaRequired\": false\n              }\n            ],\n            \"mfaCredentials\": [\n              {\n                \"id\": 4064.7132454022194,\n                \"createdAt\": \"1993-05-29\",\n                \"updatedAt\": \"2016-01-27\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 300.71610296801055,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 6264.902767208039\n                }\n              },\n              {\n                \"id\": 4970.849505092073,\n                \"createdAt\": \"1949-06-21\",\n                \"updatedAt\": \"2003-02-21\",\n                \"name\": \"string\",\n                \"status\": \"string\",\n                \"mfaCredentialType\": {\n                  \"id\": 4555.353882459765,\n                  \"name\": \"string\",\n                  \"modelName\": \"string\"\n                },\n                \"totpSoftDevice\": {\n                  \"id\": 7775.467402202405\n                }\n              }\n            ],\n            \"firstName\": \"string\",\n            \"middleName\": \"string\",\n            \"lastName\": \"string\",\n            \"fullName\": \"string\",\n            \"initials\": \"string\",\n            \"isEmailVerified\": false,\n            \"namespace\": {\n              \"id\": 7925,\n              \"nickname\": \"string\",\n              \"namespaceType\": {\n                \"id\": 2481.959359879048,\n                \"name\": \"string\",\n                \"modelName\": \"string\"\n              },\n              \"org\": {\n                \"id\": 6744.256432364372,\n                \"name\": \"string\"\n              },\n              \"identityProvider\": {\n                \"id\": 2960.616799103979,\n                \"isSsoEnabled\": true,\n                \"isSyncMobilePhoneEnabled\": true,\n                \"isRemoveGroupsEnabled\": true,\n                \"identityProviderSyncTypeId\": 7867,\n                \"credentials\": \"string\",\n                \"identityProviderType\": {\n                  \"id\": 7362.347631632881,\n                  \"name\": \"string\"\n                },\n                \"org\": {\n                  \"id\": 8165.686029875838,\n                  \"name\": \"string\"\n                }\n              },\n              \"propertyManagementSystem\": {\n                \"id\": 3139.9233116847768,\n                \"orgId\": 7599.851389022087,\n                \"propertyManagementSystemTypeId\": 3007.9278748987826,\n                \"propertyManagementSystemType\": {\n                  \"id\": 231.62166664935535,\n                  \"name\": \"string\"\n                }\n              }\n            },\n            \"idpUniqueIdentifier\": \"string\",\n            \"pmsUniqueIdentifier\": \"string\",\n            \"needsPasswordChange\": false,\n            \"nicknames\": [\n              {\n                \"nickname\": \"string\"\n              },\n              {\n                \"nickname\": \"string\"\n              }\n            ],\n            \"email\": \"string\",\n            \"mobilePhone\": \"string\",\n            \"language\": \"string\",\n            \"createdAt\": \"2021-10-03\",\n            \"updatedAt\": \"1959-10-23\",\n            \"users\": [\n              {\n                \"id\": 2646.543226345156,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"1983-01-14\",\n                \"endDate\": \"1961-09-16\",\n                \"createdAt\": \"1996-12-20\",\n                \"updatedAt\": \"1983-01-05\",\n                \"org\": {\n                  \"id\": 8114.484862605184,\n                  \"name\": \"string\"\n                }\n              },\n              {\n                \"id\": 538.8814662409225,\n                \"opal\": \"string\",\n                \"status\": \"string\",\n                \"startDate\": \"2024-05-27\",\n                \"endDate\": \"1971-05-20\",\n                \"createdAt\": \"1959-07-01\",\n                \"updatedAt\": \"1974-01-04\",\n                \"org\": {\n                  \"id\": 445.45068793258037,\n                  \"name\": \"string\"\n                }\n              }\n            ]\n          }\n        }\n      }\n    ],\n    \"zoneGroups\": [\n      {\n        \"zone\": {\n          \"id\": 5468.419280172995,\n          \"name\": \"string\"\n        },\n        \"group\": {\n          \"id\": 2316.6052360403187,\n          \"name\": \"string\"\n        }\n      },\n      {\n        \"zone\": {\n          \"id\": 8503.294514794201,\n          \"name\": \"string\"\n        },\n        \"group\": {\n          \"id\": 6613.963259136648,\n          \"name\": \"string\"\n        }\n      }\n    ],\n    \"createdAt\": \"1985-10-19\",\n    \"updatedAt\": \"1966-10-17\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1974-01-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5031,\n        8334\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          92,\n          3673\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "54593c6d-c2e4-4274-a1bb-9fac507fb31f",
+          "name": "Delete a schedule",
+          "request": {
+            "name": "Delete a schedule",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cfe8532b-5f23-4c01-b070-62abddb9f14a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1bfcbeda-9098-440a-a788-8c0dfd7cd3c0",
+          "name": "Update a schedule",
+          "request": {
+            "name": "Update a schedule",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSchedule",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"entryIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ae822bda-68ee-4c16-90a8-245ae8d30580",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"entryIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4a161511-e7f3-497a-b18b-08765914d17d",
+          "name": "Determine whether the API caller has access to modify this schedule via their admin permissions",
+          "request": {
+            "name": "Determine whether the API caller has access to modify this schedule via their admin permissions",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: determineScheduleAccess",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "determineAccess"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "ef4ef496-92a1-40fa-bc6a-1f88752d9935",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "determineAccess"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"hasAccess\": false,\n    \"entrySitesNoAccess\": [\n      {\n        \"entry\": {\n          \"id\": 6279.850727665527,\n          \"name\": \"string\"\n        },\n        \"site\": {\n          \"id\": 8234.73499824496,\n          \"name\": \"string\"\n        }\n      },\n      {\n        \"entry\": {\n          \"id\": 7773.285018057273,\n          \"name\": \"string\"\n        },\n        \"site\": {\n          \"id\": 6444.8577521843135,\n          \"name\": \"string\"\n        }\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1948-08-02\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        7306,\n        8125\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8445,\n          8038\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a06c2aa2-3981-495f-b6d9-1c38998cdcf4",
+          "name": "List all schedule events",
+          "request": {
+            "name": "List all schedule events",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listEvents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f1397b30-5721-4df0-9118-c1a3b0f94d13",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4968,\n  \"filteredCount\": 7536,\n  \"data\": [\n    {\n      \"id\": 8806.141782041417,\n      \"iCalText\": \"string\",\n      \"ordinal\": 4687.459476874055,\n      \"createdAt\": \"2023-07-05\",\n      \"updatedAt\": \"1951-04-14\",\n      \"isTemp\": false,\n      \"name\": \"string\"\n    },\n    {\n      \"id\": 2999.4085803604476,\n      \"iCalText\": \"string\",\n      \"ordinal\": 4435.094656760433,\n      \"createdAt\": \"1965-10-02\",\n      \"updatedAt\": \"1995-02-10\",\n      \"isTemp\": true,\n      \"name\": \"string\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1954-07-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4829,\n        7681\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1168,\n          5647\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6413c102-d02d-4cce-9f6d-20419640377c",
+          "name": "Create a schedule event",
+          "request": {
+            "name": "Create a schedule event",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createEvent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"iCalText\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f6cfe230-5504-409c-8167-a716a6dfdc53",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"iCalText\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4946.9689153225945,\n    \"iCalText\": \"string\",\n    \"ordinal\": 4847.190046491168,\n    \"createdAt\": \"2017-03-27\",\n    \"updatedAt\": \"2010-10-25\",\n    \"isTemp\": false,\n    \"name\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2014-10-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5622,\n        4769\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5625,\n          5950\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "816705d5-92a9-45b9-ac36-a35a356db887",
+          "name": "Bulk update schedule events",
+          "request": {
+            "name": "Bulk update schedule events",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateEvents",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"id\": \"<integer>\",\n    \"ordinal\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"ordinal\": \"<integer>\",\n    \"name\": \"<string>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "80899b08-1913-437f-b7f6-8a50518fec5c",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"id\": \"<integer>\",\n    \"ordinal\": \"<integer>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"ordinal\": \"<integer>\",\n    \"name\": \"<string>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b37ca91-3b35-4e00-83ac-a7f715d28ffc",
+          "name": "Describe a schedule event",
+          "request": {
+            "name": "Describe a schedule event",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeEvent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "events",
+                ":eventId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "eventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "83971f30-62f1-4f12-b358-76d53b24a4c4",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "events",
+                    ":eventId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "eventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4946.9689153225945,\n    \"iCalText\": \"string\",\n    \"ordinal\": 4847.190046491168,\n    \"createdAt\": \"2017-03-27\",\n    \"updatedAt\": \"2010-10-25\",\n    \"isTemp\": false,\n    \"name\": \"string\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2014-10-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5622,\n        4769\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5625,\n          5950\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c004dd58-ba5c-4d86-a530-a3dfa1ebd4d0",
+          "name": "Delete a schedule event",
+          "request": {
+            "name": "Delete a schedule event",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteEvent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "events",
+                ":eventId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "eventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fe599cae-bb41-438d-b66d-6fbb8a92ffb9",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "events",
+                    ":eventId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "eventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4595fc42-a09d-4046-83b4-fb579b7ecdfb",
+          "name": "Update a schedule event",
+          "request": {
+            "name": "Update a schedule event",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateEvent",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "schedules",
+                ":scheduleId",
+                "events",
+                ":eventId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "scheduleId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "eventId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"iCalText\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "34cb6c62-ce97-424d-a293-c87aaa05e1b5",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "schedules",
+                    ":scheduleId",
+                    "events",
+                    ":eventId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "scheduleId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "eventId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"iCalText\": \"<string>\",\n  \"ordinal\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "f3ccebd0-f0aa-43f3-808b-c71c936ac93c",
+    "name": "Openpath API Documentation auth orgs/schedules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

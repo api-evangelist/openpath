@@ -1,0 +1,117 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/sharedUsers API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/sharedUsers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/sharedUsers",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSharedUsers"
+        },
+        {
+          "info": {
+            "name": "Describe a user that has access to at least one zone from this org (including users from other orgs via zone sharing)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/sharedUsers/:userId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSharedUser"
+        },
+        {
+          "info": {
+            "name": "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/sharedUsers/list",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSharedUsersPost"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

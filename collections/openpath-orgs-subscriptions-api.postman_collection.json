@@ -1,0 +1,739 @@
+{
+  "item": [
+    {
+      "id": "1c2dfc2f-8359-48b3-82c0-f93c2860aff8",
+      "name": "orgs/subscriptions",
+      "description": {
+        "content": "REST Hook Subscriptions",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "faa8d906-65a8-4f4e-88cd-bcef06af61cf",
+          "name": "List all REST Hook subscriptions",
+          "request": {
+            "name": "List all REST Hook subscriptions",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSubscriptions",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "4edcc264-a144-4d43-bc4c-cd2d018c016c",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7233,\n  \"filteredCount\": 6131,\n  \"data\": [\n    {\n      \"id\": 6841.125958287684,\n      \"subjectOrg\": {\n        \"id\": 1808\n      },\n      \"hookEvent\": {\n        \"id\": 4927,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"updatedAt\": \"2002-05-18\"\n      },\n      \"hookAction\": {\n        \"id\": 4515,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"config\": {},\n        \"updatedAt\": \"2002-11-17\"\n      },\n      \"targetUrl\": \"string\",\n      \"isActive\": false,\n      \"isBlocking\": false,\n      \"isVisible\": false,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rateLimitCount\": 8320,\n      \"rateLimitWindowSecs\": 7897,\n      \"isOnceDaily\": false,\n      \"dailyResetTime\": \"string\",\n      \"dailyResetTimezone\": \"string\",\n      \"handlerHookEventLocation\": {\n        \"id\": 9860\n      },\n      \"updatedAt\": \"1983-05-21\"\n    },\n    {\n      \"id\": 2100.0565832054294,\n      \"subjectOrg\": {\n        \"id\": 8721\n      },\n      \"hookEvent\": {\n        \"id\": 4335,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"updatedAt\": \"1949-12-04\"\n      },\n      \"hookAction\": {\n        \"id\": 110,\n        \"name\": \"string\",\n        \"description\": \"string\",\n        \"config\": {},\n        \"updatedAt\": \"1998-08-20\"\n      },\n      \"targetUrl\": \"string\",\n      \"isActive\": false,\n      \"isBlocking\": true,\n      \"isVisible\": true,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"rateLimitCount\": 9572,\n      \"rateLimitWindowSecs\": 2975,\n      \"isOnceDaily\": false,\n      \"dailyResetTime\": \"string\",\n      \"dailyResetTimezone\": \"string\",\n      \"handlerHookEventLocation\": {\n        \"id\": 1084\n      },\n      \"updatedAt\": \"1947-11-24\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2010-07-31\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6330,\n        9788\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3215,\n          3266\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bce8625e-1987-4854-b514-f6e5ab36c05b",
+          "name": "Create a REST Hook subscription",
+          "request": {
+            "name": "Create a REST Hook subscription",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: createSubscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "subscriptions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hookEventId\": \"<integer>\",\n  \"hookEventName\": \"<string>\",\n  \"targetUrl\": \"<string>\",\n  \"hookActionId\": \"<integer>\",\n  \"isBlocking\": \"<boolean>\",\n  \"isVisible\": true,\n  \"isOnceDaily\": false,\n  \"dailyResetTime\": null,\n  \"dailyResetTimezone\": null,\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"handlerHookEventLocationId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "83bb4585-e9c3-4b52-8fc4-352c2980610d",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "subscriptions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hookEventId\": \"<integer>\",\n  \"hookEventName\": \"<string>\",\n  \"targetUrl\": \"<string>\",\n  \"hookActionId\": \"<integer>\",\n  \"isBlocking\": \"<boolean>\",\n  \"isVisible\": true,\n  \"isOnceDaily\": false,\n  \"dailyResetTime\": null,\n  \"dailyResetTimezone\": null,\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"handlerHookEventLocationId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 3201.8660028982326,\n    \"subjectOrg\": {\n      \"id\": 361\n    },\n    \"hookEvent\": {\n      \"id\": 9188,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"updatedAt\": \"2025-09-17\"\n    },\n    \"hookAction\": {\n      \"id\": 1753,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"config\": {},\n      \"updatedAt\": \"1972-03-25\"\n    },\n    \"targetUrl\": \"string\",\n    \"isActive\": false,\n    \"isBlocking\": true,\n    \"isVisible\": true,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"rateLimitCount\": 3924,\n    \"rateLimitWindowSecs\": 9616,\n    \"isOnceDaily\": false,\n    \"dailyResetTime\": \"string\",\n    \"dailyResetTimezone\": \"string\",\n    \"handlerHookEventLocation\": {\n      \"id\": 7372\n    },\n    \"updatedAt\": \"1986-10-15\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2024-07-05\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5641,\n        1383\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          288,\n          4901\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9b47412-9b65-4871-b166-982265e9a8f7",
+          "name": "Describe a REST Hook subscription",
+          "request": {
+            "name": "Describe a REST Hook subscription",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSubscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "1a6773e2-ec5c-4d6f-bb4c-19dc186228e2",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 3201.8660028982326,\n    \"subjectOrg\": {\n      \"id\": 361\n    },\n    \"hookEvent\": {\n      \"id\": 9188,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"updatedAt\": \"2025-09-17\"\n    },\n    \"hookAction\": {\n      \"id\": 1753,\n      \"name\": \"string\",\n      \"description\": \"string\",\n      \"config\": {},\n      \"updatedAt\": \"1972-03-25\"\n    },\n    \"targetUrl\": \"string\",\n    \"isActive\": false,\n    \"isBlocking\": true,\n    \"isVisible\": true,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"rateLimitCount\": 3924,\n    \"rateLimitWindowSecs\": 9616,\n    \"isOnceDaily\": false,\n    \"dailyResetTime\": \"string\",\n    \"dailyResetTimezone\": \"string\",\n    \"handlerHookEventLocation\": {\n      \"id\": 7372\n    },\n    \"updatedAt\": \"1986-10-15\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2024-07-05\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        5641,\n        1383\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          288,\n          4901\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e53d2e74-731e-4812-aec4-e4a14c09b748",
+          "name": "Delete a REST Hook subscription",
+          "request": {
+            "name": "Delete a REST Hook subscription",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteSubscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cce1daf4-e551-49f7-a535-5dd22e269543",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "18afe991-da6b-400e-bd3f-a83357786012",
+          "name": "Update a REST Hook subscription",
+          "request": {
+            "name": "Update a REST Hook subscription",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateSubscription",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "subscriptions",
+                ":subscriptionId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "subscriptionId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"hookEventId\": \"<integer>\",\n  \"hookEventName\": \"<string>\",\n  \"targetUrl\": \"<string>\",\n  \"hookActionId\": \"<integer>\",\n  \"isBlocking\": \"<boolean>\",\n  \"isVisible\": \"<boolean>\",\n  \"isOnceDaily\": \"<boolean>\",\n  \"dailyResetTime\": \"<string>\",\n  \"dailyResetTimezone\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"handlerHookEventLocationId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f2978ffc-b7eb-41e9-aad0-105f209cceda",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "subscriptions",
+                    ":subscriptionId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "subscriptionId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"hookEventId\": \"<integer>\",\n  \"hookEventName\": \"<string>\",\n  \"targetUrl\": \"<string>\",\n  \"hookActionId\": \"<integer>\",\n  \"isBlocking\": \"<boolean>\",\n  \"isVisible\": \"<boolean>\",\n  \"isOnceDaily\": \"<boolean>\",\n  \"dailyResetTime\": \"<string>\",\n  \"dailyResetTimezone\": \"<string>\",\n  \"name\": \"<string>\",\n  \"description\": \"<string>\",\n  \"handlerHookEventLocationId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "09c6c58c-abe5-4aec-b00a-0ed117da044f",
+    "name": "Openpath API Documentation auth orgs/subscriptions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

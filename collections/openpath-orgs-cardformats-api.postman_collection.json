@@ -1,0 +1,341 @@
+{
+  "item": [
+    {
+      "id": "7105ace1-72d5-4288-b1b0-ec7de858ce9e",
+      "name": "orgs/cardFormats",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f476f718-64c7-4b89-a10c-2245110bc428",
+          "name": "List all entry card formats",
+          "request": {
+            "name": "List all entry card formats",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-credential:w,o{params.orgId}-credential:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listCardFormats",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "cardFormats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "37bffb87-b509-4792-9b2e-61624bb5fb44",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "cardFormats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 292,\n  \"filteredCount\": 7862,\n  \"data\": [\n    {\n      \"id\": 5578.192771608636,\n      \"code\": \"string\",\n      \"name\": \"string\",\n      \"numBits\": 6390,\n      \"description\": {\n        \"numBits\": 2304,\n        \"fields\": [\n          {\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"maxBits\": 8082,\n            \"rightmostBit\": 1296\n          },\n          {\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"maxBits\": 3352,\n            \"rightmostBit\": 1552\n          }\n        ],\n        \"parityBits\": [\n          {\n            \"position\": 3763,\n            \"sourceBits\": [\n              8424,\n              1098\n            ],\n            \"setIfMatch\": 0\n          },\n          {\n            \"position\": 7852,\n            \"sourceBits\": [\n              1011,\n              3177\n            ],\n            \"setIfMatch\": 1\n          }\n        ],\n        \"fixedBits\": [\n          {\n            \"position\": 3174,\n            \"value\": 0\n          },\n          {\n            \"position\": 6074,\n            \"value\": 0\n          }\n        ],\n        \"reverseBitOrder\": false\n      }\n    },\n    {\n      \"id\": 7392.515706026508,\n      \"code\": \"string\",\n      \"name\": \"string\",\n      \"numBits\": 7617,\n      \"description\": {\n        \"numBits\": 104,\n        \"fields\": [\n          {\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"maxBits\": 5576,\n            \"rightmostBit\": 5835\n          },\n          {\n            \"name\": \"string\",\n            \"displayName\": \"string\",\n            \"maxBits\": 4211,\n            \"rightmostBit\": 5596\n          }\n        ],\n        \"parityBits\": [\n          {\n            \"position\": 3485,\n            \"sourceBits\": [\n              8107,\n              7175\n            ],\n            \"setIfMatch\": 0\n          },\n          {\n            \"position\": 8002,\n            \"sourceBits\": [\n              2374,\n              8488\n            ],\n            \"setIfMatch\": 1\n          }\n        ],\n        \"fixedBits\": [\n          {\n            \"position\": 2144,\n            \"value\": 1\n          },\n          {\n            \"position\": 7262,\n            \"value\": 1\n          }\n        ],\n        \"reverseBitOrder\": false\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1976-08-30\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8781,\n        7669\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          8942,\n          9961\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "912fba4c-d93e-44a4-950b-644bfde5df23",
+          "name": "Describe a card format",
+          "request": {
+            "name": "Describe a card format",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-site:w,o{params.orgId}-site:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeCardFormat",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "cardFormats",
+                ":cardFormatId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "cardFormatId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a282a87c-8cdb-4a7c-9fcc-4c3b5e349c7d",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "cardFormats",
+                    ":cardFormatId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "cardFormatId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 8297.913541128879,\n    \"code\": \"string\",\n    \"name\": \"string\",\n    \"numBits\": 5759,\n    \"description\": {\n      \"numBits\": 4914,\n      \"fields\": [\n        {\n          \"name\": \"string\",\n          \"displayName\": \"string\",\n          \"maxBits\": 5810,\n          \"rightmostBit\": 8439\n        },\n        {\n          \"name\": \"string\",\n          \"displayName\": \"string\",\n          \"maxBits\": 6451,\n          \"rightmostBit\": 4437\n        }\n      ],\n      \"parityBits\": [\n        {\n          \"position\": 7917,\n          \"sourceBits\": [\n            3181,\n            8421\n          ],\n          \"setIfMatch\": 0\n        },\n        {\n          \"position\": 1868,\n          \"sourceBits\": [\n            343,\n            7366\n          ],\n          \"setIfMatch\": 0\n        }\n      ],\n      \"fixedBits\": [\n        {\n          \"position\": 2699,\n          \"value\": 0\n        },\n        {\n          \"position\": 9820,\n          \"value\": 0\n        }\n      ],\n      \"reverseBitOrder\": false\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2017-10-14\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        2883,\n        7832\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9576,\n          5007\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "91126c2f-3cd5-4e91-988b-bc41f6dbd0e6",
+    "name": "Openpath API Documentation auth orgs/cardFormats API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

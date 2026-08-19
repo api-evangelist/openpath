@@ -1,0 +1,272 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/alarmConfigurations API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/alarmConfigurations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all alarm configurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alarmConfigurations:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,s-o:w,s-o:r,o:w,o:r<br/><br/>__Endpoint name__: listAlarmConfigurations"
+        },
+        {
+          "info": {
+            "name": "Create an alarm configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w,s-o:w<br/><br/>__Endpoint name__: createAlarmConfiguration"
+        },
+        {
+          "info": {
+            "name": "Describe an alarm configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations/:alarmConfigurationId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmConfigurationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alarmConfigurations:r,s-o:w,s-o:r,o:w,o:r<br/><br/>__Endpoint name__: describeAlarmConfiguration"
+        },
+        {
+          "info": {
+            "name": "Update an alarm configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations/:alarmConfigurationId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmConfigurationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateAlarmConfiguration"
+        },
+        {
+          "info": {
+            "name": "List all cameras of an alarm configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations/:alarmConfigurationId/cameras",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmConfigurationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmConfigurations:w,o{params.orgId}-alarmConfigurations:r,o:w,o:r<br/><br/>__Endpoint name__: listAlarmConfigurationCameras"
+        },
+        {
+          "info": {
+            "name": "Add a camera to an alarm configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations/:alarmConfigurationId/cameras/:cameraId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmConfigurationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cameraId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w<br/><br/>__Endpoint name__: addAlarmConfigurationCameraId"
+        },
+        {
+          "info": {
+            "name": "Remove a camera from an alarm configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations/:alarmConfigurationId/cameras/:cameraId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmConfigurationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "cameraId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w<br/><br/>__Endpoint name__: deleteAlarmConfigurationCameraId"
+        },
+        {
+          "info": {
+            "name": "Set an alarm configuration's cameras by replacing the entire set with this one",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmConfigurations/:alarmConfigurationId/cameraIds",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmConfigurationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmConfigurations:w,o:w<br/><br/>__Endpoint name__: setAlarmConfigurationCameraIds"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

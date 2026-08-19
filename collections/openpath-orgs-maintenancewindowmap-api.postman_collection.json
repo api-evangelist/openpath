@@ -1,0 +1,611 @@
+{
+  "item": [
+    {
+      "id": "fb1ad771-fe56-49e8-b302-c6c6883d30fa",
+      "name": "orgs/maintenanceWindowMap",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "06d3049c-b670-4c4b-8019-b3a75a1cd082",
+          "name": "List all maintenance windows maps",
+          "request": {
+            "name": "List all maintenance windows maps",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: listOrgMaintenanceWindowMap",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "maintenanceWindowMap"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "914a2053-ab60-4985-ae13-4c071bd8545c",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "maintenanceWindowMap"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 3036,\n  \"filteredCount\": 7505,\n  \"data\": [\n    {\n      \"id\": 9840,\n      \"maintenanceWindowTypeId\": 3,\n      \"modelId\": 9703,\n      \"mesonTimeslots\": {\n        \"type\": \"timeslot\",\n        \"time_slots\": [\n          \"string\",\n          \"string\"\n        ],\n        \"deviceTime\": true\n      },\n      \"maintenanceWindowDefinition\": {\n        \"id\": 4634.770162663673,\n        \"name\": \"string\",\n        \"day\": \"Saturday\",\n        \"startTime\": \"string\",\n        \"durationHours\": 4757,\n        \"timeZone\": \"string\"\n      }\n    },\n    {\n      \"id\": 8608,\n      \"maintenanceWindowTypeId\": 3,\n      \"modelId\": 6468,\n      \"mesonTimeslots\": {\n        \"type\": \"timeslot\",\n        \"time_slots\": [\n          \"string\",\n          \"string\"\n        ],\n        \"deviceTime\": true\n      },\n      \"maintenanceWindowDefinition\": {\n        \"id\": 2582.1055148427195,\n        \"name\": \"string\",\n        \"day\": \"Monday\",\n        \"startTime\": \"string\",\n        \"durationHours\": 2146,\n        \"timeZone\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2002-08-01\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        3796,\n        1598\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7046,\n          4334\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f395b00e-f930-4045-95c3-777153212ed2",
+          "name": "Create/Update/Delete maintenance window maps for an organization",
+          "request": {
+            "name": "Create/Update/Delete maintenance window maps for an organization",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: updateOrgMaintenanceWindowMap",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "maintenanceWindowMap"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Add\": [\n    {\n      \"maintenanceWindowTypeId\": \"<integer>\",\n      \"modelId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    },\n    {\n      \"maintenanceWindowTypeId\": \"<integer>\",\n      \"modelId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    }\n  ],\n  \"Update\": [\n    {\n      \"maintenanceWindowMapId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    },\n    {\n      \"maintenanceWindowMapId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    }\n  ],\n  \"Delete\": [\n    {\n      \"maintenanceWindowMapId\": \"<integer>\"\n    },\n    {\n      \"maintenanceWindowMapId\": \"<integer>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "409ea5ae-c226-4247-8ed8-0114ada75023",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "maintenanceWindowMap"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Add\": [\n    {\n      \"maintenanceWindowTypeId\": \"<integer>\",\n      \"modelId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    },\n    {\n      \"maintenanceWindowTypeId\": \"<integer>\",\n      \"modelId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    }\n  ],\n  \"Update\": [\n    {\n      \"maintenanceWindowMapId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    },\n    {\n      \"maintenanceWindowMapId\": \"<integer>\",\n      \"maintenanceWindowDefinitionId\": \"<integer>\"\n    }\n  ],\n  \"Delete\": [\n    {\n      \"maintenanceWindowMapId\": \"<integer>\"\n    },\n    {\n      \"maintenanceWindowMapId\": \"<integer>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {},\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1976-07-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1060,\n        3372\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9915,\n          3194\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9730711d-8c94-45d0-badb-9a07238d7a56",
+          "name": "Upsert ACU maintenance window maps to a single maintenance window definition",
+          "request": {
+            "name": "Upsert ACU maintenance window maps to a single maintenance window definition",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: upsertOrgMaintenanceWindowMapForAcus",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "maintenanceWindowMap"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"maintenanceWindowDefinitionId\": \"<integer>\",\n  \"acuIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a64cc483-0b1e-4bf7-9d37-af1d6794e725",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "maintenanceWindowMap"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"maintenanceWindowDefinitionId\": \"<integer>\",\n  \"acuIds\": [\n    \"<integer>\",\n    \"<integer>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {},\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1976-07-21\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1060,\n        3372\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          9915,\n          3194\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f5b2a02e-129a-45da-a751-dce6a2063ece",
+          "name": "Describe a maintenance window",
+          "request": {
+            "name": "Describe a maintenance window",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: describeOrgMaintenanceWindowMap",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "maintenanceWindowMap",
+                ":maintenanceWindowMapId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "maintenanceWindowMapId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "3614d2f9-23ef-4e32-b1f5-9b54796e7853",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "maintenanceWindowMap",
+                    ":maintenanceWindowMapId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "maintenanceWindowMapId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 4447,\n    \"maintenanceWindowTypeId\": 3,\n    \"modelId\": 4343,\n    \"mesonTimeslots\": {\n      \"type\": \"timeslot\",\n      \"time_slots\": [\n        \"string\",\n        \"string\"\n      ],\n      \"deviceTime\": false\n    },\n    \"maintenanceWindowDefinition\": {\n      \"id\": 448.26623966919834,\n      \"name\": \"string\",\n      \"day\": \"Friday\",\n      \"startTime\": \"string\",\n      \"durationHours\": 98,\n      \"timeZone\": \"string\"\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1993-01-16\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        6459,\n        6158\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          41,\n          1974\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "26911bfc-dcbf-43df-a936-b69520f6ca1d",
+    "name": "Openpath API Documentation auth orgs/maintenanceWindowMap API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

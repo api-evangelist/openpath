@@ -1,0 +1,93 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/alarmsExt API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/alarmsExt",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Describe an alarm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmsExt/:alarmIdExt",
+            "headers": [
+              {
+                "name": "x-op-debug",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmIdExt",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "options",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashAlarm:w,o{params.orgId}-dashAlarm:r,o{params.orgId}-rpt:w,o{params.orgId}-rpt:r,o{params.orgId}-rptAlarm:w,o{params.orgId}-rptAlarm:r,o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alarmActions:w,o:w,o:r<br/><br/>__Endpoint name__: describeAlarm"
+        },
+        {
+          "info": {
+            "name": "Update an alarm",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmsExt/:alarmIdExt",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "alarmIdExt",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmActions:w,o:w<br/><br/>__Endpoint name__: updateAlarm"
+        },
+        {
+          "info": {
+            "name": "Bulk update alarms",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/alarmsExt",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-alarmActions:w,o:w<br/><br/>__Endpoint name__: updateAlarms"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

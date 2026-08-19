@@ -1,0 +1,125 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/termsAgreements API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/termsAgreements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List all signed Terms of Service agreements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/termsAgreements",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTermsAgreements"
+        },
+        {
+          "info": {
+            "name": "Create a signed Terms of Service agreement - DEPRECATED use /orgs/{orgId}/termsAgreements/sign instead",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/termsAgreements",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w<br/><br/>__Endpoint name__: createTermsAgreement"
+        },
+        {
+          "info": {
+            "name": "Check if org has signed an acceptable Terms Agreement for an app or application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/termsAgreements/checkSigned",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r,s-o-video:w,s-o-video:r<br/><br/>__Endpoint name__: checkSignedOrgTermsAgreement"
+        },
+        {
+          "info": {
+            "name": "Sign an acceptable Terms Agreement for an app or application",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/termsAgreements/sign",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-integrations:w<br/><br/>__Endpoint name__: signOrgTermsAgreement"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

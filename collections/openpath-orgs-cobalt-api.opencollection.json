@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/cobalt API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/cobalt",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Receives a generateActivityLogsFilter request and passes it to cobalt to execute",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/cobalt/v0/generateActivityLogsFilter",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-rptGeneral:r,o{params.orgId}-rptGeneral:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: generateActivityLogsFilter"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

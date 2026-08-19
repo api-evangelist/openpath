@@ -1,0 +1,596 @@
+{
+  "item": [
+    {
+      "id": "cfc84f82-7f86-4a4b-8dde-24a7109b8430",
+      "name": "orgs/termsAgreements",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "023735a9-80cc-4942-840b-63cb9d76f1aa",
+          "name": "List all signed Terms of Service agreements",
+          "request": {
+            "name": "List all signed Terms of Service agreements",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listTermsAgreements",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "termsAgreements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "identity.lastName"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "778ead8e-a3bb-4fad-bc34-030f645a8716",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "termsAgreements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "identity.lastName"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7997,\n  \"filteredCount\": 4748,\n  \"data\": [\n    {\n      \"id\": 5080,\n      \"createdAt\": \"1972-09-02\",\n      \"updatedAt\": \"1968-08-23\",\n      \"orgId\": 3430,\n      \"ipAddress\": \"string\",\n      \"signedAt\": \"1957-10-03\",\n      \"termsVersion\": {\n        \"id\": 5321,\n        \"name\": \"string\",\n        \"isAcceptable\": true,\n        \"isLatest\": false,\n        \"fileUrl\": \"string\",\n        \"fileSha256Sum\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"identity\": {\n        \"id\": 4502.533411467752,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 6464.443099276778,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 1645.3047711738955,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 3479.275688970299,\n            \"createdAt\": \"1976-02-07\",\n            \"updatedAt\": \"1987-10-09\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 4958.83770599249,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 327.5021459107341\n            }\n          },\n          {\n            \"id\": 8206.950526386452,\n            \"createdAt\": \"1948-12-08\",\n            \"updatedAt\": \"1967-10-15\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 8383.31771101654,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 6340.995471875004\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": false,\n        \"namespace\": {\n          \"id\": 8929,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 4663.6210506143825,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 5000.175222816887,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 7557.650720658197,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 4309,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 2264.4996269044836,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9109.849667096916,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 8714.383332091898,\n            \"orgId\": 9624.440276828936,\n            \"propertyManagementSystemTypeId\": 1419.8497760007988,\n            \"propertyManagementSystemType\": {\n              \"id\": 6082.4565722110165,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"2000-05-25\",\n        \"updatedAt\": \"1997-09-09\",\n        \"users\": [\n          {\n            \"id\": 3666.744410610132,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1954-04-26\",\n            \"endDate\": \"2004-06-12\",\n            \"createdAt\": \"1950-05-23\",\n            \"updatedAt\": \"1971-12-24\",\n            \"org\": {\n              \"id\": 9454.752551960375,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 1339.4034988021208,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1966-06-19\",\n            \"endDate\": \"1980-01-21\",\n            \"createdAt\": \"1973-01-17\",\n            \"updatedAt\": \"2002-02-23\",\n            \"org\": {\n              \"id\": 5659.985647834423,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      }\n    },\n    {\n      \"id\": 9557,\n      \"createdAt\": \"1991-10-12\",\n      \"updatedAt\": \"1996-08-19\",\n      \"orgId\": 313,\n      \"ipAddress\": \"string\",\n      \"signedAt\": \"2003-02-01\",\n      \"termsVersion\": {\n        \"id\": 6836,\n        \"name\": \"string\",\n        \"isAcceptable\": true,\n        \"isLatest\": true,\n        \"fileUrl\": \"string\",\n        \"fileSha256Sum\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      },\n      \"identity\": {\n        \"id\": 3606.7405181520908,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 8195.375747174217,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 2827.9466285477874,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": false\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 4291.838035757877,\n            \"createdAt\": \"2021-03-28\",\n            \"updatedAt\": \"1950-01-03\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 8785.772446183286,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4566.115845714932\n            }\n          },\n          {\n            \"id\": 9064.51170001349,\n            \"createdAt\": \"2024-06-26\",\n            \"updatedAt\": \"2025-12-27\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 3950.8561582769107,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 6643.894561372429\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": false,\n        \"namespace\": {\n          \"id\": 3474,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 6855.425135002218,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 3141.9934937765925,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 7111.857198350641,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": true,\n            \"isRemoveGroupsEnabled\": true,\n            \"identityProviderSyncTypeId\": 1406,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 2458.40055104958,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 3881.7900940230334,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 5183.603653955883,\n            \"orgId\": 7426.460869810341,\n            \"propertyManagementSystemTypeId\": 669.1078189652455,\n            \"propertyManagementSystemType\": {\n              \"id\": 2485.84985680523,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1978-11-07\",\n        \"updatedAt\": \"1992-03-06\",\n        \"users\": [\n          {\n            \"id\": 8328.124832339428,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1998-09-24\",\n            \"endDate\": \"1965-04-22\",\n            \"createdAt\": \"2009-12-20\",\n            \"updatedAt\": \"1946-11-03\",\n            \"org\": {\n              \"id\": 5306.382751363623,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 5061.791682030476,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1978-05-29\",\n            \"endDate\": \"1959-11-02\",\n            \"createdAt\": \"1993-04-28\",\n            \"updatedAt\": \"1946-12-24\",\n            \"org\": {\n              \"id\": 1195.9564563811086,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1959-03-02\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8262,\n        152\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2143,\n          7494\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "708ee566-b998-4171-b3ff-713ffbed8370",
+          "name": "Create a signed Terms of Service agreement - DEPRECATED use /orgs/{orgId}/termsAgreements/sign instead",
+          "request": {
+            "name": "Create a signed Terms of Service agreement - DEPRECATED use /orgs/{orgId}/termsAgreements/sign instead",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w<br/><br/>__Endpoint name__: createTermsAgreement",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "termsAgreements"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"termsVersionId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "77973849-0aa0-4887-8ccb-3172551a076f",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "termsAgreements"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 3635,\n    \"createdAt\": \"1984-12-22\",\n    \"updatedAt\": \"1980-12-05\",\n    \"orgId\": 9410,\n    \"ipAddress\": \"string\",\n    \"signedAt\": \"1981-08-15\",\n    \"termsVersion\": {\n      \"id\": 1003,\n      \"name\": \"string\",\n      \"isAcceptable\": false,\n      \"isLatest\": false,\n      \"fileUrl\": \"string\",\n      \"fileSha256Sum\": \"string\",\n      \"fileName\": \"string\",\n      \"url\": \"string\"\n    },\n    \"identity\": {\n      \"id\": 852.7449275253107,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 724.5774524025251,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        },\n        {\n          \"id\": 4715.522070714537,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 6853.368902782308,\n          \"createdAt\": \"2021-07-08\",\n          \"updatedAt\": \"2006-08-21\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 4142.903729212089,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 9425.610386765567\n          }\n        },\n        {\n          \"id\": 9508.596612725823,\n          \"createdAt\": \"1971-12-03\",\n          \"updatedAt\": \"2016-11-26\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 7062.751561303453,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 246.8652567895502\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": false,\n      \"namespace\": {\n        \"id\": 8012,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 1216.6329026546118,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 361.8466852991853,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 9672.033000793957,\n          \"isSsoEnabled\": true,\n          \"isSyncMobilePhoneEnabled\": true,\n          \"isRemoveGroupsEnabled\": false,\n          \"identityProviderSyncTypeId\": 1832,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 6141.876934635528,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 8173.915737674996,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 9223.44160884711,\n          \"orgId\": 9621.296924393562,\n          \"propertyManagementSystemTypeId\": 9249.651050865332,\n          \"propertyManagementSystemType\": {\n            \"id\": 9431.863748384925,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"string\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"1975-09-27\",\n      \"updatedAt\": \"1977-02-23\",\n      \"users\": [\n        {\n          \"id\": 669.6505166836909,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1978-04-29\",\n          \"endDate\": \"1961-03-21\",\n          \"createdAt\": \"1947-02-12\",\n          \"updatedAt\": \"2003-12-31\",\n          \"org\": {\n            \"id\": 489.27775055656707,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 8119.954306518641,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"1948-02-24\",\n          \"endDate\": \"1956-08-17\",\n          \"createdAt\": \"1962-01-03\",\n          \"updatedAt\": \"1972-06-06\",\n          \"org\": {\n            \"id\": 9211.638089718128,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1994-10-11\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        9616,\n        8399\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1985,\n          8986\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d62c3a6a-3073-4ace-a146-604faa3b8df6",
+          "name": "Check if org has signed an acceptable Terms Agreement for an app or application",
+          "request": {
+            "name": "Check if org has signed an acceptable Terms Agreement for an app or application",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-integrations:w,o{params.orgId}-integrations:r,o:w,o:r,s-o:w,s-o:r,s-o-video:w,s-o-video:r<br/><br/>__Endpoint name__: checkSignedOrgTermsAgreement",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "termsAgreements",
+                "checkSigned"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"applicationId\": \"<integer>\",\n  \"appId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "67f7dfe1-2d36-4e3e-ab59-a466b99a42a8",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "termsAgreements",
+                    "checkSigned"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"applicationId\": \"<integer>\",\n  \"appId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"termsAgreement\": {\n      \"id\": 5797,\n      \"ipAddress\": \"string\",\n      \"signedAt\": \"2015-06-02\",\n      \"termsVersion\": {\n        \"id\": 826,\n        \"name\": \"string\",\n        \"isAcceptable\": true,\n        \"isLatest\": false,\n        \"fileUrl\": \"string\",\n        \"fileSha256Sum\": \"string\",\n        \"fileName\": \"string\",\n        \"url\": \"string\"\n      }\n    },\n    \"latestTermsVersion\": {\n      \"id\": 3603,\n      \"name\": \"string\",\n      \"isAcceptable\": true,\n      \"isLatest\": false,\n      \"fileUrl\": \"string\",\n      \"fileSha256Sum\": \"string\",\n      \"fileName\": \"string\",\n      \"url\": \"string\"\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1960-07-06\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8446,\n        2576\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7820,\n          5180\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5eeb7118-4856-4b7b-a2cb-a11cafc57794",
+          "name": "Sign an acceptable Terms Agreement for an app or application",
+          "request": {
+            "name": "Sign an acceptable Terms Agreement for an app or application",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-integrations:w<br/><br/>__Endpoint name__: signOrgTermsAgreement",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "termsAgreements",
+                "sign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"termsVersionId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "93a3ac01-f3f5-4776-bc28-cf503a0b0f2b",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "termsAgreements",
+                    "sign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "d62e5d4b-cba0-466d-9172-e81d9dd2ad59",
+    "name": "Openpath API Documentation auth orgs/termsAgreements API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

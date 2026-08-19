@@ -1,0 +1,191 @@
+{
+  "item": [
+    {
+      "id": "96561fab-74f7-402a-b3af-1e337c1da242",
+      "name": "billableFeatures",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b875f41f-4c1e-4757-9f23-588eaaa692a9",
+          "name": "List all billable features",
+          "request": {
+            "name": "List all billable features",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,o-basic:w,o-basic:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: globalListBillableFeatures",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "billableFeatures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "cd8c15c3-6883-44a4-bde7-387b0043a2bb",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "billableFeatures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7344,\n  \"filteredCount\": 6821,\n  \"data\": [\n    {\n      \"isStale\": false,\n      \"maxCount\": 8624,\n      \"currentCount\": 4964,\n      \"adjustOperation\": \"string\",\n      \"adjustValue\": 4391.404711525998,\n      \"adjustedCurrentCount\": 6735,\n      \"adjustedMaxCount\": 6289,\n      \"lastSyncCount\": 2176,\n      \"lastSyncAt\": \"2003-09-30\",\n      \"softLimit\": 7856,\n      \"softLimitFirstExceededAt\": \"1967-05-03\",\n      \"hardLimit\": 5533,\n      \"feature\": {\n        \"id\": 1074,\n        \"name\": \"string\",\n        \"code\": \"string\",\n        \"singular\": \"string\",\n        \"plural\": \"string\",\n        \"isBinary\": false\n      },\n      \"org\": {\n        \"id\": 2500,\n        \"name\": \"string\"\n      }\n    },\n    {\n      \"isStale\": false,\n      \"maxCount\": 5560,\n      \"currentCount\": 3105,\n      \"adjustOperation\": \"string\",\n      \"adjustValue\": 4716.3977293847865,\n      \"adjustedCurrentCount\": 3679,\n      \"adjustedMaxCount\": 2222,\n      \"lastSyncCount\": 3261,\n      \"lastSyncAt\": \"1985-02-05\",\n      \"softLimit\": 6775,\n      \"softLimitFirstExceededAt\": \"2016-03-14\",\n      \"hardLimit\": 9030,\n      \"feature\": {\n        \"id\": 2045,\n        \"name\": \"string\",\n        \"code\": \"string\",\n        \"singular\": \"string\",\n        \"plural\": \"string\",\n        \"isBinary\": true\n      },\n      \"org\": {\n        \"id\": 6086,\n        \"name\": \"string\"\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1990-06-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        5440,\n        3810\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5204,\n          2531\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "334af2c7-db31-44c3-8946-3f756686326d",
+    "name": "Openpath API Documentation auth billableFeatures API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

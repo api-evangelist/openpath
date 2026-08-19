@@ -1,0 +1,211 @@
+{
+  "item": [
+    {
+      "id": "f0c3a19b-ec8c-48c4-a09c-98659c1c8db3",
+      "name": "orgs/emailAlerts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ff6df29b-5422-4884-b60b-d2af2d3e6a18",
+          "name": "Get email alerts",
+          "request": {
+            "name": "Get email alerts",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-alertSettings:w,o{params.orgId}-alertSettings:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listEmailAlerts",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "emailAlerts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "1000"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f17def52-f5e9-4505-85ca-c6ea564bc4eb",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "emailAlerts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "1000"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 2440,\n  \"filteredCount\": 7267,\n  \"data\": [\n    {\n      \"id\": 3108,\n      \"emailAddresses\": \"string\",\n      \"recipients\": [\n        \"string\",\n        \"string\"\n      ],\n      \"isEnabled\": false,\n      \"includeCameraLink\": true,\n      \"emailAlertType\": {\n        \"id\": 812,\n        \"ordinal\": 7698,\n        \"name\": \"string\",\n        \"code\": \"string\",\n        \"description\": \"string\",\n        \"requiredFeature\": {\n          \"id\": 6090,\n          \"code\": \"string\"\n        },\n        \"canHaveSnapshots\": true\n      }\n    },\n    {\n      \"id\": 9490,\n      \"emailAddresses\": \"string\",\n      \"recipients\": [\n        \"string\",\n        \"string\"\n      ],\n      \"isEnabled\": true,\n      \"includeCameraLink\": false,\n      \"emailAlertType\": {\n        \"id\": 8772,\n        \"ordinal\": 9448,\n        \"name\": \"string\",\n        \"code\": \"string\",\n        \"description\": \"string\",\n        \"requiredFeature\": {\n          \"id\": 7820,\n          \"code\": \"string\"\n        },\n        \"canHaveSnapshots\": false\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1956-05-14\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        8539,\n        1235\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2367,\n          2492\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "e5b90929-2e1f-4fef-89d2-9d478ad633c7",
+    "name": "Openpath API Documentation auth orgs/emailAlerts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

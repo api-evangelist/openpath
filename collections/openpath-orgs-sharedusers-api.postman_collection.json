@@ -1,0 +1,489 @@
+{
+  "item": [
+    {
+      "id": "95cbf35b-8172-4062-8e1a-000cf80f19e9",
+      "name": "orgs/sharedUsers",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3dd68dbb-1144-4778-ae3c-a5fd5cfc0343",
+          "name": "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)",
+          "request": {
+            "name": "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSharedUsers",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sharedUsers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "identity.lastName"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "fa5ddbbb-ce6f-4420-ac51-360bb8b03d2c",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sharedUsers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "identity.lastName"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 600,\n  \"filteredCount\": 9240,\n  \"data\": [\n    {\n      \"id\": 8362.024778923063,\n      \"opal\": \"string\",\n      \"status\": \"string\",\n      \"startDate\": \"2014-12-01\",\n      \"endDate\": \"1992-12-09\",\n      \"hasRemoteUnlock\": false,\n      \"isOverrideAllowed\": true,\n      \"identity\": {\n        \"id\": 9107.2855327006,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 5671.298201231035,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 8113.9859839701885,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 5953.007226258517,\n            \"createdAt\": \"1949-07-27\",\n            \"updatedAt\": \"1967-03-24\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 6635.4951118825475,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4690.005657345307\n            }\n          },\n          {\n            \"id\": 3451.4466727938266,\n            \"createdAt\": \"1969-10-24\",\n            \"updatedAt\": \"2002-04-29\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5058.516162046316,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 1881.404654824883\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": false,\n        \"namespace\": {\n          \"id\": 6244,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 8739.703160479628,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 5936.252695346898,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 8275.808965418235,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 5591,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 7085.035109359911,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9760.604002397964,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 4842.034638266992,\n            \"orgId\": 1833.5793036766356,\n            \"propertyManagementSystemTypeId\": 7222.546975217332,\n            \"propertyManagementSystemType\": {\n              \"id\": 9251.75863886645,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"2010-05-24\",\n        \"updatedAt\": \"1976-09-23\",\n        \"users\": [\n          {\n            \"id\": 4048.0019182741457,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1947-08-16\",\n            \"endDate\": \"1949-10-03\",\n            \"createdAt\": \"1991-04-14\",\n            \"updatedAt\": \"1958-08-09\",\n            \"org\": {\n              \"id\": 5538.739907531829,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 3292.652424656861,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1981-12-04\",\n            \"endDate\": \"1990-09-07\",\n            \"createdAt\": \"1965-02-13\",\n            \"updatedAt\": \"1948-07-08\",\n            \"org\": {\n              \"id\": 2567.7079070366717,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"createdAt\": \"2000-04-08\",\n      \"pictureUrl\": \"string\",\n      \"pictureExpiresAt\": 5946.461740959815,\n      \"org\": {\n        \"id\": 2220.26372824364,\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"sites\": [\n        {\n          \"id\": 3048.002219291529,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 3960.2501118350287,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 6028.553545067509,\n      \"opal\": \"string\",\n      \"status\": \"string\",\n      \"startDate\": \"1966-04-27\",\n      \"endDate\": \"1963-04-16\",\n      \"hasRemoteUnlock\": true,\n      \"isOverrideAllowed\": true,\n      \"identity\": {\n        \"id\": 6483.869530075555,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 8267.548374700378,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 2630.6753276379013,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 1979.8637573354183,\n            \"createdAt\": \"2005-12-15\",\n            \"updatedAt\": \"1963-08-10\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 2005.9338824547513,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 1105.295869023355\n            }\n          },\n          {\n            \"id\": 3802.408373006678,\n            \"createdAt\": \"2014-08-14\",\n            \"updatedAt\": \"1971-01-06\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 6726.562099611265,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 2797.339449521291\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 124,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 3818.7249810336866,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 2158.1198413945567,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 557.2079732203073,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": true,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 5690,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 740.0165229899625,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 1572.8500180356398,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 3856.6645621191988,\n            \"orgId\": 4781.885731620009,\n            \"propertyManagementSystemTypeId\": 6444.32700321731,\n            \"propertyManagementSystemType\": {\n              \"id\": 9523.285374310362,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1997-01-20\",\n        \"updatedAt\": \"1966-07-08\",\n        \"users\": [\n          {\n            \"id\": 6612.296725977653,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2002-10-17\",\n            \"endDate\": \"1960-08-28\",\n            \"createdAt\": \"1951-08-04\",\n            \"updatedAt\": \"1948-10-16\",\n            \"org\": {\n              \"id\": 612.6598076083034,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 7797.2540813346395,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2007-09-21\",\n            \"endDate\": \"1993-03-02\",\n            \"createdAt\": \"1949-07-18\",\n            \"updatedAt\": \"1984-12-23\",\n            \"org\": {\n              \"id\": 8839.05361047684,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"createdAt\": \"1980-09-21\",\n      \"pictureUrl\": \"string\",\n      \"pictureExpiresAt\": 8471.54386804685,\n      \"org\": {\n        \"id\": 9695.394459493331,\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"sites\": [\n        {\n          \"id\": 5353.198480660712,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 846.2044100954403,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2018-09-26\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        7430,\n        3\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6630,\n          8141\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9ab04c0c-a170-4791-ada5-abcc143df92e",
+          "name": "Describe a user that has access to at least one zone from this org (including users from other orgs via zone sharing)",
+          "request": {
+            "name": "Describe a user that has access to at least one zone from this org (including users from other orgs via zone sharing)",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSharedUser",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sharedUsers",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a1cd7a40-d65f-449f-8976-2e370c3d0208",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sharedUsers",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 3851.2672376901,\n    \"opal\": \"string\",\n    \"status\": \"string\",\n    \"startDate\": \"2005-10-02\",\n    \"endDate\": \"1952-06-24\",\n    \"hasRemoteUnlock\": true,\n    \"isOverrideAllowed\": false,\n    \"identity\": {\n      \"id\": 812.0742799277181,\n      \"opal\": \"string\",\n      \"roles\": [\n        {\n          \"id\": 647.3603179730891,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": true\n        },\n        {\n          \"id\": 4962.299761037488,\n          \"name\": \"string\",\n          \"description\": \"string\",\n          \"isMfaRequired\": false\n        }\n      ],\n      \"mfaCredentials\": [\n        {\n          \"id\": 4559.89310295843,\n          \"createdAt\": \"2022-06-13\",\n          \"updatedAt\": \"1955-01-25\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 6515.179239725405,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 286.58953001301836\n          }\n        },\n        {\n          \"id\": 6111.155939495822,\n          \"createdAt\": \"1958-12-15\",\n          \"updatedAt\": \"1990-05-22\",\n          \"name\": \"string\",\n          \"status\": \"string\",\n          \"mfaCredentialType\": {\n            \"id\": 4579.777370821499,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"totpSoftDevice\": {\n            \"id\": 2102.076764133222\n          }\n        }\n      ],\n      \"firstName\": \"string\",\n      \"middleName\": \"string\",\n      \"lastName\": \"string\",\n      \"fullName\": \"string\",\n      \"initials\": \"string\",\n      \"isEmailVerified\": false,\n      \"namespace\": {\n        \"id\": 9678,\n        \"nickname\": \"string\",\n        \"namespaceType\": {\n          \"id\": 8859.03320937136,\n          \"name\": \"string\",\n          \"modelName\": \"string\"\n        },\n        \"org\": {\n          \"id\": 5766.6731208214105,\n          \"name\": \"string\"\n        },\n        \"identityProvider\": {\n          \"id\": 8578.516577338276,\n          \"isSsoEnabled\": true,\n          \"isSyncMobilePhoneEnabled\": false,\n          \"isRemoveGroupsEnabled\": true,\n          \"identityProviderSyncTypeId\": 953,\n          \"credentials\": \"string\",\n          \"identityProviderType\": {\n            \"id\": 4746.3841164122105,\n            \"name\": \"string\"\n          },\n          \"org\": {\n            \"id\": 1699.644453304695,\n            \"name\": \"string\"\n          }\n        },\n        \"propertyManagementSystem\": {\n          \"id\": 6813.486543344072,\n          \"orgId\": 7898.550095143348,\n          \"propertyManagementSystemTypeId\": 2912.7691016054623,\n          \"propertyManagementSystemType\": {\n            \"id\": 7767.4728377417505,\n            \"name\": \"string\"\n          }\n        }\n      },\n      \"idpUniqueIdentifier\": \"string\",\n      \"pmsUniqueIdentifier\": \"string\",\n      \"needsPasswordChange\": false,\n      \"nicknames\": [\n        {\n          \"nickname\": \"string\"\n        },\n        {\n          \"nickname\": \"string\"\n        }\n      ],\n      \"email\": \"string\",\n      \"mobilePhone\": \"string\",\n      \"language\": \"string\",\n      \"createdAt\": \"1968-07-23\",\n      \"updatedAt\": \"1963-09-03\",\n      \"users\": [\n        {\n          \"id\": 6833.232848679155,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2002-06-02\",\n          \"endDate\": \"2019-11-30\",\n          \"createdAt\": \"1985-11-02\",\n          \"updatedAt\": \"2000-02-17\",\n          \"org\": {\n            \"id\": 7884.086163290922,\n            \"name\": \"string\"\n          }\n        },\n        {\n          \"id\": 7379.122006652563,\n          \"opal\": \"string\",\n          \"status\": \"string\",\n          \"startDate\": \"2009-03-16\",\n          \"endDate\": \"1953-02-02\",\n          \"createdAt\": \"1994-11-24\",\n          \"updatedAt\": \"1967-08-25\",\n          \"org\": {\n            \"id\": 8877.492470190646,\n            \"name\": \"string\"\n          }\n        }\n      ]\n    },\n    \"createdAt\": \"2014-04-10\",\n    \"pictureUrl\": \"string\",\n    \"pictureExpiresAt\": 7810.460135433329,\n    \"org\": {\n      \"id\": 9325.223172890921,\n      \"opal\": \"string\",\n      \"name\": \"string\"\n    },\n    \"sites\": [\n      {\n        \"id\": 8981.634244039018,\n        \"name\": \"string\"\n      },\n      {\n        \"id\": 4814.029022144999,\n        \"name\": \"string\"\n      }\n    ]\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1972-11-25\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        7948,\n        485\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7675,\n          9697\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "596bcd23-f593-41b0-992c-c04af39043dd",
+          "name": "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)",
+          "request": {
+            "name": "List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSharedUsersPost",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "sharedUsers",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"limit\": \"<integer>\",\n  \"offset\": 0,\n  \"sort\": \"identity.lastName\",\n  \"order\": \"asc\",\n  \"q\": \"<string>\",\n  \"filter\": \"<string>\",\n  \"preFilter\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3d0fa40e-1d0b-43f1-a72e-8d176db0684f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "sharedUsers",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"limit\": \"<integer>\",\n  \"offset\": 0,\n  \"sort\": \"identity.lastName\",\n  \"order\": \"asc\",\n  \"q\": \"<string>\",\n  \"filter\": \"<string>\",\n  \"preFilter\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 600,\n  \"filteredCount\": 9240,\n  \"data\": [\n    {\n      \"id\": 8362.024778923063,\n      \"opal\": \"string\",\n      \"status\": \"string\",\n      \"startDate\": \"2014-12-01\",\n      \"endDate\": \"1992-12-09\",\n      \"hasRemoteUnlock\": false,\n      \"isOverrideAllowed\": true,\n      \"identity\": {\n        \"id\": 9107.2855327006,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 5671.298201231035,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 8113.9859839701885,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 5953.007226258517,\n            \"createdAt\": \"1949-07-27\",\n            \"updatedAt\": \"1967-03-24\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 6635.4951118825475,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 4690.005657345307\n            }\n          },\n          {\n            \"id\": 3451.4466727938266,\n            \"createdAt\": \"1969-10-24\",\n            \"updatedAt\": \"2002-04-29\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 5058.516162046316,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 1881.404654824883\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": false,\n        \"namespace\": {\n          \"id\": 6244,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 8739.703160479628,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 5936.252695346898,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 8275.808965418235,\n            \"isSsoEnabled\": false,\n            \"isSyncMobilePhoneEnabled\": false,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 5591,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 7085.035109359911,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 9760.604002397964,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 4842.034638266992,\n            \"orgId\": 1833.5793036766356,\n            \"propertyManagementSystemTypeId\": 7222.546975217332,\n            \"propertyManagementSystemType\": {\n              \"id\": 9251.75863886645,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"2010-05-24\",\n        \"updatedAt\": \"1976-09-23\",\n        \"users\": [\n          {\n            \"id\": 4048.0019182741457,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1947-08-16\",\n            \"endDate\": \"1949-10-03\",\n            \"createdAt\": \"1991-04-14\",\n            \"updatedAt\": \"1958-08-09\",\n            \"org\": {\n              \"id\": 5538.739907531829,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 3292.652424656861,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"1981-12-04\",\n            \"endDate\": \"1990-09-07\",\n            \"createdAt\": \"1965-02-13\",\n            \"updatedAt\": \"1948-07-08\",\n            \"org\": {\n              \"id\": 2567.7079070366717,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"createdAt\": \"2000-04-08\",\n      \"pictureUrl\": \"string\",\n      \"pictureExpiresAt\": 5946.461740959815,\n      \"org\": {\n        \"id\": 2220.26372824364,\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"sites\": [\n        {\n          \"id\": 3048.002219291529,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 3960.2501118350287,\n          \"name\": \"string\"\n        }\n      ]\n    },\n    {\n      \"id\": 6028.553545067509,\n      \"opal\": \"string\",\n      \"status\": \"string\",\n      \"startDate\": \"1966-04-27\",\n      \"endDate\": \"1963-04-16\",\n      \"hasRemoteUnlock\": true,\n      \"isOverrideAllowed\": true,\n      \"identity\": {\n        \"id\": 6483.869530075555,\n        \"opal\": \"string\",\n        \"roles\": [\n          {\n            \"id\": 8267.548374700378,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          },\n          {\n            \"id\": 2630.6753276379013,\n            \"name\": \"string\",\n            \"description\": \"string\",\n            \"isMfaRequired\": true\n          }\n        ],\n        \"mfaCredentials\": [\n          {\n            \"id\": 1979.8637573354183,\n            \"createdAt\": \"2005-12-15\",\n            \"updatedAt\": \"1963-08-10\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 2005.9338824547513,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 1105.295869023355\n            }\n          },\n          {\n            \"id\": 3802.408373006678,\n            \"createdAt\": \"2014-08-14\",\n            \"updatedAt\": \"1971-01-06\",\n            \"name\": \"string\",\n            \"status\": \"string\",\n            \"mfaCredentialType\": {\n              \"id\": 6726.562099611265,\n              \"name\": \"string\",\n              \"modelName\": \"string\"\n            },\n            \"totpSoftDevice\": {\n              \"id\": 2797.339449521291\n            }\n          }\n        ],\n        \"firstName\": \"string\",\n        \"middleName\": \"string\",\n        \"lastName\": \"string\",\n        \"fullName\": \"string\",\n        \"initials\": \"string\",\n        \"isEmailVerified\": true,\n        \"namespace\": {\n          \"id\": 124,\n          \"nickname\": \"string\",\n          \"namespaceType\": {\n            \"id\": 3818.7249810336866,\n            \"name\": \"string\",\n            \"modelName\": \"string\"\n          },\n          \"org\": {\n            \"id\": 2158.1198413945567,\n            \"name\": \"string\"\n          },\n          \"identityProvider\": {\n            \"id\": 557.2079732203073,\n            \"isSsoEnabled\": true,\n            \"isSyncMobilePhoneEnabled\": true,\n            \"isRemoveGroupsEnabled\": false,\n            \"identityProviderSyncTypeId\": 5690,\n            \"credentials\": \"string\",\n            \"identityProviderType\": {\n              \"id\": 740.0165229899625,\n              \"name\": \"string\"\n            },\n            \"org\": {\n              \"id\": 1572.8500180356398,\n              \"name\": \"string\"\n            }\n          },\n          \"propertyManagementSystem\": {\n            \"id\": 3856.6645621191988,\n            \"orgId\": 4781.885731620009,\n            \"propertyManagementSystemTypeId\": 6444.32700321731,\n            \"propertyManagementSystemType\": {\n              \"id\": 9523.285374310362,\n              \"name\": \"string\"\n            }\n          }\n        },\n        \"idpUniqueIdentifier\": \"string\",\n        \"pmsUniqueIdentifier\": \"string\",\n        \"needsPasswordChange\": false,\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\",\n        \"mobilePhone\": \"string\",\n        \"language\": \"string\",\n        \"createdAt\": \"1997-01-20\",\n        \"updatedAt\": \"1966-07-08\",\n        \"users\": [\n          {\n            \"id\": 6612.296725977653,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2002-10-17\",\n            \"endDate\": \"1960-08-28\",\n            \"createdAt\": \"1951-08-04\",\n            \"updatedAt\": \"1948-10-16\",\n            \"org\": {\n              \"id\": 612.6598076083034,\n              \"name\": \"string\"\n            }\n          },\n          {\n            \"id\": 7797.2540813346395,\n            \"opal\": \"string\",\n            \"status\": \"string\",\n            \"startDate\": \"2007-09-21\",\n            \"endDate\": \"1993-03-02\",\n            \"createdAt\": \"1949-07-18\",\n            \"updatedAt\": \"1984-12-23\",\n            \"org\": {\n              \"id\": 8839.05361047684,\n              \"name\": \"string\"\n            }\n          }\n        ]\n      },\n      \"createdAt\": \"1980-09-21\",\n      \"pictureUrl\": \"string\",\n      \"pictureExpiresAt\": 8471.54386804685,\n      \"org\": {\n        \"id\": 9695.394459493331,\n        \"opal\": \"string\",\n        \"name\": \"string\"\n      },\n      \"sites\": [\n        {\n          \"id\": 5353.198480660712,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 846.2044100954403,\n          \"name\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2018-09-26\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        7430,\n        3\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          6630,\n          8141\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b187ef91-1dab-49e9-96ed-b8180fefbd9a",
+    "name": "Openpath API Documentation auth orgs/sharedUsers API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

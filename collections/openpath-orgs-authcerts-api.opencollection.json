@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/authCerts API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/authCerts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get list of X.509 authentication certificates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/authCerts",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Get all X.509 certificates for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r<br/><br/>__Endpoint name__: listAuthCerts"
+        },
+        {
+          "info": {
+            "name": "Create an X.509 authentication certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/authCerts",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create an X.509 certificate for an org to be used as a means of authentication against the api. The caller must have a superset of the scopes to be assigned via the roleId. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r<br/><br/>__Endpoint name__: createAuthCe"
+        },
+        {
+          "info": {
+            "name": "Get an X.509 authentication certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/orgs/:orgId/authCerts/:authCertId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "authCertId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get an X.509 certificate for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cert{params.authCertId}:r<br/><br/>__Endpoint name__: describeAuthCert"
+        },
+        {
+          "info": {
+            "name": "Update an X.509 authentication certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/orgs/:orgId/authCerts/:authCertId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "authCertId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert's private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.au"
+        },
+        {
+          "info": {
+            "name": "Delete an X.509 authentication certificate",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/authCerts/:authCertId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "authCertId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert's private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.au"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

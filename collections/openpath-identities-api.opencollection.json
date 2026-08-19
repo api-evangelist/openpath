@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth identities API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "identities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List an identity's nicknames",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "{{baseUrl}}/identities/:identityId/nicknames",
+            "params": [
+              {
+                "name": "identityId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "q",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query"
+              },
+              {
+                "name": "preFilter",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: i{params.identityId}:w,i{params.identityId}:r,i:w,i:r<br/><br/>__Endpoint name__: listIdentityNicknames"
+        },
+        {
+          "info": {
+            "name": "Bulk-update an identity's nicknames",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "{{baseUrl}}/identities/:identityId/nicknames",
+            "params": [
+              {
+                "name": "identityId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: i{params.identityId}:w,i:w<br/><br/>__Endpoint name__: updateIdentityNicknames"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

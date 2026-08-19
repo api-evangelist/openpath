@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Openpath API Documentation auth orgs/opvideo-devices API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "orgs/opvideo-devices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Set/update the background image for an opvideo device facade",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "{{baseUrl}}/orgs/:orgId/opvideo-devices/:opvideoDeviceId/facade/background-image",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "opvideoDeviceId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:r,o-basic:r,s-o:r,o{params.orgId}-opvideoDevice:r<br/><br/>__Endpoint name__: setOpVideoDeviceFacadeBackgroundImage"
+        },
+        {
+          "info": {
+            "name": "Delete a background image for an opvideo device facade",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "{{baseUrl}}/orgs/:orgId/opvideo-devices/:opvideoDeviceId/facade/background-images/:bgImageId",
+            "params": [
+              {
+                "name": "orgId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "opvideoDeviceId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bgImageId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "__JWT is required for this endpoint with at least one of the following scopes__: o:w,o-basic:w,s-o:w,o{params.orgId}-opvideoDevice:w<br/><br/>__Endpoint name__: deleteOpVideoDeviceFacadeBackgroundImage"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

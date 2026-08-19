@@ -1,0 +1,1223 @@
+{
+  "item": [
+    {
+      "id": "21a23d87-6b60-43da-9ecf-9e5c6c6436db",
+      "name": "orgs/wirelessGateways",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "721fead2-df3c-402b-b36e-bf14882962e3",
+          "name": "List all wireless gateways",
+          "request": {
+            "name": "List all wireless gateways",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o{params.orgId}-hw:r,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:r,o{params.orgId}-acu:orgWirelessGateway-list:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessGateways",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "name"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "11af563e-4781-4158-b7bf-65ef1845f6d0",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "name"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 4167,\n  \"filteredCount\": 2931,\n  \"data\": [\n    {\n      \"id\": 5599.781339927934,\n      \"name\": \"string\",\n      \"modelName\": \"string\",\n      \"modelId\": 8086,\n      \"lastConnectedAt\": \"2010-09-16\",\n      \"lastDisconnectedAt\": \"1993-11-18\",\n      \"isLive\": false,\n      \"acuId\": 4182,\n      \"acu\": {\n        \"id\": 3152,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 9454.909909780905,\n          \"allowedDistanceMeters\": 3457.3403891053536,\n          \"scaleFactor\": 1805.3812847443462,\n          \"locationMeasurement\": {\n            \"id\": 2850.3653918000437,\n            \"longitude\": 7690.422750981504,\n            \"latitude\": 1879.1077071323614,\n            \"accuracyMeters\": 5202.158889039,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 3618.84067523764,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 3617,\n      \"thirdPartyDevice\": {\n        \"id\": 2838,\n        \"assignedOrg\": {\n          \"id\": 2982,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"1969-06-01\",\n        \"updatedAt\": \"1975-12-19\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 3178.3499656982585,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"2022-09-21\",\n          \"updatedAt\": \"2003-05-14\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 4802.180692906686,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"2019-10-13\",\n        \"updatedAt\": \"2019-04-10\",\n        \"orgId\": 8938.433300173187,\n        \"wirelessLockProviderType\": {\n          \"id\": 1172.7393309831314,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 4901,\n      \"allegionWirelessGateway\": {\n        \"id\": 4538,\n        \"idExt\": \"string\",\n        \"authKey\": \"string\",\n        \"config\": {},\n        \"wirelessGatewayId\": 7008\n      },\n      \"assaAbloyWirelessGateway\": {\n        \"id\": 9969,\n        \"status\": \"string\",\n        \"activationStatus\": \"string\",\n        \"macAddress\": \"string\",\n        \"config\": {},\n        \"activatedAt\": \"1963-03-09\",\n        \"wirelessGatewayId\": 1303\n      }\n    },\n    {\n      \"id\": 8421.692141950507,\n      \"name\": \"string\",\n      \"modelName\": \"string\",\n      \"modelId\": 6347,\n      \"lastConnectedAt\": \"2018-12-03\",\n      \"lastDisconnectedAt\": \"2022-01-11\",\n      \"isLive\": true,\n      \"acuId\": 7810,\n      \"acu\": {\n        \"id\": 5552,\n        \"opal\": \"string\",\n        \"locationRestriction\": {\n          \"id\": 3773.1318243363344,\n          \"allowedDistanceMeters\": 8027.743002403748,\n          \"scaleFactor\": 7832.876545002443,\n          \"locationMeasurement\": {\n            \"id\": 9919.356156424408,\n            \"longitude\": 7292.825875281846,\n            \"latitude\": 9435.96585682162,\n            \"accuracyMeters\": 4463.631757807878,\n            \"timeZoneId\": \"string\",\n            \"locationMeasurementSourceType\": {\n              \"id\": 9736.915727532261,\n              \"name\": \"string\",\n              \"code\": \"string\"\n            },\n            \"rawData\": {}\n          }\n        }\n      },\n      \"config\": {},\n      \"thirdPartyDeviceId\": 2740,\n      \"thirdPartyDevice\": {\n        \"id\": 894,\n        \"assignedOrg\": {\n          \"id\": 8822,\n          \"name\": \"string\"\n        },\n        \"serialNumber\": \"string\",\n        \"isOpSourced\": false,\n        \"orderName\": \"string\",\n        \"createdAt\": \"2018-03-04\",\n        \"updatedAt\": \"2004-10-21\",\n        \"thirdPartyDeviceType\": {\n          \"id\": 240.79368660905098,\n          \"manufacturerName\": \"string\",\n          \"hardwareModel\": \"string\",\n          \"description\": \"string\",\n          \"dbModelName\": \"string\",\n          \"createdAt\": \"1949-12-30\",\n          \"updatedAt\": \"1986-06-20\"\n        }\n      },\n      \"wirelessLockCount\": 0,\n      \"wirelessLockProvider\": {\n        \"id\": 8043.776436034591,\n        \"siteIdExt\": \"string\",\n        \"siteAuthKey\": \"string\",\n        \"createdAt\": \"1995-02-14\",\n        \"updatedAt\": \"1950-07-01\",\n        \"orgId\": 2196.7629489095198,\n        \"wirelessLockProviderType\": {\n          \"id\": 1148.3084741484083,\n          \"name\": \"string\"\n        }\n      },\n      \"wirelessLockProviderId\": 1668,\n      \"allegionWirelessGateway\": {\n        \"id\": 9415,\n        \"idExt\": \"string\",\n        \"authKey\": \"string\",\n        \"config\": {},\n        \"wirelessGatewayId\": 7353\n      },\n      \"assaAbloyWirelessGateway\": {\n        \"id\": 4997,\n        \"status\": \"string\",\n        \"activationStatus\": \"string\",\n        \"macAddress\": \"string\",\n        \"config\": {},\n        \"activatedAt\": \"1953-03-19\",\n        \"wirelessGatewayId\": 5805\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2000-01-23\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        453,\n        4993\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4455,\n          6745\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "649a09ad-0d09-4168-8803-01e77a561d39",
+          "name": "Create a wireless gateway",
+          "request": {
+            "name": "Create a wireless gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"serialNumber\": \"<string>\",\n  \"isLive\": \"<boolean>\",\n  \"allegionWirelessGateway\": {\n    \"idExt\": \"<string>\",\n    \"authKey\": \"<string>\",\n    \"config\": \"<object>\"\n  },\n  \"assaAbloyWirelessGateway\": {\n    \"acuId\": \"<integer>\",\n    \"config\": \"<object>\",\n    \"macAddress\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9fe57430-40a5-47e3-affb-fa92b79c4cbd",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"manufacturer\": \"<string>\",\n  \"model\": \"<string>\",\n  \"wirelessLockProviderId\": \"<integer>\",\n  \"serialNumber\": \"<string>\",\n  \"isLive\": \"<boolean>\",\n  \"allegionWirelessGateway\": {\n    \"idExt\": \"<string>\",\n    \"authKey\": \"<string>\",\n    \"config\": \"<object>\"\n  },\n  \"assaAbloyWirelessGateway\": {\n    \"acuId\": \"<integer>\",\n    \"config\": \"<object>\",\n    \"macAddress\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 6501.526993230018,\n    \"name\": \"string\",\n    \"modelName\": \"string\",\n    \"modelId\": 3608,\n    \"lastConnectedAt\": \"1989-05-16\",\n    \"lastDisconnectedAt\": \"2026-02-14\",\n    \"isLive\": true,\n    \"acuId\": 4626,\n    \"acu\": {\n      \"id\": 707,\n      \"opal\": \"string\",\n      \"locationRestriction\": {\n        \"id\": 265.6425384392647,\n        \"allowedDistanceMeters\": 8939.047766113643,\n        \"scaleFactor\": 9786.259513352135,\n        \"locationMeasurement\": {\n          \"id\": 3683.9417511854576,\n          \"longitude\": 4034.3294208039424,\n          \"latitude\": 9292.075002808058,\n          \"accuracyMeters\": 420.29384241556664,\n          \"timeZoneId\": \"string\",\n          \"locationMeasurementSourceType\": {\n            \"id\": 1668.9706458347086,\n            \"name\": \"string\",\n            \"code\": \"string\"\n          },\n          \"rawData\": {}\n        }\n      }\n    },\n    \"config\": {},\n    \"thirdPartyDeviceId\": 1469,\n    \"thirdPartyDevice\": {\n      \"id\": 5458,\n      \"assignedOrg\": {\n        \"id\": 1171,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": true,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1962-03-17\",\n      \"updatedAt\": \"1985-12-07\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 5383.279096054042,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2011-04-30\",\n        \"updatedAt\": \"2002-08-29\"\n      }\n    },\n    \"wirelessLockCount\": 0,\n    \"wirelessLockProvider\": {\n      \"id\": 8397.461624034837,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1955-11-17\",\n      \"updatedAt\": \"1977-01-27\",\n      \"orgId\": 6846.082277133773,\n      \"wirelessLockProviderType\": {\n        \"id\": 9237.972303886041,\n        \"name\": \"string\"\n      }\n    },\n    \"wirelessLockProviderId\": 7271,\n    \"allegionWirelessGateway\": {\n      \"id\": 9538,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"config\": {},\n      \"wirelessGatewayId\": 6130\n    },\n    \"assaAbloyWirelessGateway\": {\n      \"id\": 7203,\n      \"status\": \"string\",\n      \"activationStatus\": \"string\",\n      \"macAddress\": \"string\",\n      \"config\": {},\n      \"activatedAt\": \"1970-04-08\",\n      \"wirelessGatewayId\": 2114\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2001-02-22\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8045,\n        2289\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4113,\n          9455\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "982d4d17-aa49-45d7-9da0-0a1fd7ab75b0",
+          "name": "Describe a wireless gateway",
+          "request": {
+            "name": "Describe a wireless gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o:r,s-o:r<br/><br/>__Endpoint name__: describeWirelessGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                ":wirelessGatewayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b642c8a5-8f84-4fb8-9bcf-68946d427a27",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    ":wirelessGatewayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 6501.526993230018,\n    \"name\": \"string\",\n    \"modelName\": \"string\",\n    \"modelId\": 3608,\n    \"lastConnectedAt\": \"1989-05-16\",\n    \"lastDisconnectedAt\": \"2026-02-14\",\n    \"isLive\": true,\n    \"acuId\": 4626,\n    \"acu\": {\n      \"id\": 707,\n      \"opal\": \"string\",\n      \"locationRestriction\": {\n        \"id\": 265.6425384392647,\n        \"allowedDistanceMeters\": 8939.047766113643,\n        \"scaleFactor\": 9786.259513352135,\n        \"locationMeasurement\": {\n          \"id\": 3683.9417511854576,\n          \"longitude\": 4034.3294208039424,\n          \"latitude\": 9292.075002808058,\n          \"accuracyMeters\": 420.29384241556664,\n          \"timeZoneId\": \"string\",\n          \"locationMeasurementSourceType\": {\n            \"id\": 1668.9706458347086,\n            \"name\": \"string\",\n            \"code\": \"string\"\n          },\n          \"rawData\": {}\n        }\n      }\n    },\n    \"config\": {},\n    \"thirdPartyDeviceId\": 1469,\n    \"thirdPartyDevice\": {\n      \"id\": 5458,\n      \"assignedOrg\": {\n        \"id\": 1171,\n        \"name\": \"string\"\n      },\n      \"serialNumber\": \"string\",\n      \"isOpSourced\": true,\n      \"orderName\": \"string\",\n      \"createdAt\": \"1962-03-17\",\n      \"updatedAt\": \"1985-12-07\",\n      \"thirdPartyDeviceType\": {\n        \"id\": 5383.279096054042,\n        \"manufacturerName\": \"string\",\n        \"hardwareModel\": \"string\",\n        \"description\": \"string\",\n        \"dbModelName\": \"string\",\n        \"createdAt\": \"2011-04-30\",\n        \"updatedAt\": \"2002-08-29\"\n      }\n    },\n    \"wirelessLockCount\": 0,\n    \"wirelessLockProvider\": {\n      \"id\": 8397.461624034837,\n      \"siteIdExt\": \"string\",\n      \"siteAuthKey\": \"string\",\n      \"createdAt\": \"1955-11-17\",\n      \"updatedAt\": \"1977-01-27\",\n      \"orgId\": 6846.082277133773,\n      \"wirelessLockProviderType\": {\n        \"id\": 9237.972303886041,\n        \"name\": \"string\"\n      }\n    },\n    \"wirelessLockProviderId\": 7271,\n    \"allegionWirelessGateway\": {\n      \"id\": 9538,\n      \"idExt\": \"string\",\n      \"authKey\": \"string\",\n      \"config\": {},\n      \"wirelessGatewayId\": 6130\n    },\n    \"assaAbloyWirelessGateway\": {\n      \"id\": 7203,\n      \"status\": \"string\",\n      \"activationStatus\": \"string\",\n      \"macAddress\": \"string\",\n      \"config\": {},\n      \"activatedAt\": \"1970-04-08\",\n      \"wirelessGatewayId\": 2114\n    }\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2001-02-22\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        8045,\n        2289\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4113,\n          9455\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b2c39432-826b-4eb0-ada9-7f822ab0dc49",
+          "name": "Remove a wireless gateway",
+          "request": {
+            "name": "Remove a wireless gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                ":wirelessGatewayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "bbcff146-bc1c-413e-b520-0c4a018c601a",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    ":wirelessGatewayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7f8922c8-1e23-4e1f-a559-dddf162a58a8",
+          "name": "Update a wireless gateway",
+          "request": {
+            "name": "Update a wireless gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                ":wirelessGatewayId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\",\n  \"lastDisconnectedAt\": \"<date>\",\n  \"isLive\": \"<boolean>\",\n  \"allegionWirelessGateway\": {\n    \"idExt\": \"<string>\",\n    \"authKey\": \"<string>\",\n    \"config\": \"<object>\"\n  },\n  \"assaAbloyWirelessGateway\": {\n    \"config\": \"<object>\",\n    \"status\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b50afd45-2cbe-4bbf-b308-99cb57eb2642",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    ":wirelessGatewayId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"lastConnectedAt\": \"<date>\",\n  \"lastDisconnectedAt\": \"<date>\",\n  \"isLive\": \"<boolean>\",\n  \"allegionWirelessGateway\": {\n    \"idExt\": \"<string>\",\n    \"authKey\": \"<string>\",\n    \"config\": \"<object>\"\n  },\n  \"assaAbloyWirelessGateway\": {\n    \"config\": \"<object>\",\n    \"status\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c1567ffd-d3a4-465f-826c-6b011455a15b",
+          "name": "Update the firmware for multiple wireless gateways to the latest version",
+          "request": {
+            "name": "Update the firmware for multiple wireless gateways to the latest version",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessGatewayFirmwareBatch",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                "updateFirmwareBatch"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "wirelessGatewayIds",
+                  "value": "<integer>",
+                  "description": "(Required) "
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c8047ae9-8393-4844-8474-82161149f890",
+              "name": "Firmware update started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    "updateFirmwareBatch"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "wirelessGatewayIds",
+                      "value": "<integer>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "74c920e8-1e27-4cbf-9618-5c37f4a43a19",
+          "name": "Activate an Assa Abloy wireless gateway hub",
+          "request": {
+            "name": "Activate an Assa Abloy wireless gateway hub",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: activateWirelessGateway",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                ":wirelessGatewayId",
+                "activate"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f9c7dcf7-9ca9-42c2-b6c6-5aa6ca275394",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    ":wirelessGatewayId",
+                    "activate"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17efc647-d457-4fce-a234-e4b2af91f3af",
+          "name": "Sync devices for a wireless gateway",
+          "request": {
+            "name": "Sync devices for a wireless gateway",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncWirelessGatewayDevices",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                ":wirelessGatewayId",
+                "syncDevices"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "f6b70cf2-178e-457b-806f-51d36efdc287",
+              "name": "Gateway edge device sync started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    ":wirelessGatewayId",
+                    "syncDevices"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5399ea6f-bfd4-4011-9ddb-1315f107a1ce",
+          "name": "Update the firmware for a wireless gateway to a specific version",
+          "request": {
+            "name": "Update the firmware for a wireless gateway to a specific version",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessGatewayFirmware",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "wirelessGateways",
+                ":wirelessGatewayId",
+                "updateFirmware"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "wirelessGatewayId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "a501507b-6a60-4213-aca4-714fdbde0a4f",
+              "name": "Firmware update started",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "wirelessGateways",
+                    ":wirelessGatewayId",
+                    "updateFirmware"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "wirelessGatewayId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "c442e89e-c36e-466c-a214-d76fd9539611",
+    "name": "Openpath API Documentation auth orgs/wirelessGateways API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}

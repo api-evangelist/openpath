@@ -1,0 +1,2912 @@
+{
+  "item": [
+    {
+      "id": "32bae463-729d-478a-b06e-3a1e358dc5df",
+      "name": "orgs/parcels",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "76ebe04b-acfe-4f7d-90a8-deeb6af3987a",
+          "name": "List active parcels",
+          "request": {
+            "name": "List active parcels",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: listParcels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "recipient.identity.email"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "13402929-e675-4a90-9cc0-7eee1f829255",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "recipient.identity.email"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 288,\n  \"filteredCount\": 4401,\n  \"cursors\": {\n    \"nextCursor\": 418,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 4602,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 8504,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 3805,\n        \"fullName\": \"strin\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 9919.402211059109,\n          \"parcelPictureType\": {\n            \"id\": 2799.6541568846856,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2022-02-02\",\n          \"updatedAt\": \"1979-10-31\"\n        },\n        {\n          \"id\": 4158.577722578773,\n          \"parcelPictureType\": {\n            \"id\": 6935.581906204799,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2019-08-03\",\n          \"updatedAt\": \"1994-08-30\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4713,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": false\n      },\n      \"parcelStatus\": {\n        \"id\": 423.74541159735713,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"1992-05-24\",\n      \"updatedAt\": \"1966-10-29\",\n      \"parcelPickedUpAt\": \"1986-06-01\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": false,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1958-10-13\"\n    },\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 6907,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 8087,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 8464,\n        \"fullName\": \"string\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 9441.647113484998,\n          \"parcelPictureType\": {\n            \"id\": 2028.6051668499183,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1977-11-13\",\n          \"updatedAt\": \"2002-01-04\"\n        },\n        {\n          \"id\": 6516.601057023789,\n          \"parcelPictureType\": {\n            \"id\": 9776.86073904814,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1995-04-26\",\n          \"updatedAt\": \"2024-09-10\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4557,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": false\n      },\n      \"parcelStatus\": {\n        \"id\": 7403.265845592635,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"2003-06-17\",\n      \"updatedAt\": \"1970-05-11\",\n      \"parcelPickedUpAt\": \"1954-09-20\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": false,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1955-08-05\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1972-07-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4665,\n        6620\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7861,\n          3367\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe6982f5-a494-42e8-8673-1a4fde6ffb38",
+          "name": "Create a parcel",
+          "request": {
+            "name": "Create a parcel",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: createParcel",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parcelStatusId\": \"<integer>\",\n  \"mailroomId\": \"<integer>\",\n  \"note\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"carrier\": \"<string>\",\n  \"sender\": \"<string>\",\n  \"weight\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"recipientId\": \"<integer>\",\n  \"isManualScan\": \"<boolean>\",\n  \"scannedName\": \"<string>\",\n  \"matchedUserIds\": [\n    {\n      \"id\": \"<integer>\",\n      \"distance\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"distance\": \"<number>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26ed8d4f-8261-4236-b977-b3a8c1da9d85",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parcelStatusId\": \"<integer>\",\n  \"mailroomId\": \"<integer>\",\n  \"note\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"carrier\": \"<string>\",\n  \"sender\": \"<string>\",\n  \"weight\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"recipientId\": \"<integer>\",\n  \"isManualScan\": \"<boolean>\",\n  \"scannedName\": \"<string>\",\n  \"matchedUserIds\": [\n    {\n      \"id\": \"<integer>\",\n      \"distance\": \"<number>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"distance\": \"<number>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"idExt\": \"string\",\n    \"note\": \"string\",\n    \"recipient\": {\n      \"id\": 2915,\n      \"opal\": \"string\",\n      \"identity\": {\n        \"id\": 9626,\n        \"fullName\": \"str\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\"\n      }\n    },\n    \"statusLastUpdatedBy\": {\n      \"id\": 4909,\n      \"fullName\": \"string\",\n      \"email\": \"string\"\n    },\n    \"parcelPictures\": [\n      {\n        \"id\": 4728.199498761279,\n        \"parcelPictureType\": {\n          \"id\": 8371.991281804734,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"createdAt\": \"1965-10-15\",\n        \"updatedAt\": \"2003-01-26\"\n      },\n      {\n        \"id\": 4944.087316313323,\n        \"parcelPictureType\": {\n          \"id\": 6097.147990841992,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"createdAt\": \"1954-06-13\",\n        \"updatedAt\": \"1978-09-09\"\n      }\n    ],\n    \"mailroom\": {\n      \"id\": 8315,\n      \"name\": \"string\",\n      \"timezone\": \"string\",\n      \"isSelfPickup\": true,\n      \"isSignatureRequired\": false\n    },\n    \"parcelStatus\": {\n      \"id\": 3607.4115165688436,\n      \"code\": \"string\",\n      \"name\": \"string\"\n    },\n    \"trackingNumber\": \"string\",\n    \"carrier\": \"string\",\n    \"sender\": \"string\",\n    \"createdAt\": \"1967-05-14\",\n    \"updatedAt\": \"2025-03-30\",\n    \"parcelPickedUpAt\": \"2003-08-19\",\n    \"scannedName\": \"string\",\n    \"isManualScan\": true,\n    \"weight\": \"string\",\n    \"poNumber\": \"string\",\n    \"signedBy\": \"string\",\n    \"signedAt\": \"1984-02-09\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1970-01-07\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1899,\n        7678\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4192,\n          2118\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "502bcfbe-c0ca-44e8-a706-7bdb2844ffcd",
+          "name": "Delete multiple parcels",
+          "request": {
+            "name": "Delete multiple parcels",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteParcels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b607b479-ad31-4cb9-b2aa-bb185312a918",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  \"<string>\",\n  \"<string>\"\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a89f9aa3-a227-4004-9336-54db6e352813",
+          "name": "Bulk update parcels",
+          "request": {
+            "name": "Bulk update parcels",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateParcels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "[\n  {\n    \"idExt\": \"<string>\",\n    \"note\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"carrier\": \"<string>\",\n    \"sender\": \"<string>\",\n    \"weight\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"recipientId\": \"<integer>\",\n    \"parcelStatusId\": \"<integer>\",\n    \"mailroomId\": \"<integer>\"\n  },\n  {\n    \"idExt\": \"<string>\",\n    \"note\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"carrier\": \"<string>\",\n    \"sender\": \"<string>\",\n    \"weight\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"recipientId\": \"<integer>\",\n    \"parcelStatusId\": \"<integer>\",\n    \"mailroomId\": \"<integer>\"\n  }\n]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0a639faa-5d5d-433e-b3e5-5394d330646d",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"idExt\": \"<string>\",\n    \"note\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"carrier\": \"<string>\",\n    \"sender\": \"<string>\",\n    \"weight\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"recipientId\": \"<integer>\",\n    \"parcelStatusId\": \"<integer>\",\n    \"mailroomId\": \"<integer>\"\n  },\n  {\n    \"idExt\": \"<string>\",\n    \"note\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"carrier\": \"<string>\",\n    \"sender\": \"<string>\",\n    \"weight\": \"<string>\",\n    \"poNumber\": \"<string>\",\n    \"recipientId\": \"<integer>\",\n    \"parcelStatusId\": \"<integer>\",\n    \"mailroomId\": \"<integer>\"\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 288,\n  \"filteredCount\": 4401,\n  \"cursors\": {\n    \"nextCursor\": 418,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 4602,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 8504,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 3805,\n        \"fullName\": \"strin\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 9919.402211059109,\n          \"parcelPictureType\": {\n            \"id\": 2799.6541568846856,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2022-02-02\",\n          \"updatedAt\": \"1979-10-31\"\n        },\n        {\n          \"id\": 4158.577722578773,\n          \"parcelPictureType\": {\n            \"id\": 6935.581906204799,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2019-08-03\",\n          \"updatedAt\": \"1994-08-30\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4713,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": false\n      },\n      \"parcelStatus\": {\n        \"id\": 423.74541159735713,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"1992-05-24\",\n      \"updatedAt\": \"1966-10-29\",\n      \"parcelPickedUpAt\": \"1986-06-01\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": false,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1958-10-13\"\n    },\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 6907,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 8087,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 8464,\n        \"fullName\": \"string\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 9441.647113484998,\n          \"parcelPictureType\": {\n            \"id\": 2028.6051668499183,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1977-11-13\",\n          \"updatedAt\": \"2002-01-04\"\n        },\n        {\n          \"id\": 6516.601057023789,\n          \"parcelPictureType\": {\n            \"id\": 9776.86073904814,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1995-04-26\",\n          \"updatedAt\": \"2024-09-10\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4557,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": false\n      },\n      \"parcelStatus\": {\n        \"id\": 7403.265845592635,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"2003-06-17\",\n      \"updatedAt\": \"1970-05-11\",\n      \"parcelPickedUpAt\": \"1954-09-20\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": false,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1955-08-05\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1972-07-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4665,\n        6620\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7861,\n          3367\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9a4675a3-0056-4f69-9028-470b91ca9e72",
+          "name": "Describe a parcel",
+          "request": {
+            "name": "Describe a parcel",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: describeParcel",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c94a98d9-5efd-4966-bff2-223a0ae6f502",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"idExt\": \"string\",\n    \"note\": \"string\",\n    \"recipient\": {\n      \"id\": 2915,\n      \"opal\": \"string\",\n      \"identity\": {\n        \"id\": 9626,\n        \"fullName\": \"str\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\"\n      }\n    },\n    \"statusLastUpdatedBy\": {\n      \"id\": 4909,\n      \"fullName\": \"string\",\n      \"email\": \"string\"\n    },\n    \"parcelPictures\": [\n      {\n        \"id\": 4728.199498761279,\n        \"parcelPictureType\": {\n          \"id\": 8371.991281804734,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"createdAt\": \"1965-10-15\",\n        \"updatedAt\": \"2003-01-26\"\n      },\n      {\n        \"id\": 4944.087316313323,\n        \"parcelPictureType\": {\n          \"id\": 6097.147990841992,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"createdAt\": \"1954-06-13\",\n        \"updatedAt\": \"1978-09-09\"\n      }\n    ],\n    \"mailroom\": {\n      \"id\": 8315,\n      \"name\": \"string\",\n      \"timezone\": \"string\",\n      \"isSelfPickup\": true,\n      \"isSignatureRequired\": false\n    },\n    \"parcelStatus\": {\n      \"id\": 3607.4115165688436,\n      \"code\": \"string\",\n      \"name\": \"string\"\n    },\n    \"trackingNumber\": \"string\",\n    \"carrier\": \"string\",\n    \"sender\": \"string\",\n    \"createdAt\": \"1967-05-14\",\n    \"updatedAt\": \"2025-03-30\",\n    \"parcelPickedUpAt\": \"2003-08-19\",\n    \"scannedName\": \"string\",\n    \"isManualScan\": true,\n    \"weight\": \"string\",\n    \"poNumber\": \"string\",\n    \"signedBy\": \"string\",\n    \"signedAt\": \"1984-02-09\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1970-01-07\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1899,\n        7678\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4192,\n          2118\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6163dc57-e99e-4a29-8347-2ec1f22f3484",
+          "name": "Delete a parcel",
+          "request": {
+            "name": "Delete a parcel",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteParcel",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "49383ff6-fe27-4e2a-89c8-6d520eb649d1",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2890d6d5-5e25-4472-b200-4303fed6e88f",
+          "name": "Update a parcel",
+          "request": {
+            "name": "Update a parcel",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateParcel",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"note\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"carrier\": \"<string>\",\n  \"sender\": \"<string>\",\n  \"weight\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"recipientId\": \"<integer>\",\n  \"parcelStatusId\": \"<integer>\",\n  \"mailroomId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0b4597c5-759c-4a7a-9df7-7acd3e84443f",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"note\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"carrier\": \"<string>\",\n  \"sender\": \"<string>\",\n  \"weight\": \"<string>\",\n  \"poNumber\": \"<string>\",\n  \"recipientId\": \"<integer>\",\n  \"parcelStatusId\": \"<integer>\",\n  \"mailroomId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"idExt\": \"string\",\n    \"note\": \"string\",\n    \"recipient\": {\n      \"id\": 2915,\n      \"opal\": \"string\",\n      \"identity\": {\n        \"id\": 9626,\n        \"fullName\": \"str\",\n        \"firstName\": \"string\",\n        \"lastName\": \"string\",\n        \"nicknames\": [\n          {\n            \"nickname\": \"string\"\n          },\n          {\n            \"nickname\": \"string\"\n          }\n        ],\n        \"email\": \"string\"\n      }\n    },\n    \"statusLastUpdatedBy\": {\n      \"id\": 4909,\n      \"fullName\": \"string\",\n      \"email\": \"string\"\n    },\n    \"parcelPictures\": [\n      {\n        \"id\": 4728.199498761279,\n        \"parcelPictureType\": {\n          \"id\": 8371.991281804734,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"createdAt\": \"1965-10-15\",\n        \"updatedAt\": \"2003-01-26\"\n      },\n      {\n        \"id\": 4944.087316313323,\n        \"parcelPictureType\": {\n          \"id\": 6097.147990841992,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"contentType\": \"string\",\n        \"fileName\": \"string\",\n        \"pictureUrl\": \"string\",\n        \"pictureFullSizeUrl\": \"string\",\n        \"createdAt\": \"1954-06-13\",\n        \"updatedAt\": \"1978-09-09\"\n      }\n    ],\n    \"mailroom\": {\n      \"id\": 8315,\n      \"name\": \"string\",\n      \"timezone\": \"string\",\n      \"isSelfPickup\": true,\n      \"isSignatureRequired\": false\n    },\n    \"parcelStatus\": {\n      \"id\": 3607.4115165688436,\n      \"code\": \"string\",\n      \"name\": \"string\"\n    },\n    \"trackingNumber\": \"string\",\n    \"carrier\": \"string\",\n    \"sender\": \"string\",\n    \"createdAt\": \"1967-05-14\",\n    \"updatedAt\": \"2025-03-30\",\n    \"parcelPickedUpAt\": \"2003-08-19\",\n    \"scannedName\": \"string\",\n    \"isManualScan\": true,\n    \"weight\": \"string\",\n    \"poNumber\": \"string\",\n    \"signedBy\": \"string\",\n    \"signedAt\": \"1984-02-09\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1970-01-07\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1899,\n        7678\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4192,\n          2118\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68bb0c47-b72d-4981-9466-ee50f5863199",
+          "name": "Lists activity for parcels",
+          "request": {
+            "name": "Lists activity for parcels",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:r,o:w,s-o:r,s-o:w<br/><br/>__Endpoint name__: getParcelActivity",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                "activity"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "30000"
+                },
+                {
+                  "disabled": false,
+                  "key": "cursor",
+                  "value": ""
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "options",
+                  "value": ""
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "d9ced953-914b-4045-b2fd-05868bc07321",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    "activity"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "30000"
+                    },
+                    {
+                      "key": "cursor",
+                      "value": ""
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "options",
+                      "value": ""
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 5850,\n  \"filteredCount\": 5829,\n  \"cursors\": {\n    \"nextCursor\": 9882,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"hookEvent\": {\n        \"event\": \"string\",\n        \"timestamp\": 3501.205313575596,\n        \"data\": {\n          \"idExt\": \"string\",\n          \"org\": {\n            \"id\": 7763,\n            \"name\": \"string\"\n          },\n          \"userId\": 1115,\n          \"recipient\": {\n            \"id\": 1756,\n            \"opal\": \"string\",\n            \"identity\": {\n              \"id\": 4606,\n              \"fullName\": \"string\",\n              \"firstName\": \"string\",\n              \"lastName\": \"string\",\n              \"email\": \"string\"\n            }\n          },\n          \"mailroom\": {\n            \"id\": 6465,\n            \"name\": \"string\",\n            \"timezone\": \"string\"\n          },\n          \"messageType\": \"string\",\n          \"parcelStatus\": {\n            \"id\": 3812.9212198694872,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"note\": \"string\",\n          \"trackingNumber\": \"string\",\n          \"carrier\": \"string\",\n          \"sender\": \"string\",\n          \"createdAt\": \"1994-09-27\",\n          \"updatedAt\": \"1965-01-24\",\n          \"weight\": \"string\",\n          \"poNumber\": \"string\",\n          \"signedBy\": \"string\",\n          \"signedAt\": \"1983-01-27\",\n          \"scannedData\": {\n            \"scannedName\": \"string\",\n            \"isManualScan\": true,\n            \"matchedUsers\": [\n              {\n                \"id\": 3081,\n                \"distance\": 933.1170972961855,\n                \"opal\": \"string\",\n                \"identity\": {\n                  \"id\": 159,\n                  \"fullName\": \"string\",\n                  \"email\": \"string\"\n                }\n              },\n              {\n                \"id\": 3392,\n                \"distance\": 5222.321809399313,\n                \"opal\": \"string\",\n                \"identity\": {\n                  \"id\": 2397,\n                  \"fullName\": \"string\",\n                  \"email\": \"string\"\n                }\n              }\n            ]\n          },\n          \"previousFields\": {\n            \"recipient\": {\n              \"id\": 4080,\n              \"opal\": \"string\",\n              \"identity\": {\n                \"id\": 7423,\n                \"fullName\": \"string\",\n                \"firstName\": \"string\",\n                \"lastName\": \"string\",\n                \"nicknames\": [\n                  \"string\",\n                  \"string\"\n                ],\n                \"email\": \"string\"\n              }\n            },\n            \"mailroom\": {\n              \"id\": 2333,\n              \"name\": \"string\"\n            },\n            \"parcelStatus\": {\n              \"id\": 4139.922327937737,\n              \"code\": \"string\",\n              \"name\": \"string\"\n            },\n            \"note\": \"string\",\n            \"trackingNumber\": \"string\",\n            \"carrier\": \"string\",\n            \"sender\": \"string\",\n            \"weight\": \"string\",\n            \"poNumber\": \"string\"\n          }\n        }\n      }\n    },\n    {\n      \"hookEvent\": {\n        \"event\": \"string\",\n        \"timestamp\": 6912.581136465085,\n        \"data\": {\n          \"idExt\": \"string\",\n          \"org\": {\n            \"id\": 1127,\n            \"name\": \"string\"\n          },\n          \"userId\": 9506,\n          \"recipient\": {\n            \"id\": 4946,\n            \"opal\": \"string\",\n            \"identity\": {\n              \"id\": 893,\n              \"fullName\": \"string\",\n              \"firstName\": \"string\",\n              \"lastName\": \"string\",\n              \"email\": \"string\"\n            }\n          },\n          \"mailroom\": {\n            \"id\": 9027,\n            \"name\": \"string\",\n            \"timezone\": \"string\"\n          },\n          \"messageType\": \"string\",\n          \"parcelStatus\": {\n            \"id\": 5388.639416335902,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"note\": \"string\",\n          \"trackingNumber\": \"string\",\n          \"carrier\": \"string\",\n          \"sender\": \"string\",\n          \"createdAt\": \"1985-07-07\",\n          \"updatedAt\": \"2019-06-15\",\n          \"weight\": \"string\",\n          \"poNumber\": \"string\",\n          \"signedBy\": \"string\",\n          \"signedAt\": \"1979-10-01\",\n          \"scannedData\": {\n            \"scannedName\": \"string\",\n            \"isManualScan\": true,\n            \"matchedUsers\": [\n              {\n                \"id\": 830,\n                \"distance\": 8486.77084663523,\n                \"opal\": \"string\",\n                \"identity\": {\n                  \"id\": 8336,\n                  \"fullName\": \"string\",\n                  \"email\": \"string\"\n                }\n              },\n              {\n                \"id\": 6703,\n                \"distance\": 370.20322175022716,\n                \"opal\": \"string\",\n                \"identity\": {\n                  \"id\": 1230,\n                  \"fullName\": \"string\",\n                  \"email\": \"string\"\n                }\n              }\n            ]\n          },\n          \"previousFields\": {\n            \"recipient\": {\n              \"id\": 7751,\n              \"opal\": \"string\",\n              \"identity\": {\n                \"id\": 9852,\n                \"fullName\": \"string\",\n                \"firstName\": \"string\",\n                \"lastName\": \"string\",\n                \"nicknames\": [\n                  \"string\",\n                  \"string\"\n                ],\n                \"email\": \"string\"\n              }\n            },\n            \"mailroom\": {\n              \"id\": 4554,\n              \"name\": \"string\"\n            },\n            \"parcelStatus\": {\n              \"id\": 5622.187158376968,\n              \"code\": \"string\",\n              \"name\": \"string\"\n            },\n            \"note\": \"string\",\n            \"trackingNumber\": \"string\",\n            \"carrier\": \"string\",\n            \"sender\": \"string\",\n            \"weight\": \"string\",\n            \"poNumber\": \"string\"\n          }\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2015-07-13\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": false,\n      \"siteIds\": [\n        1213,\n        6789\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          4501,\n          2652\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "09c38c0e-41c1-4ef2-b6cf-cf61f446a52d",
+          "name": "Self-pickup - List parcels",
+          "request": {
+            "name": "Self-pickup - List parcels",
+            "description": {
+              "content": "__Endpoint name__: listRecipientParcels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                "users",
+                ":userId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9e8f4cfb-f7bd-45cb-88c0-9f90a63a10c0",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    "users",
+                    ":userId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 288,\n  \"filteredCount\": 4401,\n  \"cursors\": {\n    \"nextCursor\": 418,\n    \"hasNextPage\": false\n  },\n  \"data\": [\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 4602,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 8504,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 3805,\n        \"fullName\": \"strin\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 9919.402211059109,\n          \"parcelPictureType\": {\n            \"id\": 2799.6541568846856,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2022-02-02\",\n          \"updatedAt\": \"1979-10-31\"\n        },\n        {\n          \"id\": 4158.577722578773,\n          \"parcelPictureType\": {\n            \"id\": 6935.581906204799,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2019-08-03\",\n          \"updatedAt\": \"1994-08-30\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4713,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": false\n      },\n      \"parcelStatus\": {\n        \"id\": 423.74541159735713,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"1992-05-24\",\n      \"updatedAt\": \"1966-10-29\",\n      \"parcelPickedUpAt\": \"1986-06-01\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": false,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1958-10-13\"\n    },\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 6907,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 8087,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 8464,\n        \"fullName\": \"string\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 9441.647113484998,\n          \"parcelPictureType\": {\n            \"id\": 2028.6051668499183,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1977-11-13\",\n          \"updatedAt\": \"2002-01-04\"\n        },\n        {\n          \"id\": 6516.601057023789,\n          \"parcelPictureType\": {\n            \"id\": 9776.86073904814,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1995-04-26\",\n          \"updatedAt\": \"2024-09-10\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4557,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": false\n      },\n      \"parcelStatus\": {\n        \"id\": 7403.265845592635,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"2003-06-17\",\n      \"updatedAt\": \"1970-05-11\",\n      \"parcelPickedUpAt\": \"1954-09-20\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": false,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1955-08-05\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1972-07-24\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4665,\n        6620\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          7861,\n          3367\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bdffb74c-35c5-4bee-be57-b9bf77afb53b",
+          "name": "Lists parcel history",
+          "request": {
+            "name": "Lists parcel history",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: listParcelHistory",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "parcelHistory"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "timestamp"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "desc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "422f7d77-0280-42c7-aacc-1e6f89991aa6",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "parcelHistory"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "timestamp"
+                    },
+                    {
+                      "key": "order",
+                      "value": "desc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 967,\n  \"filteredCount\": 6323,\n  \"cursors\": {\n    \"nextCursor\": 1888,\n    \"hasNextPage\": true\n  },\n  \"data\": [\n    {\n      \"event\": \"string\",\n      \"timestamp\": 9118.605384809942,\n      \"data\": {\n        \"idExt\": \"string\",\n        \"org\": {\n          \"id\": 8202,\n          \"name\": \"string\"\n        },\n        \"userId\": 1991,\n        \"recipient\": {\n          \"id\": 3990,\n          \"opal\": \"string\",\n          \"identity\": {\n            \"id\": 6828,\n            \"fullName\": \"string\",\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"email\": \"string\"\n          }\n        },\n        \"mailroom\": {\n          \"id\": 147,\n          \"name\": \"string\",\n          \"timezone\": \"string\"\n        },\n        \"messageType\": \"string\",\n        \"parcelStatus\": {\n          \"id\": 2043.5969036924218,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"note\": \"string\",\n        \"trackingNumber\": \"string\",\n        \"carrier\": \"string\",\n        \"sender\": \"string\",\n        \"createdAt\": \"2004-02-28\",\n        \"updatedAt\": \"1976-08-22\",\n        \"weight\": \"string\",\n        \"poNumber\": \"string\",\n        \"signedBy\": \"string\",\n        \"signedAt\": \"1963-05-14\",\n        \"scannedData\": {\n          \"scannedName\": \"string\",\n          \"isManualScan\": false,\n          \"matchedUsers\": [\n            {\n              \"id\": 1840,\n              \"distance\": 1601.6903599562827,\n              \"opal\": \"string\",\n              \"identity\": {\n                \"id\": 8958,\n                \"fullName\": \"string\",\n                \"email\": \"string\"\n              }\n            },\n            {\n              \"id\": 7307,\n              \"distance\": 862.8702960546586,\n              \"opal\": \"string\",\n              \"identity\": {\n                \"id\": 4477,\n                \"fullName\": \"string\",\n                \"email\": \"string\"\n              }\n            }\n          ]\n        },\n        \"previousFields\": {\n          \"recipient\": {\n            \"id\": 5243,\n            \"opal\": \"string\",\n            \"identity\": {\n              \"id\": 4404,\n              \"fullName\": \"st\",\n              \"firstName\": \"string\",\n              \"lastName\": \"string\",\n              \"nicknames\": [\n                \"string\",\n                \"string\"\n              ],\n              \"email\": \"string\"\n            }\n          },\n          \"mailroom\": {\n            \"id\": 6895,\n            \"name\": \"string\"\n          },\n          \"parcelStatus\": {\n            \"id\": 3380.012339595577,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"note\": \"string\",\n          \"trackingNumber\": \"string\",\n          \"carrier\": \"string\",\n          \"sender\": \"string\",\n          \"weight\": \"string\",\n          \"poNumber\": \"string\"\n        }\n      }\n    },\n    {\n      \"event\": \"string\",\n      \"timestamp\": 2606.1501367542082,\n      \"data\": {\n        \"idExt\": \"string\",\n        \"org\": {\n          \"id\": 6823,\n          \"name\": \"string\"\n        },\n        \"userId\": 7491,\n        \"recipient\": {\n          \"id\": 8791,\n          \"opal\": \"string\",\n          \"identity\": {\n            \"id\": 6691,\n            \"fullName\": \"string\",\n            \"firstName\": \"string\",\n            \"lastName\": \"string\",\n            \"email\": \"string\"\n          }\n        },\n        \"mailroom\": {\n          \"id\": 4643,\n          \"name\": \"string\",\n          \"timezone\": \"string\"\n        },\n        \"messageType\": \"string\",\n        \"parcelStatus\": {\n          \"id\": 2375.725627284877,\n          \"code\": \"string\",\n          \"name\": \"string\"\n        },\n        \"note\": \"string\",\n        \"trackingNumber\": \"string\",\n        \"carrier\": \"string\",\n        \"sender\": \"string\",\n        \"createdAt\": \"2007-07-09\",\n        \"updatedAt\": \"1985-07-18\",\n        \"weight\": \"string\",\n        \"poNumber\": \"string\",\n        \"signedBy\": \"string\",\n        \"signedAt\": \"2013-01-30\",\n        \"scannedData\": {\n          \"scannedName\": \"string\",\n          \"isManualScan\": false,\n          \"matchedUsers\": [\n            {\n              \"id\": 5445,\n              \"distance\": 6785.430103192759,\n              \"opal\": \"string\",\n              \"identity\": {\n                \"id\": 3965,\n                \"fullName\": \"string\",\n                \"email\": \"string\"\n              }\n            },\n            {\n              \"id\": 9487,\n              \"distance\": 40.403529943063845,\n              \"opal\": \"string\",\n              \"identity\": {\n                \"id\": 8086,\n                \"fullName\": \"string\",\n                \"email\": \"string\"\n              }\n            }\n          ]\n        },\n        \"previousFields\": {\n          \"recipient\": {\n            \"id\": 2957,\n            \"opal\": \"string\",\n            \"identity\": {\n              \"id\": 5105,\n              \"fullName\": \"string\",\n              \"firstName\": \"string\",\n              \"lastName\": \"string\",\n              \"nicknames\": [\n                \"string\",\n                \"string\"\n              ],\n              \"email\": \"string\"\n            }\n          },\n          \"mailroom\": {\n            \"id\": 7259,\n            \"name\": \"string\"\n          },\n          \"parcelStatus\": {\n            \"id\": 3806.82408967138,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"note\": \"string\",\n          \"trackingNumber\": \"string\",\n          \"carrier\": \"string\",\n          \"sender\": \"string\",\n          \"weight\": \"string\",\n          \"poNumber\": \"string\"\n        }\n      }\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1976-09-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        1551,\n        808\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          3805,\n          8781\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fd7b7512-8322-45b4-b313-e7fbb4152577",
+          "name": "Get a parcel signature",
+          "request": {
+            "name": "Get a parcel signature",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: getParcelSignature",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "signature"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "367f5f37-2092-440f-8746-91ff769a684b",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "signature"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"signaturePicture\": {\n      \"id\": 5964.048028080041,\n      \"parcelPictureType\": {\n        \"id\": 6948.706052765192,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"pictureUrl\": \"string\",\n      \"pictureFullSizeUrl\": \"string\",\n      \"createdAt\": \"1947-12-25\",\n      \"updatedAt\": \"1990-02-12\"\n    },\n    \"signedBy\": \"string\",\n    \"signedAt\": \"2023-10-15\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1980-01-08\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        9327,\n        7948\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          1805,\n          1091\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5729af8f-6e58-4625-8b61-d0aab9abbd47",
+          "name": "List parcel pictures",
+          "request": {
+            "name": "List parcel pictures",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: listParcelPictures",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "parcelPictures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "0"
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "id"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "asc"
+                },
+                {
+                  "disabled": false,
+                  "key": "q",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "filter",
+                  "value": "<string>"
+                },
+                {
+                  "disabled": false,
+                  "key": "preFilter",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "e1ea06f2-ebd1-43fd-98df-2412aaa1942c",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "parcelPictures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "0"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "id"
+                    },
+                    {
+                      "key": "order",
+                      "value": "asc"
+                    },
+                    {
+                      "key": "q",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "filter",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "preFilter",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 7468,\n  \"filteredCount\": 5915,\n  \"data\": [\n    {\n      \"id\": 4927.4444609787915,\n      \"parcelPictureType\": {\n        \"id\": 3067.5252871342964,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"pictureUrl\": \"string\",\n      \"pictureFullSizeUrl\": \"string\",\n      \"createdAt\": \"1973-02-01\",\n      \"updatedAt\": \"1976-11-07\"\n    },\n    {\n      \"id\": 1249.954811249001,\n      \"parcelPictureType\": {\n        \"id\": 2366.8592616701635,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"contentType\": \"string\",\n      \"fileName\": \"string\",\n      \"pictureUrl\": \"string\",\n      \"pictureFullSizeUrl\": \"string\",\n      \"createdAt\": \"1955-12-21\",\n      \"updatedAt\": \"1990-01-29\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"1988-10-20\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        4471,\n        2712\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          955,\n          3096\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "28d08b86-3dfd-4d57-9599-dc37f5afd3a0",
+          "name": "Create a parcel picture",
+          "request": {
+            "name": "Create a parcel picture",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: createParcelPicture",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "parcelPictures"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parcelPictureTypeId\": \"<integer>\",\n  \"picture\": {\n    \"base64\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2d071a2c-dc33-4193-ad92-5661b482c178",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "parcelPictures"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parcelPictureTypeId\": \"<integer>\",\n  \"picture\": {\n    \"base64\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5731.429354823405,\n    \"parcelPictureType\": {\n      \"id\": 5465.417001913566,\n      \"code\": \"string\",\n      \"name\": \"string\"\n    },\n    \"contentType\": \"string\",\n    \"fileName\": \"string\",\n    \"pictureUrl\": \"string\",\n    \"pictureFullSizeUrl\": \"string\",\n    \"createdAt\": \"2003-04-22\",\n    \"updatedAt\": \"1980-03-17\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2008-09-27\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        663,\n        4137\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2756,\n          2145\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e20dfc9c-5125-437d-a41b-8fc9a40c494c",
+          "name": "Get a parcel picture",
+          "request": {
+            "name": "Get a parcel picture",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: describeParcelPicture",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "parcelPictures",
+                ":parcelPictureId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "parcelPictureId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "2f02a202-69e1-413b-999a-069b04e1d9ac",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "parcelPictures",
+                    ":parcelPictureId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parcelPictureId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"id\": 5731.429354823405,\n    \"parcelPictureType\": {\n      \"id\": 5465.417001913566,\n      \"code\": \"string\",\n      \"name\": \"string\"\n    },\n    \"contentType\": \"string\",\n    \"fileName\": \"string\",\n    \"pictureUrl\": \"string\",\n    \"pictureFullSizeUrl\": \"string\",\n    \"createdAt\": \"2003-04-22\",\n    \"updatedAt\": \"1980-03-17\"\n  },\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2008-09-27\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        663,\n        4137\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          2756,\n          2145\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b6b53fcf-d01f-4efd-9485-a4333fb534b5",
+          "name": "Delete a parcel picture",
+          "request": {
+            "name": "Delete a parcel picture",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteParcelPicture",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "parcelPictures",
+                ":parcelPictureId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "parcelPictureId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "0e2b86ab-8ccd-4422-a212-1284d8062220",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "parcelPictures",
+                    ":parcelPictureId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parcelPictureId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5b2b19a1-5b6a-496c-b9fa-9c819bef31ad",
+          "name": "Update a parcel picture",
+          "request": {
+            "name": "Update a parcel picture",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateParcelPicture",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                ":parcelIdExt",
+                "parcelPictures",
+                ":parcelPictureId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "parcelIdExt",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "parcelPictureId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parcelPictureTypeId\": \"<integer>\",\n  \"picture\": {\n    \"base64\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "347d87a4-f263-4ce3-8396-fd5c5e994569",
+              "name": "No Content",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    ":parcelIdExt",
+                    "parcelPictures",
+                    ":parcelPictureId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "parcelIdExt",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "parcelPictureId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parcelPictureTypeId\": \"<integer>\",\n  \"picture\": {\n    \"base64\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "059cc52f-96ce-4601-87bb-0b13bd55cf6a",
+          "name": "Send custom email to recipients",
+          "request": {
+            "name": "Send custom email to recipients",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: sendCustomParcelEmail",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                "sendEmail"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"parcelIdExts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "da15b8fe-83a3-4fcd-969a-6ab7cbfcce58",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    "sendEmail"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"parcelIdExts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"subject\": \"<string>\",\n  \"body\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "17efab4d-dc31-44b5-aa76-856779c28122",
+          "name": "Sign parcels",
+          "request": {
+            "name": "Sign parcels",
+            "description": {
+              "content": "__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: signParcels",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                "sign"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "Authorization"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"picture\": {\n    \"base64\": \"<string>\"\n  },\n  \"parcelIdExts\": [\n    \"<string>\"\n  ],\n  \"signedBy\": \"<string>\",\n  \"parcelStatusId\": \"<integer>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "0e5f1d3e-5864-4625-965e-3f5a69e212cd",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    "sign"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"picture\": {\n    \"base64\": \"<string>\"\n  },\n  \"parcelIdExts\": [\n    \"<string>\"\n  ],\n  \"signedBy\": \"<string>\",\n  \"parcelStatusId\": \"<integer>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 8104,\n  \"filteredCount\": 6062,\n  \"data\": [\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 469,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 1032,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 5108,\n        \"fullName\": \"string\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 2567.911497566228,\n          \"parcelPictureType\": {\n            \"id\": 4971.8551555206095,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1970-01-01\",\n          \"updatedAt\": \"1992-09-14\"\n        },\n        {\n          \"id\": 7511.909513345755,\n          \"parcelPictureType\": {\n            \"id\": 250.5996975340974,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1990-08-14\",\n          \"updatedAt\": \"1970-10-20\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 2449,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": true\n      },\n      \"parcelStatus\": {\n        \"id\": 5235.24448043637,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"1992-04-21\",\n      \"updatedAt\": \"2010-03-10\",\n      \"parcelPickedUpAt\": \"2025-06-30\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": true,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"2011-09-02\"\n    },\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 6693,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 2528,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 3208,\n        \"fullName\": \"strin\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 504.8446738218115,\n          \"parcelPictureType\": {\n            \"id\": 7863.203294099135,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2016-02-23\",\n          \"updatedAt\": \"1972-08-09\"\n        },\n        {\n          \"id\": 5998.0693660557645,\n          \"parcelPictureType\": {\n            \"id\": 8865.875795641965,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1965-12-22\",\n          \"updatedAt\": \"2001-03-16\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4522,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": true\n      },\n      \"parcelStatus\": {\n        \"id\": 2822.0494820602617,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"2018-08-16\",\n      \"updatedAt\": \"1956-06-19\",\n      \"parcelPickedUpAt\": \"1992-08-10\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": true,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1946-10-29\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2019-11-28\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        298,\n        784\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5602,\n          658\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "639c4082-9d99-4267-b8d4-dd2eed23e6ef",
+          "name": "Self-pickup - resend parcel reminder",
+          "request": {
+            "name": "Self-pickup - resend parcel reminder",
+            "description": {
+              "content": "__Endpoint name__: sendRecipientParcelReminder",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                "users",
+                ":userId",
+                "sendRecipientParcelReminder"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "7818e46a-ec69-4278-9af3-81423436fc27",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    "users",
+                    ":userId",
+                    "sendRecipientParcelReminder"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "30740498-102c-449f-931f-e48855eef525",
+          "name": "Self-pickup - Update parcel status",
+          "request": {
+            "name": "Self-pickup - Update parcel status",
+            "description": {
+              "content": "__Endpoint name__: updateParcelPickedUpStatus",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "orgs",
+                ":orgId",
+                "parcels",
+                "users",
+                ":userId",
+                "pickup"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "orgId",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "userId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PATCH",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"idExts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"pickedUp\": \"<boolean>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c9a5473d-abe5-43ec-84a0-5518bdb9b138",
+              "name": "Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "orgs",
+                    ":orgId",
+                    "parcels",
+                    "users",
+                    ":userId",
+                    "pickup"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "orgId",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "userId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PATCH",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idExts\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"pickedUp\": \"<boolean>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCount\": 8104,\n  \"filteredCount\": 6062,\n  \"data\": [\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 469,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 1032,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 5108,\n        \"fullName\": \"string\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 2567.911497566228,\n          \"parcelPictureType\": {\n            \"id\": 4971.8551555206095,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1970-01-01\",\n          \"updatedAt\": \"1992-09-14\"\n        },\n        {\n          \"id\": 7511.909513345755,\n          \"parcelPictureType\": {\n            \"id\": 250.5996975340974,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1990-08-14\",\n          \"updatedAt\": \"1970-10-20\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 2449,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": true\n      },\n      \"parcelStatus\": {\n        \"id\": 5235.24448043637,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"1992-04-21\",\n      \"updatedAt\": \"2010-03-10\",\n      \"parcelPickedUpAt\": \"2025-06-30\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": true,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"2011-09-02\"\n    },\n    {\n      \"idExt\": \"string\",\n      \"note\": \"string\",\n      \"recipient\": {\n        \"id\": 6693,\n        \"opal\": \"string\",\n        \"identity\": {\n          \"id\": 2528,\n          \"fullName\": \"string\",\n          \"firstName\": \"string\",\n          \"lastName\": \"string\",\n          \"nicknames\": [\n            {\n              \"nickname\": \"string\"\n            },\n            {\n              \"nickname\": \"string\"\n            }\n          ],\n          \"email\": \"string\"\n        }\n      },\n      \"statusLastUpdatedBy\": {\n        \"id\": 3208,\n        \"fullName\": \"strin\",\n        \"email\": \"string\"\n      },\n      \"parcelPictures\": [\n        {\n          \"id\": 504.8446738218115,\n          \"parcelPictureType\": {\n            \"id\": 7863.203294099135,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"2016-02-23\",\n          \"updatedAt\": \"1972-08-09\"\n        },\n        {\n          \"id\": 5998.0693660557645,\n          \"parcelPictureType\": {\n            \"id\": 8865.875795641965,\n            \"code\": \"string\",\n            \"name\": \"string\"\n          },\n          \"contentType\": \"string\",\n          \"fileName\": \"string\",\n          \"pictureUrl\": \"string\",\n          \"pictureFullSizeUrl\": \"string\",\n          \"createdAt\": \"1965-12-22\",\n          \"updatedAt\": \"2001-03-16\"\n        }\n      ],\n      \"mailroom\": {\n        \"id\": 4522,\n        \"name\": \"string\",\n        \"timezone\": \"string\",\n        \"isSelfPickup\": false,\n        \"isSignatureRequired\": true\n      },\n      \"parcelStatus\": {\n        \"id\": 2822.0494820602617,\n        \"code\": \"string\",\n        \"name\": \"string\"\n      },\n      \"trackingNumber\": \"string\",\n      \"carrier\": \"string\",\n      \"sender\": \"string\",\n      \"createdAt\": \"2018-08-16\",\n      \"updatedAt\": \"1956-06-19\",\n      \"parcelPickedUpAt\": \"1992-08-10\",\n      \"scannedName\": \"string\",\n      \"isManualScan\": true,\n      \"weight\": \"string\",\n      \"poNumber\": \"string\",\n      \"signedBy\": \"string\",\n      \"signedAt\": \"1946-10-29\"\n    }\n  ],\n  \"meta\": {\n    \"accessToken\": {\n      \"scopeUpdatedAt\": \"2019-11-28\"\n    },\n    \"siteSpecificAccess\": {\n      \"isSiteSpecific\": true,\n      \"siteIds\": [\n        298,\n        784\n      ],\n      \"siteIdsByScope\": {\n        \"string\": [\n          5602,\n          658\n        ]\n      }\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.openpath.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "18906ec8-e4b0-44bb-8262-eb6fc4c5b28d",
+    "name": "Openpath API Documentation auth orgs/parcels API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Authentication and Login",
+      "type": "text/plain"
+    }
+  }
+}
