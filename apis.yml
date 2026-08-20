@@ -50,6 +50,8 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
+  - Authentication
+  tags_raw:
   - auth
   properties:
   - type: OpenAPI
@@ -65,7 +67,8 @@ apis:
   description: The billableFeatures API from Openpath — 1 operation(s) for billablefeatures.
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
-  tags:
+  tags: []
+  tags_raw:
   - billableFeatures
   properties:
   - type: OpenAPI
@@ -82,6 +85,8 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
+  - Identities
+  tags_raw:
   - identities
   properties:
   - type: OpenAPI
@@ -1034,6 +1039,8 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
+  - Orgs Reports
+  tags_raw:
   - orgs/reports
   properties:
   - type: OpenAPI
@@ -1146,6 +1153,8 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
+  - Orgs Sites
+  tags_raw:
   - orgs/sites
   properties:
   - type: OpenAPI
@@ -1474,6 +1483,8 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
+  - Tokens
+  tags_raw:
   - tokens
   properties:
   - type: OpenAPI
