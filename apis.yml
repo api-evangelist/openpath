@@ -10,6 +10,18 @@ description: >-
   API at api.openpath.com (546 operations, JWT scope-based auth, OpenID Connect) with
   reference docs on ReadMe.
 url: https://raw.githubusercontent.com/api-evangelist/openpath/refs/heads/main/apis.yml
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
@@ -1501,6 +1513,9 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: CapabilityMap
+  url: capabilities/openpath-capability-edges.yml
+  name: Openpath Business Capability Map
 - type: DeveloperPortal
   url: https://openpath.readme.io
 - type: Documentation
