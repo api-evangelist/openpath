@@ -1051,7 +1051,7 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
-  - Orgs Reports
+  - orgs/reports
   tags_raw:
   - orgs/reports
   properties:
@@ -1165,7 +1165,7 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
-  - Orgs Sites
+  - orgs/sites
   tags_raw:
   - orgs/sites
   properties:
@@ -1513,6 +1513,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: ParentCompany
+  url: https://apis.io/providers/motorola-solutions/
+  name: Motorola Solutions
+  x-relationship: acquired
+  x-evidence: "Founded in 2016 and backed by Emergence Capital, Openpath was acquired by Motorola Solutions in 2021 and is now marketed as Avigilon Alta; openpath."
 - type: CapabilityMap
   url: capabilities/openpath-capability-edges.yml
   name: Openpath Business Capability Map
