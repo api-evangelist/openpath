@@ -1051,7 +1051,7 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
-  - orgs/reports
+  - Orgs Reports
   tags_raw:
   - orgs/reports
   properties:
@@ -1165,7 +1165,7 @@ apis:
   humanURL: https://openpath.readme.io
   baseURL: https://api.openpath.com
   tags:
-  - orgs/sites
+  - Orgs Sites
   tags_raw:
   - orgs/sites
   properties:
