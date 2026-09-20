@@ -11,7 +11,7 @@ capability_model:
   attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
     CC BY 4.0
   notice: NOTICE
-edge_count: 10
+edge_count: 13
 edges:
 - tag: orgs/identityProviders
   spec_file: openpath-orgs-identityproviders-api-openapi.yml
@@ -23,6 +23,16 @@ edges:
     URL; 'Inactivate an identity provider and all associated identities and users'
   reason: Identity provider federation, user directory sync and group mapping are core identity and access
     management operations.
+- tag: orgs/subscriptions
+  spec_file: openpath-orgs-subscriptions-api-openapi.yml
+  capability_id: BC-4270.80
+  capability_id_l1: BC-4270
+  capability_name: Webhook & Event Subscription Management
+  confidence: 0.85
+  evidence: createSubscription  Create a REST Hook subscription
+  reason: REST Hook subscription lifecycle (create, describe, update, delete) is exactly outbound webhook
+    and event subscription management on the developer platform.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: orgs/users
   spec_file: openpath-orgs-users-api-openapi.yml
   capability_id: BC-620.20
@@ -78,6 +88,27 @@ edges:
     Management; not a financial or education business function. Confidence held below 0.8 because the
     capability list frames IAM within Cybersecurity while this vendor's credentials are physical-entry
     credentials.
+- tag: orgs/effectiveScopes
+  spec_file: openpath-orgs-effectivescopes-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: GET /orgs/{orgId}/effectiveScopes getEffectivePermissionsForOrg 'Get effective permissions
+    (scopes and allowed endpoints) for the authenticated identity for an org'
+  reason: Resolves effective permissions/scopes for an authenticated identity — authorisation evaluation,
+    which belongs to identity & access management rather than commercial entitlement enforcement.
+  recovered_from: sweep-20260828T235257Z-edges.json
+- tag: orgs/authCerts
+  spec_file: openpath-orgs-authcerts-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST /orgs/{orgId}/authCerts createAuthCert 'Create an X.509 authentication certificate'
+  reason: Lifecycle CRUD over X.509 authentication certificates issued at org level is authentication
+    credential stewardship, i.e. identity & access management. Not a subscription or product capability.
+  recovered_from: sweep-20260828T235257Z-edges.json
 - tag: orgs/mailrooms
   spec_file: openpath-orgs-mailrooms-api-openapi.yml
   capability_id: BC-700.10
