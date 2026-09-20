@@ -1,0 +1,116 @@
+slug: openpath
+provider: Openpath
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 10
+edges:
+- tag: orgs/identityProviders
+  spec_file: openpath-orgs-identityproviders-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: syncUsersIdentityProvider  Sync users; getIdentityProviderAuthUrl  Generate OAuth2 authorize
+    URL; 'Inactivate an identity provider and all associated identities and users'
+  reason: Identity provider federation, user directory sync and group mapping are core identity and access
+    management operations.
+- tag: orgs/users
+  spec_file: openpath-orgs-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.85
+  evidence: Create a user / List all MFA credentials / Describe user badge / List all zones a user has
+    access to
+  reason: Full lifecycle of user accounts, MFA credentials, badges and zone access rights in an access-control
+    platform — squarely Identity & Access Management.
+- tag: orgs/roles
+  spec_file: openpath-orgs-roles-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: PUT /orgs/{orgId}/roles/{roleId}/scopeIds setRoleScopeIds 'Set a role's scopes by replacing
+    the entire set with this one'; PUT .../users/{userId} setUserToRole 'Add a user to a role'
+  reason: Operations define roles, attach permission scopes to roles, and assign/remove users from roles
+    — role-based access control administration, i.e. identity and access management (BC-620.20).
+- tag: orgs/groups
+  spec_file: openpath-orgs-groups-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: List all access groups; 'List all zones (and their associated configurations) an access group
+    has access to'; 'Bulk-update an access group's users'
+  reason: Operations manage access groups binding users to zones they may enter — access rights administration,
+    i.e. identity and access management (physical access control).
+- tag: orgs/parcels
+  spec_file: openpath-orgs-parcels-api-openapi.yml
+  capability_id: BC-700.10
+  capability_id_l1: BC-700
+  capability_name: Workplace Services Management
+  confidence: 0.75
+  evidence: GET /orgs/{orgId}/parcels/users/{userId} listRecipientParcels 'Self-pickup - List parcels';
+    'Get a parcel signature'; 'List parcel pictures'
+  reason: Operations manage inbound parcel/mail deliveries for building occupants — logging parcels, capturing
+    signatures and photos, notifying recipients for self-pickup. This is workplace mailroom/reception
+    service delivery (BC-700.10 covers reception, mail, workplace experience services), not logistics
+    or supply chain.
+- tag: orgs/credentials
+  spec_file: openpath-orgs-credentials-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: GET /orgs/{orgId}/credentials  listOrgCredentials  List all credentials from all users within
+    the org; createCredentialAction
+  reason: Operations manage the lifecycle of access credentials issued to users of an organisation (mobile/card
+    credentials in a physical access-control platform). The closest honest capability is Identity & Access
+    Management; not a financial or education business function. Confidence held below 0.8 because the
+    capability list frames IAM within Cybersecurity while this vendor's credentials are physical-entry
+    credentials.
+- tag: orgs/mailrooms
+  spec_file: openpath-orgs-mailrooms-api-openapi.yml
+  capability_id: BC-700.10
+  capability_id_l1: BC-700
+  capability_name: Workplace Services Management
+  confidence: 0.7
+  evidence: createMailroom  Create a mailroom; describeMailroomStatistics  Get single mailroom statistics
+  reason: Mailroom setup and statistics is a workplace service (mail handling) within facilities management.
+- tag: orgs/orgPackagePlans
+  spec_file: openpath-orgs-orgpackageplans-api-openapi.yml
+  capability_id: BC-4240.40
+  capability_id_l1: BC-4240
+  capability_name: Subscription Modification
+  confidence: 0.7
+  evidence: '"List all selected package plans" and "requestPackageUpgrade  Request a package plan upgrade"'
+  reason: Operations show the org's currently subscribed package plans and a request to upgrade them —
+    in-life modification of a subscription, not device or access functionality.
+- tag: orgs/sharedUsers
+  spec_file: openpath-orgs-sharedusers-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: List all users that have access to at least one zone from this org (including users from other
+    orgs via zone sharing)
+  reason: Enumerates users and their access rights to access-control zones — access administration/entitlement
+    visibility, i.e. Identity & Access Management, not a customer or HR user record.
+- tag: orgs/triggerPermissionsChange
+  spec_file: openpath-orgs-triggerpermissionschange-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: Trigger immediate entry permission recalculation & broadcast
+  reason: Forces recalculation and distribution of entry permissions — access rights administration/enforcement,
+    i.e. Identity & Access Management.
