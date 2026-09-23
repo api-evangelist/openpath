@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/authCerts API
+  title: Openpath API Documentation Orgs/auth Certs API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/authCerts
 paths:
@@ -17,110 +11,128 @@ paths:
     get:
       summary: Get list of X.509 authentication certificates
       operationId: listAuthCerts
-      description: 'Get all X.509 certificates for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r<br/><br/>__Endpoint name__: listAuthCerts'
+      description: 'Get all X.509 certificates for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r
+
+
+        __Endpoint name__: listAuthCerts'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/authCerts
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    certificate:
-                      type: string
-                    canOnlySelfModify:
-                      type: boolean
-                    name:
-                      type: string
-                      x-nullable: true
-                    roleId:
-                      type: integer
-                    opal:
-                      type: string
-                    orgId:
-                      type: integer
-                  required:
-                  - id
-                  - certificate
-              meta:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
                           type: integer
-                      siteIdsByScope:
-                        type: object
+                        certificate:
+                          type: string
+                        canOnlySelfModify:
+                          type: boolean
+                        name:
+                          type:
+                          - string
+                          - 'null'
+                        roleId:
+                          type: integer
+                        opal:
+                          type: string
+                        orgId:
+                          type: integer
+                      required:
+                      - id
+                      - certificate
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - o:r
@@ -131,94 +143,88 @@ paths:
     post:
       summary: Create an X.509 authentication certificate
       operationId: createAuthCert
-      description: 'Create an X.509 certificate for an org to be used as a means of authentication against the api. The caller must have a superset of the scopes to be assigned via the roleId. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r<br/><br/>__Endpoint name__: createAuthCert'
+      description: 'Create an X.509 certificate for an org to be used as a means of authentication against the api. The caller must have a superset of the scopes to be assigned via the roleId. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r
+
+
+        __Endpoint name__: createAuthCert'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            certificate:
-              type: string
-            canOnlySelfModify:
-              type: boolean
-              default: false
-            name:
-              type: string
-            roleId:
-              type: integer
-          required:
-          - certificate
-          - roleId
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/authCerts
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: integer
-                  certificate:
-                    type: string
-                  canOnlySelfModify:
-                    type: boolean
-                  name:
-                    type: string
-                    x-nullable: true
-                  roleId:
-                    type: integer
-                  opal:
-                    type: string
-                  orgId:
-                    type: integer
-                required:
-                - id
-                - certificate
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      id:
+                        type: integer
+                      certificate:
                         type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                      canOnlySelfModify:
+                        type: boolean
+                      name:
+                        type:
+                        - string
+                        - 'null'
+                      roleId:
+                        type: integer
+                      opal:
+                        type: string
+                      orgId:
+                        type: integer
+                    required:
+                    - id
+                    - certificate
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - o:r
@@ -226,85 +232,115 @@ paths:
       - s-o:r
       - o{params.orgId}-cert:w
       - o{params.orgId}-cert:r
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                certificate:
+                  type: string
+                canOnlySelfModify:
+                  type: boolean
+                  default: false
+                name:
+                  type: string
+                roleId:
+                  type: integer
+              required:
+              - certificate
+              - roleId
   /orgs/{orgId}/authCerts/{authCertId}:
     get:
       summary: Get an X.509 authentication certificate
       operationId: describeAuthCert
-      description: 'Get an X.509 certificate for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cert{params.authCertId}:r<br/><br/>__Endpoint name__: describeAuthCert'
+      description: 'Get an X.509 certificate for an org. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o{params.orgId}-cert:w,o{params.orgId}-cert:r,o{params.orgId}-cert{params.authCertId}:w,o{params.orgId}-cert{params.authCertId}:r
+
+
+        __Endpoint name__: describeAuthCert'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: authCertId
+        schema:
+          type: integer
+      - name: authCertId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/authCerts
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: integer
-                  certificate:
-                    type: string
-                  canOnlySelfModify:
-                    type: boolean
-                  name:
-                    type: string
-                    x-nullable: true
-                  roleId:
-                    type: integer
-                  opal:
-                    type: string
-                  orgId:
-                    type: integer
-                required:
-                - id
-                - certificate
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      id:
+                        type: integer
+                      certificate:
                         type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                      canOnlySelfModify:
+                        type: boolean
+                      name:
+                        type:
+                        - string
+                        - 'null'
+                      roleId:
+                        type: integer
+                      opal:
+                        type: string
+                      orgId:
+                        type: integer
+                    required:
+                    - id
+                    - certificate
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - o:r
@@ -317,20 +353,24 @@ paths:
     delete:
       summary: Delete an X.509 authentication certificate
       operationId: deleteAuthCert
-      description: 'Delete an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert''s private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:w<br/><br/>__Endpoint name__: deleteAuthCert'
+      description: 'Delete an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert''s private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:w
+
+
+        __Endpoint name__: deleteAuthCert'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: authCertId
+        schema:
+          type: integer
+      - name: authCertId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/authCerts
       security:
@@ -346,102 +386,116 @@ paths:
     patch:
       summary: Update an X.509 authentication certificate
       operationId: updateAuthCert
-      description: 'Update an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert''s private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:w<br/><br/>__Endpoint name__: updateAuthCert'
+      description: 'Update an X.509 certificate for an org. If this resource is being updated has the canOnlySelfModify property set, then cert-based JWT authentication is required using a JWT signed using that same cert''s private key. Check the following link for how to authenticate https://openpath.readme.io/docs/using-the-api#using-signed-jwt-for-authentication
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o{params.orgId}-cert:w,o{params.orgId}-cert{params.authCertId}:w
+
+
+        __Endpoint name__: updateAuthCert'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: authCertId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            certificate:
-              type: string
-            canOnlySelfModify:
-              type: boolean
-            name:
-              type: string
-            roleId:
-              type: integer
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: authCertId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/authCerts
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: integer
-                  certificate:
-                    type: string
-                  canOnlySelfModify:
-                    type: boolean
-                  name:
-                    type: string
-                    x-nullable: true
-                  roleId:
-                    type: integer
-                  opal:
-                    type: string
-                  orgId:
-                    type: integer
-                required:
-                - id
-                - certificate
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      id:
+                        type: integer
+                      certificate:
                         type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                      canOnlySelfModify:
+                        type: boolean
+                      name:
+                        type:
+                        - string
+                        - 'null'
+                      roleId:
+                        type: integer
+                      opal:
+                        type: string
+                      orgId:
+                        type: integer
+                    required:
+                    - id
+                    - certificate
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - s-o:w
       - o{params.orgId}-cert:w
       - o{params.orgId}-cert{params.authCertId}:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                certificate:
+                  type: string
+                canOnlySelfModify:
+                  type: boolean
+                name:
+                  type: string
+                roleId:
+                  type: integer
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

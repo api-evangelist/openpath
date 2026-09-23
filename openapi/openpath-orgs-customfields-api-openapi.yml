@@ -1,15 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/customFields API
+  title: Openpath API Documentation Orgs/custom Fields API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+  description: Custom Fields
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/customFields
   description: Custom Fields
@@ -18,128 +13,142 @@ paths:
     get:
       summary: List all custom fields
       operationId: listCustomFields
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listCustomFields'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o{params.orgId}-musterReport:r,o{params.orgId}-musterReport:w,o{params.orgId}-occupancyReport:r,o{params.orgId}-occupancyReport:w,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listCustomFields'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/customFields
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    ordinal:
-                      type: number
-                    customFieldType:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
                         name:
                           type: string
+                        ordinal:
+                          type: number
+                        customFieldType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        customFieldDropdownItems:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                        isEnabled:
+                          type: boolean
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
                       required:
                       - id
-                    customFieldDropdownItems:
-                      type: array
-                      items:
-                        type: object
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          id:
-                            type: number
-                          name:
+                          scopeUpdatedAt:
                             type: string
-                        required:
-                        - id
-                    isEnabled:
-                      type: boolean
-                    createdAt:
-                      type: string
-                      format: date
-                    updatedAt:
-                      type: string
-                      format: date
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o{params.orgId}-user:r
@@ -156,146 +165,141 @@ paths:
     post:
       summary: Create a custom field
       operationId: createCustomField
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createCustomField'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: createCustomField'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            customFieldTypeId:
-              type: integer
-            isEnabled:
-              type: boolean
-            ordinal:
-              type: integer
-          required:
-          - name
-          - customFieldTypeId
-          - isEnabled
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/customFields
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  ordinal:
-                    type: number
-                  customFieldType:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  customFieldDropdownItems:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                  isEnabled:
-                    type: boolean
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      ordinal:
+                        type: number
+                      customFieldType:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      customFieldDropdownItems:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      isEnabled:
+                        type: boolean
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                customFieldTypeId:
+                  type: integer
+                isEnabled:
+                  type: boolean
+                ordinal:
+                  type: integer
+              required:
+              - name
+              - customFieldTypeId
+              - isEnabled
     patch:
       summary: Bulk update custom fields
       operationId: updateCustomFields
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateCustomFields'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateCustomFields'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-              ordinal:
-                type: integer
-            required:
-            - id
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/customFields
       security:
@@ -307,103 +311,125 @@ paths:
       - o{params.orgId}-user:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  ordinal:
+                    type: integer
+                required:
+                - id
   /orgs/{orgId}/customFields/{customFieldId}:
     get:
       summary: Describe a custom field
       operationId: describeCustomField
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeCustomField'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeCustomField'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
+        schema:
+          type: integer
+      - name: customFieldId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  ordinal:
-                    type: number
-                  customFieldType:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  customFieldDropdownItems:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                  isEnabled:
-                    type: boolean
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      ordinal:
+                        type: number
+                      customFieldType:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      customFieldDropdownItems:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      isEnabled:
+                        type: boolean
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o{params.orgId}-user:r
@@ -414,20 +440,21 @@ paths:
     delete:
       summary: Delete a custom field
       operationId: deleteCustomField
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteCustomField'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteCustomField'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
+        schema:
+          type: integer
+      - name: customFieldId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
@@ -442,37 +469,21 @@ paths:
     patch:
       summary: Update a custom field
       operationId: updateCustomField
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateCustomField'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateCustomField'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            ordinal:
-              type: integer
-            isEnabled:
-              type: boolean
-            customFieldTypeId:
-              type: integer
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: customFieldId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
@@ -484,125 +495,158 @@ paths:
       - o{params.orgId}-user:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                ordinal:
+                  type: integer
+                isEnabled:
+                  type: boolean
+                customFieldTypeId:
+                  type: integer
   /orgs/{orgId}/customFields/{customFieldId}/dropdownItems:
     get:
       summary: List all custom field dropdown items
       operationId: listCustomFieldDropdownItems
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listCustomFieldDropdownItems'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listCustomFieldDropdownItems'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
+        schema:
+          type: integer
+      - name: customFieldId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: ordinal
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: ordinal
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/customFields
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    ordinal:
-                      type: number
-                    customField:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
                         name:
                           type: string
+                        ordinal:
+                          type: number
+                        customField:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
                       required:
                       - id
-                    createdAt:
-                      type: string
-                      format: date
-                    updatedAt:
-                      type: string
-                      format: date
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o{params.orgId}-user:r
@@ -613,135 +657,132 @@ paths:
     post:
       summary: Create a custom field dropdown item
       operationId: createCustomFieldDropdownItem
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: createCustomFieldDropdownItem'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: createCustomFieldDropdownItem'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            ordinal:
-              type: integer
-          required:
-          - name
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: customFieldId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  ordinal:
-                    type: number
-                  customField:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      ordinal:
+                        type: number
+                      customField:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                ordinal:
+                  type: integer
+              required:
+              - name
     patch:
       summary: Bulk update custom field dropdown items
       operationId: updateCustomFieldDropdownItems
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateCustomFieldDropdownItems'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateCustomFieldDropdownItems'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: array
-          items:
-            type: object
-            properties:
-              id:
-                type: integer
-              ordinal:
-                type: integer
-            required:
-            - id
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: customFieldId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
@@ -753,94 +794,117 @@ paths:
       - o{params.orgId}-user:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  ordinal:
+                    type: integer
+                required:
+                - id
   /orgs/{orgId}/customFields/{customFieldId}/dropdownItems/{dropdownItemId}:
     get:
       summary: Describe a custom field dropdown item
       operationId: describeCustomFieldDropdownItem
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeCustomFieldDropdownItem'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeCustomFieldDropdownItem'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
+        schema:
+          type: integer
+      - name: customFieldId
         in: path
         required: true
-      - type: integer
-        name: dropdownItemId
+        schema:
+          type: integer
+      - name: dropdownItemId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  ordinal:
-                    type: number
-                  customField:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      ordinal:
+                        type: number
+                      customField:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o{params.orgId}-user:r
@@ -851,24 +915,26 @@ paths:
     delete:
       summary: Delete a custom field dropdown item
       operationId: deleteCustomFieldDropdownItem
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteCustomFieldDropdownItem'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteCustomFieldDropdownItem'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
+        schema:
+          type: integer
+      - name: customFieldId
         in: path
         required: true
-      - type: integer
-        name: dropdownItemId
+        schema:
+          type: integer
+      - name: dropdownItemId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
@@ -883,37 +949,26 @@ paths:
     patch:
       summary: Update a custom field dropdown item
       operationId: updateCustomFieldDropdownItem
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateCustomFieldDropdownItem'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateCustomFieldDropdownItem'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: customFieldId
-        in: path
-        required: true
-      - type: integer
-        name: dropdownItemId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            ordinal:
-              type: integer
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: customFieldId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: dropdownItemId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/customFields
       security:
@@ -925,9 +980,24 @@ paths:
       - o{params.orgId}-user:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                ordinal:
+                  type: integer
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

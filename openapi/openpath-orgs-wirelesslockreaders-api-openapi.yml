@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/wirelessLockReaders API
+  title: Openpath API Documentation Orgs/wireless Lock Readers API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/wirelessLockReaders
 paths:
@@ -17,194 +11,212 @@ paths:
     get:
       summary: List all wireless lock readers
       operationId: listWirelessLockReaders
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o{params.orgId}-hw:r,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockReaders'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o{params.orgId}-hw:r,o{params.orgId}-dash:r,o{params.orgId}-dashEntry:r,o{params.orgId}-dashActivity:r,o:r,s-o:r
+
+
+        __Endpoint name__: listWirelessLockReaders'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: name
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: name
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/wirelessLockReaders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    manufacturer:
-                      type: string
-                    serialNumber:
-                      type: string
-                    model:
-                      type: string
-                    lastConnectedAt:
-                      type: string
-                      format: date
-                      x-nullable: true
-                    idExt:
-                      type: string
-                    thirdPartyDeviceId:
-                      type: integer
-                    thirdPartyDevice:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
+                          type: number
+                        name:
+                          type: string
+                        manufacturer:
+                          type: string
+                        serialNumber:
+                          type: string
+                        model:
+                          type: string
+                        lastConnectedAt:
+                          type:
+                          - string
+                          - 'null'
+                          format: date
+                        idExt:
+                          type: string
+                        thirdPartyDeviceId:
                           type: integer
-                        assignedOrg:
+                        thirdPartyDevice:
                           type: object
                           properties:
                             id:
                               type: integer
-                            name:
+                            assignedOrg:
+                              type: object
+                              properties:
+                                id:
+                                  type: integer
+                                name:
+                                  type: string
+                              required:
+                              - id
+                            serialNumber:
                               type: string
-                          required:
-                          - id
-                        serialNumber:
-                          type: string
-                        isOpSourced:
-                          type: boolean
-                        orderName:
-                          type: string
-                          x-nullable: true
-                        createdAt:
-                          type: string
-                          format: date
-                        updatedAt:
-                          type: string
-                          format: date
-                        thirdPartyDeviceType:
-                          type: object
-                          properties:
-                            id:
-                              type: number
-                            manufacturerName:
-                              type: string
-                            hardwareModel:
-                              type: string
-                            description:
-                              type: string
-                            dbModelName:
-                              type: string
+                            isOpSourced:
+                              type: boolean
+                            orderName:
+                              type:
+                              - string
+                              - 'null'
                             createdAt:
                               type: string
                               format: date
                             updatedAt:
                               type: string
                               format: date
+                            thirdPartyDeviceType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                manufacturerName:
+                                  type: string
+                                hardwareModel:
+                                  type: string
+                                description:
+                                  type: string
+                                dbModelName:
+                                  type: string
+                                createdAt:
+                                  type: string
+                                  format: date
+                                updatedAt:
+                                  type: string
+                                  format: date
+                              required:
+                              - id
                           required:
                           - id
-                      required:
-                      - id
-                    wirelessLockProvider:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        siteIdExt:
-                          type: string
-                          x-nullable: true
-                        siteAuthKey:
-                          type: string
-                          x-nullable: true
-                        createdAt:
-                          type: string
-                          format: date
-                        updatedAt:
-                          type: string
-                          format: date
-                        orgId:
-                          type: number
-                        wirelessLockProviderType:
+                        wirelessLockProvider:
                           type: object
                           properties:
                             id:
                               type: number
-                            name:
+                            siteIdExt:
+                              type:
+                              - string
+                              - 'null'
+                            siteAuthKey:
+                              type:
+                              - string
+                              - 'null'
+                            createdAt:
                               type: string
+                              format: date
+                            updatedAt:
+                              type: string
+                              format: date
+                            orgId:
+                              type: number
+                            wirelessLockProviderType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
                           required:
                           - id
                       required:
                       - id
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:r
       - o{params.orgId}-site:r
@@ -220,183 +232,170 @@ paths:
     post:
       summary: Create a wirelessLock reader
       operationId: createWirelessLockReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessLockReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w
+
+
+        __Endpoint name__: createWirelessLockReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-            manufacturer:
-              type: string
-            serialNumber:
-              type: string
-            model:
-              type: string
-            idExt:
-              type: string
-            wirelessLockProviderId:
-              type: integer
-          required:
-          - name
-          - manufacturer
-          - serialNumber
-          - model
-          - idExt
-          - wirelessLockProviderId
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/wirelessLockReaders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  manufacturer:
-                    type: string
-                  serialNumber:
-                    type: string
-                  model:
-                    type: string
-                  lastConnectedAt:
-                    type: string
-                    format: date
-                    x-nullable: true
-                  idExt:
-                    type: string
-                  thirdPartyDeviceId:
-                    type: integer
-                  thirdPartyDevice:
+                  data:
                     type: object
                     properties:
                       id:
+                        type: number
+                      name:
+                        type: string
+                      manufacturer:
+                        type: string
+                      serialNumber:
+                        type: string
+                      model:
+                        type: string
+                      lastConnectedAt:
+                        type:
+                        - string
+                        - 'null'
+                        format: date
+                      idExt:
+                        type: string
+                      thirdPartyDeviceId:
                         type: integer
-                      assignedOrg:
+                      thirdPartyDevice:
                         type: object
                         properties:
                           id:
                             type: integer
-                          name:
+                          assignedOrg:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                            required:
+                            - id
+                          serialNumber:
                             type: string
-                        required:
-                        - id
-                      serialNumber:
-                        type: string
-                      isOpSourced:
-                        type: boolean
-                      orderName:
-                        type: string
-                        x-nullable: true
-                      createdAt:
-                        type: string
-                        format: date
-                      updatedAt:
-                        type: string
-                        format: date
-                      thirdPartyDeviceType:
-                        type: object
-                        properties:
-                          id:
-                            type: number
-                          manufacturerName:
-                            type: string
-                          hardwareModel:
-                            type: string
-                          description:
-                            type: string
-                          dbModelName:
-                            type: string
+                          isOpSourced:
+                            type: boolean
+                          orderName:
+                            type:
+                            - string
+                            - 'null'
                           createdAt:
                             type: string
                             format: date
                           updatedAt:
                             type: string
                             format: date
+                          thirdPartyDeviceType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              manufacturerName:
+                                type: string
+                              hardwareModel:
+                                type: string
+                              description:
+                                type: string
+                              dbModelName:
+                                type: string
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                            required:
+                            - id
                         required:
                         - id
-                    required:
-                    - id
-                  wirelessLockProvider:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                      siteIdExt:
-                        type: string
-                        x-nullable: true
-                      siteAuthKey:
-                        type: string
-                        x-nullable: true
-                      createdAt:
-                        type: string
-                        format: date
-                      updatedAt:
-                        type: string
-                        format: date
-                      orgId:
-                        type: number
-                      wirelessLockProviderType:
+                      wirelessLockProvider:
                         type: object
                         properties:
                           id:
                             type: number
-                          name:
+                          siteIdExt:
+                            type:
+                            - string
+                            - 'null'
+                          siteAuthKey:
+                            type:
+                            - string
+                            - 'null'
+                          createdAt:
                             type: string
+                            format: date
+                          updatedAt:
+                            type: string
+                            format: date
+                          orgId:
+                            type: number
+                          wirelessLockProviderType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
                         required:
                         - id
                     required:
                     - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:w
       - o{params.orgId}-site:w
@@ -405,167 +404,204 @@ paths:
       - o{params.orgId}-siteGeneral:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                manufacturer:
+                  type: string
+                serialNumber:
+                  type: string
+                model:
+                  type: string
+                idExt:
+                  type: string
+                wirelessLockProviderId:
+                  type: integer
+              required:
+              - name
+              - manufacturer
+              - serialNumber
+              - model
+              - idExt
+              - wirelessLockProviderId
   /orgs/{orgId}/wirelessLockReaders/{wirelessLockReaderId}:
     get:
       summary: Describe a wireless lock reader
       operationId: describeWirelessLockReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o:r,s-o:r<br/><br/>__Endpoint name__: describeWirelessLockReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-site:r,o{params.orgId}-admin:r,o{params.orgId}-siteGeneral:r,o{params.orgId}-integrations:r,o:r,s-o:r
+
+
+        __Endpoint name__: describeWirelessLockReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockReaderId
+        schema:
+          type: integer
+      - name: wirelessLockReaderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockReaders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  manufacturer:
-                    type: string
-                  serialNumber:
-                    type: string
-                  model:
-                    type: string
-                  lastConnectedAt:
-                    type: string
-                    format: date
-                    x-nullable: true
-                  idExt:
-                    type: string
-                  thirdPartyDeviceId:
-                    type: integer
-                  thirdPartyDevice:
+                  data:
                     type: object
                     properties:
                       id:
+                        type: number
+                      name:
+                        type: string
+                      manufacturer:
+                        type: string
+                      serialNumber:
+                        type: string
+                      model:
+                        type: string
+                      lastConnectedAt:
+                        type:
+                        - string
+                        - 'null'
+                        format: date
+                      idExt:
+                        type: string
+                      thirdPartyDeviceId:
                         type: integer
-                      assignedOrg:
+                      thirdPartyDevice:
                         type: object
                         properties:
                           id:
                             type: integer
-                          name:
+                          assignedOrg:
+                            type: object
+                            properties:
+                              id:
+                                type: integer
+                              name:
+                                type: string
+                            required:
+                            - id
+                          serialNumber:
                             type: string
-                        required:
-                        - id
-                      serialNumber:
-                        type: string
-                      isOpSourced:
-                        type: boolean
-                      orderName:
-                        type: string
-                        x-nullable: true
-                      createdAt:
-                        type: string
-                        format: date
-                      updatedAt:
-                        type: string
-                        format: date
-                      thirdPartyDeviceType:
-                        type: object
-                        properties:
-                          id:
-                            type: number
-                          manufacturerName:
-                            type: string
-                          hardwareModel:
-                            type: string
-                          description:
-                            type: string
-                          dbModelName:
-                            type: string
+                          isOpSourced:
+                            type: boolean
+                          orderName:
+                            type:
+                            - string
+                            - 'null'
                           createdAt:
                             type: string
                             format: date
                           updatedAt:
                             type: string
                             format: date
+                          thirdPartyDeviceType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              manufacturerName:
+                                type: string
+                              hardwareModel:
+                                type: string
+                              description:
+                                type: string
+                              dbModelName:
+                                type: string
+                              createdAt:
+                                type: string
+                                format: date
+                              updatedAt:
+                                type: string
+                                format: date
+                            required:
+                            - id
                         required:
                         - id
-                    required:
-                    - id
-                  wirelessLockProvider:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                      siteIdExt:
-                        type: string
-                        x-nullable: true
-                      siteAuthKey:
-                        type: string
-                        x-nullable: true
-                      createdAt:
-                        type: string
-                        format: date
-                      updatedAt:
-                        type: string
-                        format: date
-                      orgId:
-                        type: number
-                      wirelessLockProviderType:
+                      wirelessLockProvider:
                         type: object
                         properties:
                           id:
                             type: number
-                          name:
+                          siteIdExt:
+                            type:
+                            - string
+                            - 'null'
+                          siteAuthKey:
+                            type:
+                            - string
+                            - 'null'
+                          createdAt:
                             type: string
+                            format: date
+                          updatedAt:
+                            type: string
+                            format: date
+                          orgId:
+                            type: number
+                          wirelessLockProviderType:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
                         required:
                         - id
                     required:
                     - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:r
       - o{params.orgId}-site:r
@@ -577,20 +613,21 @@ paths:
     delete:
       summary: Remove a wireless lock reader
       operationId: deleteWirelessLockReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessLockReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteWirelessLockReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockReaderId
+        schema:
+          type: integer
+      - name: wirelessLockReaderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockReaders
       security:
@@ -609,30 +646,21 @@ paths:
     patch:
       summary: Update a wirelessLock reader
       operationId: updateWirelessLockReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWirelessLockReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-site:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o{params.orgId}-siteGeneral:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateWirelessLockReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockReaderId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-            lastConnectedAt:
-              type: string
-              format: date
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: wirelessLockReaderId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockReaders
       security:
@@ -648,9 +676,21 @@ paths:
       - o{params.orgId}-siteGeneral:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                lastConnectedAt:
+                  type: string
+                  format: date
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

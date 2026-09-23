@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/dashboards API
+  title: Openpath API Documentation Orgs/dashboards API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/dashboards
 paths:
@@ -17,130 +11,144 @@ paths:
     get:
       summary: List all dashboards
       operationId: listDashboards
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listDashboards'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listDashboards'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: name
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: name
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/dashboards
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    widgets:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: number
-                          config:
-                            type: object
-                          startCol:
-                            type: number
-                          startRow:
-                            type: number
-                          numCols:
-                            type: number
-                          numRows:
-                            type: number
-                          widgetType:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        widgets:
+                          type: array
+                          items:
                             type: object
                             properties:
                               id:
                                 type: number
-                              name:
-                                type: string
+                              config:
+                                type: object
+                              startCol:
+                                type: number
+                              startRow:
+                                type: number
+                              numCols:
+                                type: number
+                              numRows:
+                                type: number
+                              widgetType:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
                             required:
                             - id
-                        required:
-                        - id
-                    orgId:
-                      type: number
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                        orgId:
+                          type: number
+                      required:
+                      - id
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dash:r
@@ -153,206 +161,222 @@ paths:
     post:
       summary: Create a new dashboard
       operationId: createDashboard
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w<br/><br/>__Endpoint name__: createDashboard'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w
+
+
+        __Endpoint name__: createDashboard'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-          required:
-          - name
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/dashboards
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  widgets:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        config:
-                          type: object
-                        startCol:
-                          type: number
-                        startRow:
-                          type: number
-                        numCols:
-                          type: number
-                        numRows:
-                          type: number
-                        widgetType:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      widgets:
+                        type: array
+                        items:
                           type: object
                           properties:
                             id:
                               type: number
-                            name:
-                              type: string
+                            config:
+                              type: object
+                            startCol:
+                              type: number
+                            startRow:
+                              type: number
+                            numCols:
+                              type: number
+                            numRows:
+                              type: number
+                            widgetType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
                           required:
                           - id
-                      required:
-                      - id
-                  orgId:
-                    type: number
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                      orgId:
+                        type: number
+                    required:
+                    - id
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dashCust:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+              required:
+              - name
   /orgs/{orgId}/dashboards/{dashboardId}:
     get:
       summary: Describe a dashboard
       operationId: describeDashboard
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeDashboard'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeDashboard'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
+        schema:
+          type: integer
+      - name: dashboardId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  widgets:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        config:
-                          type: object
-                        startCol:
-                          type: number
-                        startRow:
-                          type: number
-                        numCols:
-                          type: number
-                        numRows:
-                          type: number
-                        widgetType:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      widgets:
+                        type: array
+                        items:
                           type: object
                           properties:
                             id:
                               type: number
-                            name:
-                              type: string
+                            config:
+                              type: object
+                            startCol:
+                              type: number
+                            startRow:
+                              type: number
+                            numCols:
+                              type: number
+                            numRows:
+                              type: number
+                            widgetType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
                           required:
                           - id
-                      required:
-                      - id
-                  orgId:
-                    type: number
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                      orgId:
+                        type: number
+                    required:
+                    - id
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dash:r
@@ -365,20 +389,21 @@ paths:
     delete:
       summary: Delete a dashboard
       operationId: deleteDashboard
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteDashboard'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteDashboard'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
+        schema:
+          type: integer
+      - name: dashboardId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
@@ -394,230 +419,254 @@ paths:
     patch:
       summary: Update an existing dashboard
       operationId: updateDashboard
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateDashboard'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateDashboard'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: dashboardId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  widgets:
+                  data:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      widgets:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            config:
+                              type: object
+                            startCol:
+                              type: number
+                            startRow:
+                              type: number
+                            numCols:
+                              type: number
+                            numRows:
+                              type: number
+                            widgetType:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                name:
+                                  type: string
+                              required:
+                              - id
+                          required:
+                          - id
+                      orgId:
+                        type: number
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
+                            items:
+                              type: integer
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
+      x-op-scopes:
+      - o{params.orgId}-dash:w
+      - o{params.orgId}-dashCust:w
+      - o:w
+      - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+  /orgs/{orgId}/dashboards/{dashboardId}/widgets:
+    get:
+      summary: List all dashboard widgets
+      operationId: listWidgets
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listWidgets'
+      parameters:
+      - name: orgId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: dashboardId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: limit
+        in: query
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
+        in: query
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
+        in: query
+        schema:
+          type: string
+          default: id
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
+        in: query
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
+        in: query
+        schema:
+          type: string
+      - name: filter
+        in: query
+        schema:
+          type: string
+      - name: preFilter
+        in: query
+        schema:
+          type: string
+      tags:
+      - orgs/dashboards
+      security:
+      - jwt: []
+      responses:
+        '200':
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
                     type: array
                     items:
                       type: object
                       properties:
                         id:
                           type: number
-                        config:
-                          type: object
-                        startCol:
-                          type: number
-                        startRow:
+                        numRows:
                           type: number
                         numCols:
                           type: number
-                        numRows:
+                        startRow:
                           type: number
+                        startCol:
+                          type: number
+                        config:
+                          type: object
                         widgetType:
                           type: object
                           properties:
                             id:
-                              type: number
+                              type: integer
                             name:
                               type: string
                           required:
                           - id
                       required:
                       - id
-                  orgId:
-                    type: number
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
-      x-op-scopes:
-      - o{params.orgId}-dash:w
-      - o{params.orgId}-dashCust:w
-      - o:w
-      - s-o:w
-  /orgs/{orgId}/dashboards/{dashboardId}/widgets:
-    get:
-      summary: List all dashboard widgets
-      operationId: listWidgets
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listWidgets'
-      parameters:
-      - type: integer
-        name: orgId
-        in: path
-        required: true
-      - type: integer
-        name: dashboardId
-        in: path
-        required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
-        in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
-        in: query
-      - type: string
-        default: id
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
-        in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
-        in: query
-      - type: string
-        name: q
-        in: query
-      - type: string
-        name: filter
-        in: query
-      - type: string
-        name: preFilter
-        in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      tags:
-      - orgs/dashboards
-      security:
-      - jwt: []
-      responses:
-        '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    numRows:
-                      type: number
-                    numCols:
-                      type: number
-                    startRow:
-                      type: number
-                    startCol:
-                      type: number
-                    config:
-                      type: object
-                    widgetType:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        name:
-                          type: string
-                      required:
-                      - id
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
-                        properties:
-                          string:
-                            x-nullable: true
-                            type: array
-                            items:
-                              type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dash:r
@@ -630,204 +679,223 @@ paths:
     post:
       summary: Create a new dashboard widget
       operationId: createWidget
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWidget'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w
+
+
+        __Endpoint name__: createWidget'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            startCol:
-              type: integer
-            startRow:
-              type: integer
-            numCols:
-              type: integer
-            numRows:
-              type: integer
-            config:
-              type: object
-            widgetTypeId:
-              type: integer
-              x-nullable: true
-          required:
-          - startCol
-          - startRow
-          - numCols
-          - numRows
-          - config
-          - widgetTypeId
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: dashboardId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  numRows:
-                    type: number
-                  numCols:
-                    type: number
-                  startRow:
-                    type: number
-                  startCol:
-                    type: number
-                  config:
-                    type: object
-                  widgetType:
+                  data:
                     type: object
                     properties:
                       id:
-                        type: integer
-                      name:
-                        type: string
-                    required:
-                    - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                        type: number
+                      numRows:
+                        type: number
+                      numCols:
+                        type: number
+                      startRow:
+                        type: number
+                      startCol:
+                        type: number
+                      config:
+                        type: object
+                      widgetType:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dashCust:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startCol:
+                  type: integer
+                startRow:
+                  type: integer
+                numCols:
+                  type: integer
+                numRows:
+                  type: integer
+                config:
+                  type: object
+                widgetTypeId:
+                  type:
+                  - integer
+                  - 'null'
+              required:
+              - startCol
+              - startRow
+              - numCols
+              - numRows
+              - config
+              - widgetTypeId
   /orgs/{orgId}/dashboards/{dashboardId}/widgets/{widgetId}:
     get:
       summary: Describe a dashboard widget
       operationId: describeWidget
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeWidget'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeWidget'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
+        schema:
+          type: integer
+      - name: dashboardId
         in: path
         required: true
-      - type: integer
-        name: widgetId
+        schema:
+          type: integer
+      - name: widgetId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  numRows:
-                    type: number
-                  numCols:
-                    type: number
-                  startRow:
-                    type: number
-                  startCol:
-                    type: number
-                  config:
-                    type: object
-                  widgetType:
+                  data:
                     type: object
                     properties:
                       id:
-                        type: integer
-                      name:
-                        type: string
-                    required:
-                    - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                        type: number
+                      numRows:
+                        type: number
+                      numCols:
+                        type: number
+                      startRow:
+                        type: number
+                      startCol:
+                        type: number
+                      config:
+                        type: object
+                      widgetType:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: integer
+                          name:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dash:r
@@ -840,24 +908,26 @@ paths:
     delete:
       summary: Delete a dashboard widget
       operationId: deleteWidget
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWidget'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteWidget'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
+        schema:
+          type: integer
+      - name: dashboardId
         in: path
         required: true
-      - type: integer
-        name: widgetId
+        schema:
+          type: integer
+      - name: widgetId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
@@ -873,39 +943,26 @@ paths:
     patch:
       summary: Update a dashboard widget
       operationId: updateWidget
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateWidget'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dashCust:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateWidget'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: dashboardId
-        in: path
-        required: true
-      - type: integer
-        name: widgetId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            startCol:
-              type: integer
-            startRow:
-              type: integer
-            numCols:
-              type: integer
-            numRows:
-              type: integer
-            config:
-              type: object
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: dashboardId
+        in: path
+        required: true
+        schema:
+          type: integer
+      - name: widgetId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/dashboards
       security:
@@ -918,9 +975,26 @@ paths:
       - o{params.orgId}-dashCust:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                startCol:
+                  type: integer
+                startRow:
+                  type: integer
+                numCols:
+                  type: integer
+                numRows:
+                  type: integer
+                config:
+                  type: object
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

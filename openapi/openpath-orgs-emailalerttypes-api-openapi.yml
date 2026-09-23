@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/emailAlertTypes API
+  title: Openpath API Documentation Orgs/email Alert Types API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/emailAlertTypes
 paths:
@@ -17,118 +11,133 @@ paths:
     get:
       summary: List all email alert types
       operationId: listEmailAlertTypes
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listEmailAlertTypes'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listEmailAlertTypes'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: name
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: name
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/emailAlertTypes
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    ordinal:
-                      type: integer
-                    name:
-                      type: string
-                    code:
-                      type: string
-                    description:
-                      type: string
-                    requiredFeature:
-                      x-nullable: true
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: integer
+                        ordinal:
+                          type: integer
+                        name:
+                          type: string
                         code:
                           type: string
+                        description:
+                          type: string
+                        requiredFeature:
+                          type:
+                          - object
+                          - 'null'
+                          properties:
+                            id:
+                              type: integer
+                            code:
+                              type: string
+                          required:
+                          - id
+                        canHaveSnapshots:
+                          type: boolean
                       required:
                       - id
-                    canHaveSnapshots:
-                      type: boolean
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-admin:w
       - o{params.orgId}-admin:r
@@ -140,87 +149,96 @@ paths:
     get:
       summary: Describe an email alert type
       operationId: describeEmailAlertType
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeEmailAlertType'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeEmailAlertType'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: emailAlertTypeId
+        schema:
+          type: integer
+      - name: emailAlertTypeId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/emailAlertTypes
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: integer
-                  ordinal:
-                    type: integer
-                  name:
-                    type: string
-                  code:
-                    type: string
-                  description:
-                    type: string
-                  requiredFeature:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
                       id:
                         type: integer
+                      ordinal:
+                        type: integer
+                      name:
+                        type: string
                       code:
                         type: string
+                      description:
+                        type: string
+                      requiredFeature:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          id:
+                            type: integer
+                          code:
+                            type: string
+                        required:
+                        - id
+                      canHaveSnapshots:
+                        type: boolean
                     required:
                     - id
-                  canHaveSnapshots:
-                    type: boolean
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-admin:w
       - o{params.orgId}-admin:r
@@ -228,9 +246,10 @@ paths:
       - o:r
       - s-o:w
       - s-o:r
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

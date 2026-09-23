@@ -1,15 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/orgPictures API
+  title: Openpath API Documentation Orgs/org Pictures API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+  description: Org Pictures
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/orgPictures
   description: Org Pictures
@@ -18,110 +13,125 @@ paths:
     get:
       summary: List all org pictures
       operationId: listOrgPictures
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listOrgPictures'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-mobileAppSettings:w,o{params.orgId}-mobileAppSettings:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listOrgPictures'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: id
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: id
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/orgPictures
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    isAvatar:
-                      type: boolean
-                    picture:
-                      type: object
-                      properties:
-                        contentType:
-                          type: string
-                        fileName:
-                          type: string
-                        url:
-                          type: string
-                          x-nullable: true
-                  required:
-                  - id
-              meta:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  accessToken:
-                    x-nullable: true
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        isAvatar:
+                          type: boolean
+                        picture:
+                          type: object
+                          properties:
+                            contentType:
+                              type: string
+                            fileName:
+                              type: string
+                            url:
+                              type:
+                              - string
+                              - 'null'
+                      required:
+                      - id
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-admin:w
       - o{params.orgId}-admin:r
@@ -134,174 +144,192 @@ paths:
     post:
       summary: Create an org picture
       operationId: createOrgPicture
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: createOrgPicture'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w
+
+
+        __Endpoint name__: createOrgPicture'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            isAvatar:
-              type: boolean
-              default: true
-            picture:
-              type: object
-              properties:
-                base64:
-                  type: string
-              required:
-              - base64
-          required:
-          - picture
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/orgPictures
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  isAvatar:
-                    type: boolean
-                  picture:
+                  data:
                     type: object
                     properties:
-                      contentType:
-                        type: string
-                      fileName:
-                        type: string
-                      url:
-                        type: string
-                        x-nullable: true
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
+                      id:
+                        type: number
+                      isAvatar:
                         type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      picture:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          url:
+                            type:
+                            - string
+                            - 'null'
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-admin:w
       - o{params.orgId}-mobileAppSettings:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isAvatar:
+                  type: boolean
+                  default: true
+                picture:
+                  type: object
+                  properties:
+                    base64:
+                      type: string
+                  required:
+                  - base64
+              required:
+              - picture
   /orgs/{orgId}/orgPictures/{orgPictureId}:
     get:
       summary: Describe an org picture
       operationId: describeOrgPicture
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: describeOrgPicture'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w
+
+
+        __Endpoint name__: describeOrgPicture'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: orgPictureId
+        schema:
+          type: integer
+      - name: orgPictureId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/orgPictures
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  isAvatar:
-                    type: boolean
-                  picture:
+                  data:
                     type: object
                     properties:
-                      contentType:
-                        type: string
-                      fileName:
-                        type: string
-                      url:
-                        type: string
-                        x-nullable: true
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
+                      id:
+                        type: number
+                      isAvatar:
                         type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      picture:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          contentType:
+                            type: string
+                          fileName:
+                            type: string
+                          url:
+                            type:
+                            - string
+                            - 'null'
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-admin:w
       - o{params.orgId}-mobileAppSettings:w
@@ -310,20 +338,21 @@ paths:
     delete:
       summary: Delete an org picture
       operationId: deleteOrgPicture
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteOrgPicture'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteOrgPicture'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: orgPictureId
+        schema:
+          type: integer
+      - name: orgPictureId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/orgPictures
       security:
@@ -339,34 +368,21 @@ paths:
     patch:
       summary: Update an org picture
       operationId: updateOrgPicture
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateOrgPicture'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o{params.orgId}-mobileAppSettings:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateOrgPicture'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: orgPictureId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            isAvatar:
-              type: boolean
-            picture:
-              type: object
-              properties:
-                base64:
-                  type: string
-              required:
-              - base64
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: orgPictureId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/orgPictures
       security:
@@ -379,9 +395,25 @@ paths:
       - o{params.orgId}-mobileAppSettings:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                isAvatar:
+                  type: boolean
+                picture:
+                  type: object
+                  properties:
+                    base64:
+                      type: string
+                  required:
+                  - base64
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

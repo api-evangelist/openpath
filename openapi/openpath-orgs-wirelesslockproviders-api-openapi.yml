@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/wirelessLockProviders API
+  title: Openpath API Documentation Orgs/wireless Lock Providers API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/wirelessLockProviders
 paths:
@@ -17,92 +11,101 @@ paths:
     get:
       summary: List all wireless lock providers
       operationId: listWirelessLockProviders
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockProviders'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r
+
+
+        __Endpoint name__: listWirelessLockProviders'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    siteIdExt:
-                      type: string
-                      x-nullable: true
-                    siteAuthKey:
-                      type: string
-                      x-nullable: true
-                    createdAt:
-                      type: string
-                      format: date
-                    updatedAt:
-                      type: string
-                      format: date
-                    orgId:
-                      type: number
-                    wirelessLockProviderType:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
-                        name:
+                        siteIdExt:
+                          type:
+                          - string
+                          - 'null'
+                        siteAuthKey:
+                          type:
+                          - string
+                          - 'null'
+                        createdAt:
                           type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                        orgId:
+                          type: number
+                        wirelessLockProviderType:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
                       required:
                       - id
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:r
       - o{params.orgId}-hw:w
@@ -112,193 +115,215 @@ paths:
     post:
       summary: Create a wireless lock provider
       operationId: createWirelessLockProvider
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: createWirelessLockProvider'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o:w,s-o:w
+
+
+        __Endpoint name__: createWirelessLockProvider'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            siteIdExt:
-              type: string
-              x-nullable: true
-            siteAuthKey:
-              type: string
-              x-nullable: true
-            wirelessLockProviderTypeId:
-              type: integer
-          required:
-          - wirelessLockProviderTypeId
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  siteIdExt:
-                    type: string
-                    x-nullable: true
-                  siteAuthKey:
-                    type: string
-                    x-nullable: true
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  orgId:
-                    type: number
-                  wirelessLockProviderType:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
-                      name:
-                        type: string
-                    required:
-                    - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
+                      siteIdExt:
+                        type:
+                        - string
+                        - 'null'
+                      siteAuthKey:
+                        type:
+                        - string
+                        - 'null'
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      updatedAt:
+                        type: string
+                        format: date
+                      orgId:
+                        type: number
+                      wirelessLockProviderType:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                siteIdExt:
+                  type:
+                  - string
+                  - 'null'
+                siteAuthKey:
+                  type:
+                  - string
+                  - 'null'
+                wirelessLockProviderTypeId:
+                  type: integer
+              required:
+              - wirelessLockProviderTypeId
   /orgs/{orgId}/wirelessLockProviders/{wirelessLockProviderId}:
     get:
       summary: Describe a wireless lock provider
       operationId: describeWirelessLockProvider
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r<br/><br/>__Endpoint name__: describeWirelessLockProvider'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r
+
+
+        __Endpoint name__: describeWirelessLockProvider'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockProviderId
+        schema:
+          type: integer
+      - name: wirelessLockProviderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  siteIdExt:
-                    type: string
-                    x-nullable: true
-                  siteAuthKey:
-                    type: string
-                    x-nullable: true
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  orgId:
-                    type: number
-                  wirelessLockProviderType:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
-                      name:
-                        type: string
-                    required:
-                    - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
+                      siteIdExt:
+                        type:
+                        - string
+                        - 'null'
+                      siteAuthKey:
+                        type:
+                        - string
+                        - 'null'
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      updatedAt:
+                        type: string
+                        format: date
+                      orgId:
+                        type: number
+                      wirelessLockProviderType:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:r
       - o{params.orgId}-hw:w
@@ -308,20 +333,21 @@ paths:
     delete:
       summary: Remove a wireless lock provider and all related devices
       operationId: deleteWirelessLockProvider
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteWirelessLockProvider'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteWirelessLockProvider'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockProviderId
+        schema:
+          type: integer
+      - name: wirelessLockProviderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
@@ -337,79 +363,87 @@ paths:
     get:
       summary: List all operators for a wireless lock provider
       operationId: listWirelessLockProviderOperators
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockProviderOperators'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r
+
+
+        __Endpoint name__: listWirelessLockProviderOperators'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockProviderId
+        schema:
+          type: integer
+      - name: wirelessLockProviderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    userName:
-                      type: string
-                    role:
-                      type: string
-                    firstName:
-                      type: string
-                    lastName:
-                      type: string
-                    operatorId:
-                      type: integer
-              meta:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        userName:
+                          type: string
+                        role:
+                          type: string
+                        firstName:
+                          type: string
+                        lastName:
+                          type: string
+                        operatorId:
                           type: integer
-                      siteIdsByScope:
-                        type: object
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:r
       - o{params.orgId}-hw:w
@@ -420,93 +454,102 @@ paths:
     get:
       summary: List all firmwares available for a wireless lock provider by device
       operationId: listWirelessLockProviderFirmwares
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r<br/><br/>__Endpoint name__: listWirelessLockProviderFirmwares'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o:r,s-o:r
+
+
+        __Endpoint name__: listWirelessLockProviderFirmwares'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockProviderId
+        schema:
+          type: integer
+      - name: wirelessLockProviderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    manufacturer:
-                      type: string
-                    model:
-                      type: string
-                    versions:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          name:
-                            type: string
-                          description:
-                            type: string
-                          version:
-                            type: string
-                          extendedVersion:
-                            type: string
-                            x-nullable: true
-                          isPublic:
-                            type: boolean
-                            default: false
-                          releaseDate:
-                            type: string
-                            format: date
-              meta:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  accessToken:
-                    x-nullable: true
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        manufacturer:
+                          type: string
+                        model:
+                          type: string
+                        versions:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                              description:
+                                type: string
+                              version:
+                                type: string
+                              extendedVersion:
+                                type:
+                                - string
+                                - 'null'
+                              isPublic:
+                                type: boolean
+                                default: false
+                              releaseDate:
+                                type: string
+                                format: date
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-integrations:r
       - o{params.orgId}-hw:w
@@ -517,20 +560,21 @@ paths:
     post:
       summary: Sync devices for a wireless lock provider
       operationId: syncWirelessLockProviderDevices
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: syncWirelessLockProviderDevices'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-hw:w,o:w,s-o:w
+
+
+        __Endpoint name__: syncWirelessLockProviderDevices'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockProviderId
+        schema:
+          type: integer
+      - name: wirelessLockProviderId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
@@ -547,32 +591,21 @@ paths:
     post:
       summary: Invite self to be a site operator for a wireless lock provider
       operationId: inviteWirelessLockProviderOperator
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: inviteWirelessLockProviderOperator'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-integrations:w,o{params.orgId}-hw:w,o:w,s-o:w
+
+
+        __Endpoint name__: inviteWirelessLockProviderOperator'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: wirelessLockProviderId
-        in: path
-        required: true
-      - x-nullable: true
-        in: body
-        name: body
         schema:
-          type: object
-          properties:
-            email:
-              type: string
-              x-format:
-                email: true
-              x-convert:
-                trim: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: wirelessLockProviderId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/wirelessLockProviders
       security:
@@ -585,9 +618,22 @@ paths:
       - o{params.orgId}-hw:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  x-format:
+                    email: true
+                  x-convert:
+                    trim: true
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

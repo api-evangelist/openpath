@@ -1,17 +1,12 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth tokens API
+  title: Openpath API Documentation Tokens API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+  description: Token use and validation
+servers:
+- url: https://api.openpath.com
 tags:
-- name: tokens
+- name: Tokens
   description: Token use and validation
 paths:
   /tokens/cloudKeyLockdownPlanActionTokens/{token}/use:
@@ -20,68 +15,57 @@ paths:
       operationId: useCloudKeyLockdownPlanActionToken
       description: '__Endpoint name__: useCloudKeyLockdownPlanActionToken'
       parameters:
-      - type: string
-        name: token
+      - name: token
         in: path
         required: true
-      - x-nullable: true
-        in: body
-        name: body
         schema:
-          type: object
-          properties:
-            lockdownPlanId:
-              type: integer
-            action:
-              type: string
-              enum:
-              - trigger
-              - revert
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: string
       tags:
-      - tokens
+      - Tokens
       responses:
         '204':
           description: No Content
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                lockdownPlanId:
+                  type: integer
+                action:
+                  type: string
+                  enum:
+                  - trigger
+                  - revert
   /tokens/cloudKeyUnlockTokens/{token}/use:
     post:
       summary: Use a cloudKey token to remotely unlock an entry
       operationId: useCloudKeyUnlockToken
       description: '__Endpoint name__: useCloudKeyUnlockToken'
       parameters:
-      - type: string
-        name: token
+      - name: token
         in: path
         required: true
-      - x-alternatives:
-        - type: object
-          properties:
-            entryId:
-              type: integer
-        - type: string
-        x-nullable: true
-        in: body
-        name: body
         schema:
-          type: object
-          properties:
-            entryId:
-              type: integer
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: string
       tags:
-      - tokens
+      - Tokens
       responses:
         '204':
           description: No Content
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                entryId:
+                  type: integer
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

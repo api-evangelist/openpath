@@ -1,226 +1,204 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/sharedUsers API
+  title: Openpath API Documentation Orgs/shared Users API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/sharedUsers
 paths:
   /orgs/{orgId}/sharedUsers:
     get:
-      summary: List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)
+      summary: List all users that have access to at least one zone from this org (including…
       operationId: listSharedUsers
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSharedUsers'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listSharedUsers'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: identity.lastName
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: identity.lastName
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/sharedUsers
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    opal:
-                      type: string
-                    status:
-                      type: string
-                    startDate:
-                      type: string
-                      format: date
-                      x-nullable: true
-                    endDate:
-                      type: string
-                      format: date
-                      x-nullable: true
-                    hasRemoteUnlock:
-                      type: boolean
-                    isOverrideAllowed:
-                      type: boolean
-                    identity:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
                         opal:
                           type: string
-                        roles:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              name:
-                                type: string
-                              description:
-                                type: string
-                              isMfaRequired:
-                                type: boolean
-                            required:
-                            - id
-                        mfaCredentials:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              createdAt:
-                                type: string
-                                format: date
-                              updatedAt:
-                                type: string
-                                format: date
-                              name:
-                                type: string
-                              status:
-                                type: string
-                              mfaCredentialType:
+                        status:
+                          type: string
+                        startDate:
+                          type:
+                          - string
+                          - 'null'
+                          format: date
+                        endDate:
+                          type:
+                          - string
+                          - 'null'
+                          format: date
+                        hasRemoteUnlock:
+                          type: boolean
+                        isOverrideAllowed:
+                          type: boolean
+                        identity:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            opal:
+                              type: string
+                            roles:
+                              type: array
+                              items:
                                 type: object
                                 properties:
                                   id:
                                     type: number
                                   name:
                                     type: string
-                                  modelName:
+                                  description:
                                     type: string
+                                  isMfaRequired:
+                                    type: boolean
                                 required:
                                 - id
-                              totpSoftDevice:
+                            mfaCredentials:
+                              type: array
+                              items:
                                 type: object
                                 properties:
                                   id:
                                     type: number
+                                  createdAt:
+                                    type: string
+                                    format: date
+                                  updatedAt:
+                                    type: string
+                                    format: date
+                                  name:
+                                    type: string
+                                  status:
+                                    type: string
+                                  mfaCredentialType:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                      modelName:
+                                        type: string
+                                    required:
+                                    - id
+                                  totpSoftDevice:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                    required:
+                                    - id
                                 required:
                                 - id
-                            required:
-                            - id
-                        firstName:
-                          type: string
-                          x-nullable: true
-                        middleName:
-                          type: string
-                          x-nullable: true
-                        lastName:
-                          type: string
-                          x-nullable: true
-                        fullName:
-                          type: string
-                          x-nullable: true
-                        initials:
-                          type: string
-                          x-nullable: true
-                        isEmailVerified:
-                          type: boolean
-                        namespace:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            nickname:
-                              type: string
-                              x-nullable: true
-                            namespaceType:
+                            firstName:
+                              type:
+                              - string
+                              - 'null'
+                            middleName:
+                              type:
+                              - string
+                              - 'null'
+                            lastName:
+                              type:
+                              - string
+                              - 'null'
+                            fullName:
+                              type:
+                              - string
+                              - 'null'
+                            initials:
+                              type:
+                              - string
+                              - 'null'
+                            isEmailVerified:
+                              type: boolean
+                            namespace:
                               type: object
                               properties:
                                 id:
-                                  type: number
-                                name:
-                                  type: string
-                                modelName:
-                                  type: string
-                                  x-nullable: true
-                              required:
-                              - id
-                            org:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                name:
-                                  type: string
-                              required:
-                              - id
-                            identityProvider:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                isSsoEnabled:
-                                  type: boolean
-                                isSyncMobilePhoneEnabled:
-                                  type: boolean
-                                isRemoveGroupsEnabled:
-                                  type: boolean
-                                identityProviderSyncTypeId:
                                   type: integer
-                                  x-nullable: true
-                                credentials:
-                                  type: string
-                                  x-nullable: true
-                                identityProviderType:
+                                nickname:
+                                  type:
+                                  - string
+                                  - 'null'
+                                namespaceType:
                                   type: object
                                   properties:
                                     id:
                                       type: number
                                     name:
                                       type: string
+                                    modelName:
+                                      type:
+                                      - string
+                                      - 'null'
                                   required:
                                   - id
                                 org:
@@ -232,167 +210,217 @@ paths:
                                       type: string
                                   required:
                                   - id
-                              required:
-                              - id
-                            propertyManagementSystem:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                orgId:
-                                  type: number
-                                propertyManagementSystemTypeId:
-                                  type: number
-                                propertyManagementSystemType:
+                                identityProvider:
                                   type: object
                                   properties:
                                     id:
                                       type: number
-                                    name:
-                                      type: string
+                                    isSsoEnabled:
+                                      type: boolean
+                                    isSyncMobilePhoneEnabled:
+                                      type: boolean
+                                    isRemoveGroupsEnabled:
+                                      type: boolean
+                                    identityProviderSyncTypeId:
+                                      type:
+                                      - integer
+                                      - 'null'
+                                    credentials:
+                                      type:
+                                      - string
+                                      - 'null'
+                                    identityProviderType:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                    org:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
                                   required:
                                   - id
+                                propertyManagementSystem:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    orgId:
+                                      type: number
+                                    propertyManagementSystemTypeId:
+                                      type: number
+                                    propertyManagementSystemType:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                  required:
+                                  - id
+                                  - orgId
+                                  - propertyManagementSystemTypeId
                               required:
                               - id
-                              - orgId
-                              - propertyManagementSystemTypeId
+                            idpUniqueIdentifier:
+                              type: string
+                            pmsUniqueIdentifier:
+                              type:
+                              - string
+                              - 'null'
+                            needsPasswordChange:
+                              type: boolean
+                              default: false
+                            nicknames:
+                              type:
+                              - array
+                              - 'null'
+                              items:
+                                type: object
+                                properties:
+                                  nickname:
+                                    type: string
+                                    minLength: 1
+                                    maxLength: 100
+                            email:
+                              type: string
+                            mobilePhone:
+                              type:
+                              - string
+                              - 'null'
+                            language:
+                              type:
+                              - string
+                              - 'null'
+                            createdAt:
+                              type: string
+                              format: date
+                            updatedAt:
+                              type: string
+                              format: date
+                            users:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  opal:
+                                    type: string
+                                  status:
+                                    type: string
+                                  startDate:
+                                    type:
+                                    - string
+                                    - 'null'
+                                    format: date
+                                  endDate:
+                                    type:
+                                    - string
+                                    - 'null'
+                                    format: date
+                                  createdAt:
+                                    type: string
+                                    format: date
+                                  updatedAt:
+                                    type: string
+                                    format: date
+                                  org:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type:
+                                        - string
+                                        - 'null'
+                                    required:
+                                    - id
+                                required:
+                                - id
                           required:
                           - id
-                        idpUniqueIdentifier:
-                          type: string
-                        pmsUniqueIdentifier:
-                          type: string
-                          x-nullable: true
-                        needsPasswordChange:
-                          type: boolean
-                          default: false
-                        nicknames:
-                          x-nullable: true
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              nickname:
-                                type: string
-                                minLength: 1
-                                maxLength: 100
-                        email:
-                          type: string
-                        mobilePhone:
-                          type: string
-                          x-nullable: true
-                        language:
-                          type: string
-                          x-nullable: true
                         createdAt:
                           type: string
                           format: date
-                        updatedAt:
-                          type: string
-                          format: date
-                        users:
+                        pictureUrl:
+                          type:
+                          - string
+                          - 'null'
+                        pictureExpiresAt:
+                          type:
+                          - number
+                          - 'null'
+                        org:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            opal:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                          - id
+                        sites:
                           type: array
                           items:
                             type: object
                             properties:
                               id:
                                 type: number
-                              opal:
+                              name:
                                 type: string
-                              status:
-                                type: string
-                              startDate:
-                                type: string
-                                format: date
-                                x-nullable: true
-                              endDate:
-                                type: string
-                                format: date
-                                x-nullable: true
-                              createdAt:
-                                type: string
-                                format: date
-                              updatedAt:
-                                type: string
-                                format: date
-                              org:
-                                type: object
-                                properties:
-                                  id:
-                                    type: number
-                                  name:
-                                    type: string
-                                    x-nullable: true
-                                required:
-                                - id
                             required:
                             - id
                       required:
                       - id
-                    createdAt:
-                      type: string
-                      format: date
-                    pictureUrl:
-                      type: string
-                      x-nullable: true
-                    pictureExpiresAt:
-                      type: number
-                      x-nullable: true
-                    org:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        opal:
-                          type: string
-                        name:
-                          type: string
-                      required:
-                      - id
-                    sites:
-                      type: array
-                      items:
-                        type: object
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          id:
-                            type: number
-                          name:
+                          scopeUpdatedAt:
                             type: string
-                        required:
-                        - id
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o{params.orgId}-user:r
@@ -406,185 +434,164 @@ paths:
       - s-o:r
   /orgs/{orgId}/sharedUsers/{userId}:
     get:
-      summary: Describe a user that has access to at least one zone from this org (including users from other orgs via zone sharing)
+      summary: Describe a user that has access to at least one zone from this org (including…
       operationId: describeSharedUser
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeSharedUser'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-user:w,o{params.orgId}-user:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeSharedUser'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: userId
+        schema:
+          type: integer
+      - name: userId
         in: path
         required: true
-      - type: string
-        default: ''
-        name: options
+        schema:
+          type: integer
+      - name: options
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
+          default: ''
       tags:
       - orgs/sharedUsers
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  opal:
-                    type: string
-                  status:
-                    type: string
-                  startDate:
-                    type: string
-                    format: date
-                    x-nullable: true
-                  endDate:
-                    type: string
-                    format: date
-                    x-nullable: true
-                  hasRemoteUnlock:
-                    type: boolean
-                  isOverrideAllowed:
-                    type: boolean
-                  identity:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       opal:
                         type: string
-                      roles:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: number
-                            name:
-                              type: string
-                            description:
-                              type: string
-                            isMfaRequired:
-                              type: boolean
-                          required:
-                          - id
-                      mfaCredentials:
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            id:
-                              type: number
-                            createdAt:
-                              type: string
-                              format: date
-                            updatedAt:
-                              type: string
-                              format: date
-                            name:
-                              type: string
-                            status:
-                              type: string
-                            mfaCredentialType:
+                      status:
+                        type: string
+                      startDate:
+                        type:
+                        - string
+                        - 'null'
+                        format: date
+                      endDate:
+                        type:
+                        - string
+                        - 'null'
+                        format: date
+                      hasRemoteUnlock:
+                        type: boolean
+                      isOverrideAllowed:
+                        type: boolean
+                      identity:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          opal:
+                            type: string
+                          roles:
+                            type: array
+                            items:
                               type: object
                               properties:
                                 id:
                                   type: number
                                 name:
                                   type: string
-                                modelName:
+                                description:
                                   type: string
+                                isMfaRequired:
+                                  type: boolean
                               required:
                               - id
-                            totpSoftDevice:
+                          mfaCredentials:
+                            type: array
+                            items:
                               type: object
                               properties:
                                 id:
                                   type: number
+                                createdAt:
+                                  type: string
+                                  format: date
+                                updatedAt:
+                                  type: string
+                                  format: date
+                                name:
+                                  type: string
+                                status:
+                                  type: string
+                                mfaCredentialType:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                    modelName:
+                                      type: string
+                                  required:
+                                  - id
+                                totpSoftDevice:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                  required:
+                                  - id
                               required:
                               - id
-                          required:
-                          - id
-                      firstName:
-                        type: string
-                        x-nullable: true
-                      middleName:
-                        type: string
-                        x-nullable: true
-                      lastName:
-                        type: string
-                        x-nullable: true
-                      fullName:
-                        type: string
-                        x-nullable: true
-                      initials:
-                        type: string
-                        x-nullable: true
-                      isEmailVerified:
-                        type: boolean
-                      namespace:
-                        type: object
-                        properties:
-                          id:
-                            type: integer
-                          nickname:
-                            type: string
-                            x-nullable: true
-                          namespaceType:
+                          firstName:
+                            type:
+                            - string
+                            - 'null'
+                          middleName:
+                            type:
+                            - string
+                            - 'null'
+                          lastName:
+                            type:
+                            - string
+                            - 'null'
+                          fullName:
+                            type:
+                            - string
+                            - 'null'
+                          initials:
+                            type:
+                            - string
+                            - 'null'
+                          isEmailVerified:
+                            type: boolean
+                          namespace:
                             type: object
                             properties:
                               id:
-                                type: number
-                              name:
-                                type: string
-                              modelName:
-                                type: string
-                                x-nullable: true
-                            required:
-                            - id
-                          org:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              name:
-                                type: string
-                            required:
-                            - id
-                          identityProvider:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              isSsoEnabled:
-                                type: boolean
-                              isSyncMobilePhoneEnabled:
-                                type: boolean
-                              isRemoveGroupsEnabled:
-                                type: boolean
-                              identityProviderSyncTypeId:
                                 type: integer
-                                x-nullable: true
-                              credentials:
-                                type: string
-                                x-nullable: true
-                              identityProviderType:
+                              nickname:
+                                type:
+                                - string
+                                - 'null'
+                              namespaceType:
                                 type: object
                                 properties:
                                   id:
                                     type: number
                                   name:
                                     type: string
+                                  modelName:
+                                    type:
+                                    - string
+                                    - 'null'
                                 required:
                                 - id
                               org:
@@ -596,167 +603,217 @@ paths:
                                     type: string
                                 required:
                                 - id
-                            required:
-                            - id
-                          propertyManagementSystem:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              orgId:
-                                type: number
-                              propertyManagementSystemTypeId:
-                                type: number
-                              propertyManagementSystemType:
+                              identityProvider:
                                 type: object
                                 properties:
                                   id:
                                     type: number
-                                  name:
-                                    type: string
+                                  isSsoEnabled:
+                                    type: boolean
+                                  isSyncMobilePhoneEnabled:
+                                    type: boolean
+                                  isRemoveGroupsEnabled:
+                                    type: boolean
+                                  identityProviderSyncTypeId:
+                                    type:
+                                    - integer
+                                    - 'null'
+                                  credentials:
+                                    type:
+                                    - string
+                                    - 'null'
+                                  identityProviderType:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
+                                  org:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
                                 required:
                                 - id
+                              propertyManagementSystem:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  orgId:
+                                    type: number
+                                  propertyManagementSystemTypeId:
+                                    type: number
+                                  propertyManagementSystemType:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                    required:
+                                    - id
+                                required:
+                                - id
+                                - orgId
+                                - propertyManagementSystemTypeId
                             required:
                             - id
-                            - orgId
-                            - propertyManagementSystemTypeId
+                          idpUniqueIdentifier:
+                            type: string
+                          pmsUniqueIdentifier:
+                            type:
+                            - string
+                            - 'null'
+                          needsPasswordChange:
+                            type: boolean
+                            default: false
+                          nicknames:
+                            type:
+                            - array
+                            - 'null'
+                            items:
+                              type: object
+                              properties:
+                                nickname:
+                                  type: string
+                                  minLength: 1
+                                  maxLength: 100
+                          email:
+                            type: string
+                          mobilePhone:
+                            type:
+                            - string
+                            - 'null'
+                          language:
+                            type:
+                            - string
+                            - 'null'
+                          createdAt:
+                            type: string
+                            format: date
+                          updatedAt:
+                            type: string
+                            format: date
+                          users:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                opal:
+                                  type: string
+                                status:
+                                  type: string
+                                startDate:
+                                  type:
+                                  - string
+                                  - 'null'
+                                  format: date
+                                endDate:
+                                  type:
+                                  - string
+                                  - 'null'
+                                  format: date
+                                createdAt:
+                                  type: string
+                                  format: date
+                                updatedAt:
+                                  type: string
+                                  format: date
+                                org:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type:
+                                      - string
+                                      - 'null'
+                                  required:
+                                  - id
+                              required:
+                              - id
                         required:
                         - id
-                      idpUniqueIdentifier:
-                        type: string
-                      pmsUniqueIdentifier:
-                        type: string
-                        x-nullable: true
-                      needsPasswordChange:
-                        type: boolean
-                        default: false
-                      nicknames:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: object
-                          properties:
-                            nickname:
-                              type: string
-                              minLength: 1
-                              maxLength: 100
-                      email:
-                        type: string
-                      mobilePhone:
-                        type: string
-                        x-nullable: true
-                      language:
-                        type: string
-                        x-nullable: true
                       createdAt:
                         type: string
                         format: date
-                      updatedAt:
-                        type: string
-                        format: date
-                      users:
+                      pictureUrl:
+                        type:
+                        - string
+                        - 'null'
+                      pictureExpiresAt:
+                        type:
+                        - number
+                        - 'null'
+                      org:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          opal:
+                            type: string
+                          name:
+                            type: string
+                        required:
+                        - id
+                      sites:
                         type: array
                         items:
                           type: object
                           properties:
                             id:
                               type: number
-                            opal:
+                            name:
                               type: string
-                            status:
-                              type: string
-                            startDate:
-                              type: string
-                              format: date
-                              x-nullable: true
-                            endDate:
-                              type: string
-                              format: date
-                              x-nullable: true
-                            createdAt:
-                              type: string
-                              format: date
-                            updatedAt:
-                              type: string
-                              format: date
-                            org:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                name:
-                                  type: string
-                                  x-nullable: true
-                              required:
-                              - id
                           required:
                           - id
                     required:
                     - id
-                  createdAt:
-                    type: string
-                    format: date
-                  pictureUrl:
-                    type: string
-                    x-nullable: true
-                  pictureExpiresAt:
-                    type: number
-                    x-nullable: true
-                  org:
+                  meta:
                     type: object
                     properties:
-                      id:
-                        type: number
-                      opal:
-                        type: string
-                      name:
-                        type: string
-                    required:
-                    - id
-                  sites:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dashActivity:w
       - o{params.orgId}-dashActivity:r
@@ -770,210 +827,160 @@ paths:
       - s-o:r
   /orgs/{orgId}/sharedUsers/list:
     post:
-      summary: List all users that have access to at least one zone from this org (including users from other orgs via zone sharing)
+      summary: List all users that have access to at least one zone from this org (including…
       operationId: listSharedUsersPost
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listSharedUsersPost'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-user:w,o{params.orgId}-user:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listSharedUsersPost'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            limit:
-              type: integer
-              minimum: 1
-              maximum: 1000
-            offset:
-              type: integer
-              default: 0
-              minimum: 0
-            sort:
-              type: string
-              default: identity.lastName
-              pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-            order:
-              type: string
-              default: asc
-              pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-            q:
-              type: string
-            filter:
-              type: string
-            preFilter:
-              type: string
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/sharedUsers
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    opal:
-                      type: string
-                    status:
-                      type: string
-                    startDate:
-                      type: string
-                      format: date
-                      x-nullable: true
-                    endDate:
-                      type: string
-                      format: date
-                      x-nullable: true
-                    hasRemoteUnlock:
-                      type: boolean
-                    isOverrideAllowed:
-                      type: boolean
-                    identity:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
                         opal:
                           type: string
-                        roles:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              name:
-                                type: string
-                              description:
-                                type: string
-                              isMfaRequired:
-                                type: boolean
-                            required:
-                            - id
-                        mfaCredentials:
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              id:
-                                type: number
-                              createdAt:
-                                type: string
-                                format: date
-                              updatedAt:
-                                type: string
-                                format: date
-                              name:
-                                type: string
-                              status:
-                                type: string
-                              mfaCredentialType:
+                        status:
+                          type: string
+                        startDate:
+                          type:
+                          - string
+                          - 'null'
+                          format: date
+                        endDate:
+                          type:
+                          - string
+                          - 'null'
+                          format: date
+                        hasRemoteUnlock:
+                          type: boolean
+                        isOverrideAllowed:
+                          type: boolean
+                        identity:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            opal:
+                              type: string
+                            roles:
+                              type: array
+                              items:
                                 type: object
                                 properties:
                                   id:
                                     type: number
                                   name:
                                     type: string
-                                  modelName:
+                                  description:
                                     type: string
+                                  isMfaRequired:
+                                    type: boolean
                                 required:
                                 - id
-                              totpSoftDevice:
+                            mfaCredentials:
+                              type: array
+                              items:
                                 type: object
                                 properties:
                                   id:
                                     type: number
+                                  createdAt:
+                                    type: string
+                                    format: date
+                                  updatedAt:
+                                    type: string
+                                    format: date
+                                  name:
+                                    type: string
+                                  status:
+                                    type: string
+                                  mfaCredentialType:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type: string
+                                      modelName:
+                                        type: string
+                                    required:
+                                    - id
+                                  totpSoftDevice:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                    required:
+                                    - id
                                 required:
                                 - id
-                            required:
-                            - id
-                        firstName:
-                          type: string
-                          x-nullable: true
-                        middleName:
-                          type: string
-                          x-nullable: true
-                        lastName:
-                          type: string
-                          x-nullable: true
-                        fullName:
-                          type: string
-                          x-nullable: true
-                        initials:
-                          type: string
-                          x-nullable: true
-                        isEmailVerified:
-                          type: boolean
-                        namespace:
-                          type: object
-                          properties:
-                            id:
-                              type: integer
-                            nickname:
-                              type: string
-                              x-nullable: true
-                            namespaceType:
+                            firstName:
+                              type:
+                              - string
+                              - 'null'
+                            middleName:
+                              type:
+                              - string
+                              - 'null'
+                            lastName:
+                              type:
+                              - string
+                              - 'null'
+                            fullName:
+                              type:
+                              - string
+                              - 'null'
+                            initials:
+                              type:
+                              - string
+                              - 'null'
+                            isEmailVerified:
+                              type: boolean
+                            namespace:
                               type: object
                               properties:
                                 id:
-                                  type: number
-                                name:
-                                  type: string
-                                modelName:
-                                  type: string
-                                  x-nullable: true
-                              required:
-                              - id
-                            org:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                name:
-                                  type: string
-                              required:
-                              - id
-                            identityProvider:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                isSsoEnabled:
-                                  type: boolean
-                                isSyncMobilePhoneEnabled:
-                                  type: boolean
-                                isRemoveGroupsEnabled:
-                                  type: boolean
-                                identityProviderSyncTypeId:
                                   type: integer
-                                  x-nullable: true
-                                credentials:
-                                  type: string
-                                  x-nullable: true
-                                identityProviderType:
+                                nickname:
+                                  type:
+                                  - string
+                                  - 'null'
+                                namespaceType:
                                   type: object
                                   properties:
                                     id:
                                       type: number
                                     name:
                                       type: string
+                                    modelName:
+                                      type:
+                                      - string
+                                      - 'null'
                                   required:
                                   - id
                                 org:
@@ -985,167 +992,217 @@ paths:
                                       type: string
                                   required:
                                   - id
-                              required:
-                              - id
-                            propertyManagementSystem:
-                              type: object
-                              properties:
-                                id:
-                                  type: number
-                                orgId:
-                                  type: number
-                                propertyManagementSystemTypeId:
-                                  type: number
-                                propertyManagementSystemType:
+                                identityProvider:
                                   type: object
                                   properties:
                                     id:
                                       type: number
-                                    name:
-                                      type: string
+                                    isSsoEnabled:
+                                      type: boolean
+                                    isSyncMobilePhoneEnabled:
+                                      type: boolean
+                                    isRemoveGroupsEnabled:
+                                      type: boolean
+                                    identityProviderSyncTypeId:
+                                      type:
+                                      - integer
+                                      - 'null'
+                                    credentials:
+                                      type:
+                                      - string
+                                      - 'null'
+                                    identityProviderType:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                    org:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
                                   required:
                                   - id
+                                propertyManagementSystem:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    orgId:
+                                      type: number
+                                    propertyManagementSystemTypeId:
+                                      type: number
+                                    propertyManagementSystemType:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: number
+                                        name:
+                                          type: string
+                                      required:
+                                      - id
+                                  required:
+                                  - id
+                                  - orgId
+                                  - propertyManagementSystemTypeId
                               required:
                               - id
-                              - orgId
-                              - propertyManagementSystemTypeId
+                            idpUniqueIdentifier:
+                              type: string
+                            pmsUniqueIdentifier:
+                              type:
+                              - string
+                              - 'null'
+                            needsPasswordChange:
+                              type: boolean
+                              default: false
+                            nicknames:
+                              type:
+                              - array
+                              - 'null'
+                              items:
+                                type: object
+                                properties:
+                                  nickname:
+                                    type: string
+                                    minLength: 1
+                                    maxLength: 100
+                            email:
+                              type: string
+                            mobilePhone:
+                              type:
+                              - string
+                              - 'null'
+                            language:
+                              type:
+                              - string
+                              - 'null'
+                            createdAt:
+                              type: string
+                              format: date
+                            updatedAt:
+                              type: string
+                              format: date
+                            users:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  opal:
+                                    type: string
+                                  status:
+                                    type: string
+                                  startDate:
+                                    type:
+                                    - string
+                                    - 'null'
+                                    format: date
+                                  endDate:
+                                    type:
+                                    - string
+                                    - 'null'
+                                    format: date
+                                  createdAt:
+                                    type: string
+                                    format: date
+                                  updatedAt:
+                                    type: string
+                                    format: date
+                                  org:
+                                    type: object
+                                    properties:
+                                      id:
+                                        type: number
+                                      name:
+                                        type:
+                                        - string
+                                        - 'null'
+                                    required:
+                                    - id
+                                required:
+                                - id
                           required:
                           - id
-                        idpUniqueIdentifier:
-                          type: string
-                        pmsUniqueIdentifier:
-                          type: string
-                          x-nullable: true
-                        needsPasswordChange:
-                          type: boolean
-                          default: false
-                        nicknames:
-                          x-nullable: true
-                          type: array
-                          items:
-                            type: object
-                            properties:
-                              nickname:
-                                type: string
-                                minLength: 1
-                                maxLength: 100
-                        email:
-                          type: string
-                        mobilePhone:
-                          type: string
-                          x-nullable: true
-                        language:
-                          type: string
-                          x-nullable: true
                         createdAt:
                           type: string
                           format: date
-                        updatedAt:
-                          type: string
-                          format: date
-                        users:
+                        pictureUrl:
+                          type:
+                          - string
+                          - 'null'
+                        pictureExpiresAt:
+                          type:
+                          - number
+                          - 'null'
+                        org:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            opal:
+                              type: string
+                            name:
+                              type: string
+                          required:
+                          - id
+                        sites:
                           type: array
                           items:
                             type: object
                             properties:
                               id:
                                 type: number
-                              opal:
+                              name:
                                 type: string
-                              status:
-                                type: string
-                              startDate:
-                                type: string
-                                format: date
-                                x-nullable: true
-                              endDate:
-                                type: string
-                                format: date
-                                x-nullable: true
-                              createdAt:
-                                type: string
-                                format: date
-                              updatedAt:
-                                type: string
-                                format: date
-                              org:
-                                type: object
-                                properties:
-                                  id:
-                                    type: number
-                                  name:
-                                    type: string
-                                    x-nullable: true
-                                required:
-                                - id
                             required:
                             - id
                       required:
                       - id
-                    createdAt:
-                      type: string
-                      format: date
-                    pictureUrl:
-                      type: string
-                      x-nullable: true
-                    pictureExpiresAt:
-                      type: number
-                      x-nullable: true
-                    org:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        opal:
-                          type: string
-                        name:
-                          type: string
-                      required:
-                      - id
-                    sites:
-                      type: array
-                      items:
-                        type: object
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          id:
-                            type: number
-                          name:
+                          scopeUpdatedAt:
                             type: string
-                        required:
-                        - id
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-user:w
       - o{params.orgId}-user:r
@@ -1157,9 +1214,38 @@ paths:
       - o:r
       - s-o:w
       - s-o:r
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                limit:
+                  type: integer
+                  minimum: 1
+                  maximum: 1000
+                offset:
+                  type: integer
+                  default: 0
+                  minimum: 0
+                sort:
+                  type: string
+                  default: identity.lastName
+                  pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+                order:
+                  type: string
+                  default: asc
+                  pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+                q:
+                  type: string
+                filter:
+                  type: string
+                preFilter:
+                  type: string
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

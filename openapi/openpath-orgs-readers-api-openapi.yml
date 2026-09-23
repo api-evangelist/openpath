@@ -1,15 +1,10 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/readers API
+  title: Openpath API Documentation Orgs/readers API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+  description: Readers
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/readers
   description: Readers
@@ -18,167 +13,165 @@ paths:
     get:
       summary: List all owned or assigned readers
       operationId: listReaders
-      description: 'Possible comma separated values for the options parameter include: withEffectiveLocationRestriction. The withEffectiveLocationRestriction option causes current effective location restriction to be included in the response. Only readers with an effective location restriction include this object.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listReaders'
+      description: 'Possible comma separated values for the options parameter include: withEffectiveLocationRestriction. The withEffectiveLocationRestriction option causes current effective location restriction to be included in the response. Only readers with an effective location restriction include this object.
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o{params.orgId}-admin:w,o{params.orgId}-admin:r,o{params.orgId}-quickStart:w,o{params.orgId}-quickStart:r,o{params.orgId}-rpt:r,o{params.orgId}-rpt:w,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listReaders'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: name
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: name
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      - type: string
-        pattern: ^((withEffectiveLocationRestriction|excludeVideoReaders|onlyVideoReaders)(,|$))*$
-        name: options
+        schema:
+          type: string
+      - name: options
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
+          pattern: ^((withEffectiveLocationRestriction|excludeVideoReaders|onlyVideoReaders)(,|$))*$
       tags:
       - orgs/readers
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    serialNumber:
-                      type: string
-                      x-nullable: true
-                    serialNumberBrief:
-                      type: string
-                      x-nullable: true
-                    firmwareVersion:
-                      type: string
-                      x-nullable: true
-                    softwareVersionNumber:
-                      type: string
-                      x-nullable: true
-                    isExit:
-                      type: boolean
-                    advTxPower:
-                      type: number
-                      enum:
-                      - 4
-                      - 3
-                      - 0
-                      - -4
-                      - -8
-                      - -12
-                      - -16
-                      - -20
-                      - -40
-                    beaconTxPower:
-                      type: number
-                      enum:
-                      - 4
-                      - 3
-                      - 0
-                      - -4
-                      - -8
-                      - -12
-                      - -16
-                      - -20
-                      - -40
-                    capTouchEnabled:
-                      type: boolean
-                    capTouchRssi:
-                      type: integer
-                      minimum: -95
-                      maximum: -20
-                    capTouchThreshold:
-                      type: integer
-                      x-nullable: true
-                    nfcEnabled:
-                      type: boolean
-                    autoUnlockEnabled:
-                      type: boolean
-                    autoUnlockRssi:
-                      type: integer
-                      minimum: -95
-                      maximum: -30
-                    acuPort:
-                      x-nullable: true
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
-                        acuPortTypePortNumber:
-                          type: number
-                        virtualPortNumber:
-                          type: number
-                          x-nullable: true
-                        portNumber:
-                          type: number
-                          x-nullable: true
-                        label:
+                        name:
                           type: string
-                        acu:
-                          type: object
+                        serialNumber:
+                          type:
+                          - string
+                          - 'null'
+                        serialNumberBrief:
+                          type:
+                          - string
+                          - 'null'
+                        firmwareVersion:
+                          type:
+                          - string
+                          - 'null'
+                        softwareVersionNumber:
+                          type:
+                          - string
+                          - 'null'
+                        isExit:
+                          type: boolean
+                        advTxPower:
+                          type: number
+                          enum:
+                          - 4
+                          - 3
+                          - 0
+                          - -4
+                          - -8
+                          - -12
+                          - -16
+                          - -20
+                          - -40
+                        beaconTxPower:
+                          type: number
+                          enum:
+                          - 4
+                          - 3
+                          - 0
+                          - -4
+                          - -8
+                          - -12
+                          - -16
+                          - -20
+                          - -40
+                        capTouchEnabled:
+                          type: boolean
+                        capTouchRssi:
+                          type: integer
+                          minimum: -95
+                          maximum: -20
+                        capTouchThreshold:
+                          type:
+                          - integer
+                          - 'null'
+                        nfcEnabled:
+                          type: boolean
+                        autoUnlockEnabled:
+                          type: boolean
+                        autoUnlockRssi:
+                          type: integer
+                          minimum: -95
+                          maximum: -30
+                        acuPort:
+                          type:
+                          - object
+                          - 'null'
                           properties:
                             id:
                               type: number
-                            name:
+                            acuPortTypePortNumber:
+                              type: number
+                            virtualPortNumber:
+                              type:
+                              - number
+                              - 'null'
+                            portNumber:
+                              type:
+                              - number
+                              - 'null'
+                            label:
                               type: string
-                          required:
-                          - id
-                        expansionBoard:
-                          type: object
-                          properties:
-                            id:
-                              type: number
-                            number:
-                              type: integer
-                            acuModelId:
-                              type: integer
-                          required:
-                          - id
-                        eol:
-                          x-nullable: true
-                          type: object
-                          properties:
-                            eolSupervision:
+                            acu:
                               type: object
                               properties:
                                 id:
@@ -187,108 +180,139 @@ paths:
                                   type: string
                               required:
                               - id
-                      required:
-                      - id
-                    entries:
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          id:
-                            type: number
-                          name:
-                            type: string
-                        required:
-                        - id
-                    org:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                    ownedByOrg:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                    effectiveLocationRestriction:
-                      type: object
-                      properties:
-                        id:
-                          type: integer
-                        locationMeasurement:
+                            expansionBoard:
+                              type: object
+                              properties:
+                                id:
+                                  type: number
+                                number:
+                                  type: integer
+                                acuModelId:
+                                  type: integer
+                              required:
+                              - id
+                            eol:
+                              type:
+                              - object
+                              - 'null'
+                              properties:
+                                eolSupervision:
+                                  type: object
+                                  properties:
+                                    id:
+                                      type: number
+                                    name:
+                                      type: string
+                                  required:
+                                  - id
+                          required:
+                          - id
+                        entries:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              name:
+                                type: string
+                            required:
+                            - id
+                        org:
                           type: object
                           properties:
-                            longitude:
+                            id:
                               type: number
-                            latitude:
-                              type: number
-                            timeZoneId:
+                            name:
                               type: string
-                              x-nullable: true
-                        allowedDistanceMeters:
-                          type: number
-                        scaleFactor:
-                          type: number
+                          required:
+                          - id
+                        ownedByOrg:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        effectiveLocationRestriction:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                            locationMeasurement:
+                              type: object
+                              properties:
+                                longitude:
+                                  type: number
+                                latitude:
+                                  type: number
+                                timeZoneId:
+                                  type:
+                                  - string
+                                  - 'null'
+                            allowedDistanceMeters:
+                              type: number
+                            scaleFactor:
+                              type: number
+                          required:
+                          - id
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                        notes:
+                          type:
+                          - string
+                          - 'null'
+                        isAudibleFeedbackEnabled:
+                          type: boolean
+                        isLedFeedbackEnabled:
+                          type: boolean
+                        pinTimeoutSeconds:
+                          type: integer
+                        isAppleWalletTraEnabled:
+                          type: boolean
                       required:
                       - id
-                    createdAt:
-                      type: string
-                      format: date
-                    updatedAt:
-                      type: string
-                      format: date
-                    notes:
-                      type: string
-                      x-nullable: true
-                    isAudibleFeedbackEnabled:
-                      type: boolean
-                    isLedFeedbackEnabled:
-                      type: boolean
-                    pinTimeoutSeconds:
-                      type: integer
-                    isAppleWalletTraEnabled:
-                      type: boolean
-                  required:
-                  - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dash:w
       - o{params.orgId}-dash:r
@@ -311,206 +335,115 @@ paths:
     post:
       summary: Create a reader
       operationId: createReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w<br/><br/>__Endpoint name__: createReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,s-o:w
+
+
+        __Endpoint name__: createReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            notes:
-              type: string
-              x-nullable: true
-            serialNumber:
-              type: string
-              x-nullable: true
-            softwareVersionNumber:
-              type: string
-              x-nullable: true
-            acuPortId:
-              type: integer
-              x-nullable: true
-            isExit:
-              type: boolean
-            advTxPower:
-              type: integer
-              enum:
-              - 4
-              - 3
-              - 0
-              - -4
-              - -8
-              - -12
-              - -16
-              - -20
-              - -40
-            beaconTxPower:
-              type: integer
-              enum:
-              - 4
-              - 3
-              - 0
-              - -4
-              - -8
-              - -12
-              - -16
-              - -20
-              - -40
-            capTouchEnabled:
-              type: boolean
-            capTouchRssi:
-              type: integer
-              minimum: -95
-              maximum: -20
-            capTouchThreshold:
-              type: integer
-              minimum: 100
-              maximum: 15000
-              x-nullable: true
-            nfcEnabled:
-              type: boolean
-            autoUnlockEnabled:
-              type: boolean
-            autoUnlockRssi:
-              type: integer
-              minimum: -95
-              maximum: -30
-            isAudibleFeedbackEnabled:
-              type: boolean
-            isLedFeedbackEnabled:
-              type: boolean
-            pinTimeoutSeconds:
-              type: integer
-            isAppleWalletTraEnabled:
-              type: boolean
-          required:
-          - name
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/readers
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  serialNumber:
-                    type: string
-                    x-nullable: true
-                  serialNumberBrief:
-                    type: string
-                    x-nullable: true
-                  firmwareVersion:
-                    type: string
-                    x-nullable: true
-                  softwareVersionNumber:
-                    type: string
-                    x-nullable: true
-                  isExit:
-                    type: boolean
-                  advTxPower:
-                    type: number
-                    enum:
-                    - 4
-                    - 3
-                    - 0
-                    - -4
-                    - -8
-                    - -12
-                    - -16
-                    - -20
-                    - -40
-                  beaconTxPower:
-                    type: number
-                    enum:
-                    - 4
-                    - 3
-                    - 0
-                    - -4
-                    - -8
-                    - -12
-                    - -16
-                    - -20
-                    - -40
-                  capTouchEnabled:
-                    type: boolean
-                  capTouchRssi:
-                    type: integer
-                    minimum: -95
-                    maximum: -20
-                  capTouchThreshold:
-                    type: integer
-                    x-nullable: true
-                  nfcEnabled:
-                    type: boolean
-                  autoUnlockEnabled:
-                    type: boolean
-                  autoUnlockRssi:
-                    type: integer
-                    minimum: -95
-                    maximum: -30
-                  acuPort:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
-                      acuPortTypePortNumber:
-                        type: number
-                      virtualPortNumber:
-                        type: number
-                        x-nullable: true
-                      portNumber:
-                        type: number
-                        x-nullable: true
-                      label:
+                      name:
                         type: string
-                      acu:
-                        type: object
+                      serialNumber:
+                        type:
+                        - string
+                        - 'null'
+                      serialNumberBrief:
+                        type:
+                        - string
+                        - 'null'
+                      firmwareVersion:
+                        type:
+                        - string
+                        - 'null'
+                      softwareVersionNumber:
+                        type:
+                        - string
+                        - 'null'
+                      isExit:
+                        type: boolean
+                      advTxPower:
+                        type: number
+                        enum:
+                        - 4
+                        - 3
+                        - 0
+                        - -4
+                        - -8
+                        - -12
+                        - -16
+                        - -20
+                        - -40
+                      beaconTxPower:
+                        type: number
+                        enum:
+                        - 4
+                        - 3
+                        - 0
+                        - -4
+                        - -8
+                        - -12
+                        - -16
+                        - -20
+                        - -40
+                      capTouchEnabled:
+                        type: boolean
+                      capTouchRssi:
+                        type: integer
+                        minimum: -95
+                        maximum: -20
+                      capTouchThreshold:
+                        type:
+                        - integer
+                        - 'null'
+                      nfcEnabled:
+                        type: boolean
+                      autoUnlockEnabled:
+                        type: boolean
+                      autoUnlockRssi:
+                        type: integer
+                        minimum: -95
+                        maximum: -30
+                      acuPort:
+                        type:
+                        - object
+                        - 'null'
                         properties:
                           id:
                             type: number
-                          name:
+                          acuPortTypePortNumber:
+                            type: number
+                          virtualPortNumber:
+                            type:
+                            - number
+                            - 'null'
+                          portNumber:
+                            type:
+                            - number
+                            - 'null'
+                          label:
                             type: string
-                        required:
-                        - id
-                      expansionBoard:
-                        type: object
-                        properties:
-                          id:
-                            type: number
-                          number:
-                            type: integer
-                          acuModelId:
-                            type: integer
-                        required:
-                        - id
-                      eol:
-                        x-nullable: true
-                        type: object
-                        properties:
-                          eolSupervision:
+                          acu:
                             type: object
                             properties:
                               id:
@@ -519,248 +452,355 @@ paths:
                                 type: string
                             required:
                             - id
-                    required:
-                    - id
-                  entries:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                  org:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                      name:
-                        type: string
-                    required:
-                    - id
-                  ownedByOrg:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                      name:
-                        type: string
-                    required:
-                    - id
-                  effectiveLocationRestriction:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                      locationMeasurement:
-                        type: object
-                        properties:
-                          longitude:
-                            type: number
-                          latitude:
-                            type: number
-                          timeZoneId:
-                            type: string
-                            x-nullable: true
-                      allowedDistanceMeters:
-                        type: number
-                      scaleFactor:
-                        type: number
-                    required:
-                    - id
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  notes:
-                    type: string
-                    x-nullable: true
-                  isAudibleFeedbackEnabled:
-                    type: boolean
-                  isLedFeedbackEnabled:
-                    type: boolean
-                  pinTimeoutSeconds:
-                    type: integer
-                  isAppleWalletTraEnabled:
-                    type: boolean
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
+                          expansionBoard:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              number:
+                                type: integer
+                              acuModelId:
+                                type: integer
+                            required:
+                            - id
+                          eol:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              eolSupervision:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                        required:
+                        - id
+                      entries:
                         type: array
                         items:
-                          type: integer
-                      siteIdsByScope:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      org:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      ownedByOrg:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      effectiveLocationRestriction:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          locationMeasurement:
+                            type: object
+                            properties:
+                              longitude:
+                                type: number
+                              latitude:
+                                type: number
+                              timeZoneId:
+                                type:
+                                - string
+                                - 'null'
+                          allowedDistanceMeters:
+                            type: number
+                          scaleFactor:
+                            type: number
+                        required:
+                        - id
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                      notes:
+                        type:
+                        - string
+                        - 'null'
+                      isAudibleFeedbackEnabled:
+                        type: boolean
+                      isLedFeedbackEnabled:
+                        type: boolean
+                      pinTimeoutSeconds:
+                        type: integer
+                      isAppleWalletTraEnabled:
+                        type: boolean
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-hw:w
       - o{params.orgId}-admin:w
       - o{params.orgId}-quickStart:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                notes:
+                  type:
+                  - string
+                  - 'null'
+                serialNumber:
+                  type:
+                  - string
+                  - 'null'
+                softwareVersionNumber:
+                  type:
+                  - string
+                  - 'null'
+                acuPortId:
+                  type:
+                  - integer
+                  - 'null'
+                isExit:
+                  type: boolean
+                advTxPower:
+                  type: integer
+                  enum:
+                  - 4
+                  - 3
+                  - 0
+                  - -4
+                  - -8
+                  - -12
+                  - -16
+                  - -20
+                  - -40
+                beaconTxPower:
+                  type: integer
+                  enum:
+                  - 4
+                  - 3
+                  - 0
+                  - -4
+                  - -8
+                  - -12
+                  - -16
+                  - -20
+                  - -40
+                capTouchEnabled:
+                  type: boolean
+                capTouchRssi:
+                  type: integer
+                  minimum: -95
+                  maximum: -20
+                capTouchThreshold:
+                  type:
+                  - integer
+                  - 'null'
+                  minimum: 100
+                  maximum: 15000
+                nfcEnabled:
+                  type: boolean
+                autoUnlockEnabled:
+                  type: boolean
+                autoUnlockRssi:
+                  type: integer
+                  minimum: -95
+                  maximum: -30
+                isAudibleFeedbackEnabled:
+                  type: boolean
+                isLedFeedbackEnabled:
+                  type: boolean
+                pinTimeoutSeconds:
+                  type: integer
+                isAppleWalletTraEnabled:
+                  type: boolean
+              required:
+              - name
   /orgs/{orgId}/readers/{readerId}:
     get:
       summary: Describe an owned or assigned reader
       operationId: describeReader
-      description: 'Possible comma separated values for the options parameter include: withEffectiveLocationRestriction. The withEffectiveLocationRestriction option causes current effective location restriction to be included in the response. Only readers with an effective location restriction include this object.<br/><br/>__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeReader'
+      description: 'Possible comma separated values for the options parameter include: withEffectiveLocationRestriction. The withEffectiveLocationRestriction option causes current effective location restriction to be included in the response. Only readers with an effective location restriction include this object.
+
+
+        __JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-dashActivity:w,o{params.orgId}-dashActivity:r,o{params.orgId}-dashCust:w,o{params.orgId}-dashCust:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r,o{params.orgId}-dash:w,o{params.orgId}-dash:r,o{params.orgId}-site:w,o{params.orgId}-site:r,o{params.orgId}-siteGeneral:w,o{params.orgId}-siteGeneral:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: readerId
+        schema:
+          type: integer
+      - name: readerId
         in: path
         required: true
-      - type: string
-        pattern: ^((withEffectiveLocationRestriction)(,|$))*$
-        name: options
+        schema:
+          type: integer
+      - name: options
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
+          pattern: ^((withEffectiveLocationRestriction)(,|$))*$
       tags:
       - orgs/readers
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  serialNumber:
-                    type: string
-                    x-nullable: true
-                  serialNumberBrief:
-                    type: string
-                    x-nullable: true
-                  firmwareVersion:
-                    type: string
-                    x-nullable: true
-                  softwareVersionNumber:
-                    type: string
-                    x-nullable: true
-                  isExit:
-                    type: boolean
-                  advTxPower:
-                    type: number
-                    enum:
-                    - 4
-                    - 3
-                    - 0
-                    - -4
-                    - -8
-                    - -12
-                    - -16
-                    - -20
-                    - -40
-                  beaconTxPower:
-                    type: number
-                    enum:
-                    - 4
-                    - 3
-                    - 0
-                    - -4
-                    - -8
-                    - -12
-                    - -16
-                    - -20
-                    - -40
-                  capTouchEnabled:
-                    type: boolean
-                  capTouchRssi:
-                    type: integer
-                    minimum: -95
-                    maximum: -20
-                  capTouchThreshold:
-                    type: integer
-                    x-nullable: true
-                  nfcEnabled:
-                    type: boolean
-                  autoUnlockEnabled:
-                    type: boolean
-                  autoUnlockRssi:
-                    type: integer
-                    minimum: -95
-                    maximum: -30
-                  acuPort:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
-                      acuPortTypePortNumber:
-                        type: number
-                      virtualPortNumber:
-                        type: number
-                        x-nullable: true
-                      portNumber:
-                        type: number
-                        x-nullable: true
-                      label:
+                      name:
                         type: string
-                      acu:
-                        type: object
+                      serialNumber:
+                        type:
+                        - string
+                        - 'null'
+                      serialNumberBrief:
+                        type:
+                        - string
+                        - 'null'
+                      firmwareVersion:
+                        type:
+                        - string
+                        - 'null'
+                      softwareVersionNumber:
+                        type:
+                        - string
+                        - 'null'
+                      isExit:
+                        type: boolean
+                      advTxPower:
+                        type: number
+                        enum:
+                        - 4
+                        - 3
+                        - 0
+                        - -4
+                        - -8
+                        - -12
+                        - -16
+                        - -20
+                        - -40
+                      beaconTxPower:
+                        type: number
+                        enum:
+                        - 4
+                        - 3
+                        - 0
+                        - -4
+                        - -8
+                        - -12
+                        - -16
+                        - -20
+                        - -40
+                      capTouchEnabled:
+                        type: boolean
+                      capTouchRssi:
+                        type: integer
+                        minimum: -95
+                        maximum: -20
+                      capTouchThreshold:
+                        type:
+                        - integer
+                        - 'null'
+                      nfcEnabled:
+                        type: boolean
+                      autoUnlockEnabled:
+                        type: boolean
+                      autoUnlockRssi:
+                        type: integer
+                        minimum: -95
+                        maximum: -30
+                      acuPort:
+                        type:
+                        - object
+                        - 'null'
                         properties:
                           id:
                             type: number
-                          name:
+                          acuPortTypePortNumber:
+                            type: number
+                          virtualPortNumber:
+                            type:
+                            - number
+                            - 'null'
+                          portNumber:
+                            type:
+                            - number
+                            - 'null'
+                          label:
                             type: string
-                        required:
-                        - id
-                      expansionBoard:
-                        type: object
-                        properties:
-                          id:
-                            type: number
-                          number:
-                            type: integer
-                          acuModelId:
-                            type: integer
-                        required:
-                        - id
-                      eol:
-                        x-nullable: true
-                        type: object
-                        properties:
-                          eolSupervision:
+                          acu:
                             type: object
                             properties:
                               id:
@@ -769,108 +809,139 @@ paths:
                                 type: string
                             required:
                             - id
-                    required:
-                    - id
-                  entries:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        id:
-                          type: number
-                        name:
-                          type: string
-                      required:
-                      - id
-                  org:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                      name:
-                        type: string
-                    required:
-                    - id
-                  ownedByOrg:
-                    type: object
-                    properties:
-                      id:
-                        type: number
-                      name:
-                        type: string
-                    required:
-                    - id
-                  effectiveLocationRestriction:
-                    type: object
-                    properties:
-                      id:
-                        type: integer
-                      locationMeasurement:
-                        type: object
-                        properties:
-                          longitude:
-                            type: number
-                          latitude:
-                            type: number
-                          timeZoneId:
-                            type: string
-                            x-nullable: true
-                      allowedDistanceMeters:
-                        type: number
-                      scaleFactor:
-                        type: number
-                    required:
-                    - id
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  notes:
-                    type: string
-                    x-nullable: true
-                  isAudibleFeedbackEnabled:
-                    type: boolean
-                  isLedFeedbackEnabled:
-                    type: boolean
-                  pinTimeoutSeconds:
-                    type: integer
-                  isAppleWalletTraEnabled:
-                    type: boolean
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
+                          expansionBoard:
+                            type: object
+                            properties:
+                              id:
+                                type: number
+                              number:
+                                type: integer
+                              acuModelId:
+                                type: integer
+                            required:
+                            - id
+                          eol:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              eolSupervision:
+                                type: object
+                                properties:
+                                  id:
+                                    type: number
+                                  name:
+                                    type: string
+                                required:
+                                - id
+                        required:
+                        - id
+                      entries:
                         type: array
                         items:
-                          type: integer
-                      siteIdsByScope:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                      org:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      ownedByOrg:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      effectiveLocationRestriction:
+                        type: object
+                        properties:
+                          id:
+                            type: integer
+                          locationMeasurement:
+                            type: object
+                            properties:
+                              longitude:
+                                type: number
+                              latitude:
+                                type: number
+                              timeZoneId:
+                                type:
+                                - string
+                                - 'null'
+                          allowedDistanceMeters:
+                            type: number
+                          scaleFactor:
+                            type: number
+                        required:
+                        - id
+                      createdAt:
+                        type: string
+                        format: date
+                      updatedAt:
+                        type: string
+                        format: date
+                      notes:
+                        type:
+                        - string
+                        - 'null'
+                      isAudibleFeedbackEnabled:
+                        type: boolean
+                      isLedFeedbackEnabled:
+                        type: boolean
+                      pinTimeoutSeconds:
+                        type: integer
+                      isAppleWalletTraEnabled:
+                        type: boolean
+                    required:
+                    - id
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-dashActivity:w
       - o{params.orgId}-dashActivity:r
@@ -891,20 +962,21 @@ paths:
     delete:
       summary: Delete a reader
       operationId: deleteReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: readerId
+        schema:
+          type: integer
+      - name: readerId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/readers
       security:
@@ -919,96 +991,21 @@ paths:
     patch:
       summary: Update a reader
       operationId: updateReader
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,o-support:w,s-o:w<br/><br/>__Endpoint name__: updateReader'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o{params.orgId}-site:w,o{params.orgId}-siteGeneral:w,o{params.orgId}-admin:w,o{params.orgId}-quickStart:w,o:w,o-support:w,s-o:w
+
+
+        __Endpoint name__: updateReader'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: readerId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            notes:
-              type: string
-              x-nullable: true
-            serialNumber:
-              type: string
-              x-nullable: true
-            softwareVersionNumber:
-              type: string
-              x-nullable: true
-            acuPortId:
-              type: integer
-              x-nullable: true
-            isExit:
-              type: boolean
-            advTxPower:
-              type: integer
-              enum:
-              - 4
-              - 3
-              - 0
-              - -4
-              - -8
-              - -12
-              - -16
-              - -20
-              - -40
-            beaconTxPower:
-              type: integer
-              enum:
-              - 4
-              - 3
-              - 0
-              - -4
-              - -8
-              - -12
-              - -16
-              - -20
-              - -40
-            capTouchEnabled:
-              type: boolean
-            capTouchRssi:
-              type: integer
-              minimum: -95
-              maximum: -20
-            capTouchThreshold:
-              type: integer
-              minimum: 100
-              maximum: 15000
-              x-nullable: true
-            nfcEnabled:
-              type: boolean
-            autoUnlockEnabled:
-              type: boolean
-            autoUnlockRssi:
-              type: integer
-              minimum: -95
-              maximum: -30
-            isAudibleFeedbackEnabled:
-              type: boolean
-            isLedFeedbackEnabled:
-              type: boolean
-            pinTimeoutSeconds:
-              type: integer
-            isAppleWalletTraEnabled:
-              type: boolean
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: readerId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/readers
       security:
@@ -1025,24 +1022,107 @@ paths:
       - o:w
       - o-support:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                notes:
+                  type:
+                  - string
+                  - 'null'
+                serialNumber:
+                  type:
+                  - string
+                  - 'null'
+                softwareVersionNumber:
+                  type:
+                  - string
+                  - 'null'
+                acuPortId:
+                  type:
+                  - integer
+                  - 'null'
+                isExit:
+                  type: boolean
+                advTxPower:
+                  type: integer
+                  enum:
+                  - 4
+                  - 3
+                  - 0
+                  - -4
+                  - -8
+                  - -12
+                  - -16
+                  - -20
+                  - -40
+                beaconTxPower:
+                  type: integer
+                  enum:
+                  - 4
+                  - 3
+                  - 0
+                  - -4
+                  - -8
+                  - -12
+                  - -16
+                  - -20
+                  - -40
+                capTouchEnabled:
+                  type: boolean
+                capTouchRssi:
+                  type: integer
+                  minimum: -95
+                  maximum: -20
+                capTouchThreshold:
+                  type:
+                  - integer
+                  - 'null'
+                  minimum: 100
+                  maximum: 15000
+                nfcEnabled:
+                  type: boolean
+                autoUnlockEnabled:
+                  type: boolean
+                autoUnlockRssi:
+                  type: integer
+                  minimum: -95
+                  maximum: -30
+                isAudibleFeedbackEnabled:
+                  type: boolean
+                isLedFeedbackEnabled:
+                  type: boolean
+                pinTimeoutSeconds:
+                  type: integer
+                isAppleWalletTraEnabled:
+                  type: boolean
   /orgs/{orgId}/readers/{readerId}/identify:
     post:
       summary: Remotely trigger a reader to identify itself via LED and buzzer
       operationId: remoteReaderIdentify
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: remoteReaderIdentify'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w
+
+
+        __Endpoint name__: remoteReaderIdentify'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: readerId
+        schema:
+          type: integer
+      - name: readerId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/readers
       security:
@@ -1058,20 +1138,21 @@ paths:
     post:
       summary: Remotely trigger a reader to restart
       operationId: remoteReaderRestart
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w<br/><br/>__Endpoint name__: remoteReaderRestart'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-hw:w,o:w,s-o:w
+
+
+        __Endpoint name__: remoteReaderRestart'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: readerId
+        schema:
+          type: integer
+      - name: readerId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/readers
       security:
@@ -1083,9 +1164,10 @@ paths:
       - o{params.orgId}-hw:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

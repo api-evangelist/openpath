@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/maintenanceWindowAcuMap API
+  title: Openpath API Documentation Orgs/maintenance Window Acu Map…
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/maintenanceWindowAcuMap
 paths:
@@ -17,146 +11,161 @@ paths:
     get:
       summary: List all ACU maintenance window maps
       operationId: listOrgMaintenanceWindowAcuMap
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: listOrgMaintenanceWindowAcuMap'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r
+
+
+        __Endpoint name__: listOrgMaintenanceWindowAcuMap'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: id
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: id
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/maintenanceWindowAcuMap
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                    orgId:
-                      type: integer
-                    acuId:
-                      type: integer
-                    maintenanceWindowDefinitionId:
-                      type: integer
-                    mesonTimeslots:
-                      x-nullable: true
-                      type: object
-                      properties:
-                        type:
-                          type: string
-                          enum:
-                          - timeslot
-                        time_slots:
-                          type: array
-                          items:
-                            type: string
-                        deviceTime:
-                          type: boolean
-                    maintenanceWindowDefinition:
+          description: Successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
-                          type: number
-                        name:
-                          type: string
-                        day:
-                          type: string
-                          enum:
-                          - Sunday
-                          - Monday
-                          - Tuesday
-                          - Wednesday
-                          - Thursday
-                          - Friday
-                          - Saturday
-                        startTime:
-                          type: string
-                        durationHours:
                           type: integer
-                        timeZone:
-                          type: string
+                        orgId:
+                          type: integer
+                        acuId:
+                          type: integer
+                        maintenanceWindowDefinitionId:
+                          type: integer
+                        mesonTimeslots:
+                          type:
+                          - object
+                          - 'null'
+                          properties:
+                            type:
+                              type: string
+                              enum:
+                              - timeslot
+                            time_slots:
+                              type: array
+                              items:
+                                type: string
+                            deviceTime:
+                              type: boolean
+                        maintenanceWindowDefinition:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                            day:
+                              type: string
+                              enum:
+                              - Sunday
+                              - Monday
+                              - Tuesday
+                              - Wednesday
+                              - Thursday
+                              - Friday
+                              - Saturday
+                            startTime:
+                              type: string
+                            durationHours:
+                              type: integer
+                            timeZone:
+                              type: string
+                          required:
+                          - id
                       required:
                       - id
-                  required:
-                  - id
-                  - orgId
-                  - acuId
-                  - maintenanceWindowDefinitionId
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                      - orgId
+                      - acuId
+                      - maintenanceWindowDefinitionId
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - o:r
@@ -169,190 +178,207 @@ paths:
     put:
       summary: Upsert ACU maintenance window maps to a single maintenance window definition
       operationId: upsertOrgMaintenanceWindowAcuMap
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w<br/><br/>__Endpoint name__: upsertOrgMaintenanceWindowAcuMap'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,s-o:w,o-basic:w,o{params.orgId}-hw:w
+
+
+        __Endpoint name__: upsertOrgMaintenanceWindowAcuMap'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            maintenanceWindowDefinitionId:
-              type: integer
-            acuIds:
-              type: array
-              items:
-                type: integer
-          required:
-          - maintenanceWindowDefinitionId
-          - acuIds
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/maintenanceWindowAcuMap
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
-                type: object
-              meta:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
+                    type: object
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - s-o:w
       - o-basic:w
       - o{params.orgId}-hw:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                maintenanceWindowDefinitionId:
+                  type: integer
+                acuIds:
+                  type: array
+                  items:
+                    type: integer
+              required:
+              - maintenanceWindowDefinitionId
+              - acuIds
   /orgs/{orgId}/maintenanceWindowAcuMap/{maintenanceWindowAcuMapId}:
     get:
       summary: Describe an ACU maintenance window map
       operationId: describeOrgMaintenanceWindowAcuMap
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r<br/><br/>__Endpoint name__: describeOrgMaintenanceWindowAcuMap'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o:w,o:r,s-o:w,s-o:r,o-basic:w,o-basic:r,o{params.orgId}-hw:w,o{params.orgId}-hw:r
+
+
+        __Endpoint name__: describeOrgMaintenanceWindowAcuMap'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: maintenanceWindowAcuMapId
+        schema:
+          type: integer
+      - name: maintenanceWindowAcuMapId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/maintenanceWindowAcuMap
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: integer
-                  orgId:
-                    type: integer
-                  acuId:
-                    type: integer
-                  maintenanceWindowDefinitionId:
-                    type: integer
-                  mesonTimeslots:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      type:
-                        type: string
-                        enum:
-                        - timeslot
-                      time_slots:
-                        type: array
-                        items:
-                          type: string
-                      deviceTime:
-                        type: boolean
-                  maintenanceWindowDefinition:
+                  data:
                     type: object
                     properties:
                       id:
-                        type: number
-                      name:
-                        type: string
-                      day:
-                        type: string
-                        enum:
-                        - Sunday
-                        - Monday
-                        - Tuesday
-                        - Wednesday
-                        - Thursday
-                        - Friday
-                        - Saturday
-                      startTime:
-                        type: string
-                      durationHours:
                         type: integer
-                      timeZone:
-                        type: string
-                    required:
-                    - id
-                required:
-                - id
-                - orgId
-                - acuId
-                - maintenanceWindowDefinitionId
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      orgId:
+                        type: integer
+                      acuId:
+                        type: integer
+                      maintenanceWindowDefinitionId:
+                        type: integer
+                      mesonTimeslots:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
+                          type:
+                            type: string
+                            enum:
+                            - timeslot
+                          time_slots:
                             type: array
                             items:
+                              type: string
+                          deviceTime:
+                            type: boolean
+                      maintenanceWindowDefinition:
+                        type: object
+                        properties:
+                          id:
+                            type: number
+                          name:
+                            type: string
+                          day:
+                            type: string
+                            enum:
+                            - Sunday
+                            - Monday
+                            - Tuesday
+                            - Wednesday
+                            - Thursday
+                            - Friday
+                            - Saturday
+                          startTime:
+                            type: string
+                          durationHours:
+                            type: integer
+                          timeZone:
+                            type: string
+                        required:
+                        - id
+                    required:
+                    - id
+                    - orgId
+                    - acuId
+                    - maintenanceWindowDefinitionId
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
+                            items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o:w
       - o:r
@@ -362,9 +388,10 @@ paths:
       - o-basic:r
       - o{params.orgId}-hw:w
       - o{params.orgId}-hw:r
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

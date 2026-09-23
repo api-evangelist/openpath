@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/hookActions API
+  title: Openpath API Documentation Orgs/hook Actions API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/hookActions
 paths:
@@ -17,111 +11,126 @@ paths:
     get:
       summary: List all hook actions
       operationId: listHookActions
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: listHookActions'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: listHookActions'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: name
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: name
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/hookActions
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    description:
-                      type: string
-                      x-nullable: true
-                    config:
-                      type: object
-                    createdAt:
-                      type: string
-                      format: date
-                    updatedAt:
-                      type: string
-                      format: date
-                  required:
-                  - id
-              meta:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  accessToken:
-                    x-nullable: true
+                  totalCount:
+                    type: integer
+                  filteredCount:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        name:
+                          type: string
+                        description:
+                          type:
+                          - string
+                          - 'null'
+                        config:
+                          type: object
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                      required:
+                      - id
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-configurations:w
       - o{params.orgId}-configurations:r
@@ -134,531 +143,554 @@ paths:
     post:
       summary: Create a hook action
       operationId: createHookAction
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: createHookAction'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w
+
+
+        __Endpoint name__: createHookAction'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            config:
-              x-alternatives:
-              - type: object
-                properties:
-                  version:
-                    type: string
-                  trigger:
-                    type: object
-                  requests:
-                    type: array
-                    items:
-                      x-alternatives:
-                      - type: object
-                      - type: object
-                        properties:
-                          type:
-                            type: string
-                          locationId:
-                            type: integer
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                          data:
-                            type: object
-                            properties:
-                              withSourceEvent:
-                                type: boolean
-                              withListNulls:
-                                type: boolean
-                              notificationData:
-                                type: object
-                                properties:
-                                  titleText:
-                                    type: string
-                                  subtitleText:
-                                    type: string
-                                  type:
-                                    type: string
-                                    enum:
-                                    - success
-                                    - info
-                                    - warning
-                                    - error
-                                    - alarmLow
-                                    - alarmMedium
-                                    - alarmHigh
-                                  icon:
-                                    type: string
-                                    enum:
-                                    - success
-                                    - info
-                                    - warning
-                                    - error
-                                    - p1
-                                    - p2
-                                    - p3
-                                    - p4
-                                    - p5
-                                  buttons:
-                                    type: array
-                                    items:
-                                      x-alternatives:
-                                      - type: object
-                                      - type: object
-                                        properties:
-                                          target:
-                                            type: object
-                                            properties:
-                                              resourceType:
-                                                type: string
-                                              resourceUid:
-                                                type: string
-                                                x-format:
-                                                  guid: true
-                                                x-alternatives:
-                                                - type: string
-                                                  x-format:
-                                                    guid: true
-                                                - type: string
-                                                  pattern: '[1-9][0-9]*'
-                                                - type: string
-                                                  pattern: ^{{toString [^}]+}}$
-                                            required:
-                                            - resourceType
-                                            - resourceUid
-                                      type: object
-                                  org:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: integer
-                                        minimum: 1
-                                  originUserId:
-                                    type: integer
-                                    minimum: 1
-                                    x-alternatives:
-                                    - type: integer
-                                      minimum: 1
-                                    - type: string
-                                      pattern: ^{{toInt [^}]+}}$
-                                    x-nullable: true
-                                  originUserOpal:
-                                    type: string
-                                    x-nullable: true
-                                  recipientUserIds:
-                                    type: array
-                                    items:
-                                      type: integer
-                                      minimum: 1
-                                  recipientRoleIds:
-                                    type: array
-                                    items:
-                                      type: integer
-                                      minimum: 1
-                                required:
-                                - titleText
-                                - subtitleText
-                                - type
-                                - icon
-                                - org
-                            required:
-                            - notificationData
-                        required:
-                        - data
-                      - type: object
-                        properties:
-                          type:
-                            type: string
-                          blocking:
-                            type: boolean
-                            enum:
-                            - false
-                          preRequestDelaySeconds:
-                            type: integer
-                            enum:
-                            - 0
-                          locationId:
-                            type: number
-                            enum:
-                            - 4
-                          authType:
-                            type: string
-                            enum:
-                            - basic
-                            - customString
-                            - url
-                          alertCode:
-                            type: string
-                          httpParams:
-                            type: object
-                            properties:
-                              headers:
-                                type: array
-                                minItems: 2
-                                maxItems: 3
-                                items:
-                                  type: string
-                                  pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
-                              method:
-                                type: string
-                                enum:
-                                - get
-                                - post
-                              url:
-                                type: string
-                                x-format:
-                                  uri: true
-                            required:
-                            - url
-                          data:
-                            type: object
-                        required:
-                        - locationId
-                        - authType
-                        - alertCode
-                      type: object
-              - type: string
-              type: object
-              properties:
-                version:
-                  type: string
-                trigger:
-                  type: object
-                requests:
-                  type: array
-                  items:
-                    x-alternatives:
-                    - type: object
-                    - type: object
-                      properties:
-                        type:
-                          type: string
-                        locationId:
-                          type: integer
-                          enum:
-                          - 1
-                          - 2
-                          - 3
-                          - 4
-                        data:
-                          type: object
-                          properties:
-                            withSourceEvent:
-                              type: boolean
-                            withListNulls:
-                              type: boolean
-                            notificationData:
-                              type: object
-                              properties:
-                                titleText:
-                                  type: string
-                                subtitleText:
-                                  type: string
-                                type:
-                                  type: string
-                                  enum:
-                                  - success
-                                  - info
-                                  - warning
-                                  - error
-                                  - alarmLow
-                                  - alarmMedium
-                                  - alarmHigh
-                                icon:
-                                  type: string
-                                  enum:
-                                  - success
-                                  - info
-                                  - warning
-                                  - error
-                                  - p1
-                                  - p2
-                                  - p3
-                                  - p4
-                                  - p5
-                                buttons:
-                                  type: array
-                                  items:
-                                    x-alternatives:
-                                    - type: object
-                                    - type: object
-                                      properties:
-                                        target:
-                                          type: object
-                                          properties:
-                                            resourceType:
-                                              type: string
-                                            resourceUid:
-                                              type: string
-                                              x-format:
-                                                guid: true
-                                              x-alternatives:
-                                              - type: string
-                                                x-format:
-                                                  guid: true
-                                              - type: string
-                                                pattern: '[1-9][0-9]*'
-                                              - type: string
-                                                pattern: ^{{toString [^}]+}}$
-                                          required:
-                                          - resourceType
-                                          - resourceUid
-                                    type: object
-                                org:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: integer
-                                      minimum: 1
-                                originUserId:
-                                  type: integer
-                                  minimum: 1
-                                  x-alternatives:
-                                  - type: integer
-                                    minimum: 1
-                                  - type: string
-                                    pattern: ^{{toInt [^}]+}}$
-                                  x-nullable: true
-                                originUserOpal:
-                                  type: string
-                                  x-nullable: true
-                                recipientUserIds:
-                                  type: array
-                                  items:
-                                    type: integer
-                                    minimum: 1
-                                recipientRoleIds:
-                                  type: array
-                                  items:
-                                    type: integer
-                                    minimum: 1
-                              required:
-                              - titleText
-                              - subtitleText
-                              - type
-                              - icon
-                              - org
-                          required:
-                          - notificationData
-                      required:
-                      - data
-                    - type: object
-                      properties:
-                        type:
-                          type: string
-                        blocking:
-                          type: boolean
-                          enum:
-                          - false
-                        preRequestDelaySeconds:
-                          type: integer
-                          enum:
-                          - 0
-                        locationId:
-                          type: number
-                          enum:
-                          - 4
-                        authType:
-                          type: string
-                          enum:
-                          - basic
-                          - customString
-                          - url
-                        alertCode:
-                          type: string
-                        httpParams:
-                          type: object
-                          properties:
-                            headers:
-                              type: array
-                              minItems: 2
-                              maxItems: 3
-                              items:
-                                type: string
-                                pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
-                            method:
-                              type: string
-                              enum:
-                              - get
-                              - post
-                            url:
-                              type: string
-                              x-format:
-                                uri: true
-                          required:
-                          - url
-                        data:
-                          type: object
-                      required:
-                      - locationId
-                      - authType
-                      - alertCode
-                    type: object
-            description:
-              type: string
-              x-nullable: true
-          required:
-          - name
-          - config
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/hookActions
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  description:
-                    type: string
-                    x-nullable: true
-                  config:
-                    type: object
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      config:
+                        type: object
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-configurations:w
       - o{params.orgId}-outboundWebhooks:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                config:
+                  x-alternatives:
+                  - type: object
+                    properties:
+                      version:
+                        type: string
+                      trigger:
+                        type: object
+                      requests:
+                        type: array
+                        items:
+                          x-alternatives:
+                          - type: object
+                          - type: object
+                            properties:
+                              type:
+                                type: string
+                              locationId:
+                                type: integer
+                                enum:
+                                - 1
+                                - 2
+                                - 3
+                                - 4
+                              data:
+                                type: object
+                                properties:
+                                  withSourceEvent:
+                                    type: boolean
+                                  withListNulls:
+                                    type: boolean
+                                  notificationData:
+                                    type: object
+                                    properties:
+                                      titleText:
+                                        type: string
+                                      subtitleText:
+                                        type: string
+                                      type:
+                                        type: string
+                                        enum:
+                                        - success
+                                        - info
+                                        - warning
+                                        - error
+                                        - alarmLow
+                                        - alarmMedium
+                                        - alarmHigh
+                                      icon:
+                                        type: string
+                                        enum:
+                                        - success
+                                        - info
+                                        - warning
+                                        - error
+                                        - p1
+                                        - p2
+                                        - p3
+                                        - p4
+                                        - p5
+                                      buttons:
+                                        type: array
+                                        items:
+                                          x-alternatives:
+                                          - type: object
+                                          - type: object
+                                            properties:
+                                              target:
+                                                type: object
+                                                properties:
+                                                  resourceType:
+                                                    type: string
+                                                  resourceUid:
+                                                    type: string
+                                                    x-format:
+                                                      guid: true
+                                                    x-alternatives:
+                                                    - type: string
+                                                      x-format:
+                                                        guid: true
+                                                    - type: string
+                                                      pattern: '[1-9][0-9]*'
+                                                    - type: string
+                                                      pattern: ^{{toString [^}]+}}$
+                                                required:
+                                                - resourceType
+                                                - resourceUid
+                                          type: object
+                                      org:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                            minimum: 1
+                                      originUserId:
+                                        type:
+                                        - integer
+                                        - 'null'
+                                        minimum: 1
+                                        x-alternatives:
+                                        - type: integer
+                                          minimum: 1
+                                        - type: string
+                                          pattern: ^{{toInt [^}]+}}$
+                                      originUserOpal:
+                                        type:
+                                        - string
+                                        - 'null'
+                                      recipientUserIds:
+                                        type: array
+                                        items:
+                                          type: integer
+                                          minimum: 1
+                                      recipientRoleIds:
+                                        type: array
+                                        items:
+                                          type: integer
+                                          minimum: 1
+                                    required:
+                                    - titleText
+                                    - subtitleText
+                                    - type
+                                    - icon
+                                    - org
+                                required:
+                                - notificationData
+                            required:
+                            - data
+                          - type: object
+                            properties:
+                              type:
+                                type: string
+                              blocking:
+                                type: boolean
+                                enum:
+                                - false
+                              preRequestDelaySeconds:
+                                type: integer
+                                enum:
+                                - 0
+                              locationId:
+                                type: number
+                                enum:
+                                - 4
+                              authType:
+                                type: string
+                                enum:
+                                - basic
+                                - customString
+                                - url
+                              alertCode:
+                                type: string
+                              httpParams:
+                                type: object
+                                properties:
+                                  headers:
+                                    type: array
+                                    minItems: 2
+                                    maxItems: 3
+                                    items:
+                                      type: string
+                                      pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
+                                  method:
+                                    type: string
+                                    enum:
+                                    - get
+                                    - post
+                                  url:
+                                    type: string
+                                    x-format:
+                                      uri: true
+                                required:
+                                - url
+                              data:
+                                type: object
+                            required:
+                            - locationId
+                            - authType
+                            - alertCode
+                          type: object
+                  - type: string
+                  type: object
+                  properties:
+                    version:
+                      type: string
+                    trigger:
+                      type: object
+                    requests:
+                      type: array
+                      items:
+                        x-alternatives:
+                        - type: object
+                        - type: object
+                          properties:
+                            type:
+                              type: string
+                            locationId:
+                              type: integer
+                              enum:
+                              - 1
+                              - 2
+                              - 3
+                              - 4
+                            data:
+                              type: object
+                              properties:
+                                withSourceEvent:
+                                  type: boolean
+                                withListNulls:
+                                  type: boolean
+                                notificationData:
+                                  type: object
+                                  properties:
+                                    titleText:
+                                      type: string
+                                    subtitleText:
+                                      type: string
+                                    type:
+                                      type: string
+                                      enum:
+                                      - success
+                                      - info
+                                      - warning
+                                      - error
+                                      - alarmLow
+                                      - alarmMedium
+                                      - alarmHigh
+                                    icon:
+                                      type: string
+                                      enum:
+                                      - success
+                                      - info
+                                      - warning
+                                      - error
+                                      - p1
+                                      - p2
+                                      - p3
+                                      - p4
+                                      - p5
+                                    buttons:
+                                      type: array
+                                      items:
+                                        x-alternatives:
+                                        - type: object
+                                        - type: object
+                                          properties:
+                                            target:
+                                              type: object
+                                              properties:
+                                                resourceType:
+                                                  type: string
+                                                resourceUid:
+                                                  type: string
+                                                  x-format:
+                                                    guid: true
+                                                  x-alternatives:
+                                                  - type: string
+                                                    x-format:
+                                                      guid: true
+                                                  - type: string
+                                                    pattern: '[1-9][0-9]*'
+                                                  - type: string
+                                                    pattern: ^{{toString [^}]+}}$
+                                              required:
+                                              - resourceType
+                                              - resourceUid
+                                        type: object
+                                    org:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: integer
+                                          minimum: 1
+                                    originUserId:
+                                      type:
+                                      - integer
+                                      - 'null'
+                                      minimum: 1
+                                      x-alternatives:
+                                      - type: integer
+                                        minimum: 1
+                                      - type: string
+                                        pattern: ^{{toInt [^}]+}}$
+                                    originUserOpal:
+                                      type:
+                                      - string
+                                      - 'null'
+                                    recipientUserIds:
+                                      type: array
+                                      items:
+                                        type: integer
+                                        minimum: 1
+                                    recipientRoleIds:
+                                      type: array
+                                      items:
+                                        type: integer
+                                        minimum: 1
+                                  required:
+                                  - titleText
+                                  - subtitleText
+                                  - type
+                                  - icon
+                                  - org
+                              required:
+                              - notificationData
+                          required:
+                          - data
+                        - type: object
+                          properties:
+                            type:
+                              type: string
+                            blocking:
+                              type: boolean
+                              enum:
+                              - false
+                            preRequestDelaySeconds:
+                              type: integer
+                              enum:
+                              - 0
+                            locationId:
+                              type: number
+                              enum:
+                              - 4
+                            authType:
+                              type: string
+                              enum:
+                              - basic
+                              - customString
+                              - url
+                            alertCode:
+                              type: string
+                            httpParams:
+                              type: object
+                              properties:
+                                headers:
+                                  type: array
+                                  minItems: 2
+                                  maxItems: 3
+                                  items:
+                                    type: string
+                                    pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
+                                method:
+                                  type: string
+                                  enum:
+                                  - get
+                                  - post
+                                url:
+                                  type: string
+                                  x-format:
+                                    uri: true
+                              required:
+                              - url
+                            data:
+                              type: object
+                          required:
+                          - locationId
+                          - authType
+                          - alertCode
+                        type: object
+                description:
+                  type:
+                  - string
+                  - 'null'
+              required:
+              - name
+              - config
   /orgs/{orgId}/hookActions/{hookActionId}:
     get:
       summary: Describe a hook action
       operationId: describeHookAction
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r<br/><br/>__Endpoint name__: describeHookAction'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-configurations:r,o{params.orgId}-outboundWebhooks:w,o{params.orgId}-outboundWebhooks:r,o:w,o:r,s-o:w,s-o:r
+
+
+        __Endpoint name__: describeHookAction'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: hookActionId
+        schema:
+          type: integer
+      - name: hookActionId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/hookActions
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  description:
-                    type: string
-                    x-nullable: true
-                  config:
-                    type: object
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                required:
-                - id
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      id:
+                        type: number
+                      name:
+                        type: string
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      config:
+                        type: object
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                      updatedAt:
+                        type: string
+                        format: date
+                    required:
+                    - id
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-configurations:w
       - o{params.orgId}-configurations:r
@@ -671,20 +703,21 @@ paths:
     delete:
       summary: Delete a hook action
       operationId: deleteHookAction
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteHookAction'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteHookAction'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: hookActionId
+        schema:
+          type: integer
+      - name: hookActionId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/hookActions
       security:
@@ -700,389 +733,21 @@ paths:
     patch:
       summary: Update a hook action
       operationId: updateHookAction
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateHookAction'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-configurations:w,o{params.orgId}-outboundWebhooks:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateHookAction'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: hookActionId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-              minLength: 1
-              maxLength: 100
-              x-convert:
-                trim: true
-            description:
-              type: string
-              x-nullable: true
-            config:
-              x-alternatives:
-              - type: object
-                properties:
-                  version:
-                    type: string
-                  trigger:
-                    type: object
-                  requests:
-                    type: array
-                    items:
-                      x-alternatives:
-                      - type: object
-                      - type: object
-                        properties:
-                          type:
-                            type: string
-                          locationId:
-                            type: integer
-                            enum:
-                            - 1
-                            - 2
-                            - 3
-                            - 4
-                          data:
-                            type: object
-                            properties:
-                              withSourceEvent:
-                                type: boolean
-                              withListNulls:
-                                type: boolean
-                              notificationData:
-                                type: object
-                                properties:
-                                  titleText:
-                                    type: string
-                                  subtitleText:
-                                    type: string
-                                  type:
-                                    type: string
-                                    enum:
-                                    - success
-                                    - info
-                                    - warning
-                                    - error
-                                    - alarmLow
-                                    - alarmMedium
-                                    - alarmHigh
-                                  icon:
-                                    type: string
-                                    enum:
-                                    - success
-                                    - info
-                                    - warning
-                                    - error
-                                    - p1
-                                    - p2
-                                    - p3
-                                    - p4
-                                    - p5
-                                  buttons:
-                                    type: array
-                                    items:
-                                      x-alternatives:
-                                      - type: object
-                                      - type: object
-                                        properties:
-                                          target:
-                                            type: object
-                                            properties:
-                                              resourceType:
-                                                type: string
-                                              resourceUid:
-                                                type: string
-                                                x-format:
-                                                  guid: true
-                                                x-alternatives:
-                                                - type: string
-                                                  x-format:
-                                                    guid: true
-                                                - type: string
-                                                  pattern: '[1-9][0-9]*'
-                                                - type: string
-                                                  pattern: ^{{toString [^}]+}}$
-                                            required:
-                                            - resourceType
-                                            - resourceUid
-                                      type: object
-                                  org:
-                                    type: object
-                                    properties:
-                                      id:
-                                        type: integer
-                                        minimum: 1
-                                  originUserId:
-                                    type: integer
-                                    minimum: 1
-                                    x-alternatives:
-                                    - type: integer
-                                      minimum: 1
-                                    - type: string
-                                      pattern: ^{{toInt [^}]+}}$
-                                    x-nullable: true
-                                  originUserOpal:
-                                    type: string
-                                    x-nullable: true
-                                  recipientUserIds:
-                                    type: array
-                                    items:
-                                      type: integer
-                                      minimum: 1
-                                  recipientRoleIds:
-                                    type: array
-                                    items:
-                                      type: integer
-                                      minimum: 1
-                                required:
-                                - titleText
-                                - subtitleText
-                                - type
-                                - icon
-                                - org
-                            required:
-                            - notificationData
-                        required:
-                        - data
-                      - type: object
-                        properties:
-                          type:
-                            type: string
-                          blocking:
-                            type: boolean
-                            enum:
-                            - false
-                          preRequestDelaySeconds:
-                            type: integer
-                            enum:
-                            - 0
-                          locationId:
-                            type: number
-                            enum:
-                            - 4
-                          authType:
-                            type: string
-                            enum:
-                            - basic
-                            - customString
-                            - url
-                          alertCode:
-                            type: string
-                          httpParams:
-                            type: object
-                            properties:
-                              headers:
-                                type: array
-                                minItems: 2
-                                maxItems: 3
-                                items:
-                                  type: string
-                                  pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
-                              method:
-                                type: string
-                                enum:
-                                - get
-                                - post
-                              url:
-                                type: string
-                                x-format:
-                                  uri: true
-                            required:
-                            - url
-                          data:
-                            type: object
-                        required:
-                        - locationId
-                        - authType
-                        - alertCode
-                      type: object
-              - type: string
-              type: object
-              properties:
-                version:
-                  type: string
-                trigger:
-                  type: object
-                requests:
-                  type: array
-                  items:
-                    x-alternatives:
-                    - type: object
-                    - type: object
-                      properties:
-                        type:
-                          type: string
-                        locationId:
-                          type: integer
-                          enum:
-                          - 1
-                          - 2
-                          - 3
-                          - 4
-                        data:
-                          type: object
-                          properties:
-                            withSourceEvent:
-                              type: boolean
-                            withListNulls:
-                              type: boolean
-                            notificationData:
-                              type: object
-                              properties:
-                                titleText:
-                                  type: string
-                                subtitleText:
-                                  type: string
-                                type:
-                                  type: string
-                                  enum:
-                                  - success
-                                  - info
-                                  - warning
-                                  - error
-                                  - alarmLow
-                                  - alarmMedium
-                                  - alarmHigh
-                                icon:
-                                  type: string
-                                  enum:
-                                  - success
-                                  - info
-                                  - warning
-                                  - error
-                                  - p1
-                                  - p2
-                                  - p3
-                                  - p4
-                                  - p5
-                                buttons:
-                                  type: array
-                                  items:
-                                    x-alternatives:
-                                    - type: object
-                                    - type: object
-                                      properties:
-                                        target:
-                                          type: object
-                                          properties:
-                                            resourceType:
-                                              type: string
-                                            resourceUid:
-                                              type: string
-                                              x-format:
-                                                guid: true
-                                              x-alternatives:
-                                              - type: string
-                                                x-format:
-                                                  guid: true
-                                              - type: string
-                                                pattern: '[1-9][0-9]*'
-                                              - type: string
-                                                pattern: ^{{toString [^}]+}}$
-                                          required:
-                                          - resourceType
-                                          - resourceUid
-                                    type: object
-                                org:
-                                  type: object
-                                  properties:
-                                    id:
-                                      type: integer
-                                      minimum: 1
-                                originUserId:
-                                  type: integer
-                                  minimum: 1
-                                  x-alternatives:
-                                  - type: integer
-                                    minimum: 1
-                                  - type: string
-                                    pattern: ^{{toInt [^}]+}}$
-                                  x-nullable: true
-                                originUserOpal:
-                                  type: string
-                                  x-nullable: true
-                                recipientUserIds:
-                                  type: array
-                                  items:
-                                    type: integer
-                                    minimum: 1
-                                recipientRoleIds:
-                                  type: array
-                                  items:
-                                    type: integer
-                                    minimum: 1
-                              required:
-                              - titleText
-                              - subtitleText
-                              - type
-                              - icon
-                              - org
-                          required:
-                          - notificationData
-                      required:
-                      - data
-                    - type: object
-                      properties:
-                        type:
-                          type: string
-                        blocking:
-                          type: boolean
-                          enum:
-                          - false
-                        preRequestDelaySeconds:
-                          type: integer
-                          enum:
-                          - 0
-                        locationId:
-                          type: number
-                          enum:
-                          - 4
-                        authType:
-                          type: string
-                          enum:
-                          - basic
-                          - customString
-                          - url
-                        alertCode:
-                          type: string
-                        httpParams:
-                          type: object
-                          properties:
-                            headers:
-                              type: array
-                              minItems: 2
-                              maxItems: 3
-                              items:
-                                type: string
-                                pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
-                            method:
-                              type: string
-                              enum:
-                              - get
-                              - post
-                            url:
-                              type: string
-                              x-format:
-                                uri: true
-                          required:
-                          - url
-                        data:
-                          type: object
-                      required:
-                      - locationId
-                      - authType
-                      - alertCode
-                    type: object
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: hookActionId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/hookActions
       security:
@@ -1095,9 +760,385 @@ paths:
       - o{params.orgId}-outboundWebhooks:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                  maxLength: 100
+                  x-convert:
+                    trim: true
+                description:
+                  type:
+                  - string
+                  - 'null'
+                config:
+                  x-alternatives:
+                  - type: object
+                    properties:
+                      version:
+                        type: string
+                      trigger:
+                        type: object
+                      requests:
+                        type: array
+                        items:
+                          x-alternatives:
+                          - type: object
+                          - type: object
+                            properties:
+                              type:
+                                type: string
+                              locationId:
+                                type: integer
+                                enum:
+                                - 1
+                                - 2
+                                - 3
+                                - 4
+                              data:
+                                type: object
+                                properties:
+                                  withSourceEvent:
+                                    type: boolean
+                                  withListNulls:
+                                    type: boolean
+                                  notificationData:
+                                    type: object
+                                    properties:
+                                      titleText:
+                                        type: string
+                                      subtitleText:
+                                        type: string
+                                      type:
+                                        type: string
+                                        enum:
+                                        - success
+                                        - info
+                                        - warning
+                                        - error
+                                        - alarmLow
+                                        - alarmMedium
+                                        - alarmHigh
+                                      icon:
+                                        type: string
+                                        enum:
+                                        - success
+                                        - info
+                                        - warning
+                                        - error
+                                        - p1
+                                        - p2
+                                        - p3
+                                        - p4
+                                        - p5
+                                      buttons:
+                                        type: array
+                                        items:
+                                          x-alternatives:
+                                          - type: object
+                                          - type: object
+                                            properties:
+                                              target:
+                                                type: object
+                                                properties:
+                                                  resourceType:
+                                                    type: string
+                                                  resourceUid:
+                                                    type: string
+                                                    x-format:
+                                                      guid: true
+                                                    x-alternatives:
+                                                    - type: string
+                                                      x-format:
+                                                        guid: true
+                                                    - type: string
+                                                      pattern: '[1-9][0-9]*'
+                                                    - type: string
+                                                      pattern: ^{{toString [^}]+}}$
+                                                required:
+                                                - resourceType
+                                                - resourceUid
+                                          type: object
+                                      org:
+                                        type: object
+                                        properties:
+                                          id:
+                                            type: integer
+                                            minimum: 1
+                                      originUserId:
+                                        type:
+                                        - integer
+                                        - 'null'
+                                        minimum: 1
+                                        x-alternatives:
+                                        - type: integer
+                                          minimum: 1
+                                        - type: string
+                                          pattern: ^{{toInt [^}]+}}$
+                                      originUserOpal:
+                                        type:
+                                        - string
+                                        - 'null'
+                                      recipientUserIds:
+                                        type: array
+                                        items:
+                                          type: integer
+                                          minimum: 1
+                                      recipientRoleIds:
+                                        type: array
+                                        items:
+                                          type: integer
+                                          minimum: 1
+                                    required:
+                                    - titleText
+                                    - subtitleText
+                                    - type
+                                    - icon
+                                    - org
+                                required:
+                                - notificationData
+                            required:
+                            - data
+                          - type: object
+                            properties:
+                              type:
+                                type: string
+                              blocking:
+                                type: boolean
+                                enum:
+                                - false
+                              preRequestDelaySeconds:
+                                type: integer
+                                enum:
+                                - 0
+                              locationId:
+                                type: number
+                                enum:
+                                - 4
+                              authType:
+                                type: string
+                                enum:
+                                - basic
+                                - customString
+                                - url
+                              alertCode:
+                                type: string
+                              httpParams:
+                                type: object
+                                properties:
+                                  headers:
+                                    type: array
+                                    minItems: 2
+                                    maxItems: 3
+                                    items:
+                                      type: string
+                                      pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
+                                  method:
+                                    type: string
+                                    enum:
+                                    - get
+                                    - post
+                                  url:
+                                    type: string
+                                    x-format:
+                                      uri: true
+                                required:
+                                - url
+                              data:
+                                type: object
+                            required:
+                            - locationId
+                            - authType
+                            - alertCode
+                          type: object
+                  - type: string
+                  type: object
+                  properties:
+                    version:
+                      type: string
+                    trigger:
+                      type: object
+                    requests:
+                      type: array
+                      items:
+                        x-alternatives:
+                        - type: object
+                        - type: object
+                          properties:
+                            type:
+                              type: string
+                            locationId:
+                              type: integer
+                              enum:
+                              - 1
+                              - 2
+                              - 3
+                              - 4
+                            data:
+                              type: object
+                              properties:
+                                withSourceEvent:
+                                  type: boolean
+                                withListNulls:
+                                  type: boolean
+                                notificationData:
+                                  type: object
+                                  properties:
+                                    titleText:
+                                      type: string
+                                    subtitleText:
+                                      type: string
+                                    type:
+                                      type: string
+                                      enum:
+                                      - success
+                                      - info
+                                      - warning
+                                      - error
+                                      - alarmLow
+                                      - alarmMedium
+                                      - alarmHigh
+                                    icon:
+                                      type: string
+                                      enum:
+                                      - success
+                                      - info
+                                      - warning
+                                      - error
+                                      - p1
+                                      - p2
+                                      - p3
+                                      - p4
+                                      - p5
+                                    buttons:
+                                      type: array
+                                      items:
+                                        x-alternatives:
+                                        - type: object
+                                        - type: object
+                                          properties:
+                                            target:
+                                              type: object
+                                              properties:
+                                                resourceType:
+                                                  type: string
+                                                resourceUid:
+                                                  type: string
+                                                  x-format:
+                                                    guid: true
+                                                  x-alternatives:
+                                                  - type: string
+                                                    x-format:
+                                                      guid: true
+                                                  - type: string
+                                                    pattern: '[1-9][0-9]*'
+                                                  - type: string
+                                                    pattern: ^{{toString [^}]+}}$
+                                              required:
+                                              - resourceType
+                                              - resourceUid
+                                        type: object
+                                    org:
+                                      type: object
+                                      properties:
+                                        id:
+                                          type: integer
+                                          minimum: 1
+                                    originUserId:
+                                      type:
+                                      - integer
+                                      - 'null'
+                                      minimum: 1
+                                      x-alternatives:
+                                      - type: integer
+                                        minimum: 1
+                                      - type: string
+                                        pattern: ^{{toInt [^}]+}}$
+                                    originUserOpal:
+                                      type:
+                                      - string
+                                      - 'null'
+                                    recipientUserIds:
+                                      type: array
+                                      items:
+                                        type: integer
+                                        minimum: 1
+                                    recipientRoleIds:
+                                      type: array
+                                      items:
+                                        type: integer
+                                        minimum: 1
+                                  required:
+                                  - titleText
+                                  - subtitleText
+                                  - type
+                                  - icon
+                                  - org
+                              required:
+                              - notificationData
+                          required:
+                          - data
+                        - type: object
+                          properties:
+                            type:
+                              type: string
+                            blocking:
+                              type: boolean
+                              enum:
+                              - false
+                            preRequestDelaySeconds:
+                              type: integer
+                              enum:
+                              - 0
+                            locationId:
+                              type: number
+                              enum:
+                              - 4
+                            authType:
+                              type: string
+                              enum:
+                              - basic
+                              - customString
+                              - url
+                            alertCode:
+                              type: string
+                            httpParams:
+                              type: object
+                              properties:
+                                headers:
+                                  type: array
+                                  minItems: 2
+                                  maxItems: 3
+                                  items:
+                                    type: string
+                                    pattern: '^User-Agent: Openpath\/(Rules Engine|RulesEngine|AlarmConfig)$'
+                                method:
+                                  type: string
+                                  enum:
+                                  - get
+                                  - post
+                                url:
+                                  type: string
+                                  x-format:
+                                    uri: true
+                              required:
+                              - url
+                            data:
+                              type: object
+                          required:
+                          - locationId
+                          - authType
+                          - alertCode
+                        type: object
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false

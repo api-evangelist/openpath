@@ -1,15 +1,9 @@
-swagger: '2.0'
+openapi: 3.2.0
 info:
-  title: Openpath API Documentation auth orgs/mailrooms API
+  title: Openpath API Documentation Orgs/mailrooms API
   version: 1.0.0
-  description: Authentication and Login
-host: api.openpath.com
-schemes:
-- https
-consumes:
-- application/json
-produces:
-- application/json
+servers:
+- url: https://api.openpath.com
 tags:
 - name: orgs/mailrooms
 paths:
@@ -17,163 +11,185 @@ paths:
     get:
       summary: List active mailrooms
       operationId: listMailrooms
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: listMailrooms'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w
+
+
+        __Endpoint name__: listMailrooms'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        minimum: 1
-        maximum: 1000
-        name: limit
+        schema:
+          type: integer
+      - name: limit
         in: query
-      - type: integer
-        default: 0
-        minimum: 0
-        name: offset
+        schema:
+          type: integer
+          maximum: 1000
+          minimum: 1
+      - name: offset
         in: query
-      - type: string
-        default: name
-        pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
-        name: sort
+        schema:
+          type: integer
+          default: 0
+          minimum: 0
+      - name: sort
         in: query
-      - type: string
-        default: asc
-        pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
-        name: order
+        schema:
+          type: string
+          default: name
+          pattern: ^[a-zA-Z0-9.]+(,\s*[a-zA-Z0-9.]+)*$
+      - name: order
         in: query
-      - type: string
-        name: q
+        schema:
+          type: string
+          default: asc
+          pattern: ^(asc|desc)+(,\s*(asc|desc)+)*$
+      - name: q
         in: query
-      - type: string
-        name: filter
+        schema:
+          type: string
+      - name: filter
         in: query
-      - type: string
-        name: preFilter
+        schema:
+          type: string
+      - name: preFilter
         in: query
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: string
       tags:
       - orgs/mailrooms
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              totalCount:
-                type: integer
-              filteredCount:
-                type: integer
-              cursors:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  nextCursor:
+                  totalCount:
                     type: integer
-                    x-nullable: true
-                    x-alternatives:
-                    - type: integer
-                      x-nullable: true
-                    - type: string
-                      pattern: ^[a-zA-Z0-9,@._~-]+$
-                      x-nullable: true
-                  hasNextPage:
-                    type: boolean
-              data:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: number
-                    name:
-                      type: string
-                    createdAt:
-                      type: string
-                      format: date
-                    updatedAt:
-                      type: string
-                      format: date
-                    site:
+                  filteredCount:
+                    type: integer
+                  cursors:
+                    type: object
+                    properties:
+                      nextCursor:
+                        type:
+                        - integer
+                        - 'null'
+                        x-alternatives:
+                        - type:
+                          - integer
+                          - 'null'
+                        - type:
+                          - string
+                          - 'null'
+                          pattern: ^[a-zA-Z0-9,@._~-]+$
+                      hasNextPage:
+                        type: boolean
+                  data:
+                    type: array
+                    items:
                       type: object
                       properties:
                         id:
                           type: number
                         name:
                           type: string
+                        createdAt:
+                          type: string
+                          format: date
+                        updatedAt:
+                          type: string
+                          format: date
+                        site:
+                          type: object
+                          properties:
+                            id:
+                              type: number
+                            name:
+                              type: string
+                          required:
+                          - id
+                        address:
+                          type: string
+                        address2:
+                          type:
+                          - string
+                          - 'null'
+                        city:
+                          type: string
+                        state:
+                          type:
+                          - string
+                          - 'null'
+                        zip:
+                          type:
+                          - string
+                          - 'null'
+                        country:
+                          type: string
+                        phone:
+                          type:
+                          - string
+                          - 'null'
+                        description:
+                          type:
+                          - string
+                          - 'null'
+                        timezone:
+                          type: string
+                        isSelfPickup:
+                          type: boolean
+                          default: false
+                        isSignatureRequired:
+                          type: boolean
+                          default: false
                       required:
                       - id
-                    address:
-                      type: string
-                    address2:
-                      type: string
-                      x-nullable: true
-                    city:
-                      type: string
-                    state:
-                      type: string
-                      x-nullable: true
-                    zip:
-                      type: string
-                      x-nullable: true
-                    country:
-                      type: string
-                    phone:
-                      type: string
-                      x-nullable: true
-                    description:
-                      type: string
-                      x-nullable: true
-                    timezone:
-                      type: string
-                    isSelfPickup:
-                      type: boolean
-                      default: false
-                    isSignatureRequired:
-                      type: boolean
-                      default: false
-                  required:
-                  - id
-                  - name
-                  - address
-                  - city
-                  - country
-                  - timezone
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                      - name
+                      - address
+                      - city
+                      - country
+                      - timezone
+                  meta:
                     type: object
                     properties:
-                      scopeUpdatedAt:
-                        type: string
-                        format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-parcelMgmtParcels:r
       - o{params.orgId}-parcelMgmtParcels:w
@@ -184,278 +200,309 @@ paths:
     post:
       summary: Create a mailroom
       operationId: createMailroom
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: createMailroom'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w
+
+
+        __Endpoint name__: createMailroom'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-            siteId:
-              type: number
-            address:
-              type: string
-            address2:
-              type: string
-              x-nullable: true
-            city:
-              type: string
-            zip:
-              type: string
-              x-nullable: true
-            country:
-              type: string
-              x-convert:
-                trim: true
-            state:
-              type: string
-              x-convert:
-                trim: true
-              x-nullable: true
-            phone:
-              type: string
-              x-nullable: true
-            description:
-              type: string
-              x-nullable: true
-            isSelfPickup:
-              type: boolean
-            isSignatureRequired:
-              type: boolean
-          required:
-          - name
-          - siteId
-          - address
-          - city
-          - country
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
       tags:
       - orgs/mailrooms
       security:
       - jwt: []
       responses:
         '201':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Created
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  site:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  address:
-                    type: string
-                  address2:
-                    type: string
-                    x-nullable: true
-                  city:
-                    type: string
-                  state:
-                    type: string
-                    x-nullable: true
-                  zip:
-                    type: string
-                    x-nullable: true
-                  country:
-                    type: string
-                  phone:
-                    type: string
-                    x-nullable: true
-                  description:
-                    type: string
-                    x-nullable: true
-                  timezone:
-                    type: string
-                  isSelfPickup:
-                    type: boolean
-                    default: false
-                  isSignatureRequired:
-                    type: boolean
-                    default: false
-                required:
-                - id
-                - name
-                - address
-                - city
-                - country
-                - timezone
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      updatedAt:
+                        type: string
+                        format: date
+                      site:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      address:
+                        type: string
+                      address2:
+                        type:
+                        - string
+                        - 'null'
+                      city:
+                        type: string
+                      state:
+                        type:
+                        - string
+                        - 'null'
+                      zip:
+                        type:
+                        - string
+                        - 'null'
+                      country:
+                        type: string
+                      phone:
+                        type:
+                        - string
+                        - 'null'
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      timezone:
+                        type: string
+                      isSelfPickup:
+                        type: boolean
+                        default: false
+                      isSignatureRequired:
+                        type: boolean
+                        default: false
+                    required:
+                    - id
+                    - name
+                    - address
+                    - city
+                    - country
+                    - timezone
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Created
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-parcelMgmtParcels:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                siteId:
+                  type: number
+                address:
+                  type: string
+                address2:
+                  type:
+                  - string
+                  - 'null'
+                city:
+                  type: string
+                zip:
+                  type:
+                  - string
+                  - 'null'
+                country:
+                  type: string
+                  x-convert:
+                    trim: true
+                state:
+                  type:
+                  - string
+                  - 'null'
+                  x-convert:
+                    trim: true
+                phone:
+                  type:
+                  - string
+                  - 'null'
+                description:
+                  type:
+                  - string
+                  - 'null'
+                isSelfPickup:
+                  type: boolean
+                isSignatureRequired:
+                  type: boolean
+              required:
+              - name
+              - siteId
+              - address
+              - city
+              - country
   /orgs/{orgId}/mailrooms/{mailroomId}:
     get:
       summary: Describe a mailroom
       operationId: describeMailroom
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: describeMailroom'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w
+
+
+        __Endpoint name__: describeMailroom'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: mailroomId
+        schema:
+          type: integer
+      - name: mailroomId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/mailrooms
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  site:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  address:
-                    type: string
-                  address2:
-                    type: string
-                    x-nullable: true
-                  city:
-                    type: string
-                  state:
-                    type: string
-                    x-nullable: true
-                  zip:
-                    type: string
-                    x-nullable: true
-                  country:
-                    type: string
-                  phone:
-                    type: string
-                    x-nullable: true
-                  description:
-                    type: string
-                    x-nullable: true
-                  timezone:
-                    type: string
-                  isSelfPickup:
-                    type: boolean
-                    default: false
-                  isSignatureRequired:
-                    type: boolean
-                    default: false
-                required:
-                - id
-                - name
-                - address
-                - city
-                - country
-                - timezone
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      updatedAt:
+                        type: string
+                        format: date
+                      site:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      address:
+                        type: string
+                      address2:
+                        type:
+                        - string
+                        - 'null'
+                      city:
+                        type: string
+                      state:
+                        type:
+                        - string
+                        - 'null'
+                      zip:
+                        type:
+                        - string
+                        - 'null'
+                      country:
+                        type: string
+                      phone:
+                        type:
+                        - string
+                        - 'null'
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      timezone:
+                        type: string
+                      isSelfPickup:
+                        type: boolean
+                        default: false
+                      isSignatureRequired:
+                        type: boolean
+                        default: false
+                    required:
+                    - id
+                    - name
+                    - address
+                    - city
+                    - country
+                    - timezone
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-parcelMgmtParcels:r
       - o{params.orgId}-parcelMgmtParcels:w
@@ -466,20 +513,21 @@ paths:
     delete:
       summary: Delete a mailroom
       operationId: deleteMailroom
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: deleteMailroom'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w
+
+
+        __Endpoint name__: deleteMailroom'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: mailroomId
+        schema:
+          type: integer
+      - name: mailroomId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/mailrooms
       security:
@@ -494,228 +542,254 @@ paths:
     patch:
       summary: Update a mailroom
       operationId: updateMailroom
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w<br/><br/>__Endpoint name__: updateMailroom'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:w,o:w,s-o:w
+
+
+        __Endpoint name__: updateMailroom'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: mailroomId
-        in: path
-        required: true
-      - in: body
-        name: body
         schema:
-          type: object
-          properties:
-            name:
-              type: string
-            siteId:
-              type: number
-            address:
-              type: string
-            address2:
-              type: string
-              x-nullable: true
-            city:
-              type: string
-            zip:
-              type: string
-              x-nullable: true
-            country:
-              type: string
-              x-convert:
-                trim: true
-            state:
-              type: string
-              x-convert:
-                trim: true
-              x-nullable: true
-            phone:
-              type: string
-              x-nullable: true
-            description:
-              type: string
-              x-nullable: true
-            isSelfPickup:
-              type: boolean
-            isSignatureRequired:
-              type: boolean
-      consumes:
-      - application/json
-      produces:
-      - application/json
+          type: integer
+      - name: mailroomId
+        in: path
+        required: true
+        schema:
+          type: integer
       tags:
       - orgs/mailrooms
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  id:
-                    type: number
-                  name:
-                    type: string
-                  createdAt:
-                    type: string
-                    format: date
-                  updatedAt:
-                    type: string
-                    format: date
-                  site:
+                  data:
                     type: object
                     properties:
                       id:
                         type: number
                       name:
                         type: string
-                    required:
-                    - id
-                  address:
-                    type: string
-                  address2:
-                    type: string
-                    x-nullable: true
-                  city:
-                    type: string
-                  state:
-                    type: string
-                    x-nullable: true
-                  zip:
-                    type: string
-                    x-nullable: true
-                  country:
-                    type: string
-                  phone:
-                    type: string
-                    x-nullable: true
-                  description:
-                    type: string
-                    x-nullable: true
-                  timezone:
-                    type: string
-                  isSelfPickup:
-                    type: boolean
-                    default: false
-                  isSignatureRequired:
-                    type: boolean
-                    default: false
-                required:
-                - id
-                - name
-                - address
-                - city
-                - country
-                - timezone
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      scopeUpdatedAt:
+                      createdAt:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
-                    type: object
-                    properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
+                      updatedAt:
+                        type: string
+                        format: date
+                      site:
                         type: object
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          id:
+                            type: number
+                          name:
+                            type: string
+                        required:
+                        - id
+                      address:
+                        type: string
+                      address2:
+                        type:
+                        - string
+                        - 'null'
+                      city:
+                        type: string
+                      state:
+                        type:
+                        - string
+                        - 'null'
+                      zip:
+                        type:
+                        - string
+                        - 'null'
+                      country:
+                        type: string
+                      phone:
+                        type:
+                        - string
+                        - 'null'
+                      description:
+                        type:
+                        - string
+                        - 'null'
+                      timezone:
+                        type: string
+                      isSelfPickup:
+                        type: boolean
+                        default: false
+                      isSignatureRequired:
+                        type: boolean
+                        default: false
+                    required:
+                    - id
+                    - name
+                    - address
+                    - city
+                    - country
+                    - timezone
+                  meta:
+                    type: object
+                    properties:
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-parcelMgmtParcels:w
       - o:w
       - s-o:w
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                siteId:
+                  type: number
+                address:
+                  type: string
+                address2:
+                  type:
+                  - string
+                  - 'null'
+                city:
+                  type: string
+                zip:
+                  type:
+                  - string
+                  - 'null'
+                country:
+                  type: string
+                  x-convert:
+                    trim: true
+                state:
+                  type:
+                  - string
+                  - 'null'
+                  x-convert:
+                    trim: true
+                phone:
+                  type:
+                  - string
+                  - 'null'
+                description:
+                  type:
+                  - string
+                  - 'null'
+                isSelfPickup:
+                  type: boolean
+                isSignatureRequired:
+                  type: boolean
   /orgs/{orgId}/mailrooms/statistics:
     get:
       summary: Get all mailroom statistics
       operationId: describeAllMailroomStatistics
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: describeAllMailroomStatistics'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w
+
+
+        __Endpoint name__: describeAllMailroomStatistics'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/mailrooms
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  scannedCount:
-                    type: number
-                  pickedUpCount:
-                    type: number
-                  awaitingPickupCount:
-                    type: number
-                  averagePickupTime:
-                    type: number
-                  timeSince:
-                    type: string
-                    format: date
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      scannedCount:
+                        type: number
+                      pickedUpCount:
+                        type: number
+                      awaitingPickupCount:
+                        type: number
+                      averagePickupTime:
+                        type: number
+                      timeSince:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-parcelMgmtParcels:r
       - o{params.orgId}-parcelMgmtParcels:w
@@ -727,74 +801,82 @@ paths:
     get:
       summary: Get single mailroom statistics
       operationId: describeMailroomStatistics
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w<br/><br/>__Endpoint name__: describeMailroomStatistics'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-parcelMgmtParcels:r,o{params.orgId}-parcelMgmtParcels:w,o:w,o:r,s-o:r,s-o:w
+
+
+        __Endpoint name__: describeMailroomStatistics'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      - type: integer
-        name: mailroomId
+        schema:
+          type: integer
+      - name: mailroomId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/mailrooms
       security:
       - jwt: []
       responses:
         '200':
-          schema:
-            type: object
-            properties:
-              data:
+          description: Successful
+          content:
+            application/json:
+              schema:
                 type: object
                 properties:
-                  scannedCount:
-                    type: number
-                  pickedUpCount:
-                    type: number
-                  awaitingPickupCount:
-                    type: number
-                  averagePickupTime:
-                    type: number
-                  timeSince:
-                    type: string
-                    format: date
-              meta:
-                type: object
-                properties:
-                  accessToken:
-                    x-nullable: true
+                  data:
                     type: object
                     properties:
-                      scopeUpdatedAt:
+                      scannedCount:
+                        type: number
+                      pickedUpCount:
+                        type: number
+                      awaitingPickupCount:
+                        type: number
+                      averagePickupTime:
+                        type: number
+                      timeSince:
                         type: string
                         format: date
-                  siteSpecificAccess:
-                    x-nullable: true
+                  meta:
                     type: object
                     properties:
-                      isSiteSpecific:
-                        type: boolean
-                      siteIds:
-                        x-nullable: true
-                        type: array
-                        items:
-                          type: integer
-                      siteIdsByScope:
-                        type: object
+                      accessToken:
+                        type:
+                        - object
+                        - 'null'
                         properties:
-                          string:
-                            x-nullable: true
-                            type: array
+                          scopeUpdatedAt:
+                            type: string
+                            format: date
+                      siteSpecificAccess:
+                        type:
+                        - object
+                        - 'null'
+                        properties:
+                          isSiteSpecific:
+                            type: boolean
+                          siteIds:
+                            type:
+                            - array
+                            - 'null'
                             items:
                               type: integer
-                        x-nullable: true
-          description: Successful
+                          siteIdsByScope:
+                            type:
+                            - object
+                            - 'null'
+                            properties:
+                              string:
+                                type:
+                                - array
+                                - 'null'
+                                items:
+                                  type: integer
       x-op-scopes:
       - o{params.orgId}-parcelMgmtParcels:r
       - o{params.orgId}-parcelMgmtParcels:w
@@ -806,16 +888,16 @@ paths:
     delete:
       summary: Cancel mailroom
       operationId: cancelMailroom
-      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o:w,s-o:w<br/><br/>__Endpoint name__: cancelMailroom'
+      description: '__JWT is required for this endpoint with at least one of the following scopes__: o{params.orgId}-admin:w,o:w,s-o:w
+
+
+        __Endpoint name__: cancelMailroom'
       parameters:
-      - type: integer
-        name: orgId
+      - name: orgId
         in: path
         required: true
-      consumes:
-      - application/json
-      produces:
-      - application/json
+        schema:
+          type: integer
       tags:
       - orgs/mailrooms
       security:
@@ -827,9 +909,10 @@ paths:
       - o{params.orgId}-admin:w
       - o:w
       - s-o:w
-securityDefinitions:
-  jwt:
-    type: apiKey
-    name: Authorization
-    in: header
+components:
+  securitySchemes:
+    jwt:
+      type: apiKey
+      name: Authorization
+      in: header
 x-proxy-enabled: false
